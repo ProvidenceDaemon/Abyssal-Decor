@@ -22,7 +22,7 @@ public class BarrierTieBlock extends HorizontalDirectionalBlock implements Simpl
 
     public BarrierTieBlock(Properties properties, boolean isDangerous) {
         super(properties);
-        this.registerDefaultState((BlockState) this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(DANGEROUS, isDangerous).setValue(BlockStateProperties.WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(DANGEROUS, isDangerous).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override

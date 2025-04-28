@@ -38,8 +38,7 @@ public class TiedBarrierBlock extends Block implements IExtensibleBlock, SimpleW
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(EXTENSION_TYPE);
-        builder.add(BlockStateProperties.WATERLOGGED);
+        builder.add(EXTENSION_TYPE,BlockStateProperties.WATERLOGGED);
     }
 
     @Override

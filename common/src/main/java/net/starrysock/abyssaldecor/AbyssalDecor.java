@@ -42,27 +42,7 @@ public class AbyssalDecor {
     public static final DeferredRegister<DamageType> DAMAGE_TYPES = DeferredRegister.create(MOD_ID, Registries.DAMAGE_TYPE);
     
     public static void init() {
-        HashMap<String, PaletteType> paletteMap = new HashMap<>();
 
-        // add palettes here
-        paletteMap.put("seabrass", PaletteType.METAL);
-        paletteMap.put("deepbronze", PaletteType.METAL);
-        paletteMap.put("whitewood", PaletteType.WOOD);
-        paletteMap.put("blackwood", PaletteType.WOOD);
-        paletteMap.put("cinnamon", PaletteType.WOOD);
-        paletteMap.put("pearl", PaletteType.PEARL);
-        paletteMap.put("blackpearl", PaletteType.PEARL);
-        paletteMap.put("fresnel", PaletteType.GLASSLIKE);
-        paletteMap.put("vermillion", PaletteType.FRAMED_GLASSLIKE);
-        paletteMap.put("prismarine_crystal", PaletteType.GLASSLIKE);
-        paletteMap.put("crystalized_glowstone", PaletteType.FRAMED_GLASSLIKE);
-        paletteMap.put("starglass", PaletteType.GLASSLIKE);
-        paletteMap.put("pitchglass", PaletteType.FRAMED_GLASSLIKE);
-        paletteMap.put("blood_coral", PaletteType.CORAL);
-
-        //
-
-        BlockPaletteRegistryHelper.init(paletteMap);
         TABS.register();
         AbyssalDecorBlocks.register();
         AbyssalDecorItems.register();

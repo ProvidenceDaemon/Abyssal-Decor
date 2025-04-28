@@ -46,7 +46,7 @@ public class AbyssalDecorBlocks {
     //section : Barriers
     public static RegistrySupplier<Block> VELVET_BARRIER = AbyssalDecor.BLOCKS.register("velvet_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.COPPER_BLOCK)));
     public static RegistrySupplier<Block> IRON_BARRIER = AbyssalDecor.BLOCKS.register("iron_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
-    public static RegistrySupplier<Block> ROPE_BARRIER = AbyssalDecor.BLOCKS.register("rope_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.OAK_LOG)));
+    public static RegistrySupplier<Block> ROPE_BARRIER = AbyssalDecor.BLOCKS.register("rope_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.OAK_PLANKS)));
     public static RegistrySupplier<Block> BARBED_WIRE_BARRIER = AbyssalDecor.BLOCKS.register("barbed_wire_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static RegistrySupplier<Block> VELVET_BARRIER_TIE = AbyssalDecor.BLOCKS.register("velvet_barrier_tie", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.RED_WOOL), false));
@@ -54,9 +54,10 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> ROPE_BARRIER_TIE = AbyssalDecor.BLOCKS.register("rope_barrier_tie", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.BROWN_WOOL), false));
     public static RegistrySupplier<Block> BARBED_WIRE_BARRIER_TIE = AbyssalDecor.BLOCKS.register("barbed_wire_barrier_tie", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.IRON_BARS), true));
 
-    public static void register() {
-        DeferredRegister<Block> blockRegistry = AbyssalDecor.BLOCKS;
+    //blocks
 
-        blockRegistry.register();
+
+    public static void register() {
+        AbyssalDecor.BLOCKS.register();
     }
 }

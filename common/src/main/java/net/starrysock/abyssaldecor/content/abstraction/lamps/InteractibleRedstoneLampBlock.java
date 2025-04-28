@@ -23,7 +23,7 @@ public class InteractibleRedstoneLampBlock extends RedstoneLampBlock {
 
     public InteractibleRedstoneLampBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState((BlockState) this.defaultBlockState().setValue(LIT, false).setValue(FORCED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(LIT, false).setValue(FORCED, false));
     }
 
     @Override
@@ -39,7 +39,6 @@ public class InteractibleRedstoneLampBlock extends RedstoneLampBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(LIT);
         builder.add(FORCED);
     }
 
