@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrarManager;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -35,5 +36,9 @@ public class AbyssalDecor {
         AbyssalCreativeTabs.register();
 
         System.out.println(AbyssalDecorExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString());
+    }
+
+    public static ResourceLocation id(String path) {
+        return new ResourceLocation(MOD_ID,path);
     }
 }

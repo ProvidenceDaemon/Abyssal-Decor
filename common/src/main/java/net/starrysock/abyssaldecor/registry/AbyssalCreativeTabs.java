@@ -18,6 +18,18 @@ public class AbyssalCreativeTabs {
                         output.accept(AbyssalDecorItems.TERRESTRIAL_ROD.get());
                         output.accept(AbyssalDecorItems.LUNAR_ROD.get());
                         output.accept(AbyssalDecorItems.ETHEREAL_ROD.get());
+                        output.accept(AbyssalDecorItems.HANGING_MOSS.get());
+
+                        output.accept(AbyssalDecorItems.DAFFODIL.get());
+                        output.accept(AbyssalDecorItems.ASTER.get());
+                        output.accept(AbyssalDecorItems.SNAPLEAF.get());
+
+                        output.accept(AbyssalDecorItems.AMARANTH_SEEDS.get());
+                        output.accept(AbyssalDecorItems.AMARANTH_PINNACLE.get());
+                        output.accept(AbyssalDecorItems.AMARANTH_CRATE.get());
+                        output.accept(AbyssalDecorItems.MUCKROOT.get());
+                        output.accept(AbyssalDecorItems.COOKED_MUCKROOT.get());
+                        output.accept(AbyssalDecorItems.MUCKROOT_SOUP.get());
                     })
                     .build());
 

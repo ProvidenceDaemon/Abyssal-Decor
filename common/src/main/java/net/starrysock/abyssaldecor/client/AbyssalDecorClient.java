@@ -10,5 +10,13 @@ public class AbyssalDecorClient {
 
     public static void setup(BiConsumer<Block, RenderType> renderTypes) {
         renderTypes.accept(AbyssalDecorBlocks.SOLAR_ROD.get(),RenderType.cutout());
+        renderTypes.accept(AbyssalDecorBlocks.STELLAR_ROD.get(),RenderType.cutout());
+        renderTypes.accept(AbyssalDecorBlocks.TERRESTRIAL_ROD.get(),RenderType.cutout());
+        renderTypes.accept(AbyssalDecorBlocks.LUNAR_ROD.get(),RenderType.cutout());
+        renderTypes.accept(AbyssalDecorBlocks.ETHEREAL_ROD.get(),RenderType.cutout());
+
+        renderTypes.accept(AbyssalDecorBlocks.DAFFODIL.get(),RenderType.cutout());
+        renderTypes.accept(AbyssalDecorBlocks.ASTER.get(),RenderType.cutout());
+        renderTypes.accept(AbyssalDecorBlocks.SNAPLEAF.get(),RenderType.cutout());
     }
 }
