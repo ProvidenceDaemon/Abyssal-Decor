@@ -48,7 +48,7 @@ public class BlockPaletteRegistryHelper {
                     case "_small_bars" -> AbyssalDecor.BLOCKS.register(name, () -> new SmallBarsBlock(type.getProperties()));
                     default -> AbyssalDecor.BLOCKS.register(name, () -> new Block(type.getProperties()));
                 };
-                RegistrySupplier<Item> item = AbyssalDecor.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(AbyssalDecor.PALETTE_TAB)));
+                RegistrySupplier<Item> item = AbyssalDecor.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(AbyssalCreativeTabs.PALETTE_TAB)));
                 paletteBlocks.put(name, block);
                 paletteItems.put(name, item);
             }

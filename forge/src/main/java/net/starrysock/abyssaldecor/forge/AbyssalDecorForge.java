@@ -1,15 +1,34 @@
 package net.starrysock.abyssaldecor.forge;
 
 import dev.architectury.platform.forge.EventBuses;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.starrysock.abyssaldecor.client.AbyssalDecorClient;
 
 @Mod(AbyssalDecor.MOD_ID)
 public class AbyssalDecorForge {
     public AbyssalDecorForge() {
         // Submit our event bus to let architectury register our content on the right time
-        EventBuses.registerModEventBus(AbyssalDecor.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        EventBuses.registerModEventBus(AbyssalDecor.MOD_ID, bus);
         AbyssalDecor.init();
+        if (FMLEnvironment.dist.isClient()) {
+            Client.init(bus);
+        }
+    }
+
+    public static class Client {
+        static void init(IEventBus bus) {
+            bus.addListener(Client::setup);
+        }
+
+        static void setup(FMLClientSetupEvent event) {
+            AbyssalDecorClient.setup(ItemBlockRenderTypes::setRenderLayer);
+        }
     }
 }

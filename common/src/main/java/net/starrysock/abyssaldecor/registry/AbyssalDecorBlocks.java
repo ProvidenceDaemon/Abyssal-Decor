@@ -1,12 +1,10 @@
 package net.starrysock.abyssaldecor.registry;
 
-import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.block.DirectionalRodBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.BarrierTieBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.TiedBarrierBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.DirectionalInteractibleLampBlock;
@@ -16,9 +14,6 @@ import net.starrysock.abyssaldecor.content.lamps.BulkheadLampBlock;
 import net.starrysock.abyssaldecor.content.lamps.TubeLampBlock;
 
 public class AbyssalDecorBlocks {
-
-    public static RegistrySupplier<Block> TEST_BLOCK = AbyssalDecor.BLOCKS.register("test_block", () -> new Block(Block.Properties.copy(Blocks.STONE)));
-
     public static RegistrySupplier<Block> SEABRASS_ORE = AbyssalDecor.BLOCKS.register("seabrass_ore", () -> new FallingBlock(Block.Properties.copy(Blocks.GRAVEL)));
 
     //section: Lamps
@@ -55,6 +50,11 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> BARBED_WIRE_BARRIER_TIE = AbyssalDecor.BLOCKS.register("barbed_wire_barrier_tie", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.IRON_BARS), true));
 
     //blocks
+    public static final RegistrySupplier<Block> SOLAR_ROD = AbyssalDecor.BLOCKS.register("solar_rod",() -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistrySupplier<Block> STELLAR_ROD = AbyssalDecor.BLOCKS.register("stellar_rod",() -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistrySupplier<Block> TERRESTRIAL_ROD = AbyssalDecor.BLOCKS.register("terrestrial_rod",() -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistrySupplier<Block> LUNAR_ROD = AbyssalDecor.BLOCKS.register("lunar_rod",() -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistrySupplier<Block> ETHEREAL_ROD = AbyssalDecor.BLOCKS.register("ethereal_rod",() -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
 
 
     public static void register() {
