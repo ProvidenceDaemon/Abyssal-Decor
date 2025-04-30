@@ -1,5 +1,6 @@
 package net.starrysock.abyssaldecor;
 
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
@@ -8,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -18,11 +20,14 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.block.AmaranthBlock;
 import net.starrysock.abyssaldecor.block.TallAmaranthBlock;
+import net.starrysock.abyssaldecor.block.DirectionalInteractibleLampBlock;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector2i;
 
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 
 class Datagen {
@@ -73,7 +78,7 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
             simpleBlockItem(AbyssalDecorItems.FOXY_PILLAR.get());
 
-            simpleBlockItem(AbyssalDecorItems.LIGHTBULB.get(),modLoc("block/bulb_lamp_floor"));
+            simpleBlockItem(AbyssalDecorItems.LIGHTBULB.get());
 
             generatedItem(AbyssalDecorItems.DUSTY_CD.get());
         }
@@ -136,9 +141,35 @@ class Datagen {
                     }
             );
 
+            getVariantBuilder(AbyssalDecorBlocks.LIGHTBULB.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+                ModelFile modelFile = models().getExistingFile(modLoc("block/lightbulb"+(lit? "_lit":"")));
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
+            }, BlockStateProperties.WATERLOGGED);
+
             simpleBlock(AbyssalDecorBlocks.WISTERIA_PETALS.get());
             simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
             simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
+        }
+
+        static ConfiguredModel[] allRotations(ModelFile base) {
+            return Arrays.stream(Direction.values()).map(direction -> {
+                Vector2i vector2i = getRotation(direction);
+               return new ConfiguredModel(base,vector2i.x,vector2i.y,true);
+            }).toArray(ConfiguredModel[]::new);
+        }
+
+        static Vector2i getRotation(Direction direction) {
+            return switch (direction) {
+                case DOWN -> new Vector2i(180,0);
+                case UP -> new Vector2i();
+                case NORTH -> new Vector2i(90,0);
+                case SOUTH -> new Vector2i(90,180);
+                case WEST -> new Vector2i(90,270);
+                case EAST -> new Vector2i(90,90);
+            };
         }
     }
 }

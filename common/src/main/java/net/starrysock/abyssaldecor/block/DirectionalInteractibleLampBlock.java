@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.content.abstraction.lamps;
+package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.Fluids;
+import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
 import org.jetbrains.annotations.Nullable;
 
 public class DirectionalInteractibleLampBlock extends InteractibleRedstoneLampBlock implements SimpleWaterloggedBlock {
@@ -17,7 +18,7 @@ public class DirectionalInteractibleLampBlock extends InteractibleRedstoneLampBl
 
     public DirectionalInteractibleLampBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState((BlockState) this.defaultBlockState().setValue(FACING, Direction.UP).setValue(LIT, false).setValue(FORCED, false).setValue(BlockStateProperties.WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(LIT, false).setValue(FORCED, false).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override

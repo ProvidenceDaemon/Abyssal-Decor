@@ -11,7 +11,7 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.BarrierTieBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.TiedBarrierBlock;
-import net.starrysock.abyssaldecor.content.abstraction.lamps.DirectionalInteractibleLampBlock;
+import net.starrysock.abyssaldecor.block.DirectionalInteractibleLampBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.WallMountedInteractibleLampBlock;
 import net.starrysock.abyssaldecor.content.lamps.BulkheadLampBlock;
@@ -24,7 +24,7 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> FRESNEL_LAMP = AbyssalDecor.BLOCKS.register("fresnel_lamp", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
     // Lightbulb [directional], Wall Bulb Lamp [wall mounted], Tube Lamp [tube], Iron Lamp [directional], Flower Lamp [wall mounted], Frosted Lamp [directional], Quartz Lamp [directional], Jade Lamp [directional], Seaglass Lamp [directional], Blaze Lamp [wall mounted], Rainbow Lamp [directional]
-    public static RegistrySupplier<Block> LIGHTBULB = AbyssalDecor.BLOCKS.register("lightbulb", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static RegistrySupplier<Block> LIGHTBULB = AbyssalDecor.BLOCKS.register("lightbulb", () -> new DirectionalLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
     public static RegistrySupplier<Block> WALL_BULB_LAMP = AbyssalDecor.BLOCKS.register("wall_bulb_lamp", () -> new WallMountedInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
     public static RegistrySupplier<Block> TUBE_LAMP = AbyssalDecor.BLOCKS.register("tube_lamp", () -> new TubeLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
     public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
