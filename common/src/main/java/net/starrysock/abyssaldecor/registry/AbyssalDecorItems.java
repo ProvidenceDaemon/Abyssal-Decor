@@ -1,13 +1,15 @@
 package net.starrysock.abyssaldecor.registry;
 
+import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.item.SupplierRecordItem;
 
 import java.util.function.Supplier;
 
@@ -36,12 +38,21 @@ public class AbyssalDecorItems {
     //todo wisteria and elder wisteria
 
     public static final RegistrySupplier<BlockItem> WISTERIA_PETALS = registerBlockItem("wisteria_petals",AbyssalDecorBlocks.WISTERIA_PETALS);
-    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_PETALS = registerBlockItem("elder_wisteria_leaves",AbyssalDecorBlocks.ELDER_WISTERIA_PETALS);
+    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_PETALS = registerBlockItem("elder_wisteria_petals",AbyssalDecorBlocks.ELDER_WISTERIA_PETALS);
     public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_LEAVES = registerBlockItem("elder_wisteria_leaves",AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES);
 
     public static final RegistrySupplier<BlockItem> ANCIENT_BIRCH_LOG =  registerBlockItem("ancient_birch_log",AbyssalDecorBlocks.ANCIENT_BIRCH_LOG);
     public static final RegistrySupplier<BlockItem> STRIPPED_ANCIENT_BIRCH_LOG =  registerBlockItem("stripped_ancient_birch_log",AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG);
     public static final RegistrySupplier<BlockItem> FOXY_PILLAR =  registerBlockItem("foxy_pillar",AbyssalDecorBlocks.FOXY_PILLAR);
+
+    public static final RegistrySupplier<Item> DUSTY_CD = AbyssalDecor.ITEMS.register("dusty_cd",
+            () -> new SupplierRecordItem(0,AbyssalDecorSounds.DUSTY_CD.get()
+            , new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 3600));
+
+    public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem("scrimshaw",AbyssalDecorBlocks.SCRIMSHAW);
+    ////
+
+    public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

@@ -1,7 +1,6 @@
 package net.starrysock.abyssaldecor;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -63,6 +62,8 @@ class Datagen {
 
         @Override
         protected void registerModels() {
+            generatedItem(AbyssalDecorItems.AMARANTH_SEEDS.get());
+            generatedItem(AbyssalDecorItems.AMARANTH_PINNACLE.get());
             simpleBlockItem(AbyssalDecorItems.AMARANTH_CRATE.get());
             simpleBlockItem(AbyssalDecorItems.WISTERIA_PETALS.get());
             simpleBlockItem(AbyssalDecorItems.ELDER_WISTERIA_PETALS.get());
@@ -71,6 +72,10 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.ANCIENT_BIRCH_LOG.get());
             simpleBlockItem(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
             simpleBlockItem(AbyssalDecorItems.FOXY_PILLAR.get());
+
+            simpleBlockItem(AbyssalDecorItems.LIGHTBULB.get(),modLoc("block/bulb_lamp_floor"));
+
+            generatedItem(AbyssalDecorItems.DUSTY_CD.get());
         }
 
 

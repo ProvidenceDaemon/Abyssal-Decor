@@ -39,6 +39,11 @@ public class AbyssalCreativeTabs {
                         output.accept(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
 
                         output.accept(AbyssalDecorItems.FOXY_PILLAR.get());
+
+                        output.accept(AbyssalDecorItems.DUSTY_CD.get());
+                        output.accept(AbyssalDecorItems.SCRIMSHAW.get());
+
+                        output.accept(AbyssalDecorItems.LIGHTBULB.get());
                     })
                     .build());
 
