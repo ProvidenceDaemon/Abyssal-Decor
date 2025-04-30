@@ -7,10 +7,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.starrysock.abyssaldecor.AbyssalDecor;
-import net.starrysock.abyssaldecor.block.AmaranthBlock;
-import net.starrysock.abyssaldecor.block.DirectionalRodBlock;
-import net.starrysock.abyssaldecor.block.MuckrootBlock;
-import net.starrysock.abyssaldecor.block.TallAmaranthBlock;
+import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.BarrierTieBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.TiedBarrierBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.DirectionalInteractibleLampBlock;
@@ -73,6 +70,20 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> AMARANTH_CRATE = AbyssalDecor.BLOCKS.register("amaranth_crate",() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 
     public static final RegistrySupplier<Block> MUCKROOT = AbyssalDecor.BLOCKS.register("muckroot",() -> new MuckrootBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY),ModTags.Blocks.MUCKROOT_GROWABLE));
+
+    public static final RegistrySupplier<Block> BARK_ORCHID = AbyssalDecor.BLOCKS.register("bark_orchid",() -> new BarkOrchidBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).instabreak().noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
+
+    //todo wisteria and elder wisteria
+
+    public static final RegistrySupplier<Block> WISTERIA_PETALS = AbyssalDecor.BLOCKS.register("wisteria_petals",() -> Blocks.leaves(SoundType.GRASS));
+    public static final RegistrySupplier<Block> ELDER_WISTERIA_PETALS = AbyssalDecor.BLOCKS.register("elder_wisteria_petals",() -> Blocks.leaves(SoundType.GRASS));
+    public static final RegistrySupplier<Block> ELDER_WISTERIA_LEAVES = AbyssalDecor.BLOCKS.register("elder_wisteria_leaves",() -> Blocks.leaves(SoundType.GRASS));
+
+    public static final RegistrySupplier<RotatedPillarBlock> ANCIENT_BIRCH_LOG = AbyssalDecor.BLOCKS.register("ancient_birch_log",() -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+    public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_ANCIENT_BIRCH_LOG = AbyssalDecor.BLOCKS.register("stripped_ancient_birch_log",() -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+
+    public static final RegistrySupplier<RotatedPillarBlock> FOXY_PILLAR = AbyssalDecor.BLOCKS.register("foxy_pillar",() -> Blocks.log(MapColor.PODZOL, MapColor.COLOR_BROWN));
+
 
     public static void register() {
         AbyssalDecor.BLOCKS.register();

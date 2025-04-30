@@ -31,6 +31,18 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() -> new Item(new Item.Properties().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() -> new BowlFoodItem(new Item.Properties().stacksTo(1).food(Foods.BEETROOT_SOUP)));
 
+    public static final RegistrySupplier<BlockItem> BARK_ORCHID = registerBlockItem("bark_orchid",AbyssalDecorBlocks.BARK_ORCHID);
+
+    //todo wisteria and elder wisteria
+
+    public static final RegistrySupplier<BlockItem> WISTERIA_PETALS = registerBlockItem("wisteria_petals",AbyssalDecorBlocks.WISTERIA_PETALS);
+    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_PETALS = registerBlockItem("elder_wisteria_leaves",AbyssalDecorBlocks.ELDER_WISTERIA_PETALS);
+    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_LEAVES = registerBlockItem("elder_wisteria_leaves",AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES);
+
+    public static final RegistrySupplier<BlockItem> ANCIENT_BIRCH_LOG =  registerBlockItem("ancient_birch_log",AbyssalDecorBlocks.ANCIENT_BIRCH_LOG);
+    public static final RegistrySupplier<BlockItem> STRIPPED_ANCIENT_BIRCH_LOG =  registerBlockItem("stripped_ancient_birch_log",AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG);
+    public static final RegistrySupplier<BlockItem> FOXY_PILLAR =  registerBlockItem("foxy_pillar",AbyssalDecorBlocks.FOXY_PILLAR);
+
     public static void register() {
         AbyssalDecor.ITEMS.register();
     }

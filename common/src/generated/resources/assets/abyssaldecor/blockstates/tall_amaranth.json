@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0,half=lower": {
+      "model": "abyssaldecor:block/tall_amaranth_stage0_lower"
+    },
+    "age=0,half=upper": {
+      "model": "abyssaldecor:block/tall_amaranth_stage0_upper"
+    },
+    "age=1,half=lower": {
+      "model": "abyssaldecor:block/tall_amaranth_stage1_lower"
+    },
+    "age=1,half=upper": {
+      "model": "abyssaldecor:block/tall_amaranth_stage1_upper"
+    }
+  }
+}

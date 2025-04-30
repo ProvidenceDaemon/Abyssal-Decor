@@ -30,6 +30,15 @@ public class AbyssalCreativeTabs {
                         output.accept(AbyssalDecorItems.MUCKROOT.get());
                         output.accept(AbyssalDecorItems.COOKED_MUCKROOT.get());
                         output.accept(AbyssalDecorItems.MUCKROOT_SOUP.get());
+                        output.accept(AbyssalDecorItems.BARK_ORCHID.get());
+
+                        output.accept(AbyssalDecorItems.WISTERIA_PETALS.get());
+                        output.accept(AbyssalDecorItems.ELDER_WISTERIA_PETALS.get());
+                        output.accept(AbyssalDecorItems.ELDER_WISTERIA_LEAVES.get());
+                        output.accept(AbyssalDecorItems.ANCIENT_BIRCH_LOG.get());
+                        output.accept(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
+
+                        output.accept(AbyssalDecorItems.FOXY_PILLAR.get());
                     })
                     .build());
 
