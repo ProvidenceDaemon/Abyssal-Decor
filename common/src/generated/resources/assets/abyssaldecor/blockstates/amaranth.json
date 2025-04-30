@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "abyssaldecor:block/amaranth_stage0"
+    },
+    "age=1": {
+      "model": "abyssaldecor:block/amaranth_stage1"
+    }
+  }
+}

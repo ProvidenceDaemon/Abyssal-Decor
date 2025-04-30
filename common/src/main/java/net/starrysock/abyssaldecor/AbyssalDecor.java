@@ -10,6 +10,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.starrysock.abyssaldecor.platform.Services;
 import net.starrysock.abyssaldecor.registry.*;
 
 import java.util.function.Supplier;
@@ -35,7 +36,7 @@ public class AbyssalDecor {
         AbyssalDecorItems.register();
         AbyssalCreativeTabs.register();
 
-        System.out.println(AbyssalDecorExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString());
+        System.out.println(Services.PLATFORM.getConfigDirectory().toAbsolutePath().normalize());
     }
 
     public static ResourceLocation id(String path) {

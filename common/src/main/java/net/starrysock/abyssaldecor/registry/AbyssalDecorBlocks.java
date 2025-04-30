@@ -9,6 +9,8 @@ import net.minecraft.world.level.material.PushReaction;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.block.AmaranthBlock;
 import net.starrysock.abyssaldecor.block.DirectionalRodBlock;
+import net.starrysock.abyssaldecor.block.MuckrootBlock;
+import net.starrysock.abyssaldecor.block.TallAmaranthBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.BarrierTieBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.TiedBarrierBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.DirectionalInteractibleLampBlock;
@@ -67,10 +69,10 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> SNAPLEAF = AbyssalDecor.BLOCKS.register("snapleaf",() -> new FlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> AMARANTH = AbyssalDecor.BLOCKS.register("amaranth",() -> new AmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY),ModTags.Blocks.AMARANTH_GROWABLE));
-    public static final RegistrySupplier<DoublePlantBlock> TALL_AMARANTH = AbyssalDecor.BLOCKS.register("tall_amaranth",() -> new TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<DoublePlantBlock> TALL_AMARANTH = AbyssalDecor.BLOCKS.register("tall_amaranth",() -> new TallAmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistrySupplier<Block> AMARANTH_CRATE = AbyssalDecor.BLOCKS.register("amaranth_crate",() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 
-    public static final RegistrySupplier<Block> MUCKROOT = AbyssalDecor.BLOCKS.register("muckroot",() -> new AmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY),ModTags.Blocks.MUCKROOT_GROWABLE));
+    public static final RegistrySupplier<Block> MUCKROOT = AbyssalDecor.BLOCKS.register("muckroot",() -> new MuckrootBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY),ModTags.Blocks.MUCKROOT_GROWABLE));
 
     public static void register() {
         AbyssalDecor.BLOCKS.register();

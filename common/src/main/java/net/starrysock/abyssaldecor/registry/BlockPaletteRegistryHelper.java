@@ -21,7 +21,7 @@ public class BlockPaletteRegistryHelper {
 
     public static HashMap<String, RegistrySupplier<Item>> paletteItems = new HashMap<>();
 
-    public static void init(Map<String, PaletteType> toRegister) {
+    /*public static void init(Map<String, PaletteType> toRegister) {
         for (String key : toRegister.keySet()) {
             PaletteType type = toRegister.get(key);
             for (String variant : type.getVariants()) {
@@ -53,7 +53,7 @@ public class BlockPaletteRegistryHelper {
                 paletteItems.put(name, item);
             }
         }
-    }
+    }*/
 
     public static String getBaseVariant(String name) {
         if (name.contains("pipe") || name.contains("pressure")) {

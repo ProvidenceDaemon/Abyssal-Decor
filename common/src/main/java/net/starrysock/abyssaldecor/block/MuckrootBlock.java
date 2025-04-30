@@ -15,11 +15,11 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 
-public class AmaranthBlock extends CropBlock {
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
+public class MuckrootBlock extends CropBlock {
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     private final TagKey<Block> allowed;
 
-    public AmaranthBlock(Properties properties, TagKey<Block> allowed) {
+    public MuckrootBlock(Properties properties, TagKey<Block> allowed) {
         super(properties);
         this.allowed = allowed;
     }
@@ -36,25 +36,12 @@ public class AmaranthBlock extends CropBlock {
 
     @Override
     public int getMaxAge() {
-        return 1;
+        return 2;
     }
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return AbyssalDecorItems.AMARANTH_SEEDS.get();
-    }
-
-    @Override
-    public void growCrops(Level level, BlockPos blockPos, BlockState blockState) {
-        int age = getAge(blockState);
-        if (age < getMaxAge()) {
-            super.growCrops(level, blockPos, blockState);
-        } else {
-            DoublePlantBlock doubleplantblock = AbyssalDecorBlocks.TALL_AMARANTH.get();
-            if (doubleplantblock.defaultBlockState().canSurvive(level,blockPos) && level.isEmptyBlock(blockPos.above())) {
-                DoublePlantBlock.placeAt(level, doubleplantblock.defaultBlockState(), blockPos, 2);
-            }
-        }
+        return AbyssalDecorItems.MUCKROOT.get();
     }
 
     @Override
