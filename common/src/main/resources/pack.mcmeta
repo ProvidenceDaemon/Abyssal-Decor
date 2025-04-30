@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "(Mostly) Vanilla style decorative blocks, (mostly) inspired by Victorian and Lovecraftian themes!",
-        "pack_format": ${pack_format}
+        "description": "${mod_name}",
+        "pack_format": 8
     }
 }

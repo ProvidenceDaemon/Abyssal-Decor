@@ -1,3 +1,9 @@
-// 1.20.1	2025-04-30T02:51:48.6904498	Block States: abyssaldecor
+// 1.20.1	2025-04-30T04:36:25.4124963	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
+1b8248f1148659fbf5efb3f8c22c69223b58d6d3 assets/abyssaldecor/blockstates/elder_wisteria_leaves.json
+ecd87f7bab047c3354a71331ed0a80ba21be70d7 assets/abyssaldecor/blockstates/elder_wisteria_petals.json
 e2b9743d90c377a7c15232bda7e8e8acfba67f7d assets/abyssaldecor/blockstates/tall_amaranth.json
+0ec64d13fd507a3b3a13b904ebce8d3aa0d789a0 assets/abyssaldecor/blockstates/wisteria_petals.json
+1d0fe3c2dfec0909900100530b7dc98ae9aebe82 assets/abyssaldecor/models/block/elder_wisteria_leaves.json
+0adeef1d3b44757c07b5af04d894f01a55b90806 assets/abyssaldecor/models/block/elder_wisteria_petals.json
+72db36ac9572e46a3c56c553f8b18c51fb8b61db assets/abyssaldecor/models/block/wisteria_petals.json

@@ -1,13 +1,18 @@
 package net.starrysock.abyssaldecor;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -15,6 +20,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.block.AmaranthBlock;
 import net.starrysock.abyssaldecor.block.TallAmaranthBlock;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,6 +38,7 @@ class Datagen {
         }
         if (event.includeClient()) {
             generator.addProvider(true, new ModBlockStateProvider(output, helper));
+            generator.addProvider(true, new ModItemModelProvider(output, helper));
         }
     }
 
@@ -46,6 +53,56 @@ class Datagen {
             tag(ModTags.Blocks.MUCKROOT_GROWABLE).add(Blocks.FARMLAND);
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
         }
+    }
+
+    static class ModItemModelProvider extends ItemModelProvider {
+
+        public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+            super(output, AbyssalDecor.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void registerModels() {
+            simpleBlockItem(AbyssalDecorItems.AMARANTH_CRATE.get());
+            simpleBlockItem(AbyssalDecorItems.WISTERIA_PETALS.get());
+            simpleBlockItem(AbyssalDecorItems.ELDER_WISTERIA_PETALS.get());
+            simpleBlockItem(AbyssalDecorItems.ELDER_WISTERIA_LEAVES.get());
+
+            simpleBlockItem(AbyssalDecorItems.ANCIENT_BIRCH_LOG.get());
+            simpleBlockItem(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
+            simpleBlockItem(AbyssalDecorItems.FOXY_PILLAR.get());
+        }
+
+
+        protected void simpleBlockItem(Item item, ResourceLocation loc) {
+            String s = BuiltInRegistries.ITEM.getKey(item).toString();
+            getBuilder(s)
+                    .parent(getExistingFile(loc));
+        }
+
+        protected String name(Item item) {
+            return BuiltInRegistries.ITEM.getKey(item).getPath();
+        }
+
+        protected void simpleBlockItem(Item item) {
+            simpleBlockItem(item,modLoc("block/" + name(item)));
+        }
+
+
+        private void generatedItem(Item item ,ResourceLocation texture) {
+            String path = name(item);
+            singleTexture(path, mcLoc("item/generated"),
+                    "layer0", texture);
+        }
+
+        private void generatedItem(Item item) {
+            generatedItem(item,modLoc("item/"+name(item)));
+        }
+
+        private void generatedItemBlockTexture(Item item) {
+            generatedItem(item,modLoc("block/"+name(item)));
+        }
+        
     }
 
     public static class ModBlockStateProvider extends BlockStateProvider {
