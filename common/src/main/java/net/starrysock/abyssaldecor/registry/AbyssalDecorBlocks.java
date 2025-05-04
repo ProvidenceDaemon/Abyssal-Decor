@@ -28,13 +28,23 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> FRESNEL_LAMP = AbyssalDecor.BLOCKS.register("fresnel_lamp", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
     // Lightbulb [directional], Wall Bulb Lamp [wall mounted], Tube Lamp [tube], Iron Lamp [directional], Flower Lamp [wall mounted], Frosted Lamp [directional], Quartz Lamp [directional], Jade Lamp [directional], Seaglass Lamp [directional], Blaze Lamp [wall mounted], Rainbow Lamp [directional]
-    public static RegistrySupplier<Block> LIGHTBULB = AbyssalDecor.BLOCKS.register("lightbulb", () -> new DirectionalLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS)));
-    public static RegistrySupplier<Block> WALL_BULB_LAMP = AbyssalDecor.BLOCKS.register("wall_bulb_lamp", () -> new HorizontalDirectionalLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS)));
-    public static RegistrySupplier<Block> TUBE_LAMP = AbyssalDecor.BLOCKS.register("tube_lamp", () -> new TubeLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
-    public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-    public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () -> new WallMountedInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
-    public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
-    public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
+    public static RegistrySupplier<Block> LIGHTBULB = AbyssalDecor.BLOCKS.register("lightbulb", () -> new DirectionalLampBlock(lamp()));
+    public static RegistrySupplier<Block> WALL_BULB_LAMP = AbyssalDecor.BLOCKS.register("wall_bulb_lamp", () -> new HorizontalLampBlock(lamp()));
+    public static RegistrySupplier<Block> TUBE_LAMP = AbyssalDecor.BLOCKS.register("tube_lamp", () -> new TubeLampBlock(lamp()));
+    public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () -> new LampBlock(lamp()));
+    public static RegistrySupplier<Block> WALL_IRON_LAMP = AbyssalDecor.BLOCKS.register("wall_iron_lamp", () -> new HorizontalLampBlock(lamp()));
+
+    static BlockBehaviour.Properties lamp() {
+        return BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS);
+    }
+
+    public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () -> new HorizontalLampBlock(lamp()));
+    public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new DirectionalLampBlock(lamp()));
+    public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new LampBlock(lamp()));
+    public static RegistrySupplier<Block> WALL_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("wall_quartz_lamp", () -> new HorizontalLampBlock(lamp()));
+    public static RegistrySupplier<Block> CEILING_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("ceiling_quartz_lamp", () -> new LampBlock(lamp()));
+
+
     public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)));
     public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new DirectionalInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
     public static RegistrySupplier<Block> BLAZE_LAMP = AbyssalDecor.BLOCKS.register("blaze_lamp", () -> new WallMountedInteractibleLampBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS)));

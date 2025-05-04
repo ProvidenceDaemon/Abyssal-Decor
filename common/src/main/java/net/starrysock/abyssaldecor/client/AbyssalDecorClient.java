@@ -18,5 +18,10 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.DAFFODIL.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.ASTER.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.SNAPLEAF.get(),RenderType.cutout());
+
+        renderTypes.accept(AbyssalDecorBlocks.IRON_LAMP.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.WALL_IRON_LAMP.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.FLOWER_LAMP.get(),RenderType.cutoutMipped());
     }
 }

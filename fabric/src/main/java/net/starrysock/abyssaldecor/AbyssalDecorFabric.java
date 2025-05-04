@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.fabric;
+package net.starrysock.abyssaldecor;
 
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.fabricmc.api.ModInitializer;

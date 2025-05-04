@@ -16,8 +16,9 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.example.examplemod.ExampleMod"
-        ]
+            "net.starrysock.abyssaldecor.AbyssalDecorFabric"
+        ],
+        "client": ["net.starrysock.abyssaldecor.client.AbyssalDecorClientFabric"]
     },
     "mixins": [
         "${mod_id}.mixins.json",

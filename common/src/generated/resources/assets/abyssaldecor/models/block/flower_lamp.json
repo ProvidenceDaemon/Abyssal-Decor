@@ -1,0 +1,8 @@
+{
+  "parent": "abyssaldecor:custom/flowerlamp",
+  "textures": {
+    "0": "abyssaldecor:block/flowerlamp",
+    "all": "abyssaldecor:block/flowerlamp",
+    "particle": "abyssaldecor:block/flowerlamp"
+  }
+}

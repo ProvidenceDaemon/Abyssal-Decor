@@ -1,0 +1,9 @@
+{
+  "parent": "abyssaldecor:custom/frostedceilinglamp",
+  "textures": {
+    "0": "abyssaldecor:block/frostedceilinglamplit",
+    "1": "abyssaldecor:block/frostedceilinglamp2",
+    "all": "abyssaldecor:block/frostedceilinglamplit",
+    "particle": "abyssaldecor:block/frostedceilinglamplit"
+  }
+}

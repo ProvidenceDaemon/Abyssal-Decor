@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-30T14:56:34.1288308	Item Models: abyssaldecor
+// 1.20.1	2025-05-04T06:50:24.9402796	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -6,8 +6,12 @@
 e6b6f3d6db4d9099236bf803d869709a673d10de assets/abyssaldecor/models/item/dusty_cd.json
 ea6845b4905ed8e034f35c500d6a9e8583e3aae5 assets/abyssaldecor/models/item/elder_wisteria_leaves.json
 95919157d53c10c3734482280d941e8b84cc6ab5 assets/abyssaldecor/models/item/elder_wisteria_petals.json
+7d954fbae58dab1a8ec07b33c0ca81c65e242488 assets/abyssaldecor/models/item/flower_lamp.json
 24188bcd9315bf5dd44e7d245cc0bf0334d52d69 assets/abyssaldecor/models/item/foxy_pillar.json
+7bcd1448ff45b6eec395c14821ece9d1886a257a assets/abyssaldecor/models/item/frosted_lamp.json
+4558171659fa46fdce53cdca844fff92112b3e69 assets/abyssaldecor/models/item/iron_lamp.json
 0e74c8afc23641ec495a08bc5e0ace66ca6e1fcd assets/abyssaldecor/models/item/lightbulb.json
 ecf82aa504fb43dba2d71fea4c6e01f4b06fac2d assets/abyssaldecor/models/item/stripped_ancient_birch_log.json
+973d6cc125e80e52502aa17ccd96b59df0803a4f assets/abyssaldecor/models/item/tube_lamp.json
 701a0316f69b6891883ae457fa8445c4b8604899 assets/abyssaldecor/models/item/wall_bulb_lamp.json
 b63aa3f64262377c93ff790de08b3cd048eb5b9a assets/abyssaldecor/models/item/wisteria_petals.json

@@ -1,0 +1,9 @@
+{
+  "parent": "abyssaldecor:custom/ironlampceiling",
+  "textures": {
+    "0": "abyssaldecor:block/ironlamp1",
+    "1": "abyssaldecor:block/ironlamp2",
+    "all": "abyssaldecor:block/ironlamp1",
+    "particle": "abyssaldecor:block/ironlamp1"
+  }
+}

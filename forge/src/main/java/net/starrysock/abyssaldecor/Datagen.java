@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -19,6 +20,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.block.AmaranthBlock;
+import net.starrysock.abyssaldecor.block.HorizontalLampBlock;
 import net.starrysock.abyssaldecor.block.TallAmaranthBlock;
 import net.starrysock.abyssaldecor.block.DirectionalInteractibleLampBlock;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
@@ -27,7 +29,6 @@ import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2i;
 
-import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 
 class Datagen {
@@ -86,6 +87,8 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.TUBE_LAMP.get());
             simpleBlockItem(AbyssalDecorItems.IRON_LAMP.get());
             simpleBlockItem(AbyssalDecorItems.FLOWER_LAMP.get());
+            simpleBlockItem(AbyssalDecorItems.FROSTED_LAMP.get());
+            simpleBlockItem(AbyssalDecorItems.QUARTZ_LAMP.get());
         }
 
 
@@ -154,24 +157,135 @@ class Datagen {
                 return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
             }, BlockStateProperties.WATERLOGGED);
 
-            getVariantBuilder(AbyssalDecorBlocks.IRON_LAMP.get()).forAllStatesExcept(blockState -> {
+            getVariantBuilder(AbyssalDecorBlocks.FROSTED_LAMP.get()).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
                 Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
-                ModelFile modelFile = models().getExistingFile(modLoc("block/lightbulb"+(lit? "_lit":"")));
+
+                ResourceLocation texture0 = modLoc("block/frostedceilinglamp"+(lit? "lit":""));
+
+                ModelFile modelFile = models().withExistingParent("block/frosted_lamp"+(lit? "_lit":""),
+                                modLoc("custom/frostedceilinglamp"))
+                        .texture("all",texture0)
+                        .texture("particle",texture0)
+                        .texture("0",texture0)
+                        .texture("1",modLoc("block/frostedceilinglamp2"));
                 Vector2i vector2i = getRotation(orientation);
                 return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
-            });
+            }, BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.IRON_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+
+                //    "all": "abyssaldecor:block/ironlamp1",
+                //    "particle": "abyssaldecor:block/ironlamp1",
+                //    "0": "abyssaldecor:block/ironlamp1",
+                //    "1": "abyssaldecor:block/ironlamp2" add lit
+
+                ModelFile modelFile = models().withExistingParent("block/iron_lamp"+(lit? "_lit":""),
+                        modLoc("custom/ironlampceiling"))
+                        .texture("all",modLoc("block/ironlamp1"))
+                        .texture("particle",modLoc("block/ironlamp1"))
+                        .texture("0",modLoc("block/ironlamp1"))
+                        .texture("1",modLoc("block/ironlamp2"+(lit? "lit":"")));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            },BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.WALL_IRON_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+
+                ModelFile modelFile = models().withExistingParent("block/wall_iron_lamp"+(lit? "_lit":""),
+                                modLoc("custom/wallironlamp"))
+                        .texture("all",modLoc("block/ironlamp1"))
+                        .texture("particle",modLoc("block/ironlamp1"))
+                        .texture("0",modLoc("block/ironlamp1"))
+                        .texture("1",modLoc("block/ironlamp2"+(lit? "lit":"")));
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
+            },BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.FLOWER_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+
+                ResourceLocation texture = modLoc("block/flowerlamp"+(lit? "lit":""));
+
+                ModelFile modelFile = models().withExistingParent("block/flower_lamp"+(lit? "_lit":""),
+                                modLoc("custom/flowerlamp"))
+                        .texture("all",texture)
+                        .texture("particle",texture)
+                        .texture("0",texture);
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
+            },BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.TUBE_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+
+                ResourceLocation texture = modLoc("block/tubelamp");
+
+                ModelFile modelFile = models().withExistingParent("block/tube_lamp"+(lit? "_lit":""),
+                                modLoc("custom/tubelamp"))
+                        .texture("all",texture)
+                        .texture("particle",texture)
+                        .texture("0",texture);
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
+            },BlockStateProperties.WATERLOGGED);
 
             simpleBlock(AbyssalDecorBlocks.WISTERIA_PETALS.get());
             simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
             simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
+
+            /*getVariantBuilder(AbyssalDecorBlocks.IRON_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+
+                //    "all": "abyssaldecor:block/ironlamp1",
+                //    "particle": "abyssaldecor:block/ironlamp1",
+                //    "0": "abyssaldecor:block/ironlamp1",
+                //    "1": "abyssaldecor:block/ironlamp2" add lit
+
+                ModelFile modelFile = models().withExistingParent("block/iron_lamp"+(lit? "_lit":""),
+                                modLoc("custom/ironlampceiling"))
+                        .texture("all",modLoc("block/ironlamp1"))
+                        .texture("particle",modLoc("block/ironlamp1"))
+                        .texture("0",modLoc("block/ironlamp1"))
+                        .texture("1",modLoc("block/ironlamp2"+(lit? "lit":"")));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            },BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.WALL_IRON_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+
+                ModelFile modelFile = models().withExistingParent("block/wall_iron_lamp"+(lit? "_lit":""),
+                                modLoc("custom/wallironlamp"))
+                        .texture("all",modLoc("block/ironlamp1"))
+                        .texture("particle",modLoc("block/ironlamp1"))
+                        .texture("0",modLoc("block/ironlamp1"))
+                        .texture("1",modLoc("block/ironlamp2"+(lit? "lit":"")));
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
+            },BlockStateProperties.WATERLOGGED);*/
+
         }
 
-        static ConfiguredModel[] allRotations(ModelFile base) {
-            return Arrays.stream(Direction.values()).map(direction -> {
-                Vector2i vector2i = getRotation(direction);
-               return new ConfiguredModel(base,vector2i.x,vector2i.y,true);
-            }).toArray(ConfiguredModel[]::new);
+        protected void wallLamp(Block block,ResourceLocation model,ResourceLocation texture0,ResourceLocation texture1) {
+            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+            getVariantBuilder(block).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+
+                ModelFile modelFile = models().withExistingParent("block/"+name+(lit? "_lit":""),
+                                modLoc("custom/wallironlamp"))
+                        .texture("all",modLoc("block/ironlamp1"))
+                        .texture("particle",modLoc("block/ironlamp1"))
+                        .texture("0",modLoc("block/ironlamp1"))
+                        .texture("1",modLoc("block/ironlamp2"+(lit? "lit":"")));
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
+            },BlockStateProperties.WATERLOGGED);
         }
 
         static Vector2i getRotation(Direction direction) {

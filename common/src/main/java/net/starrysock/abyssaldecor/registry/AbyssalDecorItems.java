@@ -2,6 +2,7 @@ package net.starrysock.abyssaldecor.registry;
 
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -9,6 +10,7 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
 import net.starrysock.abyssaldecor.item.SupplierRecordItem;
 
 import java.util.function.Supplier;
@@ -55,9 +57,16 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);
     public static final RegistrySupplier<BlockItem> WALL_BULB_LAMP = registerBlockItem("wall_bulb_lamp",AbyssalDecorBlocks.WALL_BULB_LAMP);
     public static final RegistrySupplier<BlockItem> TUBE_LAMP = registerBlockItem("tube_lamp",AbyssalDecorBlocks.TUBE_LAMP);
-    public static final RegistrySupplier<BlockItem> IRON_LAMP = registerBlockItem("iron_lamp",AbyssalDecorBlocks.IRON_LAMP);
+    public static final RegistrySupplier<StandingAndWallBlockItem> IRON_LAMP = AbyssalDecor.ITEMS
+            .register("iron_lamp",() -> new StandingAndWallBlockItem(AbyssalDecorBlocks.IRON_LAMP.get(),AbyssalDecorBlocks.WALL_IRON_LAMP.get(),new Item.Properties(), Direction.UP));
 
     public static final RegistrySupplier<BlockItem> FLOWER_LAMP = registerBlockItem("flower_lamp",AbyssalDecorBlocks.FLOWER_LAMP);
+
+    public static final RegistrySupplier<BlockItem> FROSTED_LAMP = registerBlockItem("frosted_lamp",AbyssalDecorBlocks.FROSTED_LAMP);
+
+    public static final RegistrySupplier<FloorWallCeilingBlockItem> QUARTZ_LAMP = AbyssalDecor.ITEMS.register("quartz_lamp",() ->
+            new FloorWallCeilingBlockItem(AbyssalDecorBlocks.QUARTZ_LAMP.get(),AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),
+                    AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(),new Item.Properties()));
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

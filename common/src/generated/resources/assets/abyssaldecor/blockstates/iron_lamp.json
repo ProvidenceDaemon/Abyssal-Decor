@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "abyssaldecor:block/iron_lamp"
+    },
+    "lit=true": {
+      "model": "abyssaldecor:block/iron_lamp_lit"
+    }
+  }
+}
