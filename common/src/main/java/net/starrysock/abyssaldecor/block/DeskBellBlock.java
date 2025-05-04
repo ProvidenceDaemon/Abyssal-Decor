@@ -1,45 +1,27 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
 
-import static net.minecraft.world.level.block.RedstoneLampBlock.LIT;
-
-public class DirectionalLampBlock extends AbstractDirectionalBlock implements SimpleWaterloggedBlock {
-
-    public DirectionalLampBlock(Properties properties) {
+public class DeskBellBlock extends AbstractDirectionalBlock implements SimpleWaterloggedBlock {
+    public DeskBellBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState()
-                .setValue(LIT, false)
                 .setValue(BlockStateProperties.WATERLOGGED, false));
-    }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(LIT);
-        builder.add(BlockStateProperties.WATERLOGGED);
     }
 
     @Override
@@ -64,17 +46,30 @@ public class DirectionalLampBlock extends AbstractDirectionalBlock implements Si
                 return box(0,5,5,6,11,11);
             }
         }
-
         return super.getShape(state, level, pos, context);
     }
 
     @Override
-    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (player.getItemInHand(interactionHand).isEmpty()) {
-            level.setBlockAndUpdate(blockPos, blockState.cycle(LIT));
-            level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (level.isClientSide) {
             return InteractionResult.SUCCESS;
         }
-        return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+        level.blockEvent(pos, this, 0, 0);
+        return super.use(state, level, pos, player, hand, hit);
+    }
+
+    @Override
+    public boolean triggerEvent(BlockState state, Level level, BlockPos pos, int id, int param) {
+        double x = pos.getX()+.5;
+        double y = pos.getY()+.5;
+        double z = pos.getZ()+.5;
+        level.playLocalSound(x, y, z, SoundEvents.NOTE_BLOCK_BELL.value(), SoundSource.BLOCKS, 2, 2, false);
+        return true;
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(BlockStateProperties.WATERLOGGED);
     }
 }

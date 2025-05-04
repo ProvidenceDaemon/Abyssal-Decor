@@ -50,9 +50,14 @@ public class AbyssalDecorItems {
             , new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 3600));
 
     public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem("scrimshaw",AbyssalDecorBlocks.SCRIMSHAW);
-    ////
+    public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem("desk_bell",AbyssalDecorBlocks.DESK_BELL);
 
     public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);
+    public static final RegistrySupplier<BlockItem> WALL_BULB_LAMP = registerBlockItem("wall_bulb_lamp",AbyssalDecorBlocks.WALL_BULB_LAMP);
+    public static final RegistrySupplier<BlockItem> TUBE_LAMP = registerBlockItem("tube_lamp",AbyssalDecorBlocks.TUBE_LAMP);
+    public static final RegistrySupplier<BlockItem> IRON_LAMP = registerBlockItem("iron_lamp",AbyssalDecorBlocks.IRON_LAMP);
+
+    public static final RegistrySupplier<BlockItem> FLOWER_LAMP = registerBlockItem("flower_lamp",AbyssalDecorBlocks.FLOWER_LAMP);
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

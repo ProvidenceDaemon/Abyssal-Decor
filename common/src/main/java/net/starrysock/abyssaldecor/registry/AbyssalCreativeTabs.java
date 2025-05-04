@@ -42,8 +42,13 @@ public class AbyssalCreativeTabs {
 
                         output.accept(AbyssalDecorItems.DUSTY_CD.get());
                         output.accept(AbyssalDecorItems.SCRIMSHAW.get());
+                        output.accept(AbyssalDecorItems.DESK_BELL.get());
 
                         output.accept(AbyssalDecorItems.LIGHTBULB.get());
+                        output.accept(AbyssalDecorItems.WALL_BULB_LAMP.get());
+                        output.accept(AbyssalDecorItems.TUBE_LAMP.get());
+                        output.accept(AbyssalDecorItems.IRON_LAMP.get());
+                        output.accept(AbyssalDecorItems.FLOWER_LAMP.get());
                     })
                     .build());
 

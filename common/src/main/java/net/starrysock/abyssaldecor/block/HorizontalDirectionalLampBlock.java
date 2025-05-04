@@ -10,9 +10,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -26,31 +25,27 @@ import org.jetbrains.annotations.Nullable;
 
 import static net.minecraft.world.level.block.RedstoneLampBlock.LIT;
 
-public class DirectionalLampBlock extends AbstractDirectionalBlock implements SimpleWaterloggedBlock {
+public class HorizontalDirectionalLampBlock extends Block implements SimpleWaterloggedBlock {
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public DirectionalLampBlock(Properties properties) {
+    public HorizontalDirectionalLampBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState()
-                .setValue(LIT, false)
+                .setValue(FACING, Direction.NORTH).setValue(LIT, false)
                 .setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(LIT);
+        builder.add(FACING,LIT);
         builder.add(BlockStateProperties.WATERLOGGED);
     }
 
+    //todo fix
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         switch (state.getValue(FACING)) {
-            case DOWN -> {
-                return box(5,10,5,11,16,11);
-            }
-            case UP -> {
-                return box(5,0,5,11,6,11);
-            }
             case NORTH -> {
                 return box(5,5,10,11,11,16);
             }
@@ -77,4 +72,23 @@ public class DirectionalLampBlock extends AbstractDirectionalBlock implements Si
         }
         return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
     }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState blockstate = this.defaultBlockState();
+        LevelReader levelreader = context.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+
+        for(Direction direction : context.getNearestLookingDirections()) {
+            if (direction.getAxis().isHorizontal()) {
+                blockstate = blockstate.setValue(FACING, direction);
+                if (blockstate.canSurvive(levelreader, blockpos)) {
+                    return blockstate;
+                }
+            }
+        }
+        return null;
+    }
+
 }

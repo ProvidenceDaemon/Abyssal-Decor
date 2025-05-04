@@ -81,6 +81,11 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.LIGHTBULB.get());
 
             generatedItem(AbyssalDecorItems.DUSTY_CD.get());
+
+            simpleBlockItem(AbyssalDecorItems.WALL_BULB_LAMP.get());
+            simpleBlockItem(AbyssalDecorItems.TUBE_LAMP.get());
+            simpleBlockItem(AbyssalDecorItems.IRON_LAMP.get());
+            simpleBlockItem(AbyssalDecorItems.FLOWER_LAMP.get());
         }
 
 
@@ -148,6 +153,14 @@ class Datagen {
                 Vector2i vector2i = getRotation(orientation);
                 return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
             }, BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.IRON_LAMP.get()).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+                ModelFile modelFile = models().getExistingFile(modLoc("block/lightbulb"+(lit? "_lit":"")));
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
+            });
 
             simpleBlock(AbyssalDecorBlocks.WISTERIA_PETALS.get());
             simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
