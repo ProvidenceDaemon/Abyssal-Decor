@@ -1,7 +1,7 @@
 {
   "parent": "abyssaldecor:custom/seaglasslamp",
   "textures": {
-    "1": "abyssaldecor:block/seaglasslamp",
+    "0": "abyssaldecor:block/seaglasslamp",
     "all": "abyssaldecor:block/seaglasslamp",
     "particle": "abyssaldecor:block/seaglasslamp"
   }

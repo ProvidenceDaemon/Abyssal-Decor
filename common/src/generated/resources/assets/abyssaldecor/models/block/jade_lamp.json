@@ -1,8 +1,8 @@
 {
   "parent": "abyssaldecor:custom/jadelamp",
   "textures": {
-    "0": "abyssaldecor:block/jadelamp",
-    "all": "abyssaldecor:block/jadelamp",
-    "particle": "abyssaldecor:block/jadelamp"
+    "0": "abyssaldecor:block/jade_lamp",
+    "all": "abyssaldecor:block/jade_lamp",
+    "particle": "abyssaldecor:block/jade_lamp"
   }
 }
