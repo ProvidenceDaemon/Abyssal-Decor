@@ -18,7 +18,7 @@ public class WallMountedInteractibleLampBlock extends InteractibleRedstoneLampBl
 
     public WallMountedInteractibleLampBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState((BlockState) this.defaultBlockState().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(LIT, false).setValue(FORCED, false).setValue(BlockStateProperties.WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(LIT, false).setValue(FORCED, false).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override

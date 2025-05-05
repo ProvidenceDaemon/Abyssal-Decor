@@ -18,13 +18,20 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class LampBlock extends Block {
-    public LampBlock(Properties properties) {
+    private final VoxelShape shape;
+
+    public LampBlock(Properties properties, VoxelShape shape) {
         super(properties);
+        this.shape = shape;
         this.registerDefaultState(this.defaultBlockState().setValue(RedstoneLampBlock.LIT, false).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        if (shape != null) {
+            return shape;
+        }
+
         return super.getShape(state, level, pos, context);
     }
 

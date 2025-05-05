@@ -21,16 +21,29 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.AbyssalUtils;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.EnumMap;
 
 public class HorizontalLampBlock extends Block implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    private final VoxelShape shape;
 
-    public HorizontalLampBlock(Properties properties) {
+    private final EnumMap<Direction,VoxelShape> shapes = new EnumMap<>(Direction.class);
+
+    public HorizontalLampBlock(Properties properties,VoxelShape shape) {
         super(properties);
+        this.shape = shape;
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(FACING, Direction.NORTH).setValue(RedstoneLampBlock.LIT, false)
                 .setValue(BlockStateProperties.WATERLOGGED, false));
+
+        if (shape != null) {
+            for (Direction direction : FACING.getPossibleValues()) {
+                shapes.put(direction, AbyssalUtils.calculateShapes(direction, shape));
+            }
+        }
     }
 
     @Override
@@ -39,24 +52,14 @@ public class HorizontalLampBlock extends Block implements SimpleWaterloggedBlock
         builder.add(FACING, RedstoneLampBlock.LIT,BlockStateProperties.WATERLOGGED);
     }
 
-    //todo fix
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        switch (state.getValue(FACING)) {
-            case NORTH -> {
-                return box(5,5,10,11,11,16);
-            }
-            case SOUTH -> {
-                return box(5,5,0,11,11,6);
-            }
-            case WEST -> {
-                return box(10,5,5,16,11,11);
-            }
-            case EAST -> {
-                return box(0,5,5,6,11,11);
-            }
-        }
 
+
+
+        if (shape != null) {
+            return shapes.get(state.getValue(FACING));
+        }
         return super.getShape(state, level, pos, context);
     }
 

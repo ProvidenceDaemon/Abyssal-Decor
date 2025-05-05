@@ -9,13 +9,14 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.AbyssalUtils;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.BarrierTieBlock;
 import net.starrysock.abyssaldecor.content.abstraction.barriers.TiedBarrierBlock;
 import net.starrysock.abyssaldecor.block.DirectionalInteractibleLampBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
-import net.starrysock.abyssaldecor.content.abstraction.lamps.WallMountedInteractibleLampBlock;
 import net.starrysock.abyssaldecor.content.lamps.BulkheadLampBlock;
 import net.starrysock.abyssaldecor.content.lamps.TubeLampBlock;
 
@@ -29,24 +30,25 @@ public class AbyssalDecorBlocks {
 
     // Lightbulb [directional], Wall Bulb Lamp [wall mounted], Tube Lamp [tube], Iron Lamp [directional], Flower Lamp [wall mounted], Frosted Lamp [directional], Quartz Lamp [directional], Jade Lamp [directional], Seaglass Lamp [directional], Blaze Lamp [wall mounted], Rainbow Lamp [directional]
     public static RegistrySupplier<Block> LIGHTBULB = AbyssalDecor.BLOCKS.register("lightbulb", () -> new DirectionalLampBlock(lamp()));
-    public static RegistrySupplier<Block> WALL_BULB_LAMP = AbyssalDecor.BLOCKS.register("wall_bulb_lamp", () -> new HorizontalLampBlock(lamp()));
-    public static RegistrySupplier<Block> TUBE_LAMP = AbyssalDecor.BLOCKS.register("tube_lamp", () -> new TubeLampBlock(lamp()));
-    public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () -> new LampBlock(lamp()));
-    public static RegistrySupplier<Block> WALL_IRON_LAMP = AbyssalDecor.BLOCKS.register("wall_iron_lamp", () -> new HorizontalLampBlock(lamp()));
+    public static RegistrySupplier<Block> WALL_BULB_LAMP = AbyssalDecor.BLOCKS.register("wall_bulb_lamp", () -> new HorizontalLampBlock(lamp(), null));
+    public static RegistrySupplier<Block> TUBE_LAMP = AbyssalDecor.BLOCKS.register("tube_lamp", () -> new HorizontalLampBlock(lamp(),
+            Block.box(0,0,0,16,2,2)));
+    public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () -> new LampBlock(lamp(),Shapes.or(Block.box(6.5,2,6.5,9.5,16,9.5),Block.box(3,6,3,13,8,13))));
+    public static RegistrySupplier<Block> WALL_IRON_LAMP = AbyssalDecor.BLOCKS.register("wall_iron_lamp", () -> new HorizontalLampBlock(lamp(), null));
 
     static BlockBehaviour.Properties lamp() {
         return BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS);
     }
 
-    public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () -> new HorizontalLampBlock(lamp()));
+    public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () -> new HorizontalLampBlock(lamp(), null));
     public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new DirectionalLampBlock(lamp()));
-    public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new LampBlock(lamp()));
-    public static RegistrySupplier<Block> WALL_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("wall_quartz_lamp", () -> new HorizontalLampBlock(lamp()));
-    public static RegistrySupplier<Block> CEILING_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("ceiling_quartz_lamp", () -> new LampBlock(lamp()));
+    public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new LampBlock(lamp(), Shapes.or(Block.box(5,0,5,11,16,11),Block.box(2,10,2,14,12,14))));
+    public static RegistrySupplier<Block> WALL_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("wall_quartz_lamp", () -> new HorizontalLampBlock(lamp(), null));
+    public static RegistrySupplier<Block> CEILING_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("ceiling_quartz_lamp", () -> new LampBlock(lamp(),Shapes.or(Block.box(6.5,2,6.5,9.5,16,9.5),Block.box(5,4,5,11,9,11),Block.box(2,10,2,14,12,14))));
 
 
-    public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new HorizontalLampBlock(lamp()));
-    public static RegistrySupplier<Block> WALL_JADE_LAMP = AbyssalDecor.BLOCKS.register("wall_jade_lamp", () -> new HorizontalLampBlock(lamp()));
+    public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new HorizontalLampBlock(lamp(), null));
+    public static RegistrySupplier<Block> WALL_JADE_LAMP = AbyssalDecor.BLOCKS.register("wall_jade_lamp", () -> new HorizontalLampBlock(lamp(), null));
 
 
     public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new DirectionalLampBlock(lamp()));
@@ -104,6 +106,8 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> SCRIMSHAW = AbyssalDecor.BLOCKS.register("scrimshaw",() -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE).strength(2.0F, 10.0F).lightLevel((s) -> 4).noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
     public static final RegistrySupplier<Block> DESK_BELL = AbyssalDecor.BLOCKS.register("desk_bell",() -> new DeskBellBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> STARFISH = AbyssalDecor.BLOCKS.register("starfish",() -> new StarfishBlock(BlockBehaviour.Properties.of()));
 
     public static void register() {
         AbyssalDecor.BLOCKS.register();
