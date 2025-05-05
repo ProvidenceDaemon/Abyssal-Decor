@@ -51,6 +51,9 @@ public class AbyssalCreativeTabs {
                         output.accept(AbyssalDecorItems.FLOWER_LAMP.get());
                         output.accept(AbyssalDecorItems.FROSTED_LAMP.get());
                         output.accept(AbyssalDecorItems.QUARTZ_LAMP.get());
+                        output.accept(AbyssalDecorItems.JADE_LAMP.get());
+                        output.accept(AbyssalDecorItems.SEAGLASS_LAMP.get());
+                        output.accept(AbyssalDecorItems.BLAZE_LAMP.get());
                     })
                     .build());
 

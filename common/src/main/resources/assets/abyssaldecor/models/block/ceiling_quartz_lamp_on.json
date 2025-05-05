@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/quartzlampceilingon",
-  "textures": {
-    "all": "abyssaldecor:block/quartzlampceilingon",
-    "particle": "abyssaldecor:block/quartzlampceilingon",
-    "1": "abyssaldecor:block/quartzlampceilingon"
-  },
-  "render_type": "translucent"
-}

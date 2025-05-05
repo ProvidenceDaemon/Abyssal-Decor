@@ -24,16 +24,13 @@ public class FloorWallCeilingBlockItem extends BlockItem {
     @Override
     @Nullable
     protected BlockState getPlacementState(BlockPlaceContext context) {
-        BlockState blockstate = this.wallBlock.getStateForPlacement(context);
-        BlockPos blockpos = context.getClickedPos();
+        Block block = switch (context.getClickedFace()) {
+            case DOWN -> ceilingBlock;
+            case UP -> getBlock();
+            case NORTH, SOUTH, WEST, EAST -> wallBlock;
+        };
 
-        for(Direction direction : context.getNearestLookingDirections()) {
-            if (direction != Direction.UP && direction != Direction.DOWN) {
-
-            }
-        }
-
-        return blockstate;
+        return block.getStateForPlacement(context);
     }
 
     @Override

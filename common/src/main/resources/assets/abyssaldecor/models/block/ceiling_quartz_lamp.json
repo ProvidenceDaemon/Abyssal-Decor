@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/quartzlampceilingoff",
-  "textures": {
-    "all": "abyssaldecor:block/quartzlampceilingoff",
-    "particle": "abyssaldecor:block/quartzlampceilingoff",
-    "0": "abyssaldecor:block/quartzlampceilingoff"
-  },
-  "render_type": "translucent"
-}

@@ -13,6 +13,7 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
 import net.starrysock.abyssaldecor.item.SupplierRecordItem;
 
+import java.util.Properties;
 import java.util.function.Supplier;
 
 public class AbyssalDecorItems {
@@ -67,6 +68,12 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<FloorWallCeilingBlockItem> QUARTZ_LAMP = AbyssalDecor.ITEMS.register("quartz_lamp",() ->
             new FloorWallCeilingBlockItem(AbyssalDecorBlocks.QUARTZ_LAMP.get(),AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),
                     AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(),new Item.Properties()));
+
+    public static final RegistrySupplier<StandingAndWallBlockItem> JADE_LAMP = AbyssalDecor.ITEMS.register("jade_lamp",() ->
+            new StandingAndWallBlockItem(AbyssalDecorBlocks.JADE_LAMP.get(),AbyssalDecorBlocks.WALL_JADE_LAMP.get(),new Item.Properties(),Direction.DOWN));
+
+    public static final RegistrySupplier<BlockItem> SEAGLASS_LAMP = registerBlockItem("seaglass_lamp",AbyssalDecorBlocks.SEAGLASS_LAMP);
+    public static final RegistrySupplier<BlockItem> BLAZE_LAMP = registerBlockItem("blaze_lamp",AbyssalDecorBlocks.BLAZE_LAMP);
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

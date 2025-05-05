@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,lit=false": {
+      "model": "abyssaldecor:block/seaglass_lamp",
+      "x": 180
+    },
+    "facing=down,lit=true": {
+      "model": "abyssaldecor:block/seaglass_lamp_lit",
+      "x": 180
+    },
+    "facing=east,lit=false": {
+      "model": "abyssaldecor:block/seaglass_lamp",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "abyssaldecor:block/seaglass_lamp_lit",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,lit=false": {
+      "model": "abyssaldecor:block/seaglass_lamp",
+      "x": 90
+    },
+    "facing=north,lit=true": {
+      "model": "abyssaldecor:block/seaglass_lamp_lit",
+      "x": 90
+    },
+    "facing=south,lit=false": {
+      "model": "abyssaldecor:block/seaglass_lamp",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "abyssaldecor:block/seaglass_lamp_lit",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,lit=false": {
+      "model": "abyssaldecor:block/seaglass_lamp"
+    },
+    "facing=up,lit=true": {
+      "model": "abyssaldecor:block/seaglass_lamp_lit"
+    },
+    "facing=west,lit=false": {
+      "model": "abyssaldecor:block/seaglass_lamp",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "abyssaldecor:block/seaglass_lamp_lit",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

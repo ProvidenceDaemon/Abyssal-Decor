@@ -1,0 +1,8 @@
+{
+  "parent": "abyssaldecor:custom/blazelamp",
+  "textures": {
+    "0": "abyssaldecor:block/blazelamp",
+    "all": "abyssaldecor:block/blazelamp",
+    "particle": "abyssaldecor:block/blazelamp"
+  }
+}

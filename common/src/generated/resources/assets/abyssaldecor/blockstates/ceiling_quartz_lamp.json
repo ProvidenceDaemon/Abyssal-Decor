@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "abyssaldecor:block/ceiling_quartz_lamp"
+    },
+    "lit=true": {
+      "model": "abyssaldecor:block/ceiling_quartz_lamp_lit"
+    }
+  }
+}
