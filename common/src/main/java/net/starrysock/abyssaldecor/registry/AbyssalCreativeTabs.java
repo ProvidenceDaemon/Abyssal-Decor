@@ -54,6 +54,22 @@ public class AbyssalCreativeTabs {
                         output.accept(AbyssalDecorItems.JADE_LAMP.get());
                         output.accept(AbyssalDecorItems.SEAGLASS_LAMP.get());
                         output.accept(AbyssalDecorItems.BLAZE_LAMP.get());
+
+                        /////
+
+                        output.accept(AbyssalDecorItems.SEABRASS_ORE.get());
+                        output.accept(AbyssalDecorItems.FRESNEL_LAMP.get());
+                        output.accept(AbyssalDecorItems.RAINBOW_LAMP.get());
+                        output.accept(AbyssalDecorItems.BULKHEAD_LAMP.get());
+
+                        output.accept(AbyssalDecorItems.ABYSSAL_LANTERN.get());
+                        output.accept(AbyssalDecorItems.IRON_LANTERN.get());
+                        output.accept(AbyssalDecorItems.JADE_LANTERN.get());
+
+                        output.accept(AbyssalDecorItems.BARBED_WIRE_BARRIER.get());
+                        output.accept(AbyssalDecorItems.IRON_BARRIER.get());
+                        output.accept(AbyssalDecorItems.ROPE_BARRIER.get());
+                        output.accept(AbyssalDecorItems.VELVET_BARRIER.get());
                     })
                     .build());
 

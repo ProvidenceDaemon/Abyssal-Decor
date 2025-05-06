@@ -1,9 +1,7 @@
 package net.starrysock.abyssaldecor.content.abstraction.barriers;
 
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +11,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,7 +21,6 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalVoxelShapes;
 
 import java.util.HashMap;
@@ -128,17 +124,17 @@ public class TiedBarrierBlock extends Block implements IExtensibleBlock, SimpleW
             BarrierType neighborType = BarrierType.fromBlockState(level.getBlockState(neighborPos));
             if (level.getBlockState(neighborPos).getValue(EXTENSION_TYPE) != ExtensionType.BASE && neighborType != null) {
                 BlockState betweenState = level.getBlockState(blockPos.relative(interactedFace));
-                RegistrySupplier<Block> tieType = switch (neighborType) {
-                    case VELVET -> AbyssalDecorBlocks.VELVET_BARRIER_TIE;
-                    case IRON -> AbyssalDecorBlocks.IRON_BARRIER_TIE;
-                    case ROPE -> AbyssalDecorBlocks.ROPE_BARRIER_TIE;
-                    case BARBED -> AbyssalDecorBlocks.BARBED_WIRE_BARRIER_TIE;
+             /*   RegistrySupplier<Block> tieType = switch (neighborType) {
+                    case VELVET -> AbyssalDecorBlocks.VELVET_BARRIER_RIBBON;
+                    case IRON -> AbyssalDecorBlocks.IRON_BARRIER_RIBBON;
+                    case ROPE -> AbyssalDecorBlocks.ROPE_BARRIER_RIBBON;
+                    case BARBED -> AbyssalDecorBlocks.BARBED_WIRE_RIBBON;
                 };
                 if (neighborType == type && (betweenState.isAir() || betweenState.canBeReplaced()) && !(betweenState.getBlock() instanceof BarrierTieBlock)) {
                     boolean wasWaterlogged = (betweenState.hasProperty(BlockStateProperties.WATERLOGGED) && betweenState.getValue(BlockStateProperties.WATERLOGGED)) || level.getFluidState(blockPos.above()).is(Fluids.WATER);
                     level.setBlock(blockPos.relative(interactedFace), tieType.get().defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, interactedFace.getClockWise()).setValue(BlockStateProperties.WATERLOGGED, wasWaterlogged), 3);
                     level.playSound(null, blockPos, tieType.get().defaultBlockState().getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, 0.5F);
-                }
+                }*/
             }
 
 

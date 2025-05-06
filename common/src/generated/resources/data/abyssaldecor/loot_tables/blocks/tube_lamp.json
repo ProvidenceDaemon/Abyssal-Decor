@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:frosted_lamp_on"
+          "name": "abyssaldecor:tube_lamp"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/frosted_lamp_on"
+  "random_sequence": "abyssaldecor:blocks/tube_lamp"
 }

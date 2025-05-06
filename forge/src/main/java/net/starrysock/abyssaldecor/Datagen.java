@@ -40,6 +40,7 @@ class Datagen {
         if (event.includeServer()) {
             BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(output, lookupProvider, helper);
             generator.addProvider(true, blockTagsProvider);
+            generator.addProvider(true,ModLootTableProvider.create(output));
         }
         if (event.includeClient()) {
             generator.addProvider(true, new ModBlockStateProvider(output, helper));
@@ -92,6 +93,10 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.JADE_LAMP.get());
             simpleBlockItem(AbyssalDecorItems.SEAGLASS_LAMP.get());
             simpleBlockItem(AbyssalDecorItems.BLAZE_LAMP.get());
+
+            simpleBlockItem(AbyssalDecorItems.RAINBOW_LAMP.get());
+            simpleBlockItem(AbyssalDecorItems.SEABRASS_ORE.get());
+            simpleBlockItem(AbyssalDecorItems.FRESNEL_LAMP.get());
         }
 
 
@@ -172,6 +177,22 @@ class Datagen {
                         .texture("particle",texture0)
                         .texture("0",texture0)
                         .texture("1",modLoc("block/frostedceilinglamp2"));
+                Vector2i vector2i = getRotation(orientation);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
+            }, BlockStateProperties.WATERLOGGED);
+
+            getVariantBuilder(AbyssalDecorBlocks.RAINBOW_LAMP.get()).forAllStatesExcept(blockState -> {
+                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+
+                ResourceLocation texture0 = modLoc("block/rainbow2");
+                ResourceLocation texture1 = modLoc("block/rainbowlampbase");
+
+                ModelFile modelFile = models().withExistingParent("block/rainbow_lamp",
+                                modLoc("custom/rainbowlamp"))
+                        .texture("all",texture0)
+                        .texture("particle",texture0)
+                        .texture("1",texture0)
+                        .texture("2",texture1);
                 Vector2i vector2i = getRotation(orientation);
                 return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
             }, BlockStateProperties.WATERLOGGED);
@@ -265,6 +286,8 @@ class Datagen {
                 Vector2i vector2i = getRotation(orientation);
                 return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
             },BlockStateProperties.WATERLOGGED);
+
+            simpleBlock(AbyssalDecorBlocks.SEABRASS_ORE.get());
         }
 
         protected void lamp(Block block,ResourceLocation model,ResourceLocation texture0) {
@@ -302,6 +325,8 @@ class Datagen {
                 Vector2i vector2i = getRotation(orientation);
                 return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
             },BlockStateProperties.WATERLOGGED);
+
+           // simpleBlock(AbyssalDecorBlocks.FRESNEL_LAMP.get());
         }
 
         static Vector2i getRotation(Direction direction) {

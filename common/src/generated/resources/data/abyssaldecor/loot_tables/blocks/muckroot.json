@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:muckroot_3"
+          "name": "abyssaldecor:muckroot"
         }
       ],
       "rolls": 1.0
@@ -20,10 +20,10 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "minecraft:carrots",
+          "block": "abyssaldecor:muckroot",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "7"
+            "age": "2"
           }
         }
       ],
@@ -41,11 +41,11 @@
               }
             }
           ],
-          "name": "abyssaldecor:muckroot_3"
+          "name": "abyssaldecor:muckroot"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/muckroot_3"
+  "random_sequence": "abyssaldecor:blocks/muckroot"
 }

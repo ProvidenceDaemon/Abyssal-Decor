@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:rainbow_1"
+          "name": "abyssaldecor:barbed_wire_barrier"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/rainbow_1"
+  "random_sequence": "abyssaldecor:blocks/barbed_wire_barrier"
 }

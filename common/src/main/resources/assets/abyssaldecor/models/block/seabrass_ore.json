@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/seabrassore",
-    "particle": "abyssaldecor:block/seabrassore"
-  },
-  "render_type": "solid"
-}

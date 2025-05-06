@@ -1,11 +1,7 @@
 package net.starrysock.abyssaldecor.registry;
 
-import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
@@ -13,7 +9,6 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
 import net.starrysock.abyssaldecor.item.SupplierRecordItem;
 
-import java.util.Properties;
 import java.util.function.Supplier;
 
 public class AbyssalDecorItems {
@@ -74,6 +69,23 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> SEAGLASS_LAMP = registerBlockItem("seaglass_lamp",AbyssalDecorBlocks.SEAGLASS_LAMP);
     public static final RegistrySupplier<BlockItem> BLAZE_LAMP = registerBlockItem("blaze_lamp",AbyssalDecorBlocks.BLAZE_LAMP);
+
+    //////
+
+    public static final RegistrySupplier<BlockItem> SEABRASS_ORE = registerBlockItem("seabrass_ore",AbyssalDecorBlocks.SEABRASS_ORE);
+    public static final RegistrySupplier<BlockItem> FRESNEL_LAMP = registerBlockItem("fresnel_lamp",AbyssalDecorBlocks.FRESNEL_LAMP);
+    public static final RegistrySupplier<BlockItem> RAINBOW_LAMP = registerBlockItem("rainbow_lamp",AbyssalDecorBlocks.RAINBOW_LAMP);
+    public static final RegistrySupplier<BlockItem> BULKHEAD_LAMP = registerBlockItem("bulkhead_lamp",AbyssalDecorBlocks.BULKHEAD_LAMP);
+
+    public static final RegistrySupplier<BlockItem> ABYSSAL_LANTERN = registerBlockItem("abyssal_lantern",AbyssalDecorBlocks.ABYSSAL_LANTERN);
+    //public static final RegistrySupplier<BlockItem> BLOOD_LANTERN = registerBlockItem("blood_lantern",AbyssalDecorBlocks.BLOOD_LANTERN);
+    public static final RegistrySupplier<BlockItem> IRON_LANTERN = registerBlockItem("iron_lantern",AbyssalDecorBlocks.IRON_LANTERN);
+    public static final RegistrySupplier<BlockItem> JADE_LANTERN = registerBlockItem("jade_lantern",AbyssalDecorBlocks.JADE_LANTERN);
+
+    public static final RegistrySupplier<BlockItem> VELVET_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.VELVET_BARRIER);
+    public static final RegistrySupplier<BlockItem> IRON_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.IRON_BARRIER);
+    public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.ROPE_BARRIER);
+    public static final RegistrySupplier<BlockItem> BARBED_WIRE_BARRIER = registerBlockItem("barbed_wire_barrier",AbyssalDecorBlocks.BARBED_WIRE_BARRIER);
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

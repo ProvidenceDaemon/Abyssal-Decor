@@ -1,0 +1,9 @@
+{
+  "parent": "abyssaldecor:custom/rainbowlamp",
+  "textures": {
+    "1": "abyssaldecor:block/rainbow2",
+    "2": "abyssaldecor:block/rainbowlampbase",
+    "all": "abyssaldecor:block/rainbow2",
+    "particle": "abyssaldecor:block/rainbow2"
+  }
+}
