@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "abyssaldecor:iron_barrier"
         }
       ],
       "rolls": 1.0

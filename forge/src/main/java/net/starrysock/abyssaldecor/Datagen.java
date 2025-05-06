@@ -10,6 +10,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -19,10 +21,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.starrysock.abyssaldecor.block.AmaranthBlock;
-import net.starrysock.abyssaldecor.block.HorizontalLampBlock;
-import net.starrysock.abyssaldecor.block.TallAmaranthBlock;
-import net.starrysock.abyssaldecor.block.DirectionalInteractibleLampBlock;
+import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
@@ -71,10 +70,8 @@ class Datagen {
         protected void registerModels() {
             generatedItem(AbyssalDecorItems.AMARANTH_SEEDS.get());
             generatedItem(AbyssalDecorItems.AMARANTH_PINNACLE.get());
+
             simpleBlockItem(AbyssalDecorItems.AMARANTH_CRATE.get());
-            simpleBlockItem(AbyssalDecorItems.WISTERIA_PETALS.get());
-            simpleBlockItem(AbyssalDecorItems.ELDER_WISTERIA_PETALS.get());
-            simpleBlockItem(AbyssalDecorItems.ELDER_WISTERIA_LEAVES.get());
 
             simpleBlockItem(AbyssalDecorItems.ANCIENT_BIRCH_LOG.get());
             simpleBlockItem(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
@@ -97,6 +94,8 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.RAINBOW_LAMP.get());
             simpleBlockItem(AbyssalDecorItems.SEABRASS_ORE.get());
             simpleBlockItem(AbyssalDecorItems.FRESNEL_LAMP.get());
+
+            simpleBlockItem(AbyssalDecorItems.JADE_LANTERN.get());
         }
 
 
@@ -263,9 +262,13 @@ class Datagen {
                 return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
             },BlockStateProperties.WATERLOGGED);
 
-            simpleBlock(AbyssalDecorBlocks.WISTERIA_PETALS.get());
-            simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
-            simpleBlock(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.WISTERIA_PETALS.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
+
+            logBlock(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get());
+            logBlock(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
+            logBlock(AbyssalDecorBlocks.FOXY_PILLAR.get());
 
             lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(),modLoc("custom/floorgaslamp"),modLoc("block/quartz_lamp"));
             wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),modLoc("custom/wallgaslamp"),modLoc("block/wall_quartz_lamp"));
@@ -287,8 +290,42 @@ class Datagen {
                 return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
             },BlockStateProperties.WATERLOGGED);
 
-            simpleBlock(AbyssalDecorBlocks.SEABRASS_ORE.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.SEABRASS_ORE.get());
+
+            lamp(AbyssalDecorBlocks.JADE_LANTERN.get(),mcLoc("block/cube_all"),modLoc("block/jade_lantern"));
+
+            //simplestBlockWithItem(AbyssalDecorBlocks.IRON_LANTERN.get());
+
+
+            //buttonLampBlock(AbyssalDecorBlocks.BULKHEAD_LAMP.get(),);
         }
+
+        public void simplestBlockWithItem(Block block) {
+            simpleBlockWithItem(block,cubeAll(block));
+        }
+
+        public void buttonLampBlock(ButtonLampBlock block, ResourceLocation baseModel) {
+            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+
+            ModelFile buttonModel = models().withExistingParent(name,baseModel)
+                    ;
+
+            ModelFile buttonModelLit = models().withExistingParent(name+"_lit",baseModel);
+
+            getVariantBuilder(block).forAllStates(state -> {
+                Direction facing = state.getValue(ButtonBlock.FACING);
+                AttachFace face = state.getValue(ButtonBlock.FACE);
+                boolean powered = state.getValue(ButtonBlock.POWERED);
+
+                return ConfiguredModel.builder()
+                        .modelFile(powered ? buttonModelLit : buttonModel)
+                        .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
+                        .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
+                        .uvLock(face == AttachFace.WALL)
+                        .build();
+            });
+        }
+
 
         protected void lamp(Block block,ResourceLocation model,ResourceLocation texture0) {
             String name = BuiltInRegistries.BLOCK.getKey(block).getPath();

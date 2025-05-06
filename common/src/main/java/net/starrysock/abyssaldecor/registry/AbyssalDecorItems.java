@@ -83,8 +83,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> JADE_LANTERN = registerBlockItem("jade_lantern",AbyssalDecorBlocks.JADE_LANTERN);
 
     public static final RegistrySupplier<BlockItem> VELVET_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.VELVET_BARRIER);
-    public static final RegistrySupplier<BlockItem> IRON_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.IRON_BARRIER);
-    public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.ROPE_BARRIER);
+    public static final RegistrySupplier<BlockItem> IRON_BARRIER = registerBlockItem("iron_barrier",AbyssalDecorBlocks.IRON_BARRIER);
+    public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem("rope_barrier",AbyssalDecorBlocks.ROPE_BARRIER);
     public static final RegistrySupplier<BlockItem> BARBED_WIRE_BARRIER = registerBlockItem("barbed_wire_barrier",AbyssalDecorBlocks.BARBED_WIRE_BARRIER);
 
     public static void register() {

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/stripped_ancient_birch_log_top",
+    "side": "abyssaldecor:block/stripped_ancient_birch_log"
+  }
+}

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:velvet_barrier"
+          "name": "abyssaldecor:rope_barrier"
         }
       ],
       "rolls": 1.0

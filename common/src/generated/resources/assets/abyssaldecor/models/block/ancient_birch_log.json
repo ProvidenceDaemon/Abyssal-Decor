@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/ancient_birch_log_top",
+    "side": "abyssaldecor:block/ancient_birch_log"
+  }
+}

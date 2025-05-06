@@ -15,10 +15,16 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class LampBlock extends Block {
     private final VoxelShape shape;
+
+    public LampBlock(Properties properties) {
+        this(properties, Shapes.block());
+    }
+
 
     public LampBlock(Properties properties, VoxelShape shape) {
         super(properties);

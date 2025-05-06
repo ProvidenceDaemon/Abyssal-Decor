@@ -1,6 +1,7 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -22,6 +24,7 @@ public class ButtonLampBlock extends FaceAttachedHorizontalDirectionalBlock {
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
     public ButtonLampBlock(Properties properties) {
         super(properties);
+        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(LIT, false).setValue(FACE, AttachFace.WALL));
     }
 
     @Override
@@ -42,6 +45,6 @@ public class ButtonLampBlock extends FaceAttachedHorizontalDirectionalBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(LIT);
+        builder.add(FACE,FACING,LIT);
     }
 }

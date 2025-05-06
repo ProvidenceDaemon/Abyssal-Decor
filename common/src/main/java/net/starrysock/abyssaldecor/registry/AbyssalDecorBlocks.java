@@ -51,9 +51,9 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> RAINBOW_LAMP = AbyssalDecor.BLOCKS.register("rainbow_lamp", () -> new DirectionalLampBlock(BlockBehaviour.Properties.of().lightLevel(s -> 15).strength(0.3F).sound(SoundType.GLASS)));
     public static RegistrySupplier<Block> BULKHEAD_LAMP = AbyssalDecor.BLOCKS.register("bulkhead_lamp", () -> new ButtonLampBlock(lamp()));
 
-    public static RegistrySupplier<Block> JADE_LANTERN = AbyssalDecor.BLOCKS.register("jade_lantern", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)));
-    public static RegistrySupplier<Block> ABYSSAL_LANTERN = AbyssalDecor.BLOCKS.register("abyssal_lantern", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE)));
-    public static RegistrySupplier<Block> IRON_LANTERN = AbyssalDecor.BLOCKS.register("iron_lantern", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static RegistrySupplier<Block> JADE_LANTERN = AbyssalDecor.BLOCKS.register("jade_lantern", () -> new LampBlock(lamp()));
+    public static RegistrySupplier<Block> ABYSSAL_LANTERN = AbyssalDecor.BLOCKS.register("abyssal_lantern", () -> new LampBlock(lamp()));
+    public static RegistrySupplier<Block> IRON_LANTERN = AbyssalDecor.BLOCKS.register("iron_lantern", () -> new LampBlock(lamp()));
     //end section
 
     //section : Barriers
