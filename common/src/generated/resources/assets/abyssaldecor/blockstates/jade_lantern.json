@@ -1,15 +1,9 @@
 {
   "variants": {
-    "forced=false,lit=false": {
+    "lit=false": {
       "model": "abyssaldecor:block/jade_lantern"
     },
-    "forced=false,lit=true": {
-      "model": "abyssaldecor:block/jade_lantern_lit"
-    },
-    "forced=true,lit=false": {
-      "model": "abyssaldecor:block/jade_lantern"
-    },
-    "forced=true,lit=true": {
+    "lit=true": {
       "model": "abyssaldecor:block/jade_lantern_lit"
     }
   }

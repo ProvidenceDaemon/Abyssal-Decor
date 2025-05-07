@@ -78,7 +78,6 @@ public class ModLootTableProvider extends LootTableProvider {
             dropSelf(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get());
             dropSelf(AbyssalDecorBlocks.IRON_BARRIER.get());
             dropSelf(AbyssalDecorBlocks.ROPE_BARRIER.get());
-            dropSelf(AbyssalDecorBlocks.VELVET_BARRIER.get());
 
             dropSelf(AbyssalDecorBlocks.HANGING_MOSS.get());
             dropSelf(AbyssalDecorBlocks.BARK_ORCHID.get());
@@ -94,6 +93,8 @@ public class ModLootTableProvider extends LootTableProvider {
             dropSelf(AbyssalDecorBlocks.SCRIMSHAW.get());
             dropSelf(AbyssalDecorBlocks.DESK_BELL.get());
             dropSelf(AbyssalDecorBlocks.STARFISH.get());
+
+            add(AbyssalDecorBlocks.VELVET_BARRIER.get(),createDoorTable(AbyssalDecorBlocks.VELVET_BARRIER.get()));
 
             //dropSelf(AbyssalDecorBlocks.VELVET_BARRIER_RIBBON.get());
             LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MUCKROOT.get())

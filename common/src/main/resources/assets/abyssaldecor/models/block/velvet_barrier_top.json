@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/velvetbarriertop",
-  "textures": {
-    "all": "abyssaldecor:block/velvetbarrier1",
-    "particle": "abyssaldecor:block/velvetbarrier1",
-    "0": "abyssaldecor:block/velvetbarrier1"
-  },
-  "render_type": "cutout_mipped"
-}

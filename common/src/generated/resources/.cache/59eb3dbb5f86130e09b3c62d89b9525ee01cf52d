@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-05T22:56:34.3532269	Loot Tables
+// 1.20.1	2025-05-06T01:38:56.4046509	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 a64f395311e533d3188fa2312229412fb897ed7b data/abyssaldecor/loot_tables/blocks/ancient_birch_log.json
@@ -38,6 +38,6 @@ a91df876f455e531f4ca439b214640ffeffca640 data/abyssaldecor/loot_tables/blocks/so
 39087c3dea6ac552c2c5c0d36149594518e61354 data/abyssaldecor/loot_tables/blocks/stripped_ancient_birch_log.json
 d225c8aff26bf0e4aa3dc50eee4b507a389926d3 data/abyssaldecor/loot_tables/blocks/terrestrial_rod.json
 7eec3e42c363d878be492ca2ad0f59c7a5664ab1 data/abyssaldecor/loot_tables/blocks/tube_lamp.json
-c35cc4afaaf34401b6ed556b750e8d9b9fa17678 data/abyssaldecor/loot_tables/blocks/velvet_barrier.json
+e8189853376aefd26361bf873b35cd49c38b250a data/abyssaldecor/loot_tables/blocks/velvet_barrier.json
 b268d64d59523eda994ab322a0192b5fd18cbfab data/abyssaldecor/loot_tables/blocks/wall_bulb_lamp.json
 1e06c7f4a1c1ec986c195b843b374edf913ec195 data/abyssaldecor/loot_tables/blocks/wisteria_petals.json

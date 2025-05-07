@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "abyssaldecor:block/velvet_barrier_bottom"
+    },
+    "half=upper": {
+      "model": "abyssaldecor:block/velvet_barrier_top"
+    }
+  }
+}

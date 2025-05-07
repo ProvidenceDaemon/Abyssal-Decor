@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "abyssaldecor:block/iron_barrier_bottom"
+    },
+    "half=upper": {
+      "model": "abyssaldecor:block/iron_barrier_top"
+    }
+  }
+}

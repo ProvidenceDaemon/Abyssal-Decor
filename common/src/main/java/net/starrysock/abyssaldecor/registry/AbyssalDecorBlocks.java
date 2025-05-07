@@ -12,7 +12,6 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.block.*;
-import net.starrysock.abyssaldecor.content.abstraction.barriers.TiedBarrierBlock;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
 
 import java.util.function.ToIntFunction;
@@ -57,10 +56,10 @@ public class AbyssalDecorBlocks {
     //end section
 
     //section : Barriers
-    public static RegistrySupplier<Block> VELVET_BARRIER = AbyssalDecor.BLOCKS.register("velvet_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.COPPER_BLOCK)));
-    public static RegistrySupplier<Block> IRON_BARRIER = AbyssalDecor.BLOCKS.register("iron_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
-    public static RegistrySupplier<Block> ROPE_BARRIER = AbyssalDecor.BLOCKS.register("rope_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.OAK_PLANKS)));
-    public static RegistrySupplier<Block> BARBED_WIRE_BARRIER = AbyssalDecor.BLOCKS.register("barbed_wire_barrier", () -> new TiedBarrierBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
+    public static RegistrySupplier<Block> VELVET_BARRIER = AbyssalDecor.BLOCKS.register("velvet_barrier", () -> new BarrierPoleBlock(Block.Properties.of().pushReaction(PushReaction.DESTROY)));
+    public static RegistrySupplier<Block> IRON_BARRIER = AbyssalDecor.BLOCKS.register("iron_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
+    public static RegistrySupplier<Block> ROPE_BARRIER = AbyssalDecor.BLOCKS.register("rope_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.OAK_PLANKS)));
+    public static RegistrySupplier<Block> BARBED_WIRE_BARRIER = AbyssalDecor.BLOCKS.register("barbed_wire_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 
    // public static RegistrySupplier<Block> VELVET_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("velvet_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.RED_WOOL), false));
    // public static RegistrySupplier<Block> IRON_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("iron_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.GRAY_WOOL), false));

@@ -96,6 +96,9 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.FRESNEL_LAMP.get());
 
             simpleBlockItem(AbyssalDecorItems.JADE_LANTERN.get());
+
+            simpleBlockItem(AbyssalDecorItems.VELVET_BARRIER.get(),modLoc("block/velvet_barrier_top"));
+            simpleBlockItem(AbyssalDecorItems.IRON_BARRIER.get(),modLoc("block/iron_barrier_top"));
         }
 
 
@@ -298,6 +301,35 @@ class Datagen {
 
 
             //buttonLampBlock(AbyssalDecorBlocks.BULKHEAD_LAMP.get(),);
+
+            barrierPoleBlock(AbyssalDecorBlocks.VELVET_BARRIER.get(),modLoc("custom/velvetbarrierbottom"),modLoc("custom/velvetbarriertop"),
+                    modLoc("block/velvetbarrier1"));
+
+            barrierPoleBlock(AbyssalDecorBlocks.IRON_BARRIER.get(),modLoc("custom/ironbarrierbottom"),modLoc("custom/ironbarriertop"),
+                    modLoc("block/ironbarrier1"));
+
+         //   barrierPoleBlock(AbyssalDecorBlocks.ROPE_BARRIER.get(),modLoc("custom/ironbarrierbottom"),modLoc("custom/ironbarriertop"),
+          //          modLoc("block/velvetbarrier1"));
+
+        //    barrierPoleBlock(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),modLoc("custom/ironbarrierbottom"),modLoc("custom/ironbarriertop"),
+        //            modLoc("block/velvetbarrier1"));
+
+        }
+
+        void barrierPoleBlock(Block block,ResourceLocation modelBottom,ResourceLocation modelTop,ResourceLocation texture) {
+            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+            ModelFile bottom = models().withExistingParent(name+"_bottom",modelBottom)
+                    .texture("all",texture).texture("particle",texture).texture("0",texture);
+
+            ModelFile top = models().withExistingParent(name+"_top",modelTop)
+                    .texture("all",texture).texture("particle",texture).texture("0",texture);
+
+            getVariantBuilder(block)
+                    .forAllStatesExcept(blockState -> {
+                        DoubleBlockHalf half = blockState.getValue(BarrierPoleBlock.HALF);
+                        return ConfiguredModel.builder().modelFile(half == DoubleBlockHalf.UPPER ? top : bottom).build();
+                    },BlockStateProperties.WATERLOGGED);
+
         }
 
         public void simplestBlockWithItem(Block block) {

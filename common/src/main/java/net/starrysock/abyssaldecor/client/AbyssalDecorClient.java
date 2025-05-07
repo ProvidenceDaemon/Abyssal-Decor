@@ -31,5 +31,9 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.JADE_LAMP.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.WALL_JADE_LAMP.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.VELVET_BARRIER.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.IRON_BARRIER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.RAINBOW_LAMP.get(),RenderType.translucent());
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "abyssaldecor:custom/velvetbarrierbottom",
+  "textures": {
+    "0": "abyssaldecor:block/velvetbarrier1",
+    "all": "abyssaldecor:block/velvetbarrier1",
+    "particle": "abyssaldecor:block/velvetbarrier1"
+  }
+}
