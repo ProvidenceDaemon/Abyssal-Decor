@@ -7,6 +7,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -314,6 +315,39 @@ class Datagen {
         //    barrierPoleBlock(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),modLoc("custom/ironbarrierbottom"),modLoc("custom/ironbarriertop"),
         //            modLoc("block/velvetbarrier1"));
 
+            starfish(AbyssalDecorBlocks.STARFISH.get());
+            driedStarfish(AbyssalDecorBlocks.DRIED_STARFISH.get());
+            simpleBlock(AbyssalDecorBlocks.STARLIGHT.get(),models().withExistingParent("block/starlight","block/cross").texture("cross","block/starlight"));
+        }
+
+        void starfish(Block block) {
+            getVariantBuilder(block)
+                    .forAllStatesExcept(blockState -> {
+                        DyeColor color = blockState.getValue(StarfishBlock.COLOR);
+                        int count = blockState.getValue(StarfishBlock.COUNT);
+                        String s = "block/"+count+"_"+color.getName()+"_starfish";
+                        ModelFile file = models().withExistingParent(s,mcLoc("block/lily_pad"))
+                                .texture("texture",s).texture("particle",s);
+
+                        Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
+                        Vector2i vector2i = getRotation(orientation);
+                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
+                    });
+        }
+
+        void driedStarfish(Block block) {
+            getVariantBuilder(block)
+                    .forAllStatesExcept(blockState -> {
+                        int count = blockState.getValue(StarfishBlock.COUNT);
+                        String s = "block/"+count+"_dried_starfish";
+                        ModelFile file = models().withExistingParent(s,mcLoc("block/lily_pad"))
+                                .texture("texture",s).texture("particle",s);
+
+                        Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
+                        Vector2i vector2i = getRotation(orientation);
+
+                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
+                    });
         }
 
         void barrierPoleBlock(Block block,ResourceLocation modelBottom,ResourceLocation modelTop,ResourceLocation texture) {

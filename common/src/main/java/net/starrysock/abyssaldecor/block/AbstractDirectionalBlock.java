@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 
 public class AbstractDirectionalBlock extends DirectionalBlock {
-    protected AbstractDirectionalBlock(Properties properties) {
+    public AbstractDirectionalBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP));
     }

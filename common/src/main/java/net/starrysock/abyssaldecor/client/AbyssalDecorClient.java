@@ -35,5 +35,11 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.IRON_BARRIER.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.RAINBOW_LAMP.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.STARFISH.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.DRIED_STARFISH.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.STARLIGHT.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.LIFE_PRESERVER.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SHIP_WHEEL.get(),RenderType.cutoutMipped());
     }
 }

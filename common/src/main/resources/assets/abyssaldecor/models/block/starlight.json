@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "abyssaldecor:block/starlight",
-    "particle": "abyssaldecor:block/starlight"
-  },
-  "render_type": "cutout_mipped"
-}

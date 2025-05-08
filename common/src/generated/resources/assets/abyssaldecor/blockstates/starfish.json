@@ -1,0 +1,130 @@
+{
+  "variants": {
+    "color=orange,count=1,facing=down": {
+      "model": "abyssaldecor:block/1_orange_starfish"
+    },
+    "color=orange,count=1,facing=east": {
+      "model": "abyssaldecor:block/1_orange_starfish",
+      "y": 90
+    },
+    "color=orange,count=1,facing=north": {
+      "model": "abyssaldecor:block/1_orange_starfish"
+    },
+    "color=orange,count=1,facing=south": {
+      "model": "abyssaldecor:block/1_orange_starfish",
+      "y": 180
+    },
+    "color=orange,count=1,facing=up": {
+      "model": "abyssaldecor:block/1_orange_starfish"
+    },
+    "color=orange,count=1,facing=west": {
+      "model": "abyssaldecor:block/1_orange_starfish",
+      "y": 270
+    },
+    "color=orange,count=2,facing=down": {
+      "model": "abyssaldecor:block/2_orange_starfish"
+    },
+    "color=orange,count=2,facing=east": {
+      "model": "abyssaldecor:block/2_orange_starfish",
+      "y": 90
+    },
+    "color=orange,count=2,facing=north": {
+      "model": "abyssaldecor:block/2_orange_starfish"
+    },
+    "color=orange,count=2,facing=south": {
+      "model": "abyssaldecor:block/2_orange_starfish",
+      "y": 180
+    },
+    "color=orange,count=2,facing=up": {
+      "model": "abyssaldecor:block/2_orange_starfish"
+    },
+    "color=orange,count=2,facing=west": {
+      "model": "abyssaldecor:block/2_orange_starfish",
+      "y": 270
+    },
+    "color=pink,count=1,facing=down": {
+      "model": "abyssaldecor:block/1_pink_starfish"
+    },
+    "color=pink,count=1,facing=east": {
+      "model": "abyssaldecor:block/1_pink_starfish",
+      "y": 90
+    },
+    "color=pink,count=1,facing=north": {
+      "model": "abyssaldecor:block/1_pink_starfish"
+    },
+    "color=pink,count=1,facing=south": {
+      "model": "abyssaldecor:block/1_pink_starfish",
+      "y": 180
+    },
+    "color=pink,count=1,facing=up": {
+      "model": "abyssaldecor:block/1_pink_starfish"
+    },
+    "color=pink,count=1,facing=west": {
+      "model": "abyssaldecor:block/1_pink_starfish",
+      "y": 270
+    },
+    "color=pink,count=2,facing=down": {
+      "model": "abyssaldecor:block/2_pink_starfish"
+    },
+    "color=pink,count=2,facing=east": {
+      "model": "abyssaldecor:block/2_pink_starfish",
+      "y": 90
+    },
+    "color=pink,count=2,facing=north": {
+      "model": "abyssaldecor:block/2_pink_starfish"
+    },
+    "color=pink,count=2,facing=south": {
+      "model": "abyssaldecor:block/2_pink_starfish",
+      "y": 180
+    },
+    "color=pink,count=2,facing=up": {
+      "model": "abyssaldecor:block/2_pink_starfish"
+    },
+    "color=pink,count=2,facing=west": {
+      "model": "abyssaldecor:block/2_pink_starfish",
+      "y": 270
+    },
+    "color=purple,count=1,facing=down": {
+      "model": "abyssaldecor:block/1_purple_starfish"
+    },
+    "color=purple,count=1,facing=east": {
+      "model": "abyssaldecor:block/1_purple_starfish",
+      "y": 90
+    },
+    "color=purple,count=1,facing=north": {
+      "model": "abyssaldecor:block/1_purple_starfish"
+    },
+    "color=purple,count=1,facing=south": {
+      "model": "abyssaldecor:block/1_purple_starfish",
+      "y": 180
+    },
+    "color=purple,count=1,facing=up": {
+      "model": "abyssaldecor:block/1_purple_starfish"
+    },
+    "color=purple,count=1,facing=west": {
+      "model": "abyssaldecor:block/1_purple_starfish",
+      "y": 270
+    },
+    "color=purple,count=2,facing=down": {
+      "model": "abyssaldecor:block/2_purple_starfish"
+    },
+    "color=purple,count=2,facing=east": {
+      "model": "abyssaldecor:block/2_purple_starfish",
+      "y": 90
+    },
+    "color=purple,count=2,facing=north": {
+      "model": "abyssaldecor:block/2_purple_starfish"
+    },
+    "color=purple,count=2,facing=south": {
+      "model": "abyssaldecor:block/2_purple_starfish",
+      "y": 180
+    },
+    "color=purple,count=2,facing=up": {
+      "model": "abyssaldecor:block/2_purple_starfish"
+    },
+    "color=purple,count=2,facing=west": {
+      "model": "abyssaldecor:block/2_purple_starfish",
+      "y": 270
+    }
+  }
+}

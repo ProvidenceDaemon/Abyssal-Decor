@@ -48,6 +48,15 @@ public class AbyssalDecorItems {
             , new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 3600));
 
     public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem("scrimshaw",AbyssalDecorBlocks.SCRIMSHAW);
+    public static final RegistrySupplier<BlockItem> STARFISH = registerBlockItem("starfish",AbyssalDecorBlocks.STARFISH);
+    public static final RegistrySupplier<BlockItem> DRIED_STARFISH = registerBlockItem("dried_starfish",AbyssalDecorBlocks.DRIED_STARFISH);
+    public static final RegistrySupplier<BlockItem> STARLIGHT = registerBlockItem("starlight",AbyssalDecorBlocks.STARLIGHT);
+    public static final RegistrySupplier<BlockItem> LIFE_PRESERVER = registerBlockItem("life_preserver",AbyssalDecorBlocks.LIFE_PRESERVER);
+    public static final RegistrySupplier<BlockItem> WOOD_SUPPORT = registerBlockItem("wood_support",AbyssalDecorBlocks.WOOD_SUPPORT);
+    public static final RegistrySupplier<BlockItem> SHIP_WHEEL = registerBlockItem("ship_wheel",AbyssalDecorBlocks.SHIP_WHEEL);
+    public static final RegistrySupplier<BlockItem> WO0DEN_DRAGON_HEAD = registerBlockItem("wooden_dragon_head",AbyssalDecorBlocks.WOODEN_DRAGON_HEAD);
+    public static final RegistrySupplier<BlockItem> WO0DEN_FROG = registerBlockItem("wooden_frog",AbyssalDecorBlocks.WOODEN_FROG);
+
     public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem("desk_bell",AbyssalDecorBlocks.DESK_BELL);
 
     public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);

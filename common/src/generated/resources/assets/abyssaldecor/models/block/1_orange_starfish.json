@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/lily_pad",
+  "textures": {
+    "particle": "abyssaldecor:block/1_orange_starfish",
+    "texture": "abyssaldecor:block/1_orange_starfish"
+  }
+}

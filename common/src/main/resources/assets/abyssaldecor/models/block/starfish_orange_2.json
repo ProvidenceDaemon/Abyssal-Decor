@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/starfishorange2",
-  "textures": {
-    "all": "abyssaldecor:block/starfishorange2",
-    "particle": "abyssaldecor:block/starfishorange2",
-    "0": "abyssaldecor:block/starfishorange2"
-  },
-  "render_type": "cutout_mipped"
-}

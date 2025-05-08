@@ -26,6 +26,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class ModLootTableProvider extends LootTableProvider {
+
+
     public ModLootTableProvider(PackOutput output, Set<ResourceLocation> requiredTables, List<SubProviderEntry> subProviders) {
         super(output, requiredTables, subProviders);
     }
@@ -40,63 +42,31 @@ public class ModLootTableProvider extends LootTableProvider {
                 new LootTableProvider.SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK)));
     }
 
+
+
     static class ModBlockLoot extends VanillaBlockLoot {
+        protected final Set<Block> skip = Set.of(AbyssalDecorBlocks.AMARANTH.get(),AbyssalDecorBlocks.TALL_AMARANTH.get());
+
+
         @Override
         protected void generate() {
-            dropSelf(AbyssalDecorBlocks.SOLAR_ROD.get());
-            dropSelf(AbyssalDecorBlocks.STELLAR_ROD.get());
-            dropSelf(AbyssalDecorBlocks.TERRESTRIAL_ROD.get());
-            dropSelf(AbyssalDecorBlocks.LUNAR_ROD.get());
-            dropSelf(AbyssalDecorBlocks.ETHEREAL_ROD.get());
 
-            dropSelf(AbyssalDecorBlocks.ASTER.get());
-            dropSelf(AbyssalDecorBlocks.DAFFODIL.get());
-            dropSelf(AbyssalDecorBlocks.SNAPLEAF.get());
+            Set<Block> specialDrops = Set.of(AbyssalDecorBlocks.VELVET_BARRIER.get(),AbyssalDecorBlocks.IRON_BARRIER.get(),
+                    AbyssalDecorBlocks.ROPE_BARRIER.get(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),
+                    AbyssalDecorBlocks.MUCKROOT.get());
 
-            dropSelf(AbyssalDecorBlocks.AMARANTH_CRATE.get());
+            AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
+                Block block = blockRegistrySupplier.get();
+                if (!skip.contains(block) && !specialDrops.contains(block)) {
+                    dropSelf(block);
+                }
+            } );
 
-            dropSelf(AbyssalDecorBlocks.BLAZE_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.BULKHEAD_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.FLOWER_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.FROSTED_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.IRON_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.JADE_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.LIGHTBULB.get());
-            dropSelf(AbyssalDecorBlocks.QUARTZ_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.RAINBOW_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.SEAGLASS_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.TUBE_LAMP.get());
-            dropSelf(AbyssalDecorBlocks.WALL_BULB_LAMP.get());
+            barrierDrop(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get());
+            barrierDrop(AbyssalDecorBlocks.IRON_BARRIER.get());
+            barrierDrop(AbyssalDecorBlocks.ROPE_BARRIER.get());
+            barrierDrop(AbyssalDecorBlocks.VELVET_BARRIER.get());
 
-            dropSelf(AbyssalDecorBlocks.SEABRASS_ORE.get());
-            dropSelf(AbyssalDecorBlocks.FRESNEL_LAMP.get());
-
-            dropSelf(AbyssalDecorBlocks.ABYSSAL_LANTERN.get());
-            dropSelf(AbyssalDecorBlocks.IRON_LANTERN.get());
-            dropSelf(AbyssalDecorBlocks.JADE_LANTERN.get());
-
-            dropSelf(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get());
-            dropSelf(AbyssalDecorBlocks.IRON_BARRIER.get());
-            dropSelf(AbyssalDecorBlocks.ROPE_BARRIER.get());
-
-            dropSelf(AbyssalDecorBlocks.HANGING_MOSS.get());
-            dropSelf(AbyssalDecorBlocks.BARK_ORCHID.get());
-
-            //todo require shears?
-            dropSelf(AbyssalDecorBlocks.WISTERIA_PETALS.get());
-            dropSelf(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
-            dropSelf(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
-
-            dropSelf(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get());
-            dropSelf(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
-            dropSelf(AbyssalDecorBlocks.FOXY_PILLAR.get());
-            dropSelf(AbyssalDecorBlocks.SCRIMSHAW.get());
-            dropSelf(AbyssalDecorBlocks.DESK_BELL.get());
-            dropSelf(AbyssalDecorBlocks.STARFISH.get());
-
-            add(AbyssalDecorBlocks.VELVET_BARRIER.get(),createDoorTable(AbyssalDecorBlocks.VELVET_BARRIER.get()));
-
-            //dropSelf(AbyssalDecorBlocks.VELVET_BARRIER_RIBBON.get());
             LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MUCKROOT.get())
                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MuckrootBlock.AGE, 2));
             this.add(AbyssalDecorBlocks.MUCKROOT.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MUCKROOT.get(),
@@ -106,13 +76,15 @@ public class ModLootTableProvider extends LootTableProvider {
 
         }
 
+        protected void barrierDrop(Block block) {
+            add(block,createDoorTable(block));
+        }
+
         @Override
         protected Iterable<Block> getKnownBlocks() {
 
-            Set<Block> exclude = Set.of(AbyssalDecorBlocks.AMARANTH.get(),AbyssalDecorBlocks.TALL_AMARANTH.get());
-
             return BuiltInRegistries.BLOCK.stream().filter(block -> BuiltInRegistries.BLOCK.getKey(block)
-                    .getNamespace().equals(AbyssalDecor.MOD_ID) && !exclude.contains(block)).toList();
+                    .getNamespace().equals(AbyssalDecor.MOD_ID) && !skip.contains(block)).toList();
         }
     }
 }

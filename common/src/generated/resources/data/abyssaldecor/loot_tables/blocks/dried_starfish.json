@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:starfish"
+          "name": "abyssaldecor:dried_starfish"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/starfish"
+  "random_sequence": "abyssaldecor:blocks/dried_starfish"
 }

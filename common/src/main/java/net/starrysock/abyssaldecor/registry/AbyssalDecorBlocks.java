@@ -102,6 +102,16 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> DESK_BELL = AbyssalDecor.BLOCKS.register("desk_bell",() -> new DeskBellBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> STARFISH = AbyssalDecor.BLOCKS.register("starfish",() -> new StarfishBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> DRIED_STARFISH = AbyssalDecor.BLOCKS.register("dried_starfish",() -> new DriedStarfishBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> STARLIGHT = AbyssalDecor.BLOCKS.register("starlight",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> LIFE_PRESERVER = AbyssalDecor.BLOCKS.register("life_preserver",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> WOOD_SUPPORT = AbyssalDecor.BLOCKS.register("wood_support",() -> new WoodSupportBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> SHIP_WHEEL = AbyssalDecor.BLOCKS.register("ship_wheel",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> WOODEN_DRAGON_HEAD = AbyssalDecor.BLOCKS.register("wooden_dragon_head",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> WOODEN_FROG = AbyssalDecor.BLOCKS.register("wooden_frog",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+
+
 
     public static void register() {
         AbyssalDecor.BLOCKS.register();
