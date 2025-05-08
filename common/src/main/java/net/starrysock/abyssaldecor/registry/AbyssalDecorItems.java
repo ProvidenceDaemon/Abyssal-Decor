@@ -29,7 +29,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> AMARANTH_CRATE = registerBlockItem("amaranth_crate",AbyssalDecorBlocks.AMARANTH_CRATE);
     public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = registerNamedBlockItem("muckroot",AbyssalDecorBlocks.MUCKROOT,new Item.Properties().food(Foods.CARROT));
     public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() -> new Item(new Item.Properties().food(Foods.BEETROOT)));
-    public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() -> new BowlFoodItem(new Item.Properties().stacksTo(1).food(Foods.BEETROOT_SOUP)));
+    public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() ->
+            new BowlFoodItem(new Item.Properties().stacksTo(1).food(Foods.BEETROOT_SOUP)));
 
     public static final RegistrySupplier<BlockItem> BARK_ORCHID = registerBlockItem("bark_orchid",AbyssalDecorBlocks.BARK_ORCHID);
 
@@ -56,6 +57,16 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SHIP_WHEEL = registerBlockItem("ship_wheel",AbyssalDecorBlocks.SHIP_WHEEL);
     public static final RegistrySupplier<BlockItem> WO0DEN_DRAGON_HEAD = registerBlockItem("wooden_dragon_head",AbyssalDecorBlocks.WOODEN_DRAGON_HEAD);
     public static final RegistrySupplier<BlockItem> WO0DEN_FROG = registerBlockItem("wooden_frog",AbyssalDecorBlocks.WOODEN_FROG);
+    public static final RegistrySupplier<DoubleHighBlockItem> LION_STATUE = AbyssalDecor.ITEMS.register("lion_statue",() ->
+            new DoubleHighBlockItem(AbyssalDecorBlocks.LION_STATUE.get(),new Item.Properties()));
+    public static final RegistrySupplier<DoubleHighBlockItem> GARGOYLE = AbyssalDecor.ITEMS.register("gargoyle",() ->
+            new DoubleHighBlockItem(AbyssalDecorBlocks.GARGOYLE.get(),new Item.Properties()));
+
+    public static final RegistrySupplier<DoubleHighBlockItem> NITHING_POLE = AbyssalDecor.ITEMS.register("nithing_pole",() ->
+            new DoubleHighBlockItem(AbyssalDecorBlocks.NITHING_POLE.get(),new Item.Properties()));
+
+    public static final RegistrySupplier<DoubleHighBlockItem> TELESCOPE = AbyssalDecor.ITEMS.register("telescope",() ->
+            new DoubleHighBlockItem(AbyssalDecorBlocks.TELESCOPE.get(),new Item.Properties()));
 
     public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem("desk_bell",AbyssalDecorBlocks.DESK_BELL);
 

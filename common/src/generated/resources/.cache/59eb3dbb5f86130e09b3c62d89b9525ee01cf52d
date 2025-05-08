@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-08T03:12:14.3123828	Loot Tables
+// 1.20.1	2025-05-08T16:20:05.7553708	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 a64f395311e533d3188fa2312229412fb897ed7b data/abyssaldecor/loot_tables/blocks/ancient_birch_log.json
@@ -17,6 +17,7 @@ c1d4b846962b14d6fbdbdf0ba09a1d32cd404535 data/abyssaldecor/loot_tables/blocks/fl
 2b4cd1278c7c05f6f1cb945d37886b025fa78bb7 data/abyssaldecor/loot_tables/blocks/foxy_pillar.json
 9f8f94a32f79892414d8ea0b818a31de1c4a69e9 data/abyssaldecor/loot_tables/blocks/fresnel_lamp.json
 4510dcdb0eff3077c10f5dc88b452f910ec442cd data/abyssaldecor/loot_tables/blocks/frosted_lamp.json
+16c5b2f8c19f9aa88bef5720b3de2ee078ef71f3 data/abyssaldecor/loot_tables/blocks/gargoyle.json
 45680786547c8ae698d7723d6bd8b9a785c65eaf data/abyssaldecor/loot_tables/blocks/hanging_moss.json
 28ef40b33c5b9d0d84fab9bb99849c6a2d7047c9 data/abyssaldecor/loot_tables/blocks/iron_barrier.json
 5cd02e726c441e31a48d05d6ae6fa2c857944823 data/abyssaldecor/loot_tables/blocks/iron_lamp.json
@@ -25,8 +26,10 @@ bc28e54712b34f8d803f1c6c1e65f8eb295722ef data/abyssaldecor/loot_tables/blocks/ir
 3606e3207ca300f2c0ed4e5c965956f796685e2f data/abyssaldecor/loot_tables/blocks/jade_lantern.json
 a1726979ef55d80b657c594ff1a5a9d152ea0c6e data/abyssaldecor/loot_tables/blocks/life_preserver.json
 90391f201a22eede11fd6eaee0b44c79d2310336 data/abyssaldecor/loot_tables/blocks/lightbulb.json
+9ac26e2b097f2d8aada6022646d25eb1c9bfd527 data/abyssaldecor/loot_tables/blocks/lion_statue.json
 a79f8ae1bf27b2346c4df5a039bc2363fcb6d763 data/abyssaldecor/loot_tables/blocks/lunar_rod.json
 c987b0e7b329bcdd0a65fd212d58a8b04e862e2f data/abyssaldecor/loot_tables/blocks/muckroot.json
+c44dd9acb0b0a89828e41345c4b85b3c58df08d0 data/abyssaldecor/loot_tables/blocks/nithing_pole.json
 5ae591a5d4265f36d4e306b6bcd5e2a453ae9c83 data/abyssaldecor/loot_tables/blocks/quartz_lamp.json
 3454d7c150af066e7b95990b623949baec0e3f04 data/abyssaldecor/loot_tables/blocks/rainbow_lamp.json
 6cfcec9b86835a3324dd733ef27cc28744dba39b data/abyssaldecor/loot_tables/blocks/rope_barrier.json
@@ -40,6 +43,7 @@ a91df876f455e531f4ca439b214640ffeffca640 data/abyssaldecor/loot_tables/blocks/so
 302a1cbf51ca166c79cc712e8849498f2148026f data/abyssaldecor/loot_tables/blocks/starlight.json
 54d1f05f944c2b63a84b050925096d721a78685d data/abyssaldecor/loot_tables/blocks/stellar_rod.json
 39087c3dea6ac552c2c5c0d36149594518e61354 data/abyssaldecor/loot_tables/blocks/stripped_ancient_birch_log.json
+cdc704f8ad4575bfba033663208ca7d45df964bc data/abyssaldecor/loot_tables/blocks/telescope.json
 d225c8aff26bf0e4aa3dc50eee4b507a389926d3 data/abyssaldecor/loot_tables/blocks/terrestrial_rod.json
 7eec3e42c363d878be492ca2ad0f59c7a5664ab1 data/abyssaldecor/loot_tables/blocks/tube_lamp.json
 e8189853376aefd26361bf873b35cd49c38b250a data/abyssaldecor/loot_tables/blocks/velvet_barrier.json

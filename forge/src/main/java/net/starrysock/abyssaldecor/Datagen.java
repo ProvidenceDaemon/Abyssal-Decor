@@ -100,6 +100,11 @@ class Datagen {
 
             simpleBlockItem(AbyssalDecorItems.VELVET_BARRIER.get(),modLoc("block/velvet_barrier_top"));
             simpleBlockItem(AbyssalDecorItems.IRON_BARRIER.get(),modLoc("block/iron_barrier_top"));
+
+            generatedItem(AbyssalDecorItems.LION_STATUE.get());
+            generatedItem(AbyssalDecorItems.GARGOYLE.get());
+            generatedItem(AbyssalDecorItems.NITHING_POLE.get());
+            generatedItem(AbyssalDecorItems.TELESCOPE.get());
         }
 
 
@@ -318,6 +323,23 @@ class Datagen {
             starfish(AbyssalDecorBlocks.STARFISH.get());
             driedStarfish(AbyssalDecorBlocks.DRIED_STARFISH.get());
             simpleBlock(AbyssalDecorBlocks.STARLIGHT.get(),models().withExistingParent("block/starlight","block/cross").texture("cross","block/starlight"));
+
+            lionStatue(AbyssalDecorBlocks.LION_STATUE.get());
+            lionStatue(AbyssalDecorBlocks.NITHING_POLE.get());
+            lionStatue(AbyssalDecorBlocks.TELESCOPE.get());
+        }
+
+        void lionStatue(Block block) {
+            String name = name(block);
+            getVariantBuilder(block).forAllStates(
+                    blockState -> {
+                        Direction direction = blockState.getValue(LionStatueBlock.FACING);
+                        DoubleBlockHalf half = blockState.getValue(TallAmaranthBlock.HALF);
+
+                        ModelFile modelFile = models().getExistingFile(modLoc("block/"+name+"_"+half.getSerializedName()));
+                        return ConfiguredModel.builder().modelFile(modelFile).rotationY(getRotation(direction).y).build();
+                    }
+            );
         }
 
         void starfish(Block block) {
@@ -351,7 +373,7 @@ class Datagen {
         }
 
         void barrierPoleBlock(Block block,ResourceLocation modelBottom,ResourceLocation modelTop,ResourceLocation texture) {
-            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+            String name = name(block);
             ModelFile bottom = models().withExistingParent(name+"_bottom",modelBottom)
                     .texture("all",texture).texture("particle",texture).texture("0",texture);
 
@@ -366,12 +388,16 @@ class Datagen {
 
         }
 
+        String name(Block block) {
+            return BuiltInRegistries.BLOCK.getKey(block).getPath();
+        }
+
         public void simplestBlockWithItem(Block block) {
             simpleBlockWithItem(block,cubeAll(block));
         }
 
         public void buttonLampBlock(ButtonLampBlock block, ResourceLocation baseModel) {
-            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+            String name = name(block);
 
             ModelFile buttonModel = models().withExistingParent(name,baseModel)
                     ;
@@ -394,7 +420,7 @@ class Datagen {
 
 
         protected void lamp(Block block,ResourceLocation model,ResourceLocation texture0) {
-            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+            String name = name(block);
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
@@ -412,7 +438,7 @@ class Datagen {
 
 
         protected void wallLamp(Block block,ResourceLocation model,ResourceLocation texture0) {
-            String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+            String name = name(block);
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);

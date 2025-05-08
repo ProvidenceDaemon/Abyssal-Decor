@@ -17,7 +17,9 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.starrysock.abyssaldecor.block.HorizontalDoubleBlock;
 import net.starrysock.abyssaldecor.block.MuckrootBlock;
+import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 
@@ -53,7 +55,8 @@ public class ModLootTableProvider extends LootTableProvider {
 
             Set<Block> specialDrops = Set.of(AbyssalDecorBlocks.VELVET_BARRIER.get(),AbyssalDecorBlocks.IRON_BARRIER.get(),
                     AbyssalDecorBlocks.ROPE_BARRIER.get(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),
-                    AbyssalDecorBlocks.MUCKROOT.get());
+                    AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
+                    AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -67,6 +70,12 @@ public class ModLootTableProvider extends LootTableProvider {
             barrierDrop(AbyssalDecorBlocks.ROPE_BARRIER.get());
             barrierDrop(AbyssalDecorBlocks.VELVET_BARRIER.get());
 
+            barrierDrop(AbyssalDecorBlocks.LION_STATUE.get());
+            barrierDrop(AbyssalDecorBlocks.NITHING_POLE.get());
+            barrierDrop(AbyssalDecorBlocks.TELESCOPE.get());
+
+            add(AbyssalDecorBlocks.GARGOYLE.get(),createHorizontalStatueTable(AbyssalDecorBlocks.GARGOYLE.get()));
+
             LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MUCKROOT.get())
                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MuckrootBlock.AGE, 2));
             this.add(AbyssalDecorBlocks.MUCKROOT.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MUCKROOT.get(),
@@ -74,10 +83,15 @@ public class ModLootTableProvider extends LootTableProvider {
                             .when(builder).add(LootItem.lootTableItem(AbyssalDecorItems.MUCKROOT.get())
                                     .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
 
+
         }
 
         protected void barrierDrop(Block block) {
             add(block,createDoorTable(block));
+        }
+
+        protected LootTable.Builder createHorizontalStatueTable(Block block) {
+            return this.createSinglePropConditionTable(block, HorizontalDoubleBlock.PART, HorizontalPart.BACK);
         }
 
         @Override

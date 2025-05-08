@@ -111,6 +111,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> WOODEN_DRAGON_HEAD = AbyssalDecor.BLOCKS.register("wooden_dragon_head",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> WOODEN_FROG = AbyssalDecor.BLOCKS.register("wooden_frog",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
 
+    public static final RegistrySupplier<Block> LION_STATUE = AbyssalDecor.BLOCKS.register("lion_statue",() -> new LionStatueBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> GARGOYLE = AbyssalDecor.BLOCKS.register("gargoyle",() -> new HorizontalDoubleBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> NITHING_POLE = AbyssalDecor.BLOCKS.register("nithing_pole",() -> new LionStatueBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> TELESCOPE = AbyssalDecor.BLOCKS.register("telescope",() -> new LionStatueBlock(BlockBehaviour.Properties.of()));
+
 
 
     public static void register() {

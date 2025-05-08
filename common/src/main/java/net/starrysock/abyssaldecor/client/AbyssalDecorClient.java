@@ -41,5 +41,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.STARLIGHT.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.LIFE_PRESERVER.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SHIP_WHEEL.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.NITHING_POLE.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.TELESCOPE.get(),RenderType.cutoutMipped());
     }
 }
