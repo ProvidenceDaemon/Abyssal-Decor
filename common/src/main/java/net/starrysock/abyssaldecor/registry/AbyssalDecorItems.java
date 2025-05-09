@@ -77,6 +77,21 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_BLOCK = registerBlockItem("prismarine_crystal_block",AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK);
     public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_PANE = registerBlockItem("prismarine_crystal_pane",AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE);
 
+    public static final RegistrySupplier<BlockItem> FRESNEL_BLOCK = registerBlockItem("fresnel_block",AbyssalDecorBlocks.FRESNEL_BLOCK);
+    public static final RegistrySupplier<BlockItem> FRESNEL_PANE = registerBlockItem("fresnel_pane",AbyssalDecorBlocks.FRESNEL_PANE);
+
+    public static final RegistrySupplier<BlockItem> CRYSTALLIZED_GLOWSTONE = registerBlockItem("crystallized_glowstone",AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE);
+    public static final RegistrySupplier<BlockItem> CRYSTALLIZED_GLOWSTONE_PANE = registerBlockItem("crystallized_glowstone_pane",AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE_PANE);
+
+    public static final RegistrySupplier<BlockItem> FRAMED_CRYSTALLIZED_GLOWSTONE = registerBlockItem("framed_crystallized_glowstone",AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE);
+    public static final RegistrySupplier<BlockItem> FRAMED_CRYSTALLIZED_GLOWSTONE_PANE = registerBlockItem("framed_crystallized_glowstone_pane",AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE);
+
+    public static final RegistrySupplier<BlockItem> VERMILION_BLOCK = registerBlockItem("vermilion_block",AbyssalDecorBlocks.VERMILION_BLOCK);
+    public static final RegistrySupplier<BlockItem> VERMILION_PANE = registerBlockItem("vermilion_pane",AbyssalDecorBlocks.VERMILION_PANE);
+
+    public static final RegistrySupplier<BlockItem> FRAMED_VERMILION_BLOCK = registerBlockItem("framed_vermilion_block",AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK);
+    public static final RegistrySupplier<BlockItem> FRAMED_VERMILION_PANE = registerBlockItem("framed_vermilion_pane",AbyssalDecorBlocks.FRAMED_VERMILION_PANE);
+
     public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem("desk_bell",AbyssalDecorBlocks.DESK_BELL);
 
     public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);

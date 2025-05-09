@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/vermillionblock",
-    "particle": "abyssaldecor:block/vermillionblock"
-  },
-  "render_type": "translucent"
-}

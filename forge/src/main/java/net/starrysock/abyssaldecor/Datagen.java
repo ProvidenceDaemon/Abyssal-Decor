@@ -109,6 +109,14 @@ class Datagen {
             generatedItem(AbyssalDecorItems.DANGLING_WEB.get(),modLoc("block/dangling_web_lower"));
             simpleBlockItem(AbyssalDecorItems.PRISMARINE_CRYSTAL_BLOCK.get());
             generatedItem(AbyssalDecorItems.PRISMARINE_CRYSTAL_PANE.get(),modLoc("block/prismarine_crystal_block"));
+            simpleBlockItem(AbyssalDecorItems.FRESNEL_BLOCK.get());
+            generatedItem(AbyssalDecorItems.FRESNEL_PANE.get(),modLoc("block/fresnel_block"));
+            simpleBlockItem(AbyssalDecorItems.CRYSTALLIZED_GLOWSTONE.get());
+            generatedItem(AbyssalDecorItems.CRYSTALLIZED_GLOWSTONE_PANE.get(),modLoc("block/crystallized_glowstone"));
+            simpleBlockItem(AbyssalDecorItems.FRAMED_CRYSTALLIZED_GLOWSTONE.get());
+            generatedItem(AbyssalDecorItems.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE.get(),modLoc("block/framed_crystallized_glowstone"));
+            simpleBlockItem(AbyssalDecorItems.VERMILION_BLOCK.get());
+            generatedItem(AbyssalDecorItems.VERMILION_PANE.get(),modLoc("block/vermilion_block"));
         }
 
 
@@ -346,6 +354,20 @@ class Datagen {
             simpleBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get());
             paneBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE.get(),modLoc("block/prismarine_crystal_block"),modLoc("block/prismarine_crystal_block"));
 
+            simpleBlock(AbyssalDecorBlocks.FRESNEL_BLOCK.get());
+            paneBlock(AbyssalDecorBlocks.FRESNEL_PANE.get(),modLoc("block/fresnel_block"),modLoc("block/fresnel_block"));
+
+            simpleBlock(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE.get());
+            paneBlock(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE_PANE.get(),modLoc("block/crystallized_glowstone"),modLoc("block/crystallized_glowstone"));
+
+            simpleBlock(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE.get());
+            paneBlock(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE.get(),modLoc("block/framed_crystallized_glowstone"),modLoc("block/framed_crystallized_glowstone"));
+
+            simpleBlock(AbyssalDecorBlocks.VERMILION_BLOCK.get());
+            paneBlock(AbyssalDecorBlocks.VERMILION_PANE.get(),modLoc("block/vermilion_block"),modLoc("block/vermilion_block"));
+
+            simpleBlock(AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK.get());
+            paneBlock(AbyssalDecorBlocks.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"),modLoc("block/framed_vermilion_block"));
         }
 
 

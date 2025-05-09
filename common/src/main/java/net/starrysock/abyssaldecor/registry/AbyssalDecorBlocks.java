@@ -131,13 +131,50 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> WALL_DANGLING_WEB = AbyssalDecor.BLOCKS.register("wall_dangling_web",() -> new WallHangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
             .requiresCorrectToolForDrops().strength(4.0F).pushReaction(PushReaction.DESTROY).dropsLike(DANGLING_WEB.get())));
 
-    public static final RegistrySupplier<Block> PRISMARINE_CRYSTAL_BLOCK = AbyssalDecor.BLOCKS.register("prismarine_crystal_block",() ->
-            new GlassBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F)
-            .sound(SoundType.GLASS).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never)
-            .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+    public static final RegistrySupplier<Block> PRISMARINE_CRYSTAL_BLOCK = AbyssalDecor.BLOCKS.register("prismarine_crystal_block",() -> new GlassBlock(glassLike()));
 
     public static final RegistrySupplier<IronBarsBlock> PRISMARINE_CRYSTAL_PANE = AbyssalDecor.BLOCKS.register("prismarine_crystal_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+            () -> new IronBarsBlock(panes()));
+
+    public static final RegistrySupplier<Block> FRESNEL_BLOCK = AbyssalDecor.BLOCKS.register("fresnel_block",() ->
+            new GlassBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> FRESNEL_PANE = AbyssalDecor.BLOCKS.register("fresnel_pane",
+            () -> new IronBarsBlock(panes()));
+
+    public static final RegistrySupplier<Block> CRYSTALLIZED_GLOWSTONE = AbyssalDecor.BLOCKS.register("crystallized_glowstone",() ->
+            new GlassBlock(glassLike().lightLevel(state -> 15)));
+
+    public static final RegistrySupplier<IronBarsBlock> CRYSTALLIZED_GLOWSTONE_PANE = AbyssalDecor.BLOCKS.register("crystallized_glowstone_pane",
+            () -> new IronBarsBlock(panes().lightLevel(state -> 15)));
+
+    public static final RegistrySupplier<Block> FRAMED_CRYSTALLIZED_GLOWSTONE = AbyssalDecor.BLOCKS.register("framed_crystallized_glowstone",() ->
+            new GlassBlock(glassLike().lightLevel(state -> 15)));
+
+    public static final RegistrySupplier<IronBarsBlock> FRAMED_CRYSTALLIZED_GLOWSTONE_PANE = AbyssalDecor.BLOCKS.register("framed_crystallized_glowstone_pane",
+            () -> new IronBarsBlock(panes().lightLevel(state -> 15)));
+
+    public static final RegistrySupplier<Block> VERMILION_BLOCK = AbyssalDecor.BLOCKS.register("vermilion_block",() ->
+            new GlassBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> VERMILION_PANE = AbyssalDecor.BLOCKS.register("vermilion_pane",
+            () -> new IronBarsBlock(panes()));
+
+    public static final RegistrySupplier<Block> FRAMED_VERMILION_BLOCK = AbyssalDecor.BLOCKS.register("framed_vermilion_block",() ->
+            new GlassBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> FRAMED_VERMILION_PANE = AbyssalDecor.BLOCKS.register("framed_vermilion_pane",
+            () -> new IronBarsBlock(panes()));
+
+    static BlockBehaviour.Properties glassLike() {
+        return BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F)
+                .sound(SoundType.GLASS).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never)
+                .isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
+    }
+
+    static BlockBehaviour.Properties panes() {
+        return BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion();
+    }
 
     public static void register() {
         AbyssalDecor.BLOCKS.register();

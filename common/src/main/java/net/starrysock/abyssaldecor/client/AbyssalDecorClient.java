@@ -53,5 +53,20 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get(),RenderType.translucent());
         renderTypes.accept(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.FRESNEL_BLOCK.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.FRESNEL_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.VERMILION_BLOCK.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.VERMILION_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.FRAMED_VERMILION_PANE.get(),RenderType.translucent());
     }
 }

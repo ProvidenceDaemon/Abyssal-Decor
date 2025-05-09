@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abyssaldecor:block/framed_crystallized_glowstone"
+  }
+}
