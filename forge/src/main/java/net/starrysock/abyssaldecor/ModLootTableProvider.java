@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -56,7 +57,8 @@ public class ModLootTableProvider extends LootTableProvider {
             Set<Block> specialDrops = Set.of(AbyssalDecorBlocks.VELVET_BARRIER.get(),AbyssalDecorBlocks.IRON_BARRIER.get(),
                     AbyssalDecorBlocks.ROPE_BARRIER.get(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),
                     AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
-                    AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get());
+                    AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get(),AbyssalDecorBlocks.HANGING_WEB.get(),
+                    AbyssalDecorBlocks.DANGLING_WEB.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -76,6 +78,8 @@ public class ModLootTableProvider extends LootTableProvider {
 
             add(AbyssalDecorBlocks.GARGOYLE.get(),createHorizontalStatueTable(AbyssalDecorBlocks.GARGOYLE.get()));
 
+            barrierDrop(AbyssalDecorBlocks.DANGLING_WEB.get());
+
             LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MUCKROOT.get())
                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MuckrootBlock.AGE, 2));
             this.add(AbyssalDecorBlocks.MUCKROOT.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MUCKROOT.get(),
@@ -83,6 +87,7 @@ public class ModLootTableProvider extends LootTableProvider {
                             .when(builder).add(LootItem.lootTableItem(AbyssalDecorItems.MUCKROOT.get())
                                     .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
 
+            this.add(AbyssalDecorBlocks.HANGING_WEB.get(), block -> createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STRING))));
 
         }
 

@@ -98,7 +98,8 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<RotatedPillarBlock> FOXY_PILLAR = AbyssalDecor.BLOCKS.register("foxy_pillar",() -> Blocks.log(MapColor.PODZOL, MapColor.COLOR_BROWN));
 
-    public static final RegistrySupplier<Block> SCRIMSHAW = AbyssalDecor.BLOCKS.register("scrimshaw",() -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE).strength(2.0F, 10.0F).lightLevel((s) -> 4).noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
+    public static final RegistrySupplier<Block> SCRIMSHAW = AbyssalDecor.BLOCKS.register("scrimshaw",() -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE)
+            .strength(2.0F, 10.0F).lightLevel((s) -> 4).noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
     public static final RegistrySupplier<Block> DESK_BELL = AbyssalDecor.BLOCKS.register("desk_bell",() -> new DeskBellBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> STARFISH = AbyssalDecor.BLOCKS.register("starfish",() -> new StarfishBlock(BlockBehaviour.Properties.of()));
@@ -116,15 +117,33 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> NITHING_POLE = AbyssalDecor.BLOCKS.register("nithing_pole",() -> new LionStatueBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> TELESCOPE = AbyssalDecor.BLOCKS.register("telescope",() -> new LionStatueBlock(BlockBehaviour.Properties.of()));
 
+    public static final RegistrySupplier<Block> HANGING_WEB = AbyssalDecor.BLOCKS.register("hanging_web",
+            () -> new WebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+                    .requiresCorrectToolForDrops().strength(4.0F).pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistrySupplier<Block> WALL_HANGING_WEB = AbyssalDecor.BLOCKS.register("wall_hanging_web",
+            () -> new WallHangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+                    .requiresCorrectToolForDrops().strength(4.0F).pushReaction(PushReaction.DESTROY).dropsLike(HANGING_WEB.get())));
+
+    public static final RegistrySupplier<Block> DANGLING_WEB = AbyssalDecor.BLOCKS.register("dangling_web",() -> new HangingDoubleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+            .requiresCorrectToolForDrops().strength(4.0F).pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistrySupplier<Block> WALL_DANGLING_WEB = AbyssalDecor.BLOCKS.register("wall_dangling_web",() -> new WallHangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+            .requiresCorrectToolForDrops().strength(4.0F).pushReaction(PushReaction.DESTROY).dropsLike(DANGLING_WEB.get())));
+
+    public static final RegistrySupplier<Block> PRISMARINE_CRYSTAL_BLOCK = AbyssalDecor.BLOCKS.register("prismarine_crystal_block",() ->
+            new GlassBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F)
+            .sound(SoundType.GLASS).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never)
+            .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+    public static final RegistrySupplier<IronBarsBlock> PRISMARINE_CRYSTAL_PANE = AbyssalDecor.BLOCKS.register("prismarine_crystal_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
 
     public static void register() {
         AbyssalDecor.BLOCKS.register();
     }
 
     private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
-        return (p_50763_) -> {
-            return (Boolean)p_50763_.getValue(BlockStateProperties.LIT) ? lightValue : 0;
-        };
+        return state -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
     }
 }

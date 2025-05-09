@@ -44,5 +44,14 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.NITHING_POLE.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.TELESCOPE.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.HANGING_WEB.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.WALL_HANGING_WEB.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.DANGLING_WEB.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.WALL_DANGLING_WEB.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE.get(),RenderType.translucent());
     }
 }

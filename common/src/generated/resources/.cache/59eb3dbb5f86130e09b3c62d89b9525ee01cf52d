@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-08T16:20:05.7553708	Loot Tables
+// 1.20.1	2025-05-08T18:04:31.9029969	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 a64f395311e533d3188fa2312229412fb897ed7b data/abyssaldecor/loot_tables/blocks/ancient_birch_log.json
@@ -8,6 +8,7 @@ a64f395311e533d3188fa2312229412fb897ed7b data/abyssaldecor/loot_tables/blocks/an
 34d02e0f450bd8155e3ed26060682bc8e279cfb7 data/abyssaldecor/loot_tables/blocks/blaze_lamp.json
 2e51968b5744deb79c3e1e3adf89852e61697c54 data/abyssaldecor/loot_tables/blocks/bulkhead_lamp.json
 f607d48437820935e78b7804128599c41cb42865 data/abyssaldecor/loot_tables/blocks/daffodil.json
+54471937ffe1a562f6b06238388298ed7037a2f2 data/abyssaldecor/loot_tables/blocks/dangling_web.json
 c39a635f2379def391bc5ade4bc2dc43407f0e4a data/abyssaldecor/loot_tables/blocks/desk_bell.json
 17d0565cbeb7e024c289ce50f50cf42aff1201e5 data/abyssaldecor/loot_tables/blocks/dried_starfish.json
 39e08b706781905986ad72e23c51bab6e78407f8 data/abyssaldecor/loot_tables/blocks/elder_wisteria_leaves.json
@@ -19,6 +20,7 @@ c1d4b846962b14d6fbdbdf0ba09a1d32cd404535 data/abyssaldecor/loot_tables/blocks/fl
 4510dcdb0eff3077c10f5dc88b452f910ec442cd data/abyssaldecor/loot_tables/blocks/frosted_lamp.json
 16c5b2f8c19f9aa88bef5720b3de2ee078ef71f3 data/abyssaldecor/loot_tables/blocks/gargoyle.json
 45680786547c8ae698d7723d6bd8b9a785c65eaf data/abyssaldecor/loot_tables/blocks/hanging_moss.json
+c7707768111af5cbf8ea2f201b30ee6dcadb42d9 data/abyssaldecor/loot_tables/blocks/hanging_web.json
 28ef40b33c5b9d0d84fab9bb99849c6a2d7047c9 data/abyssaldecor/loot_tables/blocks/iron_barrier.json
 5cd02e726c441e31a48d05d6ae6fa2c857944823 data/abyssaldecor/loot_tables/blocks/iron_lamp.json
 bc28e54712b34f8d803f1c6c1e65f8eb295722ef data/abyssaldecor/loot_tables/blocks/iron_lantern.json

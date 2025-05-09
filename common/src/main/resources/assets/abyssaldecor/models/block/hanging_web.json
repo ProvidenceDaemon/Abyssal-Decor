@@ -1,8 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/hangingweb",
-  "textures": {
-    "all": "abyssaldecor:block/smallhangingweb",
-    "particle": "abyssaldecor:block/smallhangingweb",
-    "0": "abyssaldecor:block/smallhangingweb"
-  }
-}

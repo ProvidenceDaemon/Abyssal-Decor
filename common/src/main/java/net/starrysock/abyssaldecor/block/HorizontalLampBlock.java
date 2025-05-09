@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -26,8 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumMap;
 
-public class HorizontalLampBlock extends Block implements SimpleWaterloggedBlock {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+public class HorizontalLampBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock {
     private final VoxelShape shape;
 
     private final EnumMap<Direction,VoxelShape> shapes = new EnumMap<>(Direction.class);
@@ -35,8 +33,7 @@ public class HorizontalLampBlock extends Block implements SimpleWaterloggedBlock
     public HorizontalLampBlock(Properties properties,VoxelShape shape) {
         super(properties);
         this.shape = shape;
-        this.registerDefaultState(this.defaultBlockState()
-                .setValue(FACING, Direction.NORTH).setValue(RedstoneLampBlock.LIT, false)
+        this.registerDefaultState(this.defaultBlockState().setValue(RedstoneLampBlock.LIT, false)
                 .setValue(BlockStateProperties.WATERLOGGED, false));
 
         if (shape != null) {
@@ -49,7 +46,7 @@ public class HorizontalLampBlock extends Block implements SimpleWaterloggedBlock
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(FACING, RedstoneLampBlock.LIT,BlockStateProperties.WATERLOGGED);
+        builder.add(RedstoneLampBlock.LIT,BlockStateProperties.WATERLOGGED);
     }
 
     @Override

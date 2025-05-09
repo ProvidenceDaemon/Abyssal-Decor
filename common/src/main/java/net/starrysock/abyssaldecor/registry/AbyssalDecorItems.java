@@ -68,6 +68,15 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<DoubleHighBlockItem> TELESCOPE = AbyssalDecor.ITEMS.register("telescope",() ->
             new DoubleHighBlockItem(AbyssalDecorBlocks.TELESCOPE.get(),new Item.Properties()));
 
+    public static final RegistrySupplier<BlockItem> HANGING_WEB = AbyssalDecor.ITEMS.register("hanging_web",
+            () -> new StandingAndWallBlockItem(AbyssalDecorBlocks.HANGING_WEB.get(),AbyssalDecorBlocks.WALL_HANGING_WEB.get(),new Item.Properties(),Direction.UP));
+
+    public static final RegistrySupplier<BlockItem> DANGLING_WEB = AbyssalDecor.ITEMS.register("dangling_web",
+            () -> new StandingAndWallBlockItem(AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.WALL_DANGLING_WEB.get(),new Item.Properties(),Direction.UP));
+
+    public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_BLOCK = registerBlockItem("prismarine_crystal_block",AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK);
+    public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_PANE = registerBlockItem("prismarine_crystal_pane",AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE);
+
     public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem("desk_bell",AbyssalDecorBlocks.DESK_BELL);
 
     public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);

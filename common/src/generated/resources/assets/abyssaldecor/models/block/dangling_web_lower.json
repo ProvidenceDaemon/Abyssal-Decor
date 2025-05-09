@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "abyssaldecor:block/dangling_web_lower"
+  }
+}

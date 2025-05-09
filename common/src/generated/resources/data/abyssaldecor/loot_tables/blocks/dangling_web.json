@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "abyssaldecor:dangling_web",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "abyssaldecor:dangling_web"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "abyssaldecor:blocks/dangling_web"
+}

@@ -105,6 +105,10 @@ class Datagen {
             generatedItem(AbyssalDecorItems.GARGOYLE.get());
             generatedItem(AbyssalDecorItems.NITHING_POLE.get());
             generatedItem(AbyssalDecorItems.TELESCOPE.get());
+            generatedItemBlockTexture(AbyssalDecorItems.HANGING_WEB.get());
+            generatedItem(AbyssalDecorItems.DANGLING_WEB.get(),modLoc("block/dangling_web_lower"));
+            simpleBlockItem(AbyssalDecorItems.PRISMARINE_CRYSTAL_BLOCK.get());
+            generatedItem(AbyssalDecorItems.PRISMARINE_CRYSTAL_PANE.get(),modLoc("block/prismarine_crystal_block"));
         }
 
 
@@ -327,6 +331,33 @@ class Datagen {
             lionStatue(AbyssalDecorBlocks.LION_STATUE.get());
             lionStatue(AbyssalDecorBlocks.NITHING_POLE.get());
             lionStatue(AbyssalDecorBlocks.TELESCOPE.get());
+
+            simpleBlock(AbyssalDecorBlocks.HANGING_WEB.get(),models().withExistingParent("block/hanging_web","block/cross").texture("cross","block/hanging_web"));
+            horizontalBlock(AbyssalDecorBlocks.WALL_HANGING_WEB.get(),models()
+                    .withExistingParent("block/wall_hanging_web","block/vine").texture("particle",modLoc("block/hanging_web"))
+                    .texture("vine",modLoc("block/hanging_web")));
+
+            doubleBlock(AbyssalDecorBlocks.DANGLING_WEB.get(),models()
+                    .withExistingParent("block/dangling_web_upper","block/cross").texture("cross","block/dangling_web_upper"),models()
+                    .withExistingParent("block/dangling_web_lower","block/cross").texture("cross","block/dangling_web_lower"));
+
+            lionStatue(AbyssalDecorBlocks.WALL_DANGLING_WEB.get());
+
+            simpleBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get());
+            paneBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE.get(),modLoc("block/prismarine_crystal_block"),modLoc("block/prismarine_crystal_block"));
+
+        }
+
+
+        void doubleBlock(Block block,ModelFile top,ModelFile bottom) {
+            getVariantBuilder(block).forAllStates(
+                    blockState -> {
+                        DoubleBlockHalf half = blockState.getValue(TallAmaranthBlock.HALF);
+
+                        ModelFile modelFile = half == DoubleBlockHalf.LOWER ? bottom : top;
+                        return ConfiguredModel.builder().modelFile(modelFile).build();
+                    }
+            );
         }
 
         void lionStatue(Block block) {
