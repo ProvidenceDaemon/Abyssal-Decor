@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_fence_gate",
-  "textures": {
-    "texture": "abyssaldecor:block/whitewoodplanks"
-  },
-  "render_type": "solid"
-}

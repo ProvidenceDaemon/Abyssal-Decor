@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/whitewood_trim_top",
+    "side": "abyssaldecor:block/whitewood_trim"
+  }
+}

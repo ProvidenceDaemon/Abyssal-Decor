@@ -9,9 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -25,6 +23,8 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
+import net.starrysock.abyssaldecor.registry.ExtendedBlockFamilies;
+import net.starrysock.abyssaldecor.registry.ExtendedBlockFamily.Variant;
 import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2i;
@@ -69,6 +69,38 @@ class Datagen {
 
         @Override
         protected void registerModels() {
+
+
+            ExtendedBlockFamilies.getAllFamilies().forEach(family -> {
+                Block baseBlock = family.getBaseBlock();
+                String name = name(baseBlock.asItem());
+                    simpleBlockItem(family.getBaseBlock().asItem());
+                //     ResourceLocation location = Registry.BLOCK.getKey(family.getBaseBlock());
+                //     signBlock((StandingSignBlock) family.get(BlockFamily.Variant.SIGN),(WallSignBlock) family.get(BlockFamily.Variant.WALL_SIGN),
+                //             modLoc("block/"+location.getPath()));
+                TrapDoorBlock trapDoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
+
+                ResourceLocation trapDoorName = BuiltInRegistries.ITEM.getKey(trapDoor.asItem());
+                String modelName = "block/"+trapDoorName.getPath()+"_bottom";
+                simpleBlockItem(trapDoor.asItem(),modLoc(modelName));
+
+                DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
+                generatedItem(door.asItem());
+                simpleBlockItem(family.get(Variant.SLAB).asItem());
+                simpleBlockItem(family.get(Variant.STAIRS).asItem());
+                simpleBlockItem(family.get(Variant.PRESSURE_PLATE).asItem());
+
+                ButtonBlock buttonBlock = (ButtonBlock) family.get(Variant.BUTTON);
+                String buttonName = name(buttonBlock.asItem());
+                buttonInventory(buttonName,modLoc("block/"+name));
+
+                FenceBlock fenceBlock = (FenceBlock) family.get(Variant.FENCE);
+                fenceInventory(name(fenceBlock.asItem()),modLoc("block/"+name));
+
+                simpleBlockItem(family.get(Variant.FENCE_GATE).asItem());
+            });
+
+
             generatedItem(AbyssalDecorItems.AMARANTH_SEEDS.get());
             generatedItem(AbyssalDecorItems.AMARANTH_PINNACLE.get());
 
@@ -117,6 +149,12 @@ class Datagen {
             generatedItem(AbyssalDecorItems.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE.get(),modLoc("block/framed_crystallized_glowstone"));
             simpleBlockItem(AbyssalDecorItems.VERMILION_BLOCK.get());
             generatedItem(AbyssalDecorItems.VERMILION_PANE.get(),modLoc("block/vermilion_block"));
+            simpleBlockItem(AbyssalDecorItems.FRAMED_VERMILION_BLOCK.get());
+            generatedItem(AbyssalDecorItems.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"));
+
+            simpleBlockItem(AbyssalDecorItems.WHITEWOOD_LOG.get());
+            simpleBlockItem(AbyssalDecorItems.WHITEWOOD_WOOD.get());
+            simpleBlockItem(AbyssalDecorItems.WHITEWOOD_TRIM.get());
         }
 
 
@@ -159,6 +197,35 @@ class Datagen {
 
         @Override
         protected void registerStatesAndModels() {
+
+            ExtendedBlockFamilies.getAllFamilies().forEach(family -> {
+                Block baseBlock = family.getBaseBlock();
+                simpleBlock(baseBlock);
+                ResourceLocation location =BuiltInRegistries.BLOCK.getKey(baseBlock);
+                ResourceLocation baseTexture =  modLoc("block/"+location.getPath());
+                //todo signBlock((StandingSignBlock) family.get(Variant.SIGN),(WallSignBlock) family.get(Variant.WALL_SIGN), baseTexture);
+
+                TrapDoorBlock trapdoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
+                ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(trapdoor);
+                trapdoorBlock(trapdoor,modLoc("block/"+trapLoc.getPath()),false);
+
+                DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
+
+                simpleDoorBlock(door);
+
+                StairBlock stairBlock = (StairBlock) family.get(Variant.STAIRS);
+                stairsBlock(stairBlock,baseTexture);
+                SlabBlock slabBlock = (SlabBlock) family.get(Variant.SLAB);
+                slabBlock(slabBlock,baseTexture,baseTexture);
+
+                buttonBlock((ButtonBlock) family.get(Variant.BUTTON),baseTexture);
+
+                pressurePlateBlock((PressurePlateBlock) family.get(Variant.PRESSURE_PLATE),baseTexture);
+                fenceBlock((FenceBlock) family.get(Variant.FENCE),baseTexture);
+                fenceGateBlock((FenceGateBlock)family.get(Variant.FENCE_GATE),baseTexture);
+            });
+
+
             getVariantBuilder(AbyssalDecorBlocks.AMARANTH.get()).forAllStates(
                     blockState -> {
                         int age = blockState.getValue(AmaranthBlock.AGE);
@@ -368,8 +435,23 @@ class Datagen {
 
             simpleBlock(AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK.get());
             paneBlock(AbyssalDecorBlocks.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"),modLoc("block/framed_vermilion_block"));
+
+            logBlock(AbyssalDecorBlocks.WHITEWOOD_LOG.get());
+            woodBlock(AbyssalDecorBlocks.WHITEWOOD_WOOD.get(),modLoc("block/whitewood_log"));
+            logBlock(AbyssalDecorBlocks.WHITEWOOD_TRIM.get());
         }
 
+        public void woodBlock(RotatedPillarBlock block,ResourceLocation texture) {
+            ModelFile modelFile = models().cubeColumn(name(block), texture, texture);
+            axisBlock(block, modelFile, modelFile);
+        }
+
+        public void simpleDoorBlock(DoorBlock door){
+            ResourceLocation doorLoc = BuiltInRegistries.BLOCK.getKey(door);
+            ResourceLocation top = modLoc("block/"+doorLoc.getPath()+"_top");
+            ResourceLocation bottom = modLoc("block/"+doorLoc.getPath()+"_bottom");
+            doorBlock(door,bottom,top);
+        }
 
         void doubleBlock(Block block,ModelFile top,ModelFile bottom) {
             getVariantBuilder(block).forAllStates(

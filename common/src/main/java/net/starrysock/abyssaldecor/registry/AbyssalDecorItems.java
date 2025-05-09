@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
 import net.starrysock.abyssaldecor.item.SupplierRecordItem;
@@ -131,6 +132,26 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem("rope_barrier",AbyssalDecorBlocks.ROPE_BARRIER);
     public static final RegistrySupplier<BlockItem> BARBED_WIRE_BARRIER = registerBlockItem("barbed_wire_barrier",AbyssalDecorBlocks.BARBED_WIRE_BARRIER);
 
+    ///////////////////////////////
+
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_LOG = registerBlockItem("whitewood_log",AbyssalDecorBlocks.WHITEWOOD_LOG);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_WOOD = registerBlockItem("whitewood_wood", AbyssalDecorBlocks.WHITEWOOD_WOOD);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PLANKS = registerBlockItem("whitewood_planks", AbyssalDecorBlocks.WHITEWOOD_PLANKS);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_STAIRS = registerBlockItem("whitewood_stairs",AbyssalDecorBlocks.WHITEWOOD_STAIRS);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_SLAB = registerBlockItem("whitewood_slab", AbyssalDecorBlocks.WHITEWOOD_SLAB);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_BUTTON = registerBlockItem("whitewood_button",AbyssalDecorBlocks.WHITEWOOD_BUTTON);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_TRIM = registerBlockItem("whitewood_trim", AbyssalDecorBlocks.WHITEWOOD_TRIM);
+    public static final RegistrySupplier<DoubleHighBlockItem> WHITEWOOD_DOOR = registerDoorItem("whitewood_door",AbyssalDecorBlocks.WHITEWOOD_DOOR);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_TRAPDOOR = registerBlockItem("whitewood_trapdoor",AbyssalDecorBlocks.WHITEWOOD_TRAPDOOR);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PRESSURE_PLATE = registerBlockItem("whitewood_pressure_plate",AbyssalDecorBlocks.WHITEWOOD_PRESSURE_PLATE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_FENCE = registerBlockItem("whitewood_fence",AbyssalDecorBlocks.WHITEWOOD_FENCE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_FENCE_GATE = registerBlockItem("whitewood_fence_gate",AbyssalDecorBlocks.WHITEWOOD_FENCE_GATE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_SIGN = AbyssalDecor.ITEMS.register("whitewood_sign",() ->
+            new SignItem(new Item.Properties().stacksTo(16), AbyssalDecorBlocks.WHITEWOOD_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get()));
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_HANGING_SIGN = AbyssalDecor.ITEMS.register("whitewood_hanging_sign",
+            () -> new HangingSignItem(AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+
     public static void register() {
         AbyssalDecor.ITEMS.register();
     }
@@ -150,4 +171,8 @@ public class AbyssalDecorItems {
     public static <B extends Block> RegistrySupplier<BlockItem> registerBlockItem(String name, Supplier<B> bSupplier) {
        return registerBlockItem(name,bSupplier,new Item.Properties());
     }
+    public static <B extends DoorBlock> RegistrySupplier<DoubleHighBlockItem> registerDoorItem(String name, Supplier<B> bSupplier) {
+        return AbyssalDecor.ITEMS.register(name,() -> new DoubleHighBlockItem(bSupplier.get(),new Item.Properties()));
+    }
+
 }

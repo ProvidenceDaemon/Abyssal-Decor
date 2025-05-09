@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "abyssaldecor:block/whitewood_slab"
+    },
+    "type=double": {
+      "model": "abyssaldecor:block/whitewood_planks"
+    },
+    "type=top": {
+      "model": "abyssaldecor:block/whitewood_slab_top"
+    }
+  }
+}

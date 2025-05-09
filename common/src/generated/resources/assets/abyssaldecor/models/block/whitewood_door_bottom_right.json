@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "abyssaldecor:block/whitewood_door_bottom",
+    "top": "abyssaldecor:block/whitewood_door_top"
+  }
+}

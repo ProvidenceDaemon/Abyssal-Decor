@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "abyssaldecor:block/whitewood_log_top",
+    "side": "abyssaldecor:block/whitewood_log"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "abyssaldecor:block/whitewoodplanks",
-    "top": "abyssaldecor:block/whitewoodplanks",
-    "side": "abyssaldecor:block/whitewoodplanks"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_glass_pane_post",
-  "textures": {
-    "edge": "abyssaldecor:block/blanktexture16x16",
-    "pane": "abyssaldecor:block/framedglowstonepane"
-  },
-  "render_type": "translucent"
-}
