@@ -219,6 +219,33 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> MOSSY_STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.MOSSY_STONE_TRAPDOOR);
     public static final RegistrySupplier<BlockItem> ORNATE_STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR);
 
+    public static final RegistrySupplier<BlockItem> IRON_SCONCE = registerBlockItem(AbyssalDecorBlocks.IRON_SCONCE);
+    public static final RegistrySupplier<BlockItem> ORNATE_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_IRON_BARS);
+
+    public static final RegistrySupplier<BlockItem> CORRUGATED_IRON = registerBlockItem(AbyssalDecorBlocks.CORRUGATED_IRON);
+    public static final RegistrySupplier<BlockItem> IRON_PILLAR = registerBlockItem(AbyssalDecorBlocks.IRON_PILLAR);
+    public static final RegistrySupplier<BlockItem> IRON_DUCT = registerBlockItem(AbyssalDecorBlocks.IRON_DUCT);
+    public static final RegistrySupplier<DoubleHighBlockItem> IRON_PUSH_DOOR = registerDoorItem(AbyssalDecorBlocks.IRON_PUSH_DOOR);
+
+    //////////////////////////
+
+    public static final RegistrySupplier<BlockItem> IRON_PANEL_BLOCK = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL);
+
+    public static final RegistrySupplier<BlockItem> IRON_PANEL_STAIRS = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_STAIRS);
+    public static final RegistrySupplier<BlockItem> IRON_PANEL_SLAB = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_SLAB);
+    public static final RegistrySupplier<BlockItem> IRON_PANEL_WALL = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_WALL);
+
+    public static final RegistrySupplier<BlockItem> DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_BARS);
+    public static final RegistrySupplier<BlockItem> DULL_IRON_SCONCE = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_SCONCE);
+    public static final RegistrySupplier<BlockItem> ORNATE_DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_DULL_IRON_BARS);
+    public static final RegistrySupplier<DoubleHighBlockItem> DULL_IRON_BAR_DOOR = registerDoorItem(AbyssalDecorBlocks.DULL_IRON_BAR_DOOR);
+    public static final RegistrySupplier<BlockItem> DULL_IRON_BAR_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_BAR_TRAPDOOR);
+
+    public static final RegistrySupplier<BlockItem> IRON_BALL = registerBlockItem(AbyssalDecorBlocks.IRON_BALL);
+    public static final RegistrySupplier<BlockItem> DULL_IRON_POST = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_POST);
+
+    public static final RegistrySupplier<BlockItem> GOLD_SCONCE = registerBlockItem(AbyssalDecorBlocks.GOLD_SCONCE);
+    public static final RegistrySupplier<BlockItem> GOLD_BARS = registerBlockItem(AbyssalDecorBlocks.GOLD_BARS);
 
     ///////////////////////////////
 

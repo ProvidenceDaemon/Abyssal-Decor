@@ -1,7 +1,7 @@
-// 1.20.1	2025-05-17T19:08:09.2826244	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2025-05-18T17:42:06.826032	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
 91298092263229c22ed59f780495f30405f23e44 data/abyssaldecor/tags/blocks/muckroot_growable.json
-d5f032ad426c8a48a349cddfc447acec4962e06a data/minecraft/tags/blocks/mineable/pickaxe.json
+514cb767badcd642b1904ebc040ff01066df0980 data/minecraft/tags/blocks/mineable/pickaxe.json
 79fc37ec372326b706fb3c2e0f642203b708ab72 data/minecraft/tags/blocks/planks.json
 1ce34638b206a3dbc77dd63c0aefd9ec53d9d687 data/minecraft/tags/blocks/slabs.json
 65ca8e72e6c7639393b4d4d01a44a724d1a7888c data/minecraft/tags/blocks/stairs.json

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "abyssaldecor:block/iron_panel",
+    "side": "abyssaldecor:block/iron_panel",
+    "top": "abyssaldecor:block/iron_panel"
+  }
+}

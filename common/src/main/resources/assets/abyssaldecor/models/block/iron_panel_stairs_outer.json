@@ -1,9 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "abyssaldecor:block/ironpanel",
-    "top": "abyssaldecor:block/ironpanel",
-    "side": "abyssaldecor:block/ironpanel"
-  },
-  "render_type": "solid"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/ironpanel",
-    "particle": "abyssaldecor:block/ironpanel"
-  },
-  "render_type": "solid"
-}

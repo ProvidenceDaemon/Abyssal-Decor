@@ -77,6 +77,12 @@ public class ExtendedBlockFamilies {
             .wall(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_WALL.get())
             .recipeUnlockedBy("has_smooth_black_pearl").getFamily();
 
+    public static final ExtendedBlockFamily IRON_PANEL = familyBuilder(AbyssalDecorBlocks.IRON_PANEL.get())
+            .stairs(AbyssalDecorBlocks.IRON_PANEL_STAIRS.get())
+            .slab(AbyssalDecorBlocks.IRON_PANEL_SLAB.get())
+            .wall(AbyssalDecorBlocks.IRON_PANEL_WALL.get())
+            .recipeUnlockedBy("has_iron_panel").getFamily();
+
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);
         ExtendedBlockFamily blockfamily = MAP.put(baseBlock, blockfamily$builder.getFamily());

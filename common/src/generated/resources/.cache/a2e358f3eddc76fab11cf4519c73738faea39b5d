@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-18T10:27:06.7698972	Item Models: abyssaldecor
+// 1.20.1	2025-05-18T17:52:18.4067444	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -42,6 +42,9 @@ c7004b73b691c63f590b3108a0e8252430e677a4 assets/abyssaldecor/models/item/gargoyl
 0fcf364a2d58f24ce0b50c02d4a3c7d780e9cf96 assets/abyssaldecor/models/item/hanging_web.json
 0bfcddf5831ef629821a9d87b733bdcff295ef3c assets/abyssaldecor/models/item/iron_barrier.json
 4558171659fa46fdce53cdca844fff92112b3e69 assets/abyssaldecor/models/item/iron_lamp.json
+3a31dd0942e94e89e01b1cb5ab7834a04a31ee62 assets/abyssaldecor/models/item/iron_panel.json
+529bfa5f325bd556177320149cfd483c39ad73b4 assets/abyssaldecor/models/item/iron_panel_slab.json
+f2f8e7bc161385aa2852aaf31352420ea6d140b9 assets/abyssaldecor/models/item/iron_panel_stairs.json
 144bbfe2057073be4c5be5c2317e27b03126ab58 assets/abyssaldecor/models/item/jade_lamp.json
 cce7a9cfd9e9dc816c9ad1fc05987b8a5a387724 assets/abyssaldecor/models/item/jade_lantern.json
 0e74c8afc23641ec495a08bc5e0ace66ca6e1fcd assets/abyssaldecor/models/item/lightbulb.json

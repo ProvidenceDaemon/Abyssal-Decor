@@ -61,7 +61,7 @@ class Datagen {
 
 
 
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(),
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.IRON_PANEL.get(),AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get(),AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get(),
                     AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get(),AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(),
                     AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get());
@@ -548,6 +548,8 @@ class Datagen {
             trapdoor(AbyssalDecorBlocks.STONE_TRAPDOOR.get());
             trapdoor(AbyssalDecorBlocks.MOSSY_STONE_TRAPDOOR.get());
             trapdoor(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR.get());
+
+            logBlockWithItem(AbyssalDecorBlocks.IRON_PILLAR.get());
         }
 
         void trapdoor(TrapDoorBlock block) {

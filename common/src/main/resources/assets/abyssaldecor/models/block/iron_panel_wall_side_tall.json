@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_wall_side_tall",
-  "textures": {
-    "wall": "abyssaldecor:block/ironpanel",
-    "particle": "abyssaldecor:block/ironpanel"
-  },
-  "render_type": "solid"
-}

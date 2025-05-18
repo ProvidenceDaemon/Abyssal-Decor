@@ -319,7 +319,68 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> MOSSY_STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("mossy_stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
     public static final RegistrySupplier<TrapDoorBlock> ORNATE_STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("ornate_stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
-    //////////
+    public static final RegistrySupplier<IronSconceBlock> IRON_SCONCE = AbyssalDecor.BLOCKS.register("iron_sconce",
+            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<IronBarsBlock> ORNATE_IRON_BARS = AbyssalDecor.BLOCKS.register("ornate_iron_bars",() -> ironBars());
+
+    public static final RegistrySupplier<RotatedPillarBlock> CORRUGATED_IRON = AbyssalDecor.BLOCKS.register("corrugated_iron",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+            .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> IRON_PILLAR = AbyssalDecor.BLOCKS.register("iron_pillar",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+
+    public static final RegistrySupplier<Block> IRON_DUCT = AbyssalDecor.BLOCKS.register("iron_duct",() ->
+            new Block(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<DoorBlock> IRON_PUSH_DOOR = AbyssalDecor.BLOCKS.register("iron_push_door",() ->
+            new DoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops()
+                    .strength(5.0F).noOcclusion().pushReaction(PushReaction.DESTROY), ModBlockSetTypes.PUSH_IRON));
+
+
+    static IronBarsBlock ironBars() {
+        return new IronBarsBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL).noOcclusion());
+    }
+
+
+    public static final RegistrySupplier<Block> IRON_PANEL = AbyssalDecor.BLOCKS.register("iron_panel",()
+            -> new Block(BlockBehaviour.Properties.of().strength(5,6).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> IRON_PANEL_STAIRS = AbyssalDecor.BLOCKS.register("iron_panel_stairs",() -> stairs(IRON_PANEL.get()));
+    public static final RegistrySupplier<SlabBlock> IRON_PANEL_SLAB = AbyssalDecor.BLOCKS.register("iron_panel_slab",() -> slab(IRON_PANEL.get()));
+    public static final RegistrySupplier<WallBlock> IRON_PANEL_WALL = AbyssalDecor.BLOCKS.register("iron_panel_wall",() -> wall(IRON_PANEL.get()));
+
+    //industrial lever
+
+    public static final RegistrySupplier<IronBarsBlock> DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("dull_iron_bars",() -> ironBars());
+
+    public static final RegistrySupplier<IronSconceBlock> DULL_IRON_SCONCE = AbyssalDecor.BLOCKS.register("dull_iron_sconce",() -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<IronBarsBlock> ORNATE_DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("ornate_dull_iron_bars",() -> ironBars());
+    public static final RegistrySupplier<DoorBlock> DULL_IRON_BAR_DOOR = AbyssalDecor.BLOCKS.register("dull_iron_bar_door",() ->
+            new DoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops()
+            .strength(5.0F).noOcclusion().pushReaction(PushReaction.DESTROY), ModBlockSetTypes.PUSH_IRON));
+
+    public static final RegistrySupplier<TrapDoorBlock> DULL_IRON_BAR_TRAPDOOR = AbyssalDecor.BLOCKS.register("dull_iron_bar_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
+
+    public static final RegistrySupplier<AbstractDirectionalBlock> IRON_BALL = AbyssalDecor.BLOCKS.register("iron_ball",() ->
+            new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> DULL_IRON_POST = AbyssalDecor.BLOCKS.register("dull_iron_post",() ->
+            new DullIronPostBlock(BlockBehaviour.Properties.of()));
+
+
+    public static final RegistrySupplier<IronSconceBlock> GOLD_SCONCE = AbyssalDecor.BLOCKS.register("gold_sconce",
+            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<IronBarsBlock> GOLD_BARS = AbyssalDecor.BLOCKS.register("gold_bars",() -> ironBars());
+
+
+    /////////
 
 
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
