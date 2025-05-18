@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/moldylogside",
-    "particle": "abyssaldecor:block/moldylogside"
-  },
-  "render_type": "solid"
-}

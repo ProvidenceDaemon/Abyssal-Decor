@@ -1,8 +1,0 @@
-{
-  "parent": "block/fence_inventory",
-  "textures": {
-    "texture": "abyssaldecor:block/blackwoodplanks",
-    "particle": "abyssaldecor:block/blackwoodplanks"
-  },
-  "render_type": "solid"
-}

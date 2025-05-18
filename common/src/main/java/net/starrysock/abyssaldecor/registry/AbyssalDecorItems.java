@@ -182,7 +182,29 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB);
     public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL);
 
-    /////////
+    ///////////////////////////////
+
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_LOG);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_WOOD = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_WOOD);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_PLANKS = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_PLANKS);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_STAIRS = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_STAIRS);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_SLAB = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_SLAB);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_BUTTON = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_BUTTON);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_TRIM = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_TRIM);
+    public static final RegistrySupplier<DoubleHighBlockItem> BLACKWOOD_DOOR = registerDoorItem(AbyssalDecorBlocks.BLACKWOOD_DOOR);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_TRAPDOOR);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_PRESSURE_PLATE = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_PRESSURE_PLATE);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_FENCE = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_FENCE);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_FENCE_GATE = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_FENCE_GATE);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_SIGN = AbyssalDecor.ITEMS.register("blackwood_sign",() ->
+            new SignItem(new Item.Properties().stacksTo(16), AbyssalDecorBlocks.BLACKWOOD_SIGN.get(), AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get()));
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_HANGING_SIGN = AbyssalDecor.ITEMS.register("blackwood_hanging_sign",
+            () -> new HangingSignItem(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(),
+                    AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+
+    /////////////////////////////////
+
 
     public static final RegistrySupplier<BlockItem> BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL);
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BLOCK);

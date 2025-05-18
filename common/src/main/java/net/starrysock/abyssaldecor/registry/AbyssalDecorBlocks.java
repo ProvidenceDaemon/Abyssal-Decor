@@ -248,6 +248,54 @@ public class AbyssalDecorBlocks {
 
     ///////
 
+    public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+    public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_WOOD = AbyssalDecor.BLOCKS.register("blackwood_wood", () ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<Block> BLACKWOOD_PLANKS = AbyssalDecor.BLOCKS.register("blackwood_planks", () -> planks(DyeColor.WHITE.getMapColor()));
+
+    public static final RegistrySupplier<StairBlock> BLACKWOOD_STAIRS = AbyssalDecor.BLOCKS.register("blackwood_stairs",
+            () -> stairs(BLACKWOOD_PLANKS.get()));
+
+    public static final RegistrySupplier<SlabBlock> BLACKWOOD_SLAB = AbyssalDecor.BLOCKS.register("blackwood_slab", () -> slab(BLACKWOOD_PLANKS.get()));
+
+    public static final RegistrySupplier<ButtonBlock> BLACKWOOD_BUTTON = AbyssalDecor.BLOCKS.register("blackwood_button",() -> Blocks.woodenButton(ModBlockSetTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_TRIM = AbyssalDecor.BLOCKS.register("blackwood_trim",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<DoorBlock> BLACKWOOD_DOOR = AbyssalDecor.BLOCKS.register("blackwood_door",() ->
+            woodDoor(BLACKWOOD_PLANKS.get(),ModBlockSetTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<TrapDoorBlock> BLACKWOOD_TRAPDOOR = AbyssalDecor.BLOCKS.register("blackwood_trapdoor",() ->
+            woodTrapdoor(ModBlockSetTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<PressurePlateBlock> BLACKWOOD_PRESSURE_PLATE = AbyssalDecor.BLOCKS.register("blackwood_pressure_plate",() ->
+            woodPressurePlate(BLACKWOOD_PLANKS.get(),ModBlockSetTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<FenceBlock> BLACKWOOD_FENCE = AbyssalDecor.BLOCKS.register("blackwood_fence",() ->
+            woodFence(BLACKWOOD_PLANKS.get()));
+
+    public static final RegistrySupplier<FenceGateBlock> BLACKWOOD_FENCE_GATE = AbyssalDecor.BLOCKS.register("blackwood_fence_gate",() ->
+            woodFenceGate(BLACKWOOD_PLANKS.get(),ModWoodTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<StandingSignBlock> BLACKWOOD_SIGN = AbyssalDecor.BLOCKS.register("blackwood_sign",() ->
+            sign(BLACKWOOD_PLANKS.get(),ModWoodTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<WallSignBlock> BLACKWOOD_WALL_SIGN = AbyssalDecor.BLOCKS.register("blackwood_wall_sign",() ->
+            wallSign(BLACKWOOD_SIGN.get(),ModWoodTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<CeilingHangingSignBlock> BLACKWOOD_HANGING_SIGN = AbyssalDecor.BLOCKS.register("blackwood_hanging_sign",() ->
+            hangingSign(BLACKWOOD_PLANKS.get(),ModWoodTypes.BLACKWOOD));
+
+    public static final RegistrySupplier<WallHangingSignBlock> BLACKWOOD_WALL_HANGING_SIGN = AbyssalDecor.BLOCKS.register("blackwood_wall_hanging_sign",() ->
+            wallHangingSign(BLACKWOOD_HANGING_SIGN.get(),ModWoodTypes.BLACKWOOD));
+
+    ////////////////////
+
+
     public static final RegistrySupplier<Block> BLACK_PEARL = AbyssalDecor.BLOCKS.register("black_pearl",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of().strength(.5f)));
 
     public static final RegistrySupplier<Block> BLACK_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("black_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));

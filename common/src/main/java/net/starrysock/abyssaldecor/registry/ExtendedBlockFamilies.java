@@ -25,6 +25,18 @@ public class ExtendedBlockFamilies {
             .trapdoor(AbyssalDecorBlocks.WHITEWOOD_TRAPDOOR.get()).recipeGroupPrefix(RECIPE_GROUP_PREFIX_WOODEN)
             .recipeUnlockedBy(RECIPE_UNLOCKED_BY_HAS_PLANKS).getFamily();
 
+    public static final ExtendedBlockFamily BLACKWOOD_PLANKS = familyBuilder(AbyssalDecorBlocks.BLACKWOOD_PLANKS.get())
+            .button(AbyssalDecorBlocks.BLACKWOOD_BUTTON.get())
+            .fence(AbyssalDecorBlocks.BLACKWOOD_FENCE.get())
+            .fenceGate(AbyssalDecorBlocks.BLACKWOOD_FENCE_GATE.get())
+            .pressurePlate(AbyssalDecorBlocks.BLACKWOOD_PRESSURE_PLATE.get())
+            .sign(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(), AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get())
+            .hangingSign(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get())
+            .slab(AbyssalDecorBlocks.BLACKWOOD_SLAB.get())
+            .stairs(AbyssalDecorBlocks.BLACKWOOD_STAIRS.get()).door(AbyssalDecorBlocks.BLACKWOOD_DOOR.get())
+            .trapdoor(AbyssalDecorBlocks.BLACKWOOD_TRAPDOOR.get()).recipeGroupPrefix(RECIPE_GROUP_PREFIX_WOODEN)
+            .recipeUnlockedBy(RECIPE_UNLOCKED_BY_HAS_PLANKS).getFamily();
+
     public static final ExtendedBlockFamily WHITE_PEARL = familyBuilder(AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get())
             .stairs(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get())
             .slab(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get())

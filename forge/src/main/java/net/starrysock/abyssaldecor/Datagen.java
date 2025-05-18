@@ -189,6 +189,10 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.WHITEWOOD_WOOD.get());
             simpleBlockItem(AbyssalDecorItems.WHITEWOOD_TRIM.get());
 
+            simpleBlockItem(AbyssalDecorItems.BLACKWOOD_LOG.get());
+            simpleBlockItem(AbyssalDecorItems.BLACKWOOD_WOOD.get());
+            simpleBlockItem(AbyssalDecorItems.BLACKWOOD_TRIM.get());
+
             generatedItem(AbyssalDecorItems.WHITE_PEARL.get(),modLoc("item/white_pearl"));
             generatedItem(AbyssalDecorItems.BLACK_PEARL.get(),modLoc("item/black_pearl"));
 
@@ -497,6 +501,10 @@ class Datagen {
             logBlock(AbyssalDecorBlocks.WHITEWOOD_LOG.get());
             woodBlock(AbyssalDecorBlocks.WHITEWOOD_WOOD.get(),modLoc("block/whitewood_log"));
             logBlock(AbyssalDecorBlocks.WHITEWOOD_TRIM.get());
+
+            logBlock(AbyssalDecorBlocks.BLACKWOOD_LOG.get());
+            woodBlock(AbyssalDecorBlocks.BLACKWOOD_WOOD.get(),modLoc("block/blackwood_log"));
+            logBlock(AbyssalDecorBlocks.BLACKWOOD_TRIM.get());
 
             logBlock(AbyssalDecorBlocks.WHITE_PEARL_PILLAR.get());
             logBlock(AbyssalDecorBlocks.BLACK_PEARL_PILLAR.get());

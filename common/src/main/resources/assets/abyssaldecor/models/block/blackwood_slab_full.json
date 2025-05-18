@@ -1,9 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "bottom": "abyssaldecor:block/blackwoodplanks",
-    "top": "abyssaldecor:block/blackwoodplanks",
-    "side": "abyssaldecor:block/blackwoodplanks"
-  },
-  "render_type": "solid"
-}
