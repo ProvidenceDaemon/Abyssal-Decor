@@ -201,6 +201,8 @@ class Datagen {
 
             generatedItem(AbyssalDecorItems.WHITE_PEARL_BARS.get(),modLoc("block/white_pearl_bars_top"));
 
+            generatedItem(AbyssalDecorItems.SHELL.get(),modLoc("block/shelltop"));
+
         }
 
 
@@ -522,7 +524,65 @@ class Datagen {
             simplestBlockWithItem(AbyssalDecorBlocks.MIXED_PEARL_TILES.get());
             simplestBlockWithItem(AbyssalDecorBlocks.STARRY_PEARL_TILES.get());
 
+            clam(AbyssalDecorBlocks.CLAM.get());
+            clam(AbyssalDecorBlocks.CLAM_WITH_PEARL.get());
 
+            logBlockWithItem(AbyssalDecorBlocks.PEARLY_GLASS.get());
+            logBlockWithItem(AbyssalDecorBlocks.SUNNY_PEARLY_GLASS.get());
+            logBlockWithItem(AbyssalDecorBlocks.AZURE_PEARLY_GLASS.get());
+            logBlockWithItem(AbyssalDecorBlocks.VERDANT_PEARLY_GLASS.get());
+            logBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS.get());
+            logBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_PEARLY_GLASS.get());
+
+            simplePaneBlock(AbyssalDecorBlocks.PEARLY_GLASS_PANE.get());
+            simplePaneBlock(AbyssalDecorBlocks.SUNNY_PEARLY_GLASS_PANE.get());
+            simplePaneBlock(AbyssalDecorBlocks.AZURE_PEARLY_GLASS_PANE.get());
+            simplePaneBlock(AbyssalDecorBlocks.VERDANT_PEARLY_GLASS_PANE.get());
+            simplePaneBlock(AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS_PANE.get());
+            simplePaneBlock(AbyssalDecorBlocks.BLACKWOOD_PEARLY_GLASS_PANE.get());
+
+        }
+
+        void logBlockWithItem(RotatedPillarBlock block) {
+            logBlock(block);
+            simpleBlockItem(block, models().getExistingFile(modLoc(name(block))));
+        }
+
+        void simplePaneBlock(IronBarsBlock block) {
+            String name = name(block);
+            name = name.substring(0,name.length()-5);
+            paneBlock(block,modLoc("block/"+name),modLoc("block/"+name));
+            ModelFile generated = itemModels().getExistingFile(mcLoc("item/generated"));
+            itemModels().getBuilder(name+"_pane").parent(generated)
+                    .texture(
+                    "layer0",modLoc("block/"+name));
+        }
+
+        //{
+        //  "parent": "abyssaldecor:custom/clamemptyclosed",
+        //  "textures": {
+        //    "all": "abyssaldecor:block/clam1",
+        //    "particle": "abyssaldecor:block/clam1",
+        //    "0": "abyssaldecor:block/clam1",
+        //    "1": "abyssaldecor:block/clam2"
+        //  },
+        //  "render_type": "cutout_mipped"
+        //}
+        public void clam(ClamBlock clamBlock) {
+            String name = name(clamBlock);
+            getVariantBuilder(clamBlock).forAllStatesExcept(state -> {
+                boolean open = state.getValue(ClamBlock.OPEN);
+                ResourceLocation location = open ? modLoc("custom/clamemptyopen") : modLoc("custom/clamemptyclosed");
+                ModelFile file = models().withExistingParent(name +(open ? "_open":"_closed"),location)
+                        .texture("all",modLoc("block/clam1"))
+                        .texture("particle",modLoc("block/clam1"))
+                        .texture("0",modLoc("block/clam1"))
+                        .texture("1",modLoc("block/clam2"))
+                        ;
+                return ConfiguredModel.builder().modelFile(file).rotationY(getRotation(state.getValue(ClamBlock.FACING)).y).build();
+            });
+
+            simpleBlockItem(clamBlock,new ModelFile.UncheckedModelFile(modLoc(name +"_closed")));
         }
 
         public void crackedBlock(CrackedBlock block){

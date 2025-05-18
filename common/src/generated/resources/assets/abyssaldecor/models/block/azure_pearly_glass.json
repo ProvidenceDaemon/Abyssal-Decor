@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/azure_pearly_glass_top",
+    "side": "abyssaldecor:block/azure_pearly_glass"
+  }
+}

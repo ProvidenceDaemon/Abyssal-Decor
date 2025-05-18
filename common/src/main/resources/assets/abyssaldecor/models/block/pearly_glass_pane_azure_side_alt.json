@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_glass_pane_side_alt",
-  "textures": {
-    "edge": "abyssaldecor:block/pearlyglasspaneazure",
-    "pane": "abyssaldecor:block/pearlyglasspaneazure"
-  },
-  "render_type": "solid"
-}

@@ -70,5 +70,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.FRAMED_VERMILION_PANE.get(),RenderType.translucent());
 
         renderTypes.accept(AbyssalDecorBlocks.WHITE_PEARL_BARS.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.CLAM.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.CLAM_WITH_PEARL.get(),RenderType.cutoutMipped());
     }
 }

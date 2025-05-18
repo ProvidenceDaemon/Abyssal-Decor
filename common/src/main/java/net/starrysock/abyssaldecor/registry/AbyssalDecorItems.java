@@ -191,6 +191,26 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> MIXED_PEARL_TILES = registerBlockItem(AbyssalDecorBlocks.MIXED_PEARL_TILES);
     public static final RegistrySupplier<BlockItem> STARRY_PEARL_TILES = registerBlockItem(AbyssalDecorBlocks.STARRY_PEARL_TILES);
 
+    public static final RegistrySupplier<BlockItem> CLAM = registerBlockItem(AbyssalDecorBlocks.CLAM);
+    public static final RegistrySupplier<BlockItem> CLAM_WITH_PEARL = registerBlockItem(AbyssalDecorBlocks.CLAM_WITH_PEARL);
+    public static final RegistrySupplier<Item> SHELL = AbyssalDecor.ITEMS.register("shell",() -> new Item(new Item.Properties()));
+
+    /////////////////////////////////////
+
+    public static final RegistrySupplier<BlockItem> PEARLY_GLASS = registerBlockItem(AbyssalDecorBlocks.PEARLY_GLASS);
+    public static final RegistrySupplier<BlockItem> SUNNY_PEARLY_GLASS = registerBlockItem(AbyssalDecorBlocks.SUNNY_PEARLY_GLASS);
+    public static final RegistrySupplier<BlockItem> AZURE_PEARLY_GLASS = registerBlockItem(AbyssalDecorBlocks.AZURE_PEARLY_GLASS);
+    public static final RegistrySupplier<BlockItem> VERDANT_PEARLY_GLASS = registerBlockItem(AbyssalDecorBlocks.VERDANT_PEARLY_GLASS);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PEARLY_GLASS = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS);
+
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_PEARLY_GLASS = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_PEARLY_GLASS);
+    public static final RegistrySupplier<BlockItem> PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.PEARLY_GLASS_PANE);
+    public static final RegistrySupplier<BlockItem> SUNNY_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.SUNNY_PEARLY_GLASS_PANE);
+    public static final RegistrySupplier<BlockItem> AZURE_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.AZURE_PEARLY_GLASS_PANE);
+    public static final RegistrySupplier<BlockItem> VERDANT_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.VERDANT_PEARLY_GLASS_PANE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS_PANE);
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_PEARLY_GLASS_PANE);
+
     ///////////////////////////////
 
     public static final RegistrySupplier<BlockItem> BLACKWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_LOG);

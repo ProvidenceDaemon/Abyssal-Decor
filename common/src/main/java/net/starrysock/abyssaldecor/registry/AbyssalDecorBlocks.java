@@ -259,7 +259,49 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> MIXED_PEARL_TILES = AbyssalDecor.BLOCKS.register("mixed_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
     public static final RegistrySupplier<Block> STARRY_PEARL_TILES = AbyssalDecor.BLOCKS.register("starry_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
 
+    public static final RegistrySupplier<ClamBlock> CLAM = AbyssalDecor.BLOCKS.register("clam",() -> new ClamBlock(BlockBehaviour.Properties.of(),false));
+    public static final RegistrySupplier<ClamBlock> CLAM_WITH_PEARL = AbyssalDecor.BLOCKS.register("clam_with_pearl",() -> new ClamBlock(BlockBehaviour.Properties.of(),true));
+
     ///////
+
+    public static final RegistrySupplier<RotatedPillarBlock> PEARLY_GLASS = AbyssalDecor.BLOCKS.register("pearly_glass",
+            () -> new RotatedPillarBlock(glassLike()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> SUNNY_PEARLY_GLASS = AbyssalDecor.BLOCKS.register("sunny_pearly_glass",
+            () -> new RotatedPillarBlock(glassLike()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> AZURE_PEARLY_GLASS = AbyssalDecor.BLOCKS.register("azure_pearly_glass",
+            () -> new RotatedPillarBlock(glassLike()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> VERDANT_PEARLY_GLASS = AbyssalDecor.BLOCKS.register("verdant_pearly_glass",
+            () -> new RotatedPillarBlock(glassLike()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> WHITEWOOD_PEARLY_GLASS = AbyssalDecor.BLOCKS.register("whitewood_pearly_glass",
+            () -> new RotatedPillarBlock(glassLike()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_PEARLY_GLASS = AbyssalDecor.BLOCKS.register("blackwood_pearly_glass",
+            () -> new RotatedPillarBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("pearly_glass_pane",
+            () -> new IronBarsBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> SUNNY_PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("sunny_pearly_glass_pane",
+            () -> new IronBarsBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> AZURE_PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("azure_pearly_glass_pane",
+            () -> new IronBarsBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> VERDANT_PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("verdant_pearly_glass_pane",
+            () -> new IronBarsBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> WHITEWOOD_PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("whitewood_pearly_glass_pane",
+            () -> new IronBarsBlock(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> BLACKWOOD_PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("blackwood_pearly_glass_pane",
+            () -> new IronBarsBlock(glassLike()));
+
+    //////////
+
 
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_WOOD = AbyssalDecor.BLOCKS.register("blackwood_wood", () ->

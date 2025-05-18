@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-18T01:23:22.2726926	Item Models: abyssaldecor
+// 1.20.1	2025-05-18T10:27:06.7698972	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -53,6 +53,7 @@ cce7a9cfd9e9dc816c9ad1fc05987b8a5a387724 assets/abyssaldecor/models/item/jade_la
 21b86d2ca8568af1ed4fec5b85f5f82268ff4cf9 assets/abyssaldecor/models/item/rainbow_lamp.json
 6efc7d7a39e6f5b61bc48a82aa402c1f0771ec54 assets/abyssaldecor/models/item/seabrass_ore.json
 4d3b1135553e5a91efca1a840feb7b8addaacd15 assets/abyssaldecor/models/item/seaglass_lamp.json
+05e972dc998245b8c3c12cdb68bdd5d891863839 assets/abyssaldecor/models/item/shell.json
 e9a5798055eeba46b58c6ec17ced7b4086336ce1 assets/abyssaldecor/models/item/smooth_black_pearl_block.json
 021acd7b5fc73fadfd76e834849a78126e282412 assets/abyssaldecor/models/item/smooth_black_pearl_slab.json
 8d87af555ee0822b44674a6932bbcdff848c373a assets/abyssaldecor/models/item/smooth_black_pearl_stairs.json
