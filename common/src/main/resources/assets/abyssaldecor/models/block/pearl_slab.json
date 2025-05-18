@@ -1,9 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "abyssaldecor:block/pearlblockcut",
-    "top": "abyssaldecor:block/pearlblockcut",
-    "side": "abyssaldecor:block/pearlblockcut"
-  },
-  "render_type": "solid"
-}

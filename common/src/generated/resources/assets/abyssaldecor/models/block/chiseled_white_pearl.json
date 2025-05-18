@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abyssaldecor:block/chiseled_white_pearl"
+  }
+}

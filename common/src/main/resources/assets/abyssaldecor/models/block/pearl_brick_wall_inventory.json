@@ -1,8 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "abyssaldecor:block/pearlbricks",
-    "particle": "abyssaldecor:block/pearlbricks"
-  },
-  "render_type": "solid"
-}

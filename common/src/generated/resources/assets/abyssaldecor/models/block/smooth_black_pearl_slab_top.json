@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "abyssaldecor:block/smooth_black_pearl_block",
+    "side": "abyssaldecor:block/smooth_black_pearl_block",
+    "top": "abyssaldecor:block/smooth_black_pearl_block"
+  }
+}

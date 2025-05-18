@@ -58,6 +58,29 @@ class Datagen {
         protected void addTags(HolderLookup.Provider arg) {
             tag(ModTags.Blocks.MUCKROOT_GROWABLE).add(Blocks.FARMLAND);
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
+
+
+
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(),
+                    AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get(),AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get(),
+                    AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get(),AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(),
+                    AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get());
+
+            tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
+
+            tag(BlockTags.SLABS).add(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(),AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),
+                    AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get());
+
+            tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(),AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
+                    AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get());
+
+            tag(BlockTags.WALLS).add(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get(),AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get()
+            ,AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get());
+
+            tag(BlockTags.WOODEN_BUTTONS).add(AbyssalDecorBlocks.WHITEWOOD_BUTTON.get());
+
+            tag(BlockTags.WOODEN_SLABS).add(AbyssalDecorBlocks.WHITEWOOD_SLAB.get());
+            tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
         }
     }
 
@@ -78,26 +101,36 @@ class Datagen {
                 //     ResourceLocation location = Registry.BLOCK.getKey(family.getBaseBlock());
                 //     signBlock((StandingSignBlock) family.get(BlockFamily.Variant.SIGN),(WallSignBlock) family.get(BlockFamily.Variant.WALL_SIGN),
                 //             modLoc("block/"+location.getPath()));
-                TrapDoorBlock trapDoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
 
-                ResourceLocation trapDoorName = BuiltInRegistries.ITEM.getKey(trapDoor.asItem());
-                String modelName = "block/"+trapDoorName.getPath()+"_bottom";
-                simpleBlockItem(trapDoor.asItem(),modLoc(modelName));
+                if (family.exists(Variant.TRAPDOOR)) {
 
-                DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
-                generatedItem(door.asItem());
+                    TrapDoorBlock trapDoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
+
+                    ResourceLocation trapDoorName = BuiltInRegistries.ITEM.getKey(trapDoor.asItem());
+                    String modelName = "block/" + trapDoorName.getPath() + "_bottom";
+                    simpleBlockItem(trapDoor.asItem(), modLoc(modelName));
+                }
+
+                if (family.exists(Variant.DOOR)) {
+                    DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
+                    generatedItem(door.asItem());
+                }
                 simpleBlockItem(family.get(Variant.SLAB).asItem());
                 simpleBlockItem(family.get(Variant.STAIRS).asItem());
-                simpleBlockItem(family.get(Variant.PRESSURE_PLATE).asItem());
 
-                ButtonBlock buttonBlock = (ButtonBlock) family.get(Variant.BUTTON);
-                String buttonName = name(buttonBlock.asItem());
-                buttonInventory(buttonName,modLoc("block/"+name));
+                if (family.exists(Variant.PRESSURE_PLATE)) {
 
-                FenceBlock fenceBlock = (FenceBlock) family.get(Variant.FENCE);
-                fenceInventory(name(fenceBlock.asItem()),modLoc("block/"+name));
+                    simpleBlockItem(family.get(Variant.PRESSURE_PLATE).asItem());
 
-                simpleBlockItem(family.get(Variant.FENCE_GATE).asItem());
+                    ButtonBlock buttonBlock = (ButtonBlock) family.get(Variant.BUTTON);
+                    String buttonName = name(buttonBlock.asItem());
+                    buttonInventory(buttonName, modLoc("block/" + name));
+
+                    FenceBlock fenceBlock = (FenceBlock) family.get(Variant.FENCE);
+                    fenceInventory(name(fenceBlock.asItem()), modLoc("block/" + name));
+
+                    simpleBlockItem(family.get(Variant.FENCE_GATE).asItem());
+                }
             });
 
 
@@ -155,6 +188,12 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.WHITEWOOD_LOG.get());
             simpleBlockItem(AbyssalDecorItems.WHITEWOOD_WOOD.get());
             simpleBlockItem(AbyssalDecorItems.WHITEWOOD_TRIM.get());
+
+            generatedItem(AbyssalDecorItems.WHITE_PEARL.get(),modLoc("item/white_pearl"));
+            generatedItem(AbyssalDecorItems.BLACK_PEARL.get(),modLoc("item/black_pearl"));
+
+            simpleBlockItem(AbyssalDecorItems.WHITE_PEARL_PILLAR.get());
+            simpleBlockItem(AbyssalDecorItems.BLACK_PEARL_PILLAR.get());
         }
 
 
@@ -205,24 +244,43 @@ class Datagen {
                 ResourceLocation baseTexture =  modLoc("block/"+location.getPath());
                 //todo signBlock((StandingSignBlock) family.get(Variant.SIGN),(WallSignBlock) family.get(Variant.WALL_SIGN), baseTexture);
 
-                TrapDoorBlock trapdoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
-                ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(trapdoor);
-                trapdoorBlock(trapdoor,modLoc("block/"+trapLoc.getPath()),false);
+                if (family.exists(Variant.TRAPDOOR)) {
+                    TrapDoorBlock trapdoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
+                    ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(trapdoor);
+                    trapdoorBlock(trapdoor, modLoc("block/" + trapLoc.getPath()), false);
+                }
 
-                DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
+                if (family.exists(Variant.DOOR)) {
+                    DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
 
-                simpleDoorBlock(door);
+                    simpleDoorBlock(door);
+                }
+
+
+                if (family.exists(Variant.CHISELED)) {
+                    Block chiseled = family.get(Variant.CHISELED);
+                    simplestBlockWithItem(chiseled);
+                }
 
                 StairBlock stairBlock = (StairBlock) family.get(Variant.STAIRS);
                 stairsBlock(stairBlock,baseTexture);
                 SlabBlock slabBlock = (SlabBlock) family.get(Variant.SLAB);
                 slabBlock(slabBlock,baseTexture,baseTexture);
 
-                buttonBlock((ButtonBlock) family.get(Variant.BUTTON),baseTexture);
+                if (family.exists(Variant.BUTTON)) {
 
-                pressurePlateBlock((PressurePlateBlock) family.get(Variant.PRESSURE_PLATE),baseTexture);
-                fenceBlock((FenceBlock) family.get(Variant.FENCE),baseTexture);
-                fenceGateBlock((FenceGateBlock)family.get(Variant.FENCE_GATE),baseTexture);
+                    buttonBlock((ButtonBlock) family.get(Variant.BUTTON), baseTexture);
+
+                    pressurePlateBlock((PressurePlateBlock) family.get(Variant.PRESSURE_PLATE), baseTexture);
+                    fenceBlock((FenceBlock) family.get(Variant.FENCE), baseTexture);
+                    fenceGateBlock((FenceGateBlock) family.get(Variant.FENCE_GATE), baseTexture);
+                }
+
+                if (family.exists(Variant.WALL)) {
+                    WallBlock wallBlock = (WallBlock)family.get(Variant.WALL);
+                    wallBlock(wallBlock,baseTexture);
+                    simpleBlockItem(wallBlock,models().wallInventory(BuiltInRegistries.BLOCK.getKey(wallBlock).getPath(),baseTexture));
+                }
             });
 
 
@@ -439,6 +497,12 @@ class Datagen {
             logBlock(AbyssalDecorBlocks.WHITEWOOD_LOG.get());
             woodBlock(AbyssalDecorBlocks.WHITEWOOD_WOOD.get(),modLoc("block/whitewood_log"));
             logBlock(AbyssalDecorBlocks.WHITEWOOD_TRIM.get());
+
+            logBlock(AbyssalDecorBlocks.WHITE_PEARL_PILLAR.get());
+            logBlock(AbyssalDecorBlocks.BLACK_PEARL_PILLAR.get());
+
+            simplestBlockWithItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK.get());
         }
 
         public void woodBlock(RotatedPillarBlock block,ResourceLocation texture) {

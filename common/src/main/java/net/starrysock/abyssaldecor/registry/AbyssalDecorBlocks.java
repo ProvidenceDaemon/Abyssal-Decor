@@ -216,6 +216,66 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<WallHangingSignBlock> WHITEWOOD_WALL_HANGING_SIGN = AbyssalDecor.BLOCKS.register("whitewood_wall_hanging_sign",() ->
             wallHangingSign(WHITEWOOD_HANGING_SIGN.get(),ModWoodTypes.WHITEWOOD));
 
+    ///////
+
+    public static final RegistrySupplier<Block> WHITE_PEARL = AbyssalDecor.BLOCKS.register("white_pearl",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of().strength(.5f)));
+
+    public static final RegistrySupplier<Block> WHITE_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("white_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> WHITE_PEARL_STAIRS = AbyssalDecor.BLOCKS.register("white_pearl_stairs",() -> stairs(WHITE_PEARL.get()));
+    public static final RegistrySupplier<SlabBlock> WHITE_PEARL_SLAB = AbyssalDecor.BLOCKS.register("white_pearl_slab",() -> slab(WHITE_PEARL.get()));
+    public static final RegistrySupplier<Block> CHISELED_WHITE_PEARL = AbyssalDecor.BLOCKS.register("chiseled_white_pearl",() -> new Block(BlockBehaviour.Properties.copy(WHITE_PEARL_BLOCK.get())));
+    public static final RegistrySupplier<WallBlock> WHITE_PEARL_WALL = AbyssalDecor.BLOCKS.register("white_pearl_wall",() -> wall(WHITE_PEARL.get()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> WHITE_PEARL_PILLAR = AbyssalDecor.BLOCKS.register("white_pearl_pillar",() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(WHITE_PEARL_BLOCK.get())));
+    public static final RegistrySupplier<Block> CUT_WHITE_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("cut_white_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    ///////
+
+    public static final RegistrySupplier<Block> WHITE_PEARL_BRICKS = AbyssalDecor.BLOCKS.register("white_pearl_bricks",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> WHITE_PEARL_BRICK_STAIRS = AbyssalDecor.BLOCKS.register("white_pearl_brick_stairs",() -> stairs(WHITE_PEARL_BRICKS.get()));
+    public static final RegistrySupplier<SlabBlock> WHITE_PEARL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("white_pearl_brick_slab",() -> slab(WHITE_PEARL_BRICKS.get()));
+    public static final RegistrySupplier<WallBlock> WHITE_PEARL_BRICK_WALL = AbyssalDecor.BLOCKS.register("white_pearl_brick_wall",() -> wall(WHITE_PEARL_BRICKS.get()));
+
+    ///////
+
+    public static final RegistrySupplier<Block> SMOOTH_WHITE_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("smooth_white_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> SMOOTH_WHITE_PEARL_STAIRS = AbyssalDecor.BLOCKS.register("smooth_white_pearl_stairs",() -> stairs(SMOOTH_WHITE_PEARL_BLOCK.get()));
+    public static final RegistrySupplier<SlabBlock> SMOOTH_WHITE_PEARL_SLAB = AbyssalDecor.BLOCKS.register("smooth_white_pearl_slab",() -> slab(SMOOTH_WHITE_PEARL_BLOCK.get()));
+    public static final RegistrySupplier<WallBlock> SMOOTH_WHITE_PEARL_WALL = AbyssalDecor.BLOCKS.register("smooth_white_pearl_wall",() -> wall(SMOOTH_WHITE_PEARL_BLOCK.get()));
+
+    ///////
+
+    public static final RegistrySupplier<Block> BLACK_PEARL = AbyssalDecor.BLOCKS.register("black_pearl",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of().strength(.5f)));
+
+    public static final RegistrySupplier<Block> BLACK_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("black_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> BLACK_PEARL_STAIRS = AbyssalDecor.BLOCKS.register("black_pearl_stairs",() -> stairs(BLACK_PEARL.get()));
+    public static final RegistrySupplier<SlabBlock> BLACK_PEARL_SLAB = AbyssalDecor.BLOCKS.register("black_pearl_slab",() -> slab(BLACK_PEARL.get()));
+    public static final RegistrySupplier<Block> CHISELED_BLACK_PEARL = AbyssalDecor.BLOCKS.register("chiseled_black_pearl",() -> new Block(BlockBehaviour.Properties.copy(BLACK_PEARL_BLOCK.get())));
+    public static final RegistrySupplier<WallBlock> BLACK_PEARL_WALL = AbyssalDecor.BLOCKS.register("black_pearl_wall",() -> wall(BLACK_PEARL.get()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> BLACK_PEARL_PILLAR = AbyssalDecor.BLOCKS.register("black_pearl_pillar",() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BLACK_PEARL_BLOCK.get())));
+    public static final RegistrySupplier<Block> CUT_BLACK_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("cut_black_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    ///////
+
+    public static final RegistrySupplier<Block> BLACK_PEARL_BRICKS = AbyssalDecor.BLOCKS.register("black_pearl_bricks",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> BLACK_PEARL_BRICK_STAIRS = AbyssalDecor.BLOCKS.register("black_pearl_brick_stairs",() -> stairs(BLACK_PEARL_BRICKS.get()));
+    public static final RegistrySupplier<SlabBlock> BLACK_PEARL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("black_pearl_brick_slab",() -> slab(BLACK_PEARL_BRICKS.get()));
+    public static final RegistrySupplier<WallBlock> BLACK_PEARL_BRICK_WALL = AbyssalDecor.BLOCKS.register("black_pearl_brick_wall",() -> wall(BLACK_PEARL_BRICKS.get()));
+
+    ///////
+
+    public static final RegistrySupplier<Block> SMOOTH_BLACK_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("smooth_black_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<StairBlock> SMOOTH_BLACK_PEARL_STAIRS = AbyssalDecor.BLOCKS.register("smooth_black_pearl_stairs",() -> stairs(SMOOTH_BLACK_PEARL_BLOCK.get()));
+    public static final RegistrySupplier<SlabBlock> SMOOTH_BLACK_PEARL_SLAB = AbyssalDecor.BLOCKS.register("smooth_black_pearl_slab",() -> slab(SMOOTH_BLACK_PEARL_BLOCK.get()));
+    public static final RegistrySupplier<WallBlock> SMOOTH_BLACK_PEARL_WALL = AbyssalDecor.BLOCKS.register("smooth_black_pearl_wall",() -> wall(SMOOTH_BLACK_PEARL_BLOCK.get()));
+
     static Block planks(MapColor mapColor) {
         return new Block(BlockBehaviour.Properties.of().mapColor(mapColor)
                 .instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava());
@@ -236,6 +296,10 @@ public class AbyssalDecorBlocks {
     static TrapDoorBlock woodTrapdoor(BlockSetType blockSetType) {
         return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(3.0F)
                 .noOcclusion().isValidSpawn(Blocks::never).ignitedByLava(), blockSetType);
+    }
+
+    static WallBlock wall(Block parent) {
+        return  new WallBlock(BlockBehaviour.Properties.copy(parent).forceSolidOn());
     }
 
     static PressurePlateBlock woodPressurePlate(Block parent,BlockSetType blockSetType) {

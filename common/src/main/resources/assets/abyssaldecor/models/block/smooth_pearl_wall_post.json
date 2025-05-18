@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_wall_post",
-  "textures": {
-    "wall": "abyssaldecor:block/pearlblocksmooth",
-    "particle": "abyssaldecor:block/pearlblocksmooth"
-  },
-  "render_type": "solid"
-}

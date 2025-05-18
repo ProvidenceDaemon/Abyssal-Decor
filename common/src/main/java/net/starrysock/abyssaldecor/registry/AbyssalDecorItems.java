@@ -14,50 +14,50 @@ import java.util.function.Supplier;
 
 public class AbyssalDecorItems {
 
-    public static final RegistrySupplier<BlockItem> SOLAR_ROD = registerBlockItem("solar_rod",AbyssalDecorBlocks.SOLAR_ROD);
-    public static final RegistrySupplier<BlockItem> STELLAR_ROD = registerBlockItem("stellar_rod",AbyssalDecorBlocks.STELLAR_ROD);
-    public static final RegistrySupplier<BlockItem> TERRESTRIAL_ROD = registerBlockItem("terrestrial_rod",AbyssalDecorBlocks.TERRESTRIAL_ROD);
-    public static final RegistrySupplier<BlockItem> LUNAR_ROD = registerBlockItem("lunar_rod",AbyssalDecorBlocks.LUNAR_ROD);
-    public static final RegistrySupplier<BlockItem> ETHEREAL_ROD = registerBlockItem("ethereal_rod",AbyssalDecorBlocks.ETHEREAL_ROD);
-    public static final RegistrySupplier<BlockItem> HANGING_MOSS = registerBlockItem("hanging_moss",AbyssalDecorBlocks.HANGING_MOSS);
+    public static final RegistrySupplier<BlockItem> SOLAR_ROD = registerBlockItem(AbyssalDecorBlocks.SOLAR_ROD);
+    public static final RegistrySupplier<BlockItem> STELLAR_ROD = registerBlockItem(AbyssalDecorBlocks.STELLAR_ROD);
+    public static final RegistrySupplier<BlockItem> TERRESTRIAL_ROD = registerBlockItem(AbyssalDecorBlocks.TERRESTRIAL_ROD);
+    public static final RegistrySupplier<BlockItem> LUNAR_ROD = registerBlockItem(AbyssalDecorBlocks.LUNAR_ROD);
+    public static final RegistrySupplier<BlockItem> ETHEREAL_ROD = registerBlockItem(AbyssalDecorBlocks.ETHEREAL_ROD);
+    public static final RegistrySupplier<BlockItem> HANGING_MOSS = registerBlockItem(AbyssalDecorBlocks.HANGING_MOSS);
 
-    public static final RegistrySupplier<BlockItem> DAFFODIL = registerBlockItem("daffodil",AbyssalDecorBlocks.DAFFODIL);
-    public static final RegistrySupplier<BlockItem> ASTER = registerBlockItem("aster",AbyssalDecorBlocks.ASTER);
-    public static final RegistrySupplier<BlockItem> SNAPLEAF = registerBlockItem("snapleaf",AbyssalDecorBlocks.SNAPLEAF);
+    public static final RegistrySupplier<BlockItem> DAFFODIL = registerBlockItem(AbyssalDecorBlocks.DAFFODIL);
+    public static final RegistrySupplier<BlockItem> ASTER = registerBlockItem(AbyssalDecorBlocks.ASTER);
+    public static final RegistrySupplier<BlockItem> SNAPLEAF = registerBlockItem(AbyssalDecorBlocks.SNAPLEAF);
 
     public static final RegistrySupplier<ItemNameBlockItem> AMARANTH_SEEDS = registerNamedBlockItem("amaranth_seeds",AbyssalDecorBlocks.AMARANTH);
     public static final RegistrySupplier<Item> AMARANTH_PINNACLE = AbyssalDecor.ITEMS.register("amaranth_pinnacle",() -> new Item(new Item.Properties()));
-    public static final RegistrySupplier<BlockItem> AMARANTH_CRATE = registerBlockItem("amaranth_crate",AbyssalDecorBlocks.AMARANTH_CRATE);
+    public static final RegistrySupplier<BlockItem> AMARANTH_CRATE = registerBlockItem(AbyssalDecorBlocks.AMARANTH_CRATE);
     public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = registerNamedBlockItem("muckroot",AbyssalDecorBlocks.MUCKROOT,new Item.Properties().food(Foods.CARROT));
     public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() -> new Item(new Item.Properties().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() ->
             new BowlFoodItem(new Item.Properties().stacksTo(1).food(Foods.BEETROOT_SOUP)));
 
-    public static final RegistrySupplier<BlockItem> BARK_ORCHID = registerBlockItem("bark_orchid",AbyssalDecorBlocks.BARK_ORCHID);
+    public static final RegistrySupplier<BlockItem> BARK_ORCHID = registerBlockItem(AbyssalDecorBlocks.BARK_ORCHID);
 
     //todo wisteria and elder wisteria
 
-    public static final RegistrySupplier<BlockItem> WISTERIA_PETALS = registerBlockItem("wisteria_petals",AbyssalDecorBlocks.WISTERIA_PETALS);
-    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_PETALS = registerBlockItem("elder_wisteria_petals",AbyssalDecorBlocks.ELDER_WISTERIA_PETALS);
-    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_LEAVES = registerBlockItem("elder_wisteria_leaves",AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES);
+    public static final RegistrySupplier<BlockItem> WISTERIA_PETALS = registerBlockItem(AbyssalDecorBlocks.WISTERIA_PETALS);
+    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_PETALS = registerBlockItem(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS);
+    public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_LEAVES = registerBlockItem(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES);
 
-    public static final RegistrySupplier<BlockItem> ANCIENT_BIRCH_LOG =  registerBlockItem("ancient_birch_log",AbyssalDecorBlocks.ANCIENT_BIRCH_LOG);
-    public static final RegistrySupplier<BlockItem> STRIPPED_ANCIENT_BIRCH_LOG =  registerBlockItem("stripped_ancient_birch_log",AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG);
-    public static final RegistrySupplier<BlockItem> FOXY_PILLAR =  registerBlockItem("foxy_pillar",AbyssalDecorBlocks.FOXY_PILLAR);
+    public static final RegistrySupplier<BlockItem> ANCIENT_BIRCH_LOG =  registerBlockItem(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG);
+    public static final RegistrySupplier<BlockItem> STRIPPED_ANCIENT_BIRCH_LOG =  registerBlockItem(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG);
+    public static final RegistrySupplier<BlockItem> FOXY_PILLAR =  registerBlockItem(AbyssalDecorBlocks.FOXY_PILLAR);
 
     public static final RegistrySupplier<Item> DUSTY_CD = AbyssalDecor.ITEMS.register("dusty_cd",
             () -> new SupplierRecordItem(0,AbyssalDecorSounds.DUSTY_CD.get()
             , new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 3600));
 
-    public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem("scrimshaw",AbyssalDecorBlocks.SCRIMSHAW);
-    public static final RegistrySupplier<BlockItem> STARFISH = registerBlockItem("starfish",AbyssalDecorBlocks.STARFISH);
-    public static final RegistrySupplier<BlockItem> DRIED_STARFISH = registerBlockItem("dried_starfish",AbyssalDecorBlocks.DRIED_STARFISH);
-    public static final RegistrySupplier<BlockItem> STARLIGHT = registerBlockItem("starlight",AbyssalDecorBlocks.STARLIGHT);
-    public static final RegistrySupplier<BlockItem> LIFE_PRESERVER = registerBlockItem("life_preserver",AbyssalDecorBlocks.LIFE_PRESERVER);
-    public static final RegistrySupplier<BlockItem> WOOD_SUPPORT = registerBlockItem("wood_support",AbyssalDecorBlocks.WOOD_SUPPORT);
-    public static final RegistrySupplier<BlockItem> SHIP_WHEEL = registerBlockItem("ship_wheel",AbyssalDecorBlocks.SHIP_WHEEL);
-    public static final RegistrySupplier<BlockItem> WO0DEN_DRAGON_HEAD = registerBlockItem("wooden_dragon_head",AbyssalDecorBlocks.WOODEN_DRAGON_HEAD);
-    public static final RegistrySupplier<BlockItem> WO0DEN_FROG = registerBlockItem("wooden_frog",AbyssalDecorBlocks.WOODEN_FROG);
+    public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem(AbyssalDecorBlocks.SCRIMSHAW);
+    public static final RegistrySupplier<BlockItem> STARFISH = registerBlockItem(AbyssalDecorBlocks.STARFISH);
+    public static final RegistrySupplier<BlockItem> DRIED_STARFISH = registerBlockItem(AbyssalDecorBlocks.DRIED_STARFISH);
+    public static final RegistrySupplier<BlockItem> STARLIGHT = registerBlockItem(AbyssalDecorBlocks.STARLIGHT);
+    public static final RegistrySupplier<BlockItem> LIFE_PRESERVER = registerBlockItem(AbyssalDecorBlocks.LIFE_PRESERVER);
+    public static final RegistrySupplier<BlockItem> WOOD_SUPPORT = registerBlockItem(AbyssalDecorBlocks.WOOD_SUPPORT);
+    public static final RegistrySupplier<BlockItem> SHIP_WHEEL = registerBlockItem(AbyssalDecorBlocks.SHIP_WHEEL);
+    public static final RegistrySupplier<BlockItem> WO0DEN_DRAGON_HEAD = registerBlockItem(AbyssalDecorBlocks.WOODEN_DRAGON_HEAD);
+    public static final RegistrySupplier<BlockItem> WO0DEN_FROG = registerBlockItem(AbyssalDecorBlocks.WOODEN_FROG);
     public static final RegistrySupplier<DoubleHighBlockItem> LION_STATUE = AbyssalDecor.ITEMS.register("lion_statue",() ->
             new DoubleHighBlockItem(AbyssalDecorBlocks.LION_STATUE.get(),new Item.Properties()));
     public static final RegistrySupplier<DoubleHighBlockItem> GARGOYLE = AbyssalDecor.ITEMS.register("gargoyle",() ->
@@ -75,35 +75,36 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> DANGLING_WEB = AbyssalDecor.ITEMS.register("dangling_web",
             () -> new StandingAndWallBlockItem(AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.WALL_DANGLING_WEB.get(),new Item.Properties(),Direction.UP));
 
-    public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_BLOCK = registerBlockItem("prismarine_crystal_block",AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK);
-    public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_PANE = registerBlockItem("prismarine_crystal_pane",AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE);
+    public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_BLOCK = registerBlockItem(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK);
+    public static final RegistrySupplier<BlockItem> PRISMARINE_CRYSTAL_PANE = registerBlockItem(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE);
 
-    public static final RegistrySupplier<BlockItem> FRESNEL_BLOCK = registerBlockItem("fresnel_block",AbyssalDecorBlocks.FRESNEL_BLOCK);
-    public static final RegistrySupplier<BlockItem> FRESNEL_PANE = registerBlockItem("fresnel_pane",AbyssalDecorBlocks.FRESNEL_PANE);
+    public static final RegistrySupplier<BlockItem> FRESNEL_BLOCK = registerBlockItem(AbyssalDecorBlocks.FRESNEL_BLOCK);
+    public static final RegistrySupplier<BlockItem> FRESNEL_PANE = registerBlockItem(AbyssalDecorBlocks.FRESNEL_PANE);
 
-    public static final RegistrySupplier<BlockItem> CRYSTALLIZED_GLOWSTONE = registerBlockItem("crystallized_glowstone",AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE);
-    public static final RegistrySupplier<BlockItem> CRYSTALLIZED_GLOWSTONE_PANE = registerBlockItem("crystallized_glowstone_pane",AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE_PANE);
+    public static final RegistrySupplier<BlockItem> CRYSTALLIZED_GLOWSTONE = registerBlockItem(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE);
+    public static final RegistrySupplier<BlockItem> CRYSTALLIZED_GLOWSTONE_PANE = registerBlockItem(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE_PANE);
 
-    public static final RegistrySupplier<BlockItem> FRAMED_CRYSTALLIZED_GLOWSTONE = registerBlockItem("framed_crystallized_glowstone",AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE);
-    public static final RegistrySupplier<BlockItem> FRAMED_CRYSTALLIZED_GLOWSTONE_PANE = registerBlockItem("framed_crystallized_glowstone_pane",AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE);
+    public static final RegistrySupplier<BlockItem> FRAMED_CRYSTALLIZED_GLOWSTONE = registerBlockItem(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE);
+    public static final RegistrySupplier<BlockItem> FRAMED_CRYSTALLIZED_GLOWSTONE_PANE = registerBlockItem(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE);
 
-    public static final RegistrySupplier<BlockItem> VERMILION_BLOCK = registerBlockItem("vermilion_block",AbyssalDecorBlocks.VERMILION_BLOCK);
-    public static final RegistrySupplier<BlockItem> VERMILION_PANE = registerBlockItem("vermilion_pane",AbyssalDecorBlocks.VERMILION_PANE);
+    public static final RegistrySupplier<BlockItem> VERMILION_BLOCK = registerBlockItem(AbyssalDecorBlocks.VERMILION_BLOCK);
+    public static final RegistrySupplier<BlockItem> VERMILION_PANE = registerBlockItem(AbyssalDecorBlocks.VERMILION_PANE);
 
-    public static final RegistrySupplier<BlockItem> FRAMED_VERMILION_BLOCK = registerBlockItem("framed_vermilion_block",AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK);
-    public static final RegistrySupplier<BlockItem> FRAMED_VERMILION_PANE = registerBlockItem("framed_vermilion_pane",AbyssalDecorBlocks.FRAMED_VERMILION_PANE);
+    public static final RegistrySupplier<BlockItem> FRAMED_VERMILION_BLOCK = registerBlockItem(AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK);
+    public static final RegistrySupplier<BlockItem> FRAMED_VERMILION_PANE = registerBlockItem(AbyssalDecorBlocks.FRAMED_VERMILION_PANE);
 
-    public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem("desk_bell",AbyssalDecorBlocks.DESK_BELL);
+    public static final RegistrySupplier<BlockItem> DESK_BELL = registerBlockItem(AbyssalDecorBlocks.DESK_BELL);
 
-    public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem("lightbulb",AbyssalDecorBlocks.LIGHTBULB);
-    public static final RegistrySupplier<BlockItem> WALL_BULB_LAMP = registerBlockItem("wall_bulb_lamp",AbyssalDecorBlocks.WALL_BULB_LAMP);
-    public static final RegistrySupplier<BlockItem> TUBE_LAMP = registerBlockItem("tube_lamp",AbyssalDecorBlocks.TUBE_LAMP);
+    public static final RegistrySupplier<BlockItem> LIGHTBULB = registerBlockItem(AbyssalDecorBlocks.LIGHTBULB);
+    public static final RegistrySupplier<BlockItem> WALL_BULB_LAMP = registerBlockItem(AbyssalDecorBlocks.WALL_BULB_LAMP);
+    public static final RegistrySupplier<BlockItem> TUBE_LAMP = registerBlockItem(AbyssalDecorBlocks.TUBE_LAMP);
     public static final RegistrySupplier<StandingAndWallBlockItem> IRON_LAMP = AbyssalDecor.ITEMS
-            .register("iron_lamp",() -> new StandingAndWallBlockItem(AbyssalDecorBlocks.IRON_LAMP.get(),AbyssalDecorBlocks.WALL_IRON_LAMP.get(),new Item.Properties(), Direction.UP));
+            .register("iron_lamp",() -> new StandingAndWallBlockItem(AbyssalDecorBlocks.IRON_LAMP.get(),AbyssalDecorBlocks.WALL_IRON_LAMP.get()
+                    ,new Item.Properties(), Direction.UP));
 
-    public static final RegistrySupplier<BlockItem> FLOWER_LAMP = registerBlockItem("flower_lamp",AbyssalDecorBlocks.FLOWER_LAMP);
+    public static final RegistrySupplier<BlockItem> FLOWER_LAMP = registerBlockItem(AbyssalDecorBlocks.FLOWER_LAMP);
 
-    public static final RegistrySupplier<BlockItem> FROSTED_LAMP = registerBlockItem("frosted_lamp",AbyssalDecorBlocks.FROSTED_LAMP);
+    public static final RegistrySupplier<BlockItem> FROSTED_LAMP = registerBlockItem(AbyssalDecorBlocks.FROSTED_LAMP);
 
     public static final RegistrySupplier<FloorWallCeilingBlockItem> QUARTZ_LAMP = AbyssalDecor.ITEMS.register("quartz_lamp",() ->
             new FloorWallCeilingBlockItem(AbyssalDecorBlocks.QUARTZ_LAMP.get(),AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),
@@ -112,45 +113,105 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<StandingAndWallBlockItem> JADE_LAMP = AbyssalDecor.ITEMS.register("jade_lamp",() ->
             new StandingAndWallBlockItem(AbyssalDecorBlocks.JADE_LAMP.get(),AbyssalDecorBlocks.WALL_JADE_LAMP.get(),new Item.Properties(),Direction.DOWN));
 
-    public static final RegistrySupplier<BlockItem> SEAGLASS_LAMP = registerBlockItem("seaglass_lamp",AbyssalDecorBlocks.SEAGLASS_LAMP);
-    public static final RegistrySupplier<BlockItem> BLAZE_LAMP = registerBlockItem("blaze_lamp",AbyssalDecorBlocks.BLAZE_LAMP);
+    public static final RegistrySupplier<BlockItem> SEAGLASS_LAMP = registerBlockItem(AbyssalDecorBlocks.SEAGLASS_LAMP);
+    public static final RegistrySupplier<BlockItem> BLAZE_LAMP = registerBlockItem(AbyssalDecorBlocks.BLAZE_LAMP);
 
     //////
 
-    public static final RegistrySupplier<BlockItem> SEABRASS_ORE = registerBlockItem("seabrass_ore",AbyssalDecorBlocks.SEABRASS_ORE);
-    public static final RegistrySupplier<BlockItem> FRESNEL_LAMP = registerBlockItem("fresnel_lamp",AbyssalDecorBlocks.FRESNEL_LAMP);
-    public static final RegistrySupplier<BlockItem> RAINBOW_LAMP = registerBlockItem("rainbow_lamp",AbyssalDecorBlocks.RAINBOW_LAMP);
-    public static final RegistrySupplier<BlockItem> BULKHEAD_LAMP = registerBlockItem("bulkhead_lamp",AbyssalDecorBlocks.BULKHEAD_LAMP);
+    public static final RegistrySupplier<BlockItem> SEABRASS_ORE = registerBlockItem(AbyssalDecorBlocks.SEABRASS_ORE);
+    public static final RegistrySupplier<BlockItem> FRESNEL_LAMP = registerBlockItem(AbyssalDecorBlocks.FRESNEL_LAMP);
+    public static final RegistrySupplier<BlockItem> RAINBOW_LAMP = registerBlockItem(AbyssalDecorBlocks.RAINBOW_LAMP);
+    public static final RegistrySupplier<BlockItem> BULKHEAD_LAMP = registerBlockItem(AbyssalDecorBlocks.BULKHEAD_LAMP);
 
-    public static final RegistrySupplier<BlockItem> ABYSSAL_LANTERN = registerBlockItem("abyssal_lantern",AbyssalDecorBlocks.ABYSSAL_LANTERN);
+    public static final RegistrySupplier<BlockItem> ABYSSAL_LANTERN = registerBlockItem(AbyssalDecorBlocks.ABYSSAL_LANTERN);
     //public static final RegistrySupplier<BlockItem> BLOOD_LANTERN = registerBlockItem("blood_lantern",AbyssalDecorBlocks.BLOOD_LANTERN);
-    public static final RegistrySupplier<BlockItem> IRON_LANTERN = registerBlockItem("iron_lantern",AbyssalDecorBlocks.IRON_LANTERN);
-    public static final RegistrySupplier<BlockItem> JADE_LANTERN = registerBlockItem("jade_lantern",AbyssalDecorBlocks.JADE_LANTERN);
+    public static final RegistrySupplier<BlockItem> IRON_LANTERN = registerBlockItem(AbyssalDecorBlocks.IRON_LANTERN);
+    public static final RegistrySupplier<BlockItem> JADE_LANTERN = registerBlockItem(AbyssalDecorBlocks.JADE_LANTERN);
 
-    public static final RegistrySupplier<BlockItem> VELVET_BARRIER = registerBlockItem("velvet_barrier",AbyssalDecorBlocks.VELVET_BARRIER);
-    public static final RegistrySupplier<BlockItem> IRON_BARRIER = registerBlockItem("iron_barrier",AbyssalDecorBlocks.IRON_BARRIER);
-    public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem("rope_barrier",AbyssalDecorBlocks.ROPE_BARRIER);
-    public static final RegistrySupplier<BlockItem> BARBED_WIRE_BARRIER = registerBlockItem("barbed_wire_barrier",AbyssalDecorBlocks.BARBED_WIRE_BARRIER);
+    public static final RegistrySupplier<BlockItem> VELVET_BARRIER = registerBlockItem(AbyssalDecorBlocks.VELVET_BARRIER);
+    public static final RegistrySupplier<BlockItem> IRON_BARRIER = registerBlockItem(AbyssalDecorBlocks.IRON_BARRIER);
+    public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem(AbyssalDecorBlocks.ROPE_BARRIER);
+    public static final RegistrySupplier<BlockItem> BARBED_WIRE_BARRIER = registerBlockItem(AbyssalDecorBlocks.BARBED_WIRE_BARRIER);
 
     ///////////////////////////////
 
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_LOG = registerBlockItem("whitewood_log",AbyssalDecorBlocks.WHITEWOOD_LOG);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_WOOD = registerBlockItem("whitewood_wood", AbyssalDecorBlocks.WHITEWOOD_WOOD);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_PLANKS = registerBlockItem("whitewood_planks", AbyssalDecorBlocks.WHITEWOOD_PLANKS);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_STAIRS = registerBlockItem("whitewood_stairs",AbyssalDecorBlocks.WHITEWOOD_STAIRS);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_SLAB = registerBlockItem("whitewood_slab", AbyssalDecorBlocks.WHITEWOOD_SLAB);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_BUTTON = registerBlockItem("whitewood_button",AbyssalDecorBlocks.WHITEWOOD_BUTTON);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_TRIM = registerBlockItem("whitewood_trim", AbyssalDecorBlocks.WHITEWOOD_TRIM);
-    public static final RegistrySupplier<DoubleHighBlockItem> WHITEWOOD_DOOR = registerDoorItem("whitewood_door",AbyssalDecorBlocks.WHITEWOOD_DOOR);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_TRAPDOOR = registerBlockItem("whitewood_trapdoor",AbyssalDecorBlocks.WHITEWOOD_TRAPDOOR);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_PRESSURE_PLATE = registerBlockItem("whitewood_pressure_plate",AbyssalDecorBlocks.WHITEWOOD_PRESSURE_PLATE);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_FENCE = registerBlockItem("whitewood_fence",AbyssalDecorBlocks.WHITEWOOD_FENCE);
-    public static final RegistrySupplier<BlockItem> WHITEWOOD_FENCE_GATE = registerBlockItem("whitewood_fence_gate",AbyssalDecorBlocks.WHITEWOOD_FENCE_GATE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_LOG);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_WOOD = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_WOOD);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PLANKS = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PLANKS);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_STAIRS = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_STAIRS);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_SLAB = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_SLAB);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_BUTTON = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_BUTTON);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_TRIM = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_TRIM);
+    public static final RegistrySupplier<DoubleHighBlockItem> WHITEWOOD_DOOR = registerDoorItem(AbyssalDecorBlocks.WHITEWOOD_DOOR);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_TRAPDOOR);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PRESSURE_PLATE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PRESSURE_PLATE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_FENCE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_FENCE);
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_FENCE_GATE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_FENCE_GATE);
     public static final RegistrySupplier<BlockItem> WHITEWOOD_SIGN = AbyssalDecor.ITEMS.register("whitewood_sign",() ->
             new SignItem(new Item.Properties().stacksTo(16), AbyssalDecorBlocks.WHITEWOOD_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get()));
     public static final RegistrySupplier<BlockItem> WHITEWOOD_HANGING_SIGN = AbyssalDecor.ITEMS.register("whitewood_hanging_sign",
-            () -> new HangingSignItem(AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+            () -> new HangingSignItem(AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BLOCK);
+
+    ///////
+
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_STAIRS = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_STAIRS);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_SLAB);
+    public static final RegistrySupplier<BlockItem> CHISELED_WHITE_PEARL = registerBlockItem(AbyssalDecorBlocks.CHISELED_WHITE_PEARL);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_WALL);
+
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_PILLAR = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_PILLAR);
+    public static final RegistrySupplier<BlockItem> CUT_WHITE_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK);
+
+    ///////
+
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_BRICKS = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BRICKS);
+
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_BRICK_STAIRS = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_BRICK_SLAB = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_BRICK_WALL = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BRICK_WALL);
+
+    ///////
+
+    public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK);
+
+    public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_STAIRS = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS);
+    public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB);
+    public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL);
+
+    /////////
+
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL);
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BLOCK);
+
+    ///////
+
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_STAIRS = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_STAIRS);
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_SLAB);
+    public static final RegistrySupplier<BlockItem> CHISELED_BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.CHISELED_BLACK_PEARL);
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_WALL);
+
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_PILLAR = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_PILLAR);
+    public static final RegistrySupplier<BlockItem> CUT_BLACK_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK);
+
+    ///////
+
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_BRICKS = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BRICKS);
+
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_BRICK_STAIRS = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BRICK_STAIRS);
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_BRICK_SLAB = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BRICK_SLAB);
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_BRICK_WALL = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BRICK_WALL);
+
+    ///////
+
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_BLOCK);
+
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_STAIRS = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_STAIRS);
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_SLAB);
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_WALL);
 
     public static void register() {
         AbyssalDecor.ITEMS.register();
@@ -165,14 +226,21 @@ public class AbyssalDecorItems {
     }
 
     public static <B extends Block> RegistrySupplier<BlockItem> registerBlockItem(String name, Supplier<B> bSupplier, Item.Properties properties) {
-        return AbyssalDecor.ITEMS.register(name,() -> new BlockItem(bSupplier.get(),properties));
+        RegistrySupplier<BlockItem> register = AbyssalDecor.ITEMS.register(name, () -> new BlockItem(bSupplier.get(), properties));
+        return register;
     }
+
 
     public static <B extends Block> RegistrySupplier<BlockItem> registerBlockItem(String name, Supplier<B> bSupplier) {
        return registerBlockItem(name,bSupplier,new Item.Properties());
     }
-    public static <B extends DoorBlock> RegistrySupplier<DoubleHighBlockItem> registerDoorItem(String name, Supplier<B> bSupplier) {
-        return AbyssalDecor.ITEMS.register(name,() -> new DoubleHighBlockItem(bSupplier.get(),new Item.Properties()));
+
+    public static <B extends Block> RegistrySupplier<BlockItem> registerBlockItem(RegistrySupplier<B> bSupplier) {
+        return registerBlockItem(bSupplier.getId().getPath(),bSupplier,new Item.Properties());
+    }
+
+    public static <B extends DoorBlock> RegistrySupplier<DoubleHighBlockItem> registerDoorItem(RegistrySupplier<B> bSupplier) {
+        return AbyssalDecor.ITEMS.register(bSupplier.getId().getPath(),() -> new DoubleHighBlockItem(bSupplier.get(),new Item.Properties()));
     }
 
 }

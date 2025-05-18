@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "abyssaldecor:block/black_pearl_bricks",
+    "side": "abyssaldecor:block/black_pearl_bricks",
+    "top": "abyssaldecor:block/black_pearl_bricks"
+  }
+}

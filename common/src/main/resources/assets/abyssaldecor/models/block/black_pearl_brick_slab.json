@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "abyssaldecor:block/blackpearlbricks",
-    "top": "abyssaldecor:block/blackpearlbricks",
-    "side": "abyssaldecor:block/blackpearlbricks"
-  }
-}

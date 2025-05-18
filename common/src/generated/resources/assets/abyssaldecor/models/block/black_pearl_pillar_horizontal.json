@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "abyssaldecor:block/black_pearl_pillar_top",
+    "side": "abyssaldecor:block/black_pearl_pillar"
+  }
+}

@@ -25,7 +25,43 @@ public class ExtendedBlockFamilies {
             .trapdoor(AbyssalDecorBlocks.WHITEWOOD_TRAPDOOR.get()).recipeGroupPrefix(RECIPE_GROUP_PREFIX_WOODEN)
             .recipeUnlockedBy(RECIPE_UNLOCKED_BY_HAS_PLANKS).getFamily();
 
+    public static final ExtendedBlockFamily WHITE_PEARL = familyBuilder(AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get())
+            .stairs(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get())
+            .slab(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get())
+            .chiseled(AbyssalDecorBlocks.CHISELED_WHITE_PEARL.get())
+            .wall(AbyssalDecorBlocks.WHITE_PEARL_WALL.get())
+            .recipeUnlockedBy("has_white_pearl").getFamily();
 
+    public static final ExtendedBlockFamily WHITE_PEARL_BRICKS = familyBuilder(AbyssalDecorBlocks.WHITE_PEARL_BRICKS.get())
+            .stairs(AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get())
+            .slab(AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get())
+            .wall(AbyssalDecorBlocks.WHITE_PEARL_BRICK_WALL.get())
+            .recipeUnlockedBy("has_white_pearl_brick").getFamily();
+
+    public static final ExtendedBlockFamily SMOOTH_WHITE_PEARL = familyBuilder(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get())
+            .stairs(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get())
+            .slab(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get())
+            .wall(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get())
+            .recipeUnlockedBy("has_smooth_white_pearl").getFamily();
+
+    public static final ExtendedBlockFamily BLACK_PEARL = familyBuilder(AbyssalDecorBlocks.BLACK_PEARL_BLOCK.get())
+            .stairs(AbyssalDecorBlocks.BLACK_PEARL_STAIRS.get())
+            .slab(AbyssalDecorBlocks.BLACK_PEARL_SLAB.get())
+            .chiseled(AbyssalDecorBlocks.CHISELED_BLACK_PEARL.get())
+            .wall(AbyssalDecorBlocks.BLACK_PEARL_WALL.get())
+            .recipeUnlockedBy("has_black_pearl").getFamily();
+
+    public static final ExtendedBlockFamily BLACK_PEARL_BRICKS = familyBuilder(AbyssalDecorBlocks.BLACK_PEARL_BRICKS.get())
+            .stairs(AbyssalDecorBlocks.BLACK_PEARL_BRICK_STAIRS.get())
+            .slab(AbyssalDecorBlocks.BLACK_PEARL_BRICK_SLAB.get())
+            .wall(AbyssalDecorBlocks.BLACK_PEARL_BRICK_WALL.get())
+            .recipeUnlockedBy("has_black_pearl_brick").getFamily();
+
+    public static final ExtendedBlockFamily SMOOTH_BLACK_PEARL = familyBuilder(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_BLOCK.get())
+            .stairs(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_STAIRS.get())
+            .slab(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_SLAB.get())
+            .wall(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_WALL.get())
+            .recipeUnlockedBy("has_smooth_black_pearl").getFamily();
 
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);

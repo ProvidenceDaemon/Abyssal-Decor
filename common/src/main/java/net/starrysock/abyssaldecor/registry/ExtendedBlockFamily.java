@@ -40,6 +40,10 @@ public class ExtendedBlockFamily {
         return this.variants.get(variant);
     }
 
+    public boolean exists(Variant variant) {
+        return variants.containsKey(variant);
+    }
+
     public boolean shouldGenerateModel() {
         return this.generateModel;
     }

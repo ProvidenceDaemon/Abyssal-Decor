@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "abyssaldecor:block/white_pearl_bricks",
+    "side": "abyssaldecor:block/white_pearl_bricks",
+    "top": "abyssaldecor:block/white_pearl_bricks"
+  }
+}
