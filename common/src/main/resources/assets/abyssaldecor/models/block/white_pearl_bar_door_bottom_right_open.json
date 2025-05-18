@@ -1,8 +1,0 @@
-{
-  "parent": "block/door_bottom_right_open",
-  "textures": {
-    "bottom": "abyssaldecor:block/whitepearldoorbottom",
-    "top": "abyssaldecor:block/whitepearldoortop"
-  },
-  "render_type": "cutout_mipped"
-}

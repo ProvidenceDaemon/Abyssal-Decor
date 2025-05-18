@@ -163,6 +163,10 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> CHISELED_WHITE_PEARL = registerBlockItem(AbyssalDecorBlocks.CHISELED_WHITE_PEARL);
     public static final RegistrySupplier<BlockItem> WHITE_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_WALL);
 
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_BARS = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BARS);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_DOOR = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_DOOR);
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_TRAPDOOR);
+
     public static final RegistrySupplier<BlockItem> WHITE_PEARL_PILLAR = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_PILLAR);
     public static final RegistrySupplier<BlockItem> CUT_WHITE_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK);
 
@@ -181,6 +185,11 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_STAIRS = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS);
     public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB);
     public static final RegistrySupplier<BlockItem> SMOOTH_WHITE_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL);
+
+    public static final RegistrySupplier<BlockItem> WHITE_PEARL_TILES = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_TILES);
+    public static final RegistrySupplier<BlockItem> CRACKED_PEARL_TILES = registerBlockItem(AbyssalDecorBlocks.CRACKED_PEARL_TILES);
+    public static final RegistrySupplier<BlockItem> MIXED_PEARL_TILES = registerBlockItem(AbyssalDecorBlocks.MIXED_PEARL_TILES);
+    public static final RegistrySupplier<BlockItem> STARRY_PEARL_TILES = registerBlockItem(AbyssalDecorBlocks.STARRY_PEARL_TILES);
 
     ///////////////////////////////
 

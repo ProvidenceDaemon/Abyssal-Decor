@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "variant=0": {
+      "model": "abyssaldecor:block/cracked_pearl_tiles_0"
+    },
+    "variant=1": {
+      "model": "abyssaldecor:block/cracked_pearl_tiles_1"
+    },
+    "variant=2": {
+      "model": "abyssaldecor:block/cracked_pearl_tiles_2"
+    },
+    "variant=3": {
+      "model": "abyssaldecor:block/cracked_pearl_tiles_3"
+    },
+    "variant=4": {
+      "model": "abyssaldecor:block/cracked_pearl_tiles_4"
+    },
+    "variant=5": {
+      "model": "abyssaldecor:block/cracked_pearl_tiles_5"
+    }
+  }
+}

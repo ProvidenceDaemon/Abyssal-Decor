@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abyssaldecor:block/cracked_pearl_tiles_0"
+  }
+}

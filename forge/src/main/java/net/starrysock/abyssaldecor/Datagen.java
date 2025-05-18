@@ -198,6 +198,9 @@ class Datagen {
 
             simpleBlockItem(AbyssalDecorItems.WHITE_PEARL_PILLAR.get());
             simpleBlockItem(AbyssalDecorItems.BLACK_PEARL_PILLAR.get());
+
+            generatedItem(AbyssalDecorItems.WHITE_PEARL_BARS.get(),modLoc("block/white_pearl_bars_top"));
+
         }
 
 
@@ -511,6 +514,26 @@ class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK.get());
             simplestBlockWithItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK.get());
+
+            paneBlock(AbyssalDecorBlocks.WHITE_PEARL_BARS.get(),modLoc("block/white_pearl_bars_top"),modLoc("block/white_pearl_bars_top"));
+
+            simplestBlockWithItem(AbyssalDecorBlocks.WHITE_PEARL_TILES.get());
+            crackedBlock(AbyssalDecorBlocks.CRACKED_PEARL_TILES.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.MIXED_PEARL_TILES.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.STARRY_PEARL_TILES.get());
+
+
+        }
+
+        public void crackedBlock(CrackedBlock block){
+            String name = name(block);
+            getVariantBuilder(block).forAllStates(state -> {
+                int variant = state.getValue(CrackedBlock.VARIANT);
+                ModelFile modelFile = models().cubeAll(name+"_"+variant,modLoc("block/"+name+"_"+variant));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
+            ModelFile modelFile = models().cubeAll(name,modLoc("block/"+name+"_0"));
+            simpleBlockItem(block,modelFile);
         }
 
         public void woodBlock(RotatedPillarBlock block,ResourceLocation texture) {

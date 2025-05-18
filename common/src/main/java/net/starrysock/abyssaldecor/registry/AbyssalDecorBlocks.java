@@ -226,6 +226,14 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> WHITE_PEARL_SLAB = AbyssalDecor.BLOCKS.register("white_pearl_slab",() -> slab(WHITE_PEARL.get()));
     public static final RegistrySupplier<Block> CHISELED_WHITE_PEARL = AbyssalDecor.BLOCKS.register("chiseled_white_pearl",() -> new Block(BlockBehaviour.Properties.copy(WHITE_PEARL_BLOCK.get())));
     public static final RegistrySupplier<WallBlock> WHITE_PEARL_WALL = AbyssalDecor.BLOCKS.register("white_pearl_wall",() -> wall(WHITE_PEARL.get()));
+    public static final RegistrySupplier<IronBarsBlock> WHITE_PEARL_BARS = AbyssalDecor.BLOCKS.register("white_pearl_bars",
+            () ->new IronBarsBlock(panes()));
+
+    public static final RegistrySupplier<DoorBlock> WHITE_PEARL_DOOR = AbyssalDecor.BLOCKS.register("white_pearl_door",
+            () ->woodDoor(WHITE_PEARL.get(),ModBlockSetTypes.WHITE_PEARL));
+
+    public static final RegistrySupplier<TrapDoorBlock> WHITE_PEARL_TRAPDOOR = AbyssalDecor.BLOCKS.register("white_pearl_trapdoor",
+            () ->woodTrapdoor(ModBlockSetTypes.WHITE_PEARL));
 
     public static final RegistrySupplier<RotatedPillarBlock> WHITE_PEARL_PILLAR = AbyssalDecor.BLOCKS.register("white_pearl_pillar",() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(WHITE_PEARL_BLOCK.get())));
     public static final RegistrySupplier<Block> CUT_WHITE_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("cut_white_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
@@ -245,6 +253,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<StairBlock> SMOOTH_WHITE_PEARL_STAIRS = AbyssalDecor.BLOCKS.register("smooth_white_pearl_stairs",() -> stairs(SMOOTH_WHITE_PEARL_BLOCK.get()));
     public static final RegistrySupplier<SlabBlock> SMOOTH_WHITE_PEARL_SLAB = AbyssalDecor.BLOCKS.register("smooth_white_pearl_slab",() -> slab(SMOOTH_WHITE_PEARL_BLOCK.get()));
     public static final RegistrySupplier<WallBlock> SMOOTH_WHITE_PEARL_WALL = AbyssalDecor.BLOCKS.register("smooth_white_pearl_wall",() -> wall(SMOOTH_WHITE_PEARL_BLOCK.get()));
+
+    public static final RegistrySupplier<Block> WHITE_PEARL_TILES = AbyssalDecor.BLOCKS.register("white_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<CrackedBlock> CRACKED_PEARL_TILES = AbyssalDecor.BLOCKS.register("cracked_pearl_tiles",() -> new CrackedBlock(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<Block> MIXED_PEARL_TILES = AbyssalDecor.BLOCKS.register("mixed_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<Block> STARRY_PEARL_TILES = AbyssalDecor.BLOCKS.register("starry_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
 
     ///////
 
