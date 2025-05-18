@@ -541,6 +541,19 @@ class Datagen {
             simplePaneBlock(AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS_PANE.get());
             simplePaneBlock(AbyssalDecorBlocks.BLACKWOOD_PEARLY_GLASS_PANE.get());
 
+            mixedBlock(AbyssalDecorBlocks.MIXED_BRICKS.get());
+            mixedBlock(AbyssalDecorBlocks.MOSSY_MIXED_BRICKS.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.BRITTLE_TUFF.get());
+
+            trapdoor(AbyssalDecorBlocks.STONE_TRAPDOOR.get());
+            trapdoor(AbyssalDecorBlocks.MOSSY_STONE_TRAPDOOR.get());
+            trapdoor(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR.get());
+        }
+
+        void trapdoor(TrapDoorBlock block) {
+            ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(block);
+            trapdoorBlock(block, modLoc("block/" + trapLoc.getPath()), false);
+            simpleBlockItem(block, models().getExistingFile(modLoc(name(block)+"_bottom")));
         }
 
         void logBlockWithItem(RotatedPillarBlock block) {
@@ -589,6 +602,17 @@ class Datagen {
             String name = name(block);
             getVariantBuilder(block).forAllStates(state -> {
                 int variant = state.getValue(CrackedBlock.VARIANT);
+                ModelFile modelFile = models().cubeAll(name+"_"+variant,modLoc("block/"+name+"_"+variant));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
+            ModelFile modelFile = models().cubeAll(name,modLoc("block/"+name+"_0"));
+            simpleBlockItem(block,modelFile);
+        }
+
+        public void mixedBlock(MixedBlock block){
+            String name = name(block);
+            getVariantBuilder(block).forAllStates(state -> {
+                int variant = state.getValue(MixedBlock.VARIANT);
                 ModelFile modelFile = models().cubeAll(name+"_"+variant,modLoc("block/"+name+"_"+variant));
                 return ConfiguredModel.builder().modelFile(modelFile).build();
             });

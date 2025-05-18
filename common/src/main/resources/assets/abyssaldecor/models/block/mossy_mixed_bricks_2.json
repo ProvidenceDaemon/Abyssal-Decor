@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/mossymixedbricks2",
-    "particle": "abyssaldecor:block/mossymixedbricks2"
-  },
-  "render_type": "solid"
-}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "variant=0": {
+      "model": "abyssaldecor:block/mossy_mixed_bricks_0"
+    },
+    "variant=1": {
+      "model": "abyssaldecor:block/mossy_mixed_bricks_1"
+    },
+    "variant=2": {
+      "model": "abyssaldecor:block/mossy_mixed_bricks_2"
+    },
+    "variant=3": {
+      "model": "abyssaldecor:block/mossy_mixed_bricks_3"
+    }
+  }
+}

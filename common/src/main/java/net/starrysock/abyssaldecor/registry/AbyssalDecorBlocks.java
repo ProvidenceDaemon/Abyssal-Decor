@@ -14,6 +14,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.MixedBlock;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
 
@@ -299,6 +300,24 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<IronBarsBlock> BLACKWOOD_PEARLY_GLASS_PANE = AbyssalDecor.BLOCKS.register("blackwood_pearly_glass_pane",
             () -> new IronBarsBlock(glassLike()));
+
+    ////////
+
+    public static final RegistrySupplier<MixedBlock> MIXED_BRICKS = AbyssalDecor.BLOCKS.register("mixed_bricks",
+            () -> new MixedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    public static final RegistrySupplier<MixedBlock> MOSSY_MIXED_BRICKS = AbyssalDecor.BLOCKS.register("mossy_mixed_bricks",
+            () -> new MixedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    public static final RegistrySupplier<Block> BRITTLE_TUFF = AbyssalDecor.BLOCKS.register("brittle_tuff",
+            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+
+    public static final RegistrySupplier<TrapDoorBlock> STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
+    public static final RegistrySupplier<TrapDoorBlock> MOSSY_STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("mossy_stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
+    public static final RegistrySupplier<TrapDoorBlock> ORNATE_STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("ornate_stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
     //////////
 

@@ -211,6 +211,15 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> WHITEWOOD_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS_PANE);
     public static final RegistrySupplier<BlockItem> BLACKWOOD_PEARLY_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_PEARLY_GLASS_PANE);
 
+    public static final RegistrySupplier<BlockItem> MIXED_BRICKS = registerBlockItem(AbyssalDecorBlocks.MIXED_BRICKS);
+    public static final RegistrySupplier<BlockItem> MOSSY_MIXED_BRICKS = registerBlockItem(AbyssalDecorBlocks.MOSSY_MIXED_BRICKS);
+    public static final RegistrySupplier<BlockItem> BRITTLE_TUFF = registerBlockItem(AbyssalDecorBlocks.BRITTLE_TUFF);
+
+    public static final RegistrySupplier<BlockItem> STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.STONE_TRAPDOOR);
+    public static final RegistrySupplier<BlockItem> MOSSY_STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.MOSSY_STONE_TRAPDOOR);
+    public static final RegistrySupplier<BlockItem> ORNATE_STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR);
+
+
     ///////////////////////////////
 
     public static final RegistrySupplier<BlockItem> BLACKWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_LOG);
