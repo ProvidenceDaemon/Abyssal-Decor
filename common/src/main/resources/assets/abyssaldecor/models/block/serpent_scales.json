@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/serpentscales",
-    "particle": "abyssaldecor:block/serpentscales"
-  },
-  "render_type": "solid"
-}

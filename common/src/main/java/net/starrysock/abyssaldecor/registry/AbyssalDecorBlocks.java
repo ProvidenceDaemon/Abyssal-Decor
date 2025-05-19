@@ -429,7 +429,67 @@ public class AbyssalDecorBlocks {
     /////////
 
 
+    public static final RegistrySupplier<Block> ROUGH_JADE = AbyssalDecor.BLOCKS.register("rough_jade",() -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<Block> POLISHED_JADE = AbyssalDecor.BLOCKS.register("polished_jade",() -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<Block> JADE_BRICKS = AbyssalDecor.BLOCKS.register("jade_bricks",() -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<RotatedPillarBlock> JADE_PILLAR = AbyssalDecor.BLOCKS.register("jade_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<RotatedPillarBlock> GILDED_JADE_PILLAR = AbyssalDecor.BLOCKS.register("gilded_jade_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    //jade lantern
+
+    public static final RegistrySupplier<RotatedPillarBlock> QUARTZ_BONE = AbyssalDecor.BLOCKS.register("quartz_bone",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> BONEROT = AbyssalDecor.BLOCKS.register("bonerot",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<AbstractHorizontalBlock> FLAKY_SCALES =
+            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SLUMP_LIGHT =
+            AbyssalDecor.BLOCKS.register("slump_light",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SHORTGILLS =
+            AbyssalDecor.BLOCKS.register("shortgills",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SERPENT_SCALES = AbyssalDecor.BLOCKS.register("serpent_scales",() ->new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SlabBlock> SERPENT_SCALE_SLAB = AbyssalDecor.BLOCKS.register("serpent_scale_slab",() ->slab(SERPENT_SCALES.get()));
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SERPENT_SKIN = AbyssalDecor.BLOCKS.register("serpent_skin",() ->new FaceAttachedBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> DAMAGED_SERPENT_SCALES = AbyssalDecor.BLOCKS.register("damaged_serpent_scales",() ->new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SlabBlock> DAMAGED_SERPENT_SCALE_SLAB = AbyssalDecor.BLOCKS.register("damaged_serpent_scale_slab",() ->slab(DAMAGED_SERPENT_SCALES.get()));
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DAMAGED_SERPENT_SKIN = AbyssalDecor.BLOCKS.register("damaged_serpent_skin",() ->new FaceAttachedBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SERPENT_FLESH = AbyssalDecor.BLOCKS.register("serpent_flesh",() ->new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> SERPENT_FLESH_SLAB = AbyssalDecor.BLOCKS.register("serpent_flesh_slab",() ->slab(SERPENT_FLESH.get()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> RIBBED_SERPENT_VEINS = AbyssalDecor.BLOCKS.register("ribbed_serpent_veins",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SERPENT_EYE = AbyssalDecor.BLOCKS.register("serpent_eye",() ->
+            new FaceAttachedBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SMALL_SERPENT_EYES = AbyssalDecor.BLOCKS.register("small_serpent_eyes",() ->
+            new FaceAttachedBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> NETTED_SERPENT_EYE = AbyssalDecor.BLOCKS.register("netted_serpent_eye",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SMALL_NETTED_SERPENT_EYE = AbyssalDecor.BLOCKS.register("small_netted_serpent_eye",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    //////////
+
+    public static final RegistrySupplier<Block> VELVET = AbyssalDecor.BLOCKS.register("velvet",() -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> GILDED_VELVET = AbyssalDecor.BLOCKS.register("gilded_velvet",() -> new Block(BlockBehaviour.Properties.of()));
+
+    /////////
+
+
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+    public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("stripped_blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_WOOD = AbyssalDecor.BLOCKS.register("blackwood_wood", () ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
                     .sound(SoundType.WOOD).ignitedByLava()));

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "abyssaldecor:block/serpentskinbottom",
+    "east": "abyssaldecor:block/serpentskinside",
+    "north": "abyssaldecor:block/serpentskinside",
+    "particle": "abyssaldecor:block/serpentskinbottom",
+    "south": "abyssaldecor:block/serpentskinside",
+    "up": "abyssaldecor:block/damaged_serpent_scales",
+    "west": "abyssaldecor:block/serpentskinside"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "abyssaldecor:block/damaged_serpent_scales",
+    "side": "abyssaldecor:block/damaged_serpent_scales",
+    "top": "abyssaldecor:block/damaged_serpent_scales"
+  }
+}

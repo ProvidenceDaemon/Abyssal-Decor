@@ -139,10 +139,6 @@ class Datagen {
 
             simpleBlockItem(AbyssalDecorItems.AMARANTH_CRATE.get());
 
-            simpleBlockItem(AbyssalDecorItems.ANCIENT_BIRCH_LOG.get());
-            simpleBlockItem(AbyssalDecorItems.STRIPPED_ANCIENT_BIRCH_LOG.get());
-            simpleBlockItem(AbyssalDecorItems.FOXY_PILLAR.get());
-
             simpleBlockItem(AbyssalDecorItems.LIGHTBULB.get());
 
             generatedItem(AbyssalDecorItems.DUSTY_CD.get());
@@ -185,23 +181,18 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.FRAMED_VERMILION_BLOCK.get());
             generatedItem(AbyssalDecorItems.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"));
 
-            simpleBlockItem(AbyssalDecorItems.WHITEWOOD_LOG.get());
             simpleBlockItem(AbyssalDecorItems.WHITEWOOD_WOOD.get());
-            simpleBlockItem(AbyssalDecorItems.WHITEWOOD_TRIM.get());
 
-            simpleBlockItem(AbyssalDecorItems.BLACKWOOD_LOG.get());
             simpleBlockItem(AbyssalDecorItems.BLACKWOOD_WOOD.get());
-            simpleBlockItem(AbyssalDecorItems.BLACKWOOD_TRIM.get());
 
             generatedItem(AbyssalDecorItems.WHITE_PEARL.get(),modLoc("item/white_pearl"));
             generatedItem(AbyssalDecorItems.BLACK_PEARL.get(),modLoc("item/black_pearl"));
 
-            simpleBlockItem(AbyssalDecorItems.WHITE_PEARL_PILLAR.get());
-            simpleBlockItem(AbyssalDecorItems.BLACK_PEARL_PILLAR.get());
-
             generatedItem(AbyssalDecorItems.WHITE_PEARL_BARS.get(),modLoc("block/white_pearl_bars_top"));
 
             generatedItem(AbyssalDecorItems.SHELL.get(),modLoc("block/shelltop"));
+
+            generatedItemBlockTexture(AbyssalDecorItems.BLOOD_CORAL_BUD.get());
 
             generatedItem(AbyssalDecorItems.BLOOD_CORAL_BARS.get(),modLoc("block/blood_coral_bars_solo"));
 
@@ -423,9 +414,9 @@ class Datagen {
             simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
             simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
 
-            logBlock(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get());
-            logBlock(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
-            logBlock(AbyssalDecorBlocks.FOXY_PILLAR.get());
+            logBlockWithItem(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get());
+            logBlockWithItem(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
+            logBlockWithItem(AbyssalDecorBlocks.FOXY_PILLAR.get());
 
             lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(),modLoc("custom/floorgaslamp"),modLoc("block/quartz_lamp"));
             wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),modLoc("custom/wallgaslamp"),modLoc("block/wall_quartz_lamp"));
@@ -505,16 +496,19 @@ class Datagen {
             simpleBlock(AbyssalDecorBlocks.FRAMED_VERMILION_BLOCK.get());
             paneBlock(AbyssalDecorBlocks.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"),modLoc("block/framed_vermilion_block"));
 
-            logBlock(AbyssalDecorBlocks.WHITEWOOD_LOG.get());
+            logBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_LOG.get());
             woodBlock(AbyssalDecorBlocks.WHITEWOOD_WOOD.get(),modLoc("block/whitewood_log"));
-            logBlock(AbyssalDecorBlocks.WHITEWOOD_TRIM.get());
+            logBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_TRIM.get());
 
-            logBlock(AbyssalDecorBlocks.BLACKWOOD_LOG.get());
+            logBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_LOG.get());
+
+            logBlockWithItem(AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get());
+
             woodBlock(AbyssalDecorBlocks.BLACKWOOD_WOOD.get(),modLoc("block/blackwood_log"));
-            logBlock(AbyssalDecorBlocks.BLACKWOOD_TRIM.get());
+            logBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_TRIM.get());
 
-            logBlock(AbyssalDecorBlocks.WHITE_PEARL_PILLAR.get());
-            logBlock(AbyssalDecorBlocks.BLACK_PEARL_PILLAR.get());
+            logBlockWithItem(AbyssalDecorBlocks.WHITE_PEARL_PILLAR.get());
+            logBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_PILLAR.get());
 
             simplestBlockWithItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK.get());
             simplestBlockWithItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK.get());
@@ -559,6 +553,81 @@ class Datagen {
 
             paneBlock(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(),modLoc("block/blood_coral_bars_solo"),modLoc("block/blood_coral_bars_solo"));
 
+            logBlockWithItem(AbyssalDecorBlocks.GILDED_JADE_PILLAR.get());
+
+            simplestBlockWithItem(AbyssalDecorBlocks.SERPENT_SCALES.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.DAMAGED_SERPENT_SCALES.get());
+
+            slabBlock(AbyssalDecorBlocks.SERPENT_SCALE_SLAB.get(),modLoc("block/serpent_scales"),modLoc("block/serpent_scales"));
+            simpleBlockItem(AbyssalDecorBlocks.SERPENT_SCALE_SLAB.get(),models().withExistingParent("serpent_scale_slab",
+                    mcLoc("block/slab")));
+
+            simpleSlab(AbyssalDecorBlocks.DAMAGED_SERPENT_SCALE_SLAB.get(),modLoc("block/damaged_serpent_scales"));
+
+            logBlockWithItem(AbyssalDecorBlocks.RIBBED_SERPENT_VEINS.get());
+
+            ResourceLocation skin = modLoc("block/serpentskinside");
+
+            serpentEye(AbyssalDecorBlocks.SERPENT_SKIN.get(),models().withExistingParent("serpent_skin",mcLoc("block/cube"))
+                    .texture("down",modLoc("block/serpentskinbottom"))
+                    .texture("up",modLoc("block/serpent_scales"))
+                    .texture("north",skin)
+                    .texture("east",skin)
+                    .texture("south",skin)
+                    .texture("west",skin)
+                    .texture("particle",modLoc("block/serpentskinbottom")));
+
+            serpentEye(AbyssalDecorBlocks.DAMAGED_SERPENT_SKIN.get(),models().withExistingParent("damaged_serpent_skin",mcLoc("block/cube"))
+                    .texture("down",modLoc("block/serpentskinbottom"))
+                    .texture("up",modLoc("block/damaged_serpent_scales"))
+                    .texture("north",skin)
+                    .texture("east",skin)
+                    .texture("south",skin)
+                    .texture("west",skin)
+                    .texture("particle",modLoc("block/serpentskinbottom")));
+
+            serpentEye(AbyssalDecorBlocks.SERPENT_EYE.get(),models().withExistingParent("serpent_eye",mcLoc("block/cube"))
+                    .texture("down",modLoc("block/serpentskinbottom"))
+                    .texture("up",modLoc("block/serpent_eye"))
+                    .texture("north",skin)
+                    .texture("east",skin)
+                    .texture("south",skin)
+                    .texture("west",skin)
+                    .texture("particle",modLoc("block/serpentskinbottom")));
+            serpentEye(AbyssalDecorBlocks.SMALL_SERPENT_EYES.get(),models().withExistingParent("small_serpent_eyes",mcLoc("block/cube"))
+                    .texture("down",modLoc("block/serpentskinbottom"))
+                    .texture("up",modLoc("block/serpentsmalleyes"))
+                    .texture("north",skin)
+                    .texture("east",skin)
+                    .texture("south",skin)
+                    .texture("west",skin)
+                    .texture("particle",modLoc("block/serpentskinbottom")));
+
+            simplestBlockWithItem(AbyssalDecorBlocks.NETTED_SERPENT_EYE.get());
+            simplestBlockWithItem(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get());
+        }
+
+        void simpleSlab(SlabBlock slabBlock,ResourceLocation texture) {
+            String name = name(slabBlock);
+            slabBlock(slabBlock,texture,texture);
+            simpleBlockItem(slabBlock,models().withExistingParent(name,
+                    mcLoc("block/slab")));
+        }
+
+
+        void serpentEye(FaceAttachedHorizontalDirectionalBlock block,ModelFile file) {
+            getVariantBuilder(block).forAllStates(state -> {
+                    Direction facing = state.getValue(ButtonBlock.FACING);
+                    AttachFace face = state.getValue(ButtonBlock.FACE);
+
+                    return ConfiguredModel.builder()
+                            .modelFile(file)
+                            .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
+                            .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
+                            .uvLock(face == AttachFace.WALL)
+                            .build();
+                });
+            simpleBlockItem(block,file);
         }
 
         void trapdoor(TrapDoorBlock block) {

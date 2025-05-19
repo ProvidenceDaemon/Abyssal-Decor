@@ -282,7 +282,44 @@ public class AbyssalDecorItems {
 
     ///////////////////////////////
 
+    public static final RegistrySupplier<BlockItem> ROUGH_JADE = registerBlockItem(AbyssalDecorBlocks.ROUGH_JADE);
+    public static final RegistrySupplier<BlockItem> POLISHED_JADE = registerBlockItem(AbyssalDecorBlocks.POLISHED_JADE);
+    public static final RegistrySupplier<BlockItem> JADE_BRICKS = registerBlockItem(AbyssalDecorBlocks.JADE_BRICKS);
+    public static final RegistrySupplier<BlockItem> JADE_PILLAR = registerBlockItem(AbyssalDecorBlocks.JADE_PILLAR);
+    public static final RegistrySupplier<BlockItem> GILDED_JADE_PILLAR = registerBlockItem(AbyssalDecorBlocks.GILDED_JADE_PILLAR);
+
+    public static final RegistrySupplier<BlockItem> QUARTZ_BONE = registerBlockItem(AbyssalDecorBlocks.QUARTZ_BONE);
+    public static final RegistrySupplier<BlockItem> BONEROT = registerBlockItem(AbyssalDecorBlocks.BONEROT);
+    public static final RegistrySupplier<BlockItem> FLAKY_SCALES = registerBlockItem(AbyssalDecorBlocks.FLAKY_SCALES);
+
+    public static final RegistrySupplier<BlockItem> SLUMP_LIGHT = registerBlockItem(AbyssalDecorBlocks.SLUMP_LIGHT);
+    public static final RegistrySupplier<BlockItem> SHORTGILLS = registerBlockItem(AbyssalDecorBlocks.SHORTGILLS);
+
+    public static final RegistrySupplier<BlockItem> SERPENT_SCALES = registerBlockItem(AbyssalDecorBlocks.SERPENT_SCALES);
+    public static final RegistrySupplier<BlockItem> SERPENT_SCALE_SLAB = registerBlockItem(AbyssalDecorBlocks.SERPENT_SCALE_SLAB);
+    public static final RegistrySupplier<BlockItem> SERPENT_SKIN = registerBlockItem(AbyssalDecorBlocks.SERPENT_SKIN);
+
+    public static final RegistrySupplier<BlockItem> DAMAGED_SERPENT_SCALES = registerBlockItem(AbyssalDecorBlocks.DAMAGED_SERPENT_SCALES);
+    public static final RegistrySupplier<BlockItem> DAMAGED_SERPENT_SCALE_SLAB = registerBlockItem(AbyssalDecorBlocks.DAMAGED_SERPENT_SCALE_SLAB);
+    public static final RegistrySupplier<BlockItem> DAMAGED_SERPENT_SKIN = registerBlockItem(AbyssalDecorBlocks.DAMAGED_SERPENT_SKIN);
+
+    public static final RegistrySupplier<BlockItem> SERPENT_FLESH = registerBlockItem(AbyssalDecorBlocks.SERPENT_FLESH);
+    public static final RegistrySupplier<BlockItem> SERPENT_FLESH_SLAB = registerBlockItem(AbyssalDecorBlocks.SERPENT_FLESH_SLAB);
+
+    public static final RegistrySupplier<BlockItem> RIBBED_SERPENT_VEINS = registerBlockItem(AbyssalDecorBlocks.RIBBED_SERPENT_VEINS);
+    public static final RegistrySupplier<BlockItem> SERPENT_EYE = registerBlockItem(AbyssalDecorBlocks.SERPENT_EYE);
+    public static final RegistrySupplier<BlockItem> SMALL_SERPENT_EYES = registerBlockItem(AbyssalDecorBlocks.SMALL_SERPENT_EYES);
+
+    public static final RegistrySupplier<BlockItem> NETTED_SERPENT_EYE = registerBlockItem(AbyssalDecorBlocks.NETTED_SERPENT_EYE);
+    public static final RegistrySupplier<BlockItem> SMALL_NETTED_SERPENT_EYE = registerBlockItem(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE);
+
+    public static final RegistrySupplier<BlockItem> VELVET = registerBlockItem(AbyssalDecorBlocks.VELVET);
+    public static final RegistrySupplier<BlockItem> GILDED_VELVET = registerBlockItem(AbyssalDecorBlocks.GILDED_VELVET);
+
+    //////////////////////////////
+
     public static final RegistrySupplier<BlockItem> BLACKWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_LOG);
+    public static final RegistrySupplier<BlockItem> STRIPPED_BLACKWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG);
     public static final RegistrySupplier<BlockItem> BLACKWOOD_WOOD = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_WOOD);
     public static final RegistrySupplier<BlockItem> BLACKWOOD_PLANKS = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_PLANKS);
     public static final RegistrySupplier<BlockItem> BLACKWOOD_STAIRS = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_STAIRS);

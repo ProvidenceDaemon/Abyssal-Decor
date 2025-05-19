@@ -1,9 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "abyssaldecor:block/serpentscalesdamaged",
-    "top": "abyssaldecor:block/serpentscalesdamaged",
-    "side": "abyssaldecor:block/serpentscalesdamaged"
-  },
-  "render_type": "solid"
-}

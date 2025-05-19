@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "abyssaldecor:block/damaged_serpent_scale_slab"
+    },
+    "type=double": {
+      "model": "abyssaldecor:block/damaged_serpent_scales"
+    },
+    "type=top": {
+      "model": "abyssaldecor:block/damaged_serpent_scale_slab_top"
+    }
+  }
+}

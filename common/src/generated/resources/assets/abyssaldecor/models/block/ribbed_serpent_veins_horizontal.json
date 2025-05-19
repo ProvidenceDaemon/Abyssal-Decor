@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "abyssaldecor:block/ribbed_serpent_veins_top",
+    "side": "abyssaldecor:block/ribbed_serpent_veins"
+  }
+}

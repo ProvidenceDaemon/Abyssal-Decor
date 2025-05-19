@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abyssaldecor:block/damaged_serpent_scales"
+  }
+}
