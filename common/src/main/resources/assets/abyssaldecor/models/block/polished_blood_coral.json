@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/bloodcoralpolished",
-    "particle": "abyssaldecor:block/bloodcoralpolished"
-  },
-  "render_type": "solid"
-}

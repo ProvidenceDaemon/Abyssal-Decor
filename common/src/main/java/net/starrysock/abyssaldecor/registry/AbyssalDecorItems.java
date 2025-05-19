@@ -28,8 +28,10 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<ItemNameBlockItem> AMARANTH_SEEDS = registerNamedBlockItem("amaranth_seeds",AbyssalDecorBlocks.AMARANTH);
     public static final RegistrySupplier<Item> AMARANTH_PINNACLE = AbyssalDecor.ITEMS.register("amaranth_pinnacle",() -> new Item(new Item.Properties()));
     public static final RegistrySupplier<BlockItem> AMARANTH_CRATE = registerBlockItem(AbyssalDecorBlocks.AMARANTH_CRATE);
-    public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = registerNamedBlockItem("muckroot",AbyssalDecorBlocks.MUCKROOT,new Item.Properties().food(Foods.CARROT));
-    public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() -> new Item(new Item.Properties().food(Foods.BEETROOT)));
+    public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = registerNamedBlockItem("muckroot",
+            AbyssalDecorBlocks.MUCKROOT,new Item.Properties().food(Foods.CARROT));
+    public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() ->
+            new Item(new Item.Properties().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() ->
             new BowlFoodItem(new Item.Properties().stacksTo(1).food(Foods.BEETROOT_SOUP)));
 
@@ -246,6 +248,37 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> GOLD_SCONCE = registerBlockItem(AbyssalDecorBlocks.GOLD_SCONCE);
     public static final RegistrySupplier<BlockItem> GOLD_BARS = registerBlockItem(AbyssalDecorBlocks.GOLD_BARS);
+    
+    /////////////////////////////
+
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BUD = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BUD);
+    public static final RegistrySupplier<BlockItem> POLISHED_BLOOD_CORAL = registerBlockItem(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL);
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLOOD_CORAL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL);
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BRICKS = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BRICKS);
+    public static final RegistrySupplier<BlockItem> ROUGH_BLOOD_CORAL = registerBlockItem(AbyssalDecorBlocks.ROUGH_BLOOD_CORAL);
+
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_PILLAR = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR);
+    public static final RegistrySupplier<BlockItem> GLIDED_BLOOD_CORAL_PILLAR = registerBlockItem(AbyssalDecorBlocks.GLIDED_BLOOD_CORAL_PILLAR);
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_SCONCE = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE);
+
+    //blood coral lantern
+
+    public static final RegistrySupplier<DoubleHighBlockItem> BLOOD_CORAL_DOOR = registerDoorItem(AbyssalDecorBlocks.BLOOD_CORAL_DOOR);
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR);
+
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BARS = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BARS);
+
+    public static final RegistrySupplier<BlockItem> POLISHED_BLOOD_CORAL_SLAB = registerBlockItem(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB);
+    public static final RegistrySupplier<BlockItem> POLISHED_BLOOD_CORAL_STAIRS = registerBlockItem(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_STAIRS);
+    public static final RegistrySupplier<BlockItem> POLISHED_BLOOD_CORAL_WALL = registerBlockItem(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_WALL);
+
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLOOD_CORAL_SLAB = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_SLAB);
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLOOD_CORAL_STAIRS = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_STAIRS);
+    public static final RegistrySupplier<BlockItem> SMOOTH_BLOOD_CORAL_WALL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_WALL);
+
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BRICK_SLAB = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_SLAB);
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BRICK_STAIRS = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_STAIRS);
+    public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BRICK_WALL = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_WALL);
 
     ///////////////////////////////
 

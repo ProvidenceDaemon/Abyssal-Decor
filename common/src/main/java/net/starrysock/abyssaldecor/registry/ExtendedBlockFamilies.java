@@ -83,6 +83,27 @@ public class ExtendedBlockFamilies {
             .wall(AbyssalDecorBlocks.IRON_PANEL_WALL.get())
             .recipeUnlockedBy("has_iron_panel").getFamily();
 
+    public static final ExtendedBlockFamily POLISHED_BLOOD_CORAL = familyBuilder(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL.get())
+            .door(AbyssalDecorBlocks.BLOOD_CORAL_DOOR.get())
+            .slab(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB.get())
+            .stairs(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_STAIRS.get())
+            .trapdoor(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR.get())
+            .wall(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_WALL.get())
+            .getFamily();
+
+    public static final ExtendedBlockFamily SMOOTH_BLOOD_CORAL = familyBuilder(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL.get())
+            .slab(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_SLAB.get())
+            .stairs(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_STAIRS.get())
+            .wall(AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_WALL.get())
+            .getFamily();
+
+    public static final ExtendedBlockFamily BLOOD_CORAL_BRICKS = familyBuilder(AbyssalDecorBlocks.BLOOD_CORAL_BRICKS.get())
+            .slab(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_SLAB.get())
+            .stairs(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_STAIRS.get())
+            .wall(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_WALL.get())
+            .getFamily();
+
+
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);
         ExtendedBlockFamily blockfamily = MAP.put(baseBlock, blockfamily$builder.getFamily());

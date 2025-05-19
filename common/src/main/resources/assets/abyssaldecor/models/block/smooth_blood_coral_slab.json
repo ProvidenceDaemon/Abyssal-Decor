@@ -1,9 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "abyssaldecor:block/bloodcoralsmooth",
-    "top": "abyssaldecor:block/bloodcoralsmooth",
-    "side": "abyssaldecor:block/bloodcoralsmooth"
-  },
-  "render_type": "solid"
-}

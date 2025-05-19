@@ -379,6 +379,52 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<IronBarsBlock> GOLD_BARS = AbyssalDecor.BLOCKS.register("gold_bars",() -> ironBars());
 
+    ////////////////
+
+    public static final RegistrySupplier<Block> BLOOD_CORAL_BUD = AbyssalDecor.BLOCKS.register("blood_coral_bud",() ->
+            new BloodCoralBudBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> POLISHED_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("polished_blood_coral",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SMOOTH_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("smooth_blood_coral",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> BLOOD_CORAL_BRICKS = AbyssalDecor.BLOCKS.register("blood_coral_bricks",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> ROUGH_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("rough_blood_coral",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+
+
+    public static final RegistrySupplier<RotatedPillarBlock> BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("blood_coral_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> GLIDED_BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("glided_blood_coral_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<IronSconceBlock> BLOOD_CORAL_SCONCE = AbyssalDecor.BLOCKS.register("blood_coral_sconce",
+            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+
+
+    //blood coral lantern
+
+    public static final RegistrySupplier<DoorBlock> BLOOD_CORAL_DOOR = AbyssalDecor.BLOCKS.register("blood_coral_door",() -> woodDoor(SMOOTH_BLOOD_CORAL.get(),BlockSetType.STONE));
+    public static final RegistrySupplier<TrapDoorBlock> BLOOD_CORAL_TRAPDOOR = AbyssalDecor.BLOCKS.register("blood_coral_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
+
+    public static final RegistrySupplier<IronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> ironBars());
+
+    public static final RegistrySupplier<SlabBlock> POLISHED_BLOOD_CORAL_SLAB = AbyssalDecor.BLOCKS.register("polished_blood_coral_slab",() -> slab(POLISHED_BLOOD_CORAL.get()));
+    public static final RegistrySupplier<StairBlock> POLISHED_BLOOD_CORAL_STAIRS = AbyssalDecor.BLOCKS.register("polished_blood_coral_stairs",() -> stairs(POLISHED_BLOOD_CORAL.get()));
+    public static final RegistrySupplier<WallBlock> POLISHED_BLOOD_CORAL_WALL = AbyssalDecor.BLOCKS.register("polished_blood_coral_wall",() -> wall(POLISHED_BLOOD_CORAL.get()));
+
+    public static final RegistrySupplier<SlabBlock> SMOOTH_BLOOD_CORAL_SLAB = AbyssalDecor.BLOCKS.register("smooth_blood_coral_slab",() -> slab(SMOOTH_BLOOD_CORAL.get()));
+    public static final RegistrySupplier<StairBlock> SMOOTH_BLOOD_CORAL_STAIRS = AbyssalDecor.BLOCKS.register("smooth_blood_coral_stairs",() -> stairs(SMOOTH_BLOOD_CORAL.get()));
+    public static final RegistrySupplier<WallBlock> SMOOTH_BLOOD_CORAL_WALL = AbyssalDecor.BLOCKS.register("smooth_blood_coral_wall",() -> wall(SMOOTH_BLOOD_CORAL.get()));
+
+    public static final RegistrySupplier<SlabBlock> BLOOD_CORAL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("blood_coral_brick_slab",() -> slab(BLOOD_CORAL_BRICKS.get()));
+    public static final RegistrySupplier<StairBlock> BLOOD_CORAL_BRICK_STAIRS = AbyssalDecor.BLOCKS.register("blood_coral_brick_stairs",() -> stairs(BLOOD_CORAL_BRICKS.get()));
+    public static final RegistrySupplier<WallBlock> BLOOD_CORAL_BRICK_WALL = AbyssalDecor.BLOCKS.register("blood_coral_brick_wall",() -> wall(BLOOD_CORAL_BRICKS.get()));
 
     /////////
 

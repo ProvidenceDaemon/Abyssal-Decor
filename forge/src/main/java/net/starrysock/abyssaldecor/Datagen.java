@@ -203,6 +203,8 @@ class Datagen {
 
             generatedItem(AbyssalDecorItems.SHELL.get(),modLoc("block/shelltop"));
 
+            generatedItem(AbyssalDecorItems.BLOOD_CORAL_BARS.get(),modLoc("block/blood_coral_bars_solo"));
+
         }
 
 
@@ -550,6 +552,13 @@ class Datagen {
             trapdoor(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR.get());
 
             logBlockWithItem(AbyssalDecorBlocks.IRON_PILLAR.get());
+
+            logBlockWithItem(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR.get());
+            logBlockWithItem(AbyssalDecorBlocks.ROUGH_BLOOD_CORAL.get());
+            logBlockWithItem(AbyssalDecorBlocks.GLIDED_BLOOD_CORAL_PILLAR.get());
+
+            paneBlock(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(),modLoc("block/blood_coral_bars_solo"),modLoc("block/blood_coral_bars_solo"));
+
         }
 
         void trapdoor(TrapDoorBlock block) {

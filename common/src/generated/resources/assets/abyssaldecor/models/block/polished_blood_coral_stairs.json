@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "abyssaldecor:block/polished_blood_coral",
+    "side": "abyssaldecor:block/polished_blood_coral",
+    "top": "abyssaldecor:block/polished_blood_coral"
+  }
+}

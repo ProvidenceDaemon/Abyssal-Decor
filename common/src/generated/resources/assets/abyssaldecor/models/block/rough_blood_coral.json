@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/rough_blood_coral_top",
+    "side": "abyssaldecor:block/rough_blood_coral"
+  }
+}

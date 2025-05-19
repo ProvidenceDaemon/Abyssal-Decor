@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "abyssaldecor:block/smooth_blood_coral"
+  }
+}
