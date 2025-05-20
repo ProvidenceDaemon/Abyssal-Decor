@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "abyssaldecor:block/deepbronze_block"
+  }
+}

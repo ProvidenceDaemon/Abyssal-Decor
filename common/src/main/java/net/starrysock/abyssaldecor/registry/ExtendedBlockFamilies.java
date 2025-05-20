@@ -114,6 +114,22 @@ public class ExtendedBlockFamilies {
             .wall(AbyssalDecorBlocks.SEABRASS_WALL.get())
             .getFamily();
 
+    public static final ExtendedBlockFamily DEEPBRONZE_BLOCK = familyBuilder(AbyssalDecorBlocks.DEEPBRONZE_BLOCK.get())
+            .button(AbyssalDecorBlocks.DEEPBRONZE_BUTTON.get())
+            .door(AbyssalDecorBlocks.DEEPBRONZE_DOOR.get())
+            .pressurePlate(AbyssalDecorBlocks.DEEPBRONZE_PRESSURE_PLATE.get())
+            .slab(AbyssalDecorBlocks.DEEPBRONZE_SLAB.get())
+            .stairs(AbyssalDecorBlocks.DEEPBRONZE_STAIRS.get())
+            .trapdoor(AbyssalDecorBlocks.DEEPBRONZE_TRAPDOOR.get())
+            .wall(AbyssalDecorBlocks.DEEPBRONZE_WALL.get())
+            .getFamily();
+
+    public static final ExtendedBlockFamily RIVETED_DEEPBRONZE = familyBuilder(AbyssalDecorBlocks.RIVETED_DEEPBRONZE.get())
+            .slab(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_SLAB.get())
+            .stairs(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_STAIRS.get())
+            .wall(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_WALL.get())
+            .getFamily();
+
 
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "abyssaldecor:block/riveted_deepbronze",
+    "side": "abyssaldecor:block/riveted_deepbronze",
+    "top": "abyssaldecor:block/riveted_deepbronze"
+  }
+}

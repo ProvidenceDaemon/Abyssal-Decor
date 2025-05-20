@@ -199,6 +199,7 @@ class Datagen {
             generatedItemBlockTexture(AbyssalDecorItems.BLOOD_CORAL_BUD.get());
 
             generatedItem(AbyssalDecorItems.BLOOD_CORAL_BARS.get(),modLoc("block/blood_coral_bars_solo"));
+            generatedItem(AbyssalDecorItems.DEEPBRONZE_BARS.get(),modLoc("block/deepbronze_bars"));
 
         }
 
@@ -612,9 +613,11 @@ class Datagen {
             simplestBlockWithItem(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get());
 
             simplestBlockWithItem(AbyssalDecorBlocks.RIVETED_SEABRASS.get());
-
             blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(),modLoc("block/seabrass_lamp"));
             simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),modLoc("block/riveted_seabrass"));
+
+            paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(),modLoc("block/deepbronze_bars"),modLoc("block/deepbronze_bars"));
+
 
         }
 

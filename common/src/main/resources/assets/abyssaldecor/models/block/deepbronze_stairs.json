@@ -1,9 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "abyssaldecor:block/bronzeblock",
-    "top": "abyssaldecor:block/bronzeblock",
-    "side": "abyssaldecor:block/bronzeblock"
-  },
-  "render_type": "solid"
-}

@@ -73,5 +73,7 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.CLAM.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.CLAM_WITH_PEARL.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(),RenderType.cutoutMipped());
     }
 }

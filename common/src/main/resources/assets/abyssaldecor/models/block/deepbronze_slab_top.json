@@ -1,9 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "abyssaldecor:block/bronzeblock",
-    "top": "abyssaldecor:block/bronzeblock",
-    "side": "abyssaldecor:block/bronzeblockdoubleslab"
-  },
-  "render_type": "solid"
-}

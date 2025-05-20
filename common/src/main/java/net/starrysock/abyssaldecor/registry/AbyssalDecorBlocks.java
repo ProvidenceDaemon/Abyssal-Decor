@@ -556,6 +556,54 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronBarsBlock> ORNATE_SEABRASS_BARS = AbyssalDecor.BLOCKS.register("ornate_seabrass_bars",
             () -> ironBars());
 
+    //////////////
+
+    public static final RegistrySupplier<Block> DEEPBRONZE_BLOCK = AbyssalDecor.BLOCKS.register("deepbronze_block",() ->
+            new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> RIVETED_DEEPBRONZE = AbyssalDecor.BLOCKS.register("riveted_deepbronze",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> DEEPBRONZE_TRIM = AbyssalDecor.BLOCKS.register("deepbronze_trim",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> DEEPBRONZE_PILLAR = AbyssalDecor.BLOCKS.register("deepbronze_pillar",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> LARGE_DEEPBRONZE_PIPE = AbyssalDecor.BLOCKS.register("large_deepbronze_pipe",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> DEEPBRONZE_PLATING = AbyssalDecor.BLOCKS.register("deepbronze_plating",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<IronBarsBlock> DEEPBRONZE_BARS = AbyssalDecor.BLOCKS.register("deepbronze_bars",
+            () -> ironBars());
+
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DEEPBRONZE_BEAM = AbyssalDecor.BLOCKS.register("deepbronze_beam",
+            () -> new BeamBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+
+    public static final RegistrySupplier<SlabBlock> DEEPBRONZE_SLAB = AbyssalDecor.BLOCKS.register("deepbronze_slab",() -> slab(DEEPBRONZE_BLOCK.get()));
+    public static final RegistrySupplier<StairBlock> DEEPBRONZE_STAIRS = AbyssalDecor.BLOCKS.register("deepbronze_stairs",() -> stairs(DEEPBRONZE_BLOCK.get()));
+    public static final RegistrySupplier<WallBlock> DEEPBRONZE_WALL = AbyssalDecor.BLOCKS.register("deepbronze_wall",() -> wall(DEEPBRONZE_BLOCK.get()));
+
+    public static final RegistrySupplier<SlabBlock> RIVETED_DEEPBRONZE_SLAB = AbyssalDecor.BLOCKS.register("riveted_deepbronze_slab",() -> slab(RIVETED_DEEPBRONZE.get()));
+    public static final RegistrySupplier<StairBlock> RIVETED_DEEPBRONZE_STAIRS = AbyssalDecor.BLOCKS.register("riveted_deepbronze_stairs",() -> stairs(RIVETED_DEEPBRONZE.get()));
+    public static final RegistrySupplier<WallBlock> RIVETED_DEEPBRONZE_WALL = AbyssalDecor.BLOCKS.register("riveted_deepbronze_wall",() -> wall(RIVETED_DEEPBRONZE.get()));
+
+    public static final RegistrySupplier<ButtonBlock> DEEPBRONZE_BUTTON = AbyssalDecor.BLOCKS.register("deepbronze_button",() -> Blocks.stoneButton());
+    public static final RegistrySupplier<PressurePlateBlock> DEEPBRONZE_PRESSURE_PLATE = AbyssalDecor.BLOCKS.register("deepbronze_pressure_plate",() ->
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY), ModBlockSetTypes.DEEPBRONZE));
+
+    public static final RegistrySupplier<DoorBlock> DEEPBRONZE_DOOR = AbyssalDecor.BLOCKS.register("deepbronze_door",() -> woodDoor(DEEPBRONZE_BLOCK.get(),ModBlockSetTypes.DEEPBRONZE));
+    public static final RegistrySupplier<TrapDoorBlock> DEEPBRONZE_TRAPDOOR = AbyssalDecor.BLOCKS.register("deepbronze_trapdoor",() -> woodTrapdoor(ModBlockSetTypes.DEEPBRONZE));
+
+    public static final RegistrySupplier<ChainBlock> DEEPBRONZE_CHAIN = AbyssalDecor.BLOCKS.register("deepbronze_chain",() ->
+            new ChainBlock(BlockBehaviour.Properties.of()
+                    .forceSolidOn().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.CHAIN).noOcclusion()));
+
+    public static final RegistrySupplier<IronSconceBlock> DEEPBRONZE_SCONCE = AbyssalDecor.BLOCKS.register("deepbronze_sconce",
+            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
 
     /////////
 

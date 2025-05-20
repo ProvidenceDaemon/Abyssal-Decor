@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-19T22:55:02.901004	Item Models: abyssaldecor
+// 1.20.1	2025-05-20T02:49:06.552852	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -30,6 +30,14 @@ fae97fbd9ed686f67c241f74ee6d02a1ec98f6c5 assets/abyssaldecor/models/item/blood_c
 cc05848b618e6c38072137d18bcf6520d3b1086c assets/abyssaldecor/models/item/crystallized_glowstone.json
 8ecd0ae76e0521eed75468cda9b5bb89b38bfd74 assets/abyssaldecor/models/item/crystallized_glowstone_pane.json
 79fd6994da1356cc8249dfcbc33cfa3ad68e8f93 assets/abyssaldecor/models/item/dangling_web.json
+daafdd8130424530b5528635c6fe0d8898382d83 assets/abyssaldecor/models/item/deepbronze_bars.json
+8497f3093f3376a18032b95384050fed695864c6 assets/abyssaldecor/models/item/deepbronze_block.json
+5d71e77f5a88adb1176cd8b45e012471984128e1 assets/abyssaldecor/models/item/deepbronze_button.json
+18b19d5a0739728953d9cf4b96ce07845b8206b6 assets/abyssaldecor/models/item/deepbronze_door.json
+f45a85c76514b4cb673b971cbeddd2a84df82499 assets/abyssaldecor/models/item/deepbronze_pressure_plate.json
+62ede06816f078eab517b54264a1c05f1648d1ec assets/abyssaldecor/models/item/deepbronze_slab.json
+8512cf727dcfdfa303328db69b510e9c1234761a assets/abyssaldecor/models/item/deepbronze_stairs.json
+9d72234059ea6828ecbe64fc46ddb545f686af59 assets/abyssaldecor/models/item/deepbronze_trapdoor.json
 e6b6f3d6db4d9099236bf803d869709a673d10de assets/abyssaldecor/models/item/dusty_cd.json
 7d954fbae58dab1a8ec07b33c0ca81c65e242488 assets/abyssaldecor/models/item/flower_lamp.json
 3b8001632c4210115dfe7bc0f79456dcc28c1841 assets/abyssaldecor/models/item/framed_crystallized_glowstone.json
@@ -59,6 +67,9 @@ a25cf66c35fed4a4cecec3c3ede198680d563477 assets/abyssaldecor/models/item/polishe
 7c13c45623285f371e18671843281027ab21defc assets/abyssaldecor/models/item/prismarine_crystal_pane.json
 09fcd5cf69308d20787a51314b86ab58fb44c03f assets/abyssaldecor/models/item/quartz_lamp.json
 21b86d2ca8568af1ed4fec5b85f5f82268ff4cf9 assets/abyssaldecor/models/item/rainbow_lamp.json
+5e99d40fb591e05b55833cbff1c36ecb8bf57c14 assets/abyssaldecor/models/item/riveted_deepbronze.json
+63e37489c9820cacffbc398dee07c1fe954e5926 assets/abyssaldecor/models/item/riveted_deepbronze_slab.json
+cc4efeefeabee419971c0892eae00be373a729a6 assets/abyssaldecor/models/item/riveted_deepbronze_stairs.json
 ce8c055a514f22c4ae202ca832f5442797bf7bf3 assets/abyssaldecor/models/item/seabrass_block.json
 3c82f2b6c1f449381251df0f4c3ab0138e82baee assets/abyssaldecor/models/item/seabrass_button.json
 b55d147d8864c0a9b69c96edac2bfcaf6def2152 assets/abyssaldecor/models/item/seabrass_door.json

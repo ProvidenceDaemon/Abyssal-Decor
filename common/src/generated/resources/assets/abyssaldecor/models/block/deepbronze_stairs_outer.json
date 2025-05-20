@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "abyssaldecor:block/deepbronze_block",
+    "side": "abyssaldecor:block/deepbronze_block",
+    "top": "abyssaldecor:block/deepbronze_block"
+  }
+}

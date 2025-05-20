@@ -333,7 +333,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> RIVETED_SEABRASS = registerBlockItem(AbyssalDecorBlocks.RIVETED_SEABRASS);
     public static final RegistrySupplier<BlockItem> SEABRASS_TRIM = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TRIM);
     public static final RegistrySupplier<BlockItem> SEABRASS_PILLAR = registerBlockItem(AbyssalDecorBlocks.SEABRASS_PILLAR);
-    public static final RegistrySupplier<BlockItem> SEABRASS_PIPE = registerBlockItem(AbyssalDecorBlocks.LARGE_SEABRASS_PIPE);
+    public static final RegistrySupplier<BlockItem> LARGE_SEABRASS_PIPE = registerBlockItem(AbyssalDecorBlocks.LARGE_SEABRASS_PIPE);
     public static final RegistrySupplier<BlockItem> SMALL_SEABRASS_PIPES = registerBlockItem(AbyssalDecorBlocks.SMALL_SEABRASS_PIPES);
     public static final RegistrySupplier<BlockItem> SEABRASS_TILES = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TILES);
     public static final RegistrySupplier<BlockItem> SEABRASS_LAMP = registerBlockItem(AbyssalDecorBlocks.SEABRASS_LAMP);
@@ -354,6 +354,39 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SEABRASS_SCONCE = registerBlockItem(AbyssalDecorBlocks.SEABRASS_SCONCE);
     public static final RegistrySupplier<BlockItem> SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.SEABRASS_BARS);
     public static final RegistrySupplier<BlockItem> ORNATE_SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_SEABRASS_BARS);
+
+    ////////////////////////////////
+
+    public static final RegistrySupplier<Item> DEEPBRONZE_INGOT = AbyssalDecor.ITEMS.register("deepbronze_ingot", AbyssalDecorItems::simpleItem);
+    public static final RegistrySupplier<Item> DEEPBRONZE_NUGGET = AbyssalDecor.ITEMS.register("deepbronze_nugget", AbyssalDecorItems::simpleItem);
+
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_BLOCK = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BLOCK);
+    public static final RegistrySupplier<BlockItem> RIVETED_DEEPBRONZE = registerBlockItem(AbyssalDecorBlocks.RIVETED_DEEPBRONZE);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_TRIM = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_TRIM);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_PILLAR = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_PILLAR);
+    public static final RegistrySupplier<BlockItem> LARGE_DEEPBRONZE_PIPE = registerBlockItem(AbyssalDecorBlocks.LARGE_DEEPBRONZE_PIPE);
+
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_PLATING = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_PLATING);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BARS);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_BEAM = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BEAM);
+
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_STAIRS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_STAIRS);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_SLAB = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_SLAB);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_WALL = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_WALL);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_BUTTON = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BUTTON);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_PRESSURE_PLATE = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_PRESSURE_PLATE);
+
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_DOOR = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_DOOR);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_TRAPDOOR);
+
+    public static final RegistrySupplier<BlockItem> RIVETED_DEEPBRONZE_SLAB = registerBlockItem(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_SLAB);
+    public static final RegistrySupplier<BlockItem> RIVETED_DEEPBRONZE_STAIRS = registerBlockItem(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_STAIRS);
+    public static final RegistrySupplier<BlockItem> RIVETED_DEEPBRONZE_WALL = registerBlockItem(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_WALL);
+
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_CHAIN = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_CHAIN);
+
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_SCONCE = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_SCONCE);
+
 
     static Item simpleItem() {
         return new Item(new Item.Properties());
