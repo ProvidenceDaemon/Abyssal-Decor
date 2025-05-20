@@ -628,6 +628,12 @@ class Datagen {
 
             //paneBlock(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(),modLoc("block/laventine_glass"),modLoc("block/deepbronze_bars"));
 
+            simplestBlockWithItem(AbyssalDecorBlocks.SMOOTH_STARSTONE.get());
+
+            simplestBlockWithItem(AbyssalDecorBlocks.STARGLASS.get());
+
+            paneBlock(AbyssalDecorBlocks.STARGLASS_PANE.get(),modLoc("block/starglass"),modLoc("block/starglass"));
+
         }
 
         void simpleSlab(SlabBlock slabBlock,ResourceLocation texture) {

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "abyssaldecor:block/polished_starstone",
+    "side": "abyssaldecor:block/polished_starstone",
+    "top": "abyssaldecor:block/polished_starstone"
+  }
+}

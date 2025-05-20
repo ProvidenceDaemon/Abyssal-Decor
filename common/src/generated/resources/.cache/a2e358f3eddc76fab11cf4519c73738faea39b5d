@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-20T02:49:06.552852	Item Models: abyssaldecor
+// 1.20.1	2025-05-20T12:33:02.0440482	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -63,6 +63,9 @@ cce7a9cfd9e9dc816c9ad1fc05987b8a5a387724 assets/abyssaldecor/models/item/jade_la
 a25cf66c35fed4a4cecec3c3ede198680d563477 assets/abyssaldecor/models/item/polished_blood_coral.json
 18c8b3a65b81bcf6dafc8f1c3151472213439f6b assets/abyssaldecor/models/item/polished_blood_coral_slab.json
 28a82345ab8cab6c40d1db22a0823de68322aa78 assets/abyssaldecor/models/item/polished_blood_coral_stairs.json
+b1bf76ec909972576b8c86934113262121b99d19 assets/abyssaldecor/models/item/polished_starstone.json
+036a2835210bf7ea30960af820ae6c860fb32bd3 assets/abyssaldecor/models/item/polished_starstone_slab.json
+57cf0a85d677c842df501d173b5b92d3c5fe3964 assets/abyssaldecor/models/item/polished_starstone_stairs.json
 00ff201210b7669a41838e9ef5e784f0b9be2bdd assets/abyssaldecor/models/item/prismarine_crystal_block.json
 7c13c45623285f371e18671843281027ab21defc assets/abyssaldecor/models/item/prismarine_crystal_pane.json
 09fcd5cf69308d20787a51314b86ab58fb44c03f assets/abyssaldecor/models/item/quartz_lamp.json

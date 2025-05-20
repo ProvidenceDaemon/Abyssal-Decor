@@ -623,6 +623,37 @@ public class AbyssalDecorBlocks {
 
     /////////
 
+    public static final RegistrySupplier<Block> STARSTONE = AbyssalDecor.BLOCKS.register("starstone",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SMOOTH_STARSTONE = AbyssalDecor.BLOCKS.register("smooth_starstone",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> POLISHED_STARSTONE = AbyssalDecor.BLOCKS.register("polished_starstone",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> GILDED_STARSTONE = AbyssalDecor.BLOCKS.register("gilded_starstone",() -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<RotatedPillarBlock> STARSTONE_PILLAR = AbyssalDecor.BLOCKS.register("starstone_pillar",() -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+
+
+    public static final RegistrySupplier<SlabBlock> POLISHED_STARSTONE_SLAB = AbyssalDecor.BLOCKS.register("polished_starstone_slab",() -> slab(POLISHED_STARSTONE.get()));
+    public static final RegistrySupplier<StairBlock> POLISHED_STARSTONE_STAIRS = AbyssalDecor.BLOCKS.register("polished_starstone_stairs",() -> stairs(POLISHED_STARSTONE.get()));
+    public static final RegistrySupplier<WallBlock> POLISHED_STARSTONE_WALL = AbyssalDecor.BLOCKS.register("polished_starstone_wall",() -> wall(POLISHED_STARSTONE.get()));
+
+    public static final RegistrySupplier<Block> CHISELED_STARSTONE = AbyssalDecor.BLOCKS.register("chiseled_starstone",() ->
+            new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> STARSTONE_TILES = AbyssalDecor.BLOCKS.register("starstone_tiles",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> LAPIS_PILLAR = AbyssalDecor.BLOCKS.register("lapis_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> GILDED_LAPIS_PILLAR = AbyssalDecor.BLOCKS.register("gilded_lapis_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> STARGLASS = AbyssalDecor.BLOCKS.register("starglass",() -> new Block(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> STARGLASS_PANE = AbyssalDecor.BLOCKS.register("starglass_pane",() -> new IronBarsBlock(glassLike()));
+
+    ////////
+
 
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("stripped_blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));

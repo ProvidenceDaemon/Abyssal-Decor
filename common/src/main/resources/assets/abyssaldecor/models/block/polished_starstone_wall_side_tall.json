@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_wall_side_tall",
-  "textures": {
-    "wall": "abyssaldecor:block/starstone_polished",
-    "particle": "abyssaldecor:block/starstone_polished"
-  },
-  "render_type": "solid"
-}

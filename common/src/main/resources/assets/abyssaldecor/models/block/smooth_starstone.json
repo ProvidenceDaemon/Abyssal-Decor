@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/starstone_smooth",
-    "particle": "abyssaldecor:block/starstone_smooth"
-  },
-  "render_type": "solid"
-}

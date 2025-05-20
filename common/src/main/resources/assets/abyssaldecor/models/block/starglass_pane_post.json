@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_glass_pane_post",
-  "textures": {
-    "edge": "abyssal_decor:block/starglasspanetop",
-    "pane": "abyssal_decor:block/starglass"
-  },
-  "render_type": "translucent"
-}

@@ -131,6 +131,14 @@ public class ExtendedBlockFamilies {
             .getFamily();
 
 
+    public static final ExtendedBlockFamily POLISHED_STARSTONE = familyBuilder(AbyssalDecorBlocks.POLISHED_STARSTONE.get())
+            .slab(AbyssalDecorBlocks.POLISHED_STARSTONE_SLAB.get())
+            .stairs(AbyssalDecorBlocks.POLISHED_STARSTONE_STAIRS.get())
+            .wall(AbyssalDecorBlocks.POLISHED_STARSTONE_WALL.get())
+            .chiseled(AbyssalDecorBlocks.CHISELED_STARSTONE.get())
+            .getFamily();
+
+
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);
         ExtendedBlockFamily blockfamily = MAP.put(baseBlock, blockfamily$builder.getFamily());

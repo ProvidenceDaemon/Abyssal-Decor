@@ -394,6 +394,27 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> LAVENTINE_GLASS = registerBlockItem(AbyssalDecorBlocks.LAVENTINE_GLASS);
     public static final RegistrySupplier<BlockItem> LAVENTINE_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE);
 
+    public static final RegistrySupplier<BlockItem> STARSTONE = registerBlockItem(AbyssalDecorBlocks.STARSTONE);
+    public static final RegistrySupplier<BlockItem> SMOOTH_STARSTONE = registerBlockItem(AbyssalDecorBlocks.SMOOTH_STARSTONE);
+    public static final RegistrySupplier<BlockItem> POLISHED_STARSTONE = registerBlockItem(AbyssalDecorBlocks.POLISHED_STARSTONE);
+
+    public static final RegistrySupplier<BlockItem> POLISHED_STARSTONE_SLAB = registerBlockItem(AbyssalDecorBlocks.POLISHED_STARSTONE_SLAB);
+    public static final RegistrySupplier<BlockItem> POLISHED_STARSTONE_STAIRS = registerBlockItem(AbyssalDecorBlocks.POLISHED_STARSTONE_STAIRS);
+    public static final RegistrySupplier<BlockItem> POLISHED_STARSTONE_WALL = registerBlockItem(AbyssalDecorBlocks.POLISHED_STARSTONE_WALL);
+
+    public static final RegistrySupplier<BlockItem> CHISELED_STARSTONE = registerBlockItem(AbyssalDecorBlocks.CHISELED_STARSTONE);
+
+    public static final RegistrySupplier<BlockItem> STARSTONE_PILLAR = registerBlockItem(AbyssalDecorBlocks.STARSTONE_PILLAR);
+    public static final RegistrySupplier<BlockItem> GILDED_STARSTONE = registerBlockItem(AbyssalDecorBlocks.GILDED_STARSTONE);
+
+    public static final RegistrySupplier<BlockItem> STARSTONE_TILES = registerBlockItem(AbyssalDecorBlocks.STARSTONE_TILES);
+
+    public static final RegistrySupplier<BlockItem> LAPIS_PILLAR = registerBlockItem(AbyssalDecorBlocks.LAPIS_PILLAR);
+    public static final RegistrySupplier<BlockItem> GILDED_LAPIS_PILLAR = registerBlockItem(AbyssalDecorBlocks.GILDED_LAPIS_PILLAR);
+
+    public static final RegistrySupplier<BlockItem> STARGLASS = registerBlockItem(AbyssalDecorBlocks.STARGLASS);
+    public static final RegistrySupplier<BlockItem> STARGLASS_PANE = registerBlockItem(AbyssalDecorBlocks.STARGLASS_PANE);
+
     static Item simpleItem() {
         return new Item(new Item.Properties());
     }
