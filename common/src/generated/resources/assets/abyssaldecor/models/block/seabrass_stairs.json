@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "abyssaldecor:block/seabrass_block",
+    "side": "abyssaldecor:block/seabrass_block",
+    "top": "abyssaldecor:block/seabrass_block"
+  }
+}

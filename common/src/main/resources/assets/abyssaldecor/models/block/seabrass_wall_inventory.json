@@ -1,8 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "abyssaldecor:block/brassblock",
-    "particle": "abyssaldecor:block/brassblock"
-  },
-  "render_type": "solid"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/brassriveted",
-    "particle": "abyssaldecor:block/brassriveted"
-  },
-  "render_type": "solid"
-}

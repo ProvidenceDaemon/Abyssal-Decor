@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "abyssaldecor:block/seabrass_lamp"
+    },
+    "lit=true": {
+      "model": "abyssaldecor:block/seabrass_lamp_lit"
+    }
+  }
+}

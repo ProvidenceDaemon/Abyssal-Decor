@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/brasslampoff",
-    "particle": "abyssaldecor:block/brasslampoff"
-  },
-  "render_type": "solid"
-}

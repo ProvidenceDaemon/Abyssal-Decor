@@ -316,6 +316,49 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> VELVET = registerBlockItem(AbyssalDecorBlocks.VELVET);
     public static final RegistrySupplier<BlockItem> GILDED_VELVET = registerBlockItem(AbyssalDecorBlocks.GILDED_VELVET);
 
+    public static final RegistrySupplier<BlockItem> VELVET_CARPET = registerBlockItem(AbyssalDecorBlocks.VELVET_CARPET);
+    public static final RegistrySupplier<BlockItem> GILDED_VELVET_CARPET = registerBlockItem(AbyssalDecorBlocks.GILDED_VELVET_CARPET);
+
+    public static final RegistrySupplier<BlockItem> VELVET_CURTAIN = registerBlockItem(AbyssalDecorBlocks.VELVET_CURTAIN);
+    public static final RegistrySupplier<BlockItem> WOOL_CURTAIN = registerBlockItem(AbyssalDecorBlocks.WOOL_CURTAIN);
+
+    public static final RegistrySupplier<BlockItem> AMMONITE = registerBlockItem(AbyssalDecorBlocks.AMMONITE);
+    public static final RegistrySupplier<Item> RAW_SEABRASS = AbyssalDecor.ITEMS.register("raw_seabrass", AbyssalDecorItems::simpleItem);
+    public static final RegistrySupplier<BlockItem> RAW_SEABRASS_BLOCK = registerBlockItem(AbyssalDecorBlocks.RAW_SEABRASS_BLOCK);
+
+    public static final RegistrySupplier<Item> SEABRASS_INGOT = AbyssalDecor.ITEMS.register("seabrass_ingot", AbyssalDecorItems::simpleItem);
+    public static final RegistrySupplier<Item> SEABRASS_NUGGET = AbyssalDecor.ITEMS.register("seabrass_nugget", AbyssalDecorItems::simpleItem);
+
+    public static final RegistrySupplier<BlockItem> SEABRASS_BLOCK = registerBlockItem(AbyssalDecorBlocks.SEABRASS_BLOCK);
+    public static final RegistrySupplier<BlockItem> RIVETED_SEABRASS = registerBlockItem(AbyssalDecorBlocks.RIVETED_SEABRASS);
+    public static final RegistrySupplier<BlockItem> SEABRASS_TRIM = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TRIM);
+    public static final RegistrySupplier<BlockItem> SEABRASS_PILLAR = registerBlockItem(AbyssalDecorBlocks.SEABRASS_PILLAR);
+    public static final RegistrySupplier<BlockItem> SEABRASS_PIPE = registerBlockItem(AbyssalDecorBlocks.LARGE_SEABRASS_PIPE);
+    public static final RegistrySupplier<BlockItem> SMALL_SEABRASS_PIPES = registerBlockItem(AbyssalDecorBlocks.SMALL_SEABRASS_PIPES);
+    public static final RegistrySupplier<BlockItem> SEABRASS_TILES = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TILES);
+    public static final RegistrySupplier<BlockItem> SEABRASS_LAMP = registerBlockItem(AbyssalDecorBlocks.SEABRASS_LAMP);
+
+    public static final RegistrySupplier<BlockItem> SEABRASS_STAIRS = registerBlockItem(AbyssalDecorBlocks.SEABRASS_STAIRS);
+    public static final RegistrySupplier<BlockItem> SEABRASS_SLAB = registerBlockItem(AbyssalDecorBlocks.SEABRASS_SLAB);
+    public static final RegistrySupplier<BlockItem> SEABRASS_WALL = registerBlockItem(AbyssalDecorBlocks.SEABRASS_WALL);
+    public static final RegistrySupplier<BlockItem> SEABRASS_BUTTON = registerBlockItem(AbyssalDecorBlocks.SEABRASS_BUTTON);
+    public static final RegistrySupplier<BlockItem> SEABRASS_PRESSURE_PLATE = registerBlockItem(AbyssalDecorBlocks.SEABRASS_PRESSURE_PLATE);
+
+    public static final RegistrySupplier<BlockItem> SEABRASS_DOOR = registerBlockItem(AbyssalDecorBlocks.SEABRASS_DOOR);
+    public static final RegistrySupplier<BlockItem> SEABRASS_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TRAPDOOR);
+
+    public static final RegistrySupplier<BlockItem> RIVETED_SEABRASS_SLAB = registerBlockItem(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB);
+
+    public static final RegistrySupplier<BlockItem> SEABRASS_CHAIN = registerBlockItem(AbyssalDecorBlocks.SEABRASS_CHAIN);
+
+    public static final RegistrySupplier<BlockItem> SEABRASS_SCONCE = registerBlockItem(AbyssalDecorBlocks.SEABRASS_SCONCE);
+    public static final RegistrySupplier<BlockItem> SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.SEABRASS_BARS);
+    public static final RegistrySupplier<BlockItem> ORNATE_SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_SEABRASS_BARS);
+
+    static Item simpleItem() {
+        return new Item(new Item.Properties());
+    }
+
     //////////////////////////////
 
     public static final RegistrySupplier<BlockItem> BLACKWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_LOG);

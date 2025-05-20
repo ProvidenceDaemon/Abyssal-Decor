@@ -104,6 +104,17 @@ public class ExtendedBlockFamilies {
             .getFamily();
 
 
+    public static final ExtendedBlockFamily SEABRASS_BLOCK = familyBuilder(AbyssalDecorBlocks.SEABRASS_BLOCK.get())
+            .button(AbyssalDecorBlocks.SEABRASS_BUTTON.get())
+            .door(AbyssalDecorBlocks.SEABRASS_DOOR.get())
+            .pressurePlate(AbyssalDecorBlocks.SEABRASS_PRESSURE_PLATE.get())
+            .slab(AbyssalDecorBlocks.SEABRASS_SLAB.get())
+            .stairs(AbyssalDecorBlocks.SEABRASS_STAIRS.get())
+            .trapdoor(AbyssalDecorBlocks.SEABRASS_TRAPDOOR.get())
+            .wall(AbyssalDecorBlocks.SEABRASS_WALL.get())
+            .getFamily();
+
+
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);
         ExtendedBlockFamily blockfamily = MAP.put(baseBlock, blockfamily$builder.getFamily());

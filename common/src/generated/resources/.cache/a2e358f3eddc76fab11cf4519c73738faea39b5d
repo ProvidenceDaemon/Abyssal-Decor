@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-19T05:03:15.2135159	Item Models: abyssaldecor
+// 1.20.1	2025-05-19T22:55:02.901004	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -59,7 +59,14 @@ a25cf66c35fed4a4cecec3c3ede198680d563477 assets/abyssaldecor/models/item/polishe
 7c13c45623285f371e18671843281027ab21defc assets/abyssaldecor/models/item/prismarine_crystal_pane.json
 09fcd5cf69308d20787a51314b86ab58fb44c03f assets/abyssaldecor/models/item/quartz_lamp.json
 21b86d2ca8568af1ed4fec5b85f5f82268ff4cf9 assets/abyssaldecor/models/item/rainbow_lamp.json
+ce8c055a514f22c4ae202ca832f5442797bf7bf3 assets/abyssaldecor/models/item/seabrass_block.json
+3c82f2b6c1f449381251df0f4c3ab0138e82baee assets/abyssaldecor/models/item/seabrass_button.json
+b55d147d8864c0a9b69c96edac2bfcaf6def2152 assets/abyssaldecor/models/item/seabrass_door.json
 6efc7d7a39e6f5b61bc48a82aa402c1f0771ec54 assets/abyssaldecor/models/item/seabrass_ore.json
+15468f393df87a29a3a4bbf5c3a543541a4e488d assets/abyssaldecor/models/item/seabrass_pressure_plate.json
+9a85139a18d13c7eda8547639c5ef6d6e7963871 assets/abyssaldecor/models/item/seabrass_slab.json
+3d86c9718ef25343767326fd5759ef1586dccbf0 assets/abyssaldecor/models/item/seabrass_stairs.json
+aba415e796d34e5ada2e5d0bf34e43a9404c07c2 assets/abyssaldecor/models/item/seabrass_trapdoor.json
 4d3b1135553e5a91efca1a840feb7b8addaacd15 assets/abyssaldecor/models/item/seaglass_lamp.json
 05e972dc998245b8c3c12cdb68bdd5d891863839 assets/abyssaldecor/models/item/shell.json
 e9a5798055eeba46b58c6ec17ced7b4086336ce1 assets/abyssaldecor/models/item/smooth_black_pearl_block.json

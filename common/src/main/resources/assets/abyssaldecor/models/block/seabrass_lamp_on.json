@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/brasslampon",
-    "particle": "abyssaldecor:block/brasslampon"
-  },
-  "render_type": "solid"
-}

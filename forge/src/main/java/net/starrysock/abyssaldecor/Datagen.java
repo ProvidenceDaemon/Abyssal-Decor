@@ -126,6 +126,10 @@ class Datagen {
                     String buttonName = name(buttonBlock.asItem());
                     buttonInventory(buttonName, modLoc("block/" + name));
 
+
+                }
+
+                if (family.exists(Variant.FENCE)) {
                     FenceBlock fenceBlock = (FenceBlock) family.get(Variant.FENCE);
                     fenceInventory(name(fenceBlock.asItem()), modLoc("block/" + name));
 
@@ -270,10 +274,11 @@ class Datagen {
                 slabBlock(slabBlock,baseTexture,baseTexture);
 
                 if (family.exists(Variant.BUTTON)) {
-
                     buttonBlock((ButtonBlock) family.get(Variant.BUTTON), baseTexture);
-
                     pressurePlateBlock((PressurePlateBlock) family.get(Variant.PRESSURE_PLATE), baseTexture);
+                }
+
+                if (family.exists(Variant.FENCE)) {
                     fenceBlock((FenceBlock) family.get(Variant.FENCE), baseTexture);
                     fenceGateBlock((FenceGateBlock) family.get(Variant.FENCE_GATE), baseTexture);
                 }
@@ -349,7 +354,7 @@ class Datagen {
                 boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
                 Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
 
-                ResourceLocation texture0 = modLoc("block/seaglasslamp"+(lit? "lit":""));
+                ResourceLocation texture0 = modLoc("block/seaglass_lamp"+(lit? "_lit":""));
 
                 ModelFile modelFile = models().withExistingParent("block/seaglass_lamp"+(lit? "_lit":""),
                                 modLoc("custom/seaglasslamp"))
@@ -605,6 +610,12 @@ class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.NETTED_SERPENT_EYE.get());
             simplestBlockWithItem(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get());
+
+            simplestBlockWithItem(AbyssalDecorBlocks.RIVETED_SEABRASS.get());
+
+            blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(),modLoc("block/seabrass_lamp"));
+            simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),modLoc("block/riveted_seabrass"));
+
         }
 
         void simpleSlab(SlabBlock slabBlock,ResourceLocation texture) {
@@ -812,6 +823,23 @@ class Datagen {
             });
         }
 
+
+        protected void blockLamp(Block block,ResourceLocation texture0) {
+            String name = name(block);
+            ResourceLocation texture0Lit = texture0.withSuffix("_lit");
+            getVariantBuilder(block).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+
+                ResourceLocation texture = lit ? texture0Lit : texture0;
+
+                ModelFile modelFile = models().withExistingParent("block/"+name+(lit? "_lit":""),
+                               mcLoc("block/cube_all"))
+                        .texture("all",texture)
+                        .texture("particle",texture);
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            },BlockStateProperties.WATERLOGGED);
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/"+name)));
+        }
 
         protected void lamp(Block block,ResourceLocation model,ResourceLocation texture0) {
             String name = name(block);

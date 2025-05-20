@@ -21,7 +21,6 @@ import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedston
 import java.util.function.ToIntFunction;
 
 public class AbyssalDecorBlocks {
-    public static RegistrySupplier<Block> SEABRASS_ORE = AbyssalDecor.BLOCKS.register("seabrass_ore", () -> new FallingBlock(Block.Properties.copy(Blocks.GRAVEL)));
 
     //section: Lamps
     public static RegistrySupplier<Block> FRESNEL_LAMP = AbyssalDecor.BLOCKS.register("fresnel_lamp", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
@@ -483,6 +482,80 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> VELVET = AbyssalDecor.BLOCKS.register("velvet",() -> new Block(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> GILDED_VELVET = AbyssalDecor.BLOCKS.register("gilded_velvet",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<CarpetBlock> VELVET_CARPET = AbyssalDecor.BLOCKS.register("velvet_carpet",() -> new CarpetBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<CarpetBlock> GILDED_VELVET_CARPET = AbyssalDecor.BLOCKS.register("gilded_velvet_carpet",() -> new CarpetBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> VELVET_CURTAIN = AbyssalDecor.BLOCKS.register("velvet_curtain",() ->
+            new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> WOOL_CURTAIN = AbyssalDecor.BLOCKS.register("wool_curtain",() ->
+            new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> AMMONITE = AbyssalDecor.BLOCKS.register("ammonite",() ->
+            new Block(BlockBehaviour.Properties.of()));
+
+
+    public static RegistrySupplier<Block> SEABRASS_ORE = AbyssalDecor.BLOCKS.register("seabrass_ore",
+            () -> new FallingBlock(Block.Properties.copy(Blocks.GRAVEL)));
+
+    public static final RegistrySupplier<Block> RAW_SEABRASS_BLOCK = AbyssalDecor.BLOCKS.register("raw_seabrass_block",() ->
+            new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> SEABRASS_BLOCK = AbyssalDecor.BLOCKS.register("seabrass_block",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> RIVETED_SEABRASS = AbyssalDecor.BLOCKS.register("riveted_seabrass",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> SEABRASS_TRIM = AbyssalDecor.BLOCKS.register("seabrass_trim",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> SEABRASS_PILLAR = AbyssalDecor.BLOCKS.register("seabrass_pillar",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> LARGE_SEABRASS_PIPE = AbyssalDecor.BLOCKS.register("large_seabrass_pipe",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> SMALL_SEABRASS_PIPES = AbyssalDecor.BLOCKS.register("small_seabrass_pipes",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> SEABRASS_TILES = AbyssalDecor.BLOCKS.register("seabrass_tiles",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+
+    public static RegistrySupplier<LampBlock> SEABRASS_LAMP = AbyssalDecor.BLOCKS.register("seabrass_lamp", () ->
+            new LampBlock(lamp(), Shapes.block()));
+
+
+    public static final RegistrySupplier<SlabBlock> SEABRASS_SLAB = AbyssalDecor.BLOCKS.register("seabrass_slab",() -> slab(SEABRASS_BLOCK.get()));
+    public static final RegistrySupplier<StairBlock> SEABRASS_STAIRS = AbyssalDecor.BLOCKS.register("seabrass_stairs",() -> stairs(SEABRASS_BLOCK.get()));
+    public static final RegistrySupplier<WallBlock> SEABRASS_WALL = AbyssalDecor.BLOCKS.register("seabrass_wall",() -> wall(SEABRASS_BLOCK.get()));
+
+    public static final RegistrySupplier<ButtonBlock> SEABRASS_BUTTON = AbyssalDecor.BLOCKS.register("seabrass_button",() -> Blocks.stoneButton());
+    public static final RegistrySupplier<PressurePlateBlock> SEABRASS_PRESSURE_PLATE = AbyssalDecor.BLOCKS.register("seabrass_pressure_plate",() ->
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY), ModBlockSetTypes.SEABRASS));
+
+    public static final RegistrySupplier<DoorBlock> SEABRASS_DOOR = AbyssalDecor.BLOCKS.register("seabrass_door",() -> woodDoor(SEABRASS_BLOCK.get(),ModBlockSetTypes.SEABRASS));
+    public static final RegistrySupplier<TrapDoorBlock> SEABRASS_TRAPDOOR = AbyssalDecor.BLOCKS.register("seabrass_trapdoor",() -> woodTrapdoor(ModBlockSetTypes.SEABRASS));
+
+
+    public static final RegistrySupplier<SlabBlock> RIVETED_SEABRASS_SLAB = AbyssalDecor.BLOCKS.register("riveted_seabrass_slab",() -> slab(RIVETED_SEABRASS.get()));
+
+    public static final RegistrySupplier<ChainBlock> SEABRASS_CHAIN = AbyssalDecor.BLOCKS.register("seabrass_chain",() ->
+            new ChainBlock(BlockBehaviour.Properties.of()
+            .forceSolidOn().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.CHAIN).noOcclusion()));
+
+    public static final RegistrySupplier<IronSconceBlock> SEABRASS_SCONCE = AbyssalDecor.BLOCKS.register("seabrass_sconce",
+            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<IronBarsBlock> SEABRASS_BARS = AbyssalDecor.BLOCKS.register("seabrass_bars",
+            () -> ironBars());
+
+    public static final RegistrySupplier<IronBarsBlock> ORNATE_SEABRASS_BARS = AbyssalDecor.BLOCKS.register("ornate_seabrass_bars",
+            () -> ironBars());
+
 
     /////////
 
