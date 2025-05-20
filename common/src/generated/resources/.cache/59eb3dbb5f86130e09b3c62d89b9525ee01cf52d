@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-20T05:21:44.7006906	Loot Tables
+// 1.20.1	2025-05-20T11:41:59.9673534	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -132,6 +132,9 @@ beee5494c1f7f501355b85f30ed53f540bc141fa data/abyssaldecor/loot_tables/blocks/ir
 0af9a8419fbb7d03b95d329ac122d7b53245107b data/abyssaldecor/loot_tables/blocks/jade_pillar.json
 564dfc25879361fa5de2180f9eecec9e07b21ca3 data/abyssaldecor/loot_tables/blocks/large_deepbronze_pipe.json
 7b97cdfc58490656298e02367ed964040af3bbdc data/abyssaldecor/loot_tables/blocks/large_seabrass_pipe.json
+1c9604dbf5ca7be87d4b7a9031eb203c532de05e data/abyssaldecor/loot_tables/blocks/laventine.json
+8a8b59abe2702726f305f262ef890d3a30dda852 data/abyssaldecor/loot_tables/blocks/laventine_glass.json
+516825b6a5b226c014ac6bccda5b245d6d813f96 data/abyssaldecor/loot_tables/blocks/laventine_glass_pane.json
 a1726979ef55d80b657c594ff1a5a9d152ea0c6e data/abyssaldecor/loot_tables/blocks/life_preserver.json
 90391f201a22eede11fd6eaee0b44c79d2310336 data/abyssaldecor/loot_tables/blocks/lightbulb.json
 efb7902e4e18f304800247e5067da5b6698300d4 data/abyssaldecor/loot_tables/blocks/light_blue_wallpaper.json

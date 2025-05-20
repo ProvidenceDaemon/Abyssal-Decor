@@ -390,6 +390,10 @@ public class AbyssalDecorItems {
     public static final ColorFamily<BlockItem> WALLPAPERS = ColorFamily.createAndRegister(
             AbyssalDecor.ITEMS,color -> new BlockItem(AbyssalDecorBlocks.WALLPAPERS.getEntry(color).get(), new Item.Properties()),"wallpaper");
 
+    public static final RegistrySupplier<BlockItem> LAVENTINE = registerBlockItem(AbyssalDecorBlocks.LAVENTINE);
+    public static final RegistrySupplier<BlockItem> LAVENTINE_GLASS = registerBlockItem(AbyssalDecorBlocks.LAVENTINE_GLASS);
+    public static final RegistrySupplier<BlockItem> LAVENTINE_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE);
+
     static Item simpleItem() {
         return new Item(new Item.Properties());
     }

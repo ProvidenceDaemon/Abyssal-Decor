@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-20T11:16:39.9656781	Block States: abyssaldecor
+// 1.20.1	2025-05-20T11:52:17.9460307	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
 a7de563932a2abf46a26f789ddabfeb94c44ca81 assets/abyssaldecor/blockstates/azure_pearly_glass.json
@@ -89,6 +89,7 @@ e37c74c2a14e8d55a1ece49658b60134c30675ce assets/abyssaldecor/blockstates/iron_la
 241ff3ba08a6ed5f06dfef145a23471af0d2e886 assets/abyssaldecor/blockstates/iron_pillar.json
 0e2bf922c7b198945dee4caa4aeb097b3b976eb9 assets/abyssaldecor/blockstates/jade_lamp.json
 8c85e7bc68a95e0459bc5aa6dfcd07c2cd5163d8 assets/abyssaldecor/blockstates/jade_lantern.json
+3df6e45dd96dd070d065d9553b81d89bd810c794 assets/abyssaldecor/blockstates/laventine.json
 704e218ea9211deafef5e73b7ca638af62bd7aab assets/abyssaldecor/blockstates/lightbulb.json
 d400ff4a3f2fe114965a1d724e5b2d4f7fae48e0 assets/abyssaldecor/blockstates/light_blue_wallpaper.json
 1e593224079c949d6040899aaa05c020c5045794 assets/abyssaldecor/blockstates/light_gray_wallpaper.json
@@ -428,6 +429,7 @@ ab5639685c4ff5ea21beb8f2d907a6025dde361e assets/abyssaldecor/models/block/iron_p
 bed06095a728792eed14802761c9a7d675e5f1ac assets/abyssaldecor/models/block/jade_lamp_lit.json
 d8a22c20885fcd4dc05b7094f87774952901dcb0 assets/abyssaldecor/models/block/jade_lantern.json
 84abe404f12aa4ce7c44405a960fdfeaf5d5dc59 assets/abyssaldecor/models/block/jade_lantern_lit.json
+22563372c0eb2af09339b261a3bdde8f60507451 assets/abyssaldecor/models/block/laventine.json
 9a4dc3fb6c97d9591aa8eae658d06930431b1a42 assets/abyssaldecor/models/block/light_blue_wallpaper.json
 1c5d4284f375e8310a8d047ae49a57e9b064041e assets/abyssaldecor/models/block/light_gray_wallpaper.json
 bef7b40248942f6eefee1c80300ddf12c32227ce assets/abyssaldecor/models/block/lime_wallpaper.json
@@ -723,6 +725,7 @@ ea6845b4905ed8e034f35c500d6a9e8583e3aae5 assets/abyssaldecor/models/item/elder_w
 9b28d676c4b4700bfdc02a78bcd3b188845d6561 assets/abyssaldecor/models/item/green_wallpaper.json
 3b798ab097e954a7c773561a7acbeb98eb711544 assets/abyssaldecor/models/item/iron_panel_wall.json
 0ac65dc1e0480f298fecab255edc7a082c63cc56 assets/abyssaldecor/models/item/iron_pillar.json
+e95167a3798effbb8ac7fb5e7c33183ae09c2721 assets/abyssaldecor/models/item/laventine.json
 9afbca5e1b3a94866f995bd46694ee41c9366f0a assets/abyssaldecor/models/item/light_blue_wallpaper.json
 b1ae899ee3512f15d089dd5236899ebc8d892fd7 assets/abyssaldecor/models/item/light_gray_wallpaper.json
 c8768520201b018200255b8af450a7a49521c56f assets/abyssaldecor/models/item/lime_wallpaper.json

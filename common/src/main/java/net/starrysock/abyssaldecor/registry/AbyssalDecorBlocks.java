@@ -615,6 +615,12 @@ public class AbyssalDecorBlocks {
                 .strength(0.8F).sound(SoundType.WOOL).ignitedByLava());
     }
 
+    public static final RegistrySupplier<Block> LAVENTINE = AbyssalDecor.BLOCKS.register("laventine",() -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> LAVENTINE_GLASS = AbyssalDecor.BLOCKS.register("laventine_glass",() -> new Block(glassLike()));
+
+    public static final RegistrySupplier<IronBarsBlock> LAVENTINE_GLASS_PANE = AbyssalDecor.BLOCKS.register("laventine_glass_pane",() -> new IronBarsBlock(glassLike()));
+
     /////////
 
 

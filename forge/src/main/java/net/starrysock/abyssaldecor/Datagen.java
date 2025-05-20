@@ -623,6 +623,11 @@ class Datagen {
                 woodBlockWithItem(block,modLoc("block/"+name(block)));
             });
 
+            simplestBlockWithItem(AbyssalDecorBlocks.LAVENTINE.get());
+            //simplestBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS.get());
+
+            //paneBlock(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(),modLoc("block/laventine_glass"),modLoc("block/deepbronze_bars"));
+
         }
 
         void simpleSlab(SlabBlock slabBlock,ResourceLocation texture) {
