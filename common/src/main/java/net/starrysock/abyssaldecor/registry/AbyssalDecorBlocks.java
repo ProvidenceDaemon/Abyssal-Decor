@@ -607,6 +607,16 @@ public class AbyssalDecorBlocks {
 
     /////////
 
+    public static final ColorFamily<RotatedPillarBlock> WALLPAPERS = ColorFamily.createAndRegister(AbyssalDecor.BLOCKS, AbyssalDecorBlocks::wallpaper,"wallpaper");
+
+
+    public static RotatedPillarBlock wallpaper(DyeColor dyeColor) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(dyeColor).instrument(NoteBlockInstrument.GUITAR)
+                .strength(0.8F).sound(SoundType.WOOL).ignitedByLava());
+    }
+
+    /////////
+
 
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("stripped_blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));

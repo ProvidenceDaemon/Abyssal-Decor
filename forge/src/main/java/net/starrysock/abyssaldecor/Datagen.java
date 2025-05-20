@@ -503,14 +503,14 @@ class Datagen {
             paneBlock(AbyssalDecorBlocks.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"),modLoc("block/framed_vermilion_block"));
 
             logBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_LOG.get());
-            woodBlock(AbyssalDecorBlocks.WHITEWOOD_WOOD.get(),modLoc("block/whitewood_log"));
+            woodBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_WOOD.get(),modLoc("block/whitewood_log"));
             logBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_TRIM.get());
 
             logBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_LOG.get());
 
             logBlockWithItem(AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get());
 
-            woodBlock(AbyssalDecorBlocks.BLACKWOOD_WOOD.get(),modLoc("block/blackwood_log"));
+            woodBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_WOOD.get(),modLoc("block/blackwood_log"));
             logBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_TRIM.get());
 
             logBlockWithItem(AbyssalDecorBlocks.WHITE_PEARL_PILLAR.get());
@@ -619,6 +619,10 @@ class Datagen {
             paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(),modLoc("block/deepbronze_bars"),modLoc("block/deepbronze_bars"));
 
 
+            AbyssalDecorBlocks.WALLPAPERS.forEach(block -> {
+                woodBlockWithItem(block,modLoc("block/"+name(block)));
+            });
+
         }
 
         void simpleSlab(SlabBlock slabBlock,ResourceLocation texture) {
@@ -714,9 +718,10 @@ class Datagen {
             simpleBlockItem(block,modelFile);
         }
 
-        public void woodBlock(RotatedPillarBlock block,ResourceLocation texture) {
+        public void woodBlockWithItem(RotatedPillarBlock block, ResourceLocation texture) {
             ModelFile modelFile = models().cubeColumn(name(block), texture, texture);
             axisBlock(block, modelFile, modelFile);
+            simpleBlockItem(block,modelFile);
         }
 
         public void simpleDoorBlock(DoorBlock door){

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "abyssaldecor:block/orange_wallpaper",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "abyssaldecor:block/orange_wallpaper"
+    },
+    "axis=z": {
+      "model": "abyssaldecor:block/orange_wallpaper",
+      "x": 90
+    }
+  }
+}

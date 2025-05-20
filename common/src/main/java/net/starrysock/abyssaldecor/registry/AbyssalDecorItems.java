@@ -387,6 +387,8 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_SCONCE = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_SCONCE);
 
+    public static final ColorFamily<BlockItem> WALLPAPERS = ColorFamily.createAndRegister(
+            AbyssalDecor.ITEMS,color -> new BlockItem(AbyssalDecorBlocks.WALLPAPERS.getEntry(color).get(), new Item.Properties()),"wallpaper");
 
     static Item simpleItem() {
         return new Item(new Item.Properties());

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/yellow_wallpaper",
+    "side": "abyssaldecor:block/yellow_wallpaper"
+  }
+}
