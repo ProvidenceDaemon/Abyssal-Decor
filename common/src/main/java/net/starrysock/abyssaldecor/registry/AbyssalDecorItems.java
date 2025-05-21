@@ -5,9 +5,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
+import net.starrysock.abyssaldecor.item.InfiniteBlockItem;
 import net.starrysock.abyssaldecor.item.SupplierRecordItem;
 
 import java.util.function.Supplier;
@@ -415,6 +417,52 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> STARGLASS = registerBlockItem(AbyssalDecorBlocks.STARGLASS);
     public static final RegistrySupplier<BlockItem> STARGLASS_PANE = registerBlockItem(AbyssalDecorBlocks.STARGLASS_PANE);
 
+    //////////////////////////
+
+    public static final RegistrySupplier<BlockItem> GRIME = registerBlockItem(AbyssalDecorBlocks.GRIME);
+
+    public static final RegistrySupplier<BlockItem> BLACK_MOLD = registerBlockItem(AbyssalDecorBlocks.BLACK_MOLD);
+    public static final RegistrySupplier<BlockItem> BLACK_MOLD_CARPET = registerBlockItem(AbyssalDecorBlocks.BLACK_MOLD_CARPET);
+
+    public static final RegistrySupplier<BlockItem> INACTIVE_MOLD = registerBlockItem(AbyssalDecorBlocks.INACTIVE_MOLD);
+
+    public static final RegistrySupplier<BlockItem> MOLDWEAVE = registerBlockItem(AbyssalDecorBlocks.MOLDWEAVE);
+    public static final RegistrySupplier<BlockItem> MOLDWEAVE_CARPET = registerBlockItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET);
+
+    public static final RegistrySupplier<BlockItem> BLACKENED_SAND = registerBlockItem(AbyssalDecorBlocks.BLACKENED_SAND);
+
+    public static final RegistrySupplier<BlockItem> PITCHGLASS = registerBlockItem(AbyssalDecorBlocks.PITCHGLASS);
+    public static final RegistrySupplier<BlockItem> PITCHGLASS_PANE = registerBlockItem(AbyssalDecorBlocks.PITCHGLASS_PANE);
+
+    public static final RegistrySupplier<BlockItem> FRAMED_PITCHGLASS = registerBlockItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS);
+    public static final RegistrySupplier<BlockItem> FRAMED_PITCHGLASS_PANE = registerBlockItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS_PANE);
+
+    public static final RegistrySupplier<BlockItem> MOLDY_FROND_BLOCK = registerBlockItem(AbyssalDecorBlocks.MOLDY_FROND_BLOCK);
+
+
+    public static final RegistrySupplier<BlockItem> MOLDY_STALK = registerBlockItem(AbyssalDecorBlocks.MOLDY_STALK);
+
+    public static final RegistrySupplier<BlockItem> MOLDY_SPROUTS = registerBlockItem(AbyssalDecorBlocks.MOLDY_SPROUTS);
+
+    public static final RegistrySupplier<BlockItem> MOLDY_FUZZ = registerBlockItem(AbyssalDecorBlocks.MOLDY_FUZZ);
+
+    public static final RegistrySupplier<BlockItem> MOLDY_HANGERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_HANGERS);
+
+    public static final RegistrySupplier<BlockItem> FEVER_BLOSSOM_SEEDS = registerBlockItem(AbyssalDecorBlocks.FEVER_BLOSSOM_SEEDS);
+
+    public static final RegistrySupplier<BlockItem> MOLD_FRONDS = registerBlockItem(AbyssalDecorBlocks.MOLD_FRONDS);
+
+    public static final RegistrySupplier<BlockItem> MOLDY_FEATHERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_FEATHERS);
+
+    public static final RegistrySupplier<Item> FEVER_BLOSSOM = AbyssalDecor.ITEMS.register("fever_blossom",() -> simpleItem());
+    public static final RegistrySupplier<Item> FEVER_BLOSSOM_TEA = AbyssalDecor.ITEMS.register("fever_blossom_tea",() -> simpleItem());
+
+    public static final RegistrySupplier<BlockItem> MOLDY_STARSTONE = registerBlockItem(AbyssalDecorBlocks.MOLDY_STARSTONE);
+
+    public static final RegistrySupplier<BlockItem> MOLDIER_STARSTONE = registerBlockItem(AbyssalDecorBlocks.MOLDIER_STARSTONE);
+
+    public static final RegistrySupplier<BlockItem> POROUS_MOLD = registerBlockItem(AbyssalDecorBlocks.POROUS_MOLD);
+
     static Item simpleItem() {
         return new Item(new Item.Properties());
     }
@@ -440,6 +488,22 @@ public class AbyssalDecorItems {
             () -> new HangingSignItem(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
+    public static final RegistrySupplier<BlockItem> BLACKWOOD_SHINGLES = registerBlockItem(AbyssalDecorBlocks.BLACKWOOD_SHINGLES);
+
+    /////////////////////////////
+
+    public static final RegistrySupplier<BlockItem> PAPER_STACK = registerBlockItem(AbyssalDecorBlocks.PAPER_STACK);
+    public static final RegistrySupplier<BlockItem> BOOK_BLOCK = registerBlockItem(AbyssalDecorBlocks.BOOK_BLOCK);
+    public static final RegistrySupplier<BlockItem> MOLDY_BOOK_BLOCK = registerBlockItem(AbyssalDecorBlocks.MOLDY_BOOK_BLOCK);
+
+    public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_DIRT = bagOf("dirt",() -> Blocks.DIRT);
+    public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_COBBLESTONE = bagOf("cobblestone",() -> Blocks.COBBLESTONE);
+    public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_SNOW = bagOf("snow",() -> Blocks.SNOW);
+    public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_NETHERRACK = bagOf("netherrack",() -> Blocks.NETHERRACK);
+
+    static RegistrySupplier<InfiniteBlockItem>  bagOf(String suffix,Supplier<Block> block) {
+        return AbyssalDecor.ITEMS.register("bottomless_bag_of_"+suffix,() -> new InfiniteBlockItem(block.get(),new Item.Properties()));
+    }
 
     /////////////////////////////////
 
@@ -472,6 +536,10 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_STAIRS = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_STAIRS);
     public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_SLAB);
     public static final RegistrySupplier<BlockItem> SMOOTH_BLACK_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_WALL);
+
+    public static final RegistrySupplier<BlockItem> GILDED_BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.GILDED_BLACK_PEARL);
+    public static final RegistrySupplier<BlockItem> GILDED_BLACK_PEARL_DOOR = registerBlockItem(AbyssalDecorBlocks.GILDED_BLACK_PEARL_DOOR);
+    public static final RegistrySupplier<BlockItem> GILDED_BLACK_PEARL_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.GILDED_BLACK_PEARL_TRAPDOOR);
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

@@ -75,5 +75,14 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.CLAM_WITH_PEARL.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.STARGLASS.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.STARGLASS_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.PITCHGLASS.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.PITCHGLASS_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.FRAMED_PITCHGLASS.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.FRAMED_PITCHGLASS_PANE.get(),RenderType.translucent());
     }
 }

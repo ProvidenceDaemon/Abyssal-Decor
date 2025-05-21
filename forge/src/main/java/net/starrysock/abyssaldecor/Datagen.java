@@ -115,8 +115,11 @@ class Datagen {
                     DoorBlock door = (DoorBlock) family.get(Variant.DOOR);
                     generatedItem(door.asItem());
                 }
-                simpleBlockItem(family.get(Variant.SLAB).asItem());
-                simpleBlockItem(family.get(Variant.STAIRS).asItem());
+
+                if (family.exists(Variant.STAIRS)) {
+                    simpleBlockItem(family.get(Variant.SLAB).asItem());
+                    simpleBlockItem(family.get(Variant.STAIRS).asItem());
+                }
 
                 if (family.exists(Variant.PRESSURE_PLATE)) {
 
@@ -269,10 +272,12 @@ class Datagen {
                     simplestBlockWithItem(chiseled);
                 }
 
-                StairBlock stairBlock = (StairBlock) family.get(Variant.STAIRS);
-                stairsBlock(stairBlock,baseTexture);
-                SlabBlock slabBlock = (SlabBlock) family.get(Variant.SLAB);
-                slabBlock(slabBlock,baseTexture,baseTexture);
+                if (family.exists(Variant.STAIRS)) {
+                    StairBlock stairBlock = (StairBlock) family.get(Variant.STAIRS);
+                    stairsBlock(stairBlock, baseTexture);
+                    SlabBlock slabBlock = (SlabBlock) family.get(Variant.SLAB);
+                    slabBlock(slabBlock, baseTexture, baseTexture);
+                }
 
                 if (family.exists(Variant.BUTTON)) {
                     buttonBlock((ButtonBlock) family.get(Variant.BUTTON), baseTexture);
@@ -632,7 +637,22 @@ class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.STARGLASS.get());
 
-            paneBlock(AbyssalDecorBlocks.STARGLASS_PANE.get(),modLoc("block/starglass"),modLoc("block/starglass"));
+            paneBlockWithItem(AbyssalDecorBlocks.STARGLASS_PANE.get(),modLoc("block/starglass"),modLoc("block/starglass"));
+
+            woodBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_SHINGLES.get(),modLoc("block/blackwood_shingles"));
+
+            simplestBlockWithItem(AbyssalDecorBlocks.MOLDWEAVE.get());
+
+            simpleBlockItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), models().withExistingParent("moldweave_carpet",mcLoc("block/carpet"))
+                    .texture("wool",modLoc("block/moldweave")));
+        }
+
+        void paneBlockWithItem(IronBarsBlock block,ResourceLocation teture,ResourceLocation top) {
+            paneBlock(block,teture,top);
+
+            String path = name(block);
+            itemModels().singleTexture(path, mcLoc("item/generated"),
+                    "layer0", teture);
 
         }
 

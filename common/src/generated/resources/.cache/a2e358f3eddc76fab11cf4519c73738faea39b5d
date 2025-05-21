@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-20T12:33:02.0440482	Item Models: abyssaldecor
+// 1.20.1	2025-05-20T13:45:22.6658907	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -49,6 +49,9 @@ d7d3a8b7ccebdacd7fd0eb9fed2c21572ac68c39 assets/abyssaldecor/models/item/fresnel
 9f2b27dd3b2b33210968d72d6d2d8f680aef6803 assets/abyssaldecor/models/item/fresnel_pane.json
 7bcd1448ff45b6eec395c14821ece9d1886a257a assets/abyssaldecor/models/item/frosted_lamp.json
 c7004b73b691c63f590b3108a0e8252430e677a4 assets/abyssaldecor/models/item/gargoyle.json
+0467ba06b4138ef1b95172c75614fe2e14e56e4a assets/abyssaldecor/models/item/gilded_black_pearl.json
+d33830f2d7cacfbd2059fe28872349bcddcf3f3f assets/abyssaldecor/models/item/gilded_black_pearl_door.json
+c26183622043c75b51e5c5e8fec7e05bc79fc825 assets/abyssaldecor/models/item/gilded_black_pearl_trapdoor.json
 0fcf364a2d58f24ce0b50c02d4a3c7d780e9cf96 assets/abyssaldecor/models/item/hanging_web.json
 0bfcddf5831ef629821a9d87b733bdcff295ef3c assets/abyssaldecor/models/item/iron_barrier.json
 4558171659fa46fdce53cdca844fff92112b3e69 assets/abyssaldecor/models/item/iron_lamp.json

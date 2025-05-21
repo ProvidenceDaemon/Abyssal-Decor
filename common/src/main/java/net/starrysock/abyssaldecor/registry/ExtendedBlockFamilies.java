@@ -138,6 +138,11 @@ public class ExtendedBlockFamilies {
             .chiseled(AbyssalDecorBlocks.CHISELED_STARSTONE.get())
             .getFamily();
 
+    public static final ExtendedBlockFamily GILDED_BLACK_PEARL = familyBuilder(AbyssalDecorBlocks.GILDED_BLACK_PEARL.get())
+            .door(AbyssalDecorBlocks.GILDED_BLACK_PEARL_DOOR.get())
+            .trapdoor(AbyssalDecorBlocks.GILDED_BLACK_PEARL_TRAPDOOR.get())
+            .getFamily();
+
 
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
         ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);

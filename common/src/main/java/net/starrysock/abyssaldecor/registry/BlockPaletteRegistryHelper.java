@@ -1,19 +1,10 @@
 package net.starrysock.abyssaldecor.registry;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.starrysock.abyssaldecor.AbyssalDecor;
-import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
-import net.starrysock.abyssaldecor.content.abstraction.SconceBlock;
-import net.starrysock.abyssaldecor.content.abstraction.SmallBarsBlock;
-import net.starrysock.abyssaldecor.content.abstraction.pipes.InteractiblePipeBlock;
+import net.minecraft.world.level.block.Block;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class BlockPaletteRegistryHelper {
 

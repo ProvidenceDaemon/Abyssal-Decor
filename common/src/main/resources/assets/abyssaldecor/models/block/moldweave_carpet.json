@@ -1,9 +1,0 @@
-{
-  "parent": "abyssal_decor:custom/moldwavecarpet",
-  "textures": {
-    "all": "abyssal_decor:block/moldweave",
-    "particle": "abyssal_decor:block/moldweave",
-    "0": "abyssal_decor:block/moldweave"
-  },
-  "render_type": "solid"
-}

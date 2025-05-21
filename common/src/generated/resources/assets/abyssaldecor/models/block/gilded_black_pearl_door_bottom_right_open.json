@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "abyssaldecor:block/gilded_black_pearl_door_bottom",
+    "top": "abyssaldecor:block/gilded_black_pearl_door_top"
+  }
+}
