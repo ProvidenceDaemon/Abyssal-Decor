@@ -645,6 +645,9 @@ class Datagen {
 
             simpleBlockItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), models().withExistingParent("moldweave_carpet",mcLoc("block/carpet"))
                     .texture("wool",modLoc("block/moldweave")));
+
+            paneBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(),modLoc("block/black_pearl_bars_top"),modLoc("block/black_pearl_bars_top"));
+
         }
 
         void paneBlockWithItem(IronBarsBlock block,ResourceLocation teture,ResourceLocation top) {

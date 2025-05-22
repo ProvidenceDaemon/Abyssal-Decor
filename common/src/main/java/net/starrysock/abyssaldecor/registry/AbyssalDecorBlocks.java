@@ -412,6 +412,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> BLOOD_CORAL_TRAPDOOR = AbyssalDecor.BLOCKS.register("blood_coral_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
     public static final RegistrySupplier<IronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> ironBars());
+    public static final RegistrySupplier<IronBarsBlock> SMALL_BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars",() -> ironBars());
 
     public static final RegistrySupplier<SlabBlock> POLISHED_BLOOD_CORAL_SLAB = AbyssalDecor.BLOCKS.register("polished_blood_coral_slab",() -> slab(POLISHED_BLOOD_CORAL.get()));
     public static final RegistrySupplier<StairBlock> POLISHED_BLOOD_CORAL_STAIRS = AbyssalDecor.BLOCKS.register("polished_blood_coral_stairs",() -> stairs(POLISHED_BLOOD_CORAL.get()));
@@ -520,6 +521,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> SMALL_SEABRASS_PIPES = AbyssalDecor.BLOCKS.register("small_seabrass_pipes",() ->
             new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
+    public static final RegistrySupplier<Block> SEABRASS_PLATING = AbyssalDecor.BLOCKS.register("seabrass_plating",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
     public static final RegistrySupplier<Block> SEABRASS_TILES = AbyssalDecor.BLOCKS.register("seabrass_tiles",() ->
             new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
@@ -572,11 +576,21 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> LARGE_DEEPBRONZE_PIPE = AbyssalDecor.BLOCKS.register("large_deepbronze_pipe",() ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
+    public static final RegistrySupplier<Block> SMALL_DEEPBRONZE_PIPES = AbyssalDecor.BLOCKS.register("small_deepbronze_pipes",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
     public static final RegistrySupplier<Block> DEEPBRONZE_PLATING = AbyssalDecor.BLOCKS.register("deepbronze_plating",() ->
+            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
+    public static final RegistrySupplier<Block> DEEPBRONZE_TILES = AbyssalDecor.BLOCKS.register("deepbronze_tiles",() ->
             new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<IronBarsBlock> DEEPBRONZE_BARS = AbyssalDecor.BLOCKS.register("deepbronze_bars",
             () -> ironBars());
+
+    public static final RegistrySupplier<IronBarsBlock> ORNATE_DEEPBRONZE_BARS = AbyssalDecor.BLOCKS.register("ornate_deepbronze_bars",
+            () -> ironBars());
+
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DEEPBRONZE_BEAM = AbyssalDecor.BLOCKS.register("deepbronze_beam",
             () -> new BeamBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
@@ -730,6 +744,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> BLACK_PEARL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("black_pearl_brick_slab",() -> slab(BLACK_PEARL_BRICKS.get()));
     public static final RegistrySupplier<WallBlock> BLACK_PEARL_BRICK_WALL = AbyssalDecor.BLOCKS.register("black_pearl_brick_wall",() -> wall(BLACK_PEARL_BRICKS.get()));
 
+    public static final RegistrySupplier<IronBarsBlock> BLACK_PEARL_BARS = AbyssalDecor.BLOCKS.register("black_pearl_bars",() -> ironBars());
+
     ///////
 
     public static final RegistrySupplier<Block> SMOOTH_BLACK_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("smooth_black_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
@@ -796,6 +812,142 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> POROUS_MOLD = AbyssalDecor.BLOCKS.register("porous_mold",
             () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> ECHO_SHARD_BLOCK = AbyssalDecor.BLOCKS.register("echo_shard_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> POLISHED_ECHO_SHARD_BLOCK = AbyssalDecor.BLOCKS.register("polished_echo_shard_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+
+    //////////////////////
+
+    public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_LOG = AbyssalDecor.BLOCKS.register("cinnamon_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+    public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = AbyssalDecor.BLOCKS.register("stripped_cinnamon_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+
+    public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_WOOD = AbyssalDecor.BLOCKS.register("cinnamon_wood", () ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<Block> CINNAMON_PLANKS = AbyssalDecor.BLOCKS.register("cinnamon_planks", () -> planks(DyeColor.BLACK.getMapColor()));
+
+    public static final RegistrySupplier<StairBlock> CINNAMON_STAIRS = AbyssalDecor.BLOCKS.register("cinnamon_stairs",
+            () -> stairs(CINNAMON_PLANKS.get()));
+
+    public static final RegistrySupplier<SlabBlock> CINNAMON_SLAB = AbyssalDecor.BLOCKS.register("cinnamon_slab", () -> slab(CINNAMON_PLANKS.get()));
+
+    public static final RegistrySupplier<ButtonBlock> CINNAMON_BUTTON = AbyssalDecor.BLOCKS.register("cinnamon_button",() -> Blocks.woodenButton(ModBlockSetTypes.CINNAMON));
+
+    public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_TRIM = AbyssalDecor.BLOCKS.register("cinnamon_trim",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<DoorBlock> CINNAMON_DOOR = AbyssalDecor.BLOCKS.register("cinnamon_door",() ->
+            woodDoor(CINNAMON_PLANKS.get(),ModBlockSetTypes.CINNAMON));
+
+    public static final RegistrySupplier<TrapDoorBlock> CINNAMON_TRAPDOOR = AbyssalDecor.BLOCKS.register("cinnamon_trapdoor",() ->
+            woodTrapdoor(ModBlockSetTypes.CINNAMON));
+
+    public static final RegistrySupplier<PressurePlateBlock> CINNAMON_PRESSURE_PLATE = AbyssalDecor.BLOCKS.register("cinnamon_pressure_plate",() ->
+            woodPressurePlate(CINNAMON_PLANKS.get(),ModBlockSetTypes.CINNAMON));
+
+    public static final RegistrySupplier<FenceBlock> CINNAMON_FENCE = AbyssalDecor.BLOCKS.register("cinnamon_fence",() ->
+            woodFence(CINNAMON_PLANKS.get()));
+
+    public static final RegistrySupplier<FenceGateBlock> CINNAMON_FENCE_GATE = AbyssalDecor.BLOCKS.register("cinnamon_fence_gate",() ->
+            woodFenceGate(CINNAMON_PLANKS.get(),ModWoodTypes.CINNAMON));
+
+    public static final RegistrySupplier<StandingSignBlock> CINNAMON_SIGN = AbyssalDecor.BLOCKS.register("cinnamon_sign",() ->
+            sign(CINNAMON_PLANKS.get(),ModWoodTypes.CINNAMON));
+
+    public static final RegistrySupplier<WallSignBlock> CINNAMON_WALL_SIGN = AbyssalDecor.BLOCKS.register("cinnamon_wall_sign",() ->
+            wallSign(CINNAMON_SIGN.get(),ModWoodTypes.CINNAMON));
+
+    public static final RegistrySupplier<CeilingHangingSignBlock> CINNAMON_HANGING_SIGN = AbyssalDecor.BLOCKS.register("cinnamon_hanging_sign",() ->
+            hangingSign(CINNAMON_PLANKS.get(),ModWoodTypes.CINNAMON));
+
+    public static final RegistrySupplier<WallHangingSignBlock> CINNAMON_WALL_HANGING_SIGN = AbyssalDecor.BLOCKS.register("cinnamon_wall_hanging_sign",() ->
+            wallHangingSign(CINNAMON_HANGING_SIGN.get(),ModWoodTypes.CINNAMON));
+
+    public static final RegistrySupplier<Block> CINNAMON_POST = AbyssalDecor.BLOCKS.register("cinnamon_post",() ->
+            new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> CINNAMON_PANELING = AbyssalDecor.BLOCKS.register("cinnamon_paneling",() ->
+            new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<LeavesBlock> CINNAMON_LEAVES = AbyssalDecor.BLOCKS.register("cinnamon_leaves",() ->
+            Blocks.leaves(SoundType.GRASS));
+
+    public static final RegistrySupplier<LeavesBlock> FLOWERING_CINNAMON_LEAVES = AbyssalDecor.BLOCKS.register("flowering_cinnamon_leaves",() ->
+            Blocks.leaves(SoundType.GRASS));
+
+    public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_SHINGLES = AbyssalDecor.BLOCKS.register("cinnamon_shingles", () ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<SlabBlock> CINNAMON_SHINGLE_SLAB = AbyssalDecor.BLOCKS.register("cinnamon_shingle_slab", () -> slab(CINNAMON_SHINGLES.get()));
+    public static final RegistrySupplier<StairBlock> CINNAMON_SHINGLE_STAIRS = AbyssalDecor.BLOCKS.register("cinnamon_shingle_stairs", () -> stairs(CINNAMON_SHINGLES.get()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> MOSSY_CINNAMON_SHINGLES = AbyssalDecor.BLOCKS.register("mossy_cinnamon_shingles", () ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<SlabBlock> MOSSY_CINNAMON_SHINGLE_SLAB = AbyssalDecor.BLOCKS.register("mossy_cinnamon_shingle_slab",
+            () -> slab(MOSSY_CINNAMON_SHINGLES.get()));
+    public static final RegistrySupplier<StairBlock> MOSSY_CINNAMON_SHINGLE_STAIRS = AbyssalDecor.BLOCKS.register("mossy_cinnamon_shingle_stairs",
+            () -> stairs(MOSSY_CINNAMON_SHINGLES.get()));
+
+    public static final RegistrySupplier<MixedBlock> CRACKED_BRICKS = AbyssalDecor.BLOCKS.register("cracked_bricks",
+            () -> new MixedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<Block> CHISELED_BRICK = AbyssalDecor.BLOCKS.register("chiseled_brick",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<Block> BRICK_MOSAIC = AbyssalDecor.BLOCKS.register("brick_mosaic",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<RotatedPillarBlock> BRICK_CAP = AbyssalDecor.BLOCKS.register("brick_cap",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> BRICK_CORNERSTONE = AbyssalDecor.BLOCKS.register("brick_cornerstone",
+            () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<RotatedPillarBlock> BRICK_PILLAR = AbyssalDecor.BLOCKS.register("brick_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<RotatedPillarBlock> BRICK_TRAPDOOR = AbyssalDecor.BLOCKS.register("brick_trapdoor",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<RotatedPillarBlock> EFFERVESCENT_PILLAR = AbyssalDecor.BLOCKS.register("effervescent_trapdoor",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<Block> EFFERVESCENCE = AbyssalDecor.BLOCKS.register("effervescence",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<Block> EFFERVESCENT_TILES = AbyssalDecor.BLOCKS.register("effervescence_tiles",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<Block> POLISHED_EFFERVESCENCE = AbyssalDecor.BLOCKS.register("polished_effervescence",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistrySupplier<IronBarsBlock> WHITEWOOD_PICKET_FENCE = AbyssalDecor.BLOCKS.register("whitewood_picket_fence",
+            () -> ironBars());
+
+    public static final RegistrySupplier<DirectionalBlock> TRASH_BAG = AbyssalDecor.BLOCKS.register("trash_bag",() ->
+            new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<Block> FROSTED_GLASS = AbyssalDecor.BLOCKS.register("frosted_glass",() ->
+            new GlassBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<IronBarsBlock> FROSTED_GLASS_PANE = AbyssalDecor.BLOCKS.register("frosted_glass_pane",
+            () -> new IronBarsBlock(panes()));
+
+    public static final RegistrySupplier<IronBarsBlock> STONE_BARS = AbyssalDecor.BLOCKS.register("stone_bars",
+            () -> ironBars());
+
+    public static final RegistrySupplier<IronBarsBlock> SMALL_STONE_BARS = AbyssalDecor.BLOCKS.register("small_stone_bars",
+            () -> ironBars());
 
     static Block planks(MapColor mapColor) {
         return new Block(BlockBehaviour.Properties.of().mapColor(mapColor)

@@ -269,6 +269,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> BLOOD_CORAL_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR);
 
     public static final RegistrySupplier<BlockItem> BLOOD_CORAL_BARS = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_BARS);
+    public static final RegistrySupplier<BlockItem> SMALL_BLOOD_CORAL_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS);
 
     public static final RegistrySupplier<BlockItem> POLISHED_BLOOD_CORAL_SLAB = registerBlockItem(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB);
     public static final RegistrySupplier<BlockItem> POLISHED_BLOOD_CORAL_STAIRS = registerBlockItem(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_STAIRS);
@@ -337,6 +338,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SEABRASS_PILLAR = registerBlockItem(AbyssalDecorBlocks.SEABRASS_PILLAR);
     public static final RegistrySupplier<BlockItem> LARGE_SEABRASS_PIPE = registerBlockItem(AbyssalDecorBlocks.LARGE_SEABRASS_PIPE);
     public static final RegistrySupplier<BlockItem> SMALL_SEABRASS_PIPES = registerBlockItem(AbyssalDecorBlocks.SMALL_SEABRASS_PIPES);
+    public static final RegistrySupplier<BlockItem> SEABRASS_PLATING = registerBlockItem(AbyssalDecorBlocks.SEABRASS_PLATING);
     public static final RegistrySupplier<BlockItem> SEABRASS_TILES = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TILES);
     public static final RegistrySupplier<BlockItem> SEABRASS_LAMP = registerBlockItem(AbyssalDecorBlocks.SEABRASS_LAMP);
 
@@ -367,9 +369,12 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_TRIM = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_TRIM);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_PILLAR = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_PILLAR);
     public static final RegistrySupplier<BlockItem> LARGE_DEEPBRONZE_PIPE = registerBlockItem(AbyssalDecorBlocks.LARGE_DEEPBRONZE_PIPE);
+    public static final RegistrySupplier<BlockItem> SMALL_DEEPBRONZE_PIPES = registerBlockItem(AbyssalDecorBlocks.SMALL_DEEPBRONZE_PIPES);
 
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_PLATING = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_PLATING);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_TILES = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_TILES);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BARS);
+    public static final RegistrySupplier<BlockItem> ORNATE_DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_DEEPBRONZE_BARS);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_BEAM = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BEAM);
 
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_STAIRS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_STAIRS);
@@ -517,6 +522,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_SLAB = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_SLAB);
     public static final RegistrySupplier<BlockItem> CHISELED_BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.CHISELED_BLACK_PEARL);
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_WALL);
+    public static final RegistrySupplier<BlockItem> BLACK_PEARL_BARS = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BARS);
+
 
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_PILLAR = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_PILLAR);
     public static final RegistrySupplier<BlockItem> CUT_BLACK_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK);
@@ -540,6 +547,95 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> GILDED_BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.GILDED_BLACK_PEARL);
     public static final RegistrySupplier<BlockItem> GILDED_BLACK_PEARL_DOOR = registerBlockItem(AbyssalDecorBlocks.GILDED_BLACK_PEARL_DOOR);
     public static final RegistrySupplier<BlockItem> GILDED_BLACK_PEARL_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.GILDED_BLACK_PEARL_TRAPDOOR);
+
+    public static final RegistrySupplier<BlockItem> ECHO_SHARD_BLOCK = registerBlockItem(AbyssalDecorBlocks.ECHO_SHARD_BLOCK);
+    public static final RegistrySupplier<BlockItem> POLISHED_ECHO_SHARD_BLOCK = registerBlockItem(AbyssalDecorBlocks.POLISHED_ECHO_SHARD_BLOCK);
+
+    ////////////////////////
+
+    public static final RegistrySupplier<BlockItem> CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.CINNAMON_LOG);
+    public static final RegistrySupplier<BlockItem> STRIPPED_CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG);
+    public static final RegistrySupplier<BlockItem> CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.CINNAMON_WOOD);
+    public static final RegistrySupplier<BlockItem> CINNAMON_PLANKS = registerBlockItem(AbyssalDecorBlocks.CINNAMON_PLANKS);
+    public static final RegistrySupplier<BlockItem> CINNAMON_STAIRS = registerBlockItem(AbyssalDecorBlocks.CINNAMON_STAIRS);
+    public static final RegistrySupplier<BlockItem> CINNAMON_SLAB = registerBlockItem(AbyssalDecorBlocks.CINNAMON_SLAB);
+    public static final RegistrySupplier<BlockItem> CINNAMON_BUTTON = registerBlockItem(AbyssalDecorBlocks.CINNAMON_BUTTON);
+    public static final RegistrySupplier<BlockItem> CINNAMON_TRIM = registerBlockItem(AbyssalDecorBlocks.CINNAMON_TRIM);
+    public static final RegistrySupplier<DoubleHighBlockItem> CINNAMON_DOOR = registerDoorItem(AbyssalDecorBlocks.CINNAMON_DOOR);
+    public static final RegistrySupplier<BlockItem> CINNAMON_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.CINNAMON_TRAPDOOR);
+    public static final RegistrySupplier<BlockItem> CINNAMON_PRESSURE_PLATE = registerBlockItem(AbyssalDecorBlocks.CINNAMON_PRESSURE_PLATE);
+    public static final RegistrySupplier<BlockItem> CINNAMON_FENCE = registerBlockItem(AbyssalDecorBlocks.CINNAMON_FENCE);
+    public static final RegistrySupplier<BlockItem> CINNAMON_FENCE_GATE = registerBlockItem(AbyssalDecorBlocks.CINNAMON_FENCE_GATE);
+    public static final RegistrySupplier<BlockItem> CINNAMON_SIGN = AbyssalDecor.ITEMS.register("cinnamon_sign",() ->
+            new SignItem(new Item.Properties().stacksTo(16), AbyssalDecorBlocks.CINNAMON_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get()));
+    public static final RegistrySupplier<BlockItem> CINNAMON_HANGING_SIGN = AbyssalDecor.ITEMS.register("cinnamon_hanging_sign",
+            () -> new HangingSignItem(AbyssalDecorBlocks.CINNAMON_HANGING_SIGN.get(),
+                    AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+    public static final RegistrySupplier<BlockItem> CINNAMON_POST = registerBlockItem(AbyssalDecorBlocks.CINNAMON_POST);
+    public static final RegistrySupplier<BlockItem> CINNAMON_PANELING = registerBlockItem(AbyssalDecorBlocks.CINNAMON_PANELING);
+
+    public static final RegistrySupplier<BlockItem> CINNAMON_LEAVES = registerBlockItem(AbyssalDecorBlocks.CINNAMON_LEAVES);
+    public static final RegistrySupplier<BlockItem> FLOWERING_CINNAMON_LEAVES = registerBlockItem(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES);
+
+    public static final RegistrySupplier<Item> CINNAMON_STICK = AbyssalDecor.ITEMS.register("cinnamon_stick",() -> simpleItem());
+    public static final RegistrySupplier<Item> CINNAMON_APPLE = AbyssalDecor.ITEMS.register("cinnamon_apple",() -> simpleItem());
+    public static final RegistrySupplier<Item> CINNAMON_ROLL = AbyssalDecor.ITEMS.register("cinnamon_roll",() -> simpleItem());
+    public static final RegistrySupplier<Item> CINNAMON_TEA = AbyssalDecor.ITEMS.register("cinnamon_tea",() -> simpleItem());
+
+    public static final RegistrySupplier<BlockItem> CINNAMON_SHINGLES = registerBlockItem(AbyssalDecorBlocks.CINNAMON_SHINGLES);
+
+    public static final RegistrySupplier<BlockItem> CINNAMON_SHINGLE_SLAB = registerBlockItem(AbyssalDecorBlocks.CINNAMON_SHINGLE_SLAB);
+    public static final RegistrySupplier<BlockItem> CINNAMON_SHINGLE_STAIRS = registerBlockItem(AbyssalDecorBlocks.CINNAMON_SHINGLE_STAIRS);
+
+    public static final RegistrySupplier<BlockItem> MOSSY_CINNAMON_SHINGLES = registerBlockItem(AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLES);
+
+    public static final RegistrySupplier<BlockItem> MOSSY_CINNAMON_SHINGLE_SLAB = registerBlockItem(AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_SLAB);
+    public static final RegistrySupplier<BlockItem> MOSSY_CINNAMON_SHINGLE_STAIRS = registerBlockItem(AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_STAIRS);
+
+    public static final RegistrySupplier<BlockItem> CRACKED_BRICKS = registerBlockItem(AbyssalDecorBlocks.CRACKED_BRICKS);
+
+    public static final RegistrySupplier<BlockItem> CHISELED_BRICK = registerBlockItem(AbyssalDecorBlocks.CHISELED_BRICK);
+
+    public static final RegistrySupplier<BlockItem> BRICK_MOSAIC = registerBlockItem(AbyssalDecorBlocks.BRICK_MOSAIC);
+
+    public static final RegistrySupplier<BlockItem> BRICK_CAP = registerBlockItem(AbyssalDecorBlocks.BRICK_CAP);
+
+
+    public static final RegistrySupplier<BlockItem> BRICK_CORNERSTONE = registerBlockItem(AbyssalDecorBlocks.BRICK_CORNERSTONE);
+
+    public static final RegistrySupplier<BlockItem> BRICK_PILLAR = registerBlockItem(AbyssalDecorBlocks.BRICK_PILLAR);
+
+    public static final RegistrySupplier<BlockItem> BRICK_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.BRICK_TRAPDOOR);
+
+    public static final RegistrySupplier<Item> BOG_APPLE_LEAVES =  AbyssalDecor.ITEMS.register("bog_apple_leaves",() -> simpleItem());
+    public static final RegistrySupplier<Item> BOG_APPLE =  AbyssalDecor.ITEMS.register("bog_apple",() -> simpleItem());
+    public static final RegistrySupplier<Item> BOG_ROLL =  AbyssalDecor.ITEMS.register("bog_roll",() -> simpleItem());
+    public static final RegistrySupplier<Item> CANDY_BOG_APPLE =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
+
+    public static final RegistrySupplier<Item> BOG_APPLE_PIE =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
+    public static final RegistrySupplier<Item> SPIDERCORN =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
+    public static final RegistrySupplier<Item> POPPED_SPIDERCORN =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
+
+    public static final RegistrySupplier<Item> SPIDERCORN_TORTILLA =  AbyssalDecor.ITEMS.register("spidercorn_tortilla",() -> simpleItem());
+    public static final RegistrySupplier<Item> CAVE_TACO =  AbyssalDecor.ITEMS.register("cave_taco",() -> simpleItem());
+    public static final RegistrySupplier<Item> TOASTED_AMARANTH_SEEDS =  AbyssalDecor.ITEMS.register("toasted_amaranth_seeds",() -> simpleItem());
+
+
+    public static final RegistrySupplier<BlockItem> EFFERVESCENT_PILLAR = registerBlockItem(AbyssalDecorBlocks.EFFERVESCENT_PILLAR);
+
+    public static final RegistrySupplier<BlockItem> EFFERVESCENCE = registerBlockItem(AbyssalDecorBlocks.EFFERVESCENCE);
+
+    public static final RegistrySupplier<BlockItem> EFFERVESCENT_TILES = registerBlockItem(AbyssalDecorBlocks.EFFERVESCENT_TILES);
+
+    public static final RegistrySupplier<BlockItem> POLISHED_EFFERVESCENCE = registerBlockItem(AbyssalDecorBlocks.POLISHED_EFFERVESCENCE);
+
+    public static final RegistrySupplier<BlockItem> STONE_BARS = registerBlockItem(AbyssalDecorBlocks.STONE_BARS);
+    public static final RegistrySupplier<BlockItem> SMALL_STONE_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_STONE_BARS);
+
+    public static final RegistrySupplier<BlockItem> FROSTED_GLASS = registerBlockItem(AbyssalDecorBlocks.FROSTED_GLASS);
+    public static final RegistrySupplier<BlockItem> FROSTED_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.FROSTED_GLASS_PANE);
+
 
     public static void register() {
         AbyssalDecor.ITEMS.register();
