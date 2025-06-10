@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-20T13:45:22.6658907	Item Models: abyssaldecor
+// 1.20.1	2025-06-10T11:03:10.2126856	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -11,7 +11,6 @@ e88a8eabfecc83088f60007778213d150f8894f6 assets/abyssaldecor/models/item/blackwo
 55a3bb4794734265a97ef85911cad581d0e8bc01 assets/abyssaldecor/models/item/blackwood_slab.json
 746b19b609a571d0632b0b04acab430b291dea24 assets/abyssaldecor/models/item/blackwood_stairs.json
 299901ff882ec9be87d45d2850f967e15c77cf41 assets/abyssaldecor/models/item/blackwood_trapdoor.json
-de73e6f5afa73106aa6a250fd90d7c85f93f3a0d assets/abyssaldecor/models/item/blackwood_wood.json
 5c5d766a17ecfb042013ec00b21da0ebeeec1f04 assets/abyssaldecor/models/item/black_pearl.json
 d960ab5925f64fc7b8b04d803d5de1f96811372b assets/abyssaldecor/models/item/black_pearl_block.json
 b728715e2b52b3731d93c0b6384f89c063169d86 assets/abyssaldecor/models/item/black_pearl_bricks.json
@@ -110,7 +109,6 @@ efc1e52ecf5d59bb84401d9b2fd4c0a076333156 assets/abyssaldecor/models/item/whitewo
 d23d1e0bca8b6e06f573bf9f9b845977d14a42be assets/abyssaldecor/models/item/whitewood_slab.json
 c04a7699b15d6192b21cd4f281ca5e38fab94eab assets/abyssaldecor/models/item/whitewood_stairs.json
 62a4a22bf1add2d5da8e6e956ea55ab0fb31598e assets/abyssaldecor/models/item/whitewood_trapdoor.json
-01234b09e6cdf395004eef8f669720ce04c1376d assets/abyssaldecor/models/item/whitewood_wood.json
 570b2ee4fe06266dfde0c443ec5e6aac866d0340 assets/abyssaldecor/models/item/white_pearl.json
 2a8920aad16a90e2be35e391e6bb6448397e868d assets/abyssaldecor/models/item/white_pearl_bars.json
 c60ede48d6b2b422657d8b017b7be0bad27a41e0 assets/abyssaldecor/models/item/white_pearl_block.json

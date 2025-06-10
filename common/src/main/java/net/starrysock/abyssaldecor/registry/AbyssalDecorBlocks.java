@@ -76,7 +76,15 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> LUNAR_ROD = AbyssalDecor.BLOCKS.register("lunar_rod", () -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
     public static final RegistrySupplier<Block> ETHEREAL_ROD = AbyssalDecor.BLOCKS.register("ethereal_rod", () -> new DirectionalRodBlock(BlockBehaviour.Properties.of().forceSolidOff().instabreak().lightLevel(blockState -> 14).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistrySupplier<Block> HANGING_MOSS = AbyssalDecor.BLOCKS.register("hanging_moss", () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistrySupplier<Block> HANGING_MOSS = AbyssalDecor.BLOCKS.register("hanging_moss", () ->
+            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().randomTicks().strength(0.2f)
+                    .sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistrySupplier<Block> WALL_HANGING_MOSS = AbyssalDecor.BLOCKS.register("wall_hanging_moss",
+            () -> new WallHangingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
+            .replaceable().noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava()
+            .pushReaction(PushReaction.DESTROY).dropsLike(HANGING_MOSS.get())));
 
     public static final RegistrySupplier<Block> DAFFODIL = AbyssalDecor.BLOCKS.register("daffodil", () -> new FlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistrySupplier<Block> ASTER = AbyssalDecor.BLOCKS.register("aster", () -> new FlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
@@ -445,7 +453,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> BONEROT = AbyssalDecor.BLOCKS.register("bonerot",() -> new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<AbstractHorizontalBlock> FLAKY_SCALES =
-            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new WallHangingBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f)
+                    .sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> SLUMP_LIGHT =
             AbyssalDecor.BLOCKS.register("slump_light",() -> new Block(BlockBehaviour.Properties.of()));

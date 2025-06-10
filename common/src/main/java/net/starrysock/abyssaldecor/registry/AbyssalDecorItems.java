@@ -21,7 +21,9 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> TERRESTRIAL_ROD = registerBlockItem(AbyssalDecorBlocks.TERRESTRIAL_ROD);
     public static final RegistrySupplier<BlockItem> LUNAR_ROD = registerBlockItem(AbyssalDecorBlocks.LUNAR_ROD);
     public static final RegistrySupplier<BlockItem> ETHEREAL_ROD = registerBlockItem(AbyssalDecorBlocks.ETHEREAL_ROD);
-    public static final RegistrySupplier<BlockItem> HANGING_MOSS = registerBlockItem(AbyssalDecorBlocks.HANGING_MOSS);
+    public static final RegistrySupplier<BlockItem> HANGING_MOSS = AbyssalDecor.ITEMS.register("hanging_moss",() ->
+            new StandingAndWallBlockItem(AbyssalDecorBlocks.HANGING_MOSS.get(),
+                    AbyssalDecorBlocks.WALL_HANGING_MOSS.get(),new Item.Properties(),Direction.UP));
 
     public static final RegistrySupplier<BlockItem> DAFFODIL = registerBlockItem(AbyssalDecorBlocks.DAFFODIL);
     public static final RegistrySupplier<BlockItem> ASTER = registerBlockItem(AbyssalDecorBlocks.ASTER);

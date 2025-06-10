@@ -86,5 +86,6 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.FRAMED_PITCHGLASS_PANE.get(),RenderType.translucent());
 
         renderTypes.accept(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SCRIMSHAW.get(),RenderType.cutoutMipped());
     }
 }

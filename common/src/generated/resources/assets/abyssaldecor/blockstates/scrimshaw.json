@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "abyssaldecor:block/scrimshaw_cave",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "abyssaldecor:block/scrimshaw_cave",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "abyssaldecor:block/scrimshaw_cave"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "abyssaldecor:block/scrimshaw_cave"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "abyssaldecor:block/scrimshaw_cave",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "abyssaldecor:block/scrimshaw_cave",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "abyssaldecor:block/scrimshaw_cave",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "abyssaldecor:block/scrimshaw_cave",
+      "y": 270
+    }
+  }
+}

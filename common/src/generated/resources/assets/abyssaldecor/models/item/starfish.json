@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "abyssaldecor:block/1_orange_starfish"
+  }
+}

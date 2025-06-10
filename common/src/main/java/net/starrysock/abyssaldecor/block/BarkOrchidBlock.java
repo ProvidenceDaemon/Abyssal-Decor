@@ -3,26 +3,19 @@ package net.starrysock.abyssaldecor.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BarkOrchidBlock extends Block {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+public class BarkOrchidBlock extends WallHangingBlock{
 
     public BarkOrchidBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -50,27 +43,19 @@ public class BarkOrchidBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        BlockState blockState = level.getBlockState(pos.relative(state.getValue(FACING)));
-        return blockState.is(BlockTags.LOGS);
+        Direction direction = state.getValue(FACING);
+        BlockPos blockpos = pos.relative(direction.getOpposite());
+        BlockState blockstate = level.getBlockState(blockpos);
+        return blockstate.is(BlockTags.LOGS);
     }
 
+    /**
+     * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
+     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart.
+     * Note that this method should ideally consider only the specific direction passed in.
+     */
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
-    }
-
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return context.getClickedFace().getAxis() == Direction.Axis.Y ? this.defaultBlockState().setValue(FACING, Direction.NORTH) : this.defaultBlockState().setValue(FACING, context.getClickedFace());
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
-    }
-
-    @Override
-    public BlockState mirror(BlockState state, Mirror mirrorIn) {
-        return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        return facing == state.getValue(FACING) && !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
     }
 }

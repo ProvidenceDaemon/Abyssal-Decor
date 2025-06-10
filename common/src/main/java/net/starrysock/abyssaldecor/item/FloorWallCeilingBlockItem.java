@@ -13,8 +13,8 @@ public class FloorWallCeilingBlockItem extends BlockItem {
     private final Block wallBlock;
     private final Block ceilingBlock;
 
-    public FloorWallCeilingBlockItem(Block block, Block wallBlock, Block ceilingBlock, Properties properties) {
-        super(block, properties);
+    public FloorWallCeilingBlockItem(Block floorBlock, Block wallBlock, Block ceilingBlock, Properties properties) {
+        super(floorBlock, properties);
         this.wallBlock = wallBlock;
         this.ceilingBlock = ceilingBlock;
     }

@@ -205,10 +205,6 @@ class Datagen {
             simpleBlockItem(AbyssalDecorItems.FRAMED_VERMILION_BLOCK.get());
             generatedItem(AbyssalDecorItems.FRAMED_VERMILION_PANE.get(),modLoc("block/framed_vermilion_block"));
 
-            simpleBlockItem(AbyssalDecorItems.WHITEWOOD_WOOD.get());
-
-            simpleBlockItem(AbyssalDecorItems.BLACKWOOD_WOOD.get());
-
             generatedItem(AbyssalDecorItems.WHITE_PEARL.get(),modLoc("item/white_pearl"));
             generatedItem(AbyssalDecorItems.BLACK_PEARL.get(),modLoc("item/black_pearl"));
 
@@ -665,14 +661,29 @@ class Datagen {
 
             paneBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(),modLoc("block/black_pearl_bars_top"),modLoc("block/black_pearl_bars_top"));
 
+            horizontalBlock(AbyssalDecorBlocks.WALL_HANGING_MOSS.get(),models().getExistingFile(modLoc("block/hanging_moss_wall")));
+
+            simpleBlock(AbyssalDecorBlocks.HANGING_MOSS.get(),models().getExistingFile(modLoc("block/hanging_moss_ceiling")));
+            simpleBlockItem(AbyssalDecorBlocks.HANGING_MOSS.get(),models().getExistingFile(modLoc("block/hanging_moss_wall")));
+
+            simpleBlock(AbyssalDecorBlocks.DAFFODIL.get(),models().cross("daffodil",modLoc("block/daffodil")));
+            iconTexture("daffodil",modLoc("block/daffodil"));
+
+            horizontalBlock(AbyssalDecorBlocks.SCRIMSHAW.get(),models().getExistingFile(modLoc("block/scrimshaw_cave")));
+            simpleBlockItem(AbyssalDecorBlocks.SCRIMSHAW.get(),models().getExistingFile(modLoc("block/scrimshaw_cave")));
+
         }
 
-        void paneBlockWithItem(IronBarsBlock block,ResourceLocation teture,ResourceLocation top) {
-            paneBlock(block,teture,top);
+        void iconTexture(String path,ResourceLocation texture) {
+            itemModels().singleTexture(path,mcLoc("item/generated"),"layer0",texture);
+        }
+
+        void paneBlockWithItem(IronBarsBlock block,ResourceLocation texture,ResourceLocation top) {
+            paneBlock(block,texture,top);
 
             String path = name(block);
             itemModels().singleTexture(path, mcLoc("item/generated"),
-                    "layer0", teture);
+                    "layer0", texture);
 
         }
 
@@ -819,6 +830,8 @@ class Datagen {
                         Vector2i vector2i = getRotation(orientation);
                         return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
                     });
+
+            iconTexture("starfish",modLoc("block/1_orange_starfish"));
         }
 
         void driedStarfish(Block block) {
