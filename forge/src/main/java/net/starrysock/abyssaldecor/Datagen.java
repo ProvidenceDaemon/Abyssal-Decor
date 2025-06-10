@@ -5,8 +5,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -40,11 +42,14 @@ class Datagen {
         if (event.includeServer()) {
             BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(output, lookupProvider, helper);
             generator.addProvider(true, blockTagsProvider);
+            generator.addProvider(true,new ModPaintingTagsProvider(output,lookupProvider,helper));
             generator.addProvider(true,ModLootTableProvider.create(output));
+            generator.addProvider(true,new ModDataPackProvider(output,lookupProvider));
         }
         if (event.includeClient()) {
             generator.addProvider(true, new ModBlockStateProvider(output, helper));
             generator.addProvider(true, new ModItemModelProvider(output, helper));
+            generator.addProvider(true,new ModLangProvider(output));
         }
     }
 
@@ -81,6 +86,18 @@ class Datagen {
 
             tag(BlockTags.WOODEN_SLABS).add(AbyssalDecorBlocks.WHITEWOOD_SLAB.get());
             tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
+        }
+    }
+
+    static class ModPaintingTagsProvider extends PaintingVariantTagsProvider {
+
+        public ModPaintingTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
+            super(output, provider, AbyssalDecor.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.Provider provider) {
+            AbyssalDecor.PAINTING_VARIANTS.forEach(s -> tag(PaintingVariantTags.PLACEABLE).add(s.getKey()));
         }
     }
 

@@ -3,11 +3,11 @@ package net.starrysock.abyssaldecor;
 import com.google.common.base.Suppliers;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrarManager;
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -28,6 +28,9 @@ public class AbyssalDecor {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(MOD_ID, Registries.BLOCK);
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
+
+    public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS = DeferredRegister.create(MOD_ID, Registries.PAINTING_VARIANT);
+
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
 
     public static final DeferredRegister<DamageType> DAMAGE_TYPES = DeferredRegister.create(MOD_ID, Registries.DAMAGE_TYPE);
@@ -36,6 +39,7 @@ public class AbyssalDecor {
 
         AbyssalDecorBlocks.register();
         AbyssalDecorItems.register();
+        AbyssalPaintings.register();
         AbyssalCreativeTabs.register();
         AbyssalDecorSounds.register();
 

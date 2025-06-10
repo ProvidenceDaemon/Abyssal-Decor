@@ -613,9 +613,9 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<Item> BOG_ROLL =  AbyssalDecor.ITEMS.register("bog_roll",() -> simpleItem());
     public static final RegistrySupplier<Item> CANDY_BOG_APPLE =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
 
-    public static final RegistrySupplier<Item> BOG_APPLE_PIE =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
-    public static final RegistrySupplier<Item> SPIDERCORN =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
-    public static final RegistrySupplier<Item> POPPED_SPIDERCORN =  AbyssalDecor.ITEMS.register("candy_bog_apple",() -> simpleItem());
+    public static final RegistrySupplier<Item> BOG_APPLE_PIE =  AbyssalDecor.ITEMS.register("bog_apple_pie",() -> simpleItem());
+    public static final RegistrySupplier<Item> SPIDERCORN =  AbyssalDecor.ITEMS.register("spidercorn",() -> simpleItem());
+    public static final RegistrySupplier<Item> POPPED_SPIDERCORN =  AbyssalDecor.ITEMS.register("poppeed_spidercorn",() -> simpleItem());
 
     public static final RegistrySupplier<Item> SPIDERCORN_TORTILLA =  AbyssalDecor.ITEMS.register("spidercorn_tortilla",() -> simpleItem());
     public static final RegistrySupplier<Item> CAVE_TACO =  AbyssalDecor.ITEMS.register("cave_taco",() -> simpleItem());
