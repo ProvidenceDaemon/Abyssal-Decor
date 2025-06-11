@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/moldy_frond_block_top",
+    "side": "abyssaldecor:block/moldy_frond_block"
+  }
+}

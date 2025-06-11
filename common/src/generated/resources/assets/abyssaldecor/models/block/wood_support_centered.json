@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/woodsupportcentered",
+  "textures": {
+    "all": "abyssaldecor:block/woodsupport",
+    "particle": "abyssaldecor:block/woodsupport"
+  }
+}

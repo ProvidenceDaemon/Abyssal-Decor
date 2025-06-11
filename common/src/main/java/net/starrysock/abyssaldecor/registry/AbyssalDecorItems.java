@@ -159,6 +159,8 @@ public class AbyssalDecorItems {
             () -> new HangingSignItem(AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PICKET_FENCE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE);
+
     public static final RegistrySupplier<BlockItem> WHITE_PEARL = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL);
     public static final RegistrySupplier<BlockItem> WHITE_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BLOCK);
 
@@ -617,7 +619,7 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<Item> BOG_APPLE_PIE =  AbyssalDecor.ITEMS.register("bog_apple_pie",() -> simpleItem());
     public static final RegistrySupplier<Item> SPIDERCORN =  AbyssalDecor.ITEMS.register("spidercorn",() -> simpleItem());
-    public static final RegistrySupplier<Item> POPPED_SPIDERCORN =  AbyssalDecor.ITEMS.register("poppeed_spidercorn",() -> simpleItem());
+    public static final RegistrySupplier<Item> POPPED_SPIDERCORN =  AbyssalDecor.ITEMS.register("popped_spidercorn",() -> simpleItem());
 
     public static final RegistrySupplier<Item> SPIDERCORN_TORTILLA =  AbyssalDecor.ITEMS.register("spidercorn_tortilla",() -> simpleItem());
     public static final RegistrySupplier<Item> CAVE_TACO =  AbyssalDecor.ITEMS.register("cave_taco",() -> simpleItem());

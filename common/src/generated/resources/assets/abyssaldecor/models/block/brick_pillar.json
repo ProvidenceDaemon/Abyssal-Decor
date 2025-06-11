@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "abyssaldecor:block/brick_pillar_top",
+    "east": "abyssaldecor:block/brick_pillar",
+    "north": "abyssaldecor:block/brick_pillar",
+    "particle": "abyssaldecor:block/brick_pillar",
+    "south": "abyssaldecor:block/brick_pillar",
+    "up": "abyssaldecor:block/brick_pillar_top",
+    "west": "abyssaldecor:block/brick_pillar"
+  }
+}

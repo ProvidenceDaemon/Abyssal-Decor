@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "abyssaldecor:block/whitewood_picket_fence",
+    "pane": "abyssaldecor:block/whitewood_picket_fence"
+  }
+}

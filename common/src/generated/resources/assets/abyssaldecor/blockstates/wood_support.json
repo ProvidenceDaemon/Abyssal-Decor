@@ -1,0 +1,110 @@
+{
+  "variants": {
+    "centered=false,face=ceiling,facing=east": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 180,
+      "y": 270
+    },
+    "centered=false,face=ceiling,facing=north": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 180,
+      "y": 180
+    },
+    "centered=false,face=ceiling,facing=south": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 180
+    },
+    "centered=false,face=ceiling,facing=west": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 180,
+      "y": 90
+    },
+    "centered=false,face=floor,facing=east": {
+      "model": "abyssaldecor:block/wood_support",
+      "y": 90
+    },
+    "centered=false,face=floor,facing=north": {
+      "model": "abyssaldecor:block/wood_support"
+    },
+    "centered=false,face=floor,facing=south": {
+      "model": "abyssaldecor:block/wood_support",
+      "y": 180
+    },
+    "centered=false,face=floor,facing=west": {
+      "model": "abyssaldecor:block/wood_support",
+      "y": 270
+    },
+    "centered=false,face=wall,facing=east": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 90,
+      "y": 90
+    },
+    "centered=false,face=wall,facing=north": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 90
+    },
+    "centered=false,face=wall,facing=south": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 90,
+      "y": 180
+    },
+    "centered=false,face=wall,facing=west": {
+      "model": "abyssaldecor:block/wood_support",
+      "x": 90,
+      "y": 270
+    },
+    "centered=true,face=ceiling,facing=east": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 180,
+      "y": 270
+    },
+    "centered=true,face=ceiling,facing=north": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 180,
+      "y": 180
+    },
+    "centered=true,face=ceiling,facing=south": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 180
+    },
+    "centered=true,face=ceiling,facing=west": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 180,
+      "y": 90
+    },
+    "centered=true,face=floor,facing=east": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "y": 90
+    },
+    "centered=true,face=floor,facing=north": {
+      "model": "abyssaldecor:block/wood_support_centered"
+    },
+    "centered=true,face=floor,facing=south": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "y": 180
+    },
+    "centered=true,face=floor,facing=west": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "y": 270
+    },
+    "centered=true,face=wall,facing=east": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 90,
+      "y": 90
+    },
+    "centered=true,face=wall,facing=north": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 90
+    },
+    "centered=true,face=wall,facing=south": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 90,
+      "y": 180
+    },
+    "centered=true,face=wall,facing=west": {
+      "model": "abyssaldecor:block/wood_support_centered",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

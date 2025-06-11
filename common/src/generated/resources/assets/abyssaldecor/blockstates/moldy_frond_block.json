@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "abyssaldecor:block/moldy_frond_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "abyssaldecor:block/moldy_frond_block"
+    },
+    "axis=z": {
+      "model": "abyssaldecor:block/moldy_frond_block_horizontal",
+      "x": 90
+    }
+  }
+}

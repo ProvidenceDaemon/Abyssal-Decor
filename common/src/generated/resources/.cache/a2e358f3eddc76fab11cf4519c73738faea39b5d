@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-10T11:03:10.2126856	Item Models: abyssaldecor
+// 1.20.1	2025-06-11T08:37:54.8574294	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -26,6 +26,11 @@ dd4d9055d5bf89ba2c16f6d5919ace6435234b98 assets/abyssaldecor/models/item/blood_c
 58828bd5b6ce296e5d761628442827ddf04b9fe7 assets/abyssaldecor/models/item/blood_coral_bud.json
 d0fb126fca776dc4a06e06cf9cc6cecc80dedd66 assets/abyssaldecor/models/item/blood_coral_door.json
 fae97fbd9ed686f67c241f74ee6d02a1ec98f6c5 assets/abyssaldecor/models/item/blood_coral_trapdoor.json
+5e076f1be32c1b6ef0c55ca6810f8126d1e28721 assets/abyssaldecor/models/item/bog_apple.json
+b0db674bdd6eb56cf02547c72594a88e257ffaa3 assets/abyssaldecor/models/item/bog_apple_pie.json
+a33f3e0b5d217d31e47890c09c18d549d6b59948 assets/abyssaldecor/models/item/bog_roll.json
+e0558319d7257181b97e537ffa5c409349ba884f assets/abyssaldecor/models/item/candy_bog_apple.json
+1b37a5d0f48c0b6d8e205c781fcb14143a5cb4df assets/abyssaldecor/models/item/cave_taco.json
 cc05848b618e6c38072137d18bcf6520d3b1086c assets/abyssaldecor/models/item/crystallized_glowstone.json
 8ecd0ae76e0521eed75468cda9b5bb89b38bfd74 assets/abyssaldecor/models/item/crystallized_glowstone_pane.json
 79fd6994da1356cc8249dfcbc33cfa3ad68e8f93 assets/abyssaldecor/models/item/dangling_web.json
@@ -68,6 +73,7 @@ a25cf66c35fed4a4cecec3c3ede198680d563477 assets/abyssaldecor/models/item/polishe
 b1bf76ec909972576b8c86934113262121b99d19 assets/abyssaldecor/models/item/polished_starstone.json
 036a2835210bf7ea30960af820ae6c860fb32bd3 assets/abyssaldecor/models/item/polished_starstone_slab.json
 57cf0a85d677c842df501d173b5b92d3c5fe3964 assets/abyssaldecor/models/item/polished_starstone_stairs.json
+a5ca75c43d9dde85c763c176e3533e263675041e assets/abyssaldecor/models/item/popped_spidercorn.json
 00ff201210b7669a41838e9ef5e784f0b9be2bdd assets/abyssaldecor/models/item/prismarine_crystal_block.json
 7c13c45623285f371e18671843281027ab21defc assets/abyssaldecor/models/item/prismarine_crystal_pane.json
 09fcd5cf69308d20787a51314b86ab58fb44c03f assets/abyssaldecor/models/item/quartz_lamp.json
@@ -94,7 +100,9 @@ f7ecc958dac4426450d3eb74c23dfe41e008692d assets/abyssaldecor/models/item/smooth_
 3911a1d14eac13b3ac50cb6fe6c01b5f7f642cb6 assets/abyssaldecor/models/item/smooth_white_pearl_block.json
 20c6c9bac9706c46397186209a45bb9ca3197cb8 assets/abyssaldecor/models/item/smooth_white_pearl_slab.json
 64331f99cbac17976fdc73fe83e84d8917675555 assets/abyssaldecor/models/item/smooth_white_pearl_stairs.json
+a1383a3b69d2104076d02cd0f02f4aee7a26967a assets/abyssaldecor/models/item/spidercorn.json
 a51be4c0267c34a725f340a25a179b542d5cd15f assets/abyssaldecor/models/item/telescope.json
+7c00bd745f8492c3f0834e9fec8fae603cc637bc assets/abyssaldecor/models/item/toasted_amaranth_seeds.json
 973d6cc125e80e52502aa17ccd96b59df0803a4f assets/abyssaldecor/models/item/tube_lamp.json
 64345384a3d0a154d26b85218f6cca893c083e3e assets/abyssaldecor/models/item/velvet_barrier.json
 44a736e2f6386e5691f36095f2fa5277b6b7d905 assets/abyssaldecor/models/item/vermilion_block.json

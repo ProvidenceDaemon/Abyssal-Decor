@@ -118,7 +118,12 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> STARLIGHT = AbyssalDecor.BLOCKS.register("starlight", () -> new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> LIFE_PRESERVER = AbyssalDecor.BLOCKS.register("life_preserver", () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
-    public static final RegistrySupplier<Block> WOOD_SUPPORT = AbyssalDecor.BLOCKS.register("wood_support", () -> new WoodSupportBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> WOOD_SUPPORT = AbyssalDecor.BLOCKS.register("wood_support",
+            () -> new WoodSupportBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+
+
     public static final RegistrySupplier<Block> SHIP_WHEEL = AbyssalDecor.BLOCKS.register("ship_wheel", () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> WOODEN_DRAGON_HEAD = AbyssalDecor.BLOCKS.register("wooden_dragon_head", () -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> WOODEN_FROG = AbyssalDecor.BLOCKS.register("wooden_frog", () -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
@@ -522,8 +527,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> SEABRASS_TRIM = AbyssalDecor.BLOCKS.register("seabrass_trim",() ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
-    public static final RegistrySupplier<RotatedPillarBlock> SEABRASS_PILLAR = AbyssalDecor.BLOCKS.register("seabrass_pillar",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SEABRASS_PILLAR = AbyssalDecor.BLOCKS.register("seabrass_pillar",() ->
+            new FaceAttachedBlock(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get())));
 
     public static final RegistrySupplier<RotatedPillarBlock> LARGE_SEABRASS_PIPE = AbyssalDecor.BLOCKS.register("large_seabrass_pipe",() ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
@@ -573,27 +578,29 @@ public class AbyssalDecorBlocks {
     //////////////
 
     public static final RegistrySupplier<Block> DEEPBRONZE_BLOCK = AbyssalDecor.BLOCKS.register("deepbronze_block",() ->
-            new Block(BlockBehaviour.Properties.of()));
+            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+                    .requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+
     public static final RegistrySupplier<Block> RIVETED_DEEPBRONZE = AbyssalDecor.BLOCKS.register("riveted_deepbronze",() ->
-            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
     public static final RegistrySupplier<RotatedPillarBlock> DEEPBRONZE_TRIM = AbyssalDecor.BLOCKS.register("deepbronze_trim",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new RotatedPillarBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
     public static final RegistrySupplier<RotatedPillarBlock> DEEPBRONZE_PILLAR = AbyssalDecor.BLOCKS.register("deepbronze_pillar",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new RotatedPillarBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
     public static final RegistrySupplier<RotatedPillarBlock> LARGE_DEEPBRONZE_PIPE = AbyssalDecor.BLOCKS.register("large_deepbronze_pipe",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new RotatedPillarBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
-    public static final RegistrySupplier<Block> SMALL_DEEPBRONZE_PIPES = AbyssalDecor.BLOCKS.register("small_deepbronze_pipes",() ->
-            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<RotatedPillarBlock> SMALL_DEEPBRONZE_PIPES = AbyssalDecor.BLOCKS.register("small_deepbronze_pipes",() ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
     public static final RegistrySupplier<Block> DEEPBRONZE_PLATING = AbyssalDecor.BLOCKS.register("deepbronze_plating",() ->
-            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
     public static final RegistrySupplier<Block> DEEPBRONZE_TILES = AbyssalDecor.BLOCKS.register("deepbronze_tiles",() ->
-            new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
     public static final RegistrySupplier<IronBarsBlock> DEEPBRONZE_BARS = AbyssalDecor.BLOCKS.register("deepbronze_bars",
             () -> ironBars());
@@ -603,7 +610,7 @@ public class AbyssalDecorBlocks {
 
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DEEPBRONZE_BEAM = AbyssalDecor.BLOCKS.register("deepbronze_beam",
-            () -> new BeamBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            () -> new BeamBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
 
 
     public static final RegistrySupplier<SlabBlock> DEEPBRONZE_SLAB = AbyssalDecor.BLOCKS.register("deepbronze_slab",() -> slab(DEEPBRONZE_BLOCK.get()));
@@ -790,8 +797,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> FRAMED_PITCHGLASS = AbyssalDecor.BLOCKS.register("framed_pitchglass",() -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
     public static final RegistrySupplier<IronBarsBlock> FRAMED_PITCHGLASS_PANE = AbyssalDecor.BLOCKS.register("framed_pitchglass_pane",() -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
-    public static final RegistrySupplier<Block> MOLDY_FROND_BLOCK = AbyssalDecor.BLOCKS.register("moldy_frond_block",
-            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<RotatedPillarBlock> MOLDY_FROND_BLOCK = AbyssalDecor.BLOCKS.register("moldy_frond_block",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> MOLDY_STALK = AbyssalDecor.BLOCKS.register("moldy_stalk",
             () -> new Block(BlockBehaviour.Properties.of()));
@@ -923,11 +930,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> BRICK_CORNERSTONE = AbyssalDecor.BLOCKS.register("brick_cornerstone",
             () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
-    public static final RegistrySupplier<RotatedPillarBlock> BRICK_PILLAR = AbyssalDecor.BLOCKS.register("brick_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> BRICK_PILLAR = AbyssalDecor.BLOCKS.register("brick_pillar",
+            () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
-    public static final RegistrySupplier<RotatedPillarBlock> BRICK_TRAPDOOR = AbyssalDecor.BLOCKS.register("brick_trapdoor",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistrySupplier<TrapDoorBlock> BRICK_TRAPDOOR = AbyssalDecor.BLOCKS.register("brick_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS),ModBlockSetTypes.BRICK));
 
     public static final RegistrySupplier<RotatedPillarBlock> EFFERVESCENT_PILLAR = AbyssalDecor.BLOCKS.register("effervescent_trapdoor",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
