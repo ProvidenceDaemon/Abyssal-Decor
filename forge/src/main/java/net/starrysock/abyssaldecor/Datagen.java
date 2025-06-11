@@ -85,6 +85,16 @@ class Datagen {
 
             tag(BlockTags.WOODEN_SLABS).add(AbyssalDecorBlocks.WHITEWOOD_SLAB.get());
             tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
+
+
+            this.tag(BlockTags.STANDING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(),AbyssalDecorBlocks.CINNAMON_SIGN.get(),AbyssalDecorBlocks.WHITEWOOD_SIGN.get());
+            this.tag(BlockTags.WALL_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get(),AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get());
+            this.tag(BlockTags.CEILING_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(),AbyssalDecorBlocks.CINNAMON_HANGING_SIGN.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get());
+            this.tag(BlockTags.WALL_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(),AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get());
+
         }
     }
 
@@ -255,7 +265,6 @@ class Datagen {
         private void generatedItemBlockTexture(Item item) {
             generatedItem(item, modLoc("block/" + name(item)));
         }
-
     }
 
     public static class ModBlockStateProvider extends BlockStateProvider {
@@ -307,6 +316,17 @@ class Datagen {
                 if (family.exists(Variant.FENCE)) {
                     fenceBlock((FenceBlock) family.get(Variant.FENCE), baseTexture);
                     fenceGateBlock((FenceGateBlock) family.get(Variant.FENCE_GATE), baseTexture);
+                }
+
+                if (family.exists(Variant.SIGN)) {
+                    StandingSignBlock signBlock = (StandingSignBlock) family.get(Variant.SIGN);
+                    signBlock(signBlock,(WallSignBlock) family.get(Variant.WALL_SIGN),modLoc("block/"+name(baseBlock)));
+                    iconTexture(name(signBlock),modLoc("item/"+name(signBlock)));
+
+                    //uses stripped logs but whatever
+                    CeilingHangingSignBlock ceilingHangingSignBlock = (CeilingHangingSignBlock) family.get(Variant.HANGING_SIGN);
+                    hangingSignBlock(ceilingHangingSignBlock, (WallHangingSignBlock) family.get(Variant.HANGING_WALL_SIGN),modLoc("block/"+name(baseBlock)));
+                    iconTexture(name(ceilingHangingSignBlock),modLoc("item/"+name(ceilingHangingSignBlock)));
                 }
 
                 if (family.exists(Variant.WALL)) {
@@ -710,6 +730,13 @@ class Datagen {
                             modLoc("custom/tinywhitepearl"))
                     .texture("all",modLoc("block/ironball"))
                     .texture("particle",modLoc("block/ironball")));
+
+
+            directionalBlock(AbyssalDecorBlocks.BLACK_PEARL.get(),models().withExistingParent("black_pearl",
+                            modLoc("custom/tinywhitepearl"))
+                    .texture("all",modLoc("block/black_pearl"))
+                    .texture("particle",modLoc("block/black_pearl")));
+
             simpleBlockItem(AbyssalDecorBlocks.IRON_BALL.get(), models().getExistingFile(modLoc("block/iron_ball")));
 
             paneBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE.get(), modLoc("block/whitewood_picket_fence"),
@@ -730,6 +757,16 @@ class Datagen {
                     modLoc("block/pitchglasspanetop"));
 
             logBlockWithItem(AbyssalDecorBlocks.MOLDY_FROND_BLOCK.get());
+        }
+
+        public void hangingSignBlock(CeilingHangingSignBlock signBlock, WallHangingSignBlock wallSignBlock, ResourceLocation texture) {
+            ModelFile sign = models().sign(name(signBlock), texture);
+            hangingSignBlock(signBlock, wallSignBlock, sign);
+        }
+
+        public void hangingSignBlock(CeilingHangingSignBlock signBlock, WallHangingSignBlock wallSignBlock, ModelFile sign) {
+            simpleBlock(signBlock, sign);
+            simpleBlock(wallSignBlock, sign);
         }
 
         void iconTexture(String path, ResourceLocation texture) {

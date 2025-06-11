@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-11T08:37:54.8574294	Item Models: abyssaldecor
+// 1.20.1	2025-06-11T18:18:43.5383974	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -31,6 +31,15 @@ b0db674bdd6eb56cf02547c72594a88e257ffaa3 assets/abyssaldecor/models/item/bog_app
 a33f3e0b5d217d31e47890c09c18d549d6b59948 assets/abyssaldecor/models/item/bog_roll.json
 e0558319d7257181b97e537ffa5c409349ba884f assets/abyssaldecor/models/item/candy_bog_apple.json
 1b37a5d0f48c0b6d8e205c781fcb14143a5cb4df assets/abyssaldecor/models/item/cave_taco.json
+f1f98f4c472c701ac0276af906134ee0f629d895 assets/abyssaldecor/models/item/cinnamon_button.json
+a9620e8a537896d23871dcc3c2f46a1dc887573a assets/abyssaldecor/models/item/cinnamon_door.json
+3dc9baf84f6bcee07fa53b32dc5467a701ac6375 assets/abyssaldecor/models/item/cinnamon_fence.json
+9dc4e8fd7aecc37be5c59e2e995dd68a2ee81ab8 assets/abyssaldecor/models/item/cinnamon_fence_gate.json
+f7fd221b437e563b7930a3110c3d371f33575276 assets/abyssaldecor/models/item/cinnamon_planks.json
+7ac984565d7b0008769cdef83929060d22b62541 assets/abyssaldecor/models/item/cinnamon_pressure_plate.json
+bcd44bf5ce48199f1d66ab61f6b3ad6cd1b936f4 assets/abyssaldecor/models/item/cinnamon_slab.json
+616f5843f40c5d80120fff6d945bd47b453a1657 assets/abyssaldecor/models/item/cinnamon_stairs.json
+dd271cac2798a7cf7f50c6087983efbefee1108c assets/abyssaldecor/models/item/cinnamon_trapdoor.json
 cc05848b618e6c38072137d18bcf6520d3b1086c assets/abyssaldecor/models/item/crystallized_glowstone.json
 8ecd0ae76e0521eed75468cda9b5bb89b38bfd74 assets/abyssaldecor/models/item/crystallized_glowstone_pane.json
 79fd6994da1356cc8249dfcbc33cfa3ad68e8f93 assets/abyssaldecor/models/item/dangling_web.json

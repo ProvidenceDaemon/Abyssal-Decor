@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "abyssaldecor:block/cinnamon_planks",
+    "side": "abyssaldecor:block/cinnamon_planks",
+    "top": "abyssaldecor:block/cinnamon_planks"
+  }
+}

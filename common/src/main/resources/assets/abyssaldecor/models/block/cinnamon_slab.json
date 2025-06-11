@@ -1,9 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "abyssaldecor:block/cinnamonplanks",
-    "top": "abyssaldecor:block/cinnamonplanks",
-    "side": "abyssaldecor:block/cinnamonplanks"
-  },
-  "render_type": "solid"
-}

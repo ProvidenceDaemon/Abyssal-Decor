@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "abyssaldecor:block/cinnamon_planks",
+    "side": "abyssaldecor:block/cinnamon_planks",
+    "top": "abyssaldecor:block/cinnamon_planks"
+  }
+}

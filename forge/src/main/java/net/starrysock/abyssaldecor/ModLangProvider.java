@@ -32,6 +32,8 @@ public class ModLangProvider extends LanguageProvider {
             Block b = blockRegistrySupplier.get();
             if (!(b instanceof SignBlock)) {
                 addDefaultBlock(blockRegistrySupplier.get());
+            } else {
+                addDefaultBlock(blockRegistrySupplier.get());
             }
         });
 

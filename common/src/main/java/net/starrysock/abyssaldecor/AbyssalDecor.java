@@ -6,14 +6,17 @@ import dev.architectury.registry.registries.RegistrarManager;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.starrysock.abyssaldecor.mixin.BlockEntityTypeAccessor;
 import net.starrysock.abyssaldecor.platform.Services;
 import net.starrysock.abyssaldecor.registry.*;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class AbyssalDecor {
@@ -33,8 +36,6 @@ public class AbyssalDecor {
 
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
 
-    public static final DeferredRegister<DamageType> DAMAGE_TYPES = DeferredRegister.create(MOD_ID, Registries.DAMAGE_TYPE);
-    
     public static void init() {
 
         AbyssalDecorBlocks.register();
@@ -44,6 +45,22 @@ public class AbyssalDecor {
         AbyssalDecorSounds.register();
 
         System.out.println(Services.PLATFORM.getConfigDirectory().toAbsolutePath().normalize());
+    }
+
+    public static void setup() {
+        BlockEntityTypeAccessor sign = (BlockEntityTypeAccessor) BlockEntityType.SIGN;
+        HashSet<Block> blocks = new HashSet<>(sign.getValidBlocks());
+        blocks.addAll(Set.of(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(),AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get(),
+                AbyssalDecorBlocks.CINNAMON_SIGN.get(),AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get(),
+                AbyssalDecorBlocks.WHITEWOOD_SIGN.get(),AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get()));
+        sign.setValidBlocks(blocks);
+
+        BlockEntityTypeAccessor hangingsign = (BlockEntityTypeAccessor) BlockEntityType.HANGING_SIGN;
+        blocks = new HashSet<>(hangingsign.getValidBlocks());
+        blocks.addAll(Set.of(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(),AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(),
+                AbyssalDecorBlocks.CINNAMON_HANGING_SIGN.get(),AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
+                AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get(),AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get()));
+        hangingsign.setValidBlocks(blocks);
     }
 
     public static ResourceLocation id(String path) {

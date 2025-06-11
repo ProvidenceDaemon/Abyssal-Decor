@@ -1,11 +1,15 @@
-// 1.20.1	2025-05-18T17:42:06.826032	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2025-06-11T17:48:45.8391089	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
 91298092263229c22ed59f780495f30405f23e44 data/abyssaldecor/tags/blocks/muckroot_growable.json
+6c4bf439d600e69e2cef4a1ed99302edac84f487 data/minecraft/tags/blocks/ceiling_hanging_signs.json
 514cb767badcd642b1904ebc040ff01066df0980 data/minecraft/tags/blocks/mineable/pickaxe.json
 79fc37ec372326b706fb3c2e0f642203b708ab72 data/minecraft/tags/blocks/planks.json
 1ce34638b206a3dbc77dd63c0aefd9ec53d9d687 data/minecraft/tags/blocks/slabs.json
 65ca8e72e6c7639393b4d4d01a44a724d1a7888c data/minecraft/tags/blocks/stairs.json
+c27d910dd600c88fbebace017566fb6fda6f3f09 data/minecraft/tags/blocks/standing_signs.json
 0f04c3875a8f7d55dc7614f50098b864bee4dcaa data/minecraft/tags/blocks/walls.json
+3c21bc6d3c6cd38defcc60f03314edead6366a70 data/minecraft/tags/blocks/wall_hanging_signs.json
+e2722961bbb74bfb2a676ee843808a424ea3c7c9 data/minecraft/tags/blocks/wall_signs.json
 b8538b207d69dfa4c99c78112ff30a6b428e2c2d data/minecraft/tags/blocks/wooden_buttons.json
 60ac99e68072475f6b512a46e4a1fde2111fcb93 data/minecraft/tags/blocks/wooden_slabs.json
 c8d80ea063f0c0e341828424872188af8144a9bb data/minecraft/tags/blocks/wooden_stairs.json

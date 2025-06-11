@@ -5,6 +5,8 @@ import net.minecraft.Util;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.StandingSignBlock;
+import net.minecraft.world.level.block.WallSignBlock;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -121,7 +123,7 @@ public class ExtendedBlockFamily {
             return this;
         }
 
-        public Builder sign(Block signBlock, Block wallSignBlock) {
+        public Builder sign(StandingSignBlock signBlock, WallSignBlock wallSignBlock) {
             this.family.variants.put(Variant.SIGN, signBlock);
             this.family.variants.put(Variant.WALL_SIGN, wallSignBlock);
             return this;
