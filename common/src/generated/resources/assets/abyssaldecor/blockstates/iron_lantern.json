@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,lit=false": {
+      "model": "abyssaldecor:block/iron_lantern_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,lit=true": {
+      "model": "abyssaldecor:block/iron_lantern_horizontal_lit",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,lit=false": {
+      "model": "abyssaldecor:block/iron_lantern"
+    },
+    "axis=y,lit=true": {
+      "model": "abyssaldecor:block/iron_lantern_lit"
+    },
+    "axis=z,lit=false": {
+      "model": "abyssaldecor:block/iron_lantern_horizontal",
+      "x": 90
+    },
+    "axis=z,lit=true": {
+      "model": "abyssaldecor:block/iron_lantern_horizontal_lit",
+      "x": 90
+    }
+  }
+}

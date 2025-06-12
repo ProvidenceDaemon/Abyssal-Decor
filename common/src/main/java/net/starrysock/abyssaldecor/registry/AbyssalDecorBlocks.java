@@ -55,7 +55,7 @@ public class AbyssalDecorBlocks {
 
     public static RegistrySupplier<Block> JADE_LANTERN = AbyssalDecor.BLOCKS.register("jade_lantern", () -> new LampBlock(lamp()));
     public static RegistrySupplier<Block> ABYSSAL_LANTERN = AbyssalDecor.BLOCKS.register("abyssal_lantern", () -> new LampBlock(lamp()));
-    public static RegistrySupplier<Block> IRON_LANTERN = AbyssalDecor.BLOCKS.register("iron_lantern", () -> new LampBlock(lamp()));
+    public static RegistrySupplier<IronLanternBlock> IRON_LANTERN = AbyssalDecor.BLOCKS.register("iron_lantern", () -> new IronLanternBlock(lamp()));
     //end section
 
     //section : Barriers
@@ -660,7 +660,7 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> POLISHED_STARSTONE = AbyssalDecor.BLOCKS.register("polished_starstone",() -> new Block(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> GILDED_STARSTONE = AbyssalDecor.BLOCKS.register("gilded_starstone",() -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<RotatedPillarBlock> GILDED_STARSTONE = AbyssalDecor.BLOCKS.register("gilded_starstone",() -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<RotatedPillarBlock> STARSTONE_PILLAR = AbyssalDecor.BLOCKS.register("starstone_pillar",() -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
 

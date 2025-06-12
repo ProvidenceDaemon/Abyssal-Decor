@@ -15,10 +15,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -63,7 +60,7 @@ class Datagen {
         protected void addTags(HolderLookup.Provider arg) {
             tag(ModTags.Blocks.MUCKROOT_GROWABLE).add(Blocks.FARMLAND);
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
-            tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(),AbyssalDecorBlocks.BLACK_MOLD.get());
+            tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get());
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.IRON_PANEL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get(),
@@ -770,18 +767,81 @@ class Datagen {
             );
             simpleBlockItem(AbyssalDecorBlocks.TRASH_BAG.get(), models().getExistingFile(modLoc("block/trash_bag")));
 
-            iconTexture("mold_fronds",modLoc("block/moldfrondstop"));
+            iconTexture("mold_fronds", modLoc("block/moldfrondstop"));
 
-            simpleBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS.get(),models().cubeAll("laventine_glass",modLoc("block/laventinepanemid")));
+            simpleBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS.get(), models().cubeAll("laventine_glass", modLoc("block/laventinepanemid")));
 
             paneBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(), modLoc("block/laventinepanemid"),
                     modLoc("block/laventinepanemid"));
 
             simplestBlockWithItem(AbyssalDecorBlocks.EFFERVESCENT_TILES.get());
 
-            woodBlockWithItem(AbyssalDecorBlocks.SMALL_DEEPBRONZE_PIPES.get(),modLoc("block/small_deepbronze_pipes"));
+            woodBlockWithItem(AbyssalDecorBlocks.SMALL_DEEPBRONZE_PIPES.get(), modLoc("block/small_deepbronze_pipes"));
 
-            bulkheadLampBlock(AbyssalDecorBlocks.BULKHEAD_LAMP.get(),modLoc("custom/bulkheadlamp"));
+            bulkheadLampBlock(AbyssalDecorBlocks.BULKHEAD_LAMP.get(), modLoc("custom/bulkheadlamp"));
+
+
+            //{
+            //  "parent": "abyssaldecor:custom/fresnellamp",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/fresnelside",
+            //    "particle": "abyssaldecor:block/fresnelside",
+            //    "0": "abyssaldecor:block/fresneltop",
+            //    "1": "abyssaldecor:block/fresnelside",
+            //    "2": "abyssaldecor:block/fresnelinside"
+            //  },
+            //  "render_type": "translucent"
+            //}
+            simpleBlockWithItem(AbyssalDecorBlocks.FRESNEL_LAMP.get(), models().withExistingParent("fresnel_lamp", modLoc("custom/fresnellamp"))
+                    .texture("particle", modLoc("block/fresnel_block"))
+                    .texture("0", modLoc("block/fresneltop"))
+                    .texture("1", modLoc("block/fresnel_block"))
+                    .texture("2", modLoc("block/fresnelinside"))
+            );
+
+            ironLantern(AbyssalDecorBlocks.IRON_LANTERN.get());
+        }
+
+        //    public void axisBlock(RotatedPillarBlock block, ModelFile vertical, ModelFile horizontal) {
+        //        getVariantBuilder(block)
+        //            .partialState().with(RotatedPillarBlock.AXIS, Axis.Y)
+        //                .modelForState().modelFile(vertical).addModel()
+        //            .partialState().with(RotatedPillarBlock.AXIS, Axis.Z)
+        //                .modelForState().modelFile(horizontal).rotationX(90).addModel()
+        //            .partialState().with(RotatedPillarBlock.AXIS, Axis.X)
+        //                .modelForState().modelFile(horizontal).rotationX(90).rotationY(90).addModel();
+        //    }
+
+        public void ironLantern(IronLanternBlock block) {
+
+            String name = name(block);
+            ResourceLocation side = blockTexture(block);
+            ResourceLocation sideLit = side.withSuffix("_on");
+            ResourceLocation top = side;//.withSuffix("_top");
+            ResourceLocation topLit = top.withSuffix("_on");
+
+            BlockModelBuilder vertical = models().cubeColumn(name, side, top);
+            BlockModelBuilder verticalLit = models().cubeColumn(name+"_lit", sideLit, topLit);
+
+            BlockModelBuilder horizontal = models().cubeColumnHorizontal(name + "_horizontal", side, top);
+            BlockModelBuilder horizontalLit = models().cubeColumnHorizontal(name + "_horizontal_lit", sideLit, topLit);
+
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+                Direction.Axis axis = state.getValue(RotatedPillarBlock.AXIS);
+                boolean lit = state.getValue(BlockStateProperties.LIT);
+
+                ModelFile file = axis == Direction.Axis.Y ? lit ? verticalLit : vertical : lit ? horizontalLit : horizontal;
+
+                return ConfiguredModel.builder()
+                        .modelFile(file)
+                        .rotationX(axis != Direction.Axis.Y ? 90 : 0)
+                        .rotationY(axis == Direction.Axis.X ? 90 : 0)
+                        .uvLock(false)
+                        .build();
+
+            } ,BlockStateProperties.WATERLOGGED);
+
+            simpleBlockItem(block,vertical);
         }
 
         public void hangingSignBlock(CeilingHangingSignBlock signBlock, WallHangingSignBlock wallSignBlock, ResourceLocation texture) {
@@ -1040,7 +1100,7 @@ class Datagen {
             getVariantBuilder(block).forAllStates(state -> {
                 Direction facing = state.getValue(ButtonBlock.FACING);
                 AttachFace face = state.getValue(ButtonBlock.FACE);
-                boolean powered = state.getValue(ButtonBlock.POWERED);
+                boolean powered = state.getValue(RedstoneLampBlock.LIT);
 
                 return ConfiguredModel.builder()
                         .modelFile(powered ? buttonModelLit : buttonModel)
@@ -1049,6 +1109,8 @@ class Datagen {
                         .uvLock(false)
                         .build();
             });
+
+            simpleBlockItem(block,buttonModel);
         }
 
 

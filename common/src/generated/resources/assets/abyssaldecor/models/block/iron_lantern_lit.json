@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/iron_lantern_on",
+    "side": "abyssaldecor:block/iron_lantern_on"
+  }
+}

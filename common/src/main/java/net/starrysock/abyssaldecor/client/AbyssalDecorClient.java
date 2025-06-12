@@ -18,6 +18,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.LUNAR_ROD.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.ETHEREAL_ROD.get(),RenderType.cutout());
 
+        renderTypes.accept(AbyssalDecorBlocks.BULKHEAD_LAMP.get(),RenderType.cutoutMipped());
+
         renderTypes.accept(AbyssalDecorBlocks.DAFFODIL.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.ASTER.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.SNAPLEAF.get(),RenderType.cutout());
