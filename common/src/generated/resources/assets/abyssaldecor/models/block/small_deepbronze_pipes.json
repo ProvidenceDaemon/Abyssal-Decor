@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/small_deepbronze_pipes",
+    "side": "abyssaldecor:block/small_deepbronze_pipes"
+  }
+}

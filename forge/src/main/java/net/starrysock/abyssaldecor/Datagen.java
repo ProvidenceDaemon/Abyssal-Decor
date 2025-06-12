@@ -63,7 +63,7 @@ class Datagen {
         protected void addTags(HolderLookup.Provider arg) {
             tag(ModTags.Blocks.MUCKROOT_GROWABLE).add(Blocks.FARMLAND);
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
-
+            tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(),AbyssalDecorBlocks.BLACK_MOLD.get());
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.IRON_PANEL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get(),
@@ -87,12 +87,12 @@ class Datagen {
             tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
 
 
-            this.tag(BlockTags.STANDING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(),AbyssalDecorBlocks.CINNAMON_SIGN.get(),AbyssalDecorBlocks.WHITEWOOD_SIGN.get());
-            this.tag(BlockTags.WALL_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get(),AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get(),
+            this.tag(BlockTags.STANDING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(), AbyssalDecorBlocks.CINNAMON_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_SIGN.get());
+            this.tag(BlockTags.WALL_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get());
-            this.tag(BlockTags.CEILING_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(),AbyssalDecorBlocks.CINNAMON_HANGING_SIGN.get(),
+            this.tag(BlockTags.CEILING_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.CINNAMON_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get());
-            this.tag(BlockTags.WALL_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(),AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
+            this.tag(BlockTags.WALL_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get());
 
         }
@@ -232,6 +232,7 @@ class Datagen {
             generatedItem(AbyssalDecorItems.CANDY_BOG_APPLE.get());
             generatedItem(AbyssalDecorItems.CAVE_TACO.get());
             generatedItem(AbyssalDecorItems.SPIDERCORN.get());
+            generatedItem(AbyssalDecorItems.SPIDERCORN_TORTILLA.get());
             generatedItem(AbyssalDecorItems.POPPED_SPIDERCORN.get());
             generatedItem(AbyssalDecorItems.TOASTED_AMARANTH_SEEDS.get());
         }
@@ -320,13 +321,13 @@ class Datagen {
 
                 if (family.exists(Variant.SIGN)) {
                     StandingSignBlock signBlock = (StandingSignBlock) family.get(Variant.SIGN);
-                    signBlock(signBlock,(WallSignBlock) family.get(Variant.WALL_SIGN),modLoc("block/"+name(baseBlock)));
-                    iconTexture(name(signBlock),modLoc("item/"+name(signBlock)));
+                    signBlock(signBlock, (WallSignBlock) family.get(Variant.WALL_SIGN), modLoc("block/" + name(baseBlock)));
+                    iconTexture(name(signBlock), modLoc("item/" + name(signBlock)));
 
                     //uses stripped logs but whatever
                     CeilingHangingSignBlock ceilingHangingSignBlock = (CeilingHangingSignBlock) family.get(Variant.HANGING_SIGN);
-                    hangingSignBlock(ceilingHangingSignBlock, (WallHangingSignBlock) family.get(Variant.HANGING_WALL_SIGN),modLoc("block/"+name(baseBlock)));
-                    iconTexture(name(ceilingHangingSignBlock),modLoc("item/"+name(ceilingHangingSignBlock)));
+                    hangingSignBlock(ceilingHangingSignBlock, (WallHangingSignBlock) family.get(Variant.HANGING_WALL_SIGN), modLoc("block/" + name(baseBlock)));
+                    iconTexture(name(ceilingHangingSignBlock), modLoc("item/" + name(ceilingHangingSignBlock)));
                 }
 
                 if (family.exists(Variant.WALL)) {
@@ -721,21 +722,21 @@ class Datagen {
 
             logBlockWithItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get());
 
-            directionalBlock(AbyssalDecorBlocks.WHITE_PEARL.get(),models().withExistingParent("white_pearl",
-                    modLoc("custom/tinywhitepearl"))
-                    .texture("all",modLoc("block/white_pearl"))
-                    .texture("particle",modLoc("block/white_pearl")));
-
-            directionalBlock(AbyssalDecorBlocks.IRON_BALL.get(),models().withExistingParent("iron_ball",
+            directionalBlock(AbyssalDecorBlocks.WHITE_PEARL.get(), models().withExistingParent("white_pearl",
                             modLoc("custom/tinywhitepearl"))
-                    .texture("all",modLoc("block/ironball"))
-                    .texture("particle",modLoc("block/ironball")));
+                    .texture("all", modLoc("block/white_pearl"))
+                    .texture("particle", modLoc("block/white_pearl")));
 
-
-            directionalBlock(AbyssalDecorBlocks.BLACK_PEARL.get(),models().withExistingParent("black_pearl",
+            directionalBlock(AbyssalDecorBlocks.IRON_BALL.get(), models().withExistingParent("iron_ball",
                             modLoc("custom/tinywhitepearl"))
-                    .texture("all",modLoc("block/black_pearl"))
-                    .texture("particle",modLoc("block/black_pearl")));
+                    .texture("all", modLoc("block/ironball"))
+                    .texture("particle", modLoc("block/ironball")));
+
+
+            directionalBlock(AbyssalDecorBlocks.BLACK_PEARL.get(), models().withExistingParent("black_pearl",
+                            modLoc("custom/tinywhitepearl"))
+                    .texture("all", modLoc("block/black_pearl"))
+                    .texture("particle", modLoc("block/black_pearl")));
 
             simpleBlockItem(AbyssalDecorBlocks.IRON_BALL.get(), models().getExistingFile(modLoc("block/iron_ball")));
 
@@ -749,14 +750,38 @@ class Datagen {
                     .texture("east", modLoc("block/brick_pillar"))
                     .texture("south", modLoc("block/brick_pillar"))
                     .texture("west", modLoc("block/brick_pillar"))
-                    .texture("particle", modLoc("block/brick_pillar")),false);
+                    .texture("particle", modLoc("block/brick_pillar")), false);
 
-            simpleBlockWithItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS.get(),models().getExistingFile(modLoc("block/framed_pitchglass_top")));
+            simpleBlockWithItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS.get(), models().getExistingFile(modLoc("block/framed_pitchglass_top")));
 
             paneBlockWithItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS_PANE.get(), modLoc("block/pitchglasspanesolo"),
                     modLoc("block/pitchglasspanetop"));
 
             logBlockWithItem(AbyssalDecorBlocks.MOLDY_FROND_BLOCK.get());
+
+            paneBlockWithItem(AbyssalDecorBlocks.ORNATE_DEEPBRONZE_BARS.get(), modLoc("block/ornate_deepbronze_bars"),
+                    modLoc("block/bronzebarstop"));
+
+            directionalBlock(AbyssalDecorBlocks.TRASH_BAG.get(), models().withExistingParent("trash_bag", modLoc("custom/trashbag"))
+                    .texture("particle", modLoc("block/trash_bag_side"))
+                    .texture("0", modLoc("block/trash_bag_side"))
+                    .texture("2", modLoc("block/trash_bag_bottom"))
+                    .texture("3", modLoc("block/trash_bag_knot"))
+            );
+            simpleBlockItem(AbyssalDecorBlocks.TRASH_BAG.get(), models().getExistingFile(modLoc("block/trash_bag")));
+
+            iconTexture("mold_fronds",modLoc("block/moldfrondstop"));
+
+            simpleBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS.get(),models().cubeAll("laventine_glass",modLoc("block/laventinepanemid")));
+
+            paneBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(), modLoc("block/laventinepanemid"),
+                    modLoc("block/laventinepanemid"));
+
+            simplestBlockWithItem(AbyssalDecorBlocks.EFFERVESCENT_TILES.get());
+
+            woodBlockWithItem(AbyssalDecorBlocks.SMALL_DEEPBRONZE_PIPES.get(),modLoc("block/small_deepbronze_pipes"));
+
+            bulkheadLampBlock(AbyssalDecorBlocks.BULKHEAD_LAMP.get(),modLoc("custom/bulkheadlamp"));
         }
 
         public void hangingSignBlock(CeilingHangingSignBlock signBlock, WallHangingSignBlock wallSignBlock, ResourceLocation texture) {
@@ -804,7 +829,7 @@ class Datagen {
             simpleBlockItem(block, file);
         }
 
-        void serpentEye(FaceAttachedHorizontalDirectionalBlock block, ModelFile file,boolean uvlock) {
+        void serpentEye(FaceAttachedHorizontalDirectionalBlock block, ModelFile file, boolean uvlock) {
             getVariantBuilder(block).forAllStates(state -> {
                 Direction facing = state.getValue(ButtonBlock.FACING);
                 AttachFace face = state.getValue(ButtonBlock.FACE);
@@ -827,12 +852,12 @@ class Datagen {
                 boolean centered = state.getValue(WoodSupportBlock.CENTERED);
 
                 return ConfiguredModel.builder()
-                        .modelFile(centered ? centerFile:file)
+                        .modelFile(centered ? centerFile : file)
                         .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
                         .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
                         .uvLock(false)
                         .build();
-            },BlockStateProperties.WATERLOGGED);
+            }, BlockStateProperties.WATERLOGGED);
             simpleBlockItem(block, file);
         }
 
@@ -998,12 +1023,19 @@ class Datagen {
             simpleBlockWithItem(block, cubeAll(block));
         }
 
-        public void buttonLampBlock(ButtonLampBlock block, ResourceLocation baseModel) {
+        public void bulkheadLampBlock(BulkheadLampBlock block, ResourceLocation baseModel) {
             String name = name(block);
 
-            ModelFile buttonModel = models().withExistingParent(name, baseModel);
+            ResourceLocation texture = modLoc("block/bulkhead_lamp_on");
 
-            ModelFile buttonModelLit = models().withExistingParent(name + "_lit", baseModel);
+            ModelFile buttonModel = models().withExistingParent(name, baseModel)
+                    .texture("particle", texture)
+                    .texture("0", texture);
+
+
+            ModelFile buttonModelLit = models().withExistingParent(name + "_lit", baseModel)
+                    .texture("particle", texture)
+                    .texture("0", texture);
 
             getVariantBuilder(block).forAllStates(state -> {
                 Direction facing = state.getValue(ButtonBlock.FACING);
@@ -1014,7 +1046,7 @@ class Datagen {
                         .modelFile(powered ? buttonModelLit : buttonModel)
                         .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
                         .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
-                        .uvLock(face == AttachFace.WALL)
+                        .uvLock(false)
                         .build();
             });
         }

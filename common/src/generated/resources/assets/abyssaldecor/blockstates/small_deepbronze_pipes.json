@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "abyssaldecor:block/small_deepbronze_pipes",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "abyssaldecor:block/small_deepbronze_pipes"
+    },
+    "axis=z": {
+      "model": "abyssaldecor:block/small_deepbronze_pipes",
+      "x": 90
+    }
+  }
+}

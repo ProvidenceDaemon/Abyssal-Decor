@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "abyssaldecor:item/starfishdried1"
-  },
-  "render_type": "translucent"
-}

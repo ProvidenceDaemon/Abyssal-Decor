@@ -51,7 +51,7 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new ToggleableDirectionalLampBlock(lamp()));
     public static RegistrySupplier<Block> BLAZE_LAMP = AbyssalDecor.BLOCKS.register("blaze_lamp", () -> new BlazeLampBlock(BlockBehaviour.Properties.of().lightLevel(s -> 15).strength(0.3F).sound(SoundType.GLASS)));
     public static RegistrySupplier<Block> RAINBOW_LAMP = AbyssalDecor.BLOCKS.register("rainbow_lamp", () -> new DirectionalLampBlock(BlockBehaviour.Properties.of().lightLevel(s -> 15).strength(0.3F).sound(SoundType.GLASS)));
-    public static RegistrySupplier<Block> BULKHEAD_LAMP = AbyssalDecor.BLOCKS.register("bulkhead_lamp", () -> new ButtonLampBlock(lamp()));
+    public static RegistrySupplier<BulkheadLampBlock> BULKHEAD_LAMP = AbyssalDecor.BLOCKS.register("bulkhead_lamp", () -> new BulkheadLampBlock(lamp()));
 
     public static RegistrySupplier<Block> JADE_LANTERN = AbyssalDecor.BLOCKS.register("jade_lantern", () -> new LampBlock(lamp()));
     public static RegistrySupplier<Block> ABYSSAL_LANTERN = AbyssalDecor.BLOCKS.register("abyssal_lantern", () -> new LampBlock(lamp()));
@@ -462,8 +462,8 @@ public class AbyssalDecorBlocks {
                     .mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f)
                     .sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistrySupplier<Block> SLUMP_LIGHT =
-            AbyssalDecor.BLOCKS.register("slump_light",() -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<DirectionalBlock> SLUMP_LIGHT =
+            AbyssalDecor.BLOCKS.register("slump_light",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> SHORTGILLS =
             AbyssalDecor.BLOCKS.register("shortgills",() -> new Block(BlockBehaviour.Properties.of()));
@@ -815,8 +815,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> FEVER_BLOSSOM_SEEDS = AbyssalDecor.BLOCKS.register("fever_blossom_seeds",
             () -> new Block(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> MOLD_FRONDS = AbyssalDecor.BLOCKS.register("mold_fronds",
-            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<DoublePlantBlock> MOLD_FRONDS = AbyssalDecor.BLOCKS.register("mold_fronds",
+            () -> new MoldFrondsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.ROOTS).instabreak()
+                    .noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> MOLDY_FEATHERS = AbyssalDecor.BLOCKS.register("moldy_feathers",
             () -> new Block(BlockBehaviour.Properties.of()));
@@ -936,13 +937,13 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> BRICK_TRAPDOOR = AbyssalDecor.BLOCKS.register("brick_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS),ModBlockSetTypes.BRICK));
 
-    public static final RegistrySupplier<RotatedPillarBlock> EFFERVESCENT_PILLAR = AbyssalDecor.BLOCKS.register("effervescent_trapdoor",
+    public static final RegistrySupplier<RotatedPillarBlock> EFFERVESCENT_PILLAR = AbyssalDecor.BLOCKS.register("effervescent_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
     public static final RegistrySupplier<Block> EFFERVESCENCE = AbyssalDecor.BLOCKS.register("effervescence",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
-    public static final RegistrySupplier<Block> EFFERVESCENT_TILES = AbyssalDecor.BLOCKS.register("effervescence_tiles",
+    public static final RegistrySupplier<Block> EFFERVESCENT_TILES = AbyssalDecor.BLOCKS.register("effervescent_tiles",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
     public static final RegistrySupplier<Block> POLISHED_EFFERVESCENCE = AbyssalDecor.BLOCKS.register("polished_effervescence",

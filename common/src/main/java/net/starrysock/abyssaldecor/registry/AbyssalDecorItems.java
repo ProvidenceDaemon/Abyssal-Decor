@@ -139,6 +139,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> ROPE_BARRIER = registerBlockItem(AbyssalDecorBlocks.ROPE_BARRIER);
     public static final RegistrySupplier<BlockItem> BARBED_WIRE_BARRIER = registerBlockItem(AbyssalDecorBlocks.BARBED_WIRE_BARRIER);
 
+    public static final RegistrySupplier<BlockItem> TRASH_BAG = registerBlockItem(AbyssalDecorBlocks.TRASH_BAG);
+
     ///////////////////////////////
 
     public static final RegistrySupplier<BlockItem> WHITEWOOD_LOG = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_LOG);

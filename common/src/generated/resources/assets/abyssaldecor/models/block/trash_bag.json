@@ -1,0 +1,9 @@
+{
+  "parent": "abyssaldecor:custom/trashbag",
+  "textures": {
+    "0": "abyssaldecor:block/trash_bag_side",
+    "2": "abyssaldecor:block/trash_bag_bottom",
+    "3": "abyssaldecor:block/trash_bag_knot",
+    "particle": "abyssaldecor:block/trash_bag_side"
+  }
+}

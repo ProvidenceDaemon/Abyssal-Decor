@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-11T07:13:44.5360815	Loot Tables
+// 1.20.1	2025-06-12T08:55:30.9427268	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -126,8 +126,8 @@ b77c2d941b16aebbf5829298cd12154d92786d98 data/abyssaldecor/loot_tables/blocks/du
 bfb3e7fe6dd461f6d6ad597eb2f3f79ee4630048 data/abyssaldecor/loot_tables/blocks/dull_iron_sconce.json
 4fd5e52a88c9252b6d68381489855b3885b241fe data/abyssaldecor/loot_tables/blocks/echo_shard_block.json
 cc810b8cfdd47d027b9d0f5fe8d97dfcbc3e7e2f data/abyssaldecor/loot_tables/blocks/effervescence.json
-4ab87978728996528f06801a307e654c2a484eb4 data/abyssaldecor/loot_tables/blocks/effervescence_tiles.json
-b0b20b4b6b5d185c6e94fac11502ec6d42866610 data/abyssaldecor/loot_tables/blocks/effervescent_trapdoor.json
+78804833229c62e68549f5825537f19ca074805d data/abyssaldecor/loot_tables/blocks/effervescent_pillar.json
+512395d8893d44fe1fc4060c5879f87308f28d8c data/abyssaldecor/loot_tables/blocks/effervescent_tiles.json
 39e08b706781905986ad72e23c51bab6e78407f8 data/abyssaldecor/loot_tables/blocks/elder_wisteria_leaves.json
 ad5db7fc9025db019b5218aeea3affda11b2076d data/abyssaldecor/loot_tables/blocks/elder_wisteria_petals.json
 0d2bdbce512e6f0d7c4d7e6b728ba9b935512916 data/abyssaldecor/loot_tables/blocks/ethereal_rod.json
@@ -328,7 +328,7 @@ c7e486009bb19406459085527cf1a5e01c74b958 data/abyssaldecor/loot_tables/blocks/st
 ecdf471a617a7ff6992e81042f36d9e2d7036774 data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass_pane.json
 cdc704f8ad4575bfba033663208ca7d45df964bc data/abyssaldecor/loot_tables/blocks/telescope.json
 d225c8aff26bf0e4aa3dc50eee4b507a389926d3 data/abyssaldecor/loot_tables/blocks/terrestrial_rod.json
-f5bb820153b01060930bc3620d27d469ce1e6a5b data/abyssaldecor/loot_tables/blocks/trash_bag.json
+ea3a08f91d685753a41ee962f5942d4243623a50 data/abyssaldecor/loot_tables/blocks/trash_bag.json
 7eec3e42c363d878be492ca2ad0f59c7a5664ab1 data/abyssaldecor/loot_tables/blocks/tube_lamp.json
 008c8e23f762fa980d0cca5cbd192d99e0b6da75 data/abyssaldecor/loot_tables/blocks/velvet.json
 e8189853376aefd26361bf873b35cd49c38b250a data/abyssaldecor/loot_tables/blocks/velvet_barrier.json

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:trash_bag"
+          "name": "abyssaldecor:effervescent_pillar"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/trash_bag"
+  "random_sequence": "abyssaldecor:blocks/effervescent_pillar"
 }

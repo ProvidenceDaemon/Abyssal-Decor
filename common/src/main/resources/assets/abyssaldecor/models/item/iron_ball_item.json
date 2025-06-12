@@ -1,7 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/ironball1",
-  "textures": {
-    "0": "abyssaldecor:block/ironball",
-    "particle": "abyssaldecor:item/ironball"
-  }
-}

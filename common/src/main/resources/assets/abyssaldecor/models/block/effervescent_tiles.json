@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/effervescenttiles",
-    "particle": "abyssaldecor:block/effervescenttiles"
-  },
-  "render_type": "solid"
-}

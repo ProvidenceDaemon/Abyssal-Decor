@@ -9,7 +9,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SignBlock;
+import net.minecraft.world.level.block.WallHangingSignBlock;
+import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.starrysock.abyssaldecor.registry.AbyssalCreativeTabs;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
@@ -30,10 +31,9 @@ public class ModLangProvider extends LanguageProvider {
 
         AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier -> {
             Block b = blockRegistrySupplier.get();
-            if (!(b instanceof SignBlock)) {
+            if (!(b instanceof WallSignBlock) && !(b instanceof WallHangingSignBlock)) {
                 addDefaultBlock(blockRegistrySupplier.get());
             } else {
-                addDefaultBlock(blockRegistrySupplier.get());
             }
         });
 
