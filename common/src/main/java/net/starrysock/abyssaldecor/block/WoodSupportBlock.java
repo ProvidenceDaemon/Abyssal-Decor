@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.AbyssalUtils;
 import org.jetbrains.annotations.Nullable;
 
 public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterloggedBlock {
@@ -88,7 +89,7 @@ public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterlo
 
             switch (face){
                 case WALL -> {
-                    Vec3 fraction = getFraction(context.getClickLocation());
+                    Vec3 fraction = AbyssalUtils.getFraction(context.getClickLocation());
                     boolean center = fraction.y < .625;
                     stateForPlacement = stateForPlacement.setValue(CENTERED, center);
                 }
@@ -97,10 +98,6 @@ public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterlo
         }
 
         return stateForPlacement;
-    }
-
-    public static Vec3 getFraction(Vec3 vec3) {
-        return new Vec3(vec3.x - Math.floor(vec3.x),vec3.y - Math.floor(vec3.y),vec3.z - Math.floor(vec3.z));
     }
 
     @Override

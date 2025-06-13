@@ -16,14 +16,14 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.MixedBlock;
 import net.starrysock.abyssaldecor.block.*;
-import net.starrysock.abyssaldecor.content.abstraction.lamps.InteractibleRedstoneLampBlock;
 
 import java.util.function.ToIntFunction;
 
 public class AbyssalDecorBlocks {
 
     //section: Lamps
-    public static RegistrySupplier<Block> FRESNEL_LAMP = AbyssalDecor.BLOCKS.register("fresnel_lamp", () -> new InteractibleRedstoneLampBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static RegistrySupplier<Block> FRESNEL_LAMP = AbyssalDecor.BLOCKS.register("fresnel_lamp", () -> new Block(BlockBehaviour.Properties
+            .copy(Blocks.GLASS).lightLevel(s ->15)));
 
     // Lightbulb [directional], Wall Bulb Lamp [wall mounted], Tube Lamp [tube], Iron Lamp [directional], Flower Lamp [wall mounted], Frosted Lamp [directional], Quartz Lamp [directional], Jade Lamp [directional], Seaglass Lamp [directional], Blaze Lamp [wall mounted], Rainbow Lamp [directional]
     public static RegistrySupplier<Block> LIGHTBULB = AbyssalDecor.BLOCKS.register("lightbulb", () -> new ToggleableDirectionalLampBlock(lamp()));
@@ -425,7 +425,10 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> BLOOD_CORAL_TRAPDOOR = AbyssalDecor.BLOCKS.register("blood_coral_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
     public static final RegistrySupplier<IronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> ironBars());
-    public static final RegistrySupplier<IronBarsBlock> SMALL_BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars",() -> ironBars());
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars",() ->
+            new SmallBarsBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_BLOOD_CORAL_CORNER_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_BLOOD_CORAL_BARS.get())));
 
     public static final RegistrySupplier<SlabBlock> POLISHED_BLOOD_CORAL_SLAB = AbyssalDecor.BLOCKS.register("polished_blood_coral_slab",() -> slab(POLISHED_BLOOD_CORAL.get()));
     public static final RegistrySupplier<StairBlock> POLISHED_BLOOD_CORAL_STAIRS = AbyssalDecor.BLOCKS.register("polished_blood_coral_stairs",() -> stairs(POLISHED_BLOOD_CORAL.get()));

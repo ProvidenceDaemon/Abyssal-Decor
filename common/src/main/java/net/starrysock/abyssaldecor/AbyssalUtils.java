@@ -1,6 +1,7 @@
 package net.starrysock.abyssaldecor;
 
 import net.minecraft.core.Direction;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -22,5 +23,9 @@ public class AbyssalUtils {
         }
 
         return buffer[0];
+    }
+
+    public static Vec3 getFraction(Vec3 vec3) {
+        return new Vec3(vec3.x - Math.floor(vec3.x),vec3.y - Math.floor(vec3.y),vec3.z - Math.floor(vec3.z));
     }
 }

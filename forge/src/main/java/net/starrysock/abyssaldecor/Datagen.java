@@ -354,16 +354,16 @@ class Datagen {
             );
 
             getVariantBuilder(AbyssalDecorBlocks.LIGHTBULB.get()).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
-                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+                Direction orientation = blockState.getValue(DirectionalBlock.FACING);
                 ModelFile modelFile = models().getExistingFile(modLoc("block/lightbulb" + (lit ? "_lit" : "")));
                 Vector2i vector2i = getRotation(orientation);
                 return ConfiguredModel.builder().modelFile(modelFile).rotationX(vector2i.x).rotationY(vector2i.y).build();
             }, BlockStateProperties.WATERLOGGED);
 
             getVariantBuilder(AbyssalDecorBlocks.FROSTED_LAMP.get()).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
-                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+                Direction orientation = blockState.getValue(DirectionalBlock.FACING);
 
                 ResourceLocation texture0 = modLoc("block/frostedceilinglamp" + (lit ? "lit" : ""));
 
@@ -378,7 +378,7 @@ class Datagen {
             }, BlockStateProperties.WATERLOGGED);
 
             getVariantBuilder(AbyssalDecorBlocks.RAINBOW_LAMP.get()).forAllStatesExcept(blockState -> {
-                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+                Direction orientation = blockState.getValue(DirectionalBlock.FACING);
 
                 ResourceLocation texture0 = modLoc("block/rainbow2");
                 ResourceLocation texture1 = modLoc("block/rainbowlampbase");
@@ -395,8 +395,8 @@ class Datagen {
 
 
             getVariantBuilder(AbyssalDecorBlocks.SEAGLASS_LAMP.get()).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
-                Direction orientation = blockState.getValue(DirectionalInteractibleLampBlock.FACING);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+                Direction orientation = blockState.getValue(DirectionalBlock.FACING);
 
                 ResourceLocation texture0 = modLoc("block/seaglass_lamp" + (lit ? "_lit" : ""));
 
@@ -411,7 +411,7 @@ class Datagen {
 
 
             getVariantBuilder(AbyssalDecorBlocks.IRON_LAMP.get()).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
 
                 //    "all": "abyssaldecor:block/ironlamp1",
                 //    "particle": "abyssaldecor:block/ironlamp1",
@@ -428,8 +428,8 @@ class Datagen {
             }, BlockStateProperties.WATERLOGGED);
 
             getVariantBuilder(AbyssalDecorBlocks.WALL_IRON_LAMP.get()).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
-                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalDirectionalBlock.FACING);
 
                 ModelFile modelFile = models().withExistingParent("block/wall_iron_lamp" + (lit ? "_lit" : ""),
                                 modLoc("custom/wallironlamp"))
@@ -444,8 +444,8 @@ class Datagen {
             wallLamp(AbyssalDecorBlocks.FLOWER_LAMP.get(), modLoc("custom/flowerlamp"), modLoc("block/flower_lamp"));
 
             getVariantBuilder(AbyssalDecorBlocks.TUBE_LAMP.get()).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
-                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+                Direction orientation = blockState.getValue(HorizontalDirectionalBlock.FACING);
 
                 ResourceLocation texture = modLoc("block/tubelamp");
 
@@ -1118,7 +1118,7 @@ class Datagen {
             String name = name(block);
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
 
                 ResourceLocation texture = lit ? texture0Lit : texture0;
 
@@ -1135,7 +1135,7 @@ class Datagen {
             String name = name(block);
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
 
                 ResourceLocation texture = lit ? texture0Lit : texture0;
 
@@ -1153,7 +1153,7 @@ class Datagen {
             String name = name(block);
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(DirectionalInteractibleLampBlock.LIT);
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
                 Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
 
                 ResourceLocation texture = lit ? texture0Lit : texture0;
