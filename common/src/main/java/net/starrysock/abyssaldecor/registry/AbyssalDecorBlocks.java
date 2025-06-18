@@ -640,7 +640,7 @@ public class AbyssalDecorBlocks {
                     .forceSolidOn().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.CHAIN).noOcclusion()));
 
     public static final RegistrySupplier<IronSconceBlock> DEEPBRONZE_SCONCE = AbyssalDecor.BLOCKS.register("deepbronze_sconce",
-            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+            () -> new IronSconceBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BARS.get())));
 
     /////////
 

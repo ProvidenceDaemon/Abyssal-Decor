@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,vertical_direction=down": {
+      "model": "abyssaldecor:block/gold_sconce",
+      "y": 90
+    },
+    "facing=east,vertical_direction=up": {
+      "model": "abyssaldecor:block/gold_sconce_top",
+      "y": 90
+    },
+    "facing=north,vertical_direction=down": {
+      "model": "abyssaldecor:block/gold_sconce"
+    },
+    "facing=north,vertical_direction=up": {
+      "model": "abyssaldecor:block/gold_sconce_top"
+    },
+    "facing=south,vertical_direction=down": {
+      "model": "abyssaldecor:block/gold_sconce",
+      "y": 180
+    },
+    "facing=south,vertical_direction=up": {
+      "model": "abyssaldecor:block/gold_sconce_top",
+      "y": 180
+    },
+    "facing=west,vertical_direction=down": {
+      "model": "abyssaldecor:block/gold_sconce",
+      "y": 270
+    },
+    "facing=west,vertical_direction=up": {
+      "model": "abyssaldecor:block/gold_sconce_top",
+      "y": 270
+    }
+  }
+}

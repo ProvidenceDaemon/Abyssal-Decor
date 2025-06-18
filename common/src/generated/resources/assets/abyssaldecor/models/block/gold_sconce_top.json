@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/goldsconceupsidedown",
+  "textures": {
+    "0": "abyssaldecor:block/gold_sconce",
+    "particle": "abyssaldecor:block/gold_sconce"
+  }
+}

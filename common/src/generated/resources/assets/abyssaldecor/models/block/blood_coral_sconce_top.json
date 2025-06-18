@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/upsidedowncleanironsconce",
+  "textures": {
+    "0": "abyssaldecor:block/blood_coral_sconce",
+    "particle": "abyssaldecor:block/blood_coral_sconce"
+  }
+}

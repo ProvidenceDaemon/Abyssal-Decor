@@ -93,6 +93,13 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_CORNER_BARS.get(),RenderType.cutoutMipped());
 
+        renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_SCONCE.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.DULL_IRON_SCONCE.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.IRON_SCONCE.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.GOLD_SCONCE.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SEABRASS_SCONCE.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE.get(),RenderType.cutoutMipped());
     }
 }

@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.AbyssalUtils;
 import org.jetbrains.annotations.Nullable;
@@ -29,9 +30,20 @@ public class IronSconceBlock extends AbstractHorizontalBlock{
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        VoxelShape primary = box(4,0,15,12,16,16);
+        VoxelShape primary = box(6,0,13,10,16,16);
         Direction facing = state.getValue(FACING);
-        return AbyssalUtils.calculateShapes(facing,primary);
+
+        VoxelShape anchor = state.getValue(VERTICAL_FACING) == Direction.UP ?  box(4,0,4,12,1,12) :
+                box(4,15,4,12,16,12);
+
+        return AbyssalUtils.calculateShapes(facing, Shapes.or(primary,anchor));
+    }
+
+    public static final VoxelShape SUPPORT_SHAPE = box(4,0,4,12,16,12);
+
+    @Override
+    public VoxelShape getBlockSupportShape(BlockState state, BlockGetter level, BlockPos pos) {
+        return SUPPORT_SHAPE;
     }
 
     @Override

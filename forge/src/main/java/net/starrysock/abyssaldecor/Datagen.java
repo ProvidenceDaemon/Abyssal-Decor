@@ -801,10 +801,24 @@ class Datagen {
 
             ironLantern(AbyssalDecorBlocks.IRON_LANTERN.get());
             smallBars(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), modLoc("block/small_blood_coral_bars"));
-            sconce(AbyssalDecorBlocks.IRON_SCONCE.get(),modLoc("block/iron_sconce"));
+
+            regularSconce(AbyssalDecorBlocks.DEEPBRONZE_SCONCE.get(),modLoc("block/deepbronze_sconce"));
+            regularSconce(AbyssalDecorBlocks.IRON_SCONCE.get(),modLoc("block/iron_sconce"));
+            regularSconce(AbyssalDecorBlocks.DULL_IRON_SCONCE.get(),modLoc("block/dull_iron_sconce"));
+            regularSconce(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE.get(),modLoc("block/blood_coral_sconce"));
+            goldSconce(AbyssalDecorBlocks.GOLD_SCONCE.get(),modLoc("block/gold_sconce"));
+            regularSconce(AbyssalDecorBlocks.SEABRASS_SCONCE.get(),modLoc("block/seabrass_sconce"));
         }
 
-        public void sconce(IronSconceBlock block,ResourceLocation texture) {
+        public void goldSconce(IronSconceBlock block,ResourceLocation texture) {
+            sconce(block,texture,modLoc("custom/goldsconce"),modLoc("custom/goldsconceupsidedown"));
+        }
+
+        public void regularSconce(IronSconceBlock block,ResourceLocation texture) {
+            sconce(block,texture,modLoc("custom/cleanironsconce"),modLoc("custom/upsidedowncleanironsconce"));
+        }
+
+        public void sconce(IronSconceBlock block,ResourceLocation texture,ResourceLocation model,ResourceLocation upsideDownModel) {
             //{
             //  "parent": "abyssaldecor:custom/cleanironsconce",
             //  "textures": {
@@ -816,16 +830,14 @@ class Datagen {
             //}
             String name = name(block);
 
-            ResourceLocation p = modLoc("custom/cleanironsconce");
 
-            ResourceLocation u = modLoc("custom/upsidedowncleanironsconce");
 
-            ModelFile file = models().withExistingParent(name,p)
-                    .texture("1",texture)
+            ModelFile file = models().withExistingParent(name,model)
+                    .texture("0",texture)
                     .texture("particle",texture);
 
-            ModelFile fileUp = models().withExistingParent(name+"_top",u)
-                    .texture("1",texture)
+            ModelFile fileUp = models().withExistingParent(name+"_top",upsideDownModel)
+                    .texture("0",texture)
                     .texture("particle",texture);
 
             horizontalBlock(block,state -> state.getValue(BlockStateProperties.VERTICAL_DIRECTION) ==  Direction.UP ? fileUp : file);

@@ -1,7 +1,7 @@
 {
   "parent": "abyssaldecor:custom/upsidedowncleanironsconce",
   "textures": {
-    "1": "abyssaldecor:block/iron_sconce",
+    "0": "abyssaldecor:block/iron_sconce",
     "particle": "abyssaldecor:block/iron_sconce"
   }
 }
