@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/smallpearlbars",
+  "textures": {
+    "0": "abyssaldecor:block/small_blood_coral_bars",
+    "particle": "abyssaldecor:block/small_blood_coral_bars"
+  }
+}

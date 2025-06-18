@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-12T08:55:30.9427268	Loot Tables
+// 1.20.1	2025-06-18T12:22:58.1537544	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -290,6 +290,7 @@ b0bf94ffe8fbcc05d45f774c9e45230680175162 data/abyssaldecor/loot_tables/blocks/sh
 1801ae2072a94ceff33ba0260348b46685d07835 data/abyssaldecor/loot_tables/blocks/shortgills.json
 bd15443f8131aff16c29374855e580cf4cab88d3 data/abyssaldecor/loot_tables/blocks/slump_light.json
 2d7a07d6950300097e2266ccfd97e1a387999887 data/abyssaldecor/loot_tables/blocks/small_blood_coral_bars.json
+5abff8ae6c07032fde17870fa9c99362700f27cc data/abyssaldecor/loot_tables/blocks/small_blood_coral_bars_corner.json
 6a6c31173bacc825da6039c18608b33a0e8c41e5 data/abyssaldecor/loot_tables/blocks/small_deepbronze_pipes.json
 e3b31aaf25e2f17d93e59a372e08dab5154ca945 data/abyssaldecor/loot_tables/blocks/small_netted_serpent_eye.json
 80344d6548882eaa9c64189e30adc635b9815ace data/abyssaldecor/loot_tables/blocks/small_seabrass_pipes.json

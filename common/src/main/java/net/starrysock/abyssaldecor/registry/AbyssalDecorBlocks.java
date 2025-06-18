@@ -425,10 +425,13 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> BLOOD_CORAL_TRAPDOOR = AbyssalDecor.BLOCKS.register("blood_coral_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
     public static final RegistrySupplier<IronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> ironBars());
+
     public static final RegistrySupplier<SmallBarsBlock> SMALL_BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars",() ->
             new SmallBarsBlock(BlockBehaviour.Properties.of()));
+
     public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_BLOOD_CORAL_CORNER_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars_corner",() ->
             new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_BLOOD_CORAL_BARS.get())));
+
 
     public static final RegistrySupplier<SlabBlock> POLISHED_BLOOD_CORAL_SLAB = AbyssalDecor.BLOCKS.register("polished_blood_coral_slab",() -> slab(POLISHED_BLOOD_CORAL.get()));
     public static final RegistrySupplier<StairBlock> POLISHED_BLOOD_CORAL_STAIRS = AbyssalDecor.BLOCKS.register("polished_blood_coral_stairs",() -> stairs(POLISHED_BLOOD_CORAL.get()));

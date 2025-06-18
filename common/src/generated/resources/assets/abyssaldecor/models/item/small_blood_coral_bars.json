@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "abyssaldecor:block/small_blood_coral_bars"
+  }
+}

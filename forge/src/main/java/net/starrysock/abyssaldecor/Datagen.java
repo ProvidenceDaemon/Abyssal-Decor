@@ -800,6 +800,78 @@ class Datagen {
             );
 
             ironLantern(AbyssalDecorBlocks.IRON_LANTERN.get());
+            smallBars(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), modLoc("block/small_blood_coral_bars"));
+            sconce(AbyssalDecorBlocks.IRON_SCONCE.get(),modLoc("block/iron_sconce"));
+        }
+
+        public void sconce(IronSconceBlock block,ResourceLocation texture) {
+            //{
+            //  "parent": "abyssaldecor:custom/cleanironsconce",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/clean_iron_sconce",
+            //    "particle": "abyssaldecor:block/clean_iron_sconce",
+            //    "1": "abyssaldecor:block/clean_iron_sconce"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+            String name = name(block);
+
+            ResourceLocation p = modLoc("custom/cleanironsconce");
+
+            ResourceLocation u = modLoc("custom/upsidedowncleanironsconce");
+
+            ModelFile file = models().withExistingParent(name,p)
+                    .texture("1",texture)
+                    .texture("particle",texture);
+
+            ModelFile fileUp = models().withExistingParent(name+"_top",u)
+                    .texture("1",texture)
+                    .texture("particle",texture);
+
+            horizontalBlock(block,state -> state.getValue(BlockStateProperties.VERTICAL_DIRECTION) ==  Direction.UP ? fileUp : file);
+
+            simpleBlockItem(block,file);
+        }
+
+        public void smallBars(SmallBarsBlock block,ResourceLocation texture) {
+            //{
+            //  "parent": "abyssal_decor:custom/smallbloodcoralbars",
+            //  "textures": {
+            //    "all": "abyssal_decor:block/smallbloodcoralbars",
+            //    "particle": "abyssal_decor:block/smallbloodcoralbars",
+            //    "2": "abyssal_decor:block/smallbloodcoralbars"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+            //{
+            //  "parent": "abyssal_decor:custom/upsidedownbloodcoralbars",
+            //  "textures": {
+            //    "all": "abyssal_decor:block/smallbloodcoralbars",
+            //    "particle": "abyssal_decor:block/smallbloodcoralbars",
+            //    "0": "abyssal_decor:block/smallbloodcoralbars"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+
+            ModelFile.ExistingModelFile regularFile = models().getExistingFile(modLoc("custom/smallpearlbars"));
+            ModelFile.ExistingModelFile upsideDownFile = models().getExistingFile(modLoc("custom/upsidedownpearlsmallbars"));
+            String name = name(block);
+
+            getVariantBuilder(block).forAllStates(state -> {
+                Direction vertical = state.getValue(BlockStateProperties.VERTICAL_DIRECTION);
+                Direction horizontal = state.getValue(HorizontalDirectionalBlock.FACING);
+                ModelFile parentFile = vertical == Direction.UP ? upsideDownFile : regularFile;
+
+                ModelFile file = models().withExistingParent(name + (vertical == Direction.UP ? "_top" : ""),parentFile.getLocation())
+                        .texture("0",texture)
+                        .texture("particle",texture);
+
+                return ConfiguredModel.builder()
+                        .modelFile(file)
+                        .rotationY(((int) horizontal.toYRot() + 180) % 360)
+                        .build();
+            });
+            iconTexture(name,texture);
         }
 
         //    public void axisBlock(RotatedPillarBlock block, ModelFile vertical, ModelFile horizontal) {

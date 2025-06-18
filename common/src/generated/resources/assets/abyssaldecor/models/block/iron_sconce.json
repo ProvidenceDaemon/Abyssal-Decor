@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/cleanironsconce",
+  "textures": {
+    "1": "abyssaldecor:block/iron_sconce",
+    "particle": "abyssaldecor:block/iron_sconce"
+  }
+}
