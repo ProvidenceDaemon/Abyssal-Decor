@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -15,11 +16,14 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.starrysock.abyssaldecor.block.HorizontalDoubleBlock;
 import net.starrysock.abyssaldecor.block.MuckrootBlock;
+import net.starrysock.abyssaldecor.block.SmallBarsCornerBlock;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
@@ -62,10 +66,12 @@ public class ModLootTableProvider extends LootTableProvider {
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
-                if (!skip.contains(block) && !specialDrops.contains(block)) {
+                if (!skip.contains(block) && !specialDrops.contains(block) && !(block instanceof SmallBarsCornerBlock)) {
                     dropSelf(block);
                 }
             } );
+
+
 
             barrierDrop(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get());
             barrierDrop(AbyssalDecorBlocks.IRON_BARRIER.get());
@@ -89,6 +95,22 @@ public class ModLootTableProvider extends LootTableProvider {
 
             this.add(AbyssalDecorBlocks.HANGING_WEB.get(), block -> createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STRING))));
 
+            cornerTable(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS_CORNER.get(),AbyssalDecorItems.SMALL_BLACK_PEARL_BARS.get());
+            cornerTable(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get(),AbyssalDecorItems.SMALL_BLOOD_CORAL_BARS.get());
+            cornerTable(AbyssalDecorBlocks.SMALL_CLEAN_IRON_BARS_CORNER.get(),AbyssalDecorItems.SMALL_CLEAN_IRON_BARS.get());
+            cornerTable(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS_CORNER.get(),AbyssalDecorItems.SMALL_DEEPBRONZE_BARS.get());
+            cornerTable(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS_CORNER.get(),AbyssalDecorItems.SMALL_DULL_IRON_BARS.get());
+            cornerTable(AbyssalDecorBlocks.SMALL_SEABRASS_BARS_CORNER.get(),AbyssalDecorItems.SMALL_SEABRASS_BARS.get());
+            cornerTable(AbyssalDecorBlocks.SMALL_STONE_BARS_CORNER.get(),AbyssalDecorItems.SMALL_STONE_BARS.get());
+
+            cornerTable(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS_CORNER.get(),AbyssalDecorItems.SMALL_WHITE_PEARL_BARS.get());
+
+        }
+
+        protected void cornerTable(SmallBarsCornerBlock block, Item small) {
+             add(block,LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                    .add(this.applyExplosionDecay(block, LootItem.lootTableItem(small)
+                            .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2)))))));
         }
 
         protected void barrierDrop(Block block) {
@@ -105,5 +127,8 @@ public class ModLootTableProvider extends LootTableProvider {
             return BuiltInRegistries.BLOCK.stream().filter(block -> BuiltInRegistries.BLOCK.getKey(block)
                     .getNamespace().equals(AbyssalDecor.MOD_ID) && !skip.contains(block)).toList();
         }
+
+
+
     }
 }

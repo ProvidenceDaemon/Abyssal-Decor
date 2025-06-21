@@ -16,11 +16,11 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "abyssaldecor:small_blood_coral_bars"
+          "name": "abyssaldecor:small_dull_iron_bars"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/small_blood_coral_bars_corner"
+  "random_sequence": "abyssaldecor:blocks/small_dull_iron_bars_corner"
 }

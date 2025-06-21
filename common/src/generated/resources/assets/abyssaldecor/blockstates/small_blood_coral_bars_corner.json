@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "corner=northeast,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner",
+      "y": 90
+    },
+    "corner=northeast,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner_top",
+      "y": 90
+    },
+    "corner=northwest,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner"
+    },
+    "corner=northwest,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner_top"
+    },
+    "corner=southeast,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner",
+      "y": 180
+    },
+    "corner=southeast,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner_top",
+      "y": 180
+    },
+    "corner=southwest,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner",
+      "y": 270
+    },
+    "corner=southwest,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_blood_coral_bars_corner_top",
+      "y": 270
+    }
+  }
+}

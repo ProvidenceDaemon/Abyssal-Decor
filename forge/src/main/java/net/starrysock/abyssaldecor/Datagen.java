@@ -20,6 +20,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.block.*;
+import net.starrysock.abyssaldecor.block.properties.CornerDirection;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ExtendedBlockFamilies;
@@ -808,6 +809,73 @@ class Datagen {
             regularSconce(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE.get(),modLoc("block/blood_coral_sconce"));
             goldSconce(AbyssalDecorBlocks.GOLD_SCONCE.get(),modLoc("block/gold_sconce"));
             regularSconce(AbyssalDecorBlocks.SEABRASS_SCONCE.get(),modLoc("block/seabrass_sconce"));
+
+            smallCornerBar(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get(),modLoc("block/smallbloodcoralbarscorner"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS.get(), modLoc("block/smallpearlbars"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS_CORNER.get(),modLoc("block/smallpearlbars"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_CLEAN_IRON_BARS.get(), modLoc("block/smallbarsclean"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_CLEAN_IRON_BARS_CORNER.get(),modLoc("block/smallbarscleancorner"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS.get(), modLoc("block/smallbarsdull"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS_CORNER.get(),modLoc("block/dullironbarscorner"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_SEABRASS_BARS.get(), modLoc("block/smallbarsbrass"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_SEABRASS_BARS_CORNER.get(),modLoc("block/smallbarsbrasscorner"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS.get(), modLoc("block/smallbronzebars"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS_CORNER.get(),modLoc("block/smallbronzebarscorner"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_STONE_BARS.get(), modLoc("block/smallstonebars"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_STONE_BARS_CORNER.get(),modLoc("block/smallstonebarscorner"));
+
+            smallBars(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS.get(), modLoc("block/smallblackpearlbars"));
+            smallCornerBar(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS_CORNER.get(),modLoc("block/smallblackpearlbars"));
+        }
+
+        public void smallCornerBar(SmallBarsCornerBlock block,ResourceLocation texture) {
+            //{
+            //  "parent": "abyssal_decor:custom/smallbloodcoralbarscorner",
+            //  "textures": {
+            //    "all": "abyssal_decor:block/smallbloodcoralbarscorner",
+            //    "particle": "abyssal_decor:block/smallbloodcoralbarscorner",
+            //    "0": "abyssal_decor:block/smallbloodcoralbarscorner"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+
+            //{
+            //  "parent": "abyssal_decor:custom/upsidedownbloodcoralbarscorner",
+            //  "textures": {
+            //    "all": "abyssal_decor:block/smallbloodcoralbarscorner",
+            //    "particle": "abyssal_decor:block/smallbloodcoralbarscorner",
+            //    "3": "abyssal_decor:block/smallbloodcoralbarscorner"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+
+            String name = name(block);
+
+            ResourceLocation model = modLoc("custom/smallbloodcoralbarscorner");
+            ResourceLocation upsideDownModel = modLoc("custom/upsidedownbloodcoralbarscorner");
+
+
+
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+                CornerDirection cornerDirection = state.getValue(SmallBarsCornerBlock.CORNER);
+                Direction vertical = state.getValue(BlockStateProperties.VERTICAL_DIRECTION);
+
+
+                ModelFile file = models().withExistingParent(name+(vertical == Direction.UP ? "_top" : ""),vertical == Direction.UP ? upsideDownModel : model)
+                        .texture("0",texture)
+                        .texture("particle",texture);
+
+                return ConfiguredModel.builder()
+                        .modelFile(file)
+                        .rotationY(cornerDirection.yRotation())
+                        .build();
+            });
         }
 
         public void goldSconce(IronSconceBlock block,ResourceLocation texture) {

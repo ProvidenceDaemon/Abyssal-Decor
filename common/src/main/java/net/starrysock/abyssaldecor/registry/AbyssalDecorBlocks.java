@@ -259,6 +259,12 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> WHITE_PEARL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("white_pearl_brick_slab",() -> slab(WHITE_PEARL_BRICKS.get()));
     public static final RegistrySupplier<WallBlock> WHITE_PEARL_BRICK_WALL = AbyssalDecor.BLOCKS.register("white_pearl_brick_wall",() -> wall(WHITE_PEARL_BRICKS.get()));
 
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_WHITE_PEARL_BARS = AbyssalDecor.BLOCKS.register("small_white_pearl_bars",() ->
+            smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_WHITE_PEARL_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_white_pearl_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_WHITE_PEARL_BARS.get())));
+
     ///////
 
     public static final RegistrySupplier<Block> SMOOTH_WHITE_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("smooth_white_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
@@ -358,6 +364,10 @@ public class AbyssalDecorBlocks {
         return new IronBarsBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL).noOcclusion());
     }
 
+    static SmallBarsBlock smallBars() {
+        return new SmallBarsBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL).noOcclusion());
+    }
+
 
     public static final RegistrySupplier<Block> IRON_PANEL = AbyssalDecor.BLOCKS.register("iron_panel",()
             -> new Block(BlockBehaviour.Properties.of().strength(5,6).requiresCorrectToolForDrops()));
@@ -369,6 +379,12 @@ public class AbyssalDecorBlocks {
     //industrial lever
 
     public static final RegistrySupplier<IronBarsBlock> DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("dull_iron_bars",() -> ironBars());
+
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("small_dull_iron_bars",() ->
+            smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_DULL_IRON_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_dull_iron_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_DULL_IRON_BARS.get())));
 
     public static final RegistrySupplier<IronSconceBlock> DULL_IRON_SCONCE = AbyssalDecor.BLOCKS.register("dull_iron_sconce",() -> new IronSconceBlock(BlockBehaviour.Properties.of()));
 
@@ -427,9 +443,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> ironBars());
 
     public static final RegistrySupplier<SmallBarsBlock> SMALL_BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars",() ->
-            new SmallBarsBlock(BlockBehaviour.Properties.of()));
+            smallBars());
 
-    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_BLOOD_CORAL_CORNER_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars_corner",() ->
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_BLOOD_CORAL_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_blood_coral_bars_corner",() ->
             new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_BLOOD_CORAL_BARS.get())));
 
 
@@ -581,6 +597,13 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronBarsBlock> ORNATE_SEABRASS_BARS = AbyssalDecor.BLOCKS.register("ornate_seabrass_bars",
             () -> ironBars());
 
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_SEABRASS_BARS = AbyssalDecor.BLOCKS.register("small_seabrass_bars",() ->
+            smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_SEABRASS_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_seabrass_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_SEABRASS_BARS.get())));
+
+
     //////////////
 
     public static final RegistrySupplier<Block> DEEPBRONZE_BLOCK = AbyssalDecor.BLOCKS.register("deepbronze_block",() ->
@@ -613,6 +636,12 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<IronBarsBlock> ORNATE_DEEPBRONZE_BARS = AbyssalDecor.BLOCKS.register("ornate_deepbronze_bars",
             () -> ironBars());
+
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_DEEPBRONZE_BARS = AbyssalDecor.BLOCKS.register("small_deepbronze_bars",() ->
+            smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_DEEPBRONZE_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_deepbronze_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_DEEPBRONZE_BARS.get())));
 
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DEEPBRONZE_BEAM = AbyssalDecor.BLOCKS.register("deepbronze_beam",
@@ -768,6 +797,12 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<WallBlock> BLACK_PEARL_BRICK_WALL = AbyssalDecor.BLOCKS.register("black_pearl_brick_wall",() -> wall(BLACK_PEARL_BRICKS.get()));
 
     public static final RegistrySupplier<IronBarsBlock> BLACK_PEARL_BARS = AbyssalDecor.BLOCKS.register("black_pearl_bars",() -> ironBars());
+
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_BLACK_PEARL_BARS = AbyssalDecor.BLOCKS.register("small_black_pearl_bars",() ->
+            smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_BLACK_PEARL_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_black_pearl_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_BLACK_PEARL_BARS.get())));
 
     ///////
 
@@ -933,6 +968,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> BRICK_CAP = AbyssalDecor.BLOCKS.register("brick_cap",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_CLEAN_IRON_BARS = AbyssalDecor.BLOCKS.register("small_clean_iron_bars",() ->
+            smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_CLEAN_IRON_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_clean_iron_bars_corner",() ->
+            new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_CLEAN_IRON_BARS.get())));
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> BRICK_CORNERSTONE = AbyssalDecor.BLOCKS.register("brick_cornerstone",
             () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
@@ -970,8 +1010,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronBarsBlock> STONE_BARS = AbyssalDecor.BLOCKS.register("stone_bars",
             () -> ironBars());
 
-    public static final RegistrySupplier<IronBarsBlock> SMALL_STONE_BARS = AbyssalDecor.BLOCKS.register("small_stone_bars",
-            () -> ironBars());
+    public static final RegistrySupplier<SmallBarsBlock> SMALL_STONE_BARS = AbyssalDecor.BLOCKS.register("small_stone_bars",
+            () -> smallBars());
+
+    public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_STONE_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_stone_bars_corner",
+            () -> new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_STONE_BARS.get())));
 
     static Block planks(MapColor mapColor) {
         return new Block(BlockBehaviour.Properties.of().mapColor(mapColor)

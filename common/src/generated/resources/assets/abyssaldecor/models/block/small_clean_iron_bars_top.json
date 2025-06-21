@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/upsidedownpearlsmallbars",
+  "textures": {
+    "0": "abyssaldecor:block/smallbarsclean",
+    "particle": "abyssaldecor:block/smallbarsclean"
+  }
+}

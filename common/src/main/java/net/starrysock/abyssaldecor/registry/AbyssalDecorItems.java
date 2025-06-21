@@ -180,6 +180,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> WHITE_PEARL_PILLAR = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_PILLAR);
     public static final RegistrySupplier<BlockItem> CUT_WHITE_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK);
 
+    public static final RegistrySupplier<BlockItem> SMALL_WHITE_PEARL_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS);
+
     ///////
 
     public static final RegistrySupplier<BlockItem> WHITE_PEARL_BRICKS = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL_BRICKS);
@@ -229,6 +231,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> MOSSY_STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.MOSSY_STONE_TRAPDOOR);
     public static final RegistrySupplier<BlockItem> ORNATE_STONE_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR);
 
+    public static final RegistrySupplier<BlockItem> SMALL_CLEAN_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_CLEAN_IRON_BARS);
+
     public static final RegistrySupplier<BlockItem> IRON_SCONCE = registerBlockItem(AbyssalDecorBlocks.IRON_SCONCE);
     public static final RegistrySupplier<BlockItem> ORNATE_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_IRON_BARS);
 
@@ -246,6 +250,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> IRON_PANEL_WALL = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_WALL);
 
     public static final RegistrySupplier<BlockItem> DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_BARS);
+    public static final RegistrySupplier<BlockItem> SMALL_DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS);
     public static final RegistrySupplier<BlockItem> DULL_IRON_SCONCE = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_SCONCE);
     public static final RegistrySupplier<BlockItem> ORNATE_DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_DULL_IRON_BARS);
     public static final RegistrySupplier<DoubleHighBlockItem> DULL_IRON_BAR_DOOR = registerDoorItem(AbyssalDecorBlocks.DULL_IRON_BAR_DOOR);
@@ -364,6 +369,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SEABRASS_SCONCE = registerBlockItem(AbyssalDecorBlocks.SEABRASS_SCONCE);
     public static final RegistrySupplier<BlockItem> SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.SEABRASS_BARS);
     public static final RegistrySupplier<BlockItem> ORNATE_SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_SEABRASS_BARS);
+    public static final RegistrySupplier<BlockItem> SMALL_SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_SEABRASS_BARS);
 
     ////////////////////////////////
 
@@ -381,6 +387,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_TILES = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_TILES);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BARS);
     public static final RegistrySupplier<BlockItem> ORNATE_DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_DEEPBRONZE_BARS);
+    public static final RegistrySupplier<BlockItem> SMALL_DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_BEAM = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BEAM);
 
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_STAIRS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_STAIRS);
@@ -529,7 +536,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> CHISELED_BLACK_PEARL = registerBlockItem(AbyssalDecorBlocks.CHISELED_BLACK_PEARL);
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_WALL = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_WALL);
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_BARS = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_BARS);
-
+    public static final RegistrySupplier<BlockItem> SMALL_BLACK_PEARL_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS);
 
     public static final RegistrySupplier<BlockItem> BLACK_PEARL_PILLAR = registerBlockItem(AbyssalDecorBlocks.BLACK_PEARL_PILLAR);
     public static final RegistrySupplier<BlockItem> CUT_BLACK_PEARL_BLOCK = registerBlockItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK);

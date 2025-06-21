@@ -91,7 +91,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SCRIMSHAW.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_CORNER_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_SCONCE.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE.get(),RenderType.cutoutMipped());
@@ -101,5 +101,26 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SEABRASS_SCONCE.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_CLEAN_IRON_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_CLEAN_IRON_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_SEABRASS_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_SEABRASS_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_STONE_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_STONE_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS_CORNER.get(),RenderType.cutoutMipped());
     }
 }

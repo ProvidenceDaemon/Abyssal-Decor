@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_white_pearl_bars",
+      "y": 90
+    },
+    "facing=east,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_white_pearl_bars_top",
+      "y": 90
+    },
+    "facing=north,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_white_pearl_bars"
+    },
+    "facing=north,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_white_pearl_bars_top"
+    },
+    "facing=south,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_white_pearl_bars",
+      "y": 180
+    },
+    "facing=south,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_white_pearl_bars_top",
+      "y": 180
+    },
+    "facing=west,vertical_direction=down": {
+      "model": "abyssaldecor:block/small_white_pearl_bars",
+      "y": 270
+    },
+    "facing=west,vertical_direction=up": {
+      "model": "abyssaldecor:block/small_white_pearl_bars_top",
+      "y": 270
+    }
+  }
+}

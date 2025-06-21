@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/smallbrassbarscorner",
-  "textures": {
-    "all": "abyssaldecor:block/smallbarsbrasscorner",
-    "particle": "abyssaldecor:block/smallbarsbrasscorner",
-    "2": "abyssaldecor:block/smallbarsbrasscorner"
-  },
-  "render_type": "cutout_mipped"
-}
