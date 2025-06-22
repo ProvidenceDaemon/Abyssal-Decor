@@ -115,6 +115,8 @@ public class ModLangProvider extends LanguageProvider {
 
         add("item.abyssaldecor.bog_apple_pie", "Bog Apple Pie");
 
+        add(AbyssalDecorItems.SHELL.get(),"Shell");
+
         addCreativeModeTab(AbyssalCreativeTabs.PALETTE_TAB.get(),"Palletes");
         paintings();
     }

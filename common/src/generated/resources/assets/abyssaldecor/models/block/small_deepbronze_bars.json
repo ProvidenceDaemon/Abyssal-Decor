@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/smallpearlbars",
+  "parent": "abyssaldecor:custom/smallbars",
   "textures": {
     "0": "abyssaldecor:block/smallbronzebars",
     "particle": "abyssaldecor:block/smallbronzebars"

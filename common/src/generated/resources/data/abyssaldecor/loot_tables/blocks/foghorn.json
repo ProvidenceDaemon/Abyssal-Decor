@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:glided_blood_coral_pillar"
+          "name": "abyssaldecor:foghorn"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/glided_blood_coral_pillar"
+  "random_sequence": "abyssaldecor:blocks/foghorn"
 }

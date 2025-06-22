@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/upsidedownbloodcoralbarscorner",
+  "parent": "abyssaldecor:custom/upsidedownsmallbarscorner",
   "textures": {
     "0": "abyssaldecor:block/dullironbarscorner",
     "particle": "abyssaldecor:block/dullironbarscorner"

@@ -9,6 +9,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.starrysock.abyssaldecor.client.AbyssalDecorClient;
+import net.starrysock.abyssaldecor.datagen.Datagen;
 
 @Mod(AbyssalDecor.MOD_ID)
 public class AbyssalDecorForge {

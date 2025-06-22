@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "abyssaldecor:block/deepbronze_lantern"
+    },
+    "lit=true": {
+      "model": "abyssaldecor:block/deepbronze_lantern_lit"
+    }
+  }
+}

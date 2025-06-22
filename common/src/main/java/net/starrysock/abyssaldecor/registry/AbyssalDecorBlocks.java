@@ -56,6 +56,8 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> JADE_LANTERN = AbyssalDecor.BLOCKS.register("jade_lantern", () -> new LampBlock(lamp()));
     public static RegistrySupplier<Block> ABYSSAL_LANTERN = AbyssalDecor.BLOCKS.register("abyssal_lantern", () -> new LampBlock(lamp()));
     public static RegistrySupplier<IronLanternBlock> IRON_LANTERN = AbyssalDecor.BLOCKS.register("iron_lantern", () -> new IronLanternBlock(lamp()));
+    public static RegistrySupplier<Block> BLOOD_LANTERN = AbyssalDecor.BLOCKS.register("blood_lantern", () -> new LampBlock(lamp()));
+
     //end section
 
     //section : Barriers
@@ -428,7 +430,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("blood_coral_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<RotatedPillarBlock> GLIDED_BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("glided_blood_coral_pillar",
+    public static final RegistrySupplier<RotatedPillarBlock> GILDED_BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("gilded_blood_coral_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<IronSconceBlock> BLOOD_CORAL_SCONCE = AbyssalDecor.BLOCKS.register("blood_coral_sconce",
@@ -479,8 +481,8 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> BONEROT = AbyssalDecor.BLOCKS.register("bonerot",() -> new Block(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<AbstractHorizontalBlock> FLAKY_SCALES =
-            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new WallHangingBlock(BlockBehaviour.Properties.of()
+    public static final RegistrySupplier<AbstractDirectionalBlock> FLAKY_SCALES =
+            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f)
                     .sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
 
@@ -488,7 +490,7 @@ public class AbyssalDecorBlocks {
             AbyssalDecor.BLOCKS.register("slump_light",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> SHORTGILLS =
-            AbyssalDecor.BLOCKS.register("shortgills",() -> new Block(BlockBehaviour.Properties.of()));
+            AbyssalDecor.BLOCKS.register("shortgills",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> SERPENT_SCALES = AbyssalDecor.BLOCKS.register("serpent_scales",() ->new Block(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<SlabBlock> SERPENT_SCALE_SLAB = AbyssalDecor.BLOCKS.register("serpent_scale_slab",() ->slab(SERPENT_SCALES.get()));
@@ -603,6 +605,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_SEABRASS_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_seabrass_bars_corner",() ->
             new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_SEABRASS_BARS.get())));
 
+    public static final RegistrySupplier<Block> SEABRASS_CATALYST = AbyssalDecor.BLOCKS.register("seabrass_catalyst",
+            () -> new Block(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get())));
+
 
     //////////////
 
@@ -670,6 +675,7 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<IronSconceBlock> DEEPBRONZE_SCONCE = AbyssalDecor.BLOCKS.register("deepbronze_sconce",
             () -> new IronSconceBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BARS.get())));
+
 
     /////////
 
@@ -1016,6 +1022,13 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_STONE_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_stone_bars_corner",
             () -> new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_STONE_BARS.get())));
 
+    public static final RegistrySupplier<TrapDoorBlock> IRON_VENT_TRAPDOOR = AbyssalDecor.BLOCKS.register("iron_vent_trapdoor",() -> ironTrapdoor(ModBlockSetTypes.PUSH_IRON));
+
+    public static final RegistrySupplier<HorizontalDirectionalBlock> FOGHORN = AbyssalDecor.BLOCKS.register("foghorn",
+            () -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<LampBlock> DEEPBRONZE_LANTERN = AbyssalDecor.BLOCKS.register("deepbronze_lantern",() -> new LampBlock(lamp()));
+
     static Block planks(MapColor mapColor) {
         return new Block(BlockBehaviour.Properties.of().mapColor(mapColor)
                 .instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava());
@@ -1035,6 +1048,11 @@ public class AbyssalDecorBlocks {
     }
     static TrapDoorBlock woodTrapdoor(BlockSetType blockSetType) {
         return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(3.0F)
+                .noOcclusion().isValidSpawn(Blocks::never).ignitedByLava(), blockSetType);
+    }
+
+    static TrapDoorBlock ironTrapdoor(BlockSetType blockSetType) {
+        return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).instrument(NoteBlockInstrument.BASS).strength(3.0F).requiresCorrectToolForDrops()
                 .noOcclusion().isValidSpawn(Blocks::never).ignitedByLava(), blockSetType);
     }
 

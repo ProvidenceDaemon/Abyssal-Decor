@@ -1,14 +1,10 @@
-package net.starrysock.abyssaldecor;
+package net.starrysock.abyssaldecor.datagen;
 
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -16,95 +12,34 @@ import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.*;
-import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.CornerDirection;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ExtendedBlockFamilies;
 import net.starrysock.abyssaldecor.registry.ExtendedBlockFamily.Variant;
-import net.starrysock.abyssaldecor.registry.ModTags;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2i;
 
-import java.util.concurrent.CompletableFuture;
-
-class Datagen {
-    static void gather(GatherDataEvent event) {
+public class Datagen {
+    public static void gather(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         var lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
         if (event.includeServer()) {
-            BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(output, lookupProvider, helper);
-            generator.addProvider(true, blockTagsProvider);
-            generator.addProvider(true, new ModPaintingTagsProvider(output, lookupProvider, helper));
             generator.addProvider(true, ModLootTableProvider.create(output));
             generator.addProvider(true, new ModDataPackProvider(output, lookupProvider));
+            TagDatagen.gather(event);
         }
+
+
         if (event.includeClient()) {
             generator.addProvider(true, new ModBlockStateProvider(output, helper));
             generator.addProvider(true, new ModItemModelProvider(output, helper));
             generator.addProvider(true, new ModLangProvider(output));
-        }
-    }
-
-    public static class ModBlockTagProvider extends BlockTagsProvider {
-
-        public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-            super(output, lookupProvider, AbyssalDecor.MOD_ID, existingFileHelper);
-        }
-
-        @Override
-        protected void addTags(HolderLookup.Provider arg) {
-            tag(ModTags.Blocks.MUCKROOT_GROWABLE).add(Blocks.FARMLAND);
-            tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
-            tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get());
-
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.IRON_PANEL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(),
-                    AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get(),
-                    AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get(), AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(),
-                    AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get());
-
-            tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
-
-            tag(BlockTags.SLABS).add(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),
-                    AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get());
-
-            tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
-                    AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get());
-
-            tag(BlockTags.WALLS).add(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get()
-                    , AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get());
-
-            tag(BlockTags.WOODEN_BUTTONS).add(AbyssalDecorBlocks.WHITEWOOD_BUTTON.get());
-
-            tag(BlockTags.WOODEN_SLABS).add(AbyssalDecorBlocks.WHITEWOOD_SLAB.get());
-            tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
-
-
-            this.tag(BlockTags.STANDING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(), AbyssalDecorBlocks.CINNAMON_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_SIGN.get());
-            this.tag(BlockTags.WALL_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get(),
-                    AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get());
-            this.tag(BlockTags.CEILING_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.CINNAMON_HANGING_SIGN.get(),
-                    AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get());
-            this.tag(BlockTags.WALL_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
-                    AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get());
-
-        }
-    }
-
-    static class ModPaintingTagsProvider extends PaintingVariantTagsProvider {
-
-        public ModPaintingTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
-            super(output, provider, AbyssalDecor.MOD_ID, existingFileHelper);
-        }
-
-        @Override
-        protected void addTags(HolderLookup.Provider provider) {
-            AbyssalDecor.PAINTING_VARIANTS.forEach(s -> tag(PaintingVariantTags.PLACEABLE).add(s.getKey()));
         }
     }
 
@@ -598,7 +533,7 @@ class Datagen {
 
             logBlockWithItem(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR.get());
             logBlockWithItem(AbyssalDecorBlocks.ROUGH_BLOOD_CORAL.get());
-            logBlockWithItem(AbyssalDecorBlocks.GLIDED_BLOOD_CORAL_PILLAR.get());
+            logBlockWithItem(AbyssalDecorBlocks.GILDED_BLOOD_CORAL_PILLAR.get());
 
             paneBlock(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(), modLoc("block/blood_coral_bars_solo"), modLoc("block/blood_coral_bars_solo"));
 
@@ -657,6 +592,7 @@ class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.RIVETED_SEABRASS.get());
             blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(), modLoc("block/seabrass_lamp"));
+            blockLamp(AbyssalDecorBlocks.DEEPBRONZE_LANTERN.get(), modLoc("block/deepbronze_lantern"));
             simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(), modLoc("block/riveted_seabrass"));
 
             paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(), modLoc("block/deepbronze_bars"), modLoc("block/deepbronze_bars"));
@@ -832,6 +768,9 @@ class Datagen {
 
             smallBars(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS.get(), modLoc("block/smallblackpearlbars"));
             smallCornerBar(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS_CORNER.get(),modLoc("block/smallblackpearlbars"));
+
+            simpleBlockItem(AbyssalDecorBlocks.CLAM.get(), models().getExistingFile(modLoc("block/clam_closed")));
+            simpleBlockItem(AbyssalDecorBlocks.CLAM_WITH_PEARL.get(), models().getExistingFile(modLoc("block/clam_with_pearl_closed")));
         }
 
         public void smallCornerBar(SmallBarsCornerBlock block,ResourceLocation texture) {
@@ -857,8 +796,8 @@ class Datagen {
 
             String name = name(block);
 
-            ResourceLocation model = modLoc("custom/smallbloodcoralbarscorner");
-            ResourceLocation upsideDownModel = modLoc("custom/upsidedownbloodcoralbarscorner");
+            ResourceLocation model = modLoc("custom/smallbarscorner");
+            ResourceLocation upsideDownModel = modLoc("custom/upsidedownsmallbarscorner");
 
 
 
@@ -933,8 +872,8 @@ class Datagen {
             //  "render_type": "cutout_mipped"
             //}
 
-            ModelFile.ExistingModelFile regularFile = models().getExistingFile(modLoc("custom/smallpearlbars"));
-            ModelFile.ExistingModelFile upsideDownFile = models().getExistingFile(modLoc("custom/upsidedownpearlsmallbars"));
+            ModelFile.ExistingModelFile regularFile = models().getExistingFile(modLoc("custom/smallbars"));
+            ModelFile.ExistingModelFile upsideDownFile = models().getExistingFile(modLoc("custom/upsidedownsmallbars"));
             String name = name(block);
 
             getVariantBuilder(block).forAllStates(state -> {

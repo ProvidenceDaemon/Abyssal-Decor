@@ -56,6 +56,7 @@ public class AbyssalDecorItems {
             , new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 3600));
 
     public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem(AbyssalDecorBlocks.SCRIMSHAW);
+    public static final RegistrySupplier<BlockItem> FOGHORN = registerBlockItem(AbyssalDecorBlocks.FOGHORN);
     public static final RegistrySupplier<BlockItem> STARFISH = registerBlockItem(AbyssalDecorBlocks.STARFISH);
     public static final RegistrySupplier<BlockItem> DRIED_STARFISH = registerBlockItem(AbyssalDecorBlocks.DRIED_STARFISH);
     public static final RegistrySupplier<BlockItem> STARLIGHT = registerBlockItem(AbyssalDecorBlocks.STARLIGHT);
@@ -241,6 +242,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> IRON_DUCT = registerBlockItem(AbyssalDecorBlocks.IRON_DUCT);
     public static final RegistrySupplier<DoubleHighBlockItem> IRON_PUSH_DOOR = registerDoorItem(AbyssalDecorBlocks.IRON_PUSH_DOOR);
 
+    public static final RegistrySupplier<BlockItem> IRON_VENT_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.IRON_VENT_TRAPDOOR);
+
     //////////////////////////
 
     public static final RegistrySupplier<BlockItem> IRON_PANEL_BLOCK = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL);
@@ -271,7 +274,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> ROUGH_BLOOD_CORAL = registerBlockItem(AbyssalDecorBlocks.ROUGH_BLOOD_CORAL);
 
     public static final RegistrySupplier<BlockItem> BLOOD_CORAL_PILLAR = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR);
-    public static final RegistrySupplier<BlockItem> GLIDED_BLOOD_CORAL_PILLAR = registerBlockItem(AbyssalDecorBlocks.GLIDED_BLOOD_CORAL_PILLAR);
+    public static final RegistrySupplier<BlockItem> GILDED_BLOOD_CORAL_PILLAR = registerBlockItem(AbyssalDecorBlocks.GILDED_BLOOD_CORAL_PILLAR);
+    public static final RegistrySupplier<BlockItem> BLOOD_LANTERN = registerBlockItem(AbyssalDecorBlocks.BLOOD_LANTERN);
     public static final RegistrySupplier<BlockItem> BLOOD_CORAL_SCONCE = registerBlockItem(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE);
 
     //blood coral lantern
@@ -371,6 +375,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> ORNATE_SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_SEABRASS_BARS);
     public static final RegistrySupplier<BlockItem> SMALL_SEABRASS_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_SEABRASS_BARS);
 
+    public static final RegistrySupplier<BlockItem> SEABRASS_CATALYST = registerBlockItem(AbyssalDecorBlocks.SEABRASS_CATALYST);
+
     ////////////////////////////////
 
     public static final RegistrySupplier<Item> DEEPBRONZE_INGOT = AbyssalDecor.ITEMS.register("deepbronze_ingot", AbyssalDecorItems::simpleItem);
@@ -387,6 +393,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_TILES = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_TILES);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BARS);
     public static final RegistrySupplier<BlockItem> ORNATE_DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.ORNATE_DEEPBRONZE_BARS);
+    public static final RegistrySupplier<BlockItem> DEEPBRONZE_LANTERN = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_LANTERN);
     public static final RegistrySupplier<BlockItem> SMALL_DEEPBRONZE_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS);
     public static final RegistrySupplier<BlockItem> DEEPBRONZE_BEAM = registerBlockItem(AbyssalDecorBlocks.DEEPBRONZE_BEAM);
 

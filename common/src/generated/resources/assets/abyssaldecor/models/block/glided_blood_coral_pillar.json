@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "abyssaldecor:block/glided_blood_coral_pillar_top",
-    "side": "abyssaldecor:block/glided_blood_coral_pillar"
-  }
-}
