@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "abyssaldecor:item/velvet_barrier"
+    "layer0": "abyssaldecor:item/rope_barrier"
   }
 }

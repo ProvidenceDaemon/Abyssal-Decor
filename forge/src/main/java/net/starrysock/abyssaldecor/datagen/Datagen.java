@@ -125,9 +125,6 @@ public class Datagen {
 
             simpleBlockItem(AbyssalDecorItems.JADE_LANTERN.get());
 
-            simpleBlockItem(AbyssalDecorItems.VELVET_BARRIER.get(), modLoc("block/velvet_barrier_top"));
-            simpleBlockItem(AbyssalDecorItems.IRON_BARRIER.get(), modLoc("block/iron_barrier_top"));
-
             generatedItem(AbyssalDecorItems.LION_STATUE.get());
             generatedItem(AbyssalDecorItems.GARGOYLE.get());
             generatedItem(AbyssalDecorItems.NITHING_POLE.get());
@@ -432,10 +429,16 @@ public class Datagen {
             //buttonLampBlock(AbyssalDecorBlocks.BULKHEAD_LAMP.get(),);
 
             barrierPoleBlock(AbyssalDecorBlocks.VELVET_BARRIER.get(), modLoc("custom/velvetbarrierbottom"), modLoc("custom/velvetbarriertop"),
-                    modLoc("block/velvetbarrier1"));
+                    modLoc("block/velvetbarrier1"),modLoc("item/velvet_barrier"));
 
             barrierPoleBlock(AbyssalDecorBlocks.IRON_BARRIER.get(), modLoc("custom/ironbarrierbottom"), modLoc("custom/ironbarriertop"),
-                    modLoc("block/ironbarrier1"));
+                    modLoc("block/ironbarrier1"),modLoc("item/iron_barrier"));
+
+            barrierPoleBlock(AbyssalDecorBlocks.ROPE_BARRIER.get(), modLoc("custom/ropebarrierpostbottom"), modLoc("custom/ropebarrierposttop"),
+                    modLoc("block/ropebarriertexture"),modLoc("item/rope_barrier"));
+
+            barrierPoleBlock(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(), modLoc("custom/barbwirepostbottom"), modLoc("custom/barbwireposttop"),
+                    modLoc("block/barbwirebarrier1"),modLoc("item/barbed_wire_barrier"));
 
             //   barrierPoleBlock(AbyssalDecorBlocks.ROPE_BARRIER.get(),modLoc("custom/ironbarrierbottom"),modLoc("custom/ironbarriertop"),
             //          modLoc("block/velvetbarrier1"));
@@ -771,6 +774,27 @@ public class Datagen {
 
             simpleBlockItem(AbyssalDecorBlocks.CLAM.get(), models().getExistingFile(modLoc("block/clam_closed")));
             simpleBlockItem(AbyssalDecorBlocks.CLAM_WITH_PEARL.get(), models().getExistingFile(modLoc("block/clam_with_pearl_closed")));
+
+            ribbon(AbyssalDecorBlocks.IRON_BARRIER_RIBBON.get(),modLoc("custom/velvetbarrierribbon"),modLoc("block/ironbarrier2"));
+            ribbon(AbyssalDecorBlocks.ROPE_BARRIER_RIBBON.get(),modLoc("custom/ropebarrierrope"),modLoc("block/ropebarriertexture2"));
+            ribbon(AbyssalDecorBlocks.BARBED_WIRE_RIBBON.get(),modLoc("custom/barbwirewire"),modLoc("block/barbwirebarrier2"));
+        }
+
+        public void ribbon(BarrierRibbonBlock block,ResourceLocation model, ResourceLocation texture) {
+            String name = name(block);
+            //{
+            //  "parent": "abyssaldecor:custom/velvetbarrierribbon",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/velvetbarrier2",
+            //    "particle": "abyssaldecor:block/velvetbarrier2",
+            //    "1": "abyssaldecor:block/velvetbarrier2"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+            horizontalBlock(block,models().withExistingParent(name,model)
+                    .texture("0",texture)
+                    .texture("particle",texture)
+            );
         }
 
         public void smallCornerBar(SmallBarsCornerBlock block,ResourceLocation texture) {
@@ -1150,7 +1174,7 @@ public class Datagen {
                     });
         }
 
-        void barrierPoleBlock(Block block, ResourceLocation modelBottom, ResourceLocation modelTop, ResourceLocation texture) {
+        void barrierPoleBlock(Block block, ResourceLocation modelBottom, ResourceLocation modelTop, ResourceLocation texture,ResourceLocation icon) {
             String name = name(block);
             ModelFile bottom = models().withExistingParent(name + "_bottom", modelBottom)
                     .texture("all", texture).texture("particle", texture).texture("0", texture);
@@ -1164,6 +1188,7 @@ public class Datagen {
                         return ConfiguredModel.builder().modelFile(half == DoubleBlockHalf.UPPER ? top : bottom).build();
                     }, BlockStateProperties.WATERLOGGED);
 
+            iconTexture(name,icon);
         }
 
         String name(Block block) {

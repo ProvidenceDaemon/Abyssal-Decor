@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "abyssaldecor:block/barbed_wire_barrier_bottom"
+    },
+    "half=upper": {
+      "model": "abyssaldecor:block/barbed_wire_barrier_top"
+    }
+  }
+}

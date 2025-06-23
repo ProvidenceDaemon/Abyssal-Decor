@@ -66,11 +66,12 @@ public class ModLootTableProvider extends LootTableProvider {
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
-                if (!skip.contains(block) && !specialDrops.contains(block) && !(block instanceof SmallBarsCornerBlock)) {
+                if (!skip.contains(block) && !specialDrops.contains(block) && !(block instanceof SmallBarsCornerBlock) && !(block instanceof BarrierRibbonBlock)) {
                     dropSelf(block);
+                } else if (block instanceof BarrierRibbonBlock) {
+                    add(block,noDrop());
                 }
             } );
-
 
 
             barrierDrop(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get());

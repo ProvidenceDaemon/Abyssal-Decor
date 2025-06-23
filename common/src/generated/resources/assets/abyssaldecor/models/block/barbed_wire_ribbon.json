@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/barbwirewire",
+  "textures": {
+    "0": "abyssaldecor:block/barbwirebarrier2",
+    "particle": "abyssaldecor:block/barbwirebarrier2"
+  }
+}

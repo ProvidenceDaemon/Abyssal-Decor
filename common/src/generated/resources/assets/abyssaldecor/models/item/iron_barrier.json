@@ -1,3 +1,6 @@
 {
-  "parent": "abyssaldecor:block/iron_barrier_top"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "abyssaldecor:item/iron_barrier"
+  }
 }

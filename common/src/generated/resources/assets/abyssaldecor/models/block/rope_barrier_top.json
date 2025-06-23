@@ -1,0 +1,8 @@
+{
+  "parent": "abyssaldecor:custom/ropebarrierposttop",
+  "textures": {
+    "0": "abyssaldecor:block/ropebarriertexture",
+    "all": "abyssaldecor:block/ropebarriertexture",
+    "particle": "abyssaldecor:block/ropebarriertexture"
+  }
+}

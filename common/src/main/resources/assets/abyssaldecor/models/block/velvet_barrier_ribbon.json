@@ -3,7 +3,7 @@
   "textures": {
     "all": "abyssaldecor:block/velvetbarrier2",
     "particle": "abyssaldecor:block/velvetbarrier2",
-    "1": "abyssaldecor:block/velvetbarrier2"
+    "0": "abyssaldecor:block/velvetbarrier2"
   },
   "render_type": "cutout_mipped"
 }

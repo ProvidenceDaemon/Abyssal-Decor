@@ -122,5 +122,9 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS_CORNER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.IRON_BARRIER_RIBBON.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.ROPE_BARRIER_RIBBON.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.BARBED_WIRE_RIBBON.get(),RenderType.cutoutMipped());
     }
 }

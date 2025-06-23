@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/velvetbarrierribbon",
+  "textures": {
+    "0": "abyssaldecor:block/ironbarrier2",
+    "particle": "abyssaldecor:block/ironbarrier2"
+  }
+}

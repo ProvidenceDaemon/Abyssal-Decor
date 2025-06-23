@@ -14,6 +14,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.BarrierRibbonBlock;
 import net.starrysock.abyssaldecor.MixedBlock;
 import net.starrysock.abyssaldecor.block.*;
 
@@ -61,10 +62,17 @@ public class AbyssalDecorBlocks {
     //end section
 
     //section : Barriers
-    public static RegistrySupplier<Block> VELVET_BARRIER = AbyssalDecor.BLOCKS.register("velvet_barrier", () -> new BarrierPoleBlock(Block.Properties.of().pushReaction(PushReaction.DESTROY)));
+    public static RegistrySupplier<Block> VELVET_BARRIER = AbyssalDecor.BLOCKS.register("velvet_barrier", () -> new BarrierPoleBlock(BlockBehaviour.Properties.of()
+            .sound(SoundType.LANTERN).strength(2.0F, 10.0F).noOcclusion().pushReaction(PushReaction.BLOCK).isRedstoneConductor((bs, br, bp) -> false)));
     public static RegistrySupplier<Block> IRON_BARRIER = AbyssalDecor.BLOCKS.register("iron_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
     public static RegistrySupplier<Block> ROPE_BARRIER = AbyssalDecor.BLOCKS.register("rope_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.OAK_PLANKS)));
     public static RegistrySupplier<Block> BARBED_WIRE_BARRIER = AbyssalDecor.BLOCKS.register("barbed_wire_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
+
+    public static final RegistrySupplier<BarrierRibbonBlock> VELVET_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("velvet_barrier_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.VELVET_BARRIER));
+    public static final RegistrySupplier<BarrierRibbonBlock> IRON_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("iron_barrier_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.IRON_BARRIER));
+    public static final RegistrySupplier<BarrierRibbonBlock> ROPE_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("rope_barrier_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.ROPE_BARRIER));
+    public static final RegistrySupplier<BarrierRibbonBlock> BARBED_WIRE_RIBBON = AbyssalDecor.BLOCKS.register("barbed_wire_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER));
+
 
     // public static RegistrySupplier<Block> VELVET_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("velvet_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.RED_WOOL), false));
     // public static RegistrySupplier<Block> IRON_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("iron_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.GRAY_WOOL), false));
@@ -1028,6 +1036,7 @@ public class AbyssalDecorBlocks {
             () -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<LampBlock> DEEPBRONZE_LANTERN = AbyssalDecor.BLOCKS.register("deepbronze_lantern",() -> new LampBlock(lamp()));
+
 
     static Block planks(MapColor mapColor) {
         return new Block(BlockBehaviour.Properties.of().mapColor(mapColor)
