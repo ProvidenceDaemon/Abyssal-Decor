@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "abyssaldecor:block/fever_blossom_0"
+    },
+    "age=1": {
+      "model": "abyssaldecor:block/fever_blossom_1"
+    },
+    "age=2": {
+      "model": "abyssaldecor:block/fever_blossom_2"
+    },
+    "age=3": {
+      "model": "abyssaldecor:block/fever_blossom_3"
+    },
+    "age=4": {
+      "model": "abyssaldecor:block/fever_blossom_4"
+    },
+    "age=5": {
+      "model": "abyssaldecor:block/fever_blossom_5"
+    },
+    "age=6": {
+      "model": "abyssaldecor:block/fever_blossom_6"
+    },
+    "age=7": {
+      "model": "abyssaldecor:block/fever_blossom_7"
+    }
+  }
+}

@@ -2,12 +2,14 @@ package net.starrysock.abyssaldecor.registry;
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Direction;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.item.FeverBlossomItem;
 import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
 import net.starrysock.abyssaldecor.item.InfiniteBlockItem;
 import net.starrysock.abyssaldecor.item.SupplierRecordItem;
@@ -473,13 +475,18 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> MOLDY_HANGERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_HANGERS);
 
-    public static final RegistrySupplier<BlockItem> FEVER_BLOSSOM_SEEDS = registerBlockItem(AbyssalDecorBlocks.FEVER_BLOSSOM_SEEDS);
+
 
     public static final RegistrySupplier<BlockItem> MOLD_FRONDS = registerBlockItem(AbyssalDecorBlocks.MOLD_FRONDS);
 
     public static final RegistrySupplier<BlockItem> MOLDY_FEATHERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_FEATHERS);
 
-    public static final RegistrySupplier<Item> FEVER_BLOSSOM = AbyssalDecor.ITEMS.register("fever_blossom",() -> simpleItem());
+    public static final RegistrySupplier<ItemNameBlockItem> FEVER_BLOSSOM_SEEDS =
+            registerNamedBlockItem("fever_blossom_seeds",AbyssalDecorBlocks.FEVER_BLOSSOM);
+
+    public static final RegistrySupplier<Item> FEVER_BLOSSOM = AbyssalDecor.ITEMS.register("fever_blossom",
+            () -> new FeverBlossomItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).alwaysEat().build())));
+
     public static final RegistrySupplier<Item> FEVER_BLOSSOM_TEA = AbyssalDecor.ITEMS.register("fever_blossom_tea",() -> simpleItem());
 
     public static final RegistrySupplier<BlockItem> MOLDY_STARSTONE = registerBlockItem(AbyssalDecorBlocks.MOLDY_STARSTONE);

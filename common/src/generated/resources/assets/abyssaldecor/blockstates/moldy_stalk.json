@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "tri_part=bottom": {
+      "model": "abyssaldecor:block/moldy_stalk_bottom"
+    },
+    "tri_part=middle": {
+      "model": "abyssaldecor:block/moldy_stalk_middle"
+    },
+    "tri_part=top": {
+      "model": "abyssaldecor:block/moldy_stalk_top"
+    }
+  }
+}

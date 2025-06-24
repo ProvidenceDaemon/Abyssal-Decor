@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-22T17:57:24.4461791	Loot Tables
+// 1.20.1	2025-06-23T22:20:36.5341628	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -134,7 +134,7 @@ cc810b8cfdd47d027b9d0f5fe8d97dfcbc3e7e2f data/abyssaldecor/loot_tables/blocks/ef
 39e08b706781905986ad72e23c51bab6e78407f8 data/abyssaldecor/loot_tables/blocks/elder_wisteria_leaves.json
 ad5db7fc9025db019b5218aeea3affda11b2076d data/abyssaldecor/loot_tables/blocks/elder_wisteria_petals.json
 0d2bdbce512e6f0d7c4d7e6b728ba9b935512916 data/abyssaldecor/loot_tables/blocks/ethereal_rod.json
-bcfc1446ae6d62f48ef646064115f042c254102d data/abyssaldecor/loot_tables/blocks/fever_blossom_seeds.json
+929ac30be13ef36714a3835f9299a03a830ac622 data/abyssaldecor/loot_tables/blocks/fever_blossom.json
 15fd29c83809bb2c08e049cc78eec75f7bc428cf data/abyssaldecor/loot_tables/blocks/flaky_scales.json
 e74f8554b2df7c474130b8a8427cf6dfa4ba338b data/abyssaldecor/loot_tables/blocks/flowering_cinnamon_leaves.json
 c1d4b846962b14d6fbdbdf0ba09a1d32cd404535 data/abyssaldecor/loot_tables/blocks/flower_lamp.json
@@ -213,8 +213,10 @@ cc3e874808c0f4062ecbdfd98b3ebfb54466920e data/abyssaldecor/loot_tables/blocks/mo
 d3b400e4c837d8b961da2413c56180c040c88d77 data/abyssaldecor/loot_tables/blocks/moldy_frond_block.json
 a4659407319ffa256b96718533f5bdd13250f6d4 data/abyssaldecor/loot_tables/blocks/moldy_fuzz.json
 58d87561e2f16496a1614a0c1732436861626331 data/abyssaldecor/loot_tables/blocks/moldy_hangers.json
+22fc2168f62ca104fc967f12026d829c5a0aad1d data/abyssaldecor/loot_tables/blocks/moldy_hangers_plant.json
 7b836ae0e2ea5cef215a3f0bcb90b900d804ba18 data/abyssaldecor/loot_tables/blocks/moldy_sprouts.json
 01d54e8f88d33b72306a59e2b137d73e97bd5a00 data/abyssaldecor/loot_tables/blocks/moldy_stalk.json
+aeb5a5d23790f6a43d3f05994fb28bd02545e6b7 data/abyssaldecor/loot_tables/blocks/moldy_stalk_sprout.json
 612b945d72cca0135d33e53ab9cfa3cc343a0a1e data/abyssaldecor/loot_tables/blocks/moldy_starstone.json
 1ce79a4043cbccbe546f219d926b44aeb6a584b7 data/abyssaldecor/loot_tables/blocks/mold_fronds.json
 d1663cf56d6445fd2a0107b8756f309cfb8f76f1 data/abyssaldecor/loot_tables/blocks/mossy_cinnamon_shingles.json

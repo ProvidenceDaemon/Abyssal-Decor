@@ -76,7 +76,6 @@ public class ModLangProvider extends LanguageProvider {
         add("item.abyssaldecor.cinnamon_roll", "Cinnamon Roll");
         add("item.abyssaldecor.cinnamon_stick", "Cinnamon Stick");
         add("item.abyssaldecor.cinnamon_tea", "Cinnamon Tea");
-        add("item.abyssaldecor.fever_blossom", "Fever Blossom");
 
         add("item.abyssaldecor.fever_blossom_tea", "Fever Blossom Tea");
         add("item.abyssaldecor.grime", "Grime");
@@ -118,6 +117,8 @@ public class ModLangProvider extends LanguageProvider {
         add(AbyssalDecorItems.SHELL.get(),"Shell");
 
         addCreativeModeTab(AbyssalCreativeTabs.PALETTE_TAB.get(),"Palletes");
+        addDefaultItem(AbyssalDecorItems.FEVER_BLOSSOM.get());
+        addDefaultItem(AbyssalDecorItems.FEVER_BLOSSOM_SEEDS.get());
         paintings();
     }
 
@@ -221,7 +222,6 @@ public class ModLangProvider extends LanguageProvider {
         add("painting.abyssaldecor.moon_tree_painting.author", "Starrysock");
 
         add("painting.abyssaldecor.shyguy_painting_small.author", "Starrysock");
-
     }
 
     protected void addDefaultItem(Item item) {

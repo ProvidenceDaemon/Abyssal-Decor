@@ -42,6 +42,9 @@ public class TagDatagen {
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
             tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get());
 
+            tag(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON).addTag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.MOLDY_STALK.get(),
+                    AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get());
+
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.SOLAR_ROD.get(),
                     AbyssalDecorBlocks.STELLAR_ROD.get(),
                     AbyssalDecorBlocks.TERRESTRIAL_ROD.get(),

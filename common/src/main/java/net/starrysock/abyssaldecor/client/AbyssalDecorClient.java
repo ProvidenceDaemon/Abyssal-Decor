@@ -126,5 +126,14 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.IRON_BARRIER_RIBBON.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.ROPE_BARRIER_RIBBON.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.BARBED_WIRE_RIBBON.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.MOLDY_STALK.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.MOLDY_FEATHERS.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.MOLDY_HANGERS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.MOLDY_HANGERS_PLANT.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.FEVER_BLOSSOM.get(),RenderType.cutoutMipped());
     }
 }

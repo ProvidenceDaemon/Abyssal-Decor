@@ -17,6 +17,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.CornerDirection;
+import net.starrysock.abyssaldecor.block.properties.TriPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ExtendedBlockFamilies;
@@ -596,6 +597,7 @@ public class Datagen {
             simplestBlockWithItem(AbyssalDecorBlocks.RIVETED_SEABRASS.get());
             blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(), modLoc("block/seabrass_lamp"));
             blockLamp(AbyssalDecorBlocks.DEEPBRONZE_LANTERN.get(), modLoc("block/deepbronze_lantern"));
+            blockLamp(AbyssalDecorBlocks.BLOOD_LANTERN.get(), modLoc("block/blood_lantern"));
             simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(), modLoc("block/riveted_seabrass"));
 
             paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(), modLoc("block/deepbronze_bars"), modLoc("block/deepbronze_bars"));
@@ -740,6 +742,7 @@ public class Datagen {
             );
 
             ironLantern(AbyssalDecorBlocks.IRON_LANTERN.get());
+
             smallBars(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), modLoc("block/small_blood_coral_bars"));
 
             regularSconce(AbyssalDecorBlocks.DEEPBRONZE_SCONCE.get(),modLoc("block/deepbronze_sconce"));
@@ -778,6 +781,62 @@ public class Datagen {
             ribbon(AbyssalDecorBlocks.IRON_BARRIER_RIBBON.get(),modLoc("custom/velvetbarrierribbon"),modLoc("block/ironbarrier2"));
             ribbon(AbyssalDecorBlocks.ROPE_BARRIER_RIBBON.get(),modLoc("custom/ropebarrierrope"),modLoc("block/ropebarriertexture2"));
             ribbon(AbyssalDecorBlocks.BARBED_WIRE_RIBBON.get(),modLoc("custom/barbwirewire"),modLoc("block/barbwirebarrier2"));
+            moldyStalk(AbyssalDecorBlocks.MOLDY_STALK.get());
+
+            //{
+            //  "parent": "block/cross",
+            //  "textures": {
+            //    "cross": "abyssal_decor:block/moldypuffball",
+            //    "particle": "abyssal_decor:block/moldypuffball"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+            simpleBlock(AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get(),models().cross("moldy_stalk_sprout",
+                    modLoc("block/moldy_stalk")));
+
+
+            simpleBlock(AbyssalDecorBlocks.MOLDY_FEATHERS.get(),models().cross("moldy_feathers", modLoc("block/moldy_feathers")));
+            iconTexture("moldy_feathers",modLoc("block/moldy_feathers"));
+
+            ModelFile mh = models().cross("moldy_hangers", modLoc("block/moldy_hangers"));
+            simpleBlock(AbyssalDecorBlocks.MOLDY_HANGERS.get(),mh);
+            iconTexture("moldy_hangers",modLoc("block/moldy_hangers"));
+
+            simpleBlock(AbyssalDecorBlocks.MOLDY_HANGERS_PLANT.get(),mh);
+
+            feverblossom(AbyssalDecorBlocks.FEVER_BLOSSOM.get());
+            iconTexture("fever_blossom_seeds",modLoc("item/fever_blossom_seeds"));
+            iconTexture("fever_blossom",modLoc("item/fever_blossom"));
+        }
+
+        public void feverblossom(CropBlock block) {
+            String name = name(block);
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+               int age = state.getValue(CropBlock.AGE);
+               //  "parent": "block/cross",
+                //  "textures": {
+                //    "cross": "abyssaldecor:block/feverblossomcrop1",
+                //    "particle": "abyssaldecor:block/feverblossomcrop1"
+                //  },
+                //  "render_type": "cutout_mipped"
+                //}
+                ModelFile file = models().cross(name+"_"+age,modLoc("block/feverblossomcrop"+age));
+                return ConfiguredModel.builder().modelFile(file).build();
+            });
+
+        }
+
+        public void moldyStalk(Block block) {
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+                TriPart part = state.getValue(MoldyStalkBlock.TRI_PART);
+                ModelFile file = switch (part){
+                    case TOP -> models().cross("moldy_stalk_top",modLoc("block/moldystalktop"));
+                    case MIDDLE -> models().cross("moldy_stalk_middle",modLoc("block/moldystalkmid"));
+                    case BOTTOM -> models().cross("moldy_stalk_bottom",modLoc("block/moldystalkbottom"));
+                };
+                return ConfiguredModel.builder().modelFile(file).build();
+            });
+            iconTexture("moldy_stalk",modLoc("block/moldy_stalk"));
         }
 
         public void ribbon(BarrierRibbonBlock block,ResourceLocation model, ResourceLocation texture) {
@@ -969,8 +1028,8 @@ public class Datagen {
             simpleBlock(wallSignBlock, sign);
         }
 
-        void iconTexture(String path, ResourceLocation texture) {
-            itemModels().singleTexture(path, mcLoc("item/generated"), "layer0", texture);
+        ItemModelBuilder iconTexture(String path, ResourceLocation texture) {
+            return itemModels().singleTexture(path, mcLoc("item/generated"), "layer0", texture);
         }
 
         void paneBlockWithItem(IronBarsBlock block, ResourceLocation texture, ResourceLocation top) {

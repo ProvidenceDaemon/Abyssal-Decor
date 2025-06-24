@@ -855,8 +855,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> MOLDY_FROND_BLOCK = AbyssalDecor.BLOCKS.register("moldy_frond_block",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> MOLDY_STALK = AbyssalDecor.BLOCKS.register("moldy_stalk",
-            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<MoldyStalkBlock> MOLDY_STALK = AbyssalDecor.BLOCKS.register("moldy_stalk",
+            () -> new MoldyStalkBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<MoldySaplingBlock> MOLDY_STALK_SPROUT = AbyssalDecor.BLOCKS.register("moldy_stalk_sprout",
+            () -> new MoldySaplingBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> MOLDY_SPROUTS = AbyssalDecor.BLOCKS.register("moldy_sprouts",
             () -> new Block(BlockBehaviour.Properties.of()));
@@ -864,18 +867,22 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> MOLDY_FUZZ = AbyssalDecor.BLOCKS.register("moldy_fuzz",
             () -> new Block(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> MOLDY_HANGERS = AbyssalDecor.BLOCKS.register("moldy_hangers",
-            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<GrowingPlantHeadBlock> MOLDY_HANGERS = AbyssalDecor.BLOCKS.register("moldy_hangers",
+            () -> new MoldyHangersBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> FEVER_BLOSSOM_SEEDS = AbyssalDecor.BLOCKS.register("fever_blossom_seeds",
-            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<GrowingPlantBodyBlock> MOLDY_HANGERS_PLANT = AbyssalDecor.BLOCKS.register("moldy_hangers_plant",
+            () -> new MoldyHangersPlantBlock(BlockBehaviour.Properties.of()));
+
+    public static final RegistrySupplier<CropBlock> FEVER_BLOSSOM = AbyssalDecor.BLOCKS.register("fever_blossom",
+            () -> new FeverBlossomBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
+                    .noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<DoublePlantBlock> MOLD_FRONDS = AbyssalDecor.BLOCKS.register("mold_fronds",
             () -> new MoldFrondsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.ROOTS).instabreak()
                     .noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> MOLDY_FEATHERS = AbyssalDecor.BLOCKS.register("moldy_feathers",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new MoldyFeathersBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> MOLDY_STARSTONE = AbyssalDecor.BLOCKS.register("moldy_starstone",
             () -> new Block(BlockBehaviour.Properties.of()));
@@ -892,6 +899,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> POLISHED_ECHO_SHARD_BLOCK = AbyssalDecor.BLOCKS.register("polished_echo_shard_block",
             () -> new Block(BlockBehaviour.Properties.of()));
 
+    //new Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).alwaysEat().build())
 
     //////////////////////
 

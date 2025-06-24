@@ -13,6 +13,7 @@ public class ModTags {
         public static final TagKey<Block> MUCKROOT_GROWABLE = mod("muckroot_growable");
 
         public static final TagKey<Block> MOLDY_PLANT_VALID_BLOCKS = mod("moldy_plant_valid_blocks");
+        public static final TagKey<Block> MOLDY_STALK_PLANTABLE_ON = mod("moldy_stalk_plantable_on");
 
         static TagKey<Block> mod(String path) {
             return TagKey.create(Registries.BLOCK, AbyssalDecor.id(path));

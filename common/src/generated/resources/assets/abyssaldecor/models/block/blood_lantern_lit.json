@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abyssaldecor:block/blood_lantern_lit",
+    "particle": "abyssaldecor:block/blood_lantern_lit"
+  }
+}

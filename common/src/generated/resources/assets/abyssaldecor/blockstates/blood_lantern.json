@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "abyssaldecor:block/blood_lantern"
+    },
+    "lit=true": {
+      "model": "abyssaldecor:block/blood_lantern_lit"
+    }
+  }
+}
