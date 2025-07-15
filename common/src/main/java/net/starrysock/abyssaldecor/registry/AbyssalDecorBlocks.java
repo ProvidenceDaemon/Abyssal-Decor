@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.BirchTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -238,6 +239,11 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<WallHangingSignBlock> WHITEWOOD_WALL_HANGING_SIGN = AbyssalDecor.BLOCKS.register("whitewood_wall_hanging_sign",() ->
             wallHangingSign(WHITEWOOD_HANGING_SIGN.get(),ModWoodTypes.WHITEWOOD));
+
+    public static final RegistrySupplier<Block> WHITEWOOD_PLANTER = AbyssalDecor.BLOCKS.register("whitewood_planter", () ->
+            new WhitewoodPlanterBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+
 
     ///////
 
@@ -830,8 +836,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> GILDED_BLACK_PEARL_DOOR = AbyssalDecor.BLOCKS.register("gilded_black_pearl_door",() -> woodDoor(GILDED_BLACK_PEARL.get(),ModBlockSetTypes.WHITE_PEARL));
     public static final RegistrySupplier<Block> GILDED_BLACK_PEARL_TRAPDOOR = AbyssalDecor.BLOCKS.register("gilded_black_pearl_trapdoor",() -> woodTrapdoor(ModBlockSetTypes.WHITE_PEARL));
 
-    public static final RegistrySupplier<HorizontalDirectionalBlock> GRIME = AbyssalDecor.BLOCKS.register("grime",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
-    public static final RegistrySupplier<Block> GRIME_CARPET = AbyssalDecor.BLOCKS.register("grime_carpet",() -> new CarpetBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<HorizontalDirectionalBlock> WALL_GRIME = AbyssalDecor.BLOCKS.register("wall_grime",() -> new WallGrimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion()));
+    public static final RegistrySupplier<Block> GRIME_CARPET = AbyssalDecor.BLOCKS.register("grime_carpet",() -> new FloorGrimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion().dropsLike(WALL_GRIME.get())));
 
     public static final RegistrySupplier<Block> PAPER_STACK = AbyssalDecor.BLOCKS.register("paper_stack",() -> new Block(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<HorizontalDirectionalBlock> BOOK_BLOCK = AbyssalDecor.BLOCKS.register("book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
@@ -961,6 +967,9 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<LeavesBlock> FLOWERING_CINNAMON_LEAVES = AbyssalDecor.BLOCKS.register("flowering_cinnamon_leaves",() ->
             Blocks.leaves(SoundType.GRASS));
+
+    public static final RegistrySupplier<SaplingBlock> CINNAMON_BUSH = AbyssalDecor.BLOCKS.register("cinnamon_bush",() ->
+           new CinnamonSaplingBlock(new BirchTreeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_SHINGLES = AbyssalDecor.BLOCKS.register("cinnamon_shingles", () ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)

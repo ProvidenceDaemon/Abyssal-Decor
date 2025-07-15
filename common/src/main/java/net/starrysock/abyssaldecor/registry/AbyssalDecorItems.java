@@ -164,6 +164,8 @@ public class AbyssalDecorItems {
             () -> new HangingSignItem(AbyssalDecorBlocks.WHITEWOOD_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
+    public static final RegistrySupplier<BlockItem> WHITEWOOD_PLANTER = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PLANTER);
+
     public static final RegistrySupplier<BlockItem> WHITEWOOD_PICKET_FENCE = registerBlockItem(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE);
 
     public static final RegistrySupplier<BlockItem> WHITE_PEARL = registerBlockItem(AbyssalDecorBlocks.WHITE_PEARL);
@@ -446,7 +448,13 @@ public class AbyssalDecorItems {
 
     //////////////////////////
 
-    public static final RegistrySupplier<BlockItem> GRIME = registerBlockItem(AbyssalDecorBlocks.GRIME);
+    public static final RegistrySupplier<BlockItem> GRIME = AbyssalDecor.ITEMS.register("grime",
+            () -> new StandingAndWallBlockItem(AbyssalDecorBlocks.GRIME_CARPET.get(),AbyssalDecorBlocks.WALL_GRIME.get(),new Item.Properties(),Direction.UP){
+        @Override
+        public String getDescriptionId() {
+                    return this.getOrCreateDescriptionId();
+                }
+    });
 
     public static final RegistrySupplier<BlockItem> BLACK_MOLD = registerBlockItem(AbyssalDecorBlocks.BLACK_MOLD);
     public static final RegistrySupplier<BlockItem> BLACK_MOLD_CARPET = registerBlockItem(AbyssalDecorBlocks.BLACK_MOLD_CARPET);
@@ -604,6 +612,8 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> CINNAMON_LEAVES = registerBlockItem(AbyssalDecorBlocks.CINNAMON_LEAVES);
     public static final RegistrySupplier<BlockItem> FLOWERING_CINNAMON_LEAVES = registerBlockItem(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES);
+
+    public static final RegistrySupplier<BlockItem> CINNAMON_BUSH = registerBlockItem(AbyssalDecorBlocks.CINNAMON_BUSH);
 
     public static final RegistrySupplier<Item> CINNAMON_STICK = AbyssalDecor.ITEMS.register("cinnamon_stick",() -> simpleItem());
     public static final RegistrySupplier<Item> CINNAMON_APPLE = AbyssalDecor.ITEMS.register("cinnamon_apple",() -> simpleItem());

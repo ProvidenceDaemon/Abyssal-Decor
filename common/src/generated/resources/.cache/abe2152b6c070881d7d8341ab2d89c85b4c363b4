@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-23T23:06:18.4046981	Block States: abyssaldecor
+// 1.20.1	2025-07-15T00:58:05.8108712	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
 a7de563932a2abf46a26f789ddabfeb94c44ca81 assets/abyssaldecor/blockstates/azure_pearly_glass.json
@@ -261,6 +261,7 @@ a69309650c82872468d640dbd357561447eb74b9 assets/abyssaldecor/blockstates/velvet_
 6bea82b0103e0dbad4cc51c0247a5d9c9dc1329c assets/abyssaldecor/blockstates/vermilion_block.json
 00d74329b757675c46ac97fc5ef3be859d05314d assets/abyssaldecor/blockstates/vermilion_pane.json
 ed8761f35cdc39d87d9f310b48de4fc82b0176ca assets/abyssaldecor/blockstates/wall_dangling_web.json
+7e787917dd1801a839e581ed20c8d24d90d51716 assets/abyssaldecor/blockstates/wall_grime.json
 b859e6f50edc4b8220b835eb800bab81817cbca8 assets/abyssaldecor/blockstates/wall_hanging_moss.json
 41a43c5531806996b9f55da1eb10be56dfbf3b29 assets/abyssaldecor/blockstates/wall_hanging_web.json
 9daa5b7fa30d19b04e6b35dabe2d9079cf7b1b38 assets/abyssaldecor/blockstates/wall_iron_lamp.json

@@ -807,6 +807,8 @@ public class Datagen {
             feverblossom(AbyssalDecorBlocks.FEVER_BLOSSOM.get());
             iconTexture("fever_blossom_seeds",modLoc("item/fever_blossom_seeds"));
             iconTexture("fever_blossom",modLoc("item/fever_blossom"));
+
+            horizontalBlock(AbyssalDecorBlocks.WALL_GRIME.get(),models().getExistingFile(modLoc("block/grime")));
         }
 
         public void feverblossom(CropBlock block) {

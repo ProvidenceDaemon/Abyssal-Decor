@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-23T22:20:36.5341628	Loot Tables
+// 1.20.1	2025-07-15T00:58:05.8058669	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -166,8 +166,7 @@ cfe87e6f9009425660a0b76adfc9fef60a3c756d data/abyssaldecor/loot_tables/blocks/go
 a865b941dfc9ccd1344b45b31264d0471fd0b96f data/abyssaldecor/loot_tables/blocks/gold_sconce.json
 60c8d94079b94755b2449f6be75b9de001d17fa1 data/abyssaldecor/loot_tables/blocks/gray_wallpaper.json
 ba0318b12c4ce26dd06f5d0635a854c78c2f82c6 data/abyssaldecor/loot_tables/blocks/green_wallpaper.json
-77d32006ff9a2c603452094400bf0c88fbf2bb50 data/abyssaldecor/loot_tables/blocks/grime.json
-35e7e81d48cd3813d3259c94bee918e0287013c4 data/abyssaldecor/loot_tables/blocks/grime_carpet.json
+fcc4be94efc1805d7bad8c351ef6bad42ee6a254 data/abyssaldecor/loot_tables/blocks/grime_carpet.json
 45680786547c8ae698d7723d6bd8b9a785c65eaf data/abyssaldecor/loot_tables/blocks/hanging_moss.json
 c7707768111af5cbf8ea2f201b30ee6dcadb42d9 data/abyssaldecor/loot_tables/blocks/hanging_web.json
 39a468266cc95def40da20438b4fc35ff8ea0f85 data/abyssaldecor/loot_tables/blocks/inactive_mold.json
@@ -364,6 +363,7 @@ a7b25a7b3d494b3625abd370bd08fdfc918b7922 data/abyssaldecor/loot_tables/blocks/ve
 eb24ecbfc08efb1f6d2447ec6474122d7940e271 data/abyssaldecor/loot_tables/blocks/vermilion_block.json
 142eaae894743743af6afc97e230578d38d60e7f data/abyssaldecor/loot_tables/blocks/vermilion_pane.json
 b268d64d59523eda994ab322a0192b5fd18cbfab data/abyssaldecor/loot_tables/blocks/wall_bulb_lamp.json
+d88486fbc5b29071adf3fd73b831026fe2bb0a39 data/abyssaldecor/loot_tables/blocks/wall_grime.json
 cda18424412c224a867a0ce22f35153e9399fbb8 data/abyssaldecor/loot_tables/blocks/whitewood_button.json
 2dfcbf4c9b2c10f3af578fbae1113c9ce0737039 data/abyssaldecor/loot_tables/blocks/whitewood_door.json
 c22b932bfdaef444fbca118815aff8214889d2c8 data/abyssaldecor/loot_tables/blocks/whitewood_fence.json
@@ -374,6 +374,7 @@ e9289424d6ba2d998742995f0a01948fd265c3b9 data/abyssaldecor/loot_tables/blocks/wh
 0741e2309ec24a0a065084383f3ec8bf7f486307 data/abyssaldecor/loot_tables/blocks/whitewood_pearly_glass_pane.json
 14768835499c7cb8367ea014a315998b13d40313 data/abyssaldecor/loot_tables/blocks/whitewood_picket_fence.json
 b0792bcf766f84c99be2d20fe150b3f314240eef data/abyssaldecor/loot_tables/blocks/whitewood_planks.json
+b098f69090afd9928f9cf5ea6fa12eac69e54277 data/abyssaldecor/loot_tables/blocks/whitewood_planter.json
 3aec6e54ec85bcdea8e8a5a65b97c12d1289af9d data/abyssaldecor/loot_tables/blocks/whitewood_pressure_plate.json
 00aa9f5bc49a47ccbf8b0e4ace9d9c3f6acec8d9 data/abyssaldecor/loot_tables/blocks/whitewood_sign.json
 dc165b5fd247b4c57df0b92cc6d70eb82fedb410 data/abyssaldecor/loot_tables/blocks/whitewood_slab.json
