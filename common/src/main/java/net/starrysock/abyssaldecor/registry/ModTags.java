@@ -14,6 +14,7 @@ public class ModTags {
 
         public static final TagKey<Block> MOLDY_PLANT_VALID_BLOCKS = mod("moldy_plant_valid_blocks");
         public static final TagKey<Block> MOLDY_STALK_PLANTABLE_ON = mod("moldy_stalk_plantable_on");
+        public static final TagKey<Block> CINNAMON_LOGS = mod("cinnamon_logs");
 
         static TagKey<Block> mod(String path) {
             return TagKey.create(Registries.BLOCK, AbyssalDecor.id(path));

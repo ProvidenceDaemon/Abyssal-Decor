@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:grime"
+          "name": "abyssaldecor:cinnamon_bush"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/grime_carpet"
+  "random_sequence": "abyssaldecor:blocks/cinnamon_bush"
 }

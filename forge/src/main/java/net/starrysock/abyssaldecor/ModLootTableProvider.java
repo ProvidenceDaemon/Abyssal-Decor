@@ -62,7 +62,7 @@ public class ModLootTableProvider extends LootTableProvider {
                     AbyssalDecorBlocks.ROPE_BARRIER.get(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),
                     AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
                     AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get(),AbyssalDecorBlocks.HANGING_WEB.get(),
-                    AbyssalDecorBlocks.DANGLING_WEB.get());
+                    AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -105,6 +105,9 @@ public class ModLootTableProvider extends LootTableProvider {
             cornerTable(AbyssalDecorBlocks.SMALL_STONE_BARS_CORNER.get(),AbyssalDecorItems.SMALL_STONE_BARS.get());
 
             cornerTable(AbyssalDecorBlocks.SMALL_WHITE_PEARL_BARS_CORNER.get(),AbyssalDecorItems.SMALL_WHITE_PEARL_BARS.get());
+
+            this.add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(), block -> this.createLeavesDrops(block,AbyssalDecorBlocks.CINNAMON_BUSH.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+            this.add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(), block -> this.createLeavesDrops(block,AbyssalDecorBlocks.CINNAMON_BUSH.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         }
 

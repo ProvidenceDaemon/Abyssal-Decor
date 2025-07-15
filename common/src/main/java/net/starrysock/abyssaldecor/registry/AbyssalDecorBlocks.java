@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.BirchTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -969,7 +968,7 @@ public class AbyssalDecorBlocks {
             Blocks.leaves(SoundType.GRASS));
 
     public static final RegistrySupplier<SaplingBlock> CINNAMON_BUSH = AbyssalDecor.BLOCKS.register("cinnamon_bush",() ->
-           new CinnamonSaplingBlock(new BirchTreeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+           new CinnamonSaplingBlock(new CinnamonTreeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_SHINGLES = AbyssalDecor.BLOCKS.register("cinnamon_shingles", () ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
