@@ -8,6 +8,7 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 public class ModTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CINNAMON = createKey("cinnamon");
 
+
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, AbyssalDecor.id(name));
     }

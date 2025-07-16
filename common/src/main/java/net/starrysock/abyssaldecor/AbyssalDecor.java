@@ -11,9 +11,11 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.starrysock.abyssaldecor.mixin.BlockEntityTypeAccessor;
 import net.starrysock.abyssaldecor.platform.Services;
 import net.starrysock.abyssaldecor.registry.*;
+import net.starrysock.abyssaldecor.worldgen.ModFoliagePlacers;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,6 +38,8 @@ public class AbyssalDecor {
 
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
 
+    public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_TYPES = DeferredRegister.create(MOD_ID,Registries.FOLIAGE_PLACER_TYPE);
+
     public static void init() {
 
         AbyssalDecorBlocks.register();
@@ -43,6 +47,7 @@ public class AbyssalDecor {
         AbyssalPaintings.register();
         AbyssalCreativeTabs.register();
         AbyssalDecorSounds.register();
+        ModFoliagePlacers.register();
 
         System.out.println(Services.PLATFORM.getConfigDirectory().toAbsolutePath().normalize());
     }

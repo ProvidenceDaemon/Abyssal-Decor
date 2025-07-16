@@ -15,7 +15,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
@@ -23,6 +22,7 @@ import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
+import net.starrysock.abyssaldecor.worldgen.CinnamonFoliagePlacer;
 import net.starrysock.abyssaldecor.worldgen.ModTreeFeatures;
 
 import java.util.Set;
@@ -50,7 +50,7 @@ public class ModDataPackProvider extends DatapackBuiltinEntriesProvider {
 
     private static TreeConfiguration.TreeConfigurationBuilder createCinnamon() {
         return createStraightBlobTree(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),
-                5, 2, 0, 2).ignoreVines();
+                12, 2, 0, 2).ignoreVines();
     }
 
     public static void configureFeatures(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -63,7 +63,8 @@ public class ModDataPackProvider extends DatapackBuiltinEntriesProvider {
                         .add(leavesBlock.defaultBlockState(),3)
                         .add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get().defaultBlockState(),1)
                 ),
-                new SpruceFoliagePlacer(ConstantInt.of(radius), ConstantInt.of(0), ConstantInt.of(5)), new TwoLayersFeatureSize(1, 0, 1));
+                //radius offset, height
+                new CinnamonFoliagePlacer(ConstantInt.of(radius), ConstantInt.of(7), 12), new TwoLayersFeatureSize(1, 0, 1));
     }
 
 
