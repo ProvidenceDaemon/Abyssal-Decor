@@ -89,6 +89,7 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SCRIMSHAW.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SCRIMSHAW_ALTAR.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get(),RenderType.cutoutMipped());

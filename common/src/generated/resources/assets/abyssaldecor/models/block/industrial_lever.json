@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/fusebox",
+  "textures": {
+    "0": "abyssaldecor:block/fusebox",
+    "particle": "abyssaldecor:block/fusebox"
+  }
+}

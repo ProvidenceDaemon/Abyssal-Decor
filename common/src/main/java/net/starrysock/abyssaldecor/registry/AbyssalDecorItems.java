@@ -58,6 +58,7 @@ public class AbyssalDecorItems {
             , new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 3600));
 
     public static final RegistrySupplier<BlockItem> SCRIMSHAW = registerBlockItem(AbyssalDecorBlocks.SCRIMSHAW);
+    public static final RegistrySupplier<BlockItem> SCRIMSHAW_ALTAR = registerBlockItem(AbyssalDecorBlocks.SCRIMSHAW_ALTAR);
     public static final RegistrySupplier<BlockItem> FOGHORN = registerBlockItem(AbyssalDecorBlocks.FOGHORN);
     public static final RegistrySupplier<BlockItem> STARFISH = registerBlockItem(AbyssalDecorBlocks.STARFISH);
     public static final RegistrySupplier<BlockItem> DRIED_STARFISH = registerBlockItem(AbyssalDecorBlocks.DRIED_STARFISH);
@@ -255,6 +256,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> IRON_PANEL_STAIRS = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_STAIRS);
     public static final RegistrySupplier<BlockItem> IRON_PANEL_SLAB = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_SLAB);
     public static final RegistrySupplier<BlockItem> IRON_PANEL_WALL = registerBlockItem(AbyssalDecorBlocks.IRON_PANEL_WALL);
+
+    public static final RegistrySupplier<BlockItem> INDUSTRIAL_LEVER = registerBlockItem(AbyssalDecorBlocks.INDUSTRIAL_LEVER);
 
     public static final RegistrySupplier<BlockItem> DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.DULL_IRON_BARS);
     public static final RegistrySupplier<BlockItem> SMALL_DULL_IRON_BARS = registerBlockItem(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS);

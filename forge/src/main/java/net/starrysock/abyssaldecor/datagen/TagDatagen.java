@@ -53,14 +53,15 @@ public class TagDatagen {
             tag(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON).addTag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.MOLDY_STALK.get(),
                     AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get());
 
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.SOLAR_ROD.get(),
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.FOGHORN.get()
+                    , AbyssalDecorBlocks.DESK_BELL.get(),
+                    AbyssalDecorBlocks.SOLAR_ROD.get(),
                     AbyssalDecorBlocks.STELLAR_ROD.get(),
                     AbyssalDecorBlocks.TERRESTRIAL_ROD.get(),
                     AbyssalDecorBlocks.LUNAR_ROD.get(),
                     AbyssalDecorBlocks.ETHEREAL_ROD.get(),
-                    AbyssalDecorBlocks.SCRIMSHAW.get(), AbyssalDecorBlocks.FOGHORN.get()
-                    , AbyssalDecorBlocks.DESK_BELL.get(), AbyssalDecorBlocks.WALL_BULB_LAMP.get()
-                    , AbyssalDecorBlocks.TUBE_LAMP.get(), AbyssalDecorBlocks.FLOWER_LAMP.get(), AbyssalDecorBlocks.FROSTED_LAMP.get(),
+                    AbyssalDecorBlocks.SCRIMSHAW.get(),AbyssalDecorBlocks.SCRIMSHAW_ALTAR.get()
+                    ,AbyssalDecorBlocks.FLOWER_LAMP.get(), AbyssalDecorBlocks.FROSTED_LAMP.get(), AbyssalDecorBlocks.TUBE_LAMP.get(),
                     AbyssalDecorBlocks.SEAGLASS_LAMP.get(), AbyssalDecorBlocks.BLAZE_LAMP.get(), AbyssalDecorBlocks.DRIED_STARFISH.get(),
                     AbyssalDecorBlocks.STARLIGHT.get(), AbyssalDecorBlocks.RAINBOW_LAMP.get(), AbyssalDecorBlocks.LION_STATUE.get(),
                     AbyssalDecorBlocks.GARGOYLE.get(), AbyssalDecorBlocks.TELESCOPE.get(), AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get(),
@@ -88,7 +89,6 @@ public class TagDatagen {
                     AbyssalDecorBlocks.CORRUGATED_IRON.get(), AbyssalDecorBlocks.IRON_PILLAR.get(), AbyssalDecorBlocks.IRON_DUCT.get(), AbyssalDecorBlocks.IRON_PUSH_DOOR.get(),
                     AbyssalDecorBlocks.IRON_VENT_TRAPDOOR.get(), AbyssalDecorBlocks.IRON_PANEL.get(), AbyssalDecorBlocks.IRON_PANEL_STAIRS.get(),
                     AbyssalDecorBlocks.IRON_PANEL_SLAB.get(), AbyssalDecorBlocks.IRON_PANEL_WALL.get(),
-                    // AbyssalDecorBlocks.INDUSTRIAL_LEVER.get(),todo
                     AbyssalDecorBlocks.DULL_IRON_BARS.get(), AbyssalDecorBlocks.SMALL_DULL_IRON_BARS_CORNER.get(), AbyssalDecorBlocks.SMALL_DULL_IRON_BARS.get(),
                     AbyssalDecorBlocks.DULL_IRON_SCONCE.get(), AbyssalDecorBlocks.ORNATE_DULL_IRON_BARS.get(), AbyssalDecorBlocks.DULL_IRON_BAR_DOOR.get(),
                     AbyssalDecorBlocks.DULL_IRON_BAR_TRAPDOOR.get(), AbyssalDecorBlocks.DULL_IRON_POST.get(), AbyssalDecorBlocks.GOLD_SCONCE.get(),
@@ -145,10 +145,10 @@ public class TagDatagen {
                     AbyssalDecorBlocks.BRICK_TRAPDOOR.get(), AbyssalDecorBlocks.EFFERVESCENT_PILLAR.get(), AbyssalDecorBlocks.POLISHED_EFFERVESCENCE.get(),
                     AbyssalDecorBlocks.EFFERVESCENT_TILES.get(), AbyssalDecorBlocks.EFFERVESCENCE.get(), AbyssalDecorBlocks.IRON_BALL.get(),
                     AbyssalDecorBlocks.JADE_LAMP.get(), AbyssalDecorBlocks.WALL_JADE_LAMP.get(), AbyssalDecorBlocks.WALL_JADE_LAMP.get(),
+                    AbyssalDecorBlocks.WALL_BULB_LAMP.get(),
                     //AbyssalDecorBlocks.PLACED_HEART_O_SEA.get(),todo
 
                     AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), AbyssalDecorBlocks.QUARTZ_LAMP.get(),
-                   // AbyssalDecorBlocks.BULB_LAMP_FLOOR_LIT.get(),
                     AbyssalDecorBlocks.DRIED_STARFISH.get(), AbyssalDecorBlocks.DULL_IRON_BARS.get(), AbyssalDecorBlocks.WALL_IRON_LAMP.get(),
                     AbyssalDecorBlocks.IRON_LAMP.get(), AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(),
                     AbyssalDecorBlocks.DULL_IRON_POST.get(), AbyssalDecorBlocks.SEABRASS_BARS.get(), AbyssalDecorBlocks.BRICK_CAP.get(),

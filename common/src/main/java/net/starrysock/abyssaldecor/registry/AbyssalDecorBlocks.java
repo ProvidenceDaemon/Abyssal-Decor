@@ -110,6 +110,9 @@ public class AbyssalDecorBlocks {
 
     //todo wisteria and elder wisteria
 
+    public static final RegistrySupplier<Block> WISTERIA = AbyssalDecor.BLOCKS.register("wisteria", () -> Blocks.leaves(SoundType.GRASS));
+
+
     public static final RegistrySupplier<Block> WISTERIA_PETALS = AbyssalDecor.BLOCKS.register("wisteria_petals", () -> Blocks.leaves(SoundType.GRASS));
     public static final RegistrySupplier<Block> ELDER_WISTERIA_PETALS = AbyssalDecor.BLOCKS.register("elder_wisteria_petals", () -> Blocks.leaves(SoundType.GRASS));
     public static final RegistrySupplier<Block> ELDER_WISTERIA_LEAVES = AbyssalDecor.BLOCKS.register("elder_wisteria_leaves", () -> Blocks.leaves(SoundType.GRASS));
@@ -121,6 +124,10 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> SCRIMSHAW = AbyssalDecor.BLOCKS.register("scrimshaw", () -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE)
             .strength(2.0F, 10.0F).lightLevel((s) -> 4).noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
+
+    public static final RegistrySupplier<Block> SCRIMSHAW_ALTAR = AbyssalDecor.BLOCKS.register("scrimshaw_altar", () -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE)
+            .strength(2.0F, 10.0F).lightLevel((s) -> 4).noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
+
     public static final RegistrySupplier<Block> DESK_BELL = AbyssalDecor.BLOCKS.register("desk_bell", () -> new DeskBellBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> STARFISH = AbyssalDecor.BLOCKS.register("starfish", () -> new StarfishBlock(BlockBehaviour.Properties.of()));
@@ -391,7 +398,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> IRON_PANEL_SLAB = AbyssalDecor.BLOCKS.register("iron_panel_slab",() -> slab(IRON_PANEL.get()));
     public static final RegistrySupplier<WallBlock> IRON_PANEL_WALL = AbyssalDecor.BLOCKS.register("iron_panel_wall",() -> wall(IRON_PANEL.get()));
 
-    //industrial lever
+    public static final RegistrySupplier<LeverBlock> INDUSTRIAL_LEVER = AbyssalDecor.BLOCKS.register("industrial_lever",() ->
+            new IndustrialLeverBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<IronBarsBlock> DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("dull_iron_bars",() -> ironBars());
 

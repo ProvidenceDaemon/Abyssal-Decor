@@ -812,6 +812,35 @@ public class Datagen {
 
             cinnamonBush(AbyssalDecorBlocks.CINNAMON_BUSH.get());
             tallCinnamonBush(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get());
+
+            industrialLever(AbyssalDecorBlocks.INDUSTRIAL_LEVER.get());
+        }
+
+        public void industrialLever(LeverBlock block) {
+            String name = name(block);
+
+            ResourceLocation texture = modLoc("block/fusebox");
+            ResourceLocation textureOn = modLoc("block/fuseboxlit");
+
+            ModelFile file = models().withExistingParent(name,modLoc("custom/fusebox"))
+                    .texture("0",texture)
+                    .texture("particle",texture);
+            ModelFile fileLit = models().withExistingParent(name+"_on",modLoc("custom/fuseboxlit"))
+                    .texture("0",textureOn)
+                    .texture("particle",textureOn);
+
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+                Direction facing = state.getValue(LeverBlock.FACING);
+                AttachFace face = state.getValue(LeverBlock.FACE);
+                boolean powered = state.getValue(LeverBlock.POWERED);
+
+                return ConfiguredModel.builder()
+                        .modelFile(powered ? fileLit : file)
+                        .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
+                        .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
+                        .uvLock(false)
+                        .build();
+            },IndustrialLeverBlock.WATERLOGGED);
         }
 
         public void cinnamonBush(CinnamonSaplingBlock block) {
