@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "abyssaldecor:block/cinnamon_bush_stage0"
+    },
+    "stage=1": {
+      "model": "abyssaldecor:block/cinnamon_bush_stage1"
+    }
+  }
+}

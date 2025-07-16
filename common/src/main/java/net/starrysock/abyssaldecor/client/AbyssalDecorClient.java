@@ -135,5 +135,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.MOLDY_HANGERS_PLANT.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.FEVER_BLOSSOM.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.CINNAMON_BUSH.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get(),RenderType.cutoutMipped());
     }
 }

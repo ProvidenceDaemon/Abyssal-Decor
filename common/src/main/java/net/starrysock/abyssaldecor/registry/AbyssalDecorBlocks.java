@@ -967,8 +967,12 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<LeavesBlock> FLOWERING_CINNAMON_LEAVES = AbyssalDecor.BLOCKS.register("flowering_cinnamon_leaves",() ->
             Blocks.leaves(SoundType.GRASS));
 
-    public static final RegistrySupplier<SaplingBlock> CINNAMON_BUSH = AbyssalDecor.BLOCKS.register("cinnamon_bush",() ->
-           new CinnamonSaplingBlock(new CinnamonTreeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<CinnamonSaplingBlock> CINNAMON_BUSH = AbyssalDecor.BLOCKS.register("cinnamon_bush",() ->
+           new CinnamonSaplingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistrySupplier<TallCinammonSaplingBlock> TALL_CINNAMON_BUSH = AbyssalDecor.BLOCKS.register("tall_cinnamon_bush",() ->
+            new TallCinammonSaplingBlock(new CinnamonTreeGrower(),BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks()
+                    .instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_SHINGLES = AbyssalDecor.BLOCKS.register("cinnamon_shingles", () ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)

@@ -809,6 +809,29 @@ public class Datagen {
             iconTexture("fever_blossom",modLoc("item/fever_blossom"));
 
             horizontalBlock(AbyssalDecorBlocks.WALL_GRIME.get(),models().getExistingFile(modLoc("block/grime")));
+
+            cinnamonBush(AbyssalDecorBlocks.CINNAMON_BUSH.get());
+            tallCinnamonBush(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get());
+        }
+
+        public void cinnamonBush(CinnamonSaplingBlock block) {
+            String name = name(block);
+            getVariantBuilder(block).forAllStates(state -> {
+                int stage = state.getValue(CinnamonSaplingBlock.STAGE);
+                ModelFile modelFile = models().cross(name+"_stage"+stage,modLoc("block/"+name+"_stage"+stage));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
+            iconTexture(name,modLoc("block/"+name+"_stage0"));
+        }
+
+        public void tallCinnamonBush(TallCinammonSaplingBlock block) {
+            String name = name(block);
+            getVariantBuilder(block).forAllStates(state -> {
+                int stage = state.getValue(CinnamonSaplingBlock.STAGE);
+                DoubleBlockHalf half = state.getValue(DoublePlantBlock.HALF);
+                ModelFile modelFile = models().cross(name+"_stage"+stage,modLoc("block/"+name+"_"+half.getSerializedName()+"_stage"+stage));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
         }
 
         public void feverblossom(CropBlock block) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "abyssaldecor:block/cinnamon_bush_stage1"
+  }
+}

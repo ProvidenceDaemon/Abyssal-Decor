@@ -42,9 +42,11 @@ public class TagDatagen {
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
 
             tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
-            tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.CINNAMON_LOGS);
+
+            tag(BlockTags.FLOWERS).add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
 
             tag(BlockTags.LEAVES).add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
+            tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.CINNAMON_LOGS);
 
             tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get());
 
@@ -159,6 +161,8 @@ public class TagDatagen {
                     AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get());
 
             tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
+
+            tag(BlockTags.REPLACEABLE_BY_TREES).add(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get());
 
             tag(BlockTags.SLABS).add(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get());

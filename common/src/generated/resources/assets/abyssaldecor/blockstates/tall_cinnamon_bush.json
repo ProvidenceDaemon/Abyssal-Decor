@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "half=lower,stage=0": {
+      "model": "abyssaldecor:block/tall_cinnamon_bush_stage0"
+    },
+    "half=lower,stage=1": {
+      "model": "abyssaldecor:block/tall_cinnamon_bush_stage1"
+    },
+    "half=upper,stage=0": {
+      "model": "abyssaldecor:block/tall_cinnamon_bush_stage0"
+    },
+    "half=upper,stage=1": {
+      "model": "abyssaldecor:block/tall_cinnamon_bush_stage1"
+    }
+  }
+}
