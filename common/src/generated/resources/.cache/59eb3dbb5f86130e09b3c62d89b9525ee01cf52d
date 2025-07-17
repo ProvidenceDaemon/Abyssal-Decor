@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-16T16:59:31.6273387	Loot Tables
+// 1.20.1	2025-07-16T21:58:07.7241903	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -271,6 +271,7 @@ b4f5499469cd1c96f0d333e4c3018860e9d49b9b data/abyssaldecor/loot_tables/blocks/ro
 e655ea3687eca4627ff5f7557037ac463fa767a4 data/abyssaldecor/loot_tables/blocks/rough_blood_coral.json
 359d4cfc93a97cf766a08ed4f95f781eae66ba42 data/abyssaldecor/loot_tables/blocks/rough_jade.json
 8771bf71bc531cfacbdb5c200b0e479bca18889b data/abyssaldecor/loot_tables/blocks/scrimshaw.json
+b19406a92d7f84492be621987f47ade55574b1f6 data/abyssaldecor/loot_tables/blocks/scrimshaw_altar.json
 7068dab5f38aa9307a429b5c18aaa5b7dc88552f data/abyssaldecor/loot_tables/blocks/seabrass_bars.json
 8d695b3f3ac36b57d28eb04736f4696cf8719da4 data/abyssaldecor/loot_tables/blocks/seabrass_block.json
 ff0760faf962daf9a8b2cd49de2ddd323edecc4c data/abyssaldecor/loot_tables/blocks/seabrass_button.json
@@ -399,6 +400,7 @@ d708fa964d70eceff0545d59767a132bb40fadac data/abyssaldecor/loot_tables/blocks/wh
 ed628231c7c40af356402715a59d8d7c62b2531c data/abyssaldecor/loot_tables/blocks/white_pearl_trapdoor.json
 aabe7680f2f5dedb9f66fb795bc74b58d790a83c data/abyssaldecor/loot_tables/blocks/white_pearl_wall.json
 af3c4b83f747169be03c34399082bd2c7cdd21a2 data/abyssaldecor/loot_tables/blocks/white_wallpaper.json
+bc3c2651d61d0d293b771a7d5d5e0f5004cd4ddb data/abyssaldecor/loot_tables/blocks/wisteria.json
 1e06c7f4a1c1ec986c195b843b374edf913ec195 data/abyssaldecor/loot_tables/blocks/wisteria_petals.json
 cc74ab599c2391016dfa555e5cea4d0c7f3176d2 data/abyssaldecor/loot_tables/blocks/wooden_dragon_head.json
 fa6599f2a8669a1fe04da59742860e14fc6b9a53 data/abyssaldecor/loot_tables/blocks/wooden_frog.json

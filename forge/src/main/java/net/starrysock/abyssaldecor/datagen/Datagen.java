@@ -814,6 +814,36 @@ public class Datagen {
             tallCinnamonBush(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get());
 
             industrialLever(AbyssalDecorBlocks.INDUSTRIAL_LEVER.get());
+
+            wisteria(AbyssalDecorBlocks.WISTERIA.get());
+            iconTexture("wisteria",modLoc("item/wisteria"));
+        }
+
+        public void wisteria(WisteriaBlock block) {
+            String name = name(block);
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+                Direction facing = state.getValue(WisteriaBlock.FACING);
+                TriPart triPart = state.getValue(WisteriaBlock.TRI_PART);
+
+                String model = switch (triPart) {
+                    case BOTTOM -> "wisteriapurplewallbottom";
+                    case MIDDLE -> "wisteriapurplewallmid";
+                    case TOP -> "wisteriapurplewall";
+                };
+
+                String texture = switch (triPart) {
+                    case BOTTOM -> "wisteriapurplebottom";
+                    case MIDDLE -> "wisteriapurplemiddle";
+                    case TOP -> "wisteriapurpletop";
+                };
+
+                ModelFile modelFile = models().withExistingParent(name+"_"+triPart.getSerializedName(),modLoc("custom/"+model))
+                        .texture("particle",modLoc("block/"+texture))
+                        .texture("0",modLoc("block/"+texture));
+
+                return ConfiguredModel.builder().modelFile(modelFile)
+                        .rotationY(((int) facing.toYRot() + 180) % 360).build();
+            }, net.starrysock.abyssaldecor.block.WisteriaBlock.WATERLOGGED);
         }
 
         public void industrialLever(LeverBlock block) {

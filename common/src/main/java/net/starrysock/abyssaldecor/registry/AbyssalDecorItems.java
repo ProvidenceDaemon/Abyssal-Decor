@@ -44,6 +44,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> BARK_ORCHID = registerBlockItem(AbyssalDecorBlocks.BARK_ORCHID);
 
     //todo wisteria and elder wisteria
+    public static final RegistrySupplier<BlockItem> WISTERIA = registerBlockItem(AbyssalDecorBlocks.WISTERIA);
 
     public static final RegistrySupplier<BlockItem> WISTERIA_PETALS = registerBlockItem(AbyssalDecorBlocks.WISTERIA_PETALS);
     public static final RegistrySupplier<BlockItem> ELDER_WISTERIA_PETALS = registerBlockItem(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS);

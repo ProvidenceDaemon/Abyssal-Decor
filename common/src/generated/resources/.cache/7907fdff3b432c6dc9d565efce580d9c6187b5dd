@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-16T15:23:33.5937245	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2025-07-16T21:58:07.7221887	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
 518501e03b235b7b8cbe3121061d6c94c3c9ff7c data/abyssaldecor/tags/blocks/cinnamon_logs.json
 b9da89061b21c499f7bf5852305b9a28ad7ef536 data/abyssaldecor/tags/blocks/moldy_plant_valid_blocks.json
@@ -8,7 +8,7 @@ a1ba3fc8893cf83fae91c53fc5616b4277b20672 data/abyssaldecor/tags/blocks/moldy_sta
 982443ff19bfac34f19e326568641c5e83573133 data/minecraft/tags/blocks/flowers.json
 37fbf6e45c020ca62e1c08e4a8933e3abefe54b4 data/minecraft/tags/blocks/leaves.json
 0fc56e2c20be7546cdb3853577a7969a3a4f8009 data/minecraft/tags/blocks/logs_that_burn.json
-01a314fb8007a64a9c4976067b60f08661d916e2 data/minecraft/tags/blocks/mineable/pickaxe.json
+8bedcdd9cb07cad74183eaf1614c880a9b2a4412 data/minecraft/tags/blocks/mineable/pickaxe.json
 79fc37ec372326b706fb3c2e0f642203b708ab72 data/minecraft/tags/blocks/planks.json
 6a55d13f71ab10f1aaa2731564a2db25711584aa data/minecraft/tags/blocks/replaceable_by_trees.json
 1ce34638b206a3dbc77dd63c0aefd9ec53d9d687 data/minecraft/tags/blocks/slabs.json

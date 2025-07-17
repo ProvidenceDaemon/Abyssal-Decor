@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=east,tri_part=bottom": {
+      "model": "abyssaldecor:block/wisteria_bottom",
+      "y": 90
+    },
+    "facing=east,tri_part=middle": {
+      "model": "abyssaldecor:block/wisteria_middle",
+      "y": 90
+    },
+    "facing=east,tri_part=top": {
+      "model": "abyssaldecor:block/wisteria_top",
+      "y": 90
+    },
+    "facing=north,tri_part=bottom": {
+      "model": "abyssaldecor:block/wisteria_bottom"
+    },
+    "facing=north,tri_part=middle": {
+      "model": "abyssaldecor:block/wisteria_middle"
+    },
+    "facing=north,tri_part=top": {
+      "model": "abyssaldecor:block/wisteria_top"
+    },
+    "facing=south,tri_part=bottom": {
+      "model": "abyssaldecor:block/wisteria_bottom",
+      "y": 180
+    },
+    "facing=south,tri_part=middle": {
+      "model": "abyssaldecor:block/wisteria_middle",
+      "y": 180
+    },
+    "facing=south,tri_part=top": {
+      "model": "abyssaldecor:block/wisteria_top",
+      "y": 180
+    },
+    "facing=west,tri_part=bottom": {
+      "model": "abyssaldecor:block/wisteria_bottom",
+      "y": 270
+    },
+    "facing=west,tri_part=middle": {
+      "model": "abyssaldecor:block/wisteria_middle",
+      "y": 270
+    },
+    "facing=west,tri_part=top": {
+      "model": "abyssaldecor:block/wisteria_top",
+      "y": 270
+    }
+  }
+}

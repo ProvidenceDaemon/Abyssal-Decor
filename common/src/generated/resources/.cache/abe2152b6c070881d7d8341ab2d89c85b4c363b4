@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-16T17:41:52.3408115	Block States: abyssaldecor
+// 1.20.1	2025-07-17T03:07:48.9055331	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
 a7de563932a2abf46a26f789ddabfeb94c44ca81 assets/abyssaldecor/blockstates/azure_pearly_glass.json
@@ -304,6 +304,7 @@ b3f0e337304588fe6b248c8733e1805d7fb1cf8d assets/abyssaldecor/blockstates/white_p
 4b871cc5e1e35b7618be987f34cf388c410b42ba assets/abyssaldecor/blockstates/white_pearl_trapdoor.json
 52acc8aee51edd652a607d960b5adb19a00e440b assets/abyssaldecor/blockstates/white_pearl_wall.json
 38ce73c50b8887587c1b3b829da2510fa89d51a1 assets/abyssaldecor/blockstates/white_wallpaper.json
+b64cb0ad0c8db744a369eb288a6dc066f28d5544 assets/abyssaldecor/blockstates/wisteria.json
 0ec64d13fd507a3b3a13b904ebce8d3aa0d789a0 assets/abyssaldecor/blockstates/wisteria_petals.json
 ae249520ac136d1e8243479e5e9b9339159853f1 assets/abyssaldecor/blockstates/wood_support.json
 3c80c1b2a2262782f50d6ee9d00ce70388991029 assets/abyssaldecor/blockstates/yellow_wallpaper.json
@@ -986,7 +987,10 @@ b6f296298f28805c8c5f6578026261e94a89fddd assets/abyssaldecor/models/block/white_
 8ce0e6fcfff95d6e8cf49bfd7f7dfa6877c6fa2d assets/abyssaldecor/models/block/white_pearl_wall_side.json
 0c8174d5b4eba03f4a89daa30704e8b0049e3719 assets/abyssaldecor/models/block/white_pearl_wall_side_tall.json
 55e896b9aaee79ceef483e88e7ed5780e8a40719 assets/abyssaldecor/models/block/white_wallpaper.json
+a38859a2e56b63d51dd9276f3f9a269a284fd5d9 assets/abyssaldecor/models/block/wisteria_bottom.json
+2b39e1de1f44f8f772c831711e0a55adf3093d3a assets/abyssaldecor/models/block/wisteria_middle.json
 72db36ac9572e46a3c56c553f8b18c51fb8b61db assets/abyssaldecor/models/block/wisteria_petals.json
+2818e0e82ce45539b1fd0d67ee5456eeda19f1a0 assets/abyssaldecor/models/block/wisteria_top.json
 7ad82cd498d67cf308c359f25d093fc9ea94af2f assets/abyssaldecor/models/block/wood_support.json
 bdcced8b23904f6685fd791961922c9ee75cc352 assets/abyssaldecor/models/block/wood_support_centered.json
 e31f882dcda938936c77a9b9adc3d469be071f52 assets/abyssaldecor/models/block/yellow_wallpaper.json
@@ -1148,6 +1152,7 @@ fba19efe5128b0f89bc91cc8c8c98f8af6add64f assets/abyssaldecor/models/item/whitewo
 e477df587d751a86a58c61c8b68bce4d4ea44771 assets/abyssaldecor/models/item/white_pearl_tiles.json
 610afea0802116b3a7b24143e1c5e6059a71c2cc assets/abyssaldecor/models/item/white_pearl_wall.json
 7f43e2bff1683460bf2c4a2a403bfefc047ae20b assets/abyssaldecor/models/item/white_wallpaper.json
+2b278c85c19d43861bf643d6366e6bd38814cb75 assets/abyssaldecor/models/item/wisteria.json
 b63aa3f64262377c93ff790de08b3cd048eb5b9a assets/abyssaldecor/models/item/wisteria_petals.json
 163aaa8327d8dcfc0eb759a1f5828118bf10b7f6 assets/abyssaldecor/models/item/wood_support.json
 4e89f895b330bfbfb6f6ddeb766f607573e5d8fd assets/abyssaldecor/models/item/yellow_wallpaper.json

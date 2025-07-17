@@ -108,9 +108,9 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> BARK_ORCHID = AbyssalDecor.BLOCKS.register("bark_orchid", () -> new BarkOrchidBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).instabreak().noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
-    //todo wisteria and elder wisteria
-
-    public static final RegistrySupplier<Block> WISTERIA = AbyssalDecor.BLOCKS.register("wisteria", () -> Blocks.leaves(SoundType.GRASS));
+    public static final RegistrySupplier<WisteriaBlock> WISTERIA = AbyssalDecor.BLOCKS.register("wisteria",() ->
+            new WisteriaBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.VINE).strength(0.1F, 1.0F)
+                    .noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)));
 
 
     public static final RegistrySupplier<Block> WISTERIA_PETALS = AbyssalDecor.BLOCKS.register("wisteria_petals", () -> Blocks.leaves(SoundType.GRASS));
