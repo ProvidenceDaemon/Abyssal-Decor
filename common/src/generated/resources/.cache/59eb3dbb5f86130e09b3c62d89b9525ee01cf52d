@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-16T21:58:07.7241903	Loot Tables
+// 1.20.1	2025-07-17T14:25:42.5405179	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -132,6 +132,7 @@ bfb3e7fe6dd461f6d6ad597eb2f3f79ee4630048 data/abyssaldecor/loot_tables/blocks/du
 cc810b8cfdd47d027b9d0f5fe8d97dfcbc3e7e2f data/abyssaldecor/loot_tables/blocks/effervescence.json
 78804833229c62e68549f5825537f19ca074805d data/abyssaldecor/loot_tables/blocks/effervescent_pillar.json
 512395d8893d44fe1fc4060c5879f87308f28d8c data/abyssaldecor/loot_tables/blocks/effervescent_tiles.json
+62729a5d46c28b2a4e0ea32b24747866a1eb7a1a data/abyssaldecor/loot_tables/blocks/elder_wisteria.json
 39e08b706781905986ad72e23c51bab6e78407f8 data/abyssaldecor/loot_tables/blocks/elder_wisteria_leaves.json
 ad5db7fc9025db019b5218aeea3affda11b2076d data/abyssaldecor/loot_tables/blocks/elder_wisteria_petals.json
 0d2bdbce512e6f0d7c4d7e6b728ba9b935512916 data/abyssaldecor/loot_tables/blocks/ethereal_rod.json

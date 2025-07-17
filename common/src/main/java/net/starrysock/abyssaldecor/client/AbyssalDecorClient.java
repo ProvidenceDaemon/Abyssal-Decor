@@ -141,5 +141,6 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.WISTERIA.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.ELDER_WISTERIA.get(),RenderType.cutoutMipped());
     }
 }

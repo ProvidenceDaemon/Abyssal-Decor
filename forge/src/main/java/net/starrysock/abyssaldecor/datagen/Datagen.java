@@ -817,6 +817,8 @@ public class Datagen {
 
             wisteria(AbyssalDecorBlocks.WISTERIA.get());
             iconTexture("wisteria",modLoc("item/wisteria"));
+            wisteria(AbyssalDecorBlocks.ELDER_WISTERIA.get());
+            iconTexture("elder_wisteria",modLoc("item/elder_wisteria"));
         }
 
         public void wisteria(WisteriaBlock block) {
@@ -831,11 +833,8 @@ public class Datagen {
                     case TOP -> "wisteriapurplewall";
                 };
 
-                String texture = switch (triPart) {
-                    case BOTTOM -> "wisteriapurplebottom";
-                    case MIDDLE -> "wisteriapurplemiddle";
-                    case TOP -> "wisteriapurpletop";
-                };
+                String texture = name+"_"+triPart.getSerializedName();
+
 
                 ModelFile modelFile = models().withExistingParent(name+"_"+triPart.getSerializedName(),modLoc("custom/"+model))
                         .texture("particle",modLoc("block/"+texture))

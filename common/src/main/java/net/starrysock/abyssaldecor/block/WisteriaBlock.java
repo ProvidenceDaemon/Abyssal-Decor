@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -59,20 +60,34 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     protected void tryGrow(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockPos down = pos.relative(Direction.DOWN);
         if (Services.PLATFORM.onCropsGrowPre(level, down, level.getBlockState(down),random.nextDouble() < this.growPerTickProbability)) {
+            if (state.getValue(TRI_PART) != TriPart.TOP) {
+                level.setBlockAndUpdate(pos, defaultBlockState().setValue(TRI_PART, TriPart.MIDDLE).setValue(FACING, state.getValue(FACING)));
+            }
             level.setBlockAndUpdate(down, defaultBlockState().setValue(TRI_PART,TriPart.BOTTOM).setValue(FACING,state.getValue(FACING)));
             Services.PLATFORM.onCropsGrowPost(level, down, level.getBlockState(down));
         }
     }
 
+     public static final VoxelShape NORTH_AABB = box(1, 2, 10, 15, 16, 16);
+    public static final VoxelShape  EAST_AABB = box(0, 2, 1, 6, 16, 15);
+    public static final VoxelShape  WEST_AABB = box(10, 2, 1, 16, 16, 15);
+    public static final VoxelShape SOUTH_AABB = box(1, 2, 0, 15, 16, 6);
+
+    public static final VoxelShape BOTTOM_NORTH_AABB = box(1, 8, 10, 15, 16, 16);
+    public static final VoxelShape  BOTTOM_EAST_AABB = box(0, 8, 1, 6, 16, 15);
+    public static final VoxelShape  BOTTOM_WEST_AABB = box(10, 8, 1, 16, 16, 15);
+    public static final VoxelShape BOTTOM_SOUTH_AABB = box(1, 8, 0, 15, 16, 6);
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return switch (state.getValue(FACING)) {
-            case NORTH -> box(1, 2, 10, 15, 16, 16);
-            case EAST -> box(0, 2, 1, 6, 16, 15);
-            case WEST -> box(10, 2, 1, 16, 16, 15);
-            default -> box(1, 2, 0, 15, 16, 6);
+        Vec3 offset = state.getOffset(world, pos);
+        VoxelShape shape = switch (state.getValue(FACING)) {
+            case NORTH -> NORTH_AABB;
+            case EAST -> EAST_AABB;
+            case WEST -> WEST_AABB;
+            default -> SOUTH_AABB;
         };
+        return shape.move(offset.x,offset.y,offset.z);
     }
 
     @Override
@@ -92,6 +107,25 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
             world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
 
+        TriPart currentPart = state.getValue(TRI_PART);
+
+        switch (facing) {
+            case UP -> {
+
+            }
+            case DOWN -> {//a block below this one updated
+                if (facingState.is(this)) {//a new wisteria was placed
+                    if (currentPart == TriPart.BOTTOM) {
+                        return state.setValue(TRI_PART,TriPart.MIDDLE);
+                    }
+                } else {//a wisteria was probably broken
+                    if (currentPart == TriPart.MIDDLE) {
+                        return state.setValue(TRI_PART,TriPart.BOTTOM);
+                    }
+                }
+            }
+        }
+
         return !state.canSurvive(world, currentPos) ? Blocks.AIR.defaultBlockState() :
                 super.updateShape(state, facing, facingState, world, currentPos, facingPos);
 
@@ -104,11 +138,6 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
         LevelReader levelreader = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
 
-        BlockPos above = blockpos.above();
-        boolean wisteriaAbove = levelreader.getBlockState(above).is(this);
-        BlockPos below = blockpos.below();
-        boolean wisteriaBelow = levelreader.getBlockState(below).is(this);
-
         TriPart part = TriPart.TOP;
 
         //try wall placement first
@@ -117,6 +146,11 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
             if (direction.getAxis().isHorizontal()) {
                 blockstate = blockstate.setValue(FACING, direction);
                 if (blockstate.canSurvive(levelreader, blockpos)) {
+                    BlockState aboveState = levelreader.getBlockState(blockpos.above());
+                    boolean wisteriaAbove = aboveState.is(this) && aboveState.getValue(FACING) == direction;
+                    if (wisteriaAbove) {
+                        part = TriPart.BOTTOM;
+                    }
                     return blockstate.setValue(TRI_PART,part);
                 }
             }
@@ -139,8 +173,7 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     }
 
     protected boolean checkCeiling(BlockState state, LevelReader level, BlockPos pos) {
-        Direction growthDirection = Direction.DOWN;
-        BlockPos blockpos = pos.relative(growthDirection.getOpposite());
+        BlockPos blockpos = pos.relative(Direction.UP);
         BlockState blockstate = level.getBlockState(blockpos);
         return (blockstate.is(this)&& blockstate.getValue(FACING) == state.getValue(FACING)) || blockstate.is(BlockTags.LEAVES);//blockstate.isFaceSturdy(level, blockpos, growthDirection);
     }

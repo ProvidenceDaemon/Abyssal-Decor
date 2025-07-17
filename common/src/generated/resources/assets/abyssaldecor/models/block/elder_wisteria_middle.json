@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/wisteriapurplewallmid",
+  "textures": {
+    "0": "abyssaldecor:block/elder_wisteria_middle",
+    "particle": "abyssaldecor:block/elder_wisteria_middle"
+  }
+}
