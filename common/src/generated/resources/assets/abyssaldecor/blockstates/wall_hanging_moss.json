@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,vertical_direction=down": {
       "model": "abyssaldecor:block/hanging_moss_wall",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,vertical_direction=up": {
+      "model": "abyssaldecor:block/hanging_moss_wall_flipped",
+      "y": 90
+    },
+    "facing=north,vertical_direction=down": {
       "model": "abyssaldecor:block/hanging_moss_wall"
     },
-    "facing=south": {
+    "facing=north,vertical_direction=up": {
+      "model": "abyssaldecor:block/hanging_moss_wall_flipped"
+    },
+    "facing=south,vertical_direction=down": {
       "model": "abyssaldecor:block/hanging_moss_wall",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,vertical_direction=up": {
+      "model": "abyssaldecor:block/hanging_moss_wall_flipped",
+      "y": 180
+    },
+    "facing=west,vertical_direction=down": {
       "model": "abyssaldecor:block/hanging_moss_wall",
+      "y": 270
+    },
+    "facing=west,vertical_direction=up": {
+      "model": "abyssaldecor:block/hanging_moss_wall_flipped",
       "y": 270
     }
   }

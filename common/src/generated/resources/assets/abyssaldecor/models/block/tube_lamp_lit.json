@@ -2,7 +2,6 @@
   "parent": "abyssaldecor:custom/tubelamp",
   "textures": {
     "0": "abyssaldecor:block/tubelamp",
-    "all": "abyssaldecor:block/tubelamp",
     "particle": "abyssaldecor:block/tubelamp"
   }
 }

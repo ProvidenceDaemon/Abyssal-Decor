@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.AbyssalUtils;
 import org.jetbrains.annotations.Nullable;
@@ -52,18 +53,24 @@ public class HorizontalLampBlock extends AbstractHorizontalBlock implements Simp
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 
-
-
         if (shape != null) {
             return shapes.get(state.getValue(FACING));
         }
-        return super.getShape(state, level, pos, context);
+
+ ;
+        VoxelShape shape3 = Shapes.block();//Shapes.or(shape1,shape2);
+
+        return AbyssalUtils.calculateShapes(state.getValue(FACING), shape3);
+
     }
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (player.getItemInHand(interactionHand).isEmpty()) {
             level.setBlockAndUpdate(blockPos, blockState.cycle(RedstoneLampBlock.LIT));
+          //  _level.playLocalSound(x, y, z, (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.lava.extinguish")), SoundSource.BLOCKS, 0.1F, 1.5F, false);
+
+
             level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
             return InteractionResult.SUCCESS;
         }

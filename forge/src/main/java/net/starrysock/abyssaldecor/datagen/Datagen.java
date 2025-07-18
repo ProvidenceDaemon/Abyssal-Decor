@@ -199,6 +199,8 @@ public class Datagen {
         }
     }
 
+    public static final ResourceLocation BLANK = AbyssalDecor.id("block/blanktexture16x16");
+
     public static class ModBlockStateProvider extends BlockStateProvider {
 
         public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -367,12 +369,12 @@ public class Datagen {
 
                 ModelFile modelFile = models().withExistingParent("block/wall_iron_lamp" + (lit ? "_lit" : ""),
                                 modLoc("custom/wallironlamp"))
-                        .texture("all", modLoc("block/ironlamp1"))
                         .texture("particle", modLoc("block/ironlamp1"))
                         .texture("0", modLoc("block/ironlamp1"))
                         .texture("1", modLoc("block/ironlamp2" + (lit ? "lit" : "")));
                 Vector2i vector2i = getRotation(orientation);
-                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
+                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).
+                        build();
             }, BlockStateProperties.WATERLOGGED);
 
             wallLamp(AbyssalDecorBlocks.FLOWER_LAMP.get(), modLoc("custom/flowerlamp"), modLoc("block/flower_lamp"));
@@ -380,17 +382,21 @@ public class Datagen {
             getVariantBuilder(AbyssalDecorBlocks.TUBE_LAMP.get()).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
                 Direction orientation = blockState.getValue(HorizontalDirectionalBlock.FACING);
+                AttachFace face = blockState.getValue(TubeLampBlock.FACE);
+
+
 
                 ResourceLocation texture = modLoc("block/tubelamp");
 
                 ModelFile modelFile = models().withExistingParent("block/tube_lamp" + (lit ? "_lit" : ""),
                                 modLoc("custom/tubelamp"))
-                        .texture("all", texture)
                         .texture("particle", texture)
                         .texture("0", texture);
-                Vector2i vector2i = getRotation(orientation);
-                return ConfiguredModel.builder().modelFile(modelFile).rotationY(vector2i.y).build();
-            }, BlockStateProperties.WATERLOGGED);
+                return ConfiguredModel.builder().modelFile(modelFile)
+                        .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
+                        .rotationY((int) (face == AttachFace.CEILING ? orientation : orientation.getOpposite()).toYRot())
+                        .build();
+            });
 
             simplestBlockWithItem(AbyssalDecorBlocks.WISTERIA_PETALS.get());
             simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
@@ -476,7 +482,8 @@ public class Datagen {
             paneBlock(AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE_PANE.get(), modLoc("block/crystallized_glowstone"), modLoc("block/crystallized_glowstone"));
 
             simpleBlock(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE.get());
-            paneBlock(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE.get(), modLoc("block/framed_crystallized_glowstone"), modLoc("block/framed_crystallized_glowstone"));
+            paneBlock(AbyssalDecorBlocks.FRAMED_CRYSTALLIZED_GLOWSTONE_PANE.get(), modLoc("block/framed_crystallized_glowstone"),
+                    modLoc("block/framedglowstonepanetop"));
 
             simpleBlock(AbyssalDecorBlocks.VERMILION_BLOCK.get());
             paneBlock(AbyssalDecorBlocks.VERMILION_PANE.get(), modLoc("block/vermilion_block"), modLoc("block/vermilion_block"));
@@ -600,7 +607,7 @@ public class Datagen {
             blockLamp(AbyssalDecorBlocks.BLOOD_LANTERN.get(), modLoc("block/blood_lantern"));
             simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(), modLoc("block/riveted_seabrass"));
 
-            paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(), modLoc("block/deepbronze_bars"), modLoc("block/deepbronze_bars"));
+            paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(), modLoc("block/deepbronze_bars"), modLoc("block/bronzebarstop"));
 
 
             AbyssalDecorBlocks.WALLPAPERS.forEach(block -> {
@@ -616,7 +623,7 @@ public class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.STARGLASS.get());
 
-            paneBlockWithItem(AbyssalDecorBlocks.STARGLASS_PANE.get(), modLoc("block/starglass"), modLoc("block/starglass"));
+            paneBlockWithItem(AbyssalDecorBlocks.STARGLASS_PANE.get(), modLoc("block/starglass"), modLoc("block/starglasspanetop"));
 
             woodBlockWithItem(AbyssalDecorBlocks.BLACKWOOD_SHINGLES.get(), modLoc("block/blackwood_shingles"));
 
@@ -625,9 +632,9 @@ public class Datagen {
             simpleBlockItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), models().withExistingParent("moldweave_carpet", mcLoc("block/carpet"))
                     .texture("wool", modLoc("block/moldweave")));
 
-            paneBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(), modLoc("block/black_pearl_bars_top"), modLoc("block/black_pearl_bars_top"));
+            paneBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(), modLoc("block/black_pearl_bars_top"), BLANK);
 
-            horizontalBlock(AbyssalDecorBlocks.WALL_HANGING_MOSS.get(), models().getExistingFile(modLoc("block/hanging_moss_wall")));
+            wallHangingMoss(AbyssalDecorBlocks.WALL_HANGING_MOSS.get());
 
             simpleBlock(AbyssalDecorBlocks.HANGING_MOSS.get(), models().getExistingFile(modLoc("block/hanging_moss_ceiling")));
             simpleBlockItem(AbyssalDecorBlocks.HANGING_MOSS.get(), models().getExistingFile(modLoc("block/hanging_moss_wall")));
@@ -680,7 +687,7 @@ public class Datagen {
             simpleBlockItem(AbyssalDecorBlocks.IRON_BALL.get(), models().getExistingFile(modLoc("block/iron_ball")));
 
             paneBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE.get(), modLoc("block/whitewood_picket_fence"),
-                    modLoc("block/whitewood_picket_fence"));
+                    BLANK);
 
             serpentEye(AbyssalDecorBlocks.BRICK_PILLAR.get(), models().withExistingParent("brick_pillar", mcLoc("block/cube"))
                     .texture("down", modLoc("block/brick_pillar_top"))
@@ -690,6 +697,11 @@ public class Datagen {
                     .texture("south", modLoc("block/brick_pillar"))
                     .texture("west", modLoc("block/brick_pillar"))
                     .texture("particle", modLoc("block/brick_pillar")), false);
+
+            simplestBlockWithItem(AbyssalDecorBlocks.PITCHGLASS.get());
+
+            paneBlockWithItem(AbyssalDecorBlocks.PITCHGLASS_PANE.get(), modLoc("block/pitchglass"),
+                    modLoc("block/pitchglass"));
 
             simpleBlockWithItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS.get(), models().getExistingFile(modLoc("block/framed_pitchglass_top")));
 
@@ -819,6 +831,26 @@ public class Datagen {
             iconTexture("wisteria",modLoc("item/wisteria"));
             wisteria(AbyssalDecorBlocks.ELDER_WISTERIA.get());
             iconTexture("elder_wisteria",modLoc("item/elder_wisteria"));
+
+            horizontalBlock(AbyssalDecorBlocks.VERTICAL_TUBE_LAMP.get(),
+                    models().withExistingParent("vertical_tube_lamp",modLoc("custom/tubelampunlit90"))
+                            .texture("particle",modLoc("block/tubelamp"))
+                            .texture("0",modLoc("block/tubelamp"))
+            );
+        }
+
+        public void wallHangingMoss(WallHangingMossBlock block) {
+
+            ModelFile modelFile = models().getExistingFile(modLoc("block/hanging_moss_wall"));
+            ModelFile modelFileFlipped =models().getExistingFile(modLoc("block/hanging_moss_wall_flipped"));
+            getVariantBuilder(block)
+                    .forAllStates(state -> ConfiguredModel.builder()
+                            .modelFile(state.getValue(BlockStateProperties.VERTICAL_DIRECTION) == Direction.UP ? modelFileFlipped : modelFile)
+                            .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                            .build()
+                    );
+//            horizontalBlock(AbyssalDecorBlocks.WALL_HANGING_MOSS.get(), models().getExistingFile(modLoc("block/hanging_moss_wall")));
+
         }
 
         public void wisteria(WisteriaBlock block) {

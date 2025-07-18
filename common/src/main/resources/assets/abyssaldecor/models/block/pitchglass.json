@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/pitchglass",
-    "particle": "abyssaldecor:block/pitchglass"
-  },
-  "render_type": "translucent"
-}

@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-17T14:25:42.5405179	Loot Tables
+// 1.20.1	2025-07-17T22:33:40.7201668	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -356,7 +356,7 @@ ecdf471a617a7ff6992e81042f36d9e2d7036774 data/abyssaldecor/loot_tables/blocks/su
 cdc704f8ad4575bfba033663208ca7d45df964bc data/abyssaldecor/loot_tables/blocks/telescope.json
 d225c8aff26bf0e4aa3dc50eee4b507a389926d3 data/abyssaldecor/loot_tables/blocks/terrestrial_rod.json
 ea3a08f91d685753a41ee962f5942d4243623a50 data/abyssaldecor/loot_tables/blocks/trash_bag.json
-7eec3e42c363d878be492ca2ad0f59c7a5664ab1 data/abyssaldecor/loot_tables/blocks/tube_lamp.json
+91687d770c4319465044c5243b24aa0b2747cf77 data/abyssaldecor/loot_tables/blocks/tube_lamp.json
 008c8e23f762fa980d0cca5cbd192d99e0b6da75 data/abyssaldecor/loot_tables/blocks/velvet.json
 e8189853376aefd26361bf873b35cd49c38b250a data/abyssaldecor/loot_tables/blocks/velvet_barrier.json
 75142ddcf8cb62cd0b980f9233bcce2f6abc7c66 data/abyssaldecor/loot_tables/blocks/velvet_barrier_ribbon.json

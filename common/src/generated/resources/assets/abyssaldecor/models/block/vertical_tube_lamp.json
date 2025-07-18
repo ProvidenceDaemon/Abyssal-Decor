@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/tubelamp",
+  "parent": "abyssaldecor:custom/tubelampunlit90",
   "textures": {
     "0": "abyssaldecor:block/tubelamp",
     "particle": "abyssaldecor:block/tubelamp"

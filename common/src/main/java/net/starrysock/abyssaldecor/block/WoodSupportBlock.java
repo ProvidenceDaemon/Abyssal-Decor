@@ -3,6 +3,7 @@ package net.starrysock.abyssaldecor.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -98,6 +99,11 @@ public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterlo
         }
 
         return stateForPlacement;
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return true;
     }
 
     @Override

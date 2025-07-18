@@ -28,9 +28,11 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.WALL_IRON_LAMP.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.FLOWER_LAMP.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.QUARTZ_LAMP.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.QUARTZ_LAMP.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(),RenderType.translucent());
+
         renderTypes.accept(AbyssalDecorBlocks.JADE_LAMP.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.WALL_JADE_LAMP.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.VELVET_BARRIER.get(),RenderType.cutoutMipped());
@@ -142,5 +144,8 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.WISTERIA.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.ELDER_WISTERIA.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.LAVENTINE_GLASS.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(),RenderType.translucent());
     }
 }
