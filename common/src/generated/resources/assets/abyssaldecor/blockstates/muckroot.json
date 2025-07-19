@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "abyssaldecor:block/muckroot_stage0"
+    },
+    "age=1": {
+      "model": "abyssaldecor:block/muckroot_stage1"
+    },
+    "age=2": {
+      "model": "abyssaldecor:block/muckroot_stage2"
+    }
+  }
+}

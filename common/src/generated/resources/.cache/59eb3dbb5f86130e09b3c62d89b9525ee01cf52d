@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-17T22:33:40.7201668	Loot Tables
+// 1.20.1	2025-07-18T18:56:27.8494377	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -54,6 +54,7 @@ d3759047af0b7096b166b82822c2caddec18c833 data/abyssaldecor/loot_tables/blocks/bl
 ea14ab875e2a2666b6f93209d14f03a512b0edd3 data/abyssaldecor/loot_tables/blocks/blood_coral_trapdoor.json
 56d77b32fe2e7688bdf06eaeac5760db898d7736 data/abyssaldecor/loot_tables/blocks/blood_lantern.json
 acd34df5a90de0efbb6dec9637673ea59f3b58b3 data/abyssaldecor/loot_tables/blocks/blue_wallpaper.json
+a31217a8af711584ab0cf9ae92b16649e04993a8 data/abyssaldecor/loot_tables/blocks/bog_apple_leaves.json
 9a6aa694784847316336c1c60d1fc5cc1a0f37df data/abyssaldecor/loot_tables/blocks/bonerot.json
 95e7124c283855f279a1793db0060d690c1bd979 data/abyssaldecor/loot_tables/blocks/book_block.json
 a7776ac3b76e5dedddbb411bc790fa53c82eec45 data/abyssaldecor/loot_tables/blocks/brick_cap.json
@@ -336,6 +337,7 @@ cd8d7f03ed5147f0c1a790f4bb544d114374ff29 data/abyssaldecor/loot_tables/blocks/sm
 bbbc81a3220c55e7cc7ca9de84ce80d8c309a44b data/abyssaldecor/loot_tables/blocks/smooth_white_pearl_wall.json
 8bb625f78633f0bc52cc56e81f77e75b5194f257 data/abyssaldecor/loot_tables/blocks/snapleaf.json
 a91df876f455e531f4ca439b214640ffeffca640 data/abyssaldecor/loot_tables/blocks/solar_rod.json
+e046c18262249b8a6ab400a08e7610fa4e4dd57a data/abyssaldecor/loot_tables/blocks/spidercorn.json
 48391649c4972c6eaecb8f9cc69a351e3c160590 data/abyssaldecor/loot_tables/blocks/starfish.json
 b7181dccbc05487e8f587414598ea6399eb2013d data/abyssaldecor/loot_tables/blocks/starglass.json
 dd1ffd4117681a6dfb47e32d7b136d700a634f67 data/abyssaldecor/loot_tables/blocks/starglass_pane.json

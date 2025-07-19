@@ -1,6 +1,7 @@
 package net.starrysock.abyssaldecor;
 
 import com.google.common.base.Suppliers;
+import com.mojang.logging.LogUtils;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrarManager;
 import net.minecraft.core.registries.Registries;
@@ -16,6 +17,7 @@ import net.starrysock.abyssaldecor.mixin.BlockEntityTypeAccessor;
 import net.starrysock.abyssaldecor.platform.Services;
 import net.starrysock.abyssaldecor.registry.*;
 import net.starrysock.abyssaldecor.worldgen.ModFoliagePlacers;
+import org.slf4j.Logger;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,6 +25,8 @@ import java.util.function.Supplier;
 
 public class AbyssalDecor {
     public static final String MOD_ID = "abyssaldecor";
+
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     // We can use this if we don't want to use DeferredRegister
     public static final Supplier<RegistrarManager> REGISTRIES = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));

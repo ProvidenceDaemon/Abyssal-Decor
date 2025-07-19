@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -162,7 +163,6 @@ public class Datagen {
             generatedItem(AbyssalDecorItems.BOG_ROLL.get());
             generatedItem(AbyssalDecorItems.CANDY_BOG_APPLE.get());
             generatedItem(AbyssalDecorItems.CAVE_TACO.get());
-            generatedItem(AbyssalDecorItems.SPIDERCORN.get());
             generatedItem(AbyssalDecorItems.SPIDERCORN_TORTILLA.get());
             generatedItem(AbyssalDecorItems.POPPED_SPIDERCORN.get());
             generatedItem(AbyssalDecorItems.TOASTED_AMARANTH_SEEDS.get());
@@ -837,6 +837,43 @@ public class Datagen {
                             .texture("particle",modLoc("block/tubelamp"))
                             .texture("0",modLoc("block/tubelamp"))
             );
+
+            spiderCorn(AbyssalDecorBlocks.SPIDERCORN.get());
+            spiderCorn(AbyssalDecorBlocks.MUCKROOT.get());
+
+            bogApple(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get());
+            simpleBlock(AbyssalDecorBlocks.BLOOD_CORAL_BUD.get(),models().cross("blood_coral_bud",modLoc("block/blood_coral_bud")));
+        }
+
+        public void bogApple(CropBlock block){
+            String name = name(block);
+            IntegerProperty property = BogAppleLeavesBlock.AGE;
+            getVariantBuilder(block).forAllStates(state -> {
+                int age = state.getValue(property);
+                ResourceLocation baseModel = switch(age){
+                    case 0 ->modLoc("custom/bogappleleaves");
+                    case 1->modLoc("custom/buddingbogapple");
+                    case 2 ->modLoc("custom/ripebogapple");
+                    default -> throw new IllegalStateException("Unexpected value: " + age);
+                };
+
+                ModelFile modelFile = models().withExistingParent("bog_apple_leaves_stage"+age,baseModel)
+                        .texture("particle",modLoc("block/bogapple1"))
+                        .texture("0",modLoc("block/bogapple1"))
+                        .texture("1",modLoc("block/bogapple2"));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
+        }
+
+        public void spiderCorn(CropBlock block){
+            String name = name(block);
+            IntegerProperty property = SpiderCornCropBlock.AGE;
+            getVariantBuilder(block).forAllStates(state -> {
+                int age = state.getValue(property);
+                ModelFile modelFile = models().cross(name+"_stage"+age,modLoc("block/"+name+age));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
+            iconTexture(name,modLoc("item/"+name));
         }
 
         public void wallHangingMoss(WallHangingMossBlock block) {
@@ -874,7 +911,7 @@ public class Datagen {
 
                 return ConfiguredModel.builder().modelFile(modelFile)
                         .rotationY(((int) facing.toYRot() + 180) % 360).build();
-            }, net.starrysock.abyssaldecor.block.WisteriaBlock.WATERLOGGED);
+            }, WisteriaBlock.WATERLOGGED);
         }
 
         public void industrialLever(LeverBlock block) {

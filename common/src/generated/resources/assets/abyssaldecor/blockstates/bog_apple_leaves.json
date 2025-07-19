@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "age=0,waterlogged=false": {
+      "model": "abyssaldecor:block/bog_apple_leaves_stage0"
+    },
+    "age=0,waterlogged=true": {
+      "model": "abyssaldecor:block/bog_apple_leaves_stage0"
+    },
+    "age=1,waterlogged=false": {
+      "model": "abyssaldecor:block/bog_apple_leaves_stage1"
+    },
+    "age=1,waterlogged=true": {
+      "model": "abyssaldecor:block/bog_apple_leaves_stage1"
+    },
+    "age=2,waterlogged=false": {
+      "model": "abyssaldecor:block/bog_apple_leaves_stage2"
+    },
+    "age=2,waterlogged=true": {
+      "model": "abyssaldecor:block/bog_apple_leaves_stage2"
+    }
+  }
+}

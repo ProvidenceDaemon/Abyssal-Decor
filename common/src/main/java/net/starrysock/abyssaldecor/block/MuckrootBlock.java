@@ -2,17 +2,19 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
+import net.minecraft.world.phys.BlockHitResult;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 
 public class MuckrootBlock extends CropBlock {
@@ -27,6 +29,11 @@ public class MuckrootBlock extends CropBlock {
     @Override
     protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
         return blockState.is(allowed);
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        return BogAppleLeavesBlock.tryRightClickHarvest(this,state,level,pos,player,hand);
     }
 
     @Override

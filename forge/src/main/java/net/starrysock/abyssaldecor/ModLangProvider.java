@@ -57,7 +57,6 @@ public class ModLangProvider extends LanguageProvider {
         addDefaultItem(AbyssalDecorItems.SEABRASS_INGOT.get());
         addDefaultItem(AbyssalDecorItems.SEABRASS_NUGGET.get());
 
-        addDefaultItem(AbyssalDecorItems.SPIDERCORN.get());
         addDefaultItem(AbyssalDecorItems.SPIDERCORN_TORTILLA.get());
 
         addDefaultItem(AbyssalDecorItems.TOASTED_AMARANTH_SEEDS.get());
@@ -67,7 +66,6 @@ public class ModLangProvider extends LanguageProvider {
         add("item.abyssaldecor.black_pearl", "Black Pearl");
         add("item.abyssaldecor.black_pearl_meal", "Black Pearl Meal");
         add("item.abyssaldecor.blood_coral_bud", "Blood Coral Bud");
-        add("item.abyssaldecor.bog_apple_leaves", "Bog Apple Leaves");
         add("item.abyssaldecor.bog_apple", "Bog Apple");
         add("item.abyssaldecor.seabrass_chain", "Seabrass Chain");
         add("item.abyssaldecor.deepbronze_chain", "Deepbronze Chain");

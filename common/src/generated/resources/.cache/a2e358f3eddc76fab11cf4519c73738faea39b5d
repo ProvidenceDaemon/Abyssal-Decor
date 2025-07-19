@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-22T17:57:24.4521839	Item Models: abyssaldecor
+// 1.20.1	2025-07-18T22:13:53.6837469	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -108,7 +108,6 @@ f7ecc958dac4426450d3eb74c23dfe41e008692d assets/abyssaldecor/models/item/smooth_
 3911a1d14eac13b3ac50cb6fe6c01b5f7f642cb6 assets/abyssaldecor/models/item/smooth_white_pearl_block.json
 20c6c9bac9706c46397186209a45bb9ca3197cb8 assets/abyssaldecor/models/item/smooth_white_pearl_slab.json
 64331f99cbac17976fdc73fe83e84d8917675555 assets/abyssaldecor/models/item/smooth_white_pearl_stairs.json
-a1383a3b69d2104076d02cd0f02f4aee7a26967a assets/abyssaldecor/models/item/spidercorn.json
 9effd45758ca2f9dba51ff6d776579a2913a0964 assets/abyssaldecor/models/item/spidercorn_tortilla.json
 a51be4c0267c34a725f340a25a179b542d5cd15f assets/abyssaldecor/models/item/telescope.json
 7c00bd745f8492c3f0834e9fec8fae603cc637bc assets/abyssaldecor/models/item/toasted_amaranth_seeds.json

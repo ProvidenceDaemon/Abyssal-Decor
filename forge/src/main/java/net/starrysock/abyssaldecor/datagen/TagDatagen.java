@@ -3,8 +3,10 @@ package net.starrysock.abyssaldecor.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -25,6 +27,7 @@ public class TagDatagen {
         var lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
         BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(output, lookupProvider, helper);
+        generator.addProvider(true,new ModFluidTagProvider(output, lookupProvider, helper));
         generator.addProvider(true, blockTagsProvider);
         generator.addProvider(true, new ModPaintingTagsProvider(output, lookupProvider, helper));
     }
@@ -38,11 +41,15 @@ public class TagDatagen {
 
         @Override
         protected void addTags(HolderLookup.Provider arg) {
-            tag(ModTags.Blocks.MUCKROOT_GROWABLE).add(Blocks.FARMLAND);
+            //mod tags
+            tag(ModTags.Blocks.MUCKROOT_GROWABLE).addTag(BlockTags.DIRT).add(Blocks.FARMLAND);
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
+            tag(ModTags.Blocks.SPIDERCORN_GROWABLE).addTag(BlockTags.MINEABLE_WITH_PICKAXE);
 
             tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
 
+            //vanilla tags
+            tag(BlockTags.CROPS).add(AbyssalDecorBlocks.SPIDERCORN.get());
             tag(BlockTags.FLOWERS).add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
 
             tag(BlockTags.LEAVES).add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
@@ -187,6 +194,19 @@ public class TagDatagen {
             this.tag(BlockTags.WALL_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get());
 
+        }
+    }
+
+    public static class ModFluidTagProvider extends FluidTagsProvider {
+
+
+        public ModFluidTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
+            super(output, provider, AbyssalDecor.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.Provider arg) {
+            tag(ModTags.Fluids.SUPPORTS_BOG_APPLES).addTag(FluidTags.WATER);
         }
     }
 

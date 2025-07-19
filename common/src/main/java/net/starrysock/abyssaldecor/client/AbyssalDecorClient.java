@@ -147,5 +147,9 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.LAVENTINE_GLASS.get(),RenderType.translucent());
         renderTypes.accept(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(),RenderType.translucent());
+
+        renderTypes.accept(AbyssalDecorBlocks.SPIDERCORN.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.MUCKROOT.get(),RenderType.cutoutMipped());
     }
 }

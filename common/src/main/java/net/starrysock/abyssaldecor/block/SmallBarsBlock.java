@@ -8,11 +8,13 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -23,13 +25,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
-public class SmallBarsBlock extends AbstractHorizontalBlock {
+public class SmallBarsBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock {
 
     public static final DirectionProperty VERTICAL_FACING = BlockStateProperties.VERTICAL_DIRECTION;
 
     public SmallBarsBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(VERTICAL_FACING,Direction.DOWN));
+        registerDefaultState(defaultBlockState().setValue(VERTICAL_FACING,Direction.DOWN).setValue(BlockStateProperties.WATERLOGGED,false));
     }
 
     static VoxelShape UPPER = box(0,8,15,16,16,16);
@@ -126,8 +128,13 @@ public class SmallBarsBlock extends AbstractHorizontalBlock {
     }
 
     @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(BlockStateProperties.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(VERTICAL_FACING);
+        builder.add(VERTICAL_FACING,BlockStateProperties.WATERLOGGED);
     }
 }

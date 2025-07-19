@@ -1,6 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "abyssaldecor:block/muckroot3"
-  }
-}

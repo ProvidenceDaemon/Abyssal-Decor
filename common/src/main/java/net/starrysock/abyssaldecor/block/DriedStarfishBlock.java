@@ -8,7 +8,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -24,19 +27,18 @@ public class DriedStarfishBlock extends AbstractDirectionalBlock implements Simp
 
     public DriedStarfishBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(COUNT,1).setValue(FACING, Direction.UP));
+        registerDefaultState(defaultBlockState().setValue(COUNT,1).setValue(FACING, Direction.UP)
+                .setValue(BlockStateProperties.WATERLOGGED,false));
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return switch (state.getValue(FACING)) {
-            case DOWN -> box(1,0,1,15,2,15);
-            case UP -> box(1,0,1,15,2,15);
-            case NORTH -> box(1,0,1,15,2,15);
-            case SOUTH -> box(1,0,1,15,2,15);
-            case WEST -> box(1,0,1,15,2,15);
-            case EAST -> box(1,0,1,15,2,15);
-        };
+        return box(1,0,1,15,2,15);
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(BlockStateProperties.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     protected Random random = new Random(1);
@@ -55,6 +57,6 @@ public class DriedStarfishBlock extends AbstractDirectionalBlock implements Simp
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(COUNT);
+        builder.add(COUNT,BlockStateProperties.WATERLOGGED);
     }
 }

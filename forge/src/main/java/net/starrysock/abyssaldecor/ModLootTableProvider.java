@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CarrotBlock;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.starrysock.abyssaldecor.block.BogAppleLeavesBlock;
 import net.starrysock.abyssaldecor.block.HorizontalDoubleBlock;
 import net.starrysock.abyssaldecor.block.MuckrootBlock;
 import net.starrysock.abyssaldecor.block.SmallBarsCornerBlock;
@@ -62,7 +64,8 @@ public class ModLootTableProvider extends LootTableProvider {
                     AbyssalDecorBlocks.ROPE_BARRIER.get(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),
                     AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
                     AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get(),AbyssalDecorBlocks.HANGING_WEB.get(),
-                    AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
+                    AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(),
+                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -108,6 +111,21 @@ public class ModLootTableProvider extends LootTableProvider {
 
             this.add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(), block -> this.createLeavesDrops(block,AbyssalDecorBlocks.CINNAMON_BUSH.get(), NORMAL_LEAVES_SAPLING_CHANCES));
             this.add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(), block -> this.createLeavesDrops(block,AbyssalDecorBlocks.CINNAMON_BUSH.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+            LootItemCondition.Builder builder1 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BogAppleLeavesBlock.AGE, 2));
+
+            this.add(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(), this.createCropDrops(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),
+                    AbyssalDecorItems.BOG_APPLE.get(), AbyssalDecorItems.BOG_APPLE_LEAVES.get(), builder1));
+
+            LootItemCondition.Builder builder2 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.SPIDERCORN.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CarrotBlock.AGE, 7));
+
+
+            this.add(AbyssalDecorBlocks.SPIDERCORN.get(), this.applyExplosionDecay(AbyssalDecorBlocks.SPIDERCORN.get(),
+                    LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())))
+                            .withPool(LootPool.lootPool().when(builder2).add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())
+                                    .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
 
         }
 
