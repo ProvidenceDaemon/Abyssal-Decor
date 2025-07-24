@@ -1049,7 +1049,7 @@ public class Datagen {
                         .modelFile(file)
                         .rotationY(cornerDirection.yRotation())
                         .build();
-            });
+            },BlockStateProperties.WATERLOGGED);
         }
 
         public void goldSconce(IronSconceBlock block,ResourceLocation texture) {
@@ -1111,7 +1111,7 @@ public class Datagen {
             ModelFile.ExistingModelFile upsideDownFile = models().getExistingFile(modLoc("custom/upsidedownsmallbars"));
             String name = name(block);
 
-            getVariantBuilder(block).forAllStates(state -> {
+            getVariantBuilder(block).forAllStatesExcept(state -> {
                 Direction vertical = state.getValue(BlockStateProperties.VERTICAL_DIRECTION);
                 Direction horizontal = state.getValue(HorizontalDirectionalBlock.FACING);
                 ModelFile parentFile = vertical == Direction.UP ? upsideDownFile : regularFile;
@@ -1124,7 +1124,7 @@ public class Datagen {
                         .modelFile(file)
                         .rotationY(((int) horizontal.toYRot() + 180) % 360)
                         .build();
-            });
+            },BlockStateProperties.WATERLOGGED);
             iconTexture(name,texture);
         }
 
@@ -1365,7 +1365,7 @@ public class Datagen {
                         Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
                         Vector2i vector2i = getRotation(orientation);
                         return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
-                    });
+                    },BlockStateProperties.WATERLOGGED);
 
             iconTexture("starfish", modLoc("block/1_orange_starfish"));
         }
@@ -1382,7 +1382,7 @@ public class Datagen {
                         Vector2i vector2i = getRotation(orientation);
 
                         return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
-                    });
+                    },BlockStateProperties.WATERLOGGED);
         }
 
         void barrierPoleBlock(Block block, ResourceLocation modelBottom, ResourceLocation modelTop, ResourceLocation texture,ResourceLocation icon) {

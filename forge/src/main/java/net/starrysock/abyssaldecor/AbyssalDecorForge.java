@@ -8,7 +8,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.client.event.ScreenEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,27 +38,31 @@ public class AbyssalDecorForge {
 
     void setup(FMLCommonSetupEvent event) {
         AbyssalDecor.setup();
-        if (Services.PLATFORM.isDevelopmentEnvironment()) {
+    }
+
+    public static class Client {
+        static void init(IEventBus bus) {
+            bus.addListener(Client::setup);
+            if (Services.PLATFORM.isDevelopmentEnvironment()) {
+                MinecraftForge.EVENT_BUS.addListener(Client::loadComplete);
+            }
+        }
+
+        static void setup(FMLClientSetupEvent event) {
+            AbyssalDecorClient.setup(ItemBlockRenderTypes::setRenderLayer);
+        }
+
+        static void loadComplete(ScreenEvent.Init event) {
             for (RegistrySupplier<Block> block : AbyssalDecor.BLOCKS) {
                 Block block1 = block.get();
                 if (block1 instanceof SimpleWaterloggedBlock) {
-                    BlockState example = block1.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED,true);
-                    if (example.getFluidState().is(Fluids.EMPTY)) {
+                    BlockState example = block1.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true);
+                    FluidState fluidState = example.getFluidState();
+                    if (fluidState.is(Fluids.EMPTY)) {
                         AbyssalDecor.LOGGER.error("Block: {} has improper waterlogging!", BuiltInRegistries.BLOCK.getKey(block1));
                     }
                 }
             }
         }
     }
-
-    public static class Client {
-        static void init(IEventBus bus) {
-            bus.addListener(Client::setup);
-        }
-
-        static void setup(FMLClientSetupEvent event) {
-            AbyssalDecorClient.setup(ItemBlockRenderTypes::setRenderLayer);
-        }
-    }
-
 }

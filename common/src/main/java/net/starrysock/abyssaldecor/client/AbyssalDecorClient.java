@@ -151,5 +151,6 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SPIDERCORN.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.MUCKROOT.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_BUD.get(),RenderType.cutoutMipped());
     }
 }

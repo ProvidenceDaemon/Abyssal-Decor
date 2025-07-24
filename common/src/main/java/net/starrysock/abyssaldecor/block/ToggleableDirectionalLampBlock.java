@@ -8,14 +8,13 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 
 import static net.minecraft.world.level.block.RedstoneLampBlock.LIT;
 
-public class ToggleableDirectionalLampBlock extends DirectionalLampBlock implements SimpleWaterloggedBlock {
+public class ToggleableDirectionalLampBlock extends DirectionalLampBlock {
 
     public ToggleableDirectionalLampBlock(Properties properties) {
         super(properties);

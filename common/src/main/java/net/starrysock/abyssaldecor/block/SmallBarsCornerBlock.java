@@ -6,9 +6,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -19,12 +22,14 @@ import net.starrysock.abyssaldecor.block.properties.CornerDirectionProperty;
 
 import java.util.Map;
 
-public class SmallBarsCornerBlock extends Block {
+public class SmallBarsCornerBlock extends Block implements SimpleWaterloggedBlock {
     public static final CornerDirectionProperty CORNER = CornerDirectionProperty.INSTANCE;
 
     public SmallBarsCornerBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(CORNER, CornerDirection.NORTHEAST).setValue(BlockStateProperties.VERTICAL_DIRECTION, Direction.DOWN));
+        registerDefaultState(defaultBlockState().setValue(CORNER, CornerDirection.NORTHEAST)
+                .setValue(BlockStateProperties.VERTICAL_DIRECTION, Direction.DOWN)
+                .setValue(BlockStateProperties.WATERLOGGED,false));
     }
 
     static VoxelShape UPPER = Shapes.join(box(0,8,0,16,16,16),box(1,8,0,16,16,15), BooleanOp.ONLY_FIRST);
@@ -59,6 +64,11 @@ public class SmallBarsCornerBlock extends Block {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(CORNER,BlockStateProperties.VERTICAL_DIRECTION);
+        builder.add(CORNER,BlockStateProperties.VERTICAL_DIRECTION,BlockStateProperties.WATERLOGGED);
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(BlockStateProperties.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 }

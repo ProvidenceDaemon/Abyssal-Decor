@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-18T22:31:54.8516422	Block States: abyssaldecor
+// 1.20.1	2025-07-24T14:33:11.6593659	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
 a7de563932a2abf46a26f789ddabfeb94c44ca81 assets/abyssaldecor/blockstates/azure_pearly_glass.json
@@ -24,7 +24,7 @@ e888159c5f0d157b013e470f828f395eb0afc481 assets/abyssaldecor/blockstates/blackwo
 eaa2f1819e30129d1d460ed3f08ce94f33d8c8b1 assets/abyssaldecor/blockstates/blackwood_wall_hanging_sign.json
 ca8d52b2c3177b7ce3b482ad1ae440ee74a94f06 assets/abyssaldecor/blockstates/blackwood_wall_sign.json
 2efcc1cc5035b7d22473148483e8831b060a4bcf assets/abyssaldecor/blockstates/blackwood_wood.json
-2c7a045db69e18f096aff54313114b64ef9befd9 assets/abyssaldecor/blockstates/black_pearl.json
+a6a0cbd7188978431ddff713142ad0937e607fe8 assets/abyssaldecor/blockstates/black_pearl.json
 527a73e16a1bd8af2c083ea0b7806c1bcbbde0b0 assets/abyssaldecor/blockstates/black_pearl_bars.json
 e748a351b98fc8a9fbff35348724385e827c2386 assets/abyssaldecor/blockstates/black_pearl_block.json
 ef0b64843af6bd1bfd2140586612ea4e8513454a assets/abyssaldecor/blockstates/black_pearl_bricks.json
