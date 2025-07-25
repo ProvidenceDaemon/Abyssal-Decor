@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/cinnamonpostmid",
-  "textures": {
-    "all": "abyssaldecor:block/cinnamonpost",
-    "particle": "abyssaldecor:block/cinnamonpost",
-    "1": "abyssaldecor:block/cinnamonpost"
-  },
-  "render_type": "solid"
-}

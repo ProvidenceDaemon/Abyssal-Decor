@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/cinnamonposttop",
+  "textures": {
+    "0": "abyssaldecor:block/cinnamon_post",
+    "particle": "abyssaldecor:block/cinnamon_post"
+  }
+}

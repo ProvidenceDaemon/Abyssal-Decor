@@ -317,8 +317,12 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> MIXED_PEARL_TILES = AbyssalDecor.BLOCKS.register("mixed_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
     public static final RegistrySupplier<Block> STARRY_PEARL_TILES = AbyssalDecor.BLOCKS.register("starry_pearl_tiles",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
 
-    public static final RegistrySupplier<ClamBlock> CLAM = AbyssalDecor.BLOCKS.register("clam",() -> new ClamBlock(BlockBehaviour.Properties.of(),false));
-    public static final RegistrySupplier<ClamBlock> CLAM_WITH_PEARL = AbyssalDecor.BLOCKS.register("clam_with_pearl",() -> new ClamBlock(BlockBehaviour.Properties.of(),true));
+    public static final RegistrySupplier<ClamBlock> CLAM = AbyssalDecor.BLOCKS.register("clam",() ->
+            new ClamBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.METAL)
+                    .strength(1.0F, 10.0F).noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false),false));
+    public static final RegistrySupplier<ClamBlock> CLAM_WITH_PEARL = AbyssalDecor.BLOCKS.register("clam_with_pearl",() ->
+            new ClamBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.METAL)
+                    .strength(1.0F, 10.0F).noOcclusion().isRedstoneConductor((bs, br, bp) -> false),true));
 
     ///////
 
@@ -439,7 +443,8 @@ public class AbyssalDecorBlocks {
             new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> DULL_IRON_POST = AbyssalDecor.BLOCKS.register("dull_iron_post",() ->
-            new DullIronPostBlock(BlockBehaviour.Properties.of()));
+            new PostBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0F, 10.0F)
+                    .requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
 
     public static final RegistrySupplier<IronSconceBlock> GOLD_SCONCE = AbyssalDecor.BLOCKS.register("gold_sconce",
@@ -723,7 +728,7 @@ public class AbyssalDecorBlocks {
 
     public static RotatedPillarBlock wallpaper(DyeColor dyeColor) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(dyeColor).instrument(NoteBlockInstrument.GUITAR)
-                .strength(0.8F).sound(SoundType.WOOL).ignitedByLava());
+                .strength(0.8F).sound(SoundType.WOOD).ignitedByLava());
     }
 
     public static final RegistrySupplier<Block> LAVENTINE = AbyssalDecor.BLOCKS.register("laventine",() -> new GlassBlock(BlockBehaviour.Properties.of()));
@@ -982,7 +987,8 @@ public class AbyssalDecorBlocks {
             wallHangingSign(CINNAMON_HANGING_SIGN.get(),ModWoodTypes.CINNAMON));
 
     public static final RegistrySupplier<PostBlock> CINNAMON_POST = AbyssalDecor.BLOCKS.register("cinnamon_post",() ->
-            new PostBlock(BlockBehaviour.Properties.of()));
+            new PostBlock(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS)
+                    .sound(SoundType.WOOD).strength(1.0F, 10.0F).noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<Block> CINNAMON_PANELING = AbyssalDecor.BLOCKS.register("cinnamon_paneling",() ->
             new Block(BlockBehaviour.Properties.of()));

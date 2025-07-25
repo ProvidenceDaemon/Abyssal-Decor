@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-24T16:37:07.0660187	Loot Tables
+// 1.20.1	2025-07-24T21:03:16.9053878	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -155,7 +155,7 @@ b8c589a962a3e424454672904b1b477a4a24187b data/abyssaldecor/loot_tables/blocks/fr
 54f1df0ed79048e935e8dd75da66c563e466105e data/abyssaldecor/loot_tables/blocks/frosted_glass.json
 0a8701a7eb0180e8adeabd958598e3b0ad166379 data/abyssaldecor/loot_tables/blocks/frosted_glass_pane.json
 4510dcdb0eff3077c10f5dc88b452f910ec442cd data/abyssaldecor/loot_tables/blocks/frosted_lamp.json
-16c5b2f8c19f9aa88bef5720b3de2ee078ef71f3 data/abyssaldecor/loot_tables/blocks/gargoyle.json
+c1b06f82b5815c7a79dfb89b8a7ed9dafd8173cc data/abyssaldecor/loot_tables/blocks/gargoyle.json
 17e833f590ae3d5368087b352d7937dd97a6114d data/abyssaldecor/loot_tables/blocks/gilded_black_pearl.json
 0b2ceb640db035be7b00dd5cb0095e423fcc7a84 data/abyssaldecor/loot_tables/blocks/gilded_black_pearl_door.json
 e636cf0e380781af0840890d3e136c50b52ca07d data/abyssaldecor/loot_tables/blocks/gilded_black_pearl_trapdoor.json

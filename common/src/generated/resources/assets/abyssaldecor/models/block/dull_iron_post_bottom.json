@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/dullironpostbottom",
+  "textures": {
+    "0": "abyssaldecor:block/dull_iron_post",
+    "particle": "abyssaldecor:block/dull_iron_post"
+  }
+}

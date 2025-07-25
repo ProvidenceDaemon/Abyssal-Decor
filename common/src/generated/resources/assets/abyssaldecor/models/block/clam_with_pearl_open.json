@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/clamemptyopen",
+  "parent": "abyssaldecor:custom/clampearlopen",
   "textures": {
     "0": "abyssaldecor:block/clam1",
     "1": "abyssaldecor:block/clam2",

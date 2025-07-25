@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/dullironpostbottom",
-  "textures": {
-    "all": "abyssaldecor:block/dullironpost1",
-    "particle": "abyssaldecor:block/dullironpost1",
-    "0": "abyssaldecor:block/dullironpost1"
-  },
-  "render_type": "solid"
-}

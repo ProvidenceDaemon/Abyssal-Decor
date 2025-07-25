@@ -16,7 +16,7 @@
               "block": "abyssaldecor:gargoyle",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "part": "back"
+                "horizontal_part": "back"
               }
             }
           ],

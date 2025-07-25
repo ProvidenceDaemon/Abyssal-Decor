@@ -66,6 +66,7 @@ public class MoldyStalkBlock extends Block {
         }
     }
 
+
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.below()).is(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON);

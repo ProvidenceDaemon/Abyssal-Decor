@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "tri_part=bottom": {
+      "model": "abyssaldecor:block/cinnamon_post_bottom"
+    },
+    "tri_part=middle": {
+      "model": "abyssaldecor:block/cinnamon_post_middle"
+    },
+    "tri_part=top": {
+      "model": "abyssaldecor:block/cinnamon_post_top"
+    }
+  }
+}

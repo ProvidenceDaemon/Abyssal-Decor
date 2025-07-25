@@ -845,29 +845,62 @@ public class Datagen {
 
             bogApple(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get());
             simpleBlock(AbyssalDecorBlocks.BLOOD_CORAL_BUD.get(),models().cross("blood_coral_bud",modLoc("block/blood_coral_bud")));
-            post(AbyssalDecorBlocks.CINNAMON_POST.get());
+            post(AbyssalDecorBlocks.CINNAMON_POST.get(),  modLoc("custom/cinnamonpostbottom"),modLoc("custom/cinnamonpostmid")
+                    ,modLoc("custom/cinnamonposttop"));
+            post(AbyssalDecorBlocks.DULL_IRON_POST.get(),modLoc("custom/dullironpostbottom"),modLoc("custom/dullironpostmid")
+                    ,modLoc("custom/dullironposttop"));
         }
 
-        protected void post(Block block) {
+        protected void post(Block block, ResourceLocation bottom,ResourceLocation middle,ResourceLocation top) {
+            //{
+            //  "parent": "abyssaldecor:custom/cinnamonpostbottom",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/cinnamonpost",
+            //    "particle": "abyssaldecor:block/cinnamonpost",
+            //    "1": "abyssaldecor:block/cinnamonpost"
+            //  },
+            //  "render_type": "solid"
+            //}
+
+            //{
+            //  "parent": "abyssaldecor:custom/cinnamonpostmid",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/cinnamonpost",
+            //    "particle": "abyssaldecor:block/cinnamonpost",
+            //    "1": "abyssaldecor:block/cinnamonpost"
+            //  },
+            //  "render_type": "solid"
+            //}
+
+            //{
+            //  "parent": "abyssaldecor:custom/cinnamonposttop",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/cinnamonpost",
+            //    "particle": "abyssaldecor:block/cinnamonpost",
+            //    "1": "abyssaldecor:block/cinnamonpost"
+            //  },
+            //  "render_type": "solid"
+            //}
             String name = name(block);
 
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
-                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
 
                 TriPart part = blockState.getValue(ModBlockStateProperties.TRI_PART);
 
-                ResourceLocation texture = modLoc("block/blood_lantern_"+part.getSerializedName());
+                ResourceLocation texture = modLoc("block/"+name);
 
-                texture = lit ? texture.withSuffix("_lit") : texture;
+                ResourceLocation parent = switch (part) {
+                    case BOTTOM -> bottom;
+                    case MIDDLE -> middle;
+                    case TOP -> top;
+                };
 
-                ResourceLocation textureEnd = modLoc("block/blood_lantern");
-
-                textureEnd = lit ? textureEnd.withSuffix("_lit") : textureEnd;
-
-                ModelFile modelFile = models().cubeColumn(name +"_" +part.getSerializedName()+ (lit ? "_lit" : ""), texture,textureEnd);
+                ModelFile modelFile = models().withExistingParent(name +"_" +part.getSerializedName(),parent)
+                .texture("0",texture)
+                .texture("particle",texture);
                 return ConfiguredModel.builder().modelFile(modelFile).build();
             }, BlockStateProperties.WATERLOGGED);
-            simpleBlockItem(block, models().getExistingFile(modLoc("block/blood_lantern")));
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/"+name+"_bottom")));
         }
 
         public void bogApple(CropBlock block){
@@ -1305,16 +1338,19 @@ public class Datagen {
         //}
         public void clam(ClamBlock clamBlock) {
             String name = name(clamBlock);
+            boolean pearl = clamBlock.hasPearl;
+            ResourceLocation base = modLoc("custom/clam").withSuffix(pearl ? "pearl": "empty");
             getVariantBuilder(clamBlock).forAllStatesExcept(state -> {
                 boolean open = state.getValue(ClamBlock.OPEN);
-                ResourceLocation location = open ? modLoc("custom/clamemptyopen") : modLoc("custom/clamemptyclosed");
+                ResourceLocation location = base.withSuffix(open ? "open": "closed");
+
                 ModelFile file = models().withExistingParent(name + (open ? "_open" : "_closed"), location)
                         .texture("all", modLoc("block/clam1"))
                         .texture("particle", modLoc("block/clam1"))
                         .texture("0", modLoc("block/clam1"))
                         .texture("1", modLoc("block/clam2"));
                 return ConfiguredModel.builder().modelFile(file).rotationY(getRotation(state.getValue(ClamBlock.FACING)).y).build();
-            });
+            },BlockStateProperties.WATERLOGGED);
 
             simpleBlockItem(clamBlock, new ModelFile.UncheckedModelFile(modLoc(name + "_closed")));
         }
