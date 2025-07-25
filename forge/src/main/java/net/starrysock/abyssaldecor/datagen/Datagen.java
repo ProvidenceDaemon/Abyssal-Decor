@@ -18,6 +18,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.CornerDirection;
+import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
@@ -605,6 +606,7 @@ public class Datagen {
             blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(), modLoc("block/seabrass_lamp"));
             blockLamp(AbyssalDecorBlocks.DEEPBRONZE_LANTERN.get(), modLoc("block/deepbronze_lantern"));
             blockLamp(AbyssalDecorBlocks.BLOOD_LANTERN.get(), modLoc("block/blood_lantern"));
+            bloodLamp(AbyssalDecorBlocks.BLOOD_LANTERN_MULTIBLOCK.get());
             simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(), modLoc("block/riveted_seabrass"));
 
             paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(), modLoc("block/deepbronze_bars"), modLoc("block/bronzebarstop"));
@@ -843,6 +845,29 @@ public class Datagen {
 
             bogApple(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get());
             simpleBlock(AbyssalDecorBlocks.BLOOD_CORAL_BUD.get(),models().cross("blood_coral_bud",modLoc("block/blood_coral_bud")));
+            post(AbyssalDecorBlocks.CINNAMON_POST.get());
+        }
+
+        protected void post(Block block) {
+            String name = name(block);
+
+            getVariantBuilder(block).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+
+                TriPart part = blockState.getValue(ModBlockStateProperties.TRI_PART);
+
+                ResourceLocation texture = modLoc("block/blood_lantern_"+part.getSerializedName());
+
+                texture = lit ? texture.withSuffix("_lit") : texture;
+
+                ResourceLocation textureEnd = modLoc("block/blood_lantern");
+
+                textureEnd = lit ? textureEnd.withSuffix("_lit") : textureEnd;
+
+                ModelFile modelFile = models().cubeColumn(name +"_" +part.getSerializedName()+ (lit ? "_lit" : ""), texture,textureEnd);
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            }, BlockStateProperties.WATERLOGGED);
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/blood_lantern")));
         }
 
         public void bogApple(CropBlock block){
@@ -894,7 +919,7 @@ public class Datagen {
             String name = name(block);
             getVariantBuilder(block).forAllStatesExcept(state -> {
                 Direction facing = state.getValue(WisteriaBlock.FACING);
-                TriPart triPart = state.getValue(WisteriaBlock.TRI_PART);
+                TriPart triPart = state.getValue(ModBlockStateProperties.TRI_PART);
 
                 String model = switch (triPart) {
                     case BOTTOM -> "wisteriapurplewallbottom";
@@ -980,7 +1005,7 @@ public class Datagen {
 
         public void moldyStalk(Block block) {
             getVariantBuilder(block).forAllStatesExcept(state -> {
-                TriPart part = state.getValue(MoldyStalkBlock.TRI_PART);
+                TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
                 ModelFile file = switch (part){
                     case TOP -> models().cross("moldy_stalk_top",modLoc("block/moldystalktop"));
                     case MIDDLE -> models().cross("moldy_stalk_middle",modLoc("block/moldystalkmid"));
@@ -1440,6 +1465,27 @@ public class Datagen {
             simpleBlockItem(block,buttonModel);
         }
 
+        protected void bloodLamp(Block block) {
+            String name = name(block);
+
+            getVariantBuilder(block).forAllStatesExcept(blockState -> {
+                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+
+                TriPart part = blockState.getValue(ModBlockStateProperties.TRI_PART);
+
+                ResourceLocation texture = modLoc("block/blood_lantern_"+part.getSerializedName());
+
+                texture = lit ? texture.withSuffix("_lit") : texture;
+
+                ResourceLocation textureEnd = modLoc("block/blood_lantern");
+
+                textureEnd = lit ? textureEnd.withSuffix("_lit") : textureEnd;
+
+                ModelFile modelFile = models().cubeColumn(name +"_" +part.getSerializedName()+ (lit ? "_lit" : ""), texture,textureEnd);
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            }, BlockStateProperties.WATERLOGGED);
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/blood_lantern")));
+        }
 
         protected void blockLamp(Block block, ResourceLocation texture0) {
             String name = name(block);

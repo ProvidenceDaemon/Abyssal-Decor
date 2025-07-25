@@ -18,25 +18,24 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
 import net.starrysock.abyssaldecor.platform.Services;
 import org.jetbrains.annotations.Nullable;
 
 public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock, BonemealableBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final EnumProperty<TriPart> TRI_PART = EnumProperty.create("tri_part", TriPart.class);
     private final double growPerTickProbability = .25;
 
     public WisteriaBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false).setValue(TRI_PART,TriPart.TOP));
+        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false).setValue(ModBlockStateProperties.TRI_PART,TriPart.TOP));
     }
 
     @Override
@@ -60,10 +59,10 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     protected void tryGrow(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockPos down = pos.relative(Direction.DOWN);
         if (Services.PLATFORM.onCropsGrowPre(level, down, level.getBlockState(down),random.nextDouble() < this.growPerTickProbability)) {
-            if (state.getValue(TRI_PART) != TriPart.TOP) {
-                level.setBlockAndUpdate(pos, defaultBlockState().setValue(TRI_PART, TriPart.MIDDLE).setValue(FACING, state.getValue(FACING)));
+            if (state.getValue(ModBlockStateProperties.TRI_PART) != TriPart.TOP) {
+                level.setBlockAndUpdate(pos, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.MIDDLE).setValue(FACING, state.getValue(FACING)));
             }
-            level.setBlockAndUpdate(down, defaultBlockState().setValue(TRI_PART,TriPart.BOTTOM).setValue(FACING,state.getValue(FACING)));
+            level.setBlockAndUpdate(down, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM).setValue(FACING,state.getValue(FACING)));
             Services.PLATFORM.onCropsGrowPost(level, down, level.getBlockState(down));
         }
     }
@@ -93,7 +92,7 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(WATERLOGGED,TRI_PART);
+        builder.add(WATERLOGGED, ModBlockStateProperties.TRI_PART);
     }
 
     @Override
@@ -107,7 +106,7 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
             world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
 
-        TriPart currentPart = state.getValue(TRI_PART);
+        TriPart currentPart = state.getValue(ModBlockStateProperties.TRI_PART);
 
         switch (facing) {
             case UP -> {
@@ -116,11 +115,11 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
             case DOWN -> {//a block below this one updated
                 if (facingState.is(this)) {//a new wisteria was placed
                     if (currentPart == TriPart.BOTTOM) {
-                        return state.setValue(TRI_PART,TriPart.MIDDLE);
+                        return state.setValue(ModBlockStateProperties.TRI_PART,TriPart.MIDDLE);
                     }
                 } else {//a wisteria was probably broken
                     if (currentPart == TriPart.MIDDLE) {
-                        return state.setValue(TRI_PART,TriPart.BOTTOM);
+                        return state.setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM);
                     }
                 }
             }
@@ -151,7 +150,7 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
                     if (wisteriaAbove) {
                         part = TriPart.BOTTOM;
                     }
-                    return blockstate.setValue(TRI_PART,part);
+                    return blockstate.setValue(ModBlockStateProperties.TRI_PART,part);
                 }
             }
         }
@@ -190,7 +189,7 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
         if (!level.getBlockState(pos.below()).canBeReplaced()) {
             return false;
         }
-        TriPart triPart = state.getValue(TRI_PART);
+        TriPart triPart = state.getValue(ModBlockStateProperties.TRI_PART);
         if (triPart == TriPart.MIDDLE) return false;
 
         else if (triPart == TriPart.BOTTOM)return true;

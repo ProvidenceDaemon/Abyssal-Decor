@@ -11,10 +11,10 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.ModTags;
@@ -24,16 +24,15 @@ import javax.annotation.Nullable;
 public class MoldyStalkBlock extends Block {
 
 
-    public static final EnumProperty<TriPart> TRI_PART = EnumProperty.create("tri_part", TriPart.class);
     public MoldyStalkBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(TRI_PART,TriPart.BOTTOM));
+        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(TRI_PART);
+        builder.add(ModBlockStateProperties.TRI_PART);
     }
 
     public static final VoxelShape SHAPE =  box(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
@@ -53,10 +52,10 @@ public class MoldyStalkBlock extends Block {
             BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().below());
             if (blockstate.is(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON)) {
                 if (blockstate.is(AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get())) {
-                    return this.defaultBlockState().setValue(TRI_PART,TriPart.TOP);
+                    return this.defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.TOP);
                 } else if (blockstate.is(this)) {
                   //  int i = blockstate.getValue(AGE) > 0 ? 1 : 0;
-                    return this.defaultBlockState().setValue(TRI_PART,TriPart.TOP);
+                    return this.defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.TOP);
                 } else {
                     BlockState blockstate1 = context.getLevel().getBlockState(context.getClickedPos().above());
                     return blockstate1.is(this) ? this.defaultBlockState() : AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get().defaultBlockState();
@@ -86,9 +85,9 @@ public class MoldyStalkBlock extends Block {
         if (direction == Direction.UP) {
             if (neighborState.is(this)) {
                 TriPart part = (level.getBlockState(pos.below()).is(this) ? TriPart.MIDDLE : TriPart.BOTTOM);
-                level.setBlock(pos, state.setValue(TRI_PART, part), 2);
+                level.setBlock(pos, state.setValue(ModBlockStateProperties.TRI_PART, part), 2);
             } else {
-                level.setBlock(pos, state.setValue(TRI_PART, TriPart.TOP), 2);
+                level.setBlock(pos, state.setValue(ModBlockStateProperties.TRI_PART, TriPart.TOP), 2);
             }
         }
 

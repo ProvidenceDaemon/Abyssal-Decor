@@ -16,19 +16,17 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
+import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 
 import javax.annotation.Nullable;
 
 public class HorizontalDoubleBlock extends HorizontalDirectionalBlock {
 
-    public static final EnumProperty<HorizontalPart> PART = EnumProperty.create("part", HorizontalPart.class);
-
     public HorizontalDoubleBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART,HorizontalPart.BACK));
+        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(ModBlockStateProperties.PART,HorizontalPart.BACK));
     }
 
     /**
@@ -38,9 +36,9 @@ public class HorizontalDoubleBlock extends HorizontalDirectionalBlock {
      */
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        Direction neighborDirection=getNeighbourDirection(state.getValue(PART), state.getValue(FACING));
+        Direction neighborDirection=getNeighbourDirection(state.getValue(ModBlockStateProperties.PART), state.getValue(FACING));
         if (direction == neighborDirection) {
-            return neighborState.is(this) && neighborState.getValue(PART) != state.getValue(PART) ? state : Blocks.AIR.defaultBlockState();
+            return neighborState.is(this) && neighborState.getValue(ModBlockStateProperties.PART) != state.getValue(ModBlockStateProperties.PART) ? state : Blocks.AIR.defaultBlockState();
         } else {
             return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
         }
@@ -54,7 +52,7 @@ public class HorizontalDoubleBlock extends HorizontalDirectionalBlock {
         Direction direction = state.getValue(FACING);
         BlockPos blockpos = pos.relative(direction.getOpposite());
         BlockState blockstate = level.getBlockState(blockpos);
-        boolean b = state.getValue(PART) == HorizontalPart.BACK ? blockstate.isFaceSturdy(level, blockpos, direction) : blockstate.is(this);
+        boolean b = state.getValue(ModBlockStateProperties.PART) == HorizontalPart.BACK ? blockstate.isFaceSturdy(level, blockpos, direction) : blockstate.is(this);
         return b;
     }
 
@@ -62,7 +60,7 @@ public class HorizontalDoubleBlock extends HorizontalDirectionalBlock {
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
         Direction stateFacing =state.getValue(FACING);
         BlockPos blockpos = pos.relative(stateFacing);
-        level.setBlock(blockpos, DoublePlantBlock.copyWaterloggedFrom(level, blockpos, this.defaultBlockState().setValue(FACING,stateFacing).setValue(PART, HorizontalPart.FRONT)), 3);
+        level.setBlock(blockpos, DoublePlantBlock.copyWaterloggedFrom(level, blockpos, this.defaultBlockState().setValue(FACING,stateFacing).setValue(ModBlockStateProperties.PART, HorizontalPart.FRONT)), 3);
     }
 
     /**
@@ -91,12 +89,12 @@ public class HorizontalDoubleBlock extends HorizontalDirectionalBlock {
     }
 
     protected static void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
-        HorizontalPart part = state.getValue(PART);
+        HorizontalPart part = state.getValue(ModBlockStateProperties.PART);
         Direction facing = state.getValue(FACING);
         if (part == HorizontalPart.FRONT) {
             BlockPos blockpos = pos.relative(facing.getOpposite());
             BlockState blockstate = level.getBlockState(blockpos);
-            if (blockstate.is(state.getBlock()) && blockstate.getValue(PART) == HorizontalPart.BACK) {
+            if (blockstate.is(state.getBlock()) && blockstate.getValue(ModBlockStateProperties.PART) == HorizontalPart.BACK) {
                 BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
                 level.setBlock(blockpos, blockstate1, 35);
                 level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
@@ -120,6 +118,6 @@ public class HorizontalDoubleBlock extends HorizontalDirectionalBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(FACING, PART);
+        builder.add(FACING, ModBlockStateProperties.PART);
     }
 }

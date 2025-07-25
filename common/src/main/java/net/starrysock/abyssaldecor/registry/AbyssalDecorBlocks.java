@@ -67,7 +67,11 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> JADE_LANTERN = AbyssalDecor.BLOCKS.register("jade_lantern", () -> new LampBlock(lamp()));
     public static RegistrySupplier<Block> ABYSSAL_LANTERN = AbyssalDecor.BLOCKS.register("abyssal_lantern", () -> new LampBlock(lamp()));
     public static RegistrySupplier<IronLanternBlock> IRON_LANTERN = AbyssalDecor.BLOCKS.register("iron_lantern", () -> new IronLanternBlock(lamp()));
-    public static RegistrySupplier<Block> BLOOD_LANTERN = AbyssalDecor.BLOCKS.register("blood_lantern", () -> new LampBlock(lamp()));
+
+    public static RegistrySupplier<Block> BLOOD_LANTERN = AbyssalDecor.BLOCKS.register("blood_lantern", () -> new SingleLampBlock(lamp()));
+    public static RegistrySupplier<BloodLampMultiBlock> BLOOD_LANTERN_MULTIBLOCK = AbyssalDecor.BLOCKS.register("blood_lantern_multiblock",
+            () -> new BloodLampMultiBlock(lamp().dropsLike(BLOOD_LANTERN.get()),BLOOD_LANTERN.get()));
+
 
     //end section
 
@@ -977,8 +981,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<WallHangingSignBlock> CINNAMON_WALL_HANGING_SIGN = AbyssalDecor.BLOCKS.register("cinnamon_wall_hanging_sign",() ->
             wallHangingSign(CINNAMON_HANGING_SIGN.get(),ModWoodTypes.CINNAMON));
 
-    public static final RegistrySupplier<Block> CINNAMON_POST = AbyssalDecor.BLOCKS.register("cinnamon_post",() ->
-            new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<PostBlock> CINNAMON_POST = AbyssalDecor.BLOCKS.register("cinnamon_post",() ->
+            new PostBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> CINNAMON_PANELING = AbyssalDecor.BLOCKS.register("cinnamon_paneling",() ->
             new Block(BlockBehaviour.Properties.of()));

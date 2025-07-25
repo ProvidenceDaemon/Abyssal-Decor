@@ -23,10 +23,10 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.starrysock.abyssaldecor.block.BogAppleLeavesBlock;
-import net.starrysock.abyssaldecor.block.HorizontalDoubleBlock;
 import net.starrysock.abyssaldecor.block.MuckrootBlock;
 import net.starrysock.abyssaldecor.block.SmallBarsCornerBlock;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
+import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 
@@ -140,7 +140,7 @@ public class ModLootTableProvider extends LootTableProvider {
         }
 
         protected LootTable.Builder createHorizontalStatueTable(Block block) {
-            return this.createSinglePropConditionTable(block, HorizontalDoubleBlock.PART, HorizontalPart.BACK);
+            return this.createSinglePropConditionTable(block, ModBlockStateProperties.PART, HorizontalPart.BACK);
         }
 
         @Override

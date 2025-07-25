@@ -1,32 +1,62 @@
 {
   "variants": {
-    "facing=east,half=lower": {
+    "facing=east,half=lower,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_lower",
       "y": 90
     },
-    "facing=east,half=upper": {
+    "facing=east,half=lower,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_lower",
+      "y": 90
+    },
+    "facing=east,half=upper,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_upper",
       "y": 90
     },
-    "facing=north,half=lower": {
+    "facing=east,half=upper,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_upper",
+      "y": 90
+    },
+    "facing=north,half=lower,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_lower"
     },
-    "facing=north,half=upper": {
+    "facing=north,half=lower,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_lower"
+    },
+    "facing=north,half=upper,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_upper"
     },
-    "facing=south,half=lower": {
+    "facing=north,half=upper,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_upper"
+    },
+    "facing=south,half=lower,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_lower",
       "y": 180
     },
-    "facing=south,half=upper": {
+    "facing=south,half=lower,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_lower",
+      "y": 180
+    },
+    "facing=south,half=upper,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_upper",
       "y": 180
     },
-    "facing=west,half=lower": {
+    "facing=south,half=upper,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_upper",
+      "y": 180
+    },
+    "facing=west,half=lower,waterlogged=false": {
       "model": "abyssaldecor:block/nithing_pole_lower",
       "y": 270
     },
-    "facing=west,half=upper": {
+    "facing=west,half=lower,waterlogged=true": {
+      "model": "abyssaldecor:block/nithing_pole_lower",
+      "y": 270
+    },
+    "facing=west,half=upper,waterlogged=false": {
+      "model": "abyssaldecor:block/nithing_pole_upper",
+      "y": 270
+    },
+    "facing=west,half=upper,waterlogged=true": {
       "model": "abyssaldecor:block/nithing_pole_upper",
       "y": 270
     }

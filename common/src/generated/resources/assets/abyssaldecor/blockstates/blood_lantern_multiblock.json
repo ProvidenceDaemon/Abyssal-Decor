@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "lit=false,tri_part=bottom": {
+      "model": "abyssaldecor:block/blood_lantern_multiblock_bottom"
+    },
+    "lit=false,tri_part=middle": {
+      "model": "abyssaldecor:block/blood_lantern_multiblock_middle"
+    },
+    "lit=false,tri_part=top": {
+      "model": "abyssaldecor:block/blood_lantern_multiblock_top"
+    },
+    "lit=true,tri_part=bottom": {
+      "model": "abyssaldecor:block/blood_lantern_multiblock_bottom_lit"
+    },
+    "lit=true,tri_part=middle": {
+      "model": "abyssaldecor:block/blood_lantern_multiblock_middle_lit"
+    },
+    "lit=true,tri_part=top": {
+      "model": "abyssaldecor:block/blood_lantern_multiblock_top_lit"
+    }
+  }
+}
