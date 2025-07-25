@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:moldy_hangers"
+          "name": "abyssaldecor:moldy_hanger"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/moldy_hangers"
+  "random_sequence": "abyssaldecor:blocks/moldy_hanger"
 }

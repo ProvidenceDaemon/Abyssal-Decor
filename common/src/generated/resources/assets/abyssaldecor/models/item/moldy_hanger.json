@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "abyssaldecor:block/moldy_hangers"
+    "layer0": "abyssaldecor:block/moldy_hanger_middle"
   }
 }

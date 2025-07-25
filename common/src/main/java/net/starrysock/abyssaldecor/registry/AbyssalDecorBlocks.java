@@ -903,11 +903,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> MOLDY_FUZZ = AbyssalDecor.BLOCKS.register("moldy_fuzz",
             () -> new Block(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<GrowingPlantHeadBlock> MOLDY_HANGERS = AbyssalDecor.BLOCKS.register("moldy_hangers",
-            () -> new MoldyHangersBlock(BlockBehaviour.Properties.of()));
-
-    public static final RegistrySupplier<GrowingPlantBodyBlock> MOLDY_HANGERS_PLANT = AbyssalDecor.BLOCKS.register("moldy_hangers_plant",
-            () -> new MoldyHangersPlantBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> MOLDY_HANGER = AbyssalDecor.BLOCKS.register("moldy_hanger",
+            () -> new MoldyHangersBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
+                    .noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<CropBlock> FEVER_BLOSSOM = AbyssalDecor.BLOCKS.register("fever_blossom",
             () -> new FeverBlossomBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()

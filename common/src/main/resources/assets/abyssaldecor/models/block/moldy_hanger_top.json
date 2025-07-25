@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "abyssaldecor:block/moldyhanger",
-    "particle": "abyssaldecor:block/moldyhanger"
-  },
-  "render_type": "cutout_mipped"
-}

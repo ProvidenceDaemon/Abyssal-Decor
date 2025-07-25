@@ -37,6 +37,14 @@ public class BlazeLampBlock extends AbstractHorizontalBlock {
         return super.getShape(state, level, pos, context);
     }
 
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        Direction direction = state.getValue(FACING);
+        BlockPos blockpos = pos.relative(direction.getOpposite());
+        BlockState blockstate = level.getBlockState(blockpos);
+        return blockstate.isFaceSturdy(level, blockpos, direction);
+    }
+
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {

@@ -812,12 +812,6 @@ public class Datagen {
             simpleBlock(AbyssalDecorBlocks.MOLDY_FEATHERS.get(),models().cross("moldy_feathers", modLoc("block/moldy_feathers")));
             iconTexture("moldy_feathers",modLoc("block/moldy_feathers"));
 
-            ModelFile mh = models().cross("moldy_hangers", modLoc("block/moldy_hangers"));
-            simpleBlock(AbyssalDecorBlocks.MOLDY_HANGERS.get(),mh);
-            iconTexture("moldy_hangers",modLoc("block/moldy_hangers"));
-
-            simpleBlock(AbyssalDecorBlocks.MOLDY_HANGERS_PLANT.get(),mh);
-
             feverblossom(AbyssalDecorBlocks.FEVER_BLOSSOM.get());
             iconTexture("fever_blossom_seeds",modLoc("item/fever_blossom_seeds"));
             iconTexture("fever_blossom",modLoc("item/fever_blossom"));
@@ -849,6 +843,38 @@ public class Datagen {
                     ,modLoc("custom/cinnamonposttop"));
             post(AbyssalDecorBlocks.DULL_IRON_POST.get(),modLoc("custom/dullironpostbottom"),modLoc("custom/dullironpostmid")
                     ,modLoc("custom/dullironposttop"));
+            hanger();
+        }
+
+        protected void hanger() {
+            Block block = AbyssalDecorBlocks.MOLDY_HANGER.get();
+            String name = name(block);
+
+            ModelFile moldyHangerMid = models().cross("moldy_hanger_middle", modLoc("block/moldy_hanger_middle"));
+            ModelFile moldyHangerTop = models().cross("moldy_hanger_top", modLoc("block/moldy_hanger_top"));
+            ModelFile moldyHangerBottom = models().cross("moldy_hanger_bottom", modLoc("block/moldy_hanger_bottom"));
+            ModelFile moldyHangerBerries = models().cross("moldy_hanger_berries", modLoc("block/moldy_hanger_berries"));
+
+            getVariantBuilder(block).forAllStatesExcept(state -> {
+                TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
+                boolean berries = state.getValue(MoldyHangersBlock.BERRIES);
+
+
+
+                ModelFile modelFile;
+
+                if (berries) {
+                    modelFile = moldyHangerBerries;
+                } else {
+                    modelFile = switch (part) {
+                        case BOTTOM -> moldyHangerBottom;
+                        case MIDDLE -> moldyHangerMid;
+                        case TOP -> moldyHangerTop;
+                    };
+                }
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            });
+            iconTexture("moldy_hanger",modLoc("block/moldy_hanger_middle"));
         }
 
         protected void post(Block block, ResourceLocation bottom,ResourceLocation middle,ResourceLocation top) {

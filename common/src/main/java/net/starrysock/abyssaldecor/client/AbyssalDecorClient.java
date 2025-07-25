@@ -134,8 +134,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.MOLDY_STALK.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.MOLDY_FEATHERS.get(),RenderType.cutoutMipped());
 
-        renderTypes.accept(AbyssalDecorBlocks.MOLDY_HANGERS.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.MOLDY_HANGERS_PLANT.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.MOLDY_HANGER.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.FEVER_BLOSSOM.get(),RenderType.cutoutMipped());
 
@@ -152,5 +151,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.MUCKROOT.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_BUD.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.BLAZE_LAMP.get(),RenderType.cutoutMipped());
     }
 }

@@ -485,7 +485,7 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> MOLDY_FUZZ = registerBlockItem(AbyssalDecorBlocks.MOLDY_FUZZ);
 
-    public static final RegistrySupplier<BlockItem> MOLDY_HANGERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_HANGERS);
+    public static final RegistrySupplier<BlockItem> MOLDY_HANGERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_HANGER);
 
 
 
