@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/crackedpearlytiles3",
-    "particle": "abyssaldecor:block/crackedpearlytiles3"
-  },
-  "render_type": "solid"
-}

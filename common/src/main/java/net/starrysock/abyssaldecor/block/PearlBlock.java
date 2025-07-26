@@ -14,12 +14,12 @@ public class PearlBlock extends WaterloggedDirectionalBlock {
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         VoxelShape var10000;
         switch (state.getValue(FACING)) {
-            case NORTH -> var10000 = box(5.0, 5.0, 10.0, 11.0, 11.0, 16.0);
-            case EAST -> var10000 = box(0.0, 5.0, 5.0, 6.0, 11.0, 11.0);
-            case WEST -> var10000 = box(10.0, 5.0, 5.0, 16.0, 11.0, 11.0);
-            case UP -> var10000 = box(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
-            case DOWN -> var10000 = box(5.0, 10.0, 5.0, 11.0, 16.0, 11.0);
-            default -> var10000 = box(5.0, 5.0, 0.0, 11.0, 11.0, 6.0);
+            case NORTH -> var10000 = box(5, 5, 10, 11, 11, 16);
+            case EAST -> var10000 = box(0, 5, 5, 6, 11, 11);
+            case WEST -> var10000 = box(10, 5, 5, 16, 11, 11);
+            case UP -> var10000 = box(5, 0, 5, 11, 6, 11);
+            case DOWN -> var10000 = box(5, 10, 5, 11, 16, 11);
+            default -> var10000 = box(5, 5, 0, 11, 11, 6);
         }
 
         return var10000;

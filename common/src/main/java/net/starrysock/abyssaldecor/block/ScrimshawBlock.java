@@ -2,11 +2,19 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
@@ -15,6 +23,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
 public class ScrimshawBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock{
     public ScrimshawBlock(Properties properties) {
@@ -52,6 +61,16 @@ public class ScrimshawBlock extends AbstractHorizontalBlock implements SimpleWat
         builder.add(WATERLOGGED);
     }
 
+    //Scrimshaws should inflict blindness for 10 seconds to the nearest player when broken, and play a spooky sound (ambient.soul_sand_valley.mood)
+    @Override
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
+        super.playerDestroy(level, player, pos, state, blockEntity, tool);
+        if (!level.isClientSide) {
+            player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,200));
+            level.playSound((Player) null,pos, SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD.value(), SoundSource.BLOCKS,1,1);
+        }
+    }
+
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
@@ -74,6 +93,7 @@ public class ScrimshawBlock extends AbstractHorizontalBlock implements SimpleWat
             world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
 
-        return !state.canSurvive(world, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+        return !state.canSurvive(world, currentPos) ? Blocks.AIR.defaultBlockState() :
+                super.updateShape(state, facing, facingState, world, currentPos, facingPos);
     }
 }

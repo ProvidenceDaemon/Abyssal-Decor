@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "abyssaldecor:wool_curtain"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0

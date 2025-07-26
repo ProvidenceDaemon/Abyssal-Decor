@@ -65,7 +65,7 @@ public class ModLootTableProvider extends LootTableProvider {
                     AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
                     AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get(),AbyssalDecorBlocks.HANGING_WEB.get(),
                     AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(),
-                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get());
+                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),AbyssalDecorBlocks.HEART_OF_THE_SEA.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -75,6 +75,8 @@ public class ModLootTableProvider extends LootTableProvider {
                     add(block,noDrop());
                 }
             } );
+
+            dropOther(AbyssalDecorBlocks.HEART_OF_THE_SEA.get(),Items.HEART_OF_THE_SEA);
 
 
             barrierDrop(AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get());

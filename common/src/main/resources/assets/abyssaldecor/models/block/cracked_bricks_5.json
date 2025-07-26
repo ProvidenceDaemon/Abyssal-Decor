@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/crackedbricks5",
-    "particle": "abyssaldecor:block/crackedbricks5"
-  },
-  "render_type": "solid"
-}

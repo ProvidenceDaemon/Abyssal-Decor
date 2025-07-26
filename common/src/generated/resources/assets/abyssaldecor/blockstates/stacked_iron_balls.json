@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "balls=1": {
+      "model": "abyssaldecor:block/iron_ball_1"
+    },
+    "balls=2": {
+      "model": "abyssaldecor:block/iron_ball_2"
+    },
+    "balls=3": {
+      "model": "abyssaldecor:block/iron_ball_3"
+    },
+    "balls=4": {
+      "model": "abyssaldecor:block/iron_ball_4"
+    }
+  }
+}

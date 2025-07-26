@@ -1,9 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/velvetcurtainbottom",
-  "textures": {
-    "all": "abyssaldecor:block/velvetcurtainbottom",
-    "particle": "abyssaldecor:block/velvetcurtainbottom",
-    "3": "abyssaldecor:block/velvetcurtainbottom"
-  },
-  "render_type": "cutout_mipped"
-}

@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/velvetcurtainsolo",
+  "textures": {
+    "all": "abyssaldecor:block/velvet_curtain_solo",
+    "particle": "abyssaldecor:block/velvet_curtain_solo"
+  }
+}

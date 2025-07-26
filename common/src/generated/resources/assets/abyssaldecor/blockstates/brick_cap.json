@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,flipped=false": {
+      "model": "abyssaldecor:block/brick_cap",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,flipped=true": {
+      "model": "abyssaldecor:block/brick_cap_flipped",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,flipped=false": {
+      "model": "abyssaldecor:block/brick_cap"
+    },
+    "axis=y,flipped=true": {
+      "model": "abyssaldecor:block/brick_cap_flipped"
+    },
+    "axis=z,flipped=false": {
+      "model": "abyssaldecor:block/brick_cap",
+      "x": 90
+    },
+    "axis=z,flipped=true": {
+      "model": "abyssaldecor:block/brick_cap_flipped",
+      "x": 90
+    }
+  }
+}

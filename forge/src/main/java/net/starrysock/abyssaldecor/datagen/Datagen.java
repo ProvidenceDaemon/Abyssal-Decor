@@ -18,6 +18,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.CornerDirection;
+import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
@@ -535,6 +536,7 @@ public class Datagen {
 
             mixedBlock(AbyssalDecorBlocks.MIXED_BRICKS.get());
             mixedBlock(AbyssalDecorBlocks.MOSSY_MIXED_BRICKS.get());
+            crackedBlock(AbyssalDecorBlocks.CRACKED_BRICKS.get());
             simplestBlockWithItem(AbyssalDecorBlocks.BRITTLE_TUFF.get());
 
             trapdoor(AbyssalDecorBlocks.STONE_TRAPDOOR.get());
@@ -600,7 +602,6 @@ public class Datagen {
                     .texture("particle", modLoc("block/serpentskinbottom")));
 
             simplestBlockWithItem(AbyssalDecorBlocks.NETTED_SERPENT_EYE.get());
-            simplestBlockWithItem(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get());
 
             simplestBlockWithItem(AbyssalDecorBlocks.RIVETED_SEABRASS.get());
             blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(), modLoc("block/seabrass_lamp"));
@@ -690,6 +691,13 @@ public class Datagen {
                             modLoc("custom/tinywhitepearl"))
                     .texture("all", modLoc("block/heartoseablock"))
                     .texture("particle", modLoc("block/heartoseablock")));
+
+            directionalBlock(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get(), models().withExistingParent("small_netted_serpent_eye",
+                            modLoc("custom/abyssaldecorsmallblock"))
+                    .texture("0", modLoc("block/small_netted_serpent_eye"))
+                    .texture("particle", modLoc("block/small_netted_serpent_eye")));
+
+            simpleBlockItem(AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get(),models().getExistingFile(modLoc("block/small_netted_serpent_eye")));
 
             simpleBlockItem(AbyssalDecorBlocks.IRON_BALL.get(), models().getExistingFile(modLoc("block/iron_ball")));
 
@@ -849,6 +857,87 @@ public class Datagen {
             post(AbyssalDecorBlocks.DULL_IRON_POST.get(),modLoc("custom/dullironpostbottom"),modLoc("custom/dullironpostmid")
                     ,modLoc("custom/dullironposttop"));
             hanger();
+            brickCap();
+            stackedIronBalls(AbyssalDecorBlocks.STACKED_IRON_BALLS.get());
+
+            curtains(AbyssalDecorBlocks.VELVET_CURTAIN.get(),modLoc("block/velvet_curtain_solo"));
+            multiblockCurtains(AbyssalDecorBlocks.VELVET_CURTAIN_MULTIBLOCK.get());
+
+            curtains(AbyssalDecorBlocks.WOOL_CURTAIN.get(),modLoc("block/wool_curtain_solo"));
+            multiblockCurtains(AbyssalDecorBlocks.WOOL_CURTAIN_MULTIBLOCK.get());
+            gargoyle(AbyssalDecorBlocks.GARGOYLE.get());
+        }
+
+        protected void gargoyle(Block block) {
+            String name = name(block);
+            ModelFile base = models().getExistingFile(modLoc("block/gargoyle_base"));
+            ModelFile offset = models().getExistingFile(modLoc("block/gargoyle_top"));
+            horizontalBlock(block,state -> state.getValue(ModBlockStateProperties.PART) == HorizontalPart.BACK ? base : offset);
+        }
+
+
+        protected void multiblockCurtains(CurtainMultiBlock block) {
+            //{
+            //  "parent": "abyssaldecor:custom/velvetcurtainsolo",
+            //  "textures": {
+            //    "all": "abyssaldecor:block/velvetcurtainsolo",
+            //    "particle": "abyssaldecor:block/velvetcurtainsolo",
+            //    "0": "abyssaldecor:block/velvetcurtainsolo"
+            //  },
+            //  "render_type": "cutout_mipped"
+            //}
+            String name = name(block);
+
+            String baseName = name(block.soloBlock);
+
+            getVariantBuilder(block).forAllStatesExcept(blockState -> {
+
+                TriPart part = blockState.getValue(ModBlockStateProperties.TRI_PART);
+
+                ResourceLocation texture = modLoc("block/"+baseName+"_"+part.getSerializedName());
+
+                ModelFile modelFile = models().withExistingParent("block/" + name+"_"+part.getSerializedName(),
+                                modLoc("custom/velvetcurtainsolo"))
+                        .texture("all", texture)
+                        .texture("particle", texture);
+
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            }, BlockStateProperties.WATERLOGGED);
+        }
+
+        protected void curtains(Block block, ResourceLocation texture0) {
+            String name = name(block);
+            horizontalBlock(block, models().withExistingParent("block/" + name,
+                                modLoc("custom/velvetcurtainsolo"))
+                        .texture("all", texture0)
+                        .texture("particle", texture0));
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/" + name)));
+        }
+
+        protected void stackedIronBalls(StackedIronBallsBlock stackedIronBallsBlock) {
+            getVariantBuilder(stackedIronBallsBlock).forAllStatesExcept(state -> {
+                int count = state.getValue(StackedIronBallsBlock.BALLS);
+                ModelFile modelFile = models().getExistingFile(modLoc("block/iron_ball_"+count));
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+            },BlockStateProperties.WATERLOGGED);
+        }
+
+
+        //            .partialState().with(RotatedPillarBlock.AXIS, Axis.Y)
+        //                .modelForState().modelFile(vertical).addModel()
+        //            .partialState().with(RotatedPillarBlock.AXIS, Axis.Z)
+        //                .modelForState().modelFile(horizontal).rotationX(90).addModel()
+        //            .partialState().with(RotatedPillarBlock.AXIS, Axis.X)
+        //                .modelForState().modelFile(horizontal).rotationX(90).rotationY(90).addModel();
+        protected void brickCap() {
+            getVariantBuilder(AbyssalDecorBlocks.BRICK_CAP.get()).forAllStatesExcept(state -> {
+                Direction.Axis value = state.getValue(RotatedPillarBlock.AXIS);
+                boolean flipped = state.getValue(BrickCapBlock.FLIPPED);
+                ResourceLocation location = modLoc("block/brick_cap").withSuffix(flipped ? "_flipped" : "");
+                ModelFile modelFile = models().getExistingFile(location);
+                return ConfiguredModel.builder().modelFile(modelFile).rotationX(value != Direction.Axis.Y ? 90 : 0)
+                        .rotationY(value == Direction.Axis.X ? 90 : 0).build();
+            });
         }
 
         protected void hanger() {

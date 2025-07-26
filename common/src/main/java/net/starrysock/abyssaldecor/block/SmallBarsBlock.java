@@ -76,13 +76,20 @@ public class SmallBarsBlock extends AbstractHorizontalBlock implements SimpleWat
             return AbyssalDecorBlocks.SMALL_DEEPBRONZE_BARS_CORNER.get();
         } else if (this == AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS.get()) {
             return AbyssalDecorBlocks.SMALL_BLACK_PEARL_BARS_CORNER.get();
+        } else if (this == AbyssalDecorBlocks.SMALL_DULL_IRON_BARS.get()) {
+            return AbyssalDecorBlocks.SMALL_DULL_IRON_BARS_CORNER.get();
         }
         throw new RuntimeException("Corner not defined for: "+this);
     }
 
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
-        return  !useContext.isSecondaryUseActive() && useContext.getItemInHand().getItem() == this.asItem() ? true : super.canBeReplaced(state, useContext);
+        return !useContext.isSecondaryUseActive() && useContext.getItemInHand().getItem() == this.asItem() && canBeCorner(state,useContext.getClickedFace()) || super.canBeReplaced(state, useContext);
+    }
+
+    static boolean canBeCorner(BlockState state, Direction clickedFace) {
+        Direction direction = state.getValue(FACING);
+        return CornerDirection.from(clickedFace,direction)!= null;
     }
 
     @Nullable
@@ -95,6 +102,7 @@ public class SmallBarsBlock extends AbstractHorizontalBlock implements SimpleWat
 
         if (blockstate.is(this)) {
             Direction existingDirection = blockstate.getValue(FACING);
+
             SmallBarsCornerBlock cornerBlock = getCornerBars();
             Direction clickedFace = context.getClickedFace();
             CornerDirection cornerDirection = CornerDirection.from(existingDirection,clickedFace);

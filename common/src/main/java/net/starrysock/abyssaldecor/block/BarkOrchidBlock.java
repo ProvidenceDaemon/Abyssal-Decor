@@ -2,10 +2,8 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -39,14 +37,6 @@ public class BarkOrchidBlock extends WallHangingBlock{
         }
 
         return shape;
-    }
-
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING);
-        BlockPos blockpos = pos.relative(direction.getOpposite());
-        BlockState blockstate = level.getBlockState(blockpos);
-        return blockstate.is(BlockTags.LOGS);
     }
 
     /**

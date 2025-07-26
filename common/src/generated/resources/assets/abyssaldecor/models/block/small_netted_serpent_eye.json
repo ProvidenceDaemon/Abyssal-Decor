@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "abyssaldecor:custom/abyssaldecorsmallblock",
   "textures": {
-    "all": "abyssaldecor:block/small_netted_serpent_eye"
+    "0": "abyssaldecor:block/small_netted_serpent_eye",
+    "particle": "abyssaldecor:block/small_netted_serpent_eye"
   }
 }

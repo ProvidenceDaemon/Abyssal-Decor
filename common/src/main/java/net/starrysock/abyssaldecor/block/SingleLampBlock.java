@@ -25,7 +25,9 @@ public class SingleLampBlock extends LampBlock {
                     level.setBlock(pos,getMultiBlock().defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.BOTTOM),3);
                 }
             } else if(direction == Direction.DOWN) {
-
+                BlockPos above = pos.above();
+                boolean lampAbove = isSameBlock(level.getBlockState(above));
+                level.setBlock(pos,getMultiBlock().defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,lampAbove ? TriPart.MIDDLE:TriPart.TOP),3);
             }
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);

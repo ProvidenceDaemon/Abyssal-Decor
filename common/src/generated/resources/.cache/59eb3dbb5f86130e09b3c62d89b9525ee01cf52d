@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-25T20:28:27.1319776	Loot Tables
+// 1.20.1	2025-07-26T03:20:35.1862041	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -173,7 +173,7 @@ ba0318b12c4ce26dd06f5d0635a854c78c2f82c6 data/abyssaldecor/loot_tables/blocks/gr
 c7707768111af5cbf8ea2f201b30ee6dcadb42d9 data/abyssaldecor/loot_tables/blocks/hanging_web.json
 109be5054b55ef6834f9b30e83c11f70ac6777b9 data/abyssaldecor/loot_tables/blocks/healing_cinnamon_log.json
 6f137d7abf09a70723e3daccb6aace681f90460f data/abyssaldecor/loot_tables/blocks/healing_cinnamon_wood.json
-3800e69181e4bf6fc9e4c8c95a8315e1c7913862 data/abyssaldecor/loot_tables/blocks/heart_of_the_sea.json
+da78686ef382795844f4ad895e90e4229f30717e data/abyssaldecor/loot_tables/blocks/heart_of_the_sea.json
 39a468266cc95def40da20438b4fc35ff8ea0f85 data/abyssaldecor/loot_tables/blocks/inactive_mold.json
 21c452966b260926e77131fd43adbd1707238385 data/abyssaldecor/loot_tables/blocks/industrial_lever.json
 bd768071ba88f41db9ada08881acf1575e382614 data/abyssaldecor/loot_tables/blocks/iron_ball.json
@@ -340,6 +340,7 @@ bbbc81a3220c55e7cc7ca9de84ce80d8c309a44b data/abyssaldecor/loot_tables/blocks/sm
 8bb625f78633f0bc52cc56e81f77e75b5194f257 data/abyssaldecor/loot_tables/blocks/snapleaf.json
 a91df876f455e531f4ca439b214640ffeffca640 data/abyssaldecor/loot_tables/blocks/solar_rod.json
 e046c18262249b8a6ab400a08e7610fa4e4dd57a data/abyssaldecor/loot_tables/blocks/spidercorn.json
+f080ce0cf48f0f7baf540137556bd91cf3d70111 data/abyssaldecor/loot_tables/blocks/stacked_iron_balls.json
 48391649c4972c6eaecb8f9cc69a351e3c160590 data/abyssaldecor/loot_tables/blocks/starfish.json
 b7181dccbc05487e8f587414598ea6399eb2013d data/abyssaldecor/loot_tables/blocks/starglass.json
 dd1ffd4117681a6dfb47e32d7b136d700a634f67 data/abyssaldecor/loot_tables/blocks/starglass_pane.json
@@ -366,7 +367,7 @@ ea3a08f91d685753a41ee962f5942d4243623a50 data/abyssaldecor/loot_tables/blocks/tr
 e8189853376aefd26361bf873b35cd49c38b250a data/abyssaldecor/loot_tables/blocks/velvet_barrier.json
 75142ddcf8cb62cd0b980f9233bcce2f6abc7c66 data/abyssaldecor/loot_tables/blocks/velvet_barrier_ribbon.json
 c55054dabc6a48153d6c5c042943a30e35497739 data/abyssaldecor/loot_tables/blocks/velvet_carpet.json
-8995a0c228889657102ae00326791813948edcb3 data/abyssaldecor/loot_tables/blocks/velvet_curtain.json
+acafeeb6d5d8b0d47e54b7d312bc9a7aaf8d2073 data/abyssaldecor/loot_tables/blocks/velvet_curtain.json
 a7b25a7b3d494b3625abd370bd08fdfc918b7922 data/abyssaldecor/loot_tables/blocks/verdant_pearly_glass.json
 75d8113900ba1e70a3f09b93ed8f365ea14c30b9 data/abyssaldecor/loot_tables/blocks/verdant_pearly_glass_pane.json
 eb24ecbfc08efb1f6d2447ec6474122d7940e271 data/abyssaldecor/loot_tables/blocks/vermilion_block.json
@@ -411,5 +412,5 @@ bc3c2651d61d0d293b771a7d5d5e0f5004cd4ddb data/abyssaldecor/loot_tables/blocks/wi
 cc74ab599c2391016dfa555e5cea4d0c7f3176d2 data/abyssaldecor/loot_tables/blocks/wooden_dragon_head.json
 fa6599f2a8669a1fe04da59742860e14fc6b9a53 data/abyssaldecor/loot_tables/blocks/wooden_frog.json
 9992f34026eb09c60602810ad8180e093ef55574 data/abyssaldecor/loot_tables/blocks/wood_support.json
-03294a244726a19cd2d7f0a9e53c203592de94b7 data/abyssaldecor/loot_tables/blocks/wool_curtain.json
+9c115cd1786f380f3fcb6d7bd256990311a068d6 data/abyssaldecor/loot_tables/blocks/wool_curtain.json
 837afce7599d103d875c7d8014922f99eaff15ec data/abyssaldecor/loot_tables/blocks/yellow_wallpaper.json

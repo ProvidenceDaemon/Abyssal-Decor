@@ -110,13 +110,16 @@ public class AbyssalDecorBlocks {
             .replaceable().noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava()
             .pushReaction(PushReaction.DESTROY).dropsLike(HANGING_MOSS.get())));
 
-    public static final RegistrySupplier<Block> DAFFODIL = AbyssalDecor.BLOCKS.register("daffodil", () -> new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
-    public static final RegistrySupplier<Block> ASTER = AbyssalDecor.BLOCKS.register("aster", () -> new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
-    public static final RegistrySupplier<Block> SNAPLEAF = AbyssalDecor.BLOCKS.register("snapleaf", () -> new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<Block> DAFFODIL = AbyssalDecor.BLOCKS.register("daffodil", () ->
+            new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<Block> ASTER = AbyssalDecor.BLOCKS.register("aster", () ->
+            new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<Block> SNAPLEAF = AbyssalDecor.BLOCKS.register("snapleaf", () ->
+            new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> AMARANTH = AbyssalDecor.BLOCKS.register("amaranth", () -> new AmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY), ModTags.Blocks.AMARANTH_GROWABLE));
     public static final RegistrySupplier<DoublePlantBlock> TALL_AMARANTH = AbyssalDecor.BLOCKS.register("tall_amaranth", () -> new TallAmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final RegistrySupplier<Block> AMARANTH_CRATE = AbyssalDecor.BLOCKS.register("amaranth_crate", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistrySupplier<Block> AMARANTH_CRATE = AbyssalDecor.BLOCKS.register("amaranth_crate", () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 
     public static final RegistrySupplier<CropBlock> MUCKROOT = AbyssalDecor.BLOCKS.register("muckroot", () -> new MuckrootBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY), ModTags.Blocks.MUCKROOT_GROWABLE));
 
@@ -440,10 +443,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> DULL_IRON_BAR_TRAPDOOR = AbyssalDecor.BLOCKS.register("dull_iron_bar_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
     public static final RegistrySupplier<AbstractDirectionalBlock> IRON_BALL = AbyssalDecor.BLOCKS.register("iron_ball",() ->
-            new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+            new IronBallBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1, 10)
+                    .noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<Block> DULL_IRON_POST = AbyssalDecor.BLOCKS.register("dull_iron_post",() ->
-            new PostBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0F, 10.0F)
+            new PostBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1, 10)
                     .requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
 
@@ -560,7 +564,9 @@ public class AbyssalDecorBlocks {
             () -> new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> SMALL_NETTED_SERPENT_EYE = AbyssalDecor.BLOCKS.register("small_netted_serpent_eye",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new PearlBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.SHROOMLIGHT)
+                    .strength(0.2F, 1.0F).lightLevel((s) -> 10).requiresCorrectToolForDrops().jumpFactor(1.25F)
+                    .noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false)));
 
     //////////
 
@@ -571,10 +577,21 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<CarpetBlock> GILDED_VELVET_CARPET = AbyssalDecor.BLOCKS.register("gilded_velvet_carpet",() -> new CarpetBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> VELVET_CURTAIN = AbyssalDecor.BLOCKS.register("velvet_curtain",() ->
-            new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+            new CurtainBlock(BlockBehaviour.Properties.of().ignitedByLava().mapColor(MapColor.COLOR_RED)
+                    .sound(SoundType.WOOL).strength(0.1F, 1.0F).noCollission().noOcclusion()
+                    .isRedstoneConductor((bs, br, bp) -> false)));
+
+    public static final RegistrySupplier<CurtainMultiBlock> VELVET_CURTAIN_MULTIBLOCK = AbyssalDecor.BLOCKS.register("velvet_curtain_multiblock",() ->
+            new CurtainMultiBlock(BlockBehaviour.Properties.copy(VELVET_CURTAIN.get()).dropsLike(VELVET_CURTAIN.get()),VELVET_CURTAIN.get()));
 
     public static final RegistrySupplier<Block> WOOL_CURTAIN = AbyssalDecor.BLOCKS.register("wool_curtain",() ->
-            new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+            new CurtainBlock(BlockBehaviour.Properties.of().ignitedByLava().mapColor(MapColor.WOOL)
+                    .sound(SoundType.WOOL).strength(0.1F, 1.0F).noCollission().noOcclusion()
+                    .isRedstoneConductor((bs, br, bp) -> false)));
+
+    public static final RegistrySupplier<CurtainMultiBlock> WOOL_CURTAIN_MULTIBLOCK = AbyssalDecor.BLOCKS.register("wool_curtain_multiblock",() ->
+            new CurtainMultiBlock(BlockBehaviour.Properties.copy(WOOL_CURTAIN.get()).dropsLike(WOOL_CURTAIN.get()),WOOL_CURTAIN.get()));
+
 
     public static final RegistrySupplier<Block> AMMONITE = AbyssalDecor.BLOCKS.register("ammonite",() ->
             new Block(BlockBehaviour.Properties.of()));
@@ -720,6 +737,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronSconceBlock> DEEPBRONZE_SCONCE = AbyssalDecor.BLOCKS.register("deepbronze_sconce",
             () -> new IronSconceBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BARS.get())));
 
+    public static final RegistrySupplier<StackedIronBallsBlock> STACKED_IRON_BALLS = AbyssalDecor.BLOCKS.register("stacked_iron_balls",() ->
+            new StackedIronBallsBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0F, 10.0F)
+                    .noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
     /////////
 
@@ -1045,8 +1065,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<StairBlock> MOSSY_CINNAMON_SHINGLE_STAIRS = AbyssalDecor.BLOCKS.register("mossy_cinnamon_shingle_stairs",
             () -> stairs(MOSSY_CINNAMON_SHINGLES.get()));
 
-    public static final RegistrySupplier<MixedBlock> CRACKED_BRICKS = AbyssalDecor.BLOCKS.register("cracked_bricks",
-            () -> new MixedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistrySupplier<CrackedBlock> CRACKED_BRICKS = AbyssalDecor.BLOCKS.register("cracked_bricks",
+            () -> new CrackedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
     public static final RegistrySupplier<Block> CHISELED_BRICK = AbyssalDecor.BLOCKS.register("chiseled_brick",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
@@ -1054,8 +1074,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> BRICK_MOSAIC = AbyssalDecor.BLOCKS.register("brick_mosaic",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
-    public static final RegistrySupplier<RotatedPillarBlock> BRICK_CAP = AbyssalDecor.BLOCKS.register("brick_cap",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistrySupplier<BrickCapBlock> BRICK_CAP = AbyssalDecor.BLOCKS.register("brick_cap",
+            () -> new  BrickCapBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
     public static final RegistrySupplier<SmallBarsBlock> SMALL_CLEAN_IRON_BARS = AbyssalDecor.BLOCKS.register("small_clean_iron_bars",() ->
             smallBars());
