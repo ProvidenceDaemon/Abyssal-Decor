@@ -20,6 +20,7 @@
         ],
         "client": ["net.starrysock.abyssaldecor.client.AbyssalDecorClientFabric"]
     },
+    "accessWidener": "abyssaldecor.accesswidener",
     "mixins": [
         "${mod_id}.mixins.json",
         "${mod_id}.fabric.mixins.json"
