@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-25T02:18:35.9341127	Block States: abyssaldecor
+// 1.20.1	2025-07-25T20:28:27.1369822	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
 a7de563932a2abf46a26f789ddabfeb94c44ca81 assets/abyssaldecor/blockstates/azure_pearly_glass.json
@@ -131,6 +131,7 @@ d05284c605f9dfa1f8f2048215a5fd486380a541 assets/abyssaldecor/blockstates/gray_wa
 18edeca0e0d84c17f0ce72eaafa92c548cb235c0 assets/abyssaldecor/blockstates/green_wallpaper.json
 b83c1accf7e36a03e6ec6c6e7673a3dc0b465a58 assets/abyssaldecor/blockstates/hanging_moss.json
 03a63ac2de76827af188dcc5c2a85af4d3c90d3f assets/abyssaldecor/blockstates/hanging_web.json
+3655cf92514cd5cda63fb2eac8dfe906ee81a38c assets/abyssaldecor/blockstates/heart_of_the_sea.json
 2fa19c267d2b72f801e6f20bd40375f9b409d0a8 assets/abyssaldecor/blockstates/industrial_lever.json
 9ddeebb0af797d71eccbdba26d1896792e737042 assets/abyssaldecor/blockstates/iron_ball.json
 a1e811eeb5b27630185de40732beef53b44b12fb assets/abyssaldecor/blockstates/iron_barrier.json
@@ -635,6 +636,7 @@ edb5de6cb57333241a89c7a7740eb765efa34c1d assets/abyssaldecor/models/block/gilded
 ca6a5f47e46928e1018bc2770c8cdfb5113c565f assets/abyssaldecor/models/block/gray_wallpaper.json
 1364332f4358456a4c58677b31ff2f42a54cd19f assets/abyssaldecor/models/block/green_wallpaper.json
 3d24bd80a496278ef5e13cf32496290bb0d82481 assets/abyssaldecor/models/block/hanging_web.json
+c1a78d2bd2c7d61d22abe42f97b1e29a6d793811 assets/abyssaldecor/models/block/heart_of_the_sea.json
 4dd694876c16fc7febe59472c04182ba5a18893f assets/abyssaldecor/models/block/industrial_lever.json
 4843f99476af856f4287b0b4c03fb0ea1210757b assets/abyssaldecor/models/block/industrial_lever_on.json
 465fb72857485b321a62ab62d5ed1727e72f2f45 assets/abyssaldecor/models/block/iron_ball.json

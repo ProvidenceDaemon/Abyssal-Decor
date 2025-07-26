@@ -1,9 +1,15 @@
 package net.starrysock.abyssaldecor.client;
 
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 
+import java.util.List;
 import java.util.function.BiConsumer;
 
 public class AbyssalDecorClient {
@@ -153,5 +159,12 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_BUD.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.BLAZE_LAMP.get(),RenderType.cutoutMipped());
+    }
+
+
+    public static void itemTooltips(ItemStack stack, List<Component> tooltip, TooltipFlag flag) {
+        if (stack.is(AbyssalDecorItems.WHITE_PEARL.get()) || stack.is(AbyssalDecorItems.BLACK_PEARL.get()) || stack.is(Items.HEART_OF_THE_SEA)) {
+            tooltip.add(Component.literal("Placeable"));
+        }
     }
 }

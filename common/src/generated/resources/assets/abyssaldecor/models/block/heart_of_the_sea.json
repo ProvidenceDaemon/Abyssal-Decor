@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/tinywhitepearl",
+  "textures": {
+    "all": "abyssaldecor:block/heartoseablock",
+    "particle": "abyssaldecor:block/heartoseablock"
+  }
+}

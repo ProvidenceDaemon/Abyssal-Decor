@@ -1,6 +1,11 @@
 {
   "values": [
     "abyssaldecor:inactive_mold",
-    "abyssaldecor:black_mold"
+    "abyssaldecor:black_mold",
+    "abyssaldecor:moldy_starstone",
+    "abyssaldecor:moldier_starstone",
+    "abyssaldecor:porous_mold",
+    "abyssaldecor:blackwood_log",
+    "abyssaldecor:blackwood_wood"
   ]
 }

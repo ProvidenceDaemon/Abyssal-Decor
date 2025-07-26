@@ -17,6 +17,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
+import net.starrysock.abyssaldecor.block.properties.TriPart;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
@@ -78,6 +80,7 @@ public class MoldySaplingBlock extends Block {
     }
 
     protected void growBamboo(Level level, BlockPos state) {
-        level.setBlock(state.above(), AbyssalDecorBlocks.MOLDY_STALK.get().defaultBlockState(), 3);
+        level.setBlockAndUpdate(state.above(), AbyssalDecorBlocks.MOLDY_STALK.get()
+                .defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.TOP));
     }
 }

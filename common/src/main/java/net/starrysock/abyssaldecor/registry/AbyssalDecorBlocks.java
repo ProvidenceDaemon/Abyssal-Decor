@@ -270,7 +270,7 @@ public class AbyssalDecorBlocks {
 
     ///////
 
-    public static final RegistrySupplier<Block> WHITE_PEARL = AbyssalDecor.BLOCKS.register("white_pearl",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of().strength(.5f)));
+    public static final RegistrySupplier<Block> WHITE_PEARL = AbyssalDecor.BLOCKS.register("white_pearl",() -> new PearlBlock(BlockBehaviour.Properties.of().strength(.5f)));
 
     public static final RegistrySupplier<Block> WHITE_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("white_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
 
@@ -771,11 +771,12 @@ public class AbyssalDecorBlocks {
     ////////
 
 
-    public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+    public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("blackwood_log", () -> new BlackwoodLogBlock(
+            BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2.0F).randomTicks()));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_BLACKWOOD_LOG = AbyssalDecor.BLOCKS.register("stripped_blackwood_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
 
     public static final RegistrySupplier<RotatedPillarBlock> BLACKWOOD_WOOD = AbyssalDecor.BLOCKS.register("blackwood_wood", () ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+            new BlackwoodLogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
                     .sound(SoundType.WOOD).ignitedByLava()));
 
     public static final RegistrySupplier<Block> BLACKWOOD_PLANKS = AbyssalDecor.BLOCKS.register("blackwood_planks", () -> planks(DyeColor.BLACK.getMapColor()));
@@ -826,7 +827,7 @@ public class AbyssalDecorBlocks {
     ////////////////////
 
 
-    public static final RegistrySupplier<Block> BLACK_PEARL = AbyssalDecor.BLOCKS.register("black_pearl",() -> new WaterloggedDirectionalBlock(BlockBehaviour.Properties.of().strength(.5f)));
+    public static final RegistrySupplier<Block> BLACK_PEARL = AbyssalDecor.BLOCKS.register("black_pearl",() -> new PearlBlock(BlockBehaviour.Properties.of().strength(.5f)));
 
     public static final RegistrySupplier<Block> BLACK_PEARL_BLOCK = AbyssalDecor.BLOCKS.register("black_pearl_block",() -> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops()));
 
@@ -873,7 +874,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<HorizontalDirectionalBlock> BOOK_BLOCK = AbyssalDecor.BLOCKS.register("book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<HorizontalDirectionalBlock> MOLDY_BOOK_BLOCK = AbyssalDecor.BLOCKS.register("moldy_book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> BLACK_MOLD = AbyssalDecor.BLOCKS.register("black_mold",() -> new MoldBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> BLACK_MOLD = AbyssalDecor.BLOCKS.register("black_mold",() ->
+            new MoldBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLACK).sound(SoundType.SOUL_SOIL)
+            .strength(5, 10).speedFactor(0.1F).randomTicks()));
     public static final RegistrySupplier<Block> BLACK_MOLD_CARPET = AbyssalDecor.BLOCKS.register("black_mold_carpet",() -> new CarpetBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> INACTIVE_MOLD = AbyssalDecor.BLOCKS.register("inactive_mold",() -> new Block(BlockBehaviour.Properties.of()));
@@ -892,16 +895,20 @@ public class AbyssalDecorBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<MoldyStalkBlock> MOLDY_STALK = AbyssalDecor.BLOCKS.register("moldy_stalk",
-            () -> new MoldyStalkBlock(BlockBehaviour.Properties.of()));
+            () -> new MoldyStalkBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.STEM).strength(1, 10).noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<MoldySaplingBlock> MOLDY_STALK_SPROUT = AbyssalDecor.BLOCKS.register("moldy_stalk_sprout",
-            () -> new MoldySaplingBlock(BlockBehaviour.Properties.of()));
+            () -> new MoldySaplingBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.STEM).instabreak().noCollission().noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<Block> MOLDY_SPROUTS = AbyssalDecor.BLOCKS.register("moldy_sprouts",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission().noOcclusion()
+                    .isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<Block> MOLDY_FUZZ = AbyssalDecor.BLOCKS.register("moldy_fuzz",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission().noOcclusion()
+                    .isRedstoneConductor((bs, br, bp) -> false)));
 
     public static final RegistrySupplier<Block> MOLDY_HANGER = AbyssalDecor.BLOCKS.register("moldy_hanger",
             () -> new MoldyHangersBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
@@ -916,31 +923,49 @@ public class AbyssalDecorBlocks {
                     .noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> MOLDY_FEATHERS = AbyssalDecor.BLOCKS.register("moldy_feathers",
-            () -> new MoldyFeathersBlock(BlockBehaviour.Properties.of()));
+            () -> new MoldyFeathersBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.ROOTS).instabreak()
+                    .noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> MOLDY_STARSTONE = AbyssalDecor.BLOCKS.register("moldy_starstone",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new SimpleMoldBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.WATER).sound(SoundType.STONE)
+                    .strength(5.0F, 10.0F).requiresCorrectToolForDrops().randomTicks()));
 
     public static final RegistrySupplier<Block> MOLDIER_STARSTONE = AbyssalDecor.BLOCKS.register("moldier_starstone",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new SimpleMoldBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .mapColor(MapColor.WATER).sound(SoundType.STONE).strength(5.0F, 10.0F).requiresCorrectToolForDrops().randomTicks()));
 
     public static final RegistrySupplier<Block> POROUS_MOLD = AbyssalDecor.BLOCKS.register("porous_mold",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NYLIUM).strength(10.0F).speedFactor(0.1F).randomTicks()));
 
     public static final RegistrySupplier<Block> ECHO_SHARD_BLOCK = AbyssalDecor.BLOCKS.register("echo_shard_block",
             () -> new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> POLISHED_ECHO_SHARD_BLOCK = AbyssalDecor.BLOCKS.register("polished_echo_shard_block",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.WATER)
+                    .sound(SoundType.LODESTONE).strength(10.0F).lightLevel((s) -> 3).requiresCorrectToolForDrops().hasPostProcess((bs, br, bp) -> true)
+                    .emissiveRendering((bs, br, bp) -> true)));
 
     //new Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).alwaysEat().build())
 
     //////////////////////
 
     public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_LOG = AbyssalDecor.BLOCKS.register("cinnamon_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+
+    public static final RegistrySupplier<RotatedPillarBlock> HEALING_CINNAMON_LOG = AbyssalDecor.BLOCKS.register("healing_cinnamon_log",
+            () -> new HealingCinnamonLog(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> HEALING_CINNAMON_WOOD = AbyssalDecor.BLOCKS.register("healing_cinnamon_wood", () ->
+            new HealingCinnamonLog(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = AbyssalDecor.BLOCKS.register("stripped_cinnamon_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
 
     public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_WOOD = AbyssalDecor.BLOCKS.register("cinnamon_wood", () ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_CINNAMON_WOOD = AbyssalDecor.BLOCKS.register("stripped_cinnamon_wood", () ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2.0F)
                     .sound(SoundType.WOOD).ignitedByLava()));
 
@@ -1096,6 +1121,8 @@ public class AbyssalDecorBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)));
+
+    public static final RegistrySupplier<Block> HEART_OF_THE_SEA = AbyssalDecor.BLOCKS.register("heart_of_the_sea",() -> new PearlBlock(BlockBehaviour.Properties.of().strength(.5f)));
 
     static Block planks(MapColor mapColor) {
         return new Block(BlockBehaviour.Properties.of().mapColor(mapColor)

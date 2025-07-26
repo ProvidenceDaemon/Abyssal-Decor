@@ -12,7 +12,7 @@ public class WaterloggedDirectionalBlock extends AbstractDirectionalBlock implem
 
     public WaterloggedDirectionalBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(BlockStateProperties.WATERLOGGED,true));
+        registerDefaultState(defaultBlockState().setValue(BlockStateProperties.WATERLOGGED,false));
     }
 
     @Override

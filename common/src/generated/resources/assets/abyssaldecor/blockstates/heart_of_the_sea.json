@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "abyssaldecor:block/heart_of_the_sea",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "abyssaldecor:block/heart_of_the_sea",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "abyssaldecor:block/heart_of_the_sea",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "abyssaldecor:block/heart_of_the_sea",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "abyssaldecor:block/heart_of_the_sea"
+    },
+    "facing=west": {
+      "model": "abyssaldecor:block/heart_of_the_sea",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

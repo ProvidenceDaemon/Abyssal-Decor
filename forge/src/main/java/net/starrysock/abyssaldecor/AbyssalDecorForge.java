@@ -4,6 +4,7 @@ import dev.architectury.platform.forge.EventBuses;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -12,6 +13,9 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -34,6 +38,16 @@ public class AbyssalDecorForge {
         if (FMLEnvironment.dist.isClient()) {
             Client.init(bus);
         }
+        MinecraftForge.EVENT_BUS.addListener(AbyssalDecorForge::rightClickBlock);
+    }
+
+    static void rightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        InteractionResult interactionResult = AbyssalDecor.rightClickBlock(event.getEntity(), event.getHand(), event.getPos(), event.getFace());
+        if (interactionResult.consumesAction()) {
+            event.setCanceled(true);
+            event.setUseBlock(Event.Result.DENY);
+            event.setUseItem(Event.Result.DENY);
+        }
     }
 
     void setup(FMLCommonSetupEvent event) {
@@ -46,6 +60,11 @@ public class AbyssalDecorForge {
             if (Services.PLATFORM.isDevelopmentEnvironment()) {
                 MinecraftForge.EVENT_BUS.addListener(Client::loadComplete);
             }
+            MinecraftForge.EVENT_BUS.addListener(Client::tooltips);
+        }
+
+        static void tooltips(ItemTooltipEvent event) {
+            AbyssalDecorClient.itemTooltips(event.getItemStack(), event.getToolTip(), event.getFlags());
         }
 
         static void setup(FMLClientSetupEvent event) {

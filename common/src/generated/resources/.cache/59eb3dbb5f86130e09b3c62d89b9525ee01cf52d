@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-25T02:18:35.9261057	Loot Tables
+// 1.20.1	2025-07-25T20:28:27.1319776	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -171,6 +171,9 @@ a865b941dfc9ccd1344b45b31264d0471fd0b96f data/abyssaldecor/loot_tables/blocks/go
 ba0318b12c4ce26dd06f5d0635a854c78c2f82c6 data/abyssaldecor/loot_tables/blocks/green_wallpaper.json
 45680786547c8ae698d7723d6bd8b9a785c65eaf data/abyssaldecor/loot_tables/blocks/hanging_moss.json
 c7707768111af5cbf8ea2f201b30ee6dcadb42d9 data/abyssaldecor/loot_tables/blocks/hanging_web.json
+109be5054b55ef6834f9b30e83c11f70ac6777b9 data/abyssaldecor/loot_tables/blocks/healing_cinnamon_log.json
+6f137d7abf09a70723e3daccb6aace681f90460f data/abyssaldecor/loot_tables/blocks/healing_cinnamon_wood.json
+3800e69181e4bf6fc9e4c8c95a8315e1c7913862 data/abyssaldecor/loot_tables/blocks/heart_of_the_sea.json
 39a468266cc95def40da20438b4fc35ff8ea0f85 data/abyssaldecor/loot_tables/blocks/inactive_mold.json
 21c452966b260926e77131fd43adbd1707238385 data/abyssaldecor/loot_tables/blocks/industrial_lever.json
 bd768071ba88f41db9ada08881acf1575e382614 data/abyssaldecor/loot_tables/blocks/iron_ball.json
@@ -351,6 +354,7 @@ fae90a1b19e73e9261398371b7a5a9a179a45c9c data/abyssaldecor/loot_tables/blocks/st
 39087c3dea6ac552c2c5c0d36149594518e61354 data/abyssaldecor/loot_tables/blocks/stripped_ancient_birch_log.json
 d6e64f25d88889df5e42cde6d9c24eaa41eb15de data/abyssaldecor/loot_tables/blocks/stripped_blackwood_log.json
 c7e486009bb19406459085527cf1a5e01c74b958 data/abyssaldecor/loot_tables/blocks/stripped_cinnamon_log.json
+19ea2572e3a007c1a90c86cbb7060ac37e9dc221 data/abyssaldecor/loot_tables/blocks/stripped_cinnamon_wood.json
 96c28fd44e6e9072c2caf80611d1c7be57a386ba data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass.json
 ecdf471a617a7ff6992e81042f36d9e2d7036774 data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass_pane.json
 061c8c9cc61ffa116b4e3e6e4efd5d33132899d8 data/abyssaldecor/loot_tables/blocks/tall_cinnamon_bush.json

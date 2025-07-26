@@ -39,6 +39,7 @@ public class TagDatagen {
             super(output, lookupProvider, AbyssalDecor.MOD_ID, existingFileHelper);
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         protected void addTags(HolderLookup.Provider arg) {
             //mod tags
@@ -48,6 +49,12 @@ public class TagDatagen {
 
             tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
 
+            tag(ModTags.Blocks.MOLD_SPREADABLES)
+                    .addTags(BlockTags.DIRT);
+
+            tag(ModTags.Blocks.MOLD_IMMUNE).add(Blocks.DEEPSLATE,Blocks.DEEPSLATE_COAL_ORE,Blocks.DEEPSLATE_IRON_ORE,
+                    AbyssalDecorBlocks.MOLDY_STARSTONE.get(),AbyssalDecorBlocks.MOLDIER_STARSTONE.get());
+
             //vanilla tags
             tag(BlockTags.CROPS).add(AbyssalDecorBlocks.SPIDERCORN.get());
             tag(BlockTags.FLOWERS).add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
@@ -55,7 +62,21 @@ public class TagDatagen {
             tag(BlockTags.LEAVES).add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
             tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.CINNAMON_LOGS);
 
-            tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get());
+            tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get(),
+                    AbyssalDecorBlocks.MOLDY_STARSTONE.get(),AbyssalDecorBlocks.MOLDIER_STARSTONE.get(),
+                    AbyssalDecorBlocks.POROUS_MOLD.get(),
+                    AbyssalDecorBlocks.BLACKWOOD_LOG.get(),
+                    AbyssalDecorBlocks.BLACKWOOD_WOOD.get()
+            );
+
+
+            //    "abyssal_decor:black_mold",
+            //    "abyssal_decor:inactive_mold",
+            //    "abyssal_decor:moldy_starstone",
+            //    "abyssal_decor:moldier_starstone",
+            //    "abyssal_decor:porous_mold",
+            //    "abyssal_decor:blackwood_log",
+            //    "abyssal_decor:blackwood_wood"
 
             tag(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON).addTag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.MOLDY_STALK.get(),
                     AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get());
@@ -166,6 +187,8 @@ public class TagDatagen {
                     AbyssalDecorBlocks.DEEPBRONZE_LANTERN.get(),
                     AbyssalDecorBlocks.STONE_BARS.get(), AbyssalDecorBlocks.SMALL_STONE_BARS.get(), AbyssalDecorBlocks.SMALL_STONE_BARS_CORNER.get(),
                     AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get());
+
+            tag(BlockTags.MINEABLE_WITH_SHOVEL).add(AbyssalDecorBlocks.BLACK_MOLD.get(),AbyssalDecorBlocks.INACTIVE_MOLD.get());
 
             tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
 

@@ -11,6 +11,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -23,16 +24,17 @@ import javax.annotation.Nullable;
 
 public class MoldyStalkBlock extends Block {
 
+    public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
     public MoldyStalkBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM));
+        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM).setValue(ACTIVE,true));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(ModBlockStateProperties.TRI_PART);
+        builder.add(ModBlockStateProperties.TRI_PART,ACTIVE);
     }
 
     public static final VoxelShape SHAPE =  box(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
@@ -40,6 +42,11 @@ public class MoldyStalkBlock extends Block {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
+    }
+
+    @Override
+    public boolean isRandomlyTicking(BlockState state) {
+        return super.isRandomlyTicking(state) && state.getValue(ModBlockStateProperties.TRI_PART) == TriPart.TOP && state.getValue(ACTIVE);
     }
 
     @Override
@@ -99,6 +106,11 @@ public class MoldyStalkBlock extends Block {
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (!state.canSurvive(level, pos)) {
             level.destroyBlock(pos, true);
+        } else {
+            if (level.getBlockState(pos.above()).canBeReplaced()) {
+                boolean canKeepGrowing = random.nextDouble() < 0.6875;
+                level.setBlockAndUpdate(pos.above(), state.setValue(ModBlockStateProperties.TRI_PART, TriPart.TOP).setValue(ACTIVE, canKeepGrowing));
+            }
         }
     }
 

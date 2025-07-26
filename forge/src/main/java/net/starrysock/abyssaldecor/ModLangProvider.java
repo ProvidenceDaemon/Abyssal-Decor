@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.starrysock.abyssaldecor.registry.AbyssalCreativeTabs;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorMobEffects;
 import org.codehaus.plexus.util.StringUtils;
 
 import java.util.HashSet;
@@ -61,6 +62,8 @@ public class ModLangProvider extends LanguageProvider {
 
         addDefaultItem(AbyssalDecorItems.TOASTED_AMARANTH_SEEDS.get());
 
+        addEffect(AbyssalDecorMobEffects.SPORE_PROTECTION,"Spore Protection");
+
         add("item.abyssaldecor.amaranth_pinnacle", "Amaranth Pinnacle");
         add("item.abyssaldecor.amaranth_seeds", "Amaranth Seeds");
         add("item.abyssaldecor.black_pearl", "Black Pearl");
@@ -88,7 +91,6 @@ public class ModLangProvider extends LanguageProvider {
 
         add("item.abyssaldecor.dried_starfish", "Dried Starfish");
         add("item.abyssaldecor.starlight", "Starlight");
-        add("item.abyssaldecor.telescope_bottom", "Telescope");
         add("item.abyssaldecor.velvet_barrier_base", "Velvet Barrier");
         add("item.abyssaldecor.snapleaf", "Snapleaf");
         add("item.abyssaldecor.white_pearl", "White Pearl");
@@ -103,8 +105,6 @@ public class ModLangProvider extends LanguageProvider {
         add("item.abyssaldecor.dusty_cd.desc", "Unknown Artist - Unknown Track");
 
         add("subtitles.music.disk.tsm", "Mysterious CD Plays");
-
-        add("effect.abyssaldecor.spore_protection", "Spore Protection");
 
         add("item.abyssaldecor.laser_assisted_electrical_rifle", "Laser Assisted Electrical Rifle");
 

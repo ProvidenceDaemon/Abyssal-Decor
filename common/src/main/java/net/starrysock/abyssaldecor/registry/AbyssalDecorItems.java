@@ -2,6 +2,7 @@ package net.starrysock.abyssaldecor.registry;
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Direction;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
@@ -9,10 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.starrysock.abyssaldecor.AbyssalDecor;
-import net.starrysock.abyssaldecor.item.FeverBlossomItem;
-import net.starrysock.abyssaldecor.item.FloorWallCeilingBlockItem;
-import net.starrysock.abyssaldecor.item.InfiniteBlockItem;
-import net.starrysock.abyssaldecor.item.SupplierRecordItem;
+import net.starrysock.abyssaldecor.item.*;
 
 import java.util.function.Supplier;
 
@@ -499,7 +497,10 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<Item> FEVER_BLOSSOM = AbyssalDecor.ITEMS.register("fever_blossom",
             () -> new FeverBlossomItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).alwaysEat().build())));
 
-    public static final RegistrySupplier<Item> FEVER_BLOSSOM_TEA = AbyssalDecor.ITEMS.register("fever_blossom_tea",() -> simpleItem());
+    public static final RegistrySupplier<Item> FEVER_BLOSSOM_TEA = AbyssalDecor.ITEMS.register("fever_blossom_tea",() ->
+            new FeverBlossomTeaItem(new Item.Properties().food((new FoodProperties.Builder()).nutrition(2)
+                            .effect(new MobEffectInstance(AbyssalDecorMobEffects.SPORE_PROTECTION.get(),2400),1)
+                    .saturationMod(2).fast().build())));
 
     public static final RegistrySupplier<BlockItem> MOLDY_STARSTONE = registerBlockItem(AbyssalDecorBlocks.MOLDY_STARSTONE);
 
@@ -593,7 +594,10 @@ public class AbyssalDecorItems {
     ////////////////////////
 
     public static final RegistrySupplier<BlockItem> CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.CINNAMON_LOG);
+    public static final RegistrySupplier<BlockItem> HEALING_CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.HEALING_CINNAMON_LOG);
+    public static final RegistrySupplier<BlockItem> HEALING_CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD);
     public static final RegistrySupplier<BlockItem> STRIPPED_CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG);
+    public static final RegistrySupplier<BlockItem> STRIPPED_CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD);
     public static final RegistrySupplier<BlockItem> CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.CINNAMON_WOOD);
     public static final RegistrySupplier<BlockItem> CINNAMON_PLANKS = registerBlockItem(AbyssalDecorBlocks.CINNAMON_PLANKS);
     public static final RegistrySupplier<BlockItem> CINNAMON_STAIRS = registerBlockItem(AbyssalDecorBlocks.CINNAMON_STAIRS);

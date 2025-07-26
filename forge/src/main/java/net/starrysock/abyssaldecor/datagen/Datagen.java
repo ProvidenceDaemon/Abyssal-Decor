@@ -686,6 +686,11 @@ public class Datagen {
                     .texture("all", modLoc("block/black_pearl"))
                     .texture("particle", modLoc("block/black_pearl")));
 
+            directionalBlock(AbyssalDecorBlocks.HEART_OF_THE_SEA.get(), models().withExistingParent("heart_of_the_sea",
+                            modLoc("custom/tinywhitepearl"))
+                    .texture("all", modLoc("block/heartoseablock"))
+                    .texture("particle", modLoc("block/heartoseablock")));
+
             simpleBlockItem(AbyssalDecorBlocks.IRON_BALL.get(), models().getExistingFile(modLoc("block/iron_ball")));
 
             paneBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE.get(), modLoc("block/whitewood_picket_fence"),
@@ -1071,7 +1076,7 @@ public class Datagen {
                     case BOTTOM -> models().cross("moldy_stalk_bottom",modLoc("block/moldystalkbottom"));
                 };
                 return ConfiguredModel.builder().modelFile(file).build();
-            });
+            },MoldyStalkBlock.ACTIVE);
             iconTexture("moldy_stalk",modLoc("block/moldy_stalk"));
         }
 
