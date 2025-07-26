@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,horizontal_part=back,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_base",
+      "y": 90
+    },
+    "facing=east,horizontal_part=back,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_base",
+      "y": 90
+    },
+    "facing=east,horizontal_part=front,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_top",
+      "y": 90
+    },
+    "facing=east,horizontal_part=front,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_top",
+      "y": 90
+    },
+    "facing=north,horizontal_part=back,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_base"
+    },
+    "facing=north,horizontal_part=back,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_base"
+    },
+    "facing=north,horizontal_part=front,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_top"
+    },
+    "facing=north,horizontal_part=front,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_top"
+    },
+    "facing=south,horizontal_part=back,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_base",
+      "y": 180
+    },
+    "facing=south,horizontal_part=back,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_base",
+      "y": 180
+    },
+    "facing=south,horizontal_part=front,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_top",
+      "y": 180
+    },
+    "facing=south,horizontal_part=front,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_top",
+      "y": 180
+    },
+    "facing=west,horizontal_part=back,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_base",
+      "y": 270
+    },
+    "facing=west,horizontal_part=back,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_base",
+      "y": 270
+    },
+    "facing=west,horizontal_part=front,waterlogged=false": {
+      "model": "abyssaldecor:block/gargoyle_top",
+      "y": 270
+    },
+    "facing=west,horizontal_part=front,waterlogged=true": {
+      "model": "abyssaldecor:block/gargoyle_top",
+      "y": 270
+    }
+  }
+}

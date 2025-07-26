@@ -11,6 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CarrotBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.starrysock.abyssaldecor.block.BogAppleLeavesBlock;
+import net.starrysock.abyssaldecor.block.DoubleBlock;
 import net.starrysock.abyssaldecor.block.MuckrootBlock;
 import net.starrysock.abyssaldecor.block.SmallBarsCornerBlock;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
@@ -54,7 +56,7 @@ public class ModLootTableProvider extends LootTableProvider {
 
 
     static class ModBlockLoot extends VanillaBlockLoot {
-        protected final Set<Block> skip = Set.of(AbyssalDecorBlocks.AMARANTH.get(),AbyssalDecorBlocks.TALL_AMARANTH.get());
+        protected final Set<Block> skip = Set.of(AbyssalDecorBlocks.AMARANTH.get());
 
 
         @Override
@@ -69,10 +71,15 @@ public class ModLootTableProvider extends LootTableProvider {
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
-                if (!skip.contains(block) && !specialDrops.contains(block) && !(block instanceof SmallBarsCornerBlock) && !(block instanceof BarrierRibbonBlock)) {
+                if (!skip.contains(block) && !specialDrops.contains(block) && !(block instanceof SmallBarsCornerBlock)
+                       &&!(block instanceof DoubleBlock)
+                        &&!(block instanceof DoublePlantBlock)
+                        && !(block instanceof BarrierRibbonBlock)) {
                     dropSelf(block);
                 } else if (block instanceof BarrierRibbonBlock) {
                     add(block,noDrop());
+                } else if (block instanceof DoublePlantBlock || block instanceof DoubleBlock) {
+                    barrierDrop(block);
                 }
             } );
 

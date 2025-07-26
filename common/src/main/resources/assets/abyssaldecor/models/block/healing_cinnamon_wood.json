@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/healingcinnamon",
-    "particle": "abyssaldecor:block/healingcinnamon"
-  },
-  "render_type": "solid"
-}

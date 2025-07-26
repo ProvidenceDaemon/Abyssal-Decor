@@ -13,18 +13,18 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "abyssaldecor:mold_fronds",
+              "block": "abyssaldecor:tall_amaranth",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "abyssaldecor:mold_fronds"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "abyssaldecor:blocks/mold_fronds"
+  "random_sequence": "abyssaldecor:blocks/tall_amaranth"
 }

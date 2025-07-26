@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/healing_cinnamon_log",
+    "side": "abyssaldecor:block/healing_cinnamon_log"
+  }
+}

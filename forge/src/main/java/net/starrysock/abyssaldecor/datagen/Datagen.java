@@ -408,7 +408,7 @@ public class Datagen {
             logBlockWithItem(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
             logBlockWithItem(AbyssalDecorBlocks.FOXY_PILLAR.get());
 
-            lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(), modLoc("custom/floorgaslamp"), modLoc("block/quartz_lamp"));
+            lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(), modLoc("custom/floorgaslamp"), modLoc("block/quartz_lamp"), modLoc("custom/floorgaslampon"));
             wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), modLoc("custom/wallgaslamp"), modLoc("block/wall_quartz_lamp"));
             lamp(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(), modLoc("custom/ceilingquartzlamp"), modLoc("block/ceiling_quartz_lamp"));
             wallLamp(AbyssalDecorBlocks.JADE_LAMP.get(), modLoc("custom/jadelamp"), modLoc("block/jade_lamp"));
@@ -632,8 +632,7 @@ public class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.MOLDWEAVE.get());
 
-            simpleBlockItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), models().withExistingParent("moldweave_carpet", mcLoc("block/carpet"))
-                    .texture("wool", modLoc("block/moldweave")));
+            simpleBlockWithItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), models().carpet("moldweave_carpet",modLoc("block/moldweave")));
 
             paneBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(), modLoc("block/black_pearl_bars_top"), BLANK);
 
@@ -670,6 +669,7 @@ public class Datagen {
             simplestBlockWithItem(AbyssalDecorBlocks.SEABRASS_PLATING.get());
 
             logBlockWithItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get());
+            woodBlockWithItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD.get(),modLoc("block/stripped_cinnamon_log"));
 
             directionalBlock(AbyssalDecorBlocks.WHITE_PEARL.get(), models().withExistingParent("white_pearl",
                             modLoc("custom/tinywhitepearl"))
@@ -866,13 +866,21 @@ public class Datagen {
             curtains(AbyssalDecorBlocks.WOOL_CURTAIN.get(),modLoc("block/wool_curtain_solo"));
             multiblockCurtains(AbyssalDecorBlocks.WOOL_CURTAIN_MULTIBLOCK.get());
             gargoyle(AbyssalDecorBlocks.GARGOYLE.get());
+
+            axisBlock(AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),modLoc("block/healing_cinnamon_log"),modLoc("block/cinnamonlogtop"));
+            simpleBlockItem(AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),models().getExistingFile(modLoc("block/healing_cinnamon_log")));
+            woodBlockWithItem(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),modLoc("block/healing_cinnamon_log"));
         }
 
-        protected void gargoyle(Block block) {
+        protected void gargoyle(Block block) {//what is ammonite?
             String name = name(block);
-            ModelFile base = models().getExistingFile(modLoc("block/gargoyle_base"));
-            ModelFile offset = models().getExistingFile(modLoc("block/gargoyle_top"));
-            horizontalBlock(block,state -> state.getValue(ModBlockStateProperties.PART) == HorizontalPart.BACK ? base : offset);
+            ModelFile base = models().withExistingParent(name+"_base",modLoc("custom/gargoylebase"))
+                    .texture("0",modLoc("block/"+name))
+                    .texture("particle",modLoc("block/"+name));
+            ModelFile top = models().withExistingParent(name+"_top",modLoc("custom/gargoyletop"))
+                    .texture("0",modLoc("block/"+name))
+                    .texture("particle",modLoc("block/"+name));
+            horizontalBlock(block,state -> state.getValue(ModBlockStateProperties.PART) == HorizontalPart.BACK ? base : top);
         }
 
 
@@ -1427,7 +1435,7 @@ public class Datagen {
 
         void trapdoor(TrapDoorBlock block) {
             ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(block);
-            trapdoorBlock(block, modLoc("block/" + trapLoc.getPath()), false);
+            trapdoorBlock(block, modLoc("block/" + trapLoc.getPath()), true);
             simpleBlockItem(block, models().getExistingFile(modLoc(name(block) + "_bottom")));
         }
 
@@ -1661,6 +1669,10 @@ public class Datagen {
         }
 
         protected void lamp(Block block, ResourceLocation model, ResourceLocation texture0) {
+            lamp(block,model,texture0,model);
+        }
+
+            protected void lamp(Block block, ResourceLocation model, ResourceLocation texture0,ResourceLocation modelLit) {
             String name = name(block);
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
@@ -1669,8 +1681,7 @@ public class Datagen {
                 ResourceLocation texture = lit ? texture0Lit : texture0;
 
                 ModelFile modelFile = models().withExistingParent("block/" + name + (lit ? "_lit" : ""),
-                                model)
-                        .texture("all", texture)
+                                lit? modelLit : model)
                         .texture("particle", texture)
                         .texture("0", texture);
                 return ConfiguredModel.builder().modelFile(modelFile).build();

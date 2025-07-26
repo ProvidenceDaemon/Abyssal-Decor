@@ -1,0 +1,7 @@
+{
+  "parent": "abyssaldecor:custom/gargoylebase",
+  "textures": {
+    "0": "abyssaldecor:block/gargoyle",
+    "particle": "abyssaldecor:block/gargoyle"
+  }
+}

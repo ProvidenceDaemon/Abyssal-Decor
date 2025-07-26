@@ -2,7 +2,6 @@
   "parent": "minecraft:block/cube_all",
   "textures": {
     "0": "abyssaldecor:block/jade_lantern_lit",
-    "all": "abyssaldecor:block/jade_lantern_lit",
     "particle": "abyssaldecor:block/jade_lantern_lit"
   }
 }

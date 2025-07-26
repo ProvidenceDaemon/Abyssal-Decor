@@ -1,8 +1,7 @@
 {
-  "parent": "abyssaldecor:custom/floorgaslamp",
+  "parent": "abyssaldecor:custom/floorgaslampon",
   "textures": {
     "0": "abyssaldecor:block/quartz_lamp_lit",
-    "all": "abyssaldecor:block/quartz_lamp_lit",
     "particle": "abyssaldecor:block/quartz_lamp_lit"
   }
 }

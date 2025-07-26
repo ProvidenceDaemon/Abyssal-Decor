@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-26T03:20:35.1862041	Loot Tables
+// 1.20.1	2025-07-26T16:30:44.4520629	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -222,7 +222,7 @@ a4659407319ffa256b96718533f5bdd13250f6d4 data/abyssaldecor/loot_tables/blocks/mo
 01d54e8f88d33b72306a59e2b137d73e97bd5a00 data/abyssaldecor/loot_tables/blocks/moldy_stalk.json
 aeb5a5d23790f6a43d3f05994fb28bd02545e6b7 data/abyssaldecor/loot_tables/blocks/moldy_stalk_sprout.json
 612b945d72cca0135d33e53ab9cfa3cc343a0a1e data/abyssaldecor/loot_tables/blocks/moldy_starstone.json
-1ce79a4043cbccbe546f219d926b44aeb6a584b7 data/abyssaldecor/loot_tables/blocks/mold_fronds.json
+1e14c2df261ffcfb347adff0d4316a81550847a2 data/abyssaldecor/loot_tables/blocks/mold_fronds.json
 d1663cf56d6445fd2a0107b8756f309cfb8f76f1 data/abyssaldecor/loot_tables/blocks/mossy_cinnamon_shingles.json
 7165f9d3d42744fea12c33714a4be6b5b62935e3 data/abyssaldecor/loot_tables/blocks/mossy_cinnamon_shingle_slab.json
 33403cafd41c1766b9c0e444b7553414a69c0259 data/abyssaldecor/loot_tables/blocks/mossy_cinnamon_shingle_stairs.json
@@ -358,7 +358,8 @@ c7e486009bb19406459085527cf1a5e01c74b958 data/abyssaldecor/loot_tables/blocks/st
 19ea2572e3a007c1a90c86cbb7060ac37e9dc221 data/abyssaldecor/loot_tables/blocks/stripped_cinnamon_wood.json
 96c28fd44e6e9072c2caf80611d1c7be57a386ba data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass.json
 ecdf471a617a7ff6992e81042f36d9e2d7036774 data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass_pane.json
-061c8c9cc61ffa116b4e3e6e4efd5d33132899d8 data/abyssaldecor/loot_tables/blocks/tall_cinnamon_bush.json
+8efb8a3fe1c8e74342d4831fd76860342616b502 data/abyssaldecor/loot_tables/blocks/tall_amaranth.json
+66ad4024443d734a61042c5d43055705f1e49f69 data/abyssaldecor/loot_tables/blocks/tall_cinnamon_bush.json
 cdc704f8ad4575bfba033663208ca7d45df964bc data/abyssaldecor/loot_tables/blocks/telescope.json
 d225c8aff26bf0e4aa3dc50eee4b507a389926d3 data/abyssaldecor/loot_tables/blocks/terrestrial_rod.json
 ea3a08f91d685753a41ee962f5942d4243623a50 data/abyssaldecor/loot_tables/blocks/trash_bag.json

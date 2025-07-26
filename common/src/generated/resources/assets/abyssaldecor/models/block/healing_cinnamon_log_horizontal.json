@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "abyssaldecor:block/cinnamonlogtop",
+    "side": "abyssaldecor:block/healing_cinnamon_log"
+  }
+}

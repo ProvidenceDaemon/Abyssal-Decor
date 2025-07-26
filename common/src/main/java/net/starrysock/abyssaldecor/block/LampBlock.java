@@ -46,12 +46,11 @@ public class LampBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (player.getItemInHand(interactionHand).isEmpty()) {
+        if (!level.isClientSide) {
             level.setBlockAndUpdate(blockPos, blockState.cycle(RedstoneLampBlock.LIT));
-            level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
-            return InteractionResult.SUCCESS;
         }
-        return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+        level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override
@@ -62,6 +61,6 @@ public class LampBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(RedstoneLampBlock.LIT,BlockStateProperties.WATERLOGGED);
+        builder.add(RedstoneLampBlock.LIT, BlockStateProperties.WATERLOGGED);
     }
 }
