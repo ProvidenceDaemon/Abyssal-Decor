@@ -121,9 +121,14 @@ public class AbyssalDecor {
 
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CINNAMON_WOOD.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get());
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD.get());
+        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get(),AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
     }
 
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID,path);
+    }
+
+    private static class info {
+
     }
 }

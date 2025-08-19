@@ -1,6 +1,7 @@
 package net.starrysock.abyssaldecor.registry;
 
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
@@ -126,11 +127,15 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> SNAPLEAF = AbyssalDecor.BLOCKS.register("snapleaf", () ->
             new BonemealableFlowerBlock(MobEffects.REGENERATION, 8, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistrySupplier<Block> AMARANTH = AbyssalDecor.BLOCKS.register("amaranth", () -> new AmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS)
+    public static final RegistrySupplier<Block> AMARANTH = AbyssalDecor.BLOCKS.register("amaranth", () ->
+            new AmaranthBlock(BlockBehaviour.Properties.of().offsetType(BlockBehaviour.OffsetType.XZ).
+            mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS)
             .offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY), ModTags.Blocks.AMARANTH_GROWABLE));
     public static final RegistrySupplier<DoublePlantBlock> TALL_AMARANTH = AbyssalDecor.BLOCKS.register("tall_amaranth", () ->
-            new TallAmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final RegistrySupplier<Block> AMARANTH_CRATE = AbyssalDecor.BLOCKS.register("amaranth_crate", () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+            new TallAmaranthBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).randomTicks()));
+    public static final RegistrySupplier<Block> AMARANTH_CRATE = AbyssalDecor.BLOCKS.register("amaranth_crate", () ->
+            new AbstractDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 
     public static final RegistrySupplier<CropBlock> MUCKROOT = AbyssalDecor.BLOCKS.register("muckroot", () ->
             new MuckrootBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY), ModTags.Blocks.MUCKROOT_GROWABLE));
@@ -139,10 +144,10 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<WisteriaBlock> WISTERIA = AbyssalDecor.BLOCKS.register("wisteria",() ->
             new WisteriaBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.VINE).strength(0.1F, 1)
-                    .noCollission().noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)));
+                    .noCollission().noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XYZ)));
     public static final RegistrySupplier<WisteriaBlock> ELDER_WISTERIA = AbyssalDecor.BLOCKS.register("elder_wisteria",() ->
             new WisteriaBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.VINE).strength(0.1F, 1)
-                    .noCollission().noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)));
+                    .noCollission().noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XYZ)));
 
 
     public static final RegistrySupplier<Block> WISTERIA_PETALS = AbyssalDecor.BLOCKS.register("wisteria_petals", () -> Blocks.leaves(SoundType.GRASS));
@@ -152,7 +157,14 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> ANCIENT_BIRCH_LOG = AbyssalDecor.BLOCKS.register("ancient_birch_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_ANCIENT_BIRCH_LOG = AbyssalDecor.BLOCKS.register("stripped_ancient_birch_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
 
-    public static final RegistrySupplier<RotatedPillarBlock> FOXY_PILLAR = AbyssalDecor.BLOCKS.register("foxy_pillar", () -> Blocks.log(MapColor.PODZOL, MapColor.COLOR_BROWN));
+    public static final RegistrySupplier<DirectionalBlock> FOXY_PILLAR = AbyssalDecor.BLOCKS.register("foxy_pillar", () ->
+            directionalLog(MapColor.PODZOL, MapColor.COLOR_BROWN));
+
+    public static DirectionalBlock directionalLog(MapColor topMapColor, MapColor sideMapColor) {
+        return new AbstractDirectionalBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+            return p_152624_.getValue(DirectionalBlock.FACING).getAxis() == Direction.Axis.Y ? topMapColor : sideMapColor;
+        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+    }
 
     public static final RegistrySupplier<Block> SCRIMSHAW = AbyssalDecor.BLOCKS.register("scrimshaw", () -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE)
             .strength(2, 10).lightLevel((s) -> 4).noOcclusion()));
@@ -165,8 +177,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> STARFISH = AbyssalDecor.BLOCKS.register("starfish", () -> new StarfishBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> DRIED_STARFISH = AbyssalDecor.BLOCKS.register("dried_starfish", () -> new DriedStarfishBlock(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<Block> STARLIGHT = AbyssalDecor.BLOCKS.register("starlight", () ->
-            new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST_CLUSTER)
-                    .strength(1).lightLevel((s) -> 12).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true)
+            new StarlightBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST_CLUSTER)
+                    .strength(1).lightLevel(s -> 12).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true)
                     .emissiveRendering((bs, br, bp) -> true)));
 
     public static final RegistrySupplier<Block> LIFE_PRESERVER = AbyssalDecor.BLOCKS.register("life_preserver", () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
@@ -771,11 +783,12 @@ public class AbyssalDecorBlocks {
 
     /////////
 
-    public static final ColorFamily<RotatedPillarBlock> WALLPAPERS = ColorFamily.createAndRegister(AbyssalDecor.BLOCKS, AbyssalDecorBlocks::wallpaper,"wallpaper");
+    public static final ColorFamily<AbstractDirectionalBlock> WALLPAPERS =
+            ColorFamily.createAndRegister(AbyssalDecor.BLOCKS, AbyssalDecorBlocks::wallpaper,"wallpaper");
 
 
-    public static RotatedPillarBlock wallpaper(DyeColor dyeColor) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(dyeColor).instrument(NoteBlockInstrument.GUITAR)
+    public static AbstractDirectionalBlock wallpaper(DyeColor dyeColor) {
+        return new AbstractDirectionalBlock(BlockBehaviour.Properties.of().mapColor(dyeColor).instrument(NoteBlockInstrument.GUITAR)
                 .strength(0.8F).sound(SoundType.WOOD).ignitedByLava());
     }
 

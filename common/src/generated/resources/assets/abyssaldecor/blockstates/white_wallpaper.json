@@ -1,16 +1,30 @@
 {
   "variants": {
-    "axis=x": {
+    "facing=down": {
+      "model": "abyssaldecor:block/white_wallpaper",
+      "x": 180
+    },
+    "facing=east": {
       "model": "abyssaldecor:block/white_wallpaper",
       "x": 90,
       "y": 90
     },
-    "axis=y": {
-      "model": "abyssaldecor:block/white_wallpaper"
-    },
-    "axis=z": {
+    "facing=north": {
       "model": "abyssaldecor:block/white_wallpaper",
       "x": 90
+    },
+    "facing=south": {
+      "model": "abyssaldecor:block/white_wallpaper",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "abyssaldecor:block/white_wallpaper"
+    },
+    "facing=west": {
+      "model": "abyssaldecor:block/white_wallpaper",
+      "x": 90,
+      "y": 270
     }
   }
 }

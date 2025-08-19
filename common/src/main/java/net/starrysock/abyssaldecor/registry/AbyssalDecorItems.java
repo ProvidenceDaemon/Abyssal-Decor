@@ -35,7 +35,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = registerNamedBlockItem("muckroot",
             AbyssalDecorBlocks.MUCKROOT,new Item.Properties().food(Foods.CARROT));
     public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() ->
-            new Item(new Item.Properties().food(Foods.BEETROOT)));
+            new CookedMuckrootItem(new Item.Properties().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() ->
             new BowlFoodItem(new Item.Properties().stacksTo(1).food(Foods.BEETROOT_SOUP)));
 

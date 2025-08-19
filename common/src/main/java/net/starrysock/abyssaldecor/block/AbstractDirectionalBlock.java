@@ -18,10 +18,6 @@ public class AbstractDirectionalBlock extends DirectionalBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
         Direction direction = blockPlaceContext.getClickedFace();
-        BlockState blockState = blockPlaceContext.getLevel().getBlockState(blockPlaceContext.getClickedPos().relative(direction.getOpposite()));
-        if (blockState.is(this) && blockState.getValue(FACING) == direction) {
-            return this.defaultBlockState().setValue(FACING, direction.getOpposite());
-        }
         return this.defaultBlockState().setValue(FACING, direction);
     }
 

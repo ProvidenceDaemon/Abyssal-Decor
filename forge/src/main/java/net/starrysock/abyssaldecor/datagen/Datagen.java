@@ -406,7 +406,7 @@ public class Datagen {
 
             logBlockWithItem(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get());
             logBlockWithItem(AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
-            logBlockWithItem(AbyssalDecorBlocks.FOXY_PILLAR.get());
+            directionalBlockWithItem(AbyssalDecorBlocks.FOXY_PILLAR.get(),modLoc("block/foxy_pillar"), modLoc("block/foxy_pillar_top"));
 
             lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(), modLoc("custom/floorgaslamp"), modLoc("block/quartz_lamp"), modLoc("custom/floorgaslampon"));
             wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), modLoc("custom/wallgaslamp"), modLoc("block/wall_quartz_lamp"));
@@ -614,7 +614,7 @@ public class Datagen {
 
 
             AbyssalDecorBlocks.WALLPAPERS.forEach(block -> {
-                woodBlockWithItem(block, modLoc("block/" + name(block)));
+                directionalBlockWithItem(block, modLoc("block/" + name(block)));
             });
 
             simplestBlockWithItem(AbyssalDecorBlocks.LAVENTINE.get());
@@ -870,6 +870,9 @@ public class Datagen {
             axisBlock(AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),modLoc("block/healing_cinnamon_log"),modLoc("block/cinnamonlogtop"));
             simpleBlockItem(AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),models().getExistingFile(modLoc("block/healing_cinnamon_log")));
             woodBlockWithItem(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),modLoc("block/healing_cinnamon_log"));
+            directionalBlock(AbyssalDecorBlocks.AMARANTH_CRATE.get(),models().cubeBottomTop("amaranth_crate",
+                    modLoc("block/amaranthcrate"),modLoc("block/amaranthcratebottom"),modLoc("block/amaranthcratetop")));
+
         }
 
         protected void gargoyle(Block block) {//what is ammonite?
@@ -1511,6 +1514,20 @@ public class Datagen {
             simpleBlockItem(block, modelFile);
         }
 
+        public void directionalBlockWithItem(DirectionalBlock block, ResourceLocation texture) {
+            ModelFile modelFile = models().cubeColumn(name(block), texture, texture);
+            directionalBlock(block,modelFile);
+            simpleBlockItem(block, modelFile);
+        }
+
+
+        public void directionalBlockWithItem(DirectionalBlock block,ResourceLocation texture, ResourceLocation topTexture) {
+            ModelFile modelFile = models().cubeColumn(name(block), texture, topTexture);
+            directionalBlock(block,modelFile);
+            simpleBlockItem(block, modelFile);
+        }
+
+
         public void simpleDoorBlock(DoorBlock door) {
             ResourceLocation doorLoc = BuiltInRegistries.BLOCK.getKey(door);
             ResourceLocation top = modLoc("block/" + doorLoc.getPath() + "_top");
@@ -1553,7 +1570,7 @@ public class Datagen {
 
                         Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
                         Vector2i vector2i = getRotation(orientation);
-                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
+                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).rotationX(vector2i.x).build();
                     },BlockStateProperties.WATERLOGGED);
 
             iconTexture("starfish", modLoc("block/1_orange_starfish"));
@@ -1570,7 +1587,7 @@ public class Datagen {
                         Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
                         Vector2i vector2i = getRotation(orientation);
 
-                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).build();
+                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).rotationX(vector2i.x).build();
                     },BlockStateProperties.WATERLOGGED);
         }
 

@@ -2,7 +2,7 @@
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
     "bottom": "abyssaldecor:block/amaranthcratebottom",
-    "top": "abyssaldecor:block/amaranthcratetop",
-    "side": "abyssaldecor:block/amaranthcrate"
+    "side": "abyssaldecor:block/amaranthcrate",
+    "top": "abyssaldecor:block/amaranthcratetop"
   }
 }

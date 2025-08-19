@@ -1,15 +1,10 @@
 package net.starrysock.abyssaldecor.block;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import org.jetbrains.annotations.Nullable;
 
 public class StarfishBlock extends DriedStarfishBlock {
 
@@ -21,17 +16,6 @@ public class StarfishBlock extends DriedStarfishBlock {
     public StarfishBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState().setValue(COLOR,DyeColor.ORANGE));
-    }
-
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return canSupportCenter(level, pos.below(), Direction.UP);
-    }
-
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return super.getStateForPlacement(context);
     }
 
     @Override

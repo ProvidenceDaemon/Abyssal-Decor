@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 
 public class TallAmaranthBlock extends DoublePlantBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
@@ -22,7 +22,23 @@ public class TallAmaranthBlock extends DoublePlantBlock implements BonemealableB
     }
 
     public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean bl) {
-        return blockState.getValue(AGE) < 1;
+        return blockState.getValue(AGE) < 1 && blockState.getValue(HALF) == DoubleBlockHalf.LOWER;
+    }
+
+    @Override
+    public boolean isRandomlyTicking(BlockState state) {
+        return state.getValue(AGE) < 1 && state.getValue(HALF) == DoubleBlockHalf.LOWER;
+    }
+
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        grow(state, level, pos, random);
+    }
+
+    protected void grow(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (state.canSurvive(level,pos)) {
+            DoublePlantBlock.placeAt(level, state.setValue(AGE,1), pos, 2);
+        }
     }
 
     public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
@@ -31,10 +47,7 @@ public class TallAmaranthBlock extends DoublePlantBlock implements BonemealableB
 
     public void performBonemeal(ServerLevel level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
         //todo popResource(level, blockPos, new ItemStack(this));
-        DoublePlantBlock doubleplantblock = AbyssalDecorBlocks.TALL_AMARANTH.get();
-        if (doubleplantblock.defaultBlockState().canSurvive(level,blockPos) && level.isEmptyBlock(blockPos.above())) {
-            DoublePlantBlock.placeAt(level, doubleplantblock.defaultBlockState().setValue(AGE,1), blockPos, 2);
-        }
+        grow(blockState,level,blockPos,randomSource);
     }
 
     @Override

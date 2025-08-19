@@ -23,6 +23,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import org.jetbrains.annotations.Nullable;
 
 public class ScrimshawBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock{
@@ -65,9 +66,9 @@ public class ScrimshawBlock extends AbstractHorizontalBlock implements SimpleWat
     @Override
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
         super.playerDestroy(level, player, pos, state, blockEntity, tool);
-        if (!level.isClientSide) {
+        if (this == AbyssalDecorBlocks.SCRIMSHAW.get() && !level.isClientSide) {
             player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,200));
-            level.playSound((Player) null,pos, SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD.value(), SoundSource.BLOCKS,1,1);
+            level.playSound(null,pos, SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD.value(), SoundSource.BLOCKS,1,1);
         }
     }
 

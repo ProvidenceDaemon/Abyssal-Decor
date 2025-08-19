@@ -1,6 +1,7 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
 public class WoodenDragonHeadBlock extends AbstractHorizontalBlock {
     public WoodenDragonHeadBlock(Properties properties) {
@@ -23,6 +25,7 @@ public class WoodenDragonHeadBlock extends AbstractHorizontalBlock {
         builder.add(BlockStateProperties.WATERLOGGED);
     }
 
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         VoxelShape var10000;
         switch (state.getValue(FACING)) {
@@ -33,6 +36,12 @@ public class WoodenDragonHeadBlock extends AbstractHorizontalBlock {
         }
 
         return var10000;
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override

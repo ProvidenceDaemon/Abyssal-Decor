@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock, BonemealableBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    private final double growPerTickProbability = .25;
+    private final double growPerTickProbability = .5;
 
     public WisteriaBlock(Properties properties) {
         super(properties);
@@ -53,7 +53,6 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         tryGrow(state, level, pos, random);
-
     }
 
     protected void tryGrow(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
@@ -80,11 +79,13 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Vec3 offset = state.getOffset(world, pos);
+        TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
+        boolean bottom = part == TriPart.BOTTOM;
         VoxelShape shape = switch (state.getValue(FACING)) {
-            case NORTH -> NORTH_AABB;
-            case EAST -> EAST_AABB;
-            case WEST -> WEST_AABB;
-            default -> SOUTH_AABB;
+            case NORTH -> bottom ? BOTTOM_NORTH_AABB:NORTH_AABB;
+            case EAST -> bottom ? BOTTOM_EAST_AABB:EAST_AABB;
+            case WEST -> bottom ? BOTTOM_WEST_AABB:WEST_AABB;
+            default -> bottom ? BOTTOM_SOUTH_AABB:SOUTH_AABB;
         };
         return shape.move(offset.x,offset.y,offset.z);
     }

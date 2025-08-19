@@ -28,6 +28,12 @@ public class WallHangingMossBlock extends WallHangingBlock{
         registerDefaultState(defaultBlockState().setValue(VERTICAL_FACING, Direction.DOWN));
     }
 
+    protected static final VoxelShape THIN_EAST_AABB_UPPER = Block.box(0, 0, 0, 1, 16, 16);
+    protected static final VoxelShape THIN_WEST_AABB_UPPER = Block.box(15, 0, 0, 16, 16, 16);
+    protected static final VoxelShape THIN_SOUTH_AABB_UPPER = Block.box(0, 0, 0, 16, 16, 1);
+    protected static final VoxelShape THIN_NORTH_AABB_UPPER = Block.box(0, 0, 15, 16, 16, 16);
+
+
     protected static final VoxelShape THIN_EAST_AABB = Block.box(0, 0, 0, 1, 16, 16);
     protected static final VoxelShape THIN_WEST_AABB = Block.box(15, 0, 0, 16, 16, 16);
     protected static final VoxelShape THIN_SOUTH_AABB = Block.box(0, 0, 0, 16, 16, 1);
