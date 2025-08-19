@@ -2,6 +2,7 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,15 +16,28 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 
 public class MuckrootBlock extends CropBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     private final TagKey<Block> allowed;
 
+    private static final VoxelShape[] M_SHAPE_BY_AGE = new VoxelShape[]{
+            Block.box(3, 0, 3, 13, 4, 13),
+            Block.box(3, 0, 3, 13, 8, 13),
+            Block.box(3, 0, 3, 13, 12, 13)};
+
+
     public MuckrootBlock(Properties properties, TagKey<Block> allowed) {
         super(properties);
         this.allowed = allowed;
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return M_SHAPE_BY_AGE[this.getAge(state)];
     }
 
     @Override
@@ -44,6 +58,11 @@ public class MuckrootBlock extends CropBlock {
     @Override
     public int getMaxAge() {
         return 2;
+    }
+
+    @Override
+    protected int getBonemealAgeIncrease(Level level) {
+        return Mth.nextInt(level.random, 1, 2);
     }
 
     @Override

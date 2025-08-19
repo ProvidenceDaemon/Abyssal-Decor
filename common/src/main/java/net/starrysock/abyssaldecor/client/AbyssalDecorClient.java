@@ -169,6 +169,7 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.GARGOYLE.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.STONE_BARS.get(),RenderType.cutoutMipped());
     }
 
 

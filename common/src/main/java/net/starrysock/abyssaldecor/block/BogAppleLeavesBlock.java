@@ -2,7 +2,10 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -69,6 +72,7 @@ public class BogAppleLeavesBlock extends CropBlock implements SimpleWaterloggedB
                     player.addItem(stack);
                 }
                 level.setBlockAndUpdate(pos, block.defaultBlockState());
+                level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.5F);
             }
         }
         return InteractionResult.PASS;
@@ -85,6 +89,11 @@ public class BogAppleLeavesBlock extends CropBlock implements SimpleWaterloggedB
         FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
         BlockState state = fluidstate.is(ModTags.Fluids.SUPPORTS_BOG_APPLES) && fluidstate.getAmount() == 8 ? super.getStateForPlacement(context) : null;
         return state;
+    }
+
+    @Override
+    protected int getBonemealAgeIncrease(Level level) {
+        return Mth.nextInt(level.random, 1, 2);
     }
 
     @Override
