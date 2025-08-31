@@ -2,8 +2,6 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -73,15 +71,7 @@ public class HorizontalLampBlock extends AbstractHorizontalBlock implements Simp
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (player.getItemInHand(interactionHand).isEmpty()) {
-            level.setBlockAndUpdate(blockPos, blockState.cycle(RedstoneLampBlock.LIT));
-          //  _level.playLocalSound(x, y, z, (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.lava.extinguish")), SoundSource.BLOCKS, 0.1F, 1.5F, false);
-
-
-            level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
-            return InteractionResult.SUCCESS;
-        }
-        return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+        return ToggleableDirectionalLampBlock.toggleLamp(blockState,level,blockPos);
     }
 
     @Nullable

@@ -164,7 +164,7 @@ public class MoldBlock extends AbstractHorizontalBlock {
             return copyProperties(toConvert,AbyssalDecorBlocks.BLACKWOOD_STAIRS.get());
         } else if (toConvert.is(BlockTags.WOODEN_SLABS)) {
             return copyProperties(toConvert,AbyssalDecorBlocks.BLACKWOOD_SLAB.get());
-        } else if (toConvert.is(BlockTags.SAND)) {
+        } else if (toConvert.is(BlockTags.SAND) || toConvert.is(Blocks.GRAVEL) || toConvert.is(Blocks.SOUL_SAND)) {
             return AbyssalDecorBlocks.BLACKENED_SAND.get().defaultBlockState();
         } else if (toConvert.is(ModTags.Blocks.MOLD_SPREADABLES)) {
             if (random.nextDouble() < .95) {

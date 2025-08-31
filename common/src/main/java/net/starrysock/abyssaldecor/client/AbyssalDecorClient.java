@@ -99,6 +99,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SCRIMSHAW.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SCRIMSHAW_ALTAR.get(),RenderType.cutoutMipped());
 
+        renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get(),RenderType.cutoutMipped());
 
@@ -171,6 +172,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.ORNATE_STONE_TRAPDOOR.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.STONE_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.TALL_AMARANTH.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SEAGLASS_LAMP.get(),RenderType.cutoutMipped());
     }
 
 

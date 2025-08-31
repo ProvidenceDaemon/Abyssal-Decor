@@ -44,6 +44,7 @@ public class Datagen {
             generator.addProvider(true, new ModBlockStateProvider(output, helper));
             generator.addProvider(true, new ModItemModelProvider(output, helper));
             generator.addProvider(true, new ModLangProvider(output));
+            generator.addProvider(true,new ModSoundDefinitions(output,helper));
         }
     }
 
@@ -369,8 +370,10 @@ public class Datagen {
                 boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
                 Direction orientation = blockState.getValue(HorizontalDirectionalBlock.FACING);
 
+                ResourceLocation m = modLoc("custom/wallironlamp"+(lit? "lit": ""));
+
                 ModelFile modelFile = models().withExistingParent("block/wall_iron_lamp" + (lit ? "_lit" : ""),
-                                modLoc("custom/wallironlamp"))
+                                m)
                         .texture("particle", modLoc("block/ironlamp1"))
                         .texture("0", modLoc("block/ironlamp1"))
                         .texture("1", modLoc("block/ironlamp2" + (lit ? "lit" : "")));

@@ -1,0 +1,21 @@
+{
+  "lamp_off": {
+    "sounds": [
+      "abyssaldecor:lamp_off"
+    ]
+  },
+  "lamp_on": {
+    "sounds": [
+      "abyssaldecor:lamp_on"
+    ]
+  },
+  "music.disk.tsm": {
+    "sounds": [
+      {
+        "name": "abyssaldecor:unknown_artist_-_the_most_mysterious_song_on_the_internet_minus",
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.music.disk.tsm"
+  }
+}

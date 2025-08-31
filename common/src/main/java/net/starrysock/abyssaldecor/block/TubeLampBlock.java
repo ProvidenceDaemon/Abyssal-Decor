@@ -2,8 +2,6 @@ package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -64,9 +62,8 @@ public class TubeLampBlock extends FaceAttachedBlock{
             level.setBlockAndUpdate(blockPos, AbyssalDecorBlocks.VERTICAL_TUBE_LAMP.get().defaultBlockState()
                     .setValue(RedstoneLampBlock.LIT,blockState.getValue(RedstoneLampBlock.LIT)).setValue(FACING,blockState.getValue(FACING)));
         } else {
-            level.setBlockAndUpdate(blockPos, blockState.cycle(RedstoneLampBlock.LIT));
-            level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
+            return ToggleableDirectionalLampBlock.toggleLamp(blockState,level,blockPos);
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 }

@@ -22,6 +22,7 @@ import net.starrysock.abyssaldecor.block.*;
 import java.util.function.ToIntFunction;
 
 public class AbyssalDecorBlocks {
+    static final BlockBehaviour.StatePredicate EMISSIVE_LAMP = (state, level, pos) -> state.getValue(RedstoneLampBlock.LIT);
 
     //section: Lamps
     public static RegistrySupplier<Block> FRESNEL_LAMP = AbyssalDecor.BLOCKS.register("fresnel_lamp", () -> new Block(BlockBehaviour.Properties
@@ -35,29 +36,38 @@ public class AbyssalDecorBlocks {
             Shapes.or(Block.box(5.0, 8.0, 5.0, 11.0, 14.0, 11.0), Block.box(6, 3, 0, 10, 14, 1),
                     Block.box(7.0, 0.0, 7.0, 9.0, 8.0, 9.0))));
     public static RegistrySupplier<Block> TUBE_LAMP = AbyssalDecor.BLOCKS.register("tube_lamp", () -> new TubeLampBlock(lamp().noOcclusion()
-            .hasPostProcess((state, level, pos) -> state.getValue(RedstoneLampBlock.LIT))
-            .emissiveRendering((state, level, pos) -> state.getValue(RedstoneLampBlock.LIT))
+            .hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP)
     ));
+
+
     public static RegistrySupplier<Block> VERTICAL_TUBE_LAMP = AbyssalDecor.BLOCKS.register("vertical_tube_lamp",
             () -> new VerticalTubeLamp(lamp().noOcclusion().dropsLike(TUBE_LAMP.get())
-                    .hasPostProcess((state, level, pos) -> state.getValue(RedstoneLampBlock.LIT))
-                    .emissiveRendering((state, level, pos) -> state.getValue(RedstoneLampBlock.LIT)), Block.box(0,0,14,2,16,16)));
+                    .hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Block.box(0,0,14,2,16,16)));
 
 
-    public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () -> new LampBlock(lamp(), Shapes.or(Block.box(6.5, 2, 6.5, 9.5, 16, 9.5), Block.box(3, 6, 3, 13, 8, 13))));
-    public static RegistrySupplier<Block> WALL_IRON_LAMP = AbyssalDecor.BLOCKS.register("wall_iron_lamp", () -> new HorizontalLampBlock(lamp().dropsLike(IRON_LAMP.get()), null));
+    public static RegistrySupplier<Block> IRON_LAMP = AbyssalDecor.BLOCKS.register("iron_lamp", () ->
+            new LampBlock(lamp().noOcclusion().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Shapes.or(Block.box(6.5, 2, 6.5, 9.5, 16, 9.5), Block.box(3, 6, 3, 13, 8, 13))));
+    public static RegistrySupplier<Block> WALL_IRON_LAMP = AbyssalDecor.BLOCKS.register("wall_iron_lamp",
+            () -> new HorizontalLampBlock(lamp().noOcclusion().dropsLike(IRON_LAMP.get())
+                    .hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),
+                    Shapes.or(Block.box(3.0, 6.0, 3.0, 13.0, 8.0, 13.0), Block.box(6.0, 4.0, 0.0, 10.0, 12.0, 1.0), Block.box(6.5, 2.0, 6.5, 9.5, 9.0, 9.5))));
+
 
     static BlockBehaviour.Properties lamp() {
         return BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS);
     }
 
-    public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () -> new HorizontalLampBlock(lamp(), null));
+    public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () ->
+            new HorizontalLampBlock(lamp().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),
+                    Shapes.or(Block.box(5.0, 6.0, 5.0, 11.0, 15.0, 11.0), Block.box(6.0, 4.0, 0.0, 10.0, 12.0, 1.0))));
     public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new ToggleableDirectionalLampBlock(lamp()));
-    public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new LampBlock(lamp(), Block.box(5, 0, 5, 11, 16, 11)));
+    public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new
+            HorizontalLampBlock(lamp().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Block.box(5, 0, 5, 11, 16, 11)));
     public static RegistrySupplier<Block> WALL_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("wall_quartz_lamp", () ->
-            new HorizontalLampBlock(lamp().dropsLike(QUARTZ_LAMP.get()),Shapes.or(Block.box(5,3,5,11,16,11),
+            new HorizontalLampBlock(lamp().dropsLike(QUARTZ_LAMP.get()).hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),Shapes.or(Block.box(5,3,5,11,16,11),
                     Block.box(6,3,0,10,13,1))));
-    public static RegistrySupplier<Block> CEILING_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("ceiling_quartz_lamp", () -> new LampBlock(lamp().dropsLike(QUARTZ_LAMP.get()), Shapes.or(Block.box(6.5, 2, 6.5, 9.5, 16, 9.5), Block.box(5, 4, 5, 11, 9, 11), Block.box(2, 10, 2, 14, 12, 14))));
+    public static RegistrySupplier<Block> CEILING_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("ceiling_quartz_lamp", () ->
+            new LampBlock(lamp().dropsLike(QUARTZ_LAMP.get()).hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Shapes.or(Block.box(6.5, 2, 6.5, 9.5, 16, 9.5), Block.box(5, 4, 5, 11, 9, 11), Block.box(2, 10, 2, 14, 12, 14))));
 
 
     public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new HorizontalLampBlock(lamp(), null));
@@ -224,10 +234,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> WALL_DANGLING_WEB = AbyssalDecor.BLOCKS.register("wall_dangling_web", () -> new WallHangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
             .requiresCorrectToolForDrops().strength(4).pushReaction(PushReaction.DESTROY).dropsLike(DANGLING_WEB.get())));
 
-    public static final RegistrySupplier<Block> PRISMARINE_CRYSTAL_BLOCK = AbyssalDecor.BLOCKS.register("prismarine_crystal_block", () -> new GlassBlock(glassLike()));
+    public static final RegistrySupplier<Block> PRISMARINE_CRYSTAL_BLOCK = AbyssalDecor.BLOCKS.register("prismarine_crystal_block", () ->
+            new GlassBlock(glassLike().lightLevel(s -> 15)));
 
     public static final RegistrySupplier<IronBarsBlock> PRISMARINE_CRYSTAL_PANE = AbyssalDecor.BLOCKS.register("prismarine_crystal_pane",
-            () -> new IronBarsBlock(panes()));
+            () -> new IronBarsBlock(panes().lightLevel(s -> 15)));
 
     public static final RegistrySupplier<Block> FRESNEL_BLOCK = AbyssalDecor.BLOCKS.register("fresnel_block", () ->
             new GlassBlock(glassLike()));
