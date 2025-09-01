@@ -16,11 +16,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.AbyssalUtils;
 import org.jetbrains.annotations.Nullable;
 
-public class IronSconceBlock extends AbstractHorizontalBlock {
+public class SconceBlock extends AbstractHorizontalBlock {
 
     public static final DirectionProperty VERTICAL_FACING = BlockStateProperties.VERTICAL_DIRECTION;
 
-    public IronSconceBlock(Properties properties) {
+    public SconceBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState().setValue(VERTICAL_FACING, Direction.DOWN));
     }
@@ -45,11 +45,10 @@ public class IronSconceBlock extends AbstractHorizontalBlock {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING);
-        BlockPos blockpos = pos.relative(direction.getOpposite());
-        BlockState blockstate = level.getBlockState(blockpos);
-        return blockstate.isFaceSturdy(level, blockpos, direction);
+        Direction direction = state.getValue(FACING).getOpposite();
+        return DriedStarfishBlock.canSupportAtFace(level, pos, direction);
     }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

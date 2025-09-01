@@ -356,9 +356,9 @@ public class Datagen {
                 //    "particle": "abyssaldecor:block/ironlamp1",
                 //    "0": "abyssaldecor:block/ironlamp1",
                 //    "1": "abyssaldecor:block/ironlamp2" add lit
+                ResourceLocation m = modLoc("custom/ironlampceiling"+(lit? "lit": ""));
 
-                ModelFile modelFile = models().withExistingParent("block/iron_lamp" + (lit ? "_lit" : ""),
-                                modLoc("custom/ironlampceiling"))
+                ModelFile modelFile = models().withExistingParent("block/iron_lamp" + (lit ? "_lit" : ""), m)
                         .texture("all", modLoc("block/ironlamp1"))
                         .texture("particle", modLoc("block/ironlamp1"))
                         .texture("0", modLoc("block/ironlamp1"))
@@ -382,7 +382,7 @@ public class Datagen {
                         build();
             }, BlockStateProperties.WATERLOGGED);
 
-            wallLamp(AbyssalDecorBlocks.FLOWER_LAMP.get(), modLoc("custom/flowerlamp"), modLoc("block/flower_lamp"));
+            wallLamp(AbyssalDecorBlocks.FLOWER_LAMP.get(), modLoc("custom/flowerlamp"), modLoc("block/flower_lamp"),true);
 
             getVariantBuilder(AbyssalDecorBlocks.TUBE_LAMP.get()).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
@@ -412,10 +412,10 @@ public class Datagen {
             directionalBlockWithItem(AbyssalDecorBlocks.FOXY_PILLAR.get(),modLoc("block/foxy_pillar"), modLoc("block/foxy_pillar_top"));
 
             lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(), modLoc("custom/floorgaslamp"), modLoc("block/quartz_lamp"), modLoc("custom/floorgaslampon"));
-            wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), modLoc("custom/wallgaslamp"), modLoc("block/wall_quartz_lamp"));
-            lamp(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(), modLoc("custom/ceilingquartzlamp"), modLoc("block/ceiling_quartz_lamp"));
-            wallLamp(AbyssalDecorBlocks.JADE_LAMP.get(), modLoc("custom/jadelamp"), modLoc("block/jade_lamp"));
-            wallLamp(AbyssalDecorBlocks.WALL_JADE_LAMP.get(), modLoc("custom/walljadelamp"), modLoc("block/wall_jade_lamp"));
+            wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), modLoc("custom/wallgaslamp"), modLoc("block/wall_quartz_lamp"),true);
+            wallLamp(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(), modLoc("custom/ceilingquartzlamp"), modLoc("block/ceiling_quartz_lamp"),true);
+            wallLamp(AbyssalDecorBlocks.JADE_LAMP.get(), modLoc("custom/jadelamp"), modLoc("block/jade_lamp"),false);
+            wallLamp(AbyssalDecorBlocks.WALL_JADE_LAMP.get(), modLoc("custom/walljadelamp"), modLoc("block/wall_jade_lamp"),false);
 
             getVariantBuilder(AbyssalDecorBlocks.BLAZE_LAMP.get()).forAllStatesExcept(blockState -> {
                 Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
@@ -876,6 +876,12 @@ public class Datagen {
             directionalBlock(AbyssalDecorBlocks.AMARANTH_CRATE.get(),models().cubeBottomTop("amaranth_crate",
                     modLoc("block/amaranthcrate"),modLoc("block/amaranthcratebottom"),modLoc("block/amaranthcratetop")));
 
+            serpentEye(AbyssalDecorBlocks.SHELL.get(), models().withExistingParent("shell",modLoc("custom/shellfloor"))
+                    .texture("particle",modLoc("block/shelltop"))
+                    .texture("0",modLoc("block/shelltop"))
+                    .texture("1",modLoc("block/shellbottom"))
+            );
+            iconTexture("shell",modLoc("block/shelltop"));
         }
 
         protected void gargoyle(Block block) {//what is ammonite?
@@ -1244,15 +1250,15 @@ public class Datagen {
             },BlockStateProperties.WATERLOGGED);
         }
 
-        public void goldSconce(IronSconceBlock block,ResourceLocation texture) {
+        public void goldSconce(SconceBlock block, ResourceLocation texture) {
             sconce(block,texture,modLoc("custom/goldsconce"),modLoc("custom/goldsconceupsidedown"));
         }
 
-        public void regularSconce(IronSconceBlock block,ResourceLocation texture) {
+        public void regularSconce(SconceBlock block, ResourceLocation texture) {
             sconce(block,texture,modLoc("custom/cleanironsconce"),modLoc("custom/upsidedowncleanironsconce"));
         }
 
-        public void sconce(IronSconceBlock block,ResourceLocation texture,ResourceLocation model,ResourceLocation upsideDownModel) {
+        public void sconce(SconceBlock block, ResourceLocation texture, ResourceLocation model, ResourceLocation upsideDownModel) {
             //{
             //  "parent": "abyssaldecor:custom/cleanironsconce",
             //  "textures": {
@@ -1709,8 +1715,9 @@ public class Datagen {
         }
 
 
-        protected void wallLamp(Block block, ResourceLocation model, ResourceLocation texture0) {
+        protected void wallLamp(Block block, ResourceLocation model, ResourceLocation texture0,boolean litModel) {
             String name = name(block);
+            ResourceLocation litModelM = model.withSuffix("lit");
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
@@ -1718,8 +1725,10 @@ public class Datagen {
 
                 ResourceLocation texture = lit ? texture0Lit : texture0;
 
+                ResourceLocation m = litModel ? (lit ? litModelM : model):model;
+
                 ModelFile modelFile = models().withExistingParent("block/" + name + (lit ? "_lit" : ""),
-                                model)
+                                m)
                         .texture("all", texture)
                         .texture("particle", texture)
                         .texture("0", texture);

@@ -62,12 +62,15 @@ public class AbyssalDecorBlocks {
                     Shapes.or(Block.box(5.0, 6.0, 5.0, 11.0, 15.0, 11.0), Block.box(6.0, 4.0, 0.0, 10.0, 12.0, 1.0))));
     public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new ToggleableDirectionalLampBlock(lamp()));
     public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new
-            HorizontalLampBlock(lamp().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Block.box(5, 0, 5, 11, 16, 11)));
+            LampBlock(lamp().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Block.box(5, 0, 5, 11, 16, 11)));
     public static RegistrySupplier<Block> WALL_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("wall_quartz_lamp", () ->
-            new HorizontalLampBlock(lamp().dropsLike(QUARTZ_LAMP.get()).hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),Shapes.or(Block.box(5,3,5,11,16,11),
+            new HorizontalLampBlock(lamp().dropsLike(QUARTZ_LAMP.get()).hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),
+                    Shapes.or(Block.box(5,3,5,11,16,11),
                     Block.box(6,3,0,10,13,1))));
     public static RegistrySupplier<Block> CEILING_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("ceiling_quartz_lamp", () ->
-            new LampBlock(lamp().dropsLike(QUARTZ_LAMP.get()).hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Shapes.or(Block.box(6.5, 2, 6.5, 9.5, 16, 9.5), Block.box(5, 4, 5, 11, 9, 11), Block.box(2, 10, 2, 14, 12, 14))));
+            new HorizontalLampBlock(lamp().dropsLike(QUARTZ_LAMP.get()).hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),
+                    Shapes.or(Block.box(6.5, 2, 6.5, 9.5, 16, 9.5), Block.box(5, 4, 5, 11, 9, 11),
+                            Block.box(2, 10, 2, 14, 12, 14))));
 
 
     public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new HorizontalLampBlock(lamp(), null));
@@ -97,16 +100,14 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> ROPE_BARRIER = AbyssalDecor.BLOCKS.register("rope_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.OAK_PLANKS)));
     public static RegistrySupplier<Block> BARBED_WIRE_BARRIER = AbyssalDecor.BLOCKS.register("barbed_wire_barrier", () -> new BarrierPoleBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistrySupplier<BarrierRibbonBlock> VELVET_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("velvet_barrier_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.VELVET_BARRIER));
-    public static final RegistrySupplier<BarrierRibbonBlock> IRON_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("iron_barrier_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.IRON_BARRIER));
-    public static final RegistrySupplier<BarrierRibbonBlock> ROPE_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("rope_barrier_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.ROPE_BARRIER));
-    public static final RegistrySupplier<BarrierRibbonBlock> BARBED_WIRE_RIBBON = AbyssalDecor.BLOCKS.register("barbed_wire_ribbon",() -> new BarrierRibbonBlock(BlockBehaviour.Properties.of(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER));
-
-
-    // public static RegistrySupplier<Block> VELVET_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("velvet_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.RED_WOOL), false));
-    // public static RegistrySupplier<Block> IRON_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("iron_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.GRAY_WOOL), false));
-    // public static RegistrySupplier<Block> ROPE_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("rope_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.BROWN_WOOL), false));
-    // public static RegistrySupplier<Block> BARBED_WIRE_RIBBON = AbyssalDecor.BLOCKS.register("barbed_wire_barrier_ribbon", () -> new BarrierTieBlock(Block.Properties.copy(Blocks.IRON_BARS), true));
+    public static final RegistrySupplier<BarrierRibbonBlock> VELVET_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("velvet_barrier_ribbon",() ->
+            new BarrierRibbonBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.WOOL).strength(1).noOcclusion().pushReaction(PushReaction.DESTROY),AbyssalDecorBlocks.VELVET_BARRIER));
+    public static final RegistrySupplier<BarrierRibbonBlock> IRON_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("iron_barrier_ribbon",() ->
+            new BarrierRibbonBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.WOOL).strength(1).noOcclusion().pushReaction(PushReaction.DESTROY),AbyssalDecorBlocks.IRON_BARRIER));
+    public static final RegistrySupplier<BarrierRibbonBlock> ROPE_BARRIER_RIBBON = AbyssalDecor.BLOCKS.register("rope_barrier_ribbon",() ->
+            new BarrierRibbonBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.WOOL).strength(1).noOcclusion().pushReaction(PushReaction.DESTROY),AbyssalDecorBlocks.ROPE_BARRIER));
+    public static final RegistrySupplier<BarrierRibbonBlock> BARBED_WIRE_RIBBON = AbyssalDecor.BLOCKS.register("barbed_wire_ribbon",() ->
+            new BarrierRibbonBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.CHAIN).strength(1).noOcclusion().pushReaction(PushReaction.DESTROY),AbyssalDecorBlocks.BARBED_WIRE_BARRIER));
 
     //blocks
     public static final RegistrySupplier<Block> SOLAR_ROD = AbyssalDecor.BLOCKS.register("solar_rod", AbyssalDecorBlocks::rodBlock);
@@ -378,6 +379,9 @@ public class AbyssalDecorBlocks {
             new ClamBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.METAL)
                     .strength(1, 10).noOcclusion(),true));
 
+    public static final RegistrySupplier<FaceAttachedBlock> SHELL = AbyssalDecor.BLOCKS.register("shell",
+            () -> new ShellBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.METAL).strength(1).noOcclusion()));
+
     ///////
 
     public static final RegistrySupplier<RotatedPillarBlock> PEARLY_GLASS = AbyssalDecor.BLOCKS.register("pearly_glass",
@@ -434,8 +438,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> MOSSY_STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("mossy_stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
     public static final RegistrySupplier<TrapDoorBlock> ORNATE_STONE_TRAPDOOR = AbyssalDecor.BLOCKS.register("ornate_stone_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
-    public static final RegistrySupplier<IronSconceBlock> IRON_SCONCE = AbyssalDecor.BLOCKS.register("iron_sconce",
-            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SconceBlock> IRON_SCONCE = AbyssalDecor.BLOCKS.register("iron_sconce",
+            () -> new SconceBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<IronBarsBlock> ORNATE_IRON_BARS = AbyssalDecor.BLOCKS.register("ornate_iron_bars",() -> ironBars());
 
@@ -484,7 +488,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_DULL_IRON_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_dull_iron_bars_corner",() ->
             new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_DULL_IRON_BARS.get())));
 
-    public static final RegistrySupplier<IronSconceBlock> DULL_IRON_SCONCE = AbyssalDecor.BLOCKS.register("dull_iron_sconce",() -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SconceBlock> DULL_IRON_SCONCE = AbyssalDecor.BLOCKS.register("dull_iron_sconce",() -> new SconceBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<IronBarsBlock> ORNATE_DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("ornate_dull_iron_bars",() -> ironBars());
     public static final RegistrySupplier<DoorBlock> DULL_IRON_BAR_DOOR = AbyssalDecor.BLOCKS.register("dull_iron_bar_door",() ->
@@ -502,8 +506,8 @@ public class AbyssalDecorBlocks {
                     .requiresCorrectToolForDrops().noOcclusion()));
 
 
-    public static final RegistrySupplier<IronSconceBlock> GOLD_SCONCE = AbyssalDecor.BLOCKS.register("gold_sconce",
-            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SconceBlock> GOLD_SCONCE = AbyssalDecor.BLOCKS.register("gold_sconce",
+            () -> new SconceBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<IronBarsBlock> GOLD_BARS = AbyssalDecor.BLOCKS.register("gold_bars",() -> ironBars());
 
@@ -532,8 +536,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> GILDED_BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("gilded_blood_coral_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<IronSconceBlock> BLOOD_CORAL_SCONCE = AbyssalDecor.BLOCKS.register("blood_coral_sconce",
-            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SconceBlock> BLOOD_CORAL_SCONCE = AbyssalDecor.BLOCKS.register("blood_coral_sconce",
+            () -> new SconceBlock(BlockBehaviour.Properties.of()));
 
 
     //blood coral lantern
@@ -702,8 +706,8 @@ public class AbyssalDecorBlocks {
             new ChainBlock(BlockBehaviour.Properties.of()
             .forceSolidOn().requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.CHAIN).noOcclusion()));
 
-    public static final RegistrySupplier<IronSconceBlock> SEABRASS_SCONCE = AbyssalDecor.BLOCKS.register("seabrass_sconce",
-            () -> new IronSconceBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<SconceBlock> SEABRASS_SCONCE = AbyssalDecor.BLOCKS.register("seabrass_sconce",
+            () -> new SconceBlock(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<IronBarsBlock> SEABRASS_BARS = AbyssalDecor.BLOCKS.register("seabrass_bars",
             () -> ironBars());
@@ -785,8 +789,8 @@ public class AbyssalDecorBlocks {
             new ChainBlock(BlockBehaviour.Properties.of()
                     .forceSolidOn().requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.CHAIN).noOcclusion()));
 
-    public static final RegistrySupplier<IronSconceBlock> DEEPBRONZE_SCONCE = AbyssalDecor.BLOCKS.register("deepbronze_sconce",
-            () -> new IronSconceBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BARS.get())));
+    public static final RegistrySupplier<SconceBlock> DEEPBRONZE_SCONCE = AbyssalDecor.BLOCKS.register("deepbronze_sconce",
+            () -> new SconceBlock(BlockBehaviour.Properties.copy(DEEPBRONZE_BARS.get())));
 
     public static final RegistrySupplier<StackedIronBallsBlock> STACKED_IRON_BALLS = AbyssalDecor.BLOCKS.register("stacked_iron_balls",() ->
             new StackedIronBallsBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1, 10)
@@ -1161,7 +1165,7 @@ public class AbyssalDecorBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
     public static final RegistrySupplier<IronBarsBlock> WHITEWOOD_PICKET_FENCE = AbyssalDecor.BLOCKS.register("whitewood_picket_fence",
-            () -> ironBars());
+            () -> new IronBarsBlock(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2, 3)));
 
     public static final RegistrySupplier<DirectionalBlock> TRASH_BAG = AbyssalDecor.BLOCKS.register("trash_bag",() ->
             new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));

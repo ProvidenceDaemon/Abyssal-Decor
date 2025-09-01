@@ -2,6 +2,7 @@
   "parent": "abyssaldecor:custom/ceilingquartzlamp",
   "textures": {
     "0": "abyssaldecor:block/ceiling_quartz_lamp",
+    "all": "abyssaldecor:block/ceiling_quartz_lamp",
     "particle": "abyssaldecor:block/ceiling_quartz_lamp"
   }
 }

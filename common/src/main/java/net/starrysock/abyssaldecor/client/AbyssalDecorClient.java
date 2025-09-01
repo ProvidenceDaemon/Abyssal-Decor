@@ -174,6 +174,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.TALL_AMARANTH.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.SEAGLASS_LAMP.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SHELL.get(),RenderType.cutoutMipped());
     }
 
 

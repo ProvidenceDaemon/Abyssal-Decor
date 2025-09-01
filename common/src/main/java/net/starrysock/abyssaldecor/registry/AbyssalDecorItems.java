@@ -210,7 +210,7 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> CLAM = registerBlockItem(AbyssalDecorBlocks.CLAM);
     public static final RegistrySupplier<BlockItem> CLAM_WITH_PEARL = registerBlockItem(AbyssalDecorBlocks.CLAM_WITH_PEARL);
-    public static final RegistrySupplier<Item> SHELL = AbyssalDecor.ITEMS.register("shell",() -> new Item(new Item.Properties()));
+    public static final RegistrySupplier<BlockItem> SHELL = registerBlockItem(AbyssalDecorBlocks.SHELL);
 
     /////////////////////////////////////
 

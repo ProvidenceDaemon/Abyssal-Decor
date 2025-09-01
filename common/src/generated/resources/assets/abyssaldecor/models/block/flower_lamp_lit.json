@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/flowerlamp",
+  "parent": "abyssaldecor:custom/flowerlamplit",
   "textures": {
     "0": "abyssaldecor:block/flower_lamp_lit",
     "all": "abyssaldecor:block/flower_lamp_lit",

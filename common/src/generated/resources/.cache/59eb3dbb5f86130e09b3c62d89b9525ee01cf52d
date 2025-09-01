@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-26T16:30:44.4520629	Loot Tables
+// 1.20.1	2025-09-01T15:18:36.1713265	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -301,6 +301,7 @@ bc219ab1da0a27980358eae6a984a6918ac9cfb1 data/abyssaldecor/loot_tables/blocks/se
 138f4fffa784b470b88bda8481f08fb305b56fef data/abyssaldecor/loot_tables/blocks/serpent_scales.json
 1251523aaf60688016327a6805182fcd30957781 data/abyssaldecor/loot_tables/blocks/serpent_scale_slab.json
 ecb18acdadfa0561de9ea9e274ee174aae0a5c78 data/abyssaldecor/loot_tables/blocks/serpent_skin.json
+6a05098caf1a90bf38ced20e8ed9359d89dcbd70 data/abyssaldecor/loot_tables/blocks/shell.json
 b0bf94ffe8fbcc05d45f774c9e45230680175162 data/abyssaldecor/loot_tables/blocks/ship_wheel.json
 1801ae2072a94ceff33ba0260348b46685d07835 data/abyssaldecor/loot_tables/blocks/shortgills.json
 bd15443f8131aff16c29374855e580cf4cab88d3 data/abyssaldecor/loot_tables/blocks/slump_light.json

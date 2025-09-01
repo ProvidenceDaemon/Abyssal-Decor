@@ -127,6 +127,5 @@ public class AbyssalDecor {
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID,path);
     }
-
-
+    
 }

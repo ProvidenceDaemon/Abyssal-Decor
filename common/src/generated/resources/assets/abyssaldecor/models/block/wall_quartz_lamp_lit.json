@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/wallgaslamp",
+  "parent": "abyssaldecor:custom/wallgaslamplit",
   "textures": {
     "0": "abyssaldecor:block/wall_quartz_lamp_lit",
     "all": "abyssaldecor:block/wall_quartz_lamp_lit",

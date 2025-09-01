@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/ironlampceiling",
+  "parent": "abyssaldecor:custom/ironlampceilinglit",
   "textures": {
     "0": "abyssaldecor:block/ironlamp1",
     "1": "abyssaldecor:block/ironlamp2lit",
