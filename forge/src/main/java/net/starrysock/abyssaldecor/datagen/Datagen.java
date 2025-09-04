@@ -741,7 +741,9 @@ public class Datagen {
 
             iconTexture("mold_fronds", modLoc("block/moldfrondstop"));
 
-            simpleBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS.get(), models().cubeAll("laventine_glass", modLoc("block/laventinepanemid")));
+            laventineGlass(AbyssalDecorBlocks.LAVENTINE_GLASS.get());
+
+
 
             paneBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(), modLoc("block/laventinepanemid"),
                     modLoc("block/laventinepanemid"));
@@ -882,6 +884,27 @@ public class Datagen {
                     .texture("1",modLoc("block/shellbottom"))
             );
             iconTexture("shell",modLoc("block/shelltop"));
+            fancyIronBarsBlock(AbyssalDecorBlocks.GOLD_BARS.get(),modLoc("block/gold_bars_middle"),modLoc("block/gold_bars_top"),modLoc("block/gold_bars_top"));
+        }
+
+        void fancyIronBarsBlock(FancyIronBarsBlock block,ResourceLocation pane,ResourceLocation paneTop,ResourceLocation edge) {
+            paneBlock(block, pane,edge);
+            iconTexture(name(block),paneTop);
+        }
+
+        void laventineGlass(Block block) {
+
+            ModelFile upperModel = models().cubeBottomTop("laventine_glass_top", modLoc("block/laventinepanetop"),
+                    modLoc("block/laventinepanemid"), modLoc("block/laventinepanemid"));
+            ModelFile midModel = models().cubeAll("laventine_glass", modLoc("block/laventinepanemid"));
+
+            getVariantBuilder(block).forAllStates(state -> {
+                Direction direction = state.getValue(LaventineGlassBlock.VERTICAL_DIRECTION);
+                ModelFile file = direction == Direction.UP ? upperModel : midModel;
+                return ConfiguredModel.builder().modelFile(file).build();
+            });
+
+            simpleBlockItem(block,upperModel);
         }
 
         protected void gargoyle(Block block) {//what is ammonite?

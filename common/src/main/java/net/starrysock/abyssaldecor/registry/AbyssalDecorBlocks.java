@@ -465,6 +465,10 @@ public class AbyssalDecorBlocks {
         return new IronBarsBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.METAL).noOcclusion());
     }
 
+    static FancyIronBarsBlock fancyIronBars() {
+        return new FancyIronBarsBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.METAL).noOcclusion());
+    }
+
     static SmallBarsBlock smallBars() {
         return new SmallBarsBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.METAL).noOcclusion());
     }
@@ -509,7 +513,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SconceBlock> GOLD_SCONCE = AbyssalDecor.BLOCKS.register("gold_sconce",
             () -> new SconceBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<IronBarsBlock> GOLD_BARS = AbyssalDecor.BLOCKS.register("gold_bars",() -> ironBars());
+    public static final RegistrySupplier<FancyIronBarsBlock> GOLD_BARS = AbyssalDecor.BLOCKS.register("gold_bars",() -> fancyIronBars());
 
     ////////////////
 
@@ -809,9 +813,10 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> LAVENTINE = AbyssalDecor.BLOCKS.register("laventine",() -> new GlassBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<Block> LAVENTINE_GLASS = AbyssalDecor.BLOCKS.register("laventine_glass",() -> new GlassBlock(glassLike()));
+    public static final RegistrySupplier<Block> LAVENTINE_GLASS = AbyssalDecor.BLOCKS.register("laventine_glass",() -> new LaventineGlassBlock(glassLike()));
 
-    public static final RegistrySupplier<IronBarsBlock> LAVENTINE_GLASS_PANE = AbyssalDecor.BLOCKS.register("laventine_glass_pane",() -> new IronBarsBlock(glassLike()));
+    public static final RegistrySupplier<IronBarsBlock> LAVENTINE_GLASS_PANE = AbyssalDecor.BLOCKS.register("laventine_glass_pane",() ->
+            new IronBarsBlock(glassLike()));
 
     /////////
 

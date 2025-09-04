@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "vertical_direction=down": {
       "model": "abyssaldecor:block/laventine_glass"
+    },
+    "vertical_direction=up": {
+      "model": "abyssaldecor:block/laventine_glass_top"
     }
   }
 }
