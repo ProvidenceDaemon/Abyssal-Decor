@@ -817,8 +817,6 @@ public class Datagen {
             iconTexture("fever_blossom_seeds",modLoc("item/fever_blossom_seeds"));
             iconTexture("fever_blossom",modLoc("item/fever_blossom"));
 
-            horizontalBlock(AbyssalDecorBlocks.WALL_GRIME.get(),models().getExistingFile(modLoc("block/grime")));
-
             cinnamonBush(AbyssalDecorBlocks.CINNAMON_BUSH.get());
             tallCinnamonBush(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get());
 
@@ -899,6 +897,36 @@ public class Datagen {
 
             fancyIronBarsBlock(AbyssalDecorBlocks.STONE_BARS.get(),modLoc("block/stone_bars_mid"),modLoc("block/stone_bars_solo"),
                     modLoc("block/stone_bars_solo"));
+
+            wallGrime(AbyssalDecorBlocks.WALL_GRIME.get());
+            blackMold(AbyssalDecorBlocks.BLACK_MOLD.get());
+        }
+
+        void blackMold(Block block) {
+            ModelFile main = models().cubeAll(name(block),modLoc("block/blackmold"));
+            simpleBlock(block,ConfiguredModel.allYRotations(main,0,false));
+        }
+
+        void wallGrime(WallGrimeBlock block) {
+            String name = name(block);
+            ModelFile top = models().getExistingFile(modLoc("block/grime"));
+            ModelFile midFloor = models().getExistingFile(modLoc("block/grime_mid_floor"));
+            ModelFile floor = models().getExistingFile(modLoc("block/grime_floor"));
+            ModelFile mid = models().getExistingFile(modLoc("block/grime_mid"));
+            getVariantBuilder(block).forAllStates(state -> {
+                int angleOffset = 180;
+
+                ModelFile file = switch (state.getValue(ModBlockStateProperties.WALL_GRIME_TYPE)) {
+                    case FLOOR -> floor;
+                    case MIDDLE_FLOOR -> midFloor;
+                    case MIDDLE -> mid;
+                    case TOP -> top;
+                };
+
+                return ConfiguredModel.builder().modelFile(file)
+                        .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + angleOffset) % 360)
+                        .build();
+            });
         }
 
 

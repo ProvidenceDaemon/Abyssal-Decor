@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class MoldBlock extends AbstractHorizontalBlock {
+public class MoldBlock extends Block {
     public MoldBlock(Properties properties) {
         super(properties);
     }
@@ -58,6 +58,8 @@ public class MoldBlock extends AbstractHorizontalBlock {
         tickMold(level, pos, random);
     }
 
+    static final double MOLD_PLANT_CHANCE = 1/3d;
+
     public static void tickMold(ServerLevel level, BlockPos pos, RandomSource random) {
         if (level.getMaxLocalRawBrightness(pos.above()) <= 8) {
             for (int i = 0; i < 4; ++i) {
@@ -67,9 +69,11 @@ public class MoldBlock extends AbstractHorizontalBlock {
                     if (converted != null) {
                         level.setBlockAndUpdate(blockpos, converted);
 
-                        if (converted.is(AbyssalDecorBlocks.BLACK_MOLD.get()) && level.getBlockState(blockpos.above()).isAir()) {
-                            spawnPlant(level, blockpos.above());
-                        } else if ((converted.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS))
+                        if (canGrowMoldPlants(converted) && level.getBlockState(blockpos.above()).isAir()) {
+                            if (random.nextDouble() < MOLD_PLANT_CHANCE) {
+                                spawnPlant(level, blockpos.above());
+                            }
+                        } else if (converted.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS)
                                 &&level.getBlockState(blockpos.below()).canBeReplaced() && random.nextDouble() <.25) {
                             level.setBlockAndUpdate(blockpos.below(), AbyssalDecorBlocks.MOLDY_HANGER.get().defaultBlockState());
                         }
@@ -77,6 +81,11 @@ public class MoldBlock extends AbstractHorizontalBlock {
                 }
             }
         }
+    }
+
+    public static boolean canGrowMoldPlants(BlockState state) {
+        return state.is(AbyssalDecorBlocks.BLACK_MOLD.get()) || state.is(AbyssalDecorBlocks.MOLDY_STARSTONE.get())||
+                state.is(AbyssalDecorBlocks.MOLDIER_STARSTONE.get());
     }
 
     public static void spawnPlant(ServerLevel level, BlockPos above) {

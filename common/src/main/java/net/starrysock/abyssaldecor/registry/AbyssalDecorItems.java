@@ -451,7 +451,7 @@ public class AbyssalDecorItems {
     //////////////////////////
 
     public static final RegistrySupplier<BlockItem> GRIME = AbyssalDecor.ITEMS.register("grime",
-            () -> new StandingAndWallBlockItem(AbyssalDecorBlocks.GRIME_CARPET.get(),AbyssalDecorBlocks.WALL_GRIME.get(),new Item.Properties(),Direction.UP){
+            () -> new StandingAndWallBlockItem(AbyssalDecorBlocks.GRIME_CARPET.get(),AbyssalDecorBlocks.WALL_GRIME.get(),new Item.Properties(),Direction.DOWN){
         @Override
         public String getDescriptionId() {
                     return this.getOrCreateDescriptionId();

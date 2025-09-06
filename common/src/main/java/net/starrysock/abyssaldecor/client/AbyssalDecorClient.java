@@ -180,6 +180,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.FROSTED_GLASS_PANE.get(),RenderType.translucent());
         renderTypes.accept(AbyssalDecorBlocks.DULL_IRON_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SEABRASS_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.WALL_GRIME.get(),RenderType.cutoutMipped());
     }
 
 

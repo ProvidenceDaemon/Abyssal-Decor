@@ -956,7 +956,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> GILDED_BLACK_PEARL_DOOR = AbyssalDecor.BLOCKS.register("gilded_black_pearl_door",() -> woodDoor(GILDED_BLACK_PEARL.get(),ModBlockSetTypes.WHITE_PEARL));
     public static final RegistrySupplier<Block> GILDED_BLACK_PEARL_TRAPDOOR = AbyssalDecor.BLOCKS.register("gilded_black_pearl_trapdoor",() -> woodTrapdoor(ModBlockSetTypes.WHITE_PEARL));
 
-    public static final RegistrySupplier<HorizontalDirectionalBlock> WALL_GRIME = AbyssalDecor.BLOCKS.register("wall_grime",() -> new WallGrimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion()));
+    public static final RegistrySupplier<WallGrimeBlock> WALL_GRIME = AbyssalDecor.BLOCKS.register("wall_grime",() -> new WallGrimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion()));
     public static final RegistrySupplier<Block> GRIME_CARPET = AbyssalDecor.BLOCKS.register("grime_carpet",() -> new FloorGrimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion().dropsLike(WALL_GRIME.get())));
 
     public static final RegistrySupplier<Block> PAPER_STACK = AbyssalDecor.BLOCKS.register("paper_stack",() -> new Block(BlockBehaviour.Properties.of()));
@@ -1009,7 +1009,10 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<CropBlock> FEVER_BLOSSOM = AbyssalDecor.BLOCKS.register("fever_blossom",
             () -> new FeverBlossomBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
-                    .noOcclusion().randomTicks()));
+                    .noOcclusion().randomTicks()
+                    .lightLevel(value -> value.getValue(CropBlock.AGE) == CropBlock.MAX_AGE ? 7 : 0)
+            )
+    );
 
     public static final RegistrySupplier<DoublePlantBlock> MOLD_FRONDS = AbyssalDecor.BLOCKS.register("mold_fronds",
             () -> new MoldFrondsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.ROOTS).instabreak()

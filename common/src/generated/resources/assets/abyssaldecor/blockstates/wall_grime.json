@@ -1,17 +1,62 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,wall_grime_type=floor": {
+      "model": "abyssaldecor:block/grime_floor",
+      "y": 90
+    },
+    "facing=east,wall_grime_type=middle": {
+      "model": "abyssaldecor:block/grime_mid",
+      "y": 90
+    },
+    "facing=east,wall_grime_type=middle_floor": {
+      "model": "abyssaldecor:block/grime_mid_floor",
+      "y": 90
+    },
+    "facing=east,wall_grime_type=top": {
       "model": "abyssaldecor:block/grime",
       "y": 90
     },
-    "facing=north": {
+    "facing=north,wall_grime_type=floor": {
+      "model": "abyssaldecor:block/grime_floor"
+    },
+    "facing=north,wall_grime_type=middle": {
+      "model": "abyssaldecor:block/grime_mid"
+    },
+    "facing=north,wall_grime_type=middle_floor": {
+      "model": "abyssaldecor:block/grime_mid_floor"
+    },
+    "facing=north,wall_grime_type=top": {
       "model": "abyssaldecor:block/grime"
     },
-    "facing=south": {
+    "facing=south,wall_grime_type=floor": {
+      "model": "abyssaldecor:block/grime_floor",
+      "y": 180
+    },
+    "facing=south,wall_grime_type=middle": {
+      "model": "abyssaldecor:block/grime_mid",
+      "y": 180
+    },
+    "facing=south,wall_grime_type=middle_floor": {
+      "model": "abyssaldecor:block/grime_mid_floor",
+      "y": 180
+    },
+    "facing=south,wall_grime_type=top": {
       "model": "abyssaldecor:block/grime",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,wall_grime_type=floor": {
+      "model": "abyssaldecor:block/grime_floor",
+      "y": 270
+    },
+    "facing=west,wall_grime_type=middle": {
+      "model": "abyssaldecor:block/grime_mid",
+      "y": 270
+    },
+    "facing=west,wall_grime_type=middle_floor": {
+      "model": "abyssaldecor:block/grime_mid_floor",
+      "y": 270
+    },
+    "facing=west,wall_grime_type=top": {
       "model": "abyssaldecor:block/grime",
       "y": 270
     }
