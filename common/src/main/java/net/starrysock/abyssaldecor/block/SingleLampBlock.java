@@ -3,8 +3,8 @@ package net.starrysock.abyssaldecor.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
@@ -36,14 +36,14 @@ public class SingleLampBlock extends LampBlock {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        LevelReader levelreader = context.getLevel();
+        Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
 
         BlockPos below = pos.below();
         BlockPos above = pos.above();
 
-        boolean lampAbove = isSameBlock(levelreader.getBlockState(above));
-        boolean lampBelow = isSameBlock(levelreader.getBlockState(below));
+        boolean lampAbove = isSameBlock(level.getBlockState(above));
+        boolean lampBelow = isSameBlock(level.getBlockState(below));
 
         TriPart part = TriPart.getForPlacement(lampAbove,lampBelow);
 

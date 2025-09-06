@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "abyssaldecor:block/dullironbarsbottom"
-  },
-  "render_type": "cutout_mipped"
-}

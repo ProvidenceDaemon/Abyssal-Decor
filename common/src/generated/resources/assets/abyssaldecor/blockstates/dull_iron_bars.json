@@ -1,0 +1,313 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_post"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side"
+      },
+      "when": {
+        "north": "true",
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_bottom"
+      },
+      "when": {
+        "north": "true",
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_middle"
+      },
+      "when": {
+        "north": "true",
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_top"
+      },
+      "when": {
+        "north": "true",
+        "vertical_connection": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside"
+      },
+      "when": {
+        "north": "false",
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_bottom"
+      },
+      "when": {
+        "north": "false",
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_middle"
+      },
+      "when": {
+        "north": "false",
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_top"
+      },
+      "when": {
+        "north": "false",
+        "vertical_connection": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt"
+      },
+      "when": {
+        "south": "true",
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt_bottom"
+      },
+      "when": {
+        "south": "true",
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt_middle"
+      },
+      "when": {
+        "south": "true",
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt_top"
+      },
+      "when": {
+        "south": "true",
+        "vertical_connection": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt_bottom",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt_middle",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt_top",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "vertical_connection": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt",
+        "y": 90
+      },
+      "when": {
+        "vertical_connection": "solo",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt_bottom",
+        "y": 90
+      },
+      "when": {
+        "vertical_connection": "bottom",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt_middle",
+        "y": 90
+      },
+      "when": {
+        "vertical_connection": "middle",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_alt_top",
+        "y": 90
+      },
+      "when": {
+        "vertical_connection": "top",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside",
+        "y": 270
+      },
+      "when": {
+        "vertical_connection": "solo",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_bottom",
+        "y": 270
+      },
+      "when": {
+        "vertical_connection": "bottom",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_middle",
+        "y": 270
+      },
+      "when": {
+        "vertical_connection": "middle",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_top",
+        "y": 270
+      },
+      "when": {
+        "vertical_connection": "top",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_bottom",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_middle",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_side_top",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "vertical_connection": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt_bottom"
+      },
+      "when": {
+        "east": "false",
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt_middle"
+      },
+      "when": {
+        "east": "false",
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/dull_iron_bars_noside_alt_top"
+      },
+      "when": {
+        "east": "false",
+        "vertical_connection": "top"
+      }
+    }
+  ]
+}

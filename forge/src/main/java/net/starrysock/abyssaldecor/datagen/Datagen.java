@@ -8,19 +8,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
-import net.starrysock.abyssaldecor.block.properties.CornerDirection;
-import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
-import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
-import net.starrysock.abyssaldecor.block.properties.TriPart;
+import net.starrysock.abyssaldecor.block.properties.*;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ExtendedBlockFamilies;
@@ -513,7 +507,6 @@ public class Datagen {
             simplestBlockWithItem(AbyssalDecorBlocks.CUT_WHITE_PEARL_BLOCK.get());
             simplestBlockWithItem(AbyssalDecorBlocks.CUT_BLACK_PEARL_BLOCK.get());
 
-            paneBlock(AbyssalDecorBlocks.WHITE_PEARL_BARS.get(), modLoc("block/white_pearl_bars_top"), modLoc("block/white_pearl_bars_top"));
 
             simplestBlockWithItem(AbyssalDecorBlocks.WHITE_PEARL_TILES.get());
             crackedBlock(AbyssalDecorBlocks.CRACKED_PEARL_TILES.get());
@@ -637,8 +630,6 @@ public class Datagen {
 
             simpleBlockWithItem(AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), models().carpet("moldweave_carpet",modLoc("block/moldweave")));
 
-            paneBlockWithItem(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(), modLoc("block/black_pearl_bars_top"), BLANK);
-
             wallHangingMoss(AbyssalDecorBlocks.WALL_HANGING_MOSS.get());
 
             simpleBlock(AbyssalDecorBlocks.HANGING_MOSS.get(), models().getExistingFile(modLoc("block/hanging_moss_ceiling")));
@@ -661,9 +652,6 @@ public class Datagen {
             );
 
             simplestBlockWithItem(AbyssalDecorBlocks.DEEPBRONZE_TILES.get());
-
-            paneBlockWithItem(AbyssalDecorBlocks.STONE_BARS.get(), modLoc("block/stone_bars_solo"),
-                    modLoc("block/stone_bars_solo"));
 
             simplestBlockWithItem(AbyssalDecorBlocks.FROSTED_GLASS.get());
             paneBlockWithItem(AbyssalDecorBlocks.FROSTED_GLASS_PANE.get(), modLoc("block/frosted_glass"),
@@ -742,11 +730,6 @@ public class Datagen {
             iconTexture("mold_fronds", modLoc("block/moldfrondstop"));
 
             laventineGlass(AbyssalDecorBlocks.LAVENTINE_GLASS.get());
-
-
-
-            paneBlockWithItem(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(), modLoc("block/laventinepanemid"),
-                    modLoc("block/laventinepanemid"));
 
             simplestBlockWithItem(AbyssalDecorBlocks.EFFERVESCENT_TILES.get());
 
@@ -885,12 +868,210 @@ public class Datagen {
             );
             iconTexture("shell",modLoc("block/shelltop"));
             fancyIronBarsBlock(AbyssalDecorBlocks.GOLD_BARS.get(),modLoc("block/gold_bars_middle"),modLoc("block/gold_bars_top"),modLoc("block/gold_bars_top"));
+            fancyIronBarsBlock(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(),modLoc("block/laventinepanemid"),modLoc("block/laventinepanetop"),
+                    modLoc("block/laventinepanemid"));
+
+
+            fancierIronBarsBlock(AbyssalDecorBlocks.WHITE_PEARL_BARS.get(), modLoc("block/white_pearl_bars_solo"),
+                    modLoc("block/white_pearl_bars_bottom"),modLoc("block/white_pearl_bars_middle"),
+                    modLoc("block/white_pearl_bars_top"),
+                    modLoc("block/white_pearl_bars_top"),true);
+
+            fancierIronBarsBlock(AbyssalDecorBlocks.DULL_IRON_BARS.get(), modLoc("block/dull_iron_bars_solo"),
+                    modLoc("block/dull_iron_bars_bottom"),modLoc("block/dull_iron_bars_middle"),
+                    modLoc("block/dull_iron_bars_top"),
+                    modLoc("block/dull_iron_bars_solo"),false);
+
+            fancierIronBarsBlock(AbyssalDecorBlocks.BLACK_PEARL_BARS.get(), modLoc("block/black_pearl_bars_solo"),
+                    modLoc("block/black_pearl_bars_bottom"),modLoc("block/black_pearl_bars_middle"),
+                    modLoc("block/black_pearl_bars_top"),
+                    modLoc("block/black_pearl_bars_top"),false);
+
+            fancierIronBarsBlock(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(), modLoc("block/blood_coral_bars_solo"),
+                    modLoc("block/blood_coral_bars_bottom"),modLoc("block/blood_coral_bars_middle"),
+                    modLoc("block/blood_coral_bars_top"),
+                    modLoc("block/blood_coral_bars_top"),false);
+
+            fancierIronBarsBlock(AbyssalDecorBlocks.SEABRASS_BARS.get(), modLoc("block/seabrass_bars_solo"),
+                    modLoc("block/seabrass_bars_bottom"),modLoc("block/seabrass_bars_middle"),
+                    modLoc("block/seabrass_bars_top"),
+                    modLoc("block/seabrass_bars_top"),false);
+
+            fancyIronBarsBlock(AbyssalDecorBlocks.STONE_BARS.get(),modLoc("block/stone_bars_mid"),modLoc("block/stone_bars_solo"),
+                    modLoc("block/stone_bars_solo"));
         }
 
+
+        void fancierIronBarsBlock(FancierIronBarsBlock block,ResourceLocation paneSolo,ResourceLocation paneBottom,
+                                  ResourceLocation paneMiddle,ResourceLocation paneTop,ResourceLocation edge,boolean showTopEdge) {
+            fancierPaneBlock(block, paneSolo,paneBottom,paneMiddle,paneTop,edge,showTopEdge);
+            iconTexture(name(block),paneSolo);
+        }
+
+        public void fancierPaneBlock(FancierIronBarsBlock block, ResourceLocation pane,ResourceLocation paneBottom,
+                                     ResourceLocation paneMiddle,ResourceLocation paneTop, ResourceLocation edge,boolean showTopEdge) {
+            fancierPaneBlockInternal(block, BuiltInRegistries.BLOCK.getKey(block).toString(), pane,paneBottom,paneMiddle,paneTop, edge,showTopEdge);
+        }
+
+        private void fancierPaneBlockInternal(FancierIronBarsBlock block, String baseName, ResourceLocation pane,ResourceLocation paneBottom,
+                                              ResourceLocation paneMiddle,ResourceLocation paneTop, ResourceLocation edge,boolean showTopEdge) {
+            ResourceLocation edgeTexture = showTopEdge ? edge : BLANK;
+            ModelFile post = models().panePost(baseName + "_post", pane, edge);
+            ModelFile side = models().paneSide(baseName + "_side", pane, edge);
+            ModelFile sideAlt = models().paneSideAlt(baseName + "_side_alt", pane, edge);
+            ModelFile noSide = models().paneNoSide(baseName + "_noside", edge);
+            ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", edge);
+
+            ModelFile sideBottom = models().paneSide(baseName + "_side_bottom", paneBottom,edgeTexture);
+            ModelFile sideAltBottom = models().paneSideAlt(baseName + "_side_alt_bottom", paneBottom, edgeTexture);
+            ModelFile noSideBottom = models().paneNoSide(baseName + "_noside_bottom", paneBottom);
+            ModelFile noSideAltBottom = models().paneNoSideAlt(baseName + "_noside_alt_bottom", paneBottom);
+
+            ModelFile sideMiddle = models().paneSide(baseName + "_side_middle", paneMiddle, edgeTexture);
+            ModelFile sideAltMiddle = models().paneSideAlt(baseName + "_side_alt_middle", paneMiddle, edgeTexture);
+            ModelFile noSideMiddle = models().paneNoSide(baseName + "_noside_middle", paneMiddle);
+            ModelFile noSideAltMiddle = models().paneNoSideAlt(baseName + "_noside_alt_middle", paneMiddle);
+
+            ModelFile sideTop = models().paneSide(baseName + "_side_top", paneTop, edgeTexture);
+            ModelFile sideAltTop = models().paneSideAlt(baseName + "_side_alt_top", paneTop, edgeTexture);
+            ModelFile noSideTop = models().paneNoSide(baseName + "_noside_top", paneTop);
+            ModelFile noSideAltTop = models().paneNoSideAlt(baseName + "_noside_alt_top", paneTop);
+
+            fancierPaneBlock(block, post, side, sideAlt, noSide, noSideAlt,sideBottom,sideAltBottom,noSideBottom,noSideAltBottom,
+                    sideMiddle,sideAltMiddle,noSideMiddle,noSideAltMiddle,
+                    sideTop,sideAltTop,noSideTop,noSideAltTop);
+        }
+
+        public void fancierPaneBlock(FancierIronBarsBlock block, ModelFile post, ModelFile side, ModelFile sideAlt, ModelFile noSide, ModelFile noSideAlt,
+                                     ModelFile sideBottom, ModelFile sideAltBottom, ModelFile noSideBottom, ModelFile noSideAltBottom,
+                                     ModelFile sideMiddle, ModelFile sideAltMiddle, ModelFile noSideMiddle, ModelFile noSideAltMiddle,
+                                   ModelFile sideTop, ModelFile sideAltTop, ModelFile noSideTop, ModelFile noSideAltTop) {
+            MultiPartBlockStateBuilder builder = getMultipartBuilder(block)
+                    .part().modelFile(post).addModel().end();
+            PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(e -> {
+                Direction dir = e.getKey();
+                BooleanProperty property = e.getValue();
+                if (dir.getAxis().isHorizontal()) {
+                    boolean alt = dir == Direction.SOUTH;
+
+                    //sides
+
+                    builder
+                            .part().modelFile(alt || dir == Direction.WEST ? sideAlt : side)
+                            .rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                            .condition(property, true)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.SOLO)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.WEST ? sideAltBottom : sideBottom)
+                            .rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                            .condition(property, true)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.BOTTOM)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.WEST ? sideAltMiddle : sideMiddle)
+                            .rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                            .condition(property, true)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.MIDDLE)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.WEST ? sideAltTop : sideTop)
+                            .rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                            .condition(property, true)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.TOP)
+                            .end()
+
+                            //no sides
+
+                            .part().modelFile(alt || dir == Direction.EAST ? noSideAlt : noSide)
+                            .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
+                            .condition(property, false)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.SOLO)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.EAST ? noSideAltBottom : noSideBottom)
+                            .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
+                            .condition(property, false)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.BOTTOM)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.EAST ? noSideAltMiddle : noSideMiddle)
+                            .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
+                            .condition(property, false)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.MIDDLE)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.EAST ? noSideAltTop : noSideTop)
+                            .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
+                            .condition(property, false)
+                            .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.TOP)
+                    ;
+                }
+            });
+        }
+
+
         void fancyIronBarsBlock(FancyIronBarsBlock block,ResourceLocation pane,ResourceLocation paneTop,ResourceLocation edge) {
-            paneBlock(block, pane,edge);
+            fancyPaneBlock(block, pane,paneTop,edge);
             iconTexture(name(block),paneTop);
         }
+
+        public void fancyPaneBlock(FancyIronBarsBlock block, ResourceLocation pane,ResourceLocation paneTop, ResourceLocation edge) {
+            fancyPaneBlockInternal(block, BuiltInRegistries.BLOCK.getKey(block).toString(), pane,paneTop, edge);
+        }
+
+        private void fancyPaneBlockInternal(FancyIronBarsBlock block, String baseName, ResourceLocation pane,ResourceLocation paneTop, ResourceLocation edge) {
+            ModelFile post = models().panePost(baseName + "_post", pane, edge);
+            ModelFile side = models().paneSide(baseName + "_side", pane, BLANK);
+            ModelFile sideAlt = models().paneSideAlt(baseName + "_side_alt", pane, BLANK);
+            ModelFile noSide = models().paneNoSide(baseName + "_noside", edge);
+            ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", edge);
+
+            ModelFile sideTop = models().paneSide(baseName + "_side_top", paneTop, edge);
+            ModelFile sideAltTop = models().paneSideAlt(baseName + "_side_alt_top", paneTop, edge);
+            ModelFile noSideTop = models().paneNoSide(baseName + "_noside_top", paneTop);
+            ModelFile noSideAltTop = models().paneNoSideAlt(baseName + "_noside_alt_top", paneTop);
+
+            fancyPaneBlock(block, post, side, sideAlt, noSide, noSideAlt,sideTop,sideAltTop,noSideTop,noSideAltTop);
+        }
+
+        public void fancyPaneBlock(FancyIronBarsBlock block, ModelFile post, ModelFile side, ModelFile sideAlt, ModelFile noSide, ModelFile noSideAlt,
+                                   ModelFile sideTop, ModelFile sideAltTop, ModelFile noSideTop, ModelFile noSideAltTop) {
+            MultiPartBlockStateBuilder builder = getMultipartBuilder(block)
+                    .part().modelFile(post).addModel().end();
+            PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(e -> {
+                Direction dir = e.getKey();
+                BooleanProperty property = e.getValue();
+                if (dir.getAxis().isHorizontal()) {
+                    boolean alt = dir == Direction.SOUTH;
+                    builder
+                            .part().modelFile(alt || dir == Direction.WEST ? sideAlt : side)
+                            .rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                            .condition(property, true)
+                            .condition(FancyIronBarsBlock.VERTICAL_DIRECTION,Direction.DOWN)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.WEST ? sideAltTop : sideTop)
+                            .rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                            .condition(property, true)
+                            .condition(FancyIronBarsBlock.VERTICAL_DIRECTION,Direction.UP)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.EAST ? noSideAlt : noSide)
+                            .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
+                            .condition(property, false)
+                            .condition(FancyIronBarsBlock.VERTICAL_DIRECTION,Direction.DOWN)
+                            .end()
+
+                            .part().modelFile(alt || dir == Direction.EAST ? noSideAltTop : noSideTop)
+                            .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
+                            .condition(property, false)
+                            .condition(FancyIronBarsBlock.VERTICAL_DIRECTION,Direction.UP)
+                    ;
+                }
+            });
+        }
+
 
         void laventineGlass(Block block) {
 

@@ -10,7 +10,17 @@
         "model": "abyssaldecor:block/laventine_glass_pane_side"
       },
       "when": {
-        "north": "true"
+        "north": "true",
+        "vertical_direction": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_side_top"
+      },
+      "when": {
+        "north": "true",
+        "vertical_direction": "up"
       }
     },
     {
@@ -18,7 +28,17 @@
         "model": "abyssaldecor:block/laventine_glass_pane_noside"
       },
       "when": {
-        "north": "false"
+        "north": "false",
+        "vertical_direction": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_noside_top"
+      },
+      "when": {
+        "north": "false",
+        "vertical_direction": "up"
       }
     },
     {
@@ -26,7 +46,17 @@
         "model": "abyssaldecor:block/laventine_glass_pane_side_alt"
       },
       "when": {
-        "south": "true"
+        "south": "true",
+        "vertical_direction": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_side_alt_top"
+      },
+      "when": {
+        "south": "true",
+        "vertical_direction": "up"
       }
     },
     {
@@ -35,7 +65,18 @@
         "y": 90
       },
       "when": {
-        "south": "false"
+        "south": "false",
+        "vertical_direction": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_noside_alt_top",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "vertical_direction": "up"
       }
     },
     {
@@ -44,6 +85,17 @@
         "y": 90
       },
       "when": {
+        "vertical_direction": "down",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_side_alt_top",
+        "y": 90
+      },
+      "when": {
+        "vertical_direction": "up",
         "west": "true"
       }
     },
@@ -53,6 +105,17 @@
         "y": 270
       },
       "when": {
+        "vertical_direction": "down",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_noside_top",
+        "y": 270
+      },
+      "when": {
+        "vertical_direction": "up",
         "west": "false"
       }
     },
@@ -62,7 +125,18 @@
         "y": 90
       },
       "when": {
-        "east": "true"
+        "east": "true",
+        "vertical_direction": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_side_top",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "vertical_direction": "up"
       }
     },
     {
@@ -70,7 +144,17 @@
         "model": "abyssaldecor:block/laventine_glass_pane_noside_alt"
       },
       "when": {
-        "east": "false"
+        "east": "false",
+        "vertical_direction": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/laventine_glass_pane_noside_alt_top"
+      },
+      "when": {
+        "east": "false",
+        "vertical_direction": "up"
       }
     }
   ]

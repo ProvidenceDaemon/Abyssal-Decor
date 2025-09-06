@@ -176,6 +176,10 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SEAGLASS_LAMP.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SHELL.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.GOLD_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.FROSTED_GLASS.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.FROSTED_GLASS_PANE.get(),RenderType.translucent());
+        renderTypes.accept(AbyssalDecorBlocks.DULL_IRON_BARS.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SEABRASS_BARS.get(),RenderType.cutoutMipped());
     }
 
 

@@ -27,7 +27,7 @@ public class FancyIronBarsBlock extends IronBarsBlock {
         BlockState state = super.getStateForPlacement(context);
         BlockPos pos = context.getClickedPos();
         Level level = context.getLevel();
-        boolean isThisAbove = level.getBlockState(pos).is(this);
+        boolean isThisAbove = level.getBlockState(pos.above()).is(this);
         Direction direction = isThisAbove ? Direction.DOWN : Direction.UP;
         return state.setValue(VERTICAL_DIRECTION,direction);
     }
@@ -37,9 +37,9 @@ public class FancyIronBarsBlock extends IronBarsBlock {
         BlockState update = super.updateShape(state, direction, neighborState, level, pos, neighborPos);
         if (direction == Direction.UP) {
             if (neighborState.is(this)) {
-                update = state.setValue(VERTICAL_DIRECTION,Direction.DOWN);
+                update = update.setValue(VERTICAL_DIRECTION,Direction.DOWN);
             } else if (!neighborState.is(this)) {
-                update = state.setValue(VERTICAL_DIRECTION,Direction.UP);
+                update = update.setValue(VERTICAL_DIRECTION,Direction.UP);
             }
         }
         return update;

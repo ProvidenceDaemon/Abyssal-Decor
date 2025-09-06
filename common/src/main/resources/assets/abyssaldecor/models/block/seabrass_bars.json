@@ -1,8 +1,0 @@
-{
-  "parent": "abyssaldecor:custom/brasssconce",
-  "textures": {
-    "all": "abyssaldecor:blocks/brasssconce",
-    "particle": "abyssaldecor:blocks/brasssconce",
-    "1": "abyssaldecor:blocks/brasssconce"
-  }
-}

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side_alt",
   "textures": {
-    "edge": "abyssaldecor:block/blood_coral_bars_solo",
+    "edge": "abyssaldecor:block/blood_coral_bars_top",
     "pane": "abyssaldecor:block/blood_coral_bars_solo"
   }
 }

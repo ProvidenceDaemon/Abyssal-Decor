@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "edge": "abyssaldecor:block/dull_iron_bars_solo",
+    "pane": "abyssaldecor:block/dull_iron_bars_solo"
+  }
+}

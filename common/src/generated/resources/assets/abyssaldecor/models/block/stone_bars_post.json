@@ -2,6 +2,6 @@
   "parent": "minecraft:block/template_glass_pane_post",
   "textures": {
     "edge": "abyssaldecor:block/stone_bars_solo",
-    "pane": "abyssaldecor:block/stone_bars_solo"
+    "pane": "abyssaldecor:block/stone_bars_mid"
   }
 }

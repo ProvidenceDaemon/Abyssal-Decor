@@ -333,8 +333,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> WHITE_PEARL_SLAB = AbyssalDecor.BLOCKS.register("white_pearl_slab",() -> slab(WHITE_PEARL.get()));
     public static final RegistrySupplier<Block> CHISELED_WHITE_PEARL = AbyssalDecor.BLOCKS.register("chiseled_white_pearl",() -> new Block(BlockBehaviour.Properties.copy(WHITE_PEARL_BLOCK.get())));
     public static final RegistrySupplier<WallBlock> WHITE_PEARL_WALL = AbyssalDecor.BLOCKS.register("white_pearl_wall",() -> wall(WHITE_PEARL.get()));
-    public static final RegistrySupplier<IronBarsBlock> WHITE_PEARL_BARS = AbyssalDecor.BLOCKS.register("white_pearl_bars",
-            () ->new IronBarsBlock(panes()));
+    public static final RegistrySupplier<FancierIronBarsBlock> WHITE_PEARL_BARS = AbyssalDecor.BLOCKS.register("white_pearl_bars",
+            () ->new FancierIronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.METAL).strength(2.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<DoorBlock> WHITE_PEARL_DOOR = AbyssalDecor.BLOCKS.register("white_pearl_door",
             () ->woodDoor(WHITE_PEARL.get(),ModBlockSetTypes.WHITE_PEARL));
@@ -484,7 +485,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<LeverBlock> INDUSTRIAL_LEVER = AbyssalDecor.BLOCKS.register("industrial_lever",() ->
             new IndustrialLeverBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistrySupplier<IronBarsBlock> DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("dull_iron_bars",() -> ironBars());
+    public static final RegistrySupplier<FancierIronBarsBlock> DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("dull_iron_bars",() ->
+            new FancierIronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.METAL).strength(2.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<SmallBarsBlock> SMALL_DULL_IRON_BARS = AbyssalDecor.BLOCKS.register("small_dull_iron_bars",() ->
             smallBars());
@@ -549,7 +552,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<DoorBlock> BLOOD_CORAL_DOOR = AbyssalDecor.BLOCKS.register("blood_coral_door",() -> woodDoor(SMOOTH_BLOOD_CORAL.get(),BlockSetType.STONE));
     public static final RegistrySupplier<TrapDoorBlock> BLOOD_CORAL_TRAPDOOR = AbyssalDecor.BLOCKS.register("blood_coral_trapdoor",() -> woodTrapdoor(BlockSetType.STONE));
 
-    public static final RegistrySupplier<IronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> ironBars());
+    public static final RegistrySupplier<FancierIronBarsBlock> BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("blood_coral_bars",() -> new FancierIronBarsBlock(
+            BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.METAL).strength(2.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<SmallBarsBlock> SMALL_BLOOD_CORAL_BARS = AbyssalDecor.BLOCKS.register("small_blood_coral_bars",() ->
             smallBars());
@@ -713,8 +718,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SconceBlock> SEABRASS_SCONCE = AbyssalDecor.BLOCKS.register("seabrass_sconce",
             () -> new SconceBlock(BlockBehaviour.Properties.of()));
 
-    public static final RegistrySupplier<IronBarsBlock> SEABRASS_BARS = AbyssalDecor.BLOCKS.register("seabrass_bars",
-            () -> ironBars());
+    public static final RegistrySupplier<FancierIronBarsBlock> SEABRASS_BARS = AbyssalDecor.BLOCKS.register("seabrass_bars",
+            () -> new FancierIronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.METAL).strength(2.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<IronBarsBlock> ORNATE_SEABRASS_BARS = AbyssalDecor.BLOCKS.register("ornate_seabrass_bars",
             () -> ironBars());
@@ -815,8 +821,8 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> LAVENTINE_GLASS = AbyssalDecor.BLOCKS.register("laventine_glass",() -> new LaventineGlassBlock(glassLike()));
 
-    public static final RegistrySupplier<IronBarsBlock> LAVENTINE_GLASS_PANE = AbyssalDecor.BLOCKS.register("laventine_glass_pane",() ->
-            new IronBarsBlock(glassLike()));
+    public static final RegistrySupplier<FancyIronBarsBlock> LAVENTINE_GLASS_PANE = AbyssalDecor.BLOCKS.register("laventine_glass_pane",() ->
+            new FancyIronBarsBlock(glassLike()));
 
     /////////
 
@@ -928,7 +934,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> BLACK_PEARL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("black_pearl_brick_slab",() -> slab(BLACK_PEARL_BRICKS.get()));
     public static final RegistrySupplier<WallBlock> BLACK_PEARL_BRICK_WALL = AbyssalDecor.BLOCKS.register("black_pearl_brick_wall",() -> wall(BLACK_PEARL_BRICKS.get()));
 
-    public static final RegistrySupplier<IronBarsBlock> BLACK_PEARL_BARS = AbyssalDecor.BLOCKS.register("black_pearl_bars",() -> ironBars());
+    public static final RegistrySupplier<FancierIronBarsBlock> BLACK_PEARL_BARS = AbyssalDecor.BLOCKS.register("black_pearl_bars",() ->
+            new FancierIronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.METAL).strength(2.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<SmallBarsBlock> SMALL_BLACK_PEARL_BARS = AbyssalDecor.BLOCKS.register("small_black_pearl_bars",() ->
             smallBars());
@@ -1181,8 +1189,9 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronBarsBlock> FROSTED_GLASS_PANE = AbyssalDecor.BLOCKS.register("frosted_glass_pane",
             () -> new IronBarsBlock(panes()));
 
-    public static final RegistrySupplier<IronBarsBlock> STONE_BARS = AbyssalDecor.BLOCKS.register("stone_bars",
-            () -> ironBars());
+    public static final RegistrySupplier<FancyIronBarsBlock> STONE_BARS = AbyssalDecor.BLOCKS.register("stone_bars",
+            () -> new FancyIronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.METAL).strength(2.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<SmallBarsBlock> SMALL_STONE_BARS = AbyssalDecor.BLOCKS.register("small_stone_bars",
             () -> smallBars());
