@@ -73,7 +73,7 @@ public class MoldBlock extends Block {
                             if (random.nextDouble() < MOLD_PLANT_CHANCE) {
                                 spawnPlant(level, blockpos.above());
                             }
-                        } else if (converted.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS)
+                        } if (converted.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS)
                                 &&level.getBlockState(blockpos.below()).canBeReplaced() && random.nextDouble() <.25) {
                             level.setBlockAndUpdate(blockpos.below(), AbyssalDecorBlocks.MOLDY_HANGER.get().defaultBlockState());
                         }
@@ -164,7 +164,7 @@ public class MoldBlock extends Block {
             return copyProperties(toConvert, block);
 
         } else if (toConvert.is(BlockTags.MINEABLE_WITH_PICKAXE)) {
-            return random.nextDouble() < .95 ? Blocks.DEEPSLATE.defaultBlockState() :
+            return random.nextDouble() < .90 ? Blocks.DEEPSLATE.defaultBlockState() :
                     Blocks.DEEPSLATE_COAL_ORE.defaultBlockState();
 
         } else if (toConvert.is(BlockTags.PLANKS)) {

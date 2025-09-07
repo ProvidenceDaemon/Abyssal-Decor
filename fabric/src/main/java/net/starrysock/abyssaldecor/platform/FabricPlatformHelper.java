@@ -2,7 +2,10 @@ package net.starrysock.abyssaldecor.platform;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.starrysock.abyssaldecor.block.FeverBlossomBlock;
+import net.starrysock.abyssaldecor.block.MoldBushBlock;
 import net.starrysock.abyssaldecor.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -40,5 +43,15 @@ public class FabricPlatformHelper implements IPlatformHelper {
     @Override
     public void onCropsGrowPost(Level level, BlockPos pos, BlockState state) {
 
+    }
+
+    @Override
+    public FeverBlossomBlock feverBlossom(BlockBehaviour.Properties properties) {
+        return null;
+    }
+
+    @Override
+    public MoldBushBlock moldBush(BlockBehaviour.Properties properties) {
+        return null;
     }
 }

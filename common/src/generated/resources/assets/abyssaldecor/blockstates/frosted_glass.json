@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
-      "model": "abyssaldecor:block/frosted_glass"
+    "vertical_connection=bottom": {
+      "model": "abyssaldecor:block/frosted_glass_bottom"
+    },
+    "vertical_connection=middle": {
+      "model": "abyssaldecor:block/frosted_glass_middle"
+    },
+    "vertical_connection=solo": {
+      "model": "abyssaldecor:block/frosted_glass_solo"
+    },
+    "vertical_connection=top": {
+      "model": "abyssaldecor:block/frosted_glass_top"
     }
   }
 }

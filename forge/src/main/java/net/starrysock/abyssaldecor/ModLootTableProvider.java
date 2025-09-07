@@ -23,10 +23,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.starrysock.abyssaldecor.block.BogAppleLeavesBlock;
-import net.starrysock.abyssaldecor.block.DoubleBlock;
-import net.starrysock.abyssaldecor.block.MuckrootBlock;
-import net.starrysock.abyssaldecor.block.SmallBarsCornerBlock;
+import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
@@ -67,7 +64,7 @@ public class ModLootTableProvider extends LootTableProvider {
                     AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
                     AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get(),AbyssalDecorBlocks.HANGING_WEB.get(),
                     AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(),
-                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),AbyssalDecorBlocks.HEART_OF_THE_SEA.get());
+                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),AbyssalDecorBlocks.HEART_OF_THE_SEA.get(),AbyssalDecorBlocks.MOLDY_HANGER.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -134,6 +131,13 @@ public class ModLootTableProvider extends LootTableProvider {
             this.add(AbyssalDecorBlocks.SPIDERCORN.get(), this.applyExplosionDecay(AbyssalDecorBlocks.SPIDERCORN.get(),
                     LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())))
                             .withPool(LootPool.lootPool().when(builder2).add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())
+                                    .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
+
+            this.add(AbyssalDecorBlocks.MOLDY_HANGER.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MOLDY_HANGER.get(),
+                    LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AbyssalDecorItems.MOLDY_HANGER.get())))
+                            .withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MOLDY_HANGER.get())
+                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MoldyHangersBlock.BERRIES, true))
+                            ).add(LootItem.lootTableItem(Items.SPIDER_EYE)
                                     .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
 
         }

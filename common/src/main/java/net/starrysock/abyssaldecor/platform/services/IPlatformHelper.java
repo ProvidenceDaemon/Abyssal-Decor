@@ -2,7 +2,10 @@ package net.starrysock.abyssaldecor.platform.services;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.starrysock.abyssaldecor.block.FeverBlossomBlock;
+import net.starrysock.abyssaldecor.block.MoldBushBlock;
 
 import java.nio.file.Path;
 
@@ -45,5 +48,8 @@ public interface IPlatformHelper {
      boolean onCropsGrowPre(Level level, BlockPos pos, BlockState state, boolean def);
 
     void onCropsGrowPost(Level level, BlockPos pos, BlockState state);
+
+    FeverBlossomBlock feverBlossom(BlockBehaviour.Properties properties);
+    MoldBushBlock moldBush(BlockBehaviour.Properties properties);
 
 }

@@ -483,7 +483,7 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<BlockItem> MOLDY_FUZZ = registerBlockItem(AbyssalDecorBlocks.MOLDY_FUZZ);
 
-    public static final RegistrySupplier<BlockItem> MOLDY_HANGERS = registerBlockItem(AbyssalDecorBlocks.MOLDY_HANGER);
+    public static final RegistrySupplier<BlockItem> MOLDY_HANGER = registerBlockItem(AbyssalDecorBlocks.MOLDY_HANGER);
 
 
 
@@ -495,7 +495,9 @@ public class AbyssalDecorItems {
             registerNamedBlockItem("fever_blossom_seeds",AbyssalDecorBlocks.FEVER_BLOSSOM);
 
     public static final RegistrySupplier<Item> FEVER_BLOSSOM = AbyssalDecor.ITEMS.register("fever_blossom",
-            () -> new FeverBlossomItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).alwaysEat().build())));
+            () -> new FeverBlossomItem(new Item.Properties().food(new FoodProperties.Builder()
+                            .effect(new MobEffectInstance(AbyssalDecorMobEffects.SPORE_PROTECTION.get(),1200),1)
+                    .nutrition(2).saturationMod(0.1F).alwaysEat().build())));
 
     public static final RegistrySupplier<Item> FEVER_BLOSSOM_TEA = AbyssalDecor.ITEMS.register("fever_blossom_tea",() ->
             new FeverBlossomTeaItem(new Item.Properties().food((new FoodProperties.Builder()).nutrition(2)

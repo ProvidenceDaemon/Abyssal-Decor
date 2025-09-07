@@ -653,10 +653,6 @@ public class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.DEEPBRONZE_TILES.get());
 
-            simplestBlockWithItem(AbyssalDecorBlocks.FROSTED_GLASS.get());
-            paneBlockWithItem(AbyssalDecorBlocks.FROSTED_GLASS_PANE.get(), modLoc("block/frosted_glass"),
-                    modLoc("block/frosted_glass"));
-
             simplestBlockWithItem(AbyssalDecorBlocks.SEABRASS_PLATING.get());
 
             logBlockWithItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get());
@@ -900,6 +896,14 @@ public class Datagen {
 
             wallGrime(AbyssalDecorBlocks.WALL_GRIME.get());
             blackMold(AbyssalDecorBlocks.BLACK_MOLD.get());
+            verticalConnectedBlock(AbyssalDecorBlocks.FROSTED_GLASS.get(),modLoc("block/frosted_glass"),
+                    modLoc("block/frosted_glass_bottom"),modLoc("block/frosted_glass_middle"),
+                    modLoc("block/frosted_glass_top"));
+
+            fancierIronBarsBlock(AbyssalDecorBlocks.FROSTED_GLASS_PANE.get(), modLoc("block/frosted_glass"),
+                    modLoc("block/frosted_glass_bottom"),modLoc("block/frosted_glass_middle"),
+                    modLoc("block/frosted_glass_top"),
+                    modLoc("block/frosted_glass"),false);
         }
 
         void blackMold(Block block) {
@@ -929,6 +933,26 @@ public class Datagen {
             });
         }
 
+        void verticalConnectedBlock(Block block,ResourceLocation paneSolo,ResourceLocation paneBottom,
+                                  ResourceLocation paneMiddle,ResourceLocation paneTop) {
+
+            String name = name(block);
+            ModelFile solo = models().cubeAll(name+"_solo",paneSolo);
+            ModelFile bottom = models().cubeColumn(name+"_bottom",paneBottom,paneSolo);
+            ModelFile middle = models().cubeColumn(name+"_middle",paneMiddle,paneSolo);
+            ModelFile top = models().cubeColumn(name+"_top",paneTop,paneSolo);
+
+            getVariantBuilder(block).forAllStates(state -> {
+               ModelFile file = switch (state.getValue(ModBlockStateProperties.VERTICAL_CONNECTION)) {
+                   case SOLO -> solo;
+                   case BOTTOM -> bottom;
+                   case MIDDLE -> middle;
+                   case TOP -> top;
+               };
+                return ConfiguredModel.builder().modelFile(file).build();
+            });
+            simpleBlockItem(block,solo);
+        }
 
         void fancierIronBarsBlock(FancierIronBarsBlock block,ResourceLocation paneSolo,ResourceLocation paneBottom,
                                   ResourceLocation paneMiddle,ResourceLocation paneTop,ResourceLocation edge,boolean showTopEdge) {

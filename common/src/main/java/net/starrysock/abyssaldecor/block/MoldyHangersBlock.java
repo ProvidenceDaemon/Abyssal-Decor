@@ -97,14 +97,20 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        ItemStack stack = player.getItemInHand(hand);
         if (state.getValue(BERRIES)) {
             if (!level.isClientSide) {
                 level.setBlockAndUpdate(pos, state.setValue(BERRIES, false));
                 int berries = 1+player.getRandom().nextInt(4);
-                ItemStack stack = new ItemStack(Items.SPIDER_EYE,berries);
-                player.addItem(stack);
+                ItemStack berryStack = new ItemStack(Items.SPIDER_EYE,berries);
+                player.addItem(berryStack);
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
+        if (part!= TriPart.TOP){
+
         }
         return super.use(state, level, pos, player, hand, hit);
     }
