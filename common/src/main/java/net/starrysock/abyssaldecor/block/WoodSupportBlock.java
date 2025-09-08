@@ -93,15 +93,13 @@ public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterlo
             Vec3 fraction = AbyssalUtils.getFraction(context.getClickLocation());
             Direction facing = stateForPlacement.getValue(FACING);
             boolean center = switch (face){
-                case FLOOR,CEILING -> {
-                    yield switch (facing) {
-                        default -> fraction.z < .625;
-                        case EAST -> fraction.x > .375;
-                        case SOUTH -> fraction.z > .375;
-                        case WEST -> fraction.x < .625;
+                case FLOOR,CEILING -> switch (facing) {
+                    default -> fraction.z < .625;
+                    case EAST -> fraction.x > .375;
+                    case SOUTH -> fraction.z > .375;
+                    case WEST -> fraction.x < .625;
 
-                    };
-                }
+                };
                 case WALL -> fraction.y < .625;
             };
             stateForPlacement = stateForPlacement.setValue(CENTERED,center);

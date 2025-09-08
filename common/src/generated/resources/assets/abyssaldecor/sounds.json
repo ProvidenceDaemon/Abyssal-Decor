@@ -1,4 +1,68 @@
 {
+  "block.deepbronze_block.break": {
+    "sounds": [
+      "abyssaldecor:block/deepbronze/break1",
+      "abyssaldecor:block/deepbronze/break2",
+      "abyssaldecor:block/deepbronze/break3",
+      "abyssaldecor:block/deepbronze/break4"
+    ]
+  },
+  "block.deepbronze_block.step": {
+    "sounds": [
+      "abyssaldecor:block/deepbronze/step1",
+      "abyssaldecor:block/deepbronze/step2",
+      "abyssaldecor:block/deepbronze/step3",
+      "abyssaldecor:block/deepbronze/step4",
+      "abyssaldecor:block/deepbronze/step5"
+    ]
+  },
+  "block.seabrass_block.break": {
+    "sounds": [
+      "abyssaldecor:block/seabrass/break1",
+      "abyssaldecor:block/seabrass/break2",
+      "abyssaldecor:block/seabrass/break3",
+      "abyssaldecor:block/seabrass/break4"
+    ]
+  },
+  "block.seabrass_block.step": {
+    "sounds": [
+      "abyssaldecor:block/seabrass/step1",
+      "abyssaldecor:block/seabrass/step2",
+      "abyssaldecor:block/seabrass/step3",
+      "abyssaldecor:block/seabrass/step4",
+      "abyssaldecor:block/seabrass/step5",
+      "abyssaldecor:block/seabrass/step6"
+    ]
+  },
+  "block.trash_bag.break": {
+    "sounds": [
+      "abyssaldecor:block/trash_bag/break1",
+      "abyssaldecor:block/trash_bag/break2",
+      "abyssaldecor:block/trash_bag/break3",
+      "abyssaldecor:block/trash_bag/break4",
+      "abyssaldecor:block/trash_bag/break5",
+      "abyssaldecor:block/trash_bag/break6"
+    ]
+  },
+  "block.trash_bag.step": {
+    "sounds": [
+      "abyssaldecor:block/trash_bag/step2",
+      "abyssaldecor:block/trash_bag/step3",
+      "abyssaldecor:block/trash_bag/step4",
+      "abyssaldecor:block/trash_bag/step5",
+      "abyssaldecor:block/trash_bag/step6"
+    ]
+  },
+  "industrial_lever_off": {
+    "sounds": [
+      "abyssaldecor:block/industrial_lever/on"
+    ]
+  },
+  "industrial_lever_on": {
+    "sounds": [
+      "abyssaldecor:block/industrial_lever/off"
+    ]
+  },
   "lamp_off": {
     "sounds": [
       "abyssaldecor:lamp_off"
@@ -17,5 +81,18 @@
       }
     ],
     "subtitle": "subtitles.music.disk.tsm"
+  },
+  "tube_lamp_off": {
+    "sounds": [
+      "abyssaldecor:block/tube_lamp/off1",
+      "abyssaldecor:block/tube_lamp/off2"
+    ]
+  },
+  "tube_lamp_on": {
+    "sounds": [
+      "abyssaldecor:block/tube_lamp/on1",
+      "abyssaldecor:block/tube_lamp/on2",
+      "abyssaldecor:block/tube_lamp/on3"
+    ]
   }
 }

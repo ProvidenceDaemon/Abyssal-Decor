@@ -1,6 +1,8 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -20,7 +22,8 @@ public class VerticalTubeLamp extends HorizontalLampBlock{
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (player.isCrouching()) {
             level.setBlockAndUpdate(blockPos, AbyssalDecorBlocks.TUBE_LAMP.get().defaultBlockState()
-                    .setValue(RedstoneLampBlock.LIT,blockState.getValue(RedstoneLampBlock.LIT)).setValue(FACING,blockState.getValue(FACING)));
+                    .setValue(RedstoneLampBlock.LIT,blockState.getValue(RedstoneLampBlock.LIT)).setValue(FACING,blockState.getValue(FACING).getOpposite()));
+            level.playSound(null,blockPos, SoundEvents.WOODEN_TRAPDOOR_CLOSE, SoundSource.BLOCKS,1,1);
         } else {
             return ToggleableDirectionalLampBlock.toggleLamp(blockState,level,blockPos);
         }

@@ -9,6 +9,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
@@ -16,10 +17,13 @@ import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.starrysock.abyssaldecor.mixin.BlockEntityTypeAccessor;
 import net.starrysock.abyssaldecor.platform.Services;
@@ -70,20 +74,23 @@ public class AbyssalDecor {
 
     }
 
-    public static InteractionResult rightClickBlock(Player entity, InteractionHand hand, BlockPos pos, Direction face) {
-        ItemStack stack = entity.getItemInHand(hand);
+    public static InteractionResult rightClickBlock(Level level, Player player, InteractionHand hand, BlockPos pos, Direction face) {
+        ItemStack stack = player.getItemInHand(hand);
         BlockPos placePos = pos.relative(face);
-        if (stack.is(Items.HEART_OF_THE_SEA) && entity.level().getBlockState(placePos).canBeReplaced()) {
+        if (stack.is(Items.HEART_OF_THE_SEA) && player.level().getBlockState(placePos).canBeReplaced()) {
             BlockState state = AbyssalDecorBlocks.HEART_OF_THE_SEA.get().defaultBlockState().setValue(DirectionalBlock.FACING,face);//getPlacementState(new BlockPlaceContext(pl));
 
-            if (!entity.level().isClientSide) {
-                boolean b = entity.level().setBlockAndUpdate(placePos, state);
-                if (b && !entity.getAbilities().instabuild) {
+            if (!player.level().isClientSide) {
+                boolean b = player.level().setBlockAndUpdate(placePos, state);
+                if (b && !player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
+                SoundType soundtype = state.getSoundType();
+                level.playSound(player, pos, soundtype.getPlaceSound(), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                level.gameEvent(GameEvent.BLOCK_PLACE, pos, GameEvent.Context.of(player, state));
             }
 
-            return InteractionResult.sidedSuccess(entity.level().isClientSide);
+            return InteractionResult.sidedSuccess(player.level().isClientSide);
         }
         return InteractionResult.PASS;
     }

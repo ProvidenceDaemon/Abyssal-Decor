@@ -18,6 +18,7 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.BarrierRibbonBlock;
 import net.starrysock.abyssaldecor.MixedBlock;
 import net.starrysock.abyssaldecor.block.*;
+import net.starrysock.abyssaldecor.block.properties.FrostedLampBlock;
 import net.starrysock.abyssaldecor.platform.Services;
 
 import java.util.function.ToIntFunction;
@@ -61,7 +62,7 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> FLOWER_LAMP = AbyssalDecor.BLOCKS.register("flower_lamp", () ->
             new HorizontalLampBlock(lamp().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP),
                     Shapes.or(Block.box(5.0, 6.0, 5.0, 11.0, 15.0, 11.0), Block.box(6.0, 4.0, 0.0, 10.0, 12.0, 1.0))));
-    public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new ToggleableDirectionalLampBlock(lamp()));
+    public static RegistrySupplier<Block> FROSTED_LAMP = AbyssalDecor.BLOCKS.register("frosted_lamp", () -> new FrostedLampBlock(lamp()));
     public static RegistrySupplier<Block> QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("quartz_lamp", () -> new
             LampBlock(lamp().hasPostProcess(EMISSIVE_LAMP).emissiveRendering(EMISSIVE_LAMP), Block.box(5, 0, 5, 11, 16, 11)));
     public static RegistrySupplier<Block> WALL_QUARTZ_LAMP = AbyssalDecor.BLOCKS.register("wall_quartz_lamp", () ->
@@ -78,7 +79,7 @@ public class AbyssalDecorBlocks {
     public static RegistrySupplier<Block> WALL_JADE_LAMP = AbyssalDecor.BLOCKS.register("wall_jade_lamp", () -> new HorizontalLampBlock(lamp().dropsLike(JADE_LAMP.get()), null));
 
 
-    public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new ToggleableDirectionalLampBlock(lamp()));
+    public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new FrostedLampBlock(lamp()));
     public static RegistrySupplier<Block> BLAZE_LAMP = AbyssalDecor.BLOCKS.register("blaze_lamp", () ->
             new BlazeLampBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(4.0F, 10.0F).lightLevel(s -> 12)
                     .noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
@@ -672,38 +673,38 @@ public class AbyssalDecorBlocks {
             () -> new FallingBlock(Block.Properties.copy(Blocks.GRAVEL)));
 
     public static final RegistrySupplier<Block> RAW_SEABRASS_BLOCK = AbyssalDecor.BLOCKS.register("raw_seabrass_block",() ->
-            new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(5.0F, 10.0F)
+            new Block(BlockBehaviour.Properties.of().sound(ModSoundTypes.SEABRASS_BLOCK).strength(5.0F, 10.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<Block> SEABRASS_BLOCK = AbyssalDecor.BLOCKS.register("seabrass_block",() ->
-            new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK)
+            new Block(BlockBehaviour.Properties.of().sound(ModSoundTypes.SEABRASS_BLOCK)
                     .mapColor(MapColor.COLOR_YELLOW).strength(5.0F, 10.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<Block> RIVETED_SEABRASS = AbyssalDecor.BLOCKS.register("riveted_seabrass",() ->
-            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<RotatedPillarBlock> SEABRASS_TRIM = AbyssalDecor.BLOCKS.register("seabrass_trim",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SEABRASS_PILLAR = AbyssalDecor.BLOCKS.register("seabrass_pillar",() ->
             new FaceAttachedBlock(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get())));
 
     public static final RegistrySupplier<RotatedPillarBlock> LARGE_SEABRASS_PIPE = AbyssalDecor.BLOCKS.register("large_seabrass_pipe",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<Block> SMALL_SEABRASS_PIPES = AbyssalDecor.BLOCKS.register("small_seabrass_pipes",() ->
-            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<Block> SEABRASS_PLATING = AbyssalDecor.BLOCKS.register("seabrass_plating",() ->
-            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
     public static final RegistrySupplier<Block> SEABRASS_TILES = AbyssalDecor.BLOCKS.register("seabrass_tiles",() ->
-            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+            new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
 
@@ -754,7 +755,7 @@ public class AbyssalDecorBlocks {
 
     public static final RegistrySupplier<Block> DEEPBRONZE_BLOCK = AbyssalDecor.BLOCKS.register("deepbronze_block",() ->
             new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
-                    .requiresCorrectToolForDrops().strength(3, 6).sound(SoundType.NETHERITE_BLOCK)));
+                    .requiresCorrectToolForDrops().strength(3, 6).sound(ModSoundTypes.DEEPBRONZE_BLOCK)));
 
     public static final RegistrySupplier<Block> RIVETED_DEEPBRONZE = AbyssalDecor.BLOCKS.register("riveted_deepbronze",() ->
             new Block(BlockBehaviour.Properties.copy(DEEPBRONZE_BLOCK.get())));
@@ -1205,7 +1206,8 @@ public class AbyssalDecorBlocks {
             () -> new IronBarsBlock(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2, 3)));
 
     public static final RegistrySupplier<DirectionalBlock> TRASH_BAG = AbyssalDecor.BLOCKS.register("trash_bag",() ->
-            new AbstractDirectionalBlock(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.AZALEA_LEAVES).strength(2.0F).noOcclusion()));
+            new AbstractDirectionalBlock(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS)
+                    .sound(ModSoundTypes.TRASH_BAG).strength(2.0F).noOcclusion()));
 
     public static final RegistrySupplier<Block> FROSTED_GLASS = AbyssalDecor.BLOCKS.register("frosted_glass",() ->
             new FrostedGlassBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).mapColor(MapColor.TERRACOTTA_WHITE)

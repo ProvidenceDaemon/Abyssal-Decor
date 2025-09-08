@@ -42,7 +42,7 @@ public class AbyssalDecorForge {
     }
 
     static void rightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        InteractionResult interactionResult = AbyssalDecor.rightClickBlock(event.getEntity(), event.getHand(), event.getPos(), event.getFace());
+        InteractionResult interactionResult = AbyssalDecor.rightClickBlock(event.getLevel(),event.getEntity(), event.getHand(), event.getPos(), event.getFace());
         if (interactionResult.consumesAction()) {
             event.setCanceled(true);
             event.setUseBlock(Event.Result.DENY);

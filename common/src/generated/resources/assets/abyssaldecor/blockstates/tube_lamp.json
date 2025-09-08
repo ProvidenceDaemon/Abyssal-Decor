@@ -1,110 +1,72 @@
 {
   "variants": {
-    "face=ceiling,facing=east,lit=false": {
+    "facing=east,half=bottom,lit=false": {
+      "model": "abyssaldecor:block/tube_lamp",
+      "y": 90
+    },
+    "facing=east,half=bottom,lit=true": {
+      "model": "abyssaldecor:block/tube_lamp_lit",
+      "y": 90
+    },
+    "facing=east,half=top,lit=false": {
       "model": "abyssaldecor:block/tube_lamp",
       "x": 180,
       "y": 270
     },
-    "face=ceiling,facing=east,lit=true": {
+    "facing=east,half=top,lit=true": {
       "model": "abyssaldecor:block/tube_lamp_lit",
       "x": 180,
       "y": 270
     },
-    "face=ceiling,facing=north,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "x": 180,
-      "y": 180
-    },
-    "face=ceiling,facing=north,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 180,
-      "y": 180
-    },
-    "face=ceiling,facing=south,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "x": 180
-    },
-    "face=ceiling,facing=south,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 180
-    },
-    "face=ceiling,facing=west,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "x": 180,
-      "y": 90
-    },
-    "face=ceiling,facing=west,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 180,
-      "y": 90
-    },
-    "face=floor,facing=east,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "y": 90
-    },
-    "face=floor,facing=east,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "y": 90
-    },
-    "face=floor,facing=north,lit=false": {
+    "facing=north,half=bottom,lit=false": {
       "model": "abyssaldecor:block/tube_lamp"
     },
-    "face=floor,facing=north,lit=true": {
+    "facing=north,half=bottom,lit=true": {
       "model": "abyssaldecor:block/tube_lamp_lit"
     },
-    "face=floor,facing=south,lit=false": {
+    "facing=north,half=top,lit=false": {
+      "model": "abyssaldecor:block/tube_lamp",
+      "x": 180,
+      "y": 180
+    },
+    "facing=north,half=top,lit=true": {
+      "model": "abyssaldecor:block/tube_lamp_lit",
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=bottom,lit=false": {
       "model": "abyssaldecor:block/tube_lamp",
       "y": 180
     },
-    "face=floor,facing=south,lit=true": {
+    "facing=south,half=bottom,lit=true": {
       "model": "abyssaldecor:block/tube_lamp_lit",
       "y": 180
     },
-    "face=floor,facing=west,lit=false": {
+    "facing=south,half=top,lit=false": {
+      "model": "abyssaldecor:block/tube_lamp",
+      "x": 180
+    },
+    "facing=south,half=top,lit=true": {
+      "model": "abyssaldecor:block/tube_lamp_lit",
+      "x": 180
+    },
+    "facing=west,half=bottom,lit=false": {
       "model": "abyssaldecor:block/tube_lamp",
       "y": 270
     },
-    "face=floor,facing=west,lit=true": {
+    "facing=west,half=bottom,lit=true": {
       "model": "abyssaldecor:block/tube_lamp_lit",
       "y": 270
     },
-    "face=wall,facing=east,lit=false": {
+    "facing=west,half=top,lit=false": {
       "model": "abyssaldecor:block/tube_lamp",
-      "x": 90,
+      "x": 180,
       "y": 90
     },
-    "face=wall,facing=east,lit=true": {
+    "facing=west,half=top,lit=true": {
       "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 90,
+      "x": 180,
       "y": 90
-    },
-    "face=wall,facing=north,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "x": 90
-    },
-    "face=wall,facing=north,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 90
-    },
-    "face=wall,facing=south,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "x": 90,
-      "y": 180
-    },
-    "face=wall,facing=south,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 90,
-      "y": 180
-    },
-    "face=wall,facing=west,lit=false": {
-      "model": "abyssaldecor:block/tube_lamp",
-      "x": 90,
-      "y": 270
-    },
-    "face=wall,facing=west,lit=true": {
-      "model": "abyssaldecor:block/tube_lamp_lit",
-      "x": 90,
-      "y": 270
     }
   }
 }

@@ -381,19 +381,18 @@ public class Datagen {
             getVariantBuilder(AbyssalDecorBlocks.TUBE_LAMP.get()).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
                 Direction orientation = blockState.getValue(HorizontalDirectionalBlock.FACING);
-                AttachFace face = blockState.getValue(TubeLampBlock.FACE);
-
+                Half half = blockState.getValue(BlockStateProperties.HALF);
 
 
                 ResourceLocation texture = modLoc("block/tubelamp");
 
                 ModelFile modelFile = models().withExistingParent("block/tube_lamp" + (lit ? "_lit" : ""),
-                                modLoc("custom/tubelamp"))
+                                modLoc("custom/tubelamp"+ (lit ? "lit" : "")))
                         .texture("particle", texture)
                         .texture("0", texture);
                 return ConfiguredModel.builder().modelFile(modelFile)
-                        .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
-                        .rotationY((int) (face == AttachFace.CEILING ? orientation : orientation.getOpposite()).toYRot())
+                        .rotationX(half == Half.BOTTOM ? 0 : 180)
+                        .rotationY((int) (half == Half.TOP ? orientation : orientation.getOpposite()).toYRot())
                         .build();
             });
 

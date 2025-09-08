@@ -1,9 +1,15 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -11,10 +17,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorSounds;
 
 import javax.annotation.Nullable;
 
@@ -72,6 +81,25 @@ public class IndustrialLeverBlock extends LeverBlock implements SimpleWaterlogge
                     default:
                         return ALT_DOWN_AABB_Z;
                 }
+        }
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (level.isClientSide) {
+            BlockState blockstate1 = state.cycle(POWERED);
+            if (blockstate1.getValue(POWERED)) {
+                makeParticle(blockstate1, level, pos, 1.0F);
+            }
+
+            return InteractionResult.SUCCESS;
+        } else {
+            BlockState blockstate = this.pull(state, level, pos);
+            //float f = blockstate.getValue(POWERED) ? 0.6F : 0.5F;
+            SoundEvent soundEvent = blockstate.getValue(POWERED) ? AbyssalDecorSounds.INDUSTRIAL_LEVER_ON.get() : AbyssalDecorSounds.INDUSTRIAL_LEVER_OFF.get();
+            level.playSound(null, pos,soundEvent, SoundSource.BLOCKS, 1, 1);
+            level.gameEvent(player, blockstate.getValue(POWERED) ? GameEvent.BLOCK_ACTIVATE : GameEvent.BLOCK_DEACTIVATE, pos);
+            return InteractionResult.CONSUME;
         }
     }
 

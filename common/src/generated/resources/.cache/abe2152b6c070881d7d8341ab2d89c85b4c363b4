@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-07T22:02:42.3427167	Block States: abyssaldecor
+// 1.20.1	2025-09-08T00:01:39.2702853	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 ef421ee76ead997567926af87905959bf2e77b26 assets/abyssaldecor/blockstates/amaranth_crate.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
@@ -281,7 +281,7 @@ e2b9743d90c377a7c15232bda7e8e8acfba67f7d assets/abyssaldecor/blockstates/tall_am
 8c85d831c8aad15bdba713b873927a373c0d79b5 assets/abyssaldecor/blockstates/tall_cinnamon_bush.json
 a8e291577d37888f7389aba189bad11dd17a9b76 assets/abyssaldecor/blockstates/telescope.json
 cb753a9a4352995e61d51ca8df80c63c730f8d45 assets/abyssaldecor/blockstates/trash_bag.json
-08eaa1051a01e823dfa302b35c78aa394e8c9163 assets/abyssaldecor/blockstates/tube_lamp.json
+3161ebbc660d088f351b6bf17fc6890476f8f5ae assets/abyssaldecor/blockstates/tube_lamp.json
 a69309650c82872468d640dbd357561447eb74b9 assets/abyssaldecor/blockstates/velvet_barrier.json
 83b7e80adfddd89f1749eb8bf596f90c404e1b60 assets/abyssaldecor/blockstates/velvet_curtain.json
 f53c0df267480fff78e2d91a1738896b08deb605 assets/abyssaldecor/blockstates/velvet_curtain_multiblock.json
@@ -1048,7 +1048,7 @@ fe67f3cf786f893b5c818b7af54820fc3f504431 assets/abyssaldecor/models/block/tall_c
 ffe5ece0b0413e97aa6501c5e52637ee9160e285 assets/abyssaldecor/models/block/tall_cinnamon_bush_stage1.json
 03c0814ebd419b8f66647183fbc0752835fdc564 assets/abyssaldecor/models/block/trash_bag.json
 35c93033fa4a0b4bcf1b65e1c7b378d1c14dece2 assets/abyssaldecor/models/block/tube_lamp.json
-35c93033fa4a0b4bcf1b65e1c7b378d1c14dece2 assets/abyssaldecor/models/block/tube_lamp_lit.json
+41601a8d2f5d94e6d4ae3ff382174036e6e1c4da assets/abyssaldecor/models/block/tube_lamp_lit.json
 1fa927b7d855ec845f5cbcfe58c784c16ab0c3df assets/abyssaldecor/models/block/velvet_barrier_bottom.json
 8e470343d52fdd48a8c4a2c03c77e869016bd8bf assets/abyssaldecor/models/block/velvet_barrier_top.json
 7427687e3c4a2771d73e5ac5bd6528379f96c3f1 assets/abyssaldecor/models/block/velvet_curtain.json

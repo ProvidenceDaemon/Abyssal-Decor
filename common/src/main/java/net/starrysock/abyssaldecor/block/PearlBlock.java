@@ -1,10 +1,13 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 
 public class PearlBlock extends WaterloggedDirectionalBlock {
     public PearlBlock(Properties properties) {
@@ -25,5 +28,11 @@ public class PearlBlock extends WaterloggedDirectionalBlock {
         return var10000;
     }
 
-
+    @Override
+    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+        if (this == AbyssalDecorBlocks.HEART_OF_THE_SEA.get()) {
+            return Items.HEART_OF_THE_SEA.getDefaultInstance();
+        }
+        return super.getCloneItemStack(level, pos, state);
+    }
 }
