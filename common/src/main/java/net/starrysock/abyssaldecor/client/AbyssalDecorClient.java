@@ -103,6 +103,9 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get(),RenderType.cutoutMipped());
 
+        renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_DOOR.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR.get(),RenderType.cutoutMipped());
+
         renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_SCONCE.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.BLOOD_CORAL_SCONCE.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.DULL_IRON_SCONCE.get(),RenderType.cutoutMipped());
@@ -184,6 +187,15 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.FOGHORN.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.TRASH_BAG.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.WALL_BULB_LAMP.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.INDUSTRIAL_LEVER.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.SEABRASS_TRAPDOOR.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_TRAPDOOR.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.WHITE_PEARL_TRAPDOOR.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.WHITE_PEARL_DOOR.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.SEABRASS_DOOR.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_DOOR.get(),RenderType.cutoutMipped());
     }
 
 

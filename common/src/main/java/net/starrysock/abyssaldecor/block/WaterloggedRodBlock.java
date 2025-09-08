@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.starrysock.abyssaldecor.AbyssalUtils;
 
 public class WaterloggedRodBlock extends RodBlock implements SimpleWaterloggedBlock {
     public WaterloggedRodBlock(Properties properties) {
@@ -18,13 +19,17 @@ public class WaterloggedRodBlock extends RodBlock implements SimpleWaterloggedBl
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
-        Direction direction = blockPlaceContext.getClickedFace();
-        BlockState blockState = blockPlaceContext.getLevel().getBlockState(blockPlaceContext.getClickedPos().relative(direction.getOpposite()));
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Direction direction = context.getClickedFace();
+        BlockState blockState = context.getLevel().getBlockState(context.getClickedPos().relative(direction.getOpposite()));
         if (blockState.is(this) && blockState.getValue(FACING) == direction) {
-            return this.defaultBlockState().setValue(FACING, direction.getOpposite());
+            BlockState state = this.defaultBlockState().setValue(FACING, direction.getOpposite());
+            state = AbyssalUtils.waterLog(state,context.getLevel().getFluidState(context.getClickedPos()));
+            return state;
         }
-        return this.defaultBlockState().setValue(FACING, direction);
+        BlockState state = this.defaultBlockState().setValue(FACING, direction);
+        state = AbyssalUtils.waterLog(state,context.getLevel().getFluidState(context.getClickedPos()));
+        return state;
     }
 
     @Override

@@ -323,7 +323,7 @@ public class AbyssalDecorBlocks {
             wallHangingSign(WHITEWOOD_HANGING_SIGN.get(),ModWoodTypes.WHITEWOOD));
 
     public static final RegistrySupplier<Block> WHITEWOOD_PLANTER = AbyssalDecor.BLOCKS.register("whitewood_planter", () ->
-            new WhitewoodPlanterBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS)
+            Services.PLATFORM.whitewoodPlanter(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS)
                     .strength(2, 3).sound(SoundType.WOOD).ignitedByLava()));
 
 

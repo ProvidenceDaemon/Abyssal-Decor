@@ -8,6 +8,8 @@ import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.material.FluidState;
+import net.starrysock.abyssaldecor.AbyssalUtils;
 
 public class AbstractDirectionalBlock extends DirectionalBlock {
     public AbstractDirectionalBlock(Properties properties) {
@@ -18,7 +20,10 @@ public class AbstractDirectionalBlock extends DirectionalBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
         Direction direction = blockPlaceContext.getClickedFace();
-        return this.defaultBlockState().setValue(FACING, direction);
+        BlockState state = this.defaultBlockState().setValue(FACING, direction);
+        FluidState fluidState = blockPlaceContext.getLevel().getFluidState(blockPlaceContext.getClickedPos());
+        state = AbyssalUtils.waterLog(state,fluidState);
+        return state;
     }
 
     /**

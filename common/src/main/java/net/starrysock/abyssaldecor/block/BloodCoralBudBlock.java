@@ -6,8 +6,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,6 +37,16 @@ public class BloodCoralBudBlock extends Block implements SimpleWaterloggedBlock,
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockPos = pos.below();
         return level.getBlockState(blockPos).isFaceSturdy(level,blockPos,Direction.UP);
+    }
+
+    /**
+     * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
+     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart.
+     * Note that this method should ideally consider only the specific direction passed in.
+     */
+    @Override
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        return !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
     }
 
     @Override

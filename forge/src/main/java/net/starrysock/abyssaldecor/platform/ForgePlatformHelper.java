@@ -8,8 +8,10 @@ import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.starrysock.abyssaldecor.block.FeverBlossomBlock;
 import net.starrysock.abyssaldecor.block.MoldBushBlock;
+import net.starrysock.abyssaldecor.block.WhitewoodPlanterBlock;
 import net.starrysock.abyssaldecor.forge.FeverBlossomBlockForge;
 import net.starrysock.abyssaldecor.forge.MoldBushBlockForge;
+import net.starrysock.abyssaldecor.forge.WhiteWoodPlanterBlockForge;
 import net.starrysock.abyssaldecor.platform.services.IPlatformHelper;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
@@ -57,5 +59,10 @@ public class ForgePlatformHelper implements IPlatformHelper {
     @Override
     public MoldBushBlock moldBush(BlockBehaviour.Properties properties) {
         return new MoldBushBlockForge(properties);
+    }
+
+    @Override
+    public WhitewoodPlanterBlock whitewoodPlanter(BlockBehaviour.Properties properties) {
+        return new WhiteWoodPlanterBlockForge(properties);
     }
 }

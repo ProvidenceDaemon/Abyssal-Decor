@@ -12,6 +12,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.AbyssalUtils;
 import org.jetbrains.annotations.Nullable;
 
 public class WoodenFrogBlock extends AbstractHorizontalBlock implements SimpleWaterloggedBlock {
@@ -42,7 +43,9 @@ public class WoodenFrogBlock extends AbstractHorizontalBlock implements SimpleWa
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        BlockState state = defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        state = AbyssalUtils.waterLog(state,context.getLevel().getFluidState(context.getClickedPos()));
+        return state;
     }
 
     @Override

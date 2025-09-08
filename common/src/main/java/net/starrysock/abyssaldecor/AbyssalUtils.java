@@ -1,6 +1,10 @@
 package net.starrysock.abyssaldecor;
 
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -27,5 +31,10 @@ public class AbyssalUtils {
 
     public static Vec3 getFraction(Vec3 vec3) {
         return new Vec3(vec3.x - Math.floor(vec3.x),vec3.y - Math.floor(vec3.y),vec3.z - Math.floor(vec3.z));
+    }
+
+    public static BlockState waterLog(BlockState state, FluidState fluidState) {
+        return fluidState.getType() == Fluids.WATER && state.hasProperty(BlockStateProperties.WATERLOGGED) ?
+                state.setValue(BlockStateProperties.WATERLOGGED, true) : state;
     }
 }

@@ -11,6 +11,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "abyssaldecor:blood_coral_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "abyssaldecor:blood_coral_door"
         }
       ],

@@ -122,7 +122,7 @@ public class SmallBarsBlock extends AbstractHorizontalBlock implements SimpleWat
                 if (direction.getAxis().isHorizontal()) {
                     blockstate1 = blockstate1.setValue(FACING, direction.getOpposite()).setValue(VERTICAL_FACING,fraction.y > .5 ? Direction.UP: Direction.DOWN);
                     if (blockstate1.canSurvive(levelreader, blockpos)) {
-                        return blockstate1;//.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                        return blockstate1.setValue(BlockStateProperties.WATERLOGGED, fluidstate.getType() == Fluids.WATER);
                     }
                 }
             }

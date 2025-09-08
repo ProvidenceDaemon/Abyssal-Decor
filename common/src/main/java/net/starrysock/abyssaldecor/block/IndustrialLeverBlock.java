@@ -89,7 +89,7 @@ public class IndustrialLeverBlock extends LeverBlock implements SimpleWaterlogge
         if (level.isClientSide) {
             BlockState blockstate1 = state.cycle(POWERED);
             if (blockstate1.getValue(POWERED)) {
-                makeParticle(blockstate1, level, pos, 1.0F);
+                LeverBlock.makeParticle(blockstate1, level, pos, 1.0F);
             }
 
             return InteractionResult.SUCCESS;

@@ -11,6 +11,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "abyssaldecor:white_pearl_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "abyssaldecor:white_pearl_door"
         }
       ],

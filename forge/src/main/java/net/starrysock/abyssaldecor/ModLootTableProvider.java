@@ -73,12 +73,15 @@ public class ModLootTableProvider extends LootTableProvider {
                 if (!skip.contains(block) && !specialDrops.contains(block) && !(block instanceof SmallBarsCornerBlock)
                        &&!(block instanceof DoubleBlock)
                         &&!(block instanceof DoublePlantBlock)
-                        && !(block instanceof BarrierRibbonBlock)) {
+                        && !(block instanceof BarrierRibbonBlock)
+                        && !(block instanceof DoorBlock)) {
                     dropSelf(block);
                 } else if (block instanceof BarrierRibbonBlock) {
                     add(block,noDrop());
                 } else if (block instanceof DoublePlantBlock || block instanceof DoubleBlock) {
                     barrierDrop(block);
+                } else if (block instanceof DoorBlock) {
+                    this.add(block, this::createDoorTable);
                 }
             } );
 

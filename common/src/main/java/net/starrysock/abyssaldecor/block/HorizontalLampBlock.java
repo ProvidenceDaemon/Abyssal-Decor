@@ -85,6 +85,7 @@ public class HorizontalLampBlock extends AbstractHorizontalBlock implements Simp
             if (direction.getAxis().isHorizontal()) {
                 blockstate = blockstate.setValue(FACING, direction);
                 if (blockstate.canSurvive(levelreader, blockpos)) {
+                    blockstate = AbyssalUtils.waterLog(blockstate,context.getLevel().getFluidState(context.getClickedPos()));
                     return blockstate;
                 }
             }

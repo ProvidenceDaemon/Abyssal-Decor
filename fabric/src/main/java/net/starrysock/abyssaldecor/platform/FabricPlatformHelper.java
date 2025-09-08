@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.starrysock.abyssaldecor.block.FeverBlossomBlock;
 import net.starrysock.abyssaldecor.block.MoldBushBlock;
+import net.starrysock.abyssaldecor.block.WhitewoodPlanterBlock;
 import net.starrysock.abyssaldecor.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -47,11 +48,16 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
     public FeverBlossomBlock feverBlossom(BlockBehaviour.Properties properties) {
-        return null;
+        return new FeverBlossomBlock(properties);
     }
 
     @Override
     public MoldBushBlock moldBush(BlockBehaviour.Properties properties) {
-        return null;
+        return new MoldBushBlock(properties);
+    }
+
+    @Override
+    public WhitewoodPlanterBlock whitewoodPlanter(BlockBehaviour.Properties properties) {
+        return new WhitewoodPlanterBlock(properties);
     }
 }

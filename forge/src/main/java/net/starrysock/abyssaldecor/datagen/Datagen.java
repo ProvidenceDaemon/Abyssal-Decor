@@ -217,7 +217,7 @@ public class Datagen {
                 if (family.exists(Variant.TRAPDOOR)) {
                     TrapDoorBlock trapdoor = (TrapDoorBlock) family.get(Variant.TRAPDOOR);
                     ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(trapdoor);
-                    trapdoorBlock(trapdoor, modLoc("block/" + trapLoc.getPath()), false);
+                    trapdoorBlock(trapdoor, modLoc("block/" + trapLoc.getPath()), true);
                 }
 
                 if (family.exists(Variant.DOOR)) {
@@ -906,7 +906,15 @@ public class Datagen {
 
             wallLamp(AbyssalDecorBlocks.WALL_BULB_LAMP.get(), modLoc("custom/bulblamp"), modLoc("block/bulblamp"),true);
 
+            simpleBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PLANTER.get(),models()
+                    .cubeBottomTop("whitewood_planter",modLoc("block/whitewoodplanterside"),modLoc("block/whitewoodplanterbottom")
+                            ,modLoc("block/whitewoodplantertop")));
         }
+        //    "bottom": "abyssaldecor:block/whitewoodplanterbottom",
+        //    "top": "abyssaldecor:block/whitewoodplantertop",
+        //    "side": "abyssaldecor:block/whitewoodplanterside",
+        //    "overlay": "abyssaldecor:block/whitewoodplanterside",
+        //    "particle": "abyssaldecor:block/whitewoodplanterbottom"
 
         void blackMold(Block block) {
             ModelFile main = models().cubeAll(name(block),modLoc("block/blackmold"));

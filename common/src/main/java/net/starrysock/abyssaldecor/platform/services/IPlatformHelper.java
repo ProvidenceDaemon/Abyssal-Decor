@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.starrysock.abyssaldecor.block.FeverBlossomBlock;
 import net.starrysock.abyssaldecor.block.MoldBushBlock;
+import net.starrysock.abyssaldecor.block.WhitewoodPlanterBlock;
 
 import java.nio.file.Path;
 
@@ -51,5 +52,6 @@ public interface IPlatformHelper {
 
     FeverBlossomBlock feverBlossom(BlockBehaviour.Properties properties);
     MoldBushBlock moldBush(BlockBehaviour.Properties properties);
+    WhitewoodPlanterBlock whitewoodPlanter(BlockBehaviour.Properties properties);
 
 }
