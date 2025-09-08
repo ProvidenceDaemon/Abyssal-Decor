@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "abyssaldecor:block/tall_cinnamon_bush_upper_stage0"
+  }
+}

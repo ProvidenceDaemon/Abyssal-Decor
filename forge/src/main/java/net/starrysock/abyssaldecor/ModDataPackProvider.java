@@ -64,7 +64,7 @@ public class ModDataPackProvider extends DatapackBuiltinEntriesProvider {
                         .add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get().defaultBlockState(),1)
                 ),
                 //radius offset, height
-                new CinnamonFoliagePlacer(ConstantInt.of(radius), ConstantInt.of(7), 12), new TwoLayersFeatureSize(1, 0, 1));
+                new CinnamonFoliagePlacer(ConstantInt.of(radius), ConstantInt.of(7), 10), new TwoLayersFeatureSize(1, 0, 1));
     }
 
 

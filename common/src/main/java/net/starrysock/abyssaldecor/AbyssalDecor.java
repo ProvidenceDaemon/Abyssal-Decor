@@ -136,5 +136,6 @@ public class AbyssalDecor {
         return new ResourceLocation(MOD_ID,path);
     }
 
-    
+    private static class info {
+    }
 }

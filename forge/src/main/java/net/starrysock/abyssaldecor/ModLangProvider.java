@@ -115,6 +115,7 @@ public class ModLangProvider extends LanguageProvider {
         addCreativeModeTab(AbyssalCreativeTabs.PALETTE_TAB.get(),"Palletes");
         addDefaultItem(AbyssalDecorItems.FEVER_BLOSSOM.get());
         addDefaultItem(AbyssalDecorItems.FEVER_BLOSSOM_SEEDS.get());
+        addDefaultItem(AbyssalDecorItems.CAVE_TACO.get());
         paintings();
     }
 

@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/lily_pad",
+  "parent": "abyssaldecor:custom/starfishdried1",
   "textures": {
     "particle": "abyssaldecor:block/1_pink_starfish",
     "texture": "abyssaldecor:block/1_pink_starfish"

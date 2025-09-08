@@ -653,17 +653,10 @@ public class AbyssalDecorBlocks {
                     .sound(SoundType.WOOL).strength(0.1F, 1).noCollission().noOcclusion()
                     ));
 
-    public static final RegistrySupplier<CurtainMultiBlock> VELVET_CURTAIN_MULTIBLOCK = AbyssalDecor.BLOCKS.register("velvet_curtain_multiblock",() ->
-            new CurtainMultiBlock(BlockBehaviour.Properties.copy(VELVET_CURTAIN.get()).dropsLike(VELVET_CURTAIN.get()),VELVET_CURTAIN.get()));
-
     public static final RegistrySupplier<Block> WOOL_CURTAIN = AbyssalDecor.BLOCKS.register("wool_curtain",() ->
             new CurtainBlock(BlockBehaviour.Properties.of().ignitedByLava().mapColor(MapColor.WOOL)
                     .sound(SoundType.WOOL).strength(0.1F, 1).noCollission().noOcclusion()
                     ));
-
-    public static final RegistrySupplier<CurtainMultiBlock> WOOL_CURTAIN_MULTIBLOCK = AbyssalDecor.BLOCKS.register("wool_curtain_multiblock",() ->
-            new CurtainMultiBlock(BlockBehaviour.Properties.copy(WOOL_CURTAIN.get()).dropsLike(WOOL_CURTAIN.get()),WOOL_CURTAIN.get()));
-
 
     public static final RegistrySupplier<Block> AMMONITE = AbyssalDecor.BLOCKS.register("ammonite",() ->
             new Block(BlockBehaviour.Properties.of()));
@@ -688,8 +681,8 @@ public class AbyssalDecorBlocks {
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
                     .strength(3.0F, 10.0F).requiresCorrectToolForDrops()));
 
-    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SEABRASS_PILLAR = AbyssalDecor.BLOCKS.register("seabrass_pillar",() ->
-            new FaceAttachedBlock(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get())));
+    public static final RegistrySupplier<FaceAttachedBlock> SEABRASS_PILLAR = AbyssalDecor.BLOCKS.register("seabrass_pillar",() ->
+            new FaceAttachedBlock(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get()),true));
 
     public static final RegistrySupplier<RotatedPillarBlock> LARGE_SEABRASS_PIPE = AbyssalDecor.BLOCKS.register("large_seabrass_pipe",() ->
             new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(ModSoundTypes.SEABRASS_BLOCK)
@@ -748,7 +741,7 @@ public class AbyssalDecorBlocks {
             new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_SEABRASS_BARS.get())));
 
     public static final RegistrySupplier<Block> SEABRASS_CATALYST = AbyssalDecor.BLOCKS.register("seabrass_catalyst",
-            () -> new Block(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get())));
+            () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.copy(SEABRASS_BLOCK.get()).noOcclusion()));
 
 
     //////////////
@@ -1181,11 +1174,11 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SmallBarsCornerBlock> SMALL_CLEAN_IRON_BARS_CORNER = AbyssalDecor.BLOCKS.register("small_clean_iron_bars_corner",() ->
             new SmallBarsCornerBlock(BlockBehaviour.Properties.copy(SMALL_CLEAN_IRON_BARS.get())));
 
-    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> BRICK_CORNERSTONE = AbyssalDecor.BLOCKS.register("brick_cornerstone",
-            () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistrySupplier<FaceAttachedBlock> BRICK_CORNERSTONE = AbyssalDecor.BLOCKS.register("brick_cornerstone",
+            () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS),true));
 
-    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> BRICK_PILLAR = AbyssalDecor.BLOCKS.register("brick_pillar",
-            () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistrySupplier<FaceAttachedBlock> BRICK_PILLAR = AbyssalDecor.BLOCKS.register("brick_pillar",
+            () -> new FaceAttachedBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS),true));
 
     public static final RegistrySupplier<TrapDoorBlock> BRICK_TRAPDOOR = AbyssalDecor.BLOCKS.register("brick_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS),ModBlockSetTypes.BRICK));

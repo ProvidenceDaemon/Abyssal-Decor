@@ -3,7 +3,6 @@ package net.starrysock.abyssaldecor.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BeamBlock extends FaceAttachedBlock implements SimpleWaterloggedBlock {
     public BeamBlock(Properties properties) {
-        super(properties);
+        super(properties,true);
         registerDefaultState(defaultBlockState().setValue(BlockStateProperties.WATERLOGGED,false));
     }
 
@@ -45,11 +44,6 @@ public class BeamBlock extends FaceAttachedBlock implements SimpleWaterloggedBlo
             };
             default -> throw new IllegalStateException("Unexpected value: " + value);
         };
-    }
-
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return true;
     }
 
     @Override

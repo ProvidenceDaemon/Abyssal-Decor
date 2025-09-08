@@ -1,53 +1,105 @@
 {
   "variants": {
-    "count=1,facing=down": {
+    "count=1,facing=down,waterlogged=false": {
       "model": "abyssaldecor:block/1_dried_starfish",
       "x": 180
     },
-    "count=1,facing=east": {
+    "count=1,facing=down,waterlogged=true": {
+      "model": "abyssaldecor:block/1_dried_starfish",
+      "x": 180
+    },
+    "count=1,facing=east,waterlogged=false": {
       "model": "abyssaldecor:block/1_dried_starfish",
       "x": 90,
       "y": 90
     },
-    "count=1,facing=north": {
+    "count=1,facing=east,waterlogged=true": {
+      "model": "abyssaldecor:block/1_dried_starfish",
+      "x": 90,
+      "y": 90
+    },
+    "count=1,facing=north,waterlogged=false": {
       "model": "abyssaldecor:block/1_dried_starfish",
       "x": 90
     },
-    "count=1,facing=south": {
+    "count=1,facing=north,waterlogged=true": {
+      "model": "abyssaldecor:block/1_dried_starfish",
+      "x": 90
+    },
+    "count=1,facing=south,waterlogged=false": {
       "model": "abyssaldecor:block/1_dried_starfish",
       "x": 90,
       "y": 180
     },
-    "count=1,facing=up": {
+    "count=1,facing=south,waterlogged=true": {
+      "model": "abyssaldecor:block/1_dried_starfish",
+      "x": 90,
+      "y": 180
+    },
+    "count=1,facing=up,waterlogged=false": {
       "model": "abyssaldecor:block/1_dried_starfish"
     },
-    "count=1,facing=west": {
+    "count=1,facing=up,waterlogged=true": {
+      "model": "abyssaldecor:block/1_dried_starfish"
+    },
+    "count=1,facing=west,waterlogged=false": {
       "model": "abyssaldecor:block/1_dried_starfish",
       "x": 90,
       "y": 270
     },
-    "count=2,facing=down": {
+    "count=1,facing=west,waterlogged=true": {
+      "model": "abyssaldecor:block/1_dried_starfish",
+      "x": 90,
+      "y": 270
+    },
+    "count=2,facing=down,waterlogged=false": {
       "model": "abyssaldecor:block/2_dried_starfish",
       "x": 180
     },
-    "count=2,facing=east": {
+    "count=2,facing=down,waterlogged=true": {
+      "model": "abyssaldecor:block/2_dried_starfish",
+      "x": 180
+    },
+    "count=2,facing=east,waterlogged=false": {
       "model": "abyssaldecor:block/2_dried_starfish",
       "x": 90,
       "y": 90
     },
-    "count=2,facing=north": {
+    "count=2,facing=east,waterlogged=true": {
+      "model": "abyssaldecor:block/2_dried_starfish",
+      "x": 90,
+      "y": 90
+    },
+    "count=2,facing=north,waterlogged=false": {
       "model": "abyssaldecor:block/2_dried_starfish",
       "x": 90
     },
-    "count=2,facing=south": {
+    "count=2,facing=north,waterlogged=true": {
+      "model": "abyssaldecor:block/2_dried_starfish",
+      "x": 90
+    },
+    "count=2,facing=south,waterlogged=false": {
       "model": "abyssaldecor:block/2_dried_starfish",
       "x": 90,
       "y": 180
     },
-    "count=2,facing=up": {
+    "count=2,facing=south,waterlogged=true": {
+      "model": "abyssaldecor:block/2_dried_starfish",
+      "x": 90,
+      "y": 180
+    },
+    "count=2,facing=up,waterlogged=false": {
       "model": "abyssaldecor:block/2_dried_starfish"
     },
-    "count=2,facing=west": {
+    "count=2,facing=up,waterlogged=true": {
+      "model": "abyssaldecor:block/2_dried_starfish"
+    },
+    "count=2,facing=west,waterlogged=false": {
+      "model": "abyssaldecor:block/2_dried_starfish",
+      "x": 90,
+      "y": 270
+    },
+    "count=2,facing=west,waterlogged=true": {
       "model": "abyssaldecor:block/2_dried_starfish",
       "x": 90,
       "y": 270

@@ -165,10 +165,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.BLAZE_LAMP.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.VELVET_CURTAIN.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.VELVET_CURTAIN_MULTIBLOCK.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.WOOL_CURTAIN.get(),RenderType.cutoutMipped());
-        renderTypes.accept(AbyssalDecorBlocks.WOOL_CURTAIN_MULTIBLOCK.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SMALL_DULL_IRON_BARS_CORNER.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.GARGOYLE.get(),RenderType.cutoutMipped());

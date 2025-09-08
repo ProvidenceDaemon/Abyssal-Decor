@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,7 +25,7 @@ public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterlo
     public static final BooleanProperty CENTERED = BooleanProperty.create("centered");
 
     public WoodSupportBlock(Properties properties) {
-        super(properties);
+        super(properties,true);
         this.registerDefaultState(this.stateDefinition.any().setValue(BlockStateProperties.WATERLOGGED, false).setValue(CENTERED, false));
 
     }
@@ -107,11 +106,6 @@ public class WoodSupportBlock extends FaceAttachedBlock implements SimpleWaterlo
         }
 
         return stateForPlacement;
-    }
-
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return true;
     }
 
     @Override

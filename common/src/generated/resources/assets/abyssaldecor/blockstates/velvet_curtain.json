@@ -1,34 +1,52 @@
 {
   "variants": {
-    "facing=east,waterlogged=false": {
-      "model": "abyssaldecor:block/velvet_curtain",
-      "y": 90
+    "facing=east,vertical_connection=bottom": {
+      "model": "abyssaldecor:block/velvet_curtain_bottom"
     },
-    "facing=east,waterlogged=true": {
-      "model": "abyssaldecor:block/velvet_curtain",
-      "y": 90
+    "facing=east,vertical_connection=middle": {
+      "model": "abyssaldecor:block/velvet_curtain_middle"
     },
-    "facing=north,waterlogged=false": {
-      "model": "abyssaldecor:block/velvet_curtain"
+    "facing=east,vertical_connection=solo": {
+      "model": "abyssaldecor:block/velvet_curtain_solo"
     },
-    "facing=north,waterlogged=true": {
-      "model": "abyssaldecor:block/velvet_curtain"
+    "facing=east,vertical_connection=top": {
+      "model": "abyssaldecor:block/velvet_curtain_top"
     },
-    "facing=south,waterlogged=false": {
-      "model": "abyssaldecor:block/velvet_curtain",
-      "y": 180
+    "facing=north,vertical_connection=bottom": {
+      "model": "abyssaldecor:block/velvet_curtain_bottom"
     },
-    "facing=south,waterlogged=true": {
-      "model": "abyssaldecor:block/velvet_curtain",
-      "y": 180
+    "facing=north,vertical_connection=middle": {
+      "model": "abyssaldecor:block/velvet_curtain_middle"
     },
-    "facing=west,waterlogged=false": {
-      "model": "abyssaldecor:block/velvet_curtain",
-      "y": 270
+    "facing=north,vertical_connection=solo": {
+      "model": "abyssaldecor:block/velvet_curtain_solo"
     },
-    "facing=west,waterlogged=true": {
-      "model": "abyssaldecor:block/velvet_curtain",
-      "y": 270
+    "facing=north,vertical_connection=top": {
+      "model": "abyssaldecor:block/velvet_curtain_top"
+    },
+    "facing=south,vertical_connection=bottom": {
+      "model": "abyssaldecor:block/velvet_curtain_bottom"
+    },
+    "facing=south,vertical_connection=middle": {
+      "model": "abyssaldecor:block/velvet_curtain_middle"
+    },
+    "facing=south,vertical_connection=solo": {
+      "model": "abyssaldecor:block/velvet_curtain_solo"
+    },
+    "facing=south,vertical_connection=top": {
+      "model": "abyssaldecor:block/velvet_curtain_top"
+    },
+    "facing=west,vertical_connection=bottom": {
+      "model": "abyssaldecor:block/velvet_curtain_bottom"
+    },
+    "facing=west,vertical_connection=middle": {
+      "model": "abyssaldecor:block/velvet_curtain_middle"
+    },
+    "facing=west,vertical_connection=solo": {
+      "model": "abyssaldecor:block/velvet_curtain_solo"
+    },
+    "facing=west,vertical_connection=top": {
+      "model": "abyssaldecor:block/velvet_curtain_top"
     }
   }
 }

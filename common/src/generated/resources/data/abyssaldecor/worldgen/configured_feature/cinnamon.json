@@ -10,7 +10,7 @@
     },
     "foliage_placer": {
       "type": "abyssaldecor:cinnamon_foliage_placer",
-      "height": 12,
+      "height": 10,
       "offset": 7,
       "radius": 2
     },

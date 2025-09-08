@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-08T16:17:14.5557712	Loot Tables
+// 1.20.1	2025-09-08T19:29:04.776962	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -369,7 +369,7 @@ ea3a08f91d685753a41ee962f5942d4243623a50 data/abyssaldecor/loot_tables/blocks/tr
 e8189853376aefd26361bf873b35cd49c38b250a data/abyssaldecor/loot_tables/blocks/velvet_barrier.json
 75142ddcf8cb62cd0b980f9233bcce2f6abc7c66 data/abyssaldecor/loot_tables/blocks/velvet_barrier_ribbon.json
 c55054dabc6a48153d6c5c042943a30e35497739 data/abyssaldecor/loot_tables/blocks/velvet_carpet.json
-acafeeb6d5d8b0d47e54b7d312bc9a7aaf8d2073 data/abyssaldecor/loot_tables/blocks/velvet_curtain.json
+8995a0c228889657102ae00326791813948edcb3 data/abyssaldecor/loot_tables/blocks/velvet_curtain.json
 a7b25a7b3d494b3625abd370bd08fdfc918b7922 data/abyssaldecor/loot_tables/blocks/verdant_pearly_glass.json
 75d8113900ba1e70a3f09b93ed8f365ea14c30b9 data/abyssaldecor/loot_tables/blocks/verdant_pearly_glass_pane.json
 eb24ecbfc08efb1f6d2447ec6474122d7940e271 data/abyssaldecor/loot_tables/blocks/vermilion_block.json
@@ -414,5 +414,5 @@ bc3c2651d61d0d293b771a7d5d5e0f5004cd4ddb data/abyssaldecor/loot_tables/blocks/wi
 cc74ab599c2391016dfa555e5cea4d0c7f3176d2 data/abyssaldecor/loot_tables/blocks/wooden_dragon_head.json
 fa6599f2a8669a1fe04da59742860e14fc6b9a53 data/abyssaldecor/loot_tables/blocks/wooden_frog.json
 9992f34026eb09c60602810ad8180e093ef55574 data/abyssaldecor/loot_tables/blocks/wood_support.json
-9c115cd1786f380f3fcb6d7bd256990311a068d6 data/abyssaldecor/loot_tables/blocks/wool_curtain.json
+03294a244726a19cd2d7f0a9e53c203592de94b7 data/abyssaldecor/loot_tables/blocks/wool_curtain.json
 837afce7599d103d875c7d8014922f99eaff15ec data/abyssaldecor/loot_tables/blocks/yellow_wallpaper.json

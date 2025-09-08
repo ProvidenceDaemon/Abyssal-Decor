@@ -841,11 +841,9 @@ public class Datagen {
             brickCap();
             stackedIronBalls(AbyssalDecorBlocks.STACKED_IRON_BALLS.get());
 
-            curtains(AbyssalDecorBlocks.VELVET_CURTAIN.get(),modLoc("block/velvet_curtain_solo"));
-            multiblockCurtains(AbyssalDecorBlocks.VELVET_CURTAIN_MULTIBLOCK.get());
+            curtains(AbyssalDecorBlocks.VELVET_CURTAIN.get());
 
-            curtains(AbyssalDecorBlocks.WOOL_CURTAIN.get(),modLoc("block/wool_curtain_solo"));
-            multiblockCurtains(AbyssalDecorBlocks.WOOL_CURTAIN_MULTIBLOCK.get());
+            curtains(AbyssalDecorBlocks.WOOL_CURTAIN.get());
             gargoyle(AbyssalDecorBlocks.GARGOYLE.get());
 
             axisBlock(AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),modLoc("block/healing_cinnamon_log"),modLoc("block/cinnamonlogtop"));
@@ -909,12 +907,10 @@ public class Datagen {
             simpleBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PLANTER.get(),models()
                     .cubeBottomTop("whitewood_planter",modLoc("block/whitewoodplanterside"),modLoc("block/whitewoodplanterbottom")
                             ,modLoc("block/whitewoodplantertop")));
+
+            directionalBlock(AbyssalDecorBlocks.SEABRASS_CATALYST.get(),models().getExistingFile(modLoc("block/seabrass_catalyst")));
+            simpleBlockItem(AbyssalDecorBlocks.SEABRASS_CATALYST.get(),models().getExistingFile(modLoc("block/seabrass_catalyst")));
         }
-        //    "bottom": "abyssaldecor:block/whitewoodplanterbottom",
-        //    "top": "abyssaldecor:block/whitewoodplantertop",
-        //    "side": "abyssaldecor:block/whitewoodplanterside",
-        //    "overlay": "abyssaldecor:block/whitewoodplanterside",
-        //    "particle": "abyssaldecor:block/whitewoodplanterbottom"
 
         void blackMold(Block block) {
             ModelFile main = models().cubeAll(name(block),modLoc("block/blackmold"));
@@ -1191,13 +1187,28 @@ public class Datagen {
             }, BlockStateProperties.WATERLOGGED);
         }
 
-        protected void curtains(Block block, ResourceLocation texture0) {
+        protected void curtains(Block block) {
             String name = name(block);
-            horizontalBlock(block, models().withExistingParent("block/" + name,
+
+            getVariantBuilder(block).forAllStatesExcept(blockState -> {
+                VerticalConnection part = blockState.getValue(ModBlockStateProperties.VERTICAL_CONNECTION);
+
+                ResourceLocation texture = modLoc("block/"+name+"_"+part.getSerializedName());
+
+
+                ModelFile modelFile = models().withExistingParent("block/" + name+"_"+part.getSerializedName(),
                                 modLoc("custom/velvetcurtainsolo"))
-                        .texture("all", texture0)
-                        .texture("particle", texture0));
-            simpleBlockItem(block, models().getExistingFile(modLoc("block/" + name)));
+                        .texture("all", texture)
+                        .texture("particle", texture);
+
+                return ConfiguredModel.builder().modelFile(modelFile).build();
+
+                   //     horizontalBlock(block, models().withExistingParent("block/" + name,
+                    //                    modLoc("custom/velvetcurtainsolo"))
+                     //           .texture("all", texture0)
+                      //          .texture("particle", texture0));
+                    },BlockStateProperties.WATERLOGGED);
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/" + name+"_solo")));
         }
 
         protected void stackedIronBalls(StackedIronBallsBlock stackedIronBallsBlock) {
@@ -1420,7 +1431,8 @@ public class Datagen {
             getVariantBuilder(block).forAllStates(state -> {
                 int stage = state.getValue(CinnamonSaplingBlock.STAGE);
                 DoubleBlockHalf half = state.getValue(DoublePlantBlock.HALF);
-                ModelFile modelFile = models().cross(name+"_stage"+stage,modLoc("block/"+name+"_"+half.getSerializedName()+"_stage"+stage));
+                ModelFile modelFile = models().cross(name+"_"+half.getSerializedName()+"_stage"+stage,
+                        modLoc("block/"+name+"_"+half.getSerializedName()+"_stage"+stage));
                 return ConfiguredModel.builder().modelFile(modelFile).build();
             });
         }
@@ -1835,35 +1847,24 @@ public class Datagen {
         }
 
         void starfish(Block block) {
-            getVariantBuilder(block)
-                    .forAllStatesExcept(blockState -> {
-                        DyeColor color = blockState.getValue(StarfishBlock.COLOR);
-                        int count = blockState.getValue(StarfishBlock.COUNT);
+            directionalBlock(block,state -> {
+                        DyeColor color = state.getValue(StarfishBlock.COLOR);
+                        int count = state.getValue(StarfishBlock.COUNT);
                         String s = "block/" + count + "_" + color.getName() + "_starfish";
-                        ModelFile file = models().withExistingParent(s, mcLoc("block/lily_pad"))
+                        ModelFile file = models().withExistingParent(s, modLoc("custom/starfishdried1"))
                                 .texture("texture", s).texture("particle", s);
-
-                        Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
-                        Vector2i vector2i = getRotation(orientation);
-                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).rotationX(vector2i.x).build();
-                    },BlockStateProperties.WATERLOGGED);
-
+                        return file;});
             iconTexture("starfish", modLoc("block/1_orange_starfish"));
         }
 
         void driedStarfish(Block block) {
-            getVariantBuilder(block)
-                    .forAllStatesExcept(blockState -> {
-                        int count = blockState.getValue(StarfishBlock.COUNT);
-                        String s = "block/" + count + "_dried_starfish";
-                        ModelFile file = models().withExistingParent(s, mcLoc("block/lily_pad"))
-                                .texture("texture", s).texture("particle", s);
-
-                        Direction orientation = blockState.getValue(AbstractDirectionalBlock.FACING);
-                        Vector2i vector2i = getRotation(orientation);
-
-                        return ConfiguredModel.builder().modelFile(file).rotationY(vector2i.y).rotationX(vector2i.x).build();
-                    },BlockStateProperties.WATERLOGGED);
+            directionalBlock(block,state -> {
+                int count = state.getValue(StarfishBlock.COUNT);
+                String s = "block/" + count + "_dried_starfish";
+                ModelFile file = models().withExistingParent(s, modLoc("custom/starfishdried1"))
+                        .texture("0", s).texture("particle", s);
+                return file;
+            });
         }
 
         void barrierPoleBlock(Block block, ResourceLocation modelBottom, ResourceLocation modelTop, ResourceLocation texture,ResourceLocation icon) {
