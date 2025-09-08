@@ -545,7 +545,7 @@ public class AbyssalDecorItems {
 
     public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_DIRT = bagOf("dirt",() -> Blocks.DIRT);
     public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_COBBLESTONE = bagOf("cobblestone",() -> Blocks.COBBLESTONE);
-    public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_SNOW = bagOf("snow",() -> Blocks.SNOW);
+    public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_SNOW = bagOf("snow",() -> Blocks.SNOW_BLOCK);
     public static final RegistrySupplier<InfiniteBlockItem> BOTTOMLESS_BAG_OF_NETHERRACK = bagOf("netherrack",() -> Blocks.NETHERRACK);
 
     static RegistrySupplier<InfiniteBlockItem>  bagOf(String suffix,Supplier<Block> block) {

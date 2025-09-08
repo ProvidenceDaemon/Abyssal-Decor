@@ -1,7 +1,18 @@
 {
   "values": [
+    "abyssaldecor:white_pearl_wall",
     "abyssaldecor:smooth_white_pearl_wall",
-    "abyssaldecor:smooth_white_pearl_wall",
-    "abyssaldecor:smooth_white_pearl_wall"
+    "abyssaldecor:white_pearl_brick_wall",
+    "abyssaldecor:iron_panel_wall",
+    "abyssaldecor:polished_blood_coral_wall",
+    "abyssaldecor:smooth_blood_coral_wall",
+    "abyssaldecor:blood_coral_brick_wall",
+    "abyssaldecor:seabrass_wall",
+    "abyssaldecor:deepbronze_wall",
+    "abyssaldecor:riveted_deepbronze_wall",
+    "abyssaldecor:polished_starstone_wall",
+    "abyssaldecor:black_pearl_wall",
+    "abyssaldecor:smooth_black_pearl_wall",
+    "abyssaldecor:black_pearl_brick_wall"
   ]
 }

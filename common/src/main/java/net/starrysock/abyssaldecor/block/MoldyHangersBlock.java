@@ -1,14 +1,19 @@
 package net.starrysock.abyssaldecor.block;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,6 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -109,8 +115,21 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
         }
 
         TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
-        if (part!= TriPart.TOP){
+        if (stack.getItem() instanceof ShearsItem && part== TriPart.MIDDLE){
+            state =  state.setValue(ModBlockStateProperties.TRI_PART, TriPart.BOTTOM);
+            if (!level.isClientSide) {
+                level.setBlockAndUpdate(pos,state);
+            }
 
+            if (player instanceof ServerPlayer) {
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, stack);
+            }
+            level.playSound(player, pos, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS, 1.0F, 1.0F);
+
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, state));
+            stack.hurtAndBreak(1, player, (playerx) -> playerx.broadcastBreakEvent(hand));
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return super.use(state, level, pos, player, hand, hit);
     }
@@ -124,7 +143,7 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos above = pos.above();
         BlockState aboveState = level.getBlockState(above);
-        return aboveState.is(this) || aboveState.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS);
+        return aboveState.is(this)&& aboveState.getValue(ModBlockStateProperties.TRI_PART) != TriPart.BOTTOM || aboveState.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS);
     }
 
     @Override

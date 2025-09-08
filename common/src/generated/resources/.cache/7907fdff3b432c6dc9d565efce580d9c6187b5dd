@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-25T20:28:27.1299751	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2025-09-07T16:51:06.8048284	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
 518501e03b235b7b8cbe3121061d6c94c3c9ff7c data/abyssaldecor/tags/blocks/cinnamon_logs.json
 d46ae7fe4e630b4423f6a21fab66675e21c1b837 data/abyssaldecor/tags/blocks/moldy_plant_valid_blocks.json
@@ -6,7 +6,7 @@ a1ba3fc8893cf83fae91c53fc5616b4277b20672 data/abyssaldecor/tags/blocks/moldy_sta
 7c33f3a0bbae410cf4b84fe2b4f30f34e2948c88 data/abyssaldecor/tags/blocks/mold_immune.json
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/mold_spreadables.json
 3432c166d1f6c722101d3f66a0d49a4322c4d95f data/abyssaldecor/tags/blocks/muckroot_growable.json
-73d66f372d8c4d1b45f3aa477fbb0a97cfa88b10 data/abyssaldecor/tags/blocks/spidercorn_growable.json
+8dd9194492a51b40153c68f2381b0eaa8f09a217 data/abyssaldecor/tags/blocks/spidercorn_growable.json
 6c4bf439d600e69e2cef4a1ed99302edac84f487 data/minecraft/tags/blocks/ceiling_hanging_signs.json
 97bb314468bd64557a1bb324f83513b189afc565 data/minecraft/tags/blocks/crops.json
 982443ff19bfac34f19e326568641c5e83573133 data/minecraft/tags/blocks/flowers.json
@@ -19,7 +19,7 @@ e562e5972babdcf2655876e1ff5e6c77d33e4856 data/minecraft/tags/blocks/mineable/sho
 1ce34638b206a3dbc77dd63c0aefd9ec53d9d687 data/minecraft/tags/blocks/slabs.json
 65ca8e72e6c7639393b4d4d01a44a724d1a7888c data/minecraft/tags/blocks/stairs.json
 c27d910dd600c88fbebace017566fb6fda6f3f09 data/minecraft/tags/blocks/standing_signs.json
-0f04c3875a8f7d55dc7614f50098b864bee4dcaa data/minecraft/tags/blocks/walls.json
+f1397ffb49dd0b3e74ac3a3e8ff7507c313813bc data/minecraft/tags/blocks/walls.json
 3c21bc6d3c6cd38defcc60f03314edead6366a70 data/minecraft/tags/blocks/wall_hanging_signs.json
 e2722961bbb74bfb2a676ee843808a424ea3c7c9 data/minecraft/tags/blocks/wall_signs.json
 b8538b207d69dfa4c99c78112ff30a6b428e2c2d data/minecraft/tags/blocks/wooden_buttons.json

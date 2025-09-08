@@ -45,8 +45,9 @@ public class HangingDoubleBlock extends Block {
     @Override
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
-        if (facing.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.LOWER != (facing == Direction.UP) || facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf) {
-            return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+        if (facing.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.UPPER != (facing == Direction.DOWN) ||
+                facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf) {
+            return doubleblockhalf == DoubleBlockHalf.UPPER && facing == Direction.UP && !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
         } else {
             return Blocks.AIR.defaultBlockState();
         }
@@ -56,7 +57,7 @@ public class HangingDoubleBlock extends Block {
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockpos = pos.above();
         BlockState blockstate = level.getBlockState(blockpos);
-        boolean b = state.getValue(HALF) == DoubleBlockHalf.UPPER ? blockstate.isFaceSturdy(level, blockpos, Direction.DOWN) : blockstate.is(this);
+        boolean b = state.getValue(HALF) == DoubleBlockHalf.UPPER ? DriedStarfishBlock.canSupportAtFace(level, pos, Direction.UP) : blockstate.is(this);
         return b;
     }
 
@@ -74,7 +75,7 @@ public class HangingDoubleBlock extends Block {
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         if (!level.isClientSide) {
             if (player.isCreative()) {
-                preventCreativeDropFromUpperPart(level, pos, state, player);
+                preventCreativeDropFromTopPart(level, pos, state, player);
             } else {
                 dropResources(state, level, pos, null, player, player.getMainHandItem());
             }
@@ -91,10 +92,17 @@ public class HangingDoubleBlock extends Block {
         super.playerDestroy(level, player, pos, Blocks.AIR.defaultBlockState(), te, stack);
     }
 
-    protected static void preventCreativeDropFromUpperPart(Level level, BlockPos pos, BlockState state, Player player) {
+    /**
+     * @see DoublePlantBlock#preventCreativeDropFromBottomPart(Level, BlockPos, BlockState, Player)
+     * @param level
+     * @param pos
+     * @param state
+     * @param player
+     */
+    protected static void preventCreativeDropFromTopPart(Level level, BlockPos pos, BlockState state, Player player) {
         DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
         if (doubleblockhalf == DoubleBlockHalf.LOWER) {
-            BlockPos blockpos = pos.below();
+            BlockPos blockpos = pos.above();
             BlockState blockstate = level.getBlockState(blockpos);
             if (blockstate.is(state.getBlock()) && blockstate.getValue(HALF) == DoubleBlockHalf.UPPER) {
                 BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
@@ -102,7 +110,6 @@ public class HangingDoubleBlock extends Block {
                 level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
             }
         }
-
     }
 
     @Override

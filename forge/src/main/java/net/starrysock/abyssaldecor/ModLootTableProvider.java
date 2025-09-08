@@ -10,8 +10,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CarrotBlock;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
@@ -94,7 +96,7 @@ public class ModLootTableProvider extends LootTableProvider {
 
             add(AbyssalDecorBlocks.GARGOYLE.get(),createHorizontalStatueTable(AbyssalDecorBlocks.GARGOYLE.get()));
 
-            barrierDrop(AbyssalDecorBlocks.DANGLING_WEB.get());
+            hangingDrop(AbyssalDecorBlocks.DANGLING_WEB.get());
 
             LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MUCKROOT.get())
                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MuckrootBlock.AGE, 2));
@@ -121,17 +123,21 @@ public class ModLootTableProvider extends LootTableProvider {
             LootItemCondition.Builder builder1 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get())
                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BogAppleLeavesBlock.AGE, 2));
 
-            this.add(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(), this.createCropDrops(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),
+            this.add(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(), this.createBogAppleDrops(AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),
                     AbyssalDecorItems.BOG_APPLE.get(), AbyssalDecorItems.BOG_APPLE_LEAVES.get(), builder1));
 
             LootItemCondition.Builder builder2 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.SPIDERCORN.get())
-                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CarrotBlock.AGE, 7));
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SpiderCornCropBlock.AGE, 2));
 
 
             this.add(AbyssalDecorBlocks.SPIDERCORN.get(), this.applyExplosionDecay(AbyssalDecorBlocks.SPIDERCORN.get(),
                     LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())))
-                            .withPool(LootPool.lootPool().when(builder2).add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())
-                                    .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
+                            .withPool(LootPool.lootPool().when(builder2)
+                                    .add(LootItem.lootTableItem(AbyssalDecorItems.SPIDERCORN.get())
+                                            .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))
+                                    .add(LootItem.lootTableItem(Items.STRING)
+                                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(0,1))))
+                            )));
 
             this.add(AbyssalDecorBlocks.MOLDY_HANGER.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MOLDY_HANGER.get(),
                     LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AbyssalDecorItems.MOLDY_HANGER.get())))
@@ -140,6 +146,12 @@ public class ModLootTableProvider extends LootTableProvider {
                             ).add(LootItem.lootTableItem(Items.SPIDER_EYE)
                                     .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
 
+        }
+
+        protected LootTable.Builder createBogAppleDrops(Block cropBlock, Item grownCropItem, Item seedsItem, LootItemCondition.Builder dropGrownCropCondition) {
+            return this.applyExplosionDecay(cropBlock, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(grownCropItem).when(dropGrownCropCondition)
+                    .otherwise(LootItem.lootTableItem(seedsItem)))).withPool(LootPool.lootPool().when(dropGrownCropCondition)
+                    .add(LootItem.lootTableItem(seedsItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5F, 2)))));
         }
 
         protected void cornerTable(SmallBarsCornerBlock block, Item small) {
@@ -151,6 +163,15 @@ public class ModLootTableProvider extends LootTableProvider {
         protected void barrierDrop(Block block) {
             add(block,createDoorTable(block));
         }
+
+        protected void hangingDrop(Block block) {
+            add(block,createUpperBlockTable(block));
+        }
+
+        protected LootTable.Builder createUpperBlockTable(Block doorBlock) {
+            return this.createSinglePropConditionTable(doorBlock, DoorBlock.HALF, DoubleBlockHalf.UPPER);
+        }
+
 
         protected LootTable.Builder createHorizontalStatueTable(Block block) {
             return this.createSinglePropConditionTable(block, ModBlockStateProperties.PART, HorizontalPart.BACK);

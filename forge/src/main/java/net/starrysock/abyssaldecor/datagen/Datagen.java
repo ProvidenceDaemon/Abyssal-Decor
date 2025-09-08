@@ -427,7 +427,7 @@ public class Datagen {
 
             simplestBlockWithItem(AbyssalDecorBlocks.SEABRASS_ORE.get());
 
-            lamp(AbyssalDecorBlocks.JADE_LANTERN.get(), mcLoc("block/cube_all"), modLoc("block/jade_lantern"));
+            blockLamp(AbyssalDecorBlocks.JADE_LANTERN.get(), modLoc("block/jade_lantern"));
 
             //simplestBlockWithItem(AbyssalDecorBlocks.IRON_LANTERN.get());
 
@@ -904,6 +904,9 @@ public class Datagen {
                     modLoc("block/frosted_glass_bottom"),modLoc("block/frosted_glass_middle"),
                     modLoc("block/frosted_glass_top"),
                     modLoc("block/frosted_glass"),false);
+
+            wallLamp(AbyssalDecorBlocks.WALL_BULB_LAMP.get(), modLoc("custom/bulblamp"), modLoc("block/bulblamp"),true);
+
         }
 
         void blackMold(Block block) {
@@ -1884,6 +1887,7 @@ public class Datagen {
         public void bulkheadLampBlock(BulkheadLampBlock block, ResourceLocation baseModel) {
             String name = name(block);
 
+            ResourceLocation baseModelLit = baseModel.withSuffix("lit");
             ResourceLocation texture = modLoc("block/bulkhead_lamp_on");
 
             ModelFile buttonModel = models().withExistingParent(name, baseModel)
@@ -1891,7 +1895,7 @@ public class Datagen {
                     .texture("0", texture);
 
 
-            ModelFile buttonModelLit = models().withExistingParent(name + "_lit", baseModel)
+            ModelFile buttonModelLit = models().withExistingParent(name + "_lit", baseModelLit)
                     .texture("particle", texture)
                     .texture("0", texture);
 

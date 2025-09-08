@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/bulkheadlamp",
+  "parent": "abyssaldecor:custom/bulkheadlamplit",
   "textures": {
     "0": "abyssaldecor:block/bulkhead_lamp_on",
     "particle": "abyssaldecor:block/bulkhead_lamp_on"

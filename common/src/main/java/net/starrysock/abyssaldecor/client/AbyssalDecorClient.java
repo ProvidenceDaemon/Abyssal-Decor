@@ -181,6 +181,9 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.DULL_IRON_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SEABRASS_BARS.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.WALL_GRIME.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.FOGHORN.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.TRASH_BAG.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.WALL_BULB_LAMP.get(),RenderType.cutoutMipped());
     }
 
 

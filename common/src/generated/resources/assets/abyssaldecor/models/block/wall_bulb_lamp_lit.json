@@ -1,0 +1,8 @@
+{
+  "parent": "abyssaldecor:custom/bulblamplit",
+  "textures": {
+    "0": "abyssaldecor:block/bulblamp_lit",
+    "all": "abyssaldecor:block/bulblamp_lit",
+    "particle": "abyssaldecor:block/bulblamp_lit"
+  }
+}

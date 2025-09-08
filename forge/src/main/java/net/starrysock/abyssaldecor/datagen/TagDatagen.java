@@ -45,7 +45,7 @@ public class TagDatagen {
             //mod tags
             tag(ModTags.Blocks.MUCKROOT_GROWABLE).addTag(BlockTags.DIRT).add(Blocks.FARMLAND);
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
-            tag(ModTags.Blocks.SPIDERCORN_GROWABLE).addTag(BlockTags.MINEABLE_WITH_PICKAXE);
+            tag(ModTags.Blocks.SPIDERCORN_GROWABLE).addTag(BlockTags.BASE_STONE_OVERWORLD);
 
             tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
 
@@ -200,8 +200,22 @@ public class TagDatagen {
             tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get());
 
-            tag(BlockTags.WALLS).add(AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get()
-                    , AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get());
+            tag(BlockTags.WALLS).add(AbyssalDecorBlocks.WHITE_PEARL_WALL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get()
+                    ,AbyssalDecorBlocks.WHITE_PEARL_BRICK_WALL.get()
+                    ,AbyssalDecorBlocks.IRON_PANEL_WALL.get()
+
+                    ,AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_WALL.get()
+                    ,AbyssalDecorBlocks.SMOOTH_BLOOD_CORAL_WALL.get()
+                    ,AbyssalDecorBlocks.BLOOD_CORAL_BRICK_WALL.get()
+
+                    ,AbyssalDecorBlocks.SEABRASS_WALL.get()
+                    ,AbyssalDecorBlocks.DEEPBRONZE_WALL.get()
+                    ,AbyssalDecorBlocks.RIVETED_DEEPBRONZE_WALL.get()
+                    ,AbyssalDecorBlocks.POLISHED_STARSTONE_WALL.get()
+
+                    ,AbyssalDecorBlocks.BLACK_PEARL_WALL.get(), AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_WALL.get()
+                    ,AbyssalDecorBlocks.BLACK_PEARL_BRICK_WALL.get()
+            );
 
             tag(BlockTags.WOODEN_BUTTONS).add(AbyssalDecorBlocks.WHITEWOOD_BUTTON.get());
 

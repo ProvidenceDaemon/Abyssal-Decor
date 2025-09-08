@@ -79,7 +79,9 @@ public class AbyssalDecorBlocks {
 
 
     public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new ToggleableDirectionalLampBlock(lamp()));
-    public static RegistrySupplier<Block> BLAZE_LAMP = AbyssalDecor.BLOCKS.register("blaze_lamp", () -> new BlazeLampBlock(BlockBehaviour.Properties.of().lightLevel(s -> 15).strength(0.3F).sound(SoundType.GLASS)));
+    public static RegistrySupplier<Block> BLAZE_LAMP = AbyssalDecor.BLOCKS.register("blaze_lamp", () ->
+            new BlazeLampBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(4.0F, 10.0F).lightLevel(s -> 12)
+                    .noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
     public static RegistrySupplier<Block> RAINBOW_LAMP = AbyssalDecor.BLOCKS.register("rainbow_lamp", () -> new DirectionalLampBlock(BlockBehaviour.Properties.of().lightLevel(s -> 15).strength(0.3F).sound(SoundType.GLASS)));
     public static RegistrySupplier<BulkheadLampBlock> BULKHEAD_LAMP = AbyssalDecor.BLOCKS.register("bulkhead_lamp", () -> new BulkheadLampBlock(lamp()));
 
@@ -173,9 +175,7 @@ public class AbyssalDecorBlocks {
             directionalLog(MapColor.PODZOL, MapColor.COLOR_BROWN));
 
     public static DirectionalBlock directionalLog(MapColor topMapColor, MapColor sideMapColor) {
-        return new AbstractDirectionalBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
-            return p_152624_.getValue(DirectionalBlock.FACING).getAxis() == Direction.Axis.Y ? topMapColor : sideMapColor;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+        return new AbstractDirectionalBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> p_152624_.getValue(DirectionalBlock.FACING).getAxis() == Direction.Axis.Y ? topMapColor : sideMapColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
     }
 
     public static final RegistrySupplier<Block> SCRIMSHAW = AbyssalDecor.BLOCKS.register("scrimshaw", () -> new ScrimshawBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.LODESTONE)
@@ -193,7 +193,9 @@ public class AbyssalDecorBlocks {
                     .strength(1).lightLevel(s -> 12).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true)
                     .emissiveRendering((bs, br, bp) -> true)));
 
-    public static final RegistrySupplier<Block> LIFE_PRESERVER = AbyssalDecor.BLOCKS.register("life_preserver", () -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> LIFE_PRESERVER = AbyssalDecor.BLOCKS.register("life_preserver", () ->
+            new LifePreserverBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.WOOL)
+                    .strength(0, 1).noOcclusion()));
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> WOOD_SUPPORT = AbyssalDecor.BLOCKS.register("wood_support",
             () -> new WoodSupportBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn()
@@ -1126,10 +1128,16 @@ public class AbyssalDecorBlocks {
             new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<LeavesBlock> CINNAMON_LEAVES = AbyssalDecor.BLOCKS.register("cinnamon_leaves",() ->
-            Blocks.leaves(SoundType.GRASS));
+            cinnamonLeaves(SoundType.GRASS,false));
 
     public static final RegistrySupplier<LeavesBlock> FLOWERING_CINNAMON_LEAVES = AbyssalDecor.BLOCKS.register("flowering_cinnamon_leaves",() ->
-            Blocks.leaves(SoundType.GRASS));
+            cinnamonLeaves(SoundType.GRASS,true));
+
+    public static LeavesBlock cinnamonLeaves(SoundType type,boolean flowering) {
+        return new CinnamonLeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F)
+                .randomTicks().sound(type).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot).isSuffocating(Blocks::never)
+                .isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never),flowering);
+    }
 
     public static final RegistrySupplier<CinnamonSaplingBlock> CINNAMON_BUSH = AbyssalDecor.BLOCKS.register("cinnamon_bush",() ->
            new CinnamonSaplingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
@@ -1220,7 +1228,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<TrapDoorBlock> IRON_VENT_TRAPDOOR = AbyssalDecor.BLOCKS.register("iron_vent_trapdoor",() -> ironTrapdoor(ModBlockSetTypes.PUSH_IRON));
 
     public static final RegistrySupplier<HorizontalDirectionalBlock> FOGHORN = AbyssalDecor.BLOCKS.register("foghorn",
-            () -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+            () -> new FoghornBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.LANTERN).strength(5.0F, 10.0F).noOcclusion()));
 
     public static final RegistrySupplier<LampBlock> DEEPBRONZE_LANTERN = AbyssalDecor.BLOCKS.register("deepbronze_lantern",() -> new LampBlock(lamp()));
 
