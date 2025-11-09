@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crystallized_glowstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssaldecor:crystallized_glowstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssaldecor:framed_crystallized_glowstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_crystallized_glowstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abyssaldecor:framed_crystallized_glowstone"
+    ]
+  },
+  "sends_telemetry_event": false
+}

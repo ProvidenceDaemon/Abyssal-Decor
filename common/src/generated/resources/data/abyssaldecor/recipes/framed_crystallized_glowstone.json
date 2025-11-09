@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "abyssaldecor:crystallized_glowstone"
+    },
+    "b": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "result": {
+    "item": "abyssaldecor:framed_crystallized_glowstone"
+  },
+  "show_notification": true
+}

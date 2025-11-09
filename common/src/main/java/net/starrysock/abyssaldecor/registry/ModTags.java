@@ -2,6 +2,7 @@ package net.starrysock.abyssaldecor.registry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.starrysock.abyssaldecor.AbyssalDecor;
@@ -21,6 +22,8 @@ public class ModTags {
         public static final TagKey<Block> MOLD_SPREADABLES = mod("mold_spreadables");
         public static final TagKey<Block> MOLD_IMMUNE = mod("mold_immune");
 
+        public static final TagKey<Block> WHITEWOOD_LOGS = mod("whitewood_logs");
+
 
         static TagKey<Block> mod(String path) {
             return TagKey.create(Registries.BLOCK, AbyssalDecor.id(path));
@@ -31,6 +34,14 @@ public class ModTags {
         public static final TagKey<Fluid> SUPPORTS_BOG_APPLES = mod("supports_bog_apples");
         static TagKey<Fluid> mod(String path) {
             return TagKey.create(Registries.FLUID, AbyssalDecor.id(path));
+        }
+    }
+
+    public static class Items {
+        public static final TagKey<Item> WHITEWOOD_LOGS = mod("whitewood_logs");
+
+        static TagKey<Item> mod(String path) {
+            return TagKey.create(Registries.ITEM, AbyssalDecor.id(path));
         }
     }
 }

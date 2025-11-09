@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "abyssaldecor:vermilion_block"
+    },
+    "b": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "result": {
+    "item": "abyssaldecor:framed_vermilion_block"
+  },
+  "show_notification": true
+}

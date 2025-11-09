@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_scrimshaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssaldecor:scrimshaw"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssaldecor:scrimshaw_altar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_scrimshaw",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abyssaldecor:scrimshaw_altar"
+    ]
+  },
+  "sends_telemetry_event": false
+}

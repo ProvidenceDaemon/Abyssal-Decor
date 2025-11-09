@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:spidercorn"
+    },
+    {
+      "item": "abyssaldecor:spidercorn"
+    },
+    {
+      "item": "abyssaldecor:spidercorn"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:spidercorn_tortilla"
+  }
+}

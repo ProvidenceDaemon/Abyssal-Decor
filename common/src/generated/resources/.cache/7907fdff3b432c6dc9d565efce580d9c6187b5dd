@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-07T16:51:06.8048284	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2025-11-09T15:40:13.6150708	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
 518501e03b235b7b8cbe3121061d6c94c3c9ff7c data/abyssaldecor/tags/blocks/cinnamon_logs.json
 d46ae7fe4e630b4423f6a21fab66675e21c1b837 data/abyssaldecor/tags/blocks/moldy_plant_valid_blocks.json
@@ -7,6 +7,7 @@ a1ba3fc8893cf83fae91c53fc5616b4277b20672 data/abyssaldecor/tags/blocks/moldy_sta
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/mold_spreadables.json
 3432c166d1f6c722101d3f66a0d49a4322c4d95f data/abyssaldecor/tags/blocks/muckroot_growable.json
 8dd9194492a51b40153c68f2381b0eaa8f09a217 data/abyssaldecor/tags/blocks/spidercorn_growable.json
+be03e52a67c66c53bc0fa808fa59f6116dc14571 data/abyssaldecor/tags/blocks/whitewood_logs.json
 6c4bf439d600e69e2cef4a1ed99302edac84f487 data/minecraft/tags/blocks/ceiling_hanging_signs.json
 97bb314468bd64557a1bb324f83513b189afc565 data/minecraft/tags/blocks/crops.json
 982443ff19bfac34f19e326568641c5e83573133 data/minecraft/tags/blocks/flowers.json

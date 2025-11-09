@@ -4,10 +4,12 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.PaintingVariantTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -29,6 +31,7 @@ public class TagDatagen {
         BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(output, lookupProvider, helper);
         generator.addProvider(true,new ModFluidTagProvider(output, lookupProvider, helper));
         generator.addProvider(true, blockTagsProvider);
+        generator.addProvider(true,new ModItemTagsProvider(output,lookupProvider,blockTagsProvider.contentsGetter(),helper));
         generator.addProvider(true, new ModPaintingTagsProvider(output, lookupProvider, helper));
     }
 
@@ -48,6 +51,8 @@ public class TagDatagen {
             tag(ModTags.Blocks.SPIDERCORN_GROWABLE).addTag(BlockTags.BASE_STONE_OVERWORLD);
 
             tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
+
+            tag(ModTags.Blocks.WHITEWOOD_LOGS).add(AbyssalDecorBlocks.WHITEWOOD_LOG.get(),AbyssalDecorBlocks.WHITEWOOD_WOOD.get());
 
             tag(ModTags.Blocks.MOLD_SPREADABLES)
                     .addTags(BlockTags.DIRT);
@@ -244,6 +249,18 @@ public class TagDatagen {
         @Override
         protected void addTags(HolderLookup.Provider arg) {
             tag(ModTags.Fluids.SUPPORTS_BOG_APPLES).addTag(FluidTags.WATER);
+        }
+    }
+
+    static class ModItemTagsProvider extends ItemTagsProvider {
+
+        public ModItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
+            super(output, lookupProvider, blockTags, AbyssalDecor.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.Provider provider) {
+            copy(ModTags.Blocks.WHITEWOOD_LOGS,ModTags.Items.WHITEWOOD_LOGS);
         }
     }
 

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "abyssaldecor:whitewood_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "abyssaldecor:whitewood_planks"
+  }
+}

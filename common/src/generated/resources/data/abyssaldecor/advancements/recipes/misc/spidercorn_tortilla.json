@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spidercorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssaldecor:spidercorn"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssaldecor:spidercorn_tortilla"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_spidercorn",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abyssaldecor:spidercorn_tortilla"
+    ]
+  },
+  "sends_telemetry_event": false
+}

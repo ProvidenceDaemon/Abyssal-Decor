@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:gold_nugget"
+    },
+    "b": {
+      "item": "abyssaldecor:velvet"
+    }
+  },
+  "pattern": [
+    "aba",
+    "a a",
+    "a a"
+  ],
+  "result": {
+    "item": "abyssaldecor:velvet_barrier"
+  },
+  "show_notification": true
+}
