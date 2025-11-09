@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "abyssal_decor:cinnamon_stick"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:cinnamon_apple",
+    "count": 2
+  }
+}

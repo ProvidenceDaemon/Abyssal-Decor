@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:seabrass_ingot"
+    },
+    "b": {
+      "item": "abyssal_decor:bulb_lamp_floor"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:seabrass_lamp_off",
+    "count": 2
+  }
+}

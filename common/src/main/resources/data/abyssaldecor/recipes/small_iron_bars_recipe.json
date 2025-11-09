@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:small_clean_iron_bars",
+    "count": 6
+  }
+}

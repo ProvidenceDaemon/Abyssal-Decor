@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:deepbronze_nugget"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:deepbronze_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:spidercorn_crop"
+    },
+    {
+      "item": "abyssal_decor:spidercorn_crop"
+    },
+    {
+      "item": "abyssal_decor:spidercorn_crop"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:spidercorn_tortilla",
+    "count": 1
+  }
+}

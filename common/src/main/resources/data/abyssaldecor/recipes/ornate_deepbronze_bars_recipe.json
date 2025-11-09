@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:deepbronze_bars"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:ornate_deepbronze_bars",
+    "count": 4
+  }
+}

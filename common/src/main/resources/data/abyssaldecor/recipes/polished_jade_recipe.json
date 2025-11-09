@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:rough_jade"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:polished_jade",
+    "count": 4
+  }
+}

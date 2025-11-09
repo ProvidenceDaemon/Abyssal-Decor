@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:inactive_mold"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:black_mold_carpet",
+    "count": 3
+  }
+}

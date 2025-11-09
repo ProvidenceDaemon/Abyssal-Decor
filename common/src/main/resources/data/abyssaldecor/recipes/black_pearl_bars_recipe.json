@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:black_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:black_pearl_bars_solo",
+    "count": 16
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:mold_weave"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:moldweave_carpet",
+    "count": 3
+  }
+}

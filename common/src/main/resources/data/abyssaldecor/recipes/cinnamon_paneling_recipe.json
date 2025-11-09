@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:cinnamon_trim"
+    },
+    {
+      "item": "abyssal_decor:cinnamon_trim"
+    },
+    {
+      "item": "abyssal_decor:cinnamon_trim"
+    },
+    {
+      "item": "abyssal_decor:cinnamon_trim"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:cinnamon_paneling",
+    "count": 8
+  }
+}

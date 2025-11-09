@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:wisteria_elder_wall"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:wisteria_leaves_elder",
+    "count": 2
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:gilded_black_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:gilded_black_pearl_trapdoor",
+    "count": 2
+  }
+}

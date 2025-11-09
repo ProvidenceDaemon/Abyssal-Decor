@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:chiseled_black_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:cut_black_pearl_block",
+    "count": 1
+  }
+}

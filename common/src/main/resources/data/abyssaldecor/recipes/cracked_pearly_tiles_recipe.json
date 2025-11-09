@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 0.2,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "abyssal_decor:white_pearl_tiles"
+  },
+  "result": "abyssal_decor:cracked_pearly_tiles"
+}

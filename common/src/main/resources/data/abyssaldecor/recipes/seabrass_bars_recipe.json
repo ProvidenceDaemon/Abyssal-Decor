@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:seabrass_ingot"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:seabrass_bars",
+    "count": 16
+  }
+}

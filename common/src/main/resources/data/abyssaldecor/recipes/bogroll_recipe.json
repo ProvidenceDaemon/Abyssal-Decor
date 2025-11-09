@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  a",
+    " a ",
+    "a  "
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:bog_apple_leaves"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:bog_roll",
+    "count": 1
+  }
+}

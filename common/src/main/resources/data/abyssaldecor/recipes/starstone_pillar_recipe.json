@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:gilded_starstone"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:starstone_pillar",
+    "count": 3
+  }
+}

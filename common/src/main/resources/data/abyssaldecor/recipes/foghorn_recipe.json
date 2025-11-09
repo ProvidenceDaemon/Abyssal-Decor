@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " ba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:seabrass_ingot"
+    },
+    "b": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:foghorn",
+    "count": 2
+  }
+}

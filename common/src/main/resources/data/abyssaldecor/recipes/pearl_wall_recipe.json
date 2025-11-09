@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:block_of_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:pearl_wall",
+    "count": 6
+  }
+}

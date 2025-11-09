@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "old_growth_birch_forest",
+  "features": "abyssal_decor:elder_birch_ruin_structure_feature",
+  "step": "surface_structures"
+}

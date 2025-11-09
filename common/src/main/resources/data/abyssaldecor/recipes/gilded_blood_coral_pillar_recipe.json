@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_nugget"
+    },
+    "b": {
+      "item": "abyssal_decor:blood_coral_pillar"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:gilded_blood_coral_pillar",
+    "count": 2
+  }
+}

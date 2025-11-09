@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "abyssal_decor:cinnamon_planks"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:cinnamon_trim",
+    "count": 6
+  }
+}

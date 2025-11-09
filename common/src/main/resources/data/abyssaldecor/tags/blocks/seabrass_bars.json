@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "abyssal_decor:seabrass_bars",
+    "abyssal_decor:ornate_seabrass_bars",
+    "abyssal_decor:seabrass_bars_top",
+    "abyssal_decor:seabrass_bars_mid",
+    "abyssal_decor:seabrass_bars_bottom"
+  ]
+}

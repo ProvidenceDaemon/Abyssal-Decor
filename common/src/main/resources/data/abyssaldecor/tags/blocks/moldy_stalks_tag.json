@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "abyssal_decor:moldy_stalk_upper",
+    "abyssal_decor:moldy_stalk_mid",
+    "abyssal_decor:moldy_stalk_bottom",
+    "abyssal_decor:moldy_stalk_solo",
+    "abyssal_decor:moldy_stalk_inactive"
+  ]
+}

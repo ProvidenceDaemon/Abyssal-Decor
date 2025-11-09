@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:scrimshaw_cave"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "c": {
+      "item": "minecraft:chest"
+    },
+    "d": {
+      "item": "minecraft:honeycomb"
+    },
+    "e": {
+      "item": "abyssal_decor:gilded_velvet_carpet"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:scrimshaw_altar",
+    "count": 1
+  }
+}

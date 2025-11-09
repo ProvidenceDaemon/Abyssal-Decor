@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "b": {
+      "item": "abyssal_decor:starfish"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:starlight",
+    "count": 4
+  }
+}

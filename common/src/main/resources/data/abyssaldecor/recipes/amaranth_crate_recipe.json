@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:amaranth_pinnacle"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:amaranth_crate",
+    "count": 1
+  }
+}

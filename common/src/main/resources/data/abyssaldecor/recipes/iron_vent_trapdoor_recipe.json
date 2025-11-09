@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:iron_duct"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:iron_vent_trapdoor",
+    "count": 2
+  }
+}

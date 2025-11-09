@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:fresnel_block"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:fresnel_pane",
+    "count": 16
+  }
+}

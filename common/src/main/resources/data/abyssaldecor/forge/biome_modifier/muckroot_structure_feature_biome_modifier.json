@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "birch_forest",
+    "plains",
+    "forest",
+    "old_growth_birch_forest",
+    "windswept_forest",
+    "old_growth_pine_taiga",
+    "old_growth_spruce_taiga",
+    "taiga",
+    "flower_forest"
+  ],
+  "features": "abyssal_decor:muckroot_structure_feature",
+  "step": "surface_structures"
+}

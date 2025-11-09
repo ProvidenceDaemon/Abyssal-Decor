@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "abyssal_decor:white_wood_planks"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:white_wood_trim",
+    "count": 6
+  }
+}

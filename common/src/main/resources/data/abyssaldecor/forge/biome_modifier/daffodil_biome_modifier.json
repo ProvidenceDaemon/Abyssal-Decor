@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "birch_forest",
+    "plains",
+    "old_growth_birch_forest",
+    "flower_forest",
+    "sunflower_plains"
+  ],
+  "features": "abyssal_decor:daffodil",
+  "step": "vegetal_decoration"
+}

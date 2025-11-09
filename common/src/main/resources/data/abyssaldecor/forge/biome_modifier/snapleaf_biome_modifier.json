@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "mangrove_swamp",
+    "swamp"
+  ],
+  "features": "abyssal_decor:snapleaf",
+  "step": "vegetal_decoration"
+}

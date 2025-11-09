@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_overworld",
+  "features": "abyssal_decor:scrimshaw_cavern_structure_feature",
+  "step": "underground_structures"
+}

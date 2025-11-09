@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:blackwood_trim"
+    },
+    {
+      "item": "abyssal_decor:blackwood_trim"
+    },
+    {
+      "item": "abyssal_decor:blackwood_trim"
+    },
+    {
+      "item": "abyssal_decor:blackwood_trim"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:blackwood_shingles",
+    "count": 8
+  }
+}

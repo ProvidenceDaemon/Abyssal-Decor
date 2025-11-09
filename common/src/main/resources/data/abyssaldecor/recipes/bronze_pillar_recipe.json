@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:deepbronze_block"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:deepbronze_pillar",
+    "count": 3
+  }
+}

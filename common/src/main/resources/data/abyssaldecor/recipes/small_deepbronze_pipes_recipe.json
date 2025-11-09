@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:large_deepbronze_pipe"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:small_deepbronze_pipes",
+    "count": 2
+  }
+}

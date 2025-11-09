@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:pearly_glass_block_sunny"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:pearly_glass_pane_sunny",
+    "count": 16
+  }
+}

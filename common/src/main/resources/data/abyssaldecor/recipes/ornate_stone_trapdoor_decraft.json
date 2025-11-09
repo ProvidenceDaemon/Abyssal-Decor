@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:ornate_stone_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:stone_trapdoor",
+    "count": 1
+  }
+}

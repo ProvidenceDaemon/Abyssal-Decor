@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:whitewood_log"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:white_wood_planks",
+    "count": 4
+  }
+}

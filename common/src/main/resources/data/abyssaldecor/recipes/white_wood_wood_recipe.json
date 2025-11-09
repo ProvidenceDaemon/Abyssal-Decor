@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:white_wood_log"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:white_wood_wood",
+    "count": 3
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:vermillion_block"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:vermillion_pane",
+    "count": 16
+  }
+}

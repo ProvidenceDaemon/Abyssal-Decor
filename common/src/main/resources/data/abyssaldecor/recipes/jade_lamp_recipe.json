@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " b ",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:polished_jade"
+    },
+    "b": {
+      "item": "abyssal_decor:bulb_lamp_floor"
+    },
+    "c": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:jade_lamp_item",
+    "count": 4
+  }
+}

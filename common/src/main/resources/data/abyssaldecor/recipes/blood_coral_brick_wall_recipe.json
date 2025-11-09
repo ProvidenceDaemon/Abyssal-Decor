@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:blood_coral_bricks"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:blood_coral_brick_wall",
+    "count": 6
+  }
+}

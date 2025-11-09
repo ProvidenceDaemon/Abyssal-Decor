@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "dark_forest",
+    "plains",
+    "flower_forest",
+    "forest"
+  ],
+  "features": "abyssal_decor:amaranth_structure_feature",
+  "step": "surface_structures"
+}

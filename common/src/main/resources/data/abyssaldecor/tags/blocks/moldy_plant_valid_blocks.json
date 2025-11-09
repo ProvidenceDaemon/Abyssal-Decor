@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "abyssal_decor:black_mold",
+    "abyssal_decor:inactive_mold",
+    "abyssal_decor:moldy_starstone",
+    "abyssal_decor:moldier_starstone",
+    "abyssal_decor:porous_mold",
+    "abyssal_decor:blackwood_log",
+    "abyssal_decor:blackwood_wood"
+  ]
+}

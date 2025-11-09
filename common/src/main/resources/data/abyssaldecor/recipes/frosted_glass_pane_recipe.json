@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:frosted_glass_solo"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:frosted_glass_pane_solo",
+    "count": 16
+  }
+}

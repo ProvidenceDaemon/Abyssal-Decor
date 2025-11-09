@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "mangrove_swamp",
+  "features": "abyssal_decor:ripe_bog_apple_structure_feature",
+  "step": "surface_structures"
+}

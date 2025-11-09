@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "b"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:glow_ink_sac"
+    },
+    "b": {
+      "item": "abyssal_decor:polished_starstone"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:lunar_rod",
+    "count": 4
+  }
+}

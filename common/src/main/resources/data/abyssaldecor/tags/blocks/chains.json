@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "abyssal_decor:seabrass_chain",
+    "minecraft:chain",
+    "abyssal_decor:deepbronze_chain"
+  ]
+}

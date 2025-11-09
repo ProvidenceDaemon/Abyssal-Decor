@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "abyssal_decor:grime_ceiling",
+    "abyssal_decor:grime",
+    "abyssal_decor:grime_floor",
+    "abyssal_decor:grime_mid_ceiling",
+    "abyssal_decor:grime_mid_floor",
+    "abyssal_decor:grime_mid",
+    "abyssal_decor:grime_upper"
+  ]
+}

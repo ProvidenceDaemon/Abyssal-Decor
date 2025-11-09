@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:riveted_deepbronze"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:riveted_deepbronze_wall",
+    "count": 6
+  }
+}

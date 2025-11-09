@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "bb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:brick"
+    },
+    "b": {
+      "item": "minecraft:bricks"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:brick_cap",
+    "count": 2
+  }
+}

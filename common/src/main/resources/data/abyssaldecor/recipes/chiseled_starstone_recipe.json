@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:polished_starstone_slab"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:chiseled_starstone",
+    "count": 1
+  }
+}

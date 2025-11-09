@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "abyssal_decor:wisteria_purple_wall",
+    "abyssal_decor:wisteria_purple_wall_mid",
+    "abyssal_decor:wisteria_purple_bottom",
+    "abyssal_decor:wisteria_elder_wall",
+    "abyssal_decor:wisteria_elder_mid",
+    "abyssal_decor:wisteria_elder_bottom",
+    "abyssal_decor:wisteria_purple_petals",
+    "abyssal_decor:wisteria_elder_petals"
+  ]
+}

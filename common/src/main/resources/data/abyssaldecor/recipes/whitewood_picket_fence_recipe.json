@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:white_wood_fence"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:whitewood_picket_fence",
+    "count": 3
+  }
+}

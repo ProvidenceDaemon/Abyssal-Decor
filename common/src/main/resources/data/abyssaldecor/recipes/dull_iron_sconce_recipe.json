@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:iron_sconce"
+    },
+    {
+      "item": "abyssal_decor:grime"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:dull_iron_sconce",
+    "count": 1
+  }
+}

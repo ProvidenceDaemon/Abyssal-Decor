@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:chiseled_brick"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:brick_mosaic",
+    "count": 4
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:paper_stack"
+    }
+  ],
+  "result": {
+    "item": "minecraft:paper",
+    "count": 9
+  }
+}

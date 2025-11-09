@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:pearly_bars_solo"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:white_pearl_bar_trapdoor",
+    "count": 2
+  }
+}

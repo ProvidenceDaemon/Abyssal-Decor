@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:large_seabrass_pipe"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:small_seabrass_pipes",
+    "count": 2
+  }
+}

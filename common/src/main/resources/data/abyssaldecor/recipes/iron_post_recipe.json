@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:dull_iron_bars"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:dull_iron_post",
+    "count": 3
+  }
+}

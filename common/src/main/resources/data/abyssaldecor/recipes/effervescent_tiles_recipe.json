@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:polished_effervescence"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:effervescent_tiles",
+    "count": 4
+  }
+}

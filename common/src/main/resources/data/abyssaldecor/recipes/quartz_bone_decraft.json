@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_decor:quartz_bone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:quartz",
+    "count": 6
+  }
+}

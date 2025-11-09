@@ -1,0 +1,7 @@
+{
+  "type": "abyssal_decor:ripe_bog_apple_structure_feature",
+  "config": {
+    "structure": "abyssal_decor:ripebogapplestructure",
+    "ignored_blocks": "minecraft:structure_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:blackwood_planks"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:blackwood_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:iron_panel"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:corrugated_iron",
+    "count": 6
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:mold_fronds"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:moldy_frond_block",
+    "count": 1
+  }
+}

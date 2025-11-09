@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "abyssal_decor:grime"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:dull_iron_bars",
+    "count": 1
+  }
+}

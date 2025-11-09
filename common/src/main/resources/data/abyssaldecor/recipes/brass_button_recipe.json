@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "abyssal_decor:seabrass_ingot"
+    }
+  ],
+  "result": {
+    "item": "abyssal_decor:seabrass_button",
+    "count": 1
+  }
+}

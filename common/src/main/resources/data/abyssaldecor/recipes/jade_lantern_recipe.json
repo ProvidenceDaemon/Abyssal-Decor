@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:polished_jade"
+    },
+    "b": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "abyssal_decor:jade_lantern_off",
+    "count": 8
+  }
+}

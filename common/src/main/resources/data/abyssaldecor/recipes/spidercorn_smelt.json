@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 1,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "abyssal_decor:spidercorn_crop"
+  },
+  "result": "abyssal_decor:popped_spidercorn"
+}

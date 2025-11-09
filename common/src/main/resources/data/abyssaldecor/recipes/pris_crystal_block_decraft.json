@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssal_decor:block_of_prismarine_crystal"
+    }
+  },
+  "result": {
+    "item": "minecraft:prismarine_crystals",
+    "count": 9
+  }
+}
