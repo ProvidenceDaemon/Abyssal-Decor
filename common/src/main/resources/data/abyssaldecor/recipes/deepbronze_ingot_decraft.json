@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:deepbronze_ingot"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:deepbronze_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "tag": "minecraft:logs"
+    },
+    "b": {
+      "item": "abyssaldecor:black_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:stripped_blackwood_log",
+    "count": 8
+  }
+}

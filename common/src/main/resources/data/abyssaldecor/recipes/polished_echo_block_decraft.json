@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "echo_block_decraft",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:polished_echo_shard_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:echo_shard",
+    "count": 4
+  }
+}

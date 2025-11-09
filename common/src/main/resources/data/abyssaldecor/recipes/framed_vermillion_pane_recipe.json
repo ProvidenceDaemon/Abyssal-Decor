@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:framed_vermillion_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:framed_vermillion_pane",
+    "count": 16
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:cinnamon_stick"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:cinnamon_shingles",
+    "count": 4
+  }
+}

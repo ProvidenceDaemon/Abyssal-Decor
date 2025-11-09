@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    "ba"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:white_pearl_tiles"
+    },
+    "b": {
+      "item": "abyssaldecor:polished_starstone"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:starry_pearl_tiles",
+    "count": 4
+  }
+}

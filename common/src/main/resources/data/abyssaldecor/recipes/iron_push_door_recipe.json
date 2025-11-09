@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:iron_panel"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:iron_push_door",
+    "count": 3
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:velvet"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:velvet_carpet",
+    "count": 3
+  }
+}

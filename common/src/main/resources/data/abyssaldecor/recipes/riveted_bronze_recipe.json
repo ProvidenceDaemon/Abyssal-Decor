@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:deepbronze_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:riveted_deepbronze",
+    "count": 8
+  }
+}

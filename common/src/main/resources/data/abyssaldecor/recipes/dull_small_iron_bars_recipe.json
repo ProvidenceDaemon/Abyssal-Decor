@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:dull_iron_bars"
+    },
+    {
+      "item": "abyssaldecor:dull_iron_bars"
+    },
+    {
+      "item": "abyssaldecor:dull_iron_bars"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:small_dull_iron_bars",
+    "count": 6
+  }
+}

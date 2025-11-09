@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:polished_jade"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:jade_pillar",
+    "count": 3
+  }
+}

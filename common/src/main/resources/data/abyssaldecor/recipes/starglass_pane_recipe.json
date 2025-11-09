@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:starglass_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:starglass_pane",
+    "count": 16
+  }
+}

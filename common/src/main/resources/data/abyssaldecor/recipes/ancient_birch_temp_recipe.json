@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:grime"
+    },
+    "b": {
+      "item": "minecraft:birch_log"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:ancient_birch_log",
+    "count": 1
+  }
+}

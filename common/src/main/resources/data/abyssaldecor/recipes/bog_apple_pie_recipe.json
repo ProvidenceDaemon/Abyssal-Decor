@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:wheat"
+    },
+    "b": {
+      "item": "abyssaldecor:bog_apple"
+    },
+    "c": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:bog_apple_pie",
+    "count": 1
+  }
+}

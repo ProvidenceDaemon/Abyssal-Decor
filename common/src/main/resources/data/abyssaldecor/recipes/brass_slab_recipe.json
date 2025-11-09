@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:seabrass_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:seabrass_slab",
+    "count": 6
+  }
+}

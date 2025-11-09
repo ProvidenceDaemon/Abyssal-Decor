@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a ",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stone"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:small_stone_bars_corner",
+    "count": 3
+  }
+}

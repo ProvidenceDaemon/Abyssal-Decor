@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:deepbronze_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:deepbronze_stairs",
+    "count": 4
+  }
+}

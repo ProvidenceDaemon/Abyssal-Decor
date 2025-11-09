@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:cinnamon_shingles"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:cinnamon_shingle_slab",
+    "count": 6
+  }
+}

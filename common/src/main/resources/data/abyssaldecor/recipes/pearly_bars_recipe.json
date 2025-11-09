@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:white_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:pearly_bars_solo",
+    "count": 16
+  }
+}

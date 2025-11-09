@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:stone_trapdoor"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:ornate_stone_trapdoor",
+    "count": 1
+  }
+}

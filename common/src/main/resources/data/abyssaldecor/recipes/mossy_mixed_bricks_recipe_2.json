@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mossy_mixed_bricks_recipe",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    },
+    {
+      "item": "abyssaldecor:mixed_bricks"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:mossy_mixed_bricks",
+    "count": 8
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:blackwood_planks"
+    },
+    "b": {
+      "item": "abyssaldecor:white_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:pearly_glass_block_blackwood",
+    "count": 6
+  }
+}

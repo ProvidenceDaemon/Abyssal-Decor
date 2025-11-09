@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:white_wood_planks"
+    },
+    "b": {
+      "tag": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:white_wood_planter",
+    "count": 6
+  }
+}

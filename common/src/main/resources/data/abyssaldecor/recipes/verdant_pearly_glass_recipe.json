@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:pearly_glass_block"
+    },
+    "b": {
+      "item": "minecraft:lime_dye"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:pearly_glass_block_verdant",
+    "count": 1
+  }
+}

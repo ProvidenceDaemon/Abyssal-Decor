@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_nugget"
+    },
+    "b": {
+      "item": "abyssaldecor:jade_pillar"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:gilded_jade_pillar",
+    "count": 2
+  }
+}

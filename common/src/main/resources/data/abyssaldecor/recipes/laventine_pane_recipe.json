@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:laventine_glass"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:laventine_glass_pane_top",
+    "count": 16
+  }
+}

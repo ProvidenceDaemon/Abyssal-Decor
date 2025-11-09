@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bbb",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:seabrass_button"
+    },
+    "b": {
+      "item": "abyssaldecor:seabrass_nugget"
+    },
+    "c": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:desk_bell",
+    "count": 2
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:iron_panel"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:iron_panel_slab",
+    "count": 6
+  }
+}

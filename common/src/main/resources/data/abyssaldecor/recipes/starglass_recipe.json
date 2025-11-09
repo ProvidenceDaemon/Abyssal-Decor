@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:black_pearl"
+    },
+    "b": {
+      "item": "abyssaldecor:starstone"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:starglass_block",
+    "count": 2
+  }
+}

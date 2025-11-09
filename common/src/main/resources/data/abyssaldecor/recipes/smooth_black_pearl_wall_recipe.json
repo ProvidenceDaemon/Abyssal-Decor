@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:smooth_black_pearl_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:smooth_black_pearl_wall",
+    "count": 6
+  }
+}

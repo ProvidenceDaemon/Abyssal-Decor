@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "abyssaldecor:deepbronze_ingot"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:deepbronze_button",
+    "count": 1
+  }
+}

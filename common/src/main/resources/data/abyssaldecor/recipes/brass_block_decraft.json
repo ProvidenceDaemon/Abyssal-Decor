@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:seabrass_block"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:seabrass_ingot",
+    "count": 4
+  }
+}

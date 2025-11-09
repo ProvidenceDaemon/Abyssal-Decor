@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:framed_pitchglass_top"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:framed_pitchglass_pane_top",
+    "count": 16
+  }
+}

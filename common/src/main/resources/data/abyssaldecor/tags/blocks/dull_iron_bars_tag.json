@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "abyssaldecor:dull_iron_bars_upper",
+    "abyssaldecor:dull_iron_bars_mid",
+    "abyssaldecor:dull_iron_bars_bottom",
+    "abyssaldecor:dull_iron_bars",
+    "abyssaldecor:ornate_dull_iron_bars"
+  ]
+}

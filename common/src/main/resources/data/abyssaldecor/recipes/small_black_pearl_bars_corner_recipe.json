@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a ",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:small_black_pearl_bars"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:upsidedown_black_pearl_bars_corner",
+    "count": 3
+  }
+}

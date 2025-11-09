@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_nugget"
+    },
+    "b": {
+      "item": "abyssaldecor:bulb_lamp_floor"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:bulkhead_lamp",
+    "count": 1
+  }
+}

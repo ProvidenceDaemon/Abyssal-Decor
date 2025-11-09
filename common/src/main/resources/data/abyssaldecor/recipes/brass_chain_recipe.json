@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:seabrass_nugget"
+    },
+    "b": {
+      "item": "abyssaldecor:seabrass_ingot"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:seabrass_chain",
+    "count": 3
+  }
+}

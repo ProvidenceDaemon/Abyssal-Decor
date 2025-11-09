@@ -1,0 +1,15 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "birch_forest",
+    "plains",
+    "old_growth_birch_forest",
+    "flower_forest",
+    "sunflower_plains",
+    "old_growth_pine_taiga",
+    "old_growth_spruce_taiga",
+    "taiga"
+  ],
+  "features": "abyssaldecor:aster",
+  "step": "vegetal_decoration"
+}

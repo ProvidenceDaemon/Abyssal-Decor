@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "b": {
+      "item": "minecraft:mud"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:wooden_frog",
+    "count": 1
+  }
+}

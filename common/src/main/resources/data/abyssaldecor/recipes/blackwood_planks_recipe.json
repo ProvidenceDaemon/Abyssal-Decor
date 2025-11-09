@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:blackwood_log"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:blackwood_planks",
+    "count": 4
+  }
+}

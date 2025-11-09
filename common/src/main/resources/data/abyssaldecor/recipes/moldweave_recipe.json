@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:moldy_hanger"
+    },
+    {
+      "item": "abyssaldecor:moldy_hanger"
+    },
+    {
+      "item": "abyssaldecor:moldy_hanger"
+    },
+    {
+      "item": "abyssaldecor:moldy_hanger"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:mold_weave",
+    "count": 1
+  }
+}

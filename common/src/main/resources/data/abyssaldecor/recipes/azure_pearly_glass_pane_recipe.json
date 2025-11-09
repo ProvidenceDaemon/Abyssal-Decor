@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:pearly_glass_block_azure"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:pearly_glass_pane_azure",
+    "count": 16
+  }
+}

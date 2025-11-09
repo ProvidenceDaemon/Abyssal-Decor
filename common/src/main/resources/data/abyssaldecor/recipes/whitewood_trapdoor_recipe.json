@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:white_wood_planks"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:white_wood_trapdoor",
+    "count": 2
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:ornate_iron_bars",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:blackwood_log"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:blackwood_wood",
+    "count": 3
+  }
+}

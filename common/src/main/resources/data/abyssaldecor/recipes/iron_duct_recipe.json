@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:iron_panel"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:iron_duct",
+    "count": 8
+  }
+}

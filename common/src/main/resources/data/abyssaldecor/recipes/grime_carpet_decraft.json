@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:grime_carpet"
+    },
+    {
+      "item": "abyssaldecor:grime_carpet"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:grime",
+    "count": 2
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:grime"
+    },
+    "b": {
+      "item": "abyssaldecor:book_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:moldy_book_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:polished_starstone"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:polished_starstone_slab",
+    "count": 6
+  }
+}

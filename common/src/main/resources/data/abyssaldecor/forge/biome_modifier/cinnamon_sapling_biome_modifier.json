@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "bamboo_jungle",
+    "plains",
+    "jungle",
+    "sparse_jungle"
+  ],
+  "features": "abyssaldecor:cinnamon_sapling",
+  "step": "vegetal_decoration"
+}

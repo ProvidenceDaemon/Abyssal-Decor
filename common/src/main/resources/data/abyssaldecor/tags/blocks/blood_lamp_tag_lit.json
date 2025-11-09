@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "abyssaldecor:blood_lantern_on",
+    "abyssaldecor:blood_lamp_lit_top",
+    "abyssaldecor:blood_lamp_lit_mid",
+    "abyssaldecor:blood_lamp_lit_bottom"
+  ]
+}

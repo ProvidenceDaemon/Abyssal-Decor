@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    "ba"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:white_pearl_tiles"
+    },
+    "b": {
+      "item": "abyssaldecor:black_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:mixed_pearl_tiles",
+    "count": 4
+  }
+}

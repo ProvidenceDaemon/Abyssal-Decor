@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:block_of_black_pearl"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:black_pearl_bricks",
+    "count": 8
+  }
+}

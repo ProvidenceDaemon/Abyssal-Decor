@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    },
+    {
+      "item": "abyssaldecor:cinnamon_shingles"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:mossy_cinnamon_shingles",
+    "count": 8
+  }
+}

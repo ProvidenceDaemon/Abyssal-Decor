@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:riveted_deepbronze"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:deepbronze_tiles",
+    "count": 2
+  }
+}

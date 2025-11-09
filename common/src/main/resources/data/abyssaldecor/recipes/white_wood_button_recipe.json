@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:white_wood_planks"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:white_wood_button",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:smooth_blood_coral"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:smooth_blood_coral_slab",
+    "count": 6
+  }
+}

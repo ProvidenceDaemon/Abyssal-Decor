@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:blood_coral_bud"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:rough_blood_coral",
+    "count": 2
+  }
+}

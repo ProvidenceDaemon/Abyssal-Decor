@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:damaged_serpent_scales"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:damaged_serpent_scale_slab",
+    "count": 6
+  }
+}

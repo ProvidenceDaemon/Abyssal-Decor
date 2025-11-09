@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:smooth_pearl_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:smooth_pearl_slab",
+    "count": 6
+  }
+}

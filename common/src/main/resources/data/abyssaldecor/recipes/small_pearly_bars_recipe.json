@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:pearly_bars_solo"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:small_pearl_bars",
+    "count": 6
+  }
+}

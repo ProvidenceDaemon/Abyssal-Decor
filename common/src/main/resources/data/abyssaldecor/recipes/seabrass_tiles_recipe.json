@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:riveted_seabrass"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:seabrass_tiles",
+    "count": 2
+  }
+}

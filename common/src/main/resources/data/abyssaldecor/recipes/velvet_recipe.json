@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:amaranth_pinnacle"
+    },
+    {
+      "item": "abyssaldecor:amaranth_pinnacle"
+    },
+    {
+      "item": "abyssaldecor:amaranth_pinnacle"
+    },
+    {
+      "item": "abyssaldecor:amaranth_pinnacle"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:velvet",
+    "count": 1
+  }
+}

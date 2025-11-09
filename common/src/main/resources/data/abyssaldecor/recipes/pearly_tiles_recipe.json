@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:pearl_bricks"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:white_pearl_tiles",
+    "count": 8
+  }
+}

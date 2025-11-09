@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:echo_shard_block"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:polished_echo_shard_block",
+    "count": 4
+  }
+}

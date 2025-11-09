@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    "bdb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:snow_block"
+    },
+    "b": {
+      "item": "minecraft:leather"
+    },
+    "c": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "d": {
+      "item": "minecraft:dragon_breath"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:bottomless_bag_of_snow",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:cinnamon_fence"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:cinnamon_post",
+    "count": 3
+  }
+}

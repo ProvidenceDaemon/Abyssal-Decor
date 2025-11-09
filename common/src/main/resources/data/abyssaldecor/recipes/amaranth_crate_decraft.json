@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:amaranth_crate"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:amaranth_pinnacle",
+    "count": 9
+  }
+}

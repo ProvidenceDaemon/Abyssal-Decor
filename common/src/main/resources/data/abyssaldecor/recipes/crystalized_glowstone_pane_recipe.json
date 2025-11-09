@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:crystalized_glowstone"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:crystalized_glowstone_pane",
+    "count": 16
+  }
+}

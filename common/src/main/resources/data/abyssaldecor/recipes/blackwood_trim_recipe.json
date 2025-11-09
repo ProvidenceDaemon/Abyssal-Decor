@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "abyssaldecor:blackwood_planks"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:blackwood_trim",
+    "count": 6
+  }
+}

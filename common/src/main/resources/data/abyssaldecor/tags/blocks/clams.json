@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "abyssaldecor:clam_pearl_closed",
+    "abyssaldecor:clam_pearl_open",
+    "abyssaldecor:clam_empty_closed",
+    "abyssaldecor:clam_empty_open"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "abyssaldecor:seabrass_ingot"
+    }
+  },
+  "result": {
+    "item": "abyssaldecor:seabrass_pressure_plate",
+    "count": 1
+  }
+}
