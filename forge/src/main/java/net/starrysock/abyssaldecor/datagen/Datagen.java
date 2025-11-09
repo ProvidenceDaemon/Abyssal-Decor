@@ -30,6 +30,7 @@ public class Datagen {
         if (event.includeServer()) {
             generator.addProvider(true, ModLootTableProvider.create(output));
             generator.addProvider(true, new ModDataPackProvider(output, lookupProvider));
+            generator.addProvider(true,new AbyssalDecorRecipeProvider(output));
             TagDatagen.gather(event);
         }
 
@@ -267,7 +268,7 @@ public class Datagen {
                 }
             });
 
-
+            simplestBlockWithItem(AbyssalDecorBlocks.INACTIVE_MOLD.get());
             getVariantBuilder(AbyssalDecorBlocks.AMARANTH.get()).forAllStates(
                     blockState -> {
                         int age = blockState.getValue(AmaranthBlock.AGE);
@@ -1239,7 +1240,6 @@ public class Datagen {
 
         protected void hanger() {
             Block block = AbyssalDecorBlocks.MOLDY_HANGER.get();
-            String name = name(block);
 
             ModelFile moldyHangerMid = models().cross("moldy_hanger_middle", modLoc("block/moldy_hanger_middle"));
             ModelFile moldyHangerTop = models().cross("moldy_hanger_top", modLoc("block/moldy_hanger_top"));
@@ -1247,7 +1247,7 @@ public class Datagen {
             ModelFile moldyHangerBerries = models().cross("moldy_hanger_berries", modLoc("block/moldy_hanger_berries"));
 
             getVariantBuilder(block).forAllStatesExcept(state -> {
-                TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
+                TriPart part = state.getValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM);
                 boolean berries = state.getValue(MoldyHangersBlock.BERRIES);
 
 
@@ -1266,6 +1266,12 @@ public class Datagen {
                 return ConfiguredModel.builder().modelFile(modelFile).build();
             });
             iconTexture("moldy_hanger",modLoc("block/moldy_hanger_middle"));
+
+            Block block1 = AbyssalDecorBlocks.INACTIVE_MOLDY_HANGER.get();
+
+            simpleBlock(block1,moldyHangerBottom);
+            iconTexture("inactive_moldy_hanger",modLoc("block/moldy_hanger_bottom"));
+
         }
 
         protected void post(Block block, ResourceLocation bottom,ResourceLocation middle,ResourceLocation top) {

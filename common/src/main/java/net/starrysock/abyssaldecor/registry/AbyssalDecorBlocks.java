@@ -1017,6 +1017,10 @@ public class AbyssalDecorBlocks {
             () -> new MoldyHangersBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
                     .noOcclusion().randomTicks()));
 
+    public static final RegistrySupplier<Block> INACTIVE_MOLDY_HANGER = AbyssalDecor.BLOCKS.register("inactive_moldy_hanger",
+            () -> new InactiveMoldyHangersBlock(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
+                    .noOcclusion().randomTicks()));
+
     public static final RegistrySupplier<CropBlock> FEVER_BLOSSOM = AbyssalDecor.BLOCKS.register("fever_blossom",
             () -> Services.PLATFORM.feverBlossom(BlockBehaviour.Properties.of().sound(SoundType.ROOTS).instabreak().noCollission()
                     .noOcclusion().randomTicks()

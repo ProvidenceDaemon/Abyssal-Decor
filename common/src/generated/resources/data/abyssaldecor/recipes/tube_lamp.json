@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "abyssaldecor:lightbulb"
+    }
+  },
+  "pattern": [
+    "aaa"
+  ],
+  "result": {
+    "item": "abyssaldecor:tube_lamp"
+  },
+  "show_notification": true
+}

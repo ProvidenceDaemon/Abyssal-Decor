@@ -1,16 +1,10 @@
 {
   "variants": {
-    "berries=false,tri_part=bottom": {
-      "model": "abyssaldecor:block/moldy_hanger_bottom"
-    },
     "berries=false,tri_part=middle": {
       "model": "abyssaldecor:block/moldy_hanger_middle"
     },
     "berries=false,tri_part=top": {
       "model": "abyssaldecor:block/moldy_hanger_top"
-    },
-    "berries=true,tri_part=bottom": {
-      "model": "abyssaldecor:block/moldy_hanger_berries"
     },
     "berries=true,tri_part=middle": {
       "model": "abyssaldecor:block/moldy_hanger_berries"

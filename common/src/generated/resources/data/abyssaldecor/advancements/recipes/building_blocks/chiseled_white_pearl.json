@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssaldecor:chiseled_white_pearl"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssaldecor:white_pearl_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_pearl",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abyssaldecor:chiseled_white_pearl"
+    ]
+  },
+  "sends_telemetry_event": false
+}

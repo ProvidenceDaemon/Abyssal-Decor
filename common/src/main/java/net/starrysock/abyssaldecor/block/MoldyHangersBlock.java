@@ -31,6 +31,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,7 +42,7 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
 
     public MoldyHangersBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.TOP)
+        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM, TriPart.TOP)
                 .setValue(BERRIES,false));
     }
 
@@ -61,12 +62,12 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
             triPart = TriPart.TOP;
         }
 
-        return defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,triPart);
+        return defaultBlockState().setValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM,triPart);
     }
 
     @Override
     public boolean isRandomlyTicking(BlockState state) {
-        return super.isRandomlyTicking(state) && state.getValue(ModBlockStateProperties.TRI_PART) != TriPart.BOTTOM && !state.getValue(BERRIES);
+        return super.isRandomlyTicking(state) && !state.getValue(BERRIES);
     }
 
     /**
@@ -92,9 +93,9 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
             if (this.canGrowInto(level.getBlockState(below))) {
                 boolean canContinueGrowing = random.nextDouble() < .875;
                 TriPart part = canContinueGrowing ? TriPart.MIDDLE: TriPart.BOTTOM;
-                level.setBlockAndUpdate(below,defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,part));
+                level.setBlockAndUpdate(below,defaultBlockState().setValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM,part));
 
-                if (random.nextDouble() < .5 && state.getValue(ModBlockStateProperties.TRI_PART) == TriPart.MIDDLE) {
+                if (random.nextDouble() < .5 && state.getValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM) == TriPart.MIDDLE) {
                     level.setBlockAndUpdate(pos,state.setValue(BERRIES,true));
                 }
             }
@@ -114,9 +115,9 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
-        TriPart part = state.getValue(ModBlockStateProperties.TRI_PART);
-        if (stack.getItem() instanceof ShearsItem && part== TriPart.MIDDLE){
-            state =  state.setValue(ModBlockStateProperties.TRI_PART, TriPart.BOTTOM);
+        TriPart part = state.getValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM);
+        if (stack.getItem() instanceof ShearsItem && part == TriPart.MIDDLE){
+            state = AbyssalDecorBlocks.INACTIVE_MOLDY_HANGER.get().defaultBlockState();
             if (!level.isClientSide) {
                 level.setBlockAndUpdate(pos,state);
             }
@@ -143,13 +144,13 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos above = pos.above();
         BlockState aboveState = level.getBlockState(above);
-        return aboveState.is(this)&& aboveState.getValue(ModBlockStateProperties.TRI_PART) != TriPart.BOTTOM || aboveState.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS);
+        return aboveState.is(this) || aboveState.is(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(ModBlockStateProperties.TRI_PART,BERRIES);
+        builder.add(ModBlockStateProperties.TRI_PART_NO_BOTTOM,BERRIES);
     }
 
     @Override

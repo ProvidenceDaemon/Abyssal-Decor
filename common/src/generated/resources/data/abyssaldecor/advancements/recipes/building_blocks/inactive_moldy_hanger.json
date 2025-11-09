@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_moldy_hanger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssaldecor:moldy_hanger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssaldecor:inactive_moldy_hanger"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_moldy_hanger",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abyssaldecor:inactive_moldy_hanger"
+    ]
+  },
+  "sends_telemetry_event": false
+}

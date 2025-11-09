@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "abyssaldecor:block/inactivemold",
-    "particle": "abyssaldecor:block/inactivemold"
-  },
-  "render_type": "solid"
-}
