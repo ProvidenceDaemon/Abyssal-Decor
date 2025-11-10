@@ -99,12 +99,12 @@ public class ExtendedBlockFamilies {
             .recipeUnlockedBy("has_iron_panel").getFamily();
 
     public static final ExtendedBlockFamily BLOOD_CORAL_BARS = familyBuilder(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get())
-            .door(AbyssalDecorBlocks.BLOOD_CORAL_DOOR.get())
             .trapdoor(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR.get())
             .getFamily();
 
     public static final ExtendedBlockFamily POLISHED_BLOOD_CORAL = familyBuilder(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL.get())
             .slab(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB.get())
+            .door(AbyssalDecorBlocks.BLOOD_CORAL_DOOR.get())
             .stairs(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_STAIRS.get())
             .wall(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_WALL.get())
             .getFamily();

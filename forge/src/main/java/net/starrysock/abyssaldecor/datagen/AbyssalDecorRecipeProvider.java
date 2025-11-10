@@ -480,7 +480,7 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AbyssalDecorItems.BLACK_PEARL.get(), 4)
                 .requires(AbyssalDecorItems.BLACK_PEARL_BLOCK.get())
                 .unlockedBy(getHasName(AbyssalDecorItems.BLACK_PEARL_BLOCK.get()), has(AbyssalDecorItems.BLACK_PEARL_BLOCK.get()))
-                .save(consumer);
+                .save(consumer,"black_pearl_block_uncrafting");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.SEAGLASS_LAMP.get())
                 .pattern("aba")
