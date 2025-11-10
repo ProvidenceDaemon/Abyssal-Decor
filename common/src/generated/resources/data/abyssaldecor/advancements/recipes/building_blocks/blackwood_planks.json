@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_deepbronze_block": {
+    "has_log": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "abyssaldecor:deepbronze_block"
-            ]
+            "tag": "abyssaldecor:blackwood_logs"
           }
         ]
       },
@@ -15,20 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:deepbronze_trapdoor"
+        "recipe": "abyssaldecor:blackwood_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_deepbronze_block",
+      "has_log",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:deepbronze_trapdoor"
+      "abyssaldecor:blackwood_planks"
     ]
   },
   "sends_telemetry_event": false

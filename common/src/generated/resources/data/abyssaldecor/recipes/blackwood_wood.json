@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "building",
+  "group": "bark",
   "key": {
     "#": {
-      "item": "abyssaldecor:riveted_deepbronze"
+      "item": "abyssaldecor:blackwood_log"
     }
   },
   "pattern": [
-    "##",
     "##",
     "##"
   ],
   "result": {
     "count": 3,
-    "item": "abyssaldecor:deepbronze_door"
+    "item": "abyssaldecor:blackwood_wood"
   },
   "show_notification": true
 }

@@ -2,15 +2,15 @@ package net.starrysock.abyssaldecor.registry;
 
 import com.google.common.collect.Maps;
 import net.minecraft.Util;
-import net.minecraft.world.flag.FeatureFlagSet;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
 
 import javax.annotation.Nullable;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * like BlockFamily except better
@@ -18,9 +18,8 @@ import java.util.Optional;
 public class ExtendedBlockFamily {
     private final Block baseBlock;
     final Map<Variant, Block> variants = Maps.newHashMap();
-    FeatureFlagSet requiredFeatures = FeatureFlags.VANILLA_SET;
+    public final Set<Variant> excludeRecipe = new HashSet<>();
     boolean generateModel = true;
-    boolean generateRecipe = true;
     @Nullable
     String recipeGroupPrefix;
     @Nullable
@@ -50,10 +49,6 @@ public class ExtendedBlockFamily {
         return this.generateModel;
     }
 
-    public boolean shouldGenerateRecipe(FeatureFlagSet enabledFeatures) {
-        return this.generateRecipe && this.requiredFeatures.isSubsetOf(enabledFeatures);
-    }
-
     public Optional<String> getRecipeGroupPrefix() {
         return Util.isBlank(this.recipeGroupPrefix) ? Optional.empty() : Optional.of(this.recipeGroupPrefix);
     }
@@ -73,9 +68,22 @@ public class ExtendedBlockFamily {
             return this.family;
         }
 
-        public Builder button(Block buttonBlock) {
-            this.family.variants.put(Variant.BUTTON, buttonBlock);
+        public Builder button(Block buttonBlock,boolean excludeRecipe) {
+            return addVariant(Variant.BUTTON,buttonBlock,excludeRecipe);
+        }
+
+
+        public Builder addVariant(Variant variant,Block block,boolean excludeRecipe) {
+            this.family.variants.put(variant, block);
+            if (excludeRecipe) {
+                family.excludeRecipe.add(variant);
+            }
             return this;
+        }
+
+
+        public Builder button(Block buttonBlock) {
+            return button(buttonBlock,false);
         }
 
         public Builder chiseled(Block chiseledBlock) {
@@ -146,8 +154,11 @@ public class ExtendedBlockFamily {
         }
 
         public Builder pressurePlate(Block pressurePlateBlock) {
-            this.family.variants.put(Variant.PRESSURE_PLATE, pressurePlateBlock);
-            return this;
+            return pressurePlate(pressurePlateBlock,false);
+        }
+
+        public Builder pressurePlate(Block pressurePlateBlock,boolean excludeRecipe) {
+            return addVariant(Variant.PRESSURE_PLATE,pressurePlateBlock,excludeRecipe);
         }
 
         public Builder polished(Block polishedBlock) {
@@ -156,8 +167,11 @@ public class ExtendedBlockFamily {
         }
 
         public Builder trapdoor(Block trapdoorBlock) {
-            this.family.variants.put(Variant.TRAPDOOR, trapdoorBlock);
-            return this;
+            return trapdoor(trapdoorBlock,false);
+        }
+
+        public Builder trapdoor(Block trapdoorBlock,boolean excludeRecipe) {
+            return addVariant(Variant.TRAPDOOR,trapdoorBlock,excludeRecipe);
         }
 
         public Builder wall(Block wallBlock) {
@@ -167,11 +181,6 @@ public class ExtendedBlockFamily {
 
         public Builder dontGenerateModel() {
             this.family.generateModel = false;
-            return this;
-        }
-
-        public Builder dontGenerateRecipe() {
-            this.family.generateRecipe = false;
             return this;
         }
 

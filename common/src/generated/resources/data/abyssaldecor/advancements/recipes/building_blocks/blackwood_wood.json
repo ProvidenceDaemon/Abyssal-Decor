@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_riveted_deepbronze": {
+    "has_log": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:riveted_deepbronze"
+              "abyssaldecor:blackwood_log"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:deepbronze_door"
+        "recipe": "abyssaldecor:blackwood_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_riveted_deepbronze",
+      "has_log",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:deepbronze_door"
+      "abyssaldecor:blackwood_wood"
     ]
   },
   "sends_telemetry_event": false

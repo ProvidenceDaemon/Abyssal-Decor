@@ -50,7 +50,11 @@ public class TagDatagen {
             tag(ModTags.Blocks.AMARANTH_GROWABLE).addTag(BlockTags.DIRT);
             tag(ModTags.Blocks.SPIDERCORN_GROWABLE).addTag(BlockTags.BASE_STONE_OVERWORLD);
 
-            tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
+            tag(ModTags.Blocks.BLACKWOOD_LOGS).add(AbyssalDecorBlocks.BLACKWOOD_LOG.get(),AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get(),
+                    AbyssalDecorBlocks.BLACKWOOD_WOOD.get());//no stripped blackwood wood?
+
+            tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),
+                    AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
 
             tag(ModTags.Blocks.WHITEWOOD_LOGS).add(AbyssalDecorBlocks.WHITEWOOD_LOG.get(),AbyssalDecorBlocks.WHITEWOOD_WOOD.get());
 
@@ -260,6 +264,8 @@ public class TagDatagen {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
+            copy(ModTags.Blocks.BLACKWOOD_LOGS,ModTags.Items.BLACKWOOD_LOGS);
+            copy(ModTags.Blocks.CINNAMON_LOGS,ModTags.Items.CINNAMON_LOGS);
             copy(ModTags.Blocks.WHITEWOOD_LOGS,ModTags.Items.WHITEWOOD_LOGS);
         }
     }

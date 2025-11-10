@@ -1,6 +1,7 @@
-// 1.20.1	2025-11-09T15:40:13.6150708	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2025-11-10T17:47:45.8544473	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
-518501e03b235b7b8cbe3121061d6c94c3c9ff7c data/abyssaldecor/tags/blocks/cinnamon_logs.json
+8abba24678cbde4ba1e30a6a7337863f0b751284 data/abyssaldecor/tags/blocks/blackwood_logs.json
+e29bd706552efd74b72d0baf2a3d6b4258655292 data/abyssaldecor/tags/blocks/cinnamon_logs.json
 d46ae7fe4e630b4423f6a21fab66675e21c1b837 data/abyssaldecor/tags/blocks/moldy_plant_valid_blocks.json
 a1ba3fc8893cf83fae91c53fc5616b4277b20672 data/abyssaldecor/tags/blocks/moldy_stalk_plantable_on.json
 7c33f3a0bbae410cf4b84fe2b4f30f34e2948c88 data/abyssaldecor/tags/blocks/mold_immune.json

@@ -25,8 +25,14 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
-        ExtendedBlockFamilies.getAllFamilies().filter(family -> family.shouldGenerateRecipe(FeatureFlags.VANILLA_SET)).forEach(
+        ExtendedBlockFamilies.getAllFamilies().forEach(
                 family -> generateRecipes(consumer, family));
+
+        planksFromLog(consumer, AbyssalDecorBlocks.BLACKWOOD_PLANKS.get(), ModTags.Items.BLACKWOOD_LOGS, 4);
+        woodFromLogs(consumer, AbyssalDecorBlocks.BLACKWOOD_WOOD.get(), AbyssalDecorBlocks.BLACKWOOD_LOG.get());
+
+        planksFromLog(consumer, AbyssalDecorBlocks.CINNAMON_PLANKS.get(), ModTags.Items.CINNAMON_LOGS, 4);
+        woodFromLogs(consumer, AbyssalDecorBlocks.CINNAMON_WOOD.get(), AbyssalDecorBlocks.CINNAMON_LOG.get());
 
         planksFromLog(consumer, AbyssalDecorBlocks.WHITEWOOD_PLANKS.get(), ModTags.Items.WHITEWOOD_LOGS, 4);
         woodFromLogs(consumer, AbyssalDecorBlocks.WHITEWOOD_WOOD.get(), AbyssalDecorBlocks.WHITEWOOD_LOG.get());
@@ -645,25 +651,28 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                     .put(ExtendedBlockFamily.Variant.BUTTON, (p_176733_, p_176734_) -> buttonBuilder(p_176733_, Ingredient.of(p_176734_)))
                     .put(ExtendedBlockFamily.Variant.CHISELED, (p_248037_, p_248038_) -> chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, p_248037_, Ingredient.of(p_248038_)))
                     .put(ExtendedBlockFamily.Variant.CUT, (p_248026_, p_248027_) -> cutBuilder(RecipeCategory.BUILDING_BLOCKS, p_248026_, Ingredient.of(p_248027_)))
-                    .put(ExtendedBlockFamily.Variant.DOOR, (p_176714_, p_176715_) -> doorBuilder(p_176714_, Ingredient.of(p_176715_))).put(ExtendedBlockFamily.Variant.CUSTOM_FENCE, (p_176708_, p_176709_) -> fenceBuilder(p_176708_, Ingredient.of(p_176709_))).put(ExtendedBlockFamily.Variant.FENCE, (p_248031_, p_248032_) -> fenceBuilder(p_248031_, Ingredient.of(p_248032_))).put(ExtendedBlockFamily.Variant.CUSTOM_FENCE_GATE, (p_176698_, p_176699_) -> fenceGateBuilder(p_176698_, Ingredient.of(p_176699_))).put(ExtendedBlockFamily.Variant.FENCE_GATE, (p_248035_, p_248036_) -> fenceGateBuilder(p_248035_, Ingredient.of(p_248036_))).put(ExtendedBlockFamily.Variant.SIGN, (p_176688_, p_176689_) -> signBuilder(p_176688_, Ingredient.of(p_176689_))).put(ExtendedBlockFamily.Variant.SLAB, (p_248017_, p_248018_) -> slabBuilder(RecipeCategory.BUILDING_BLOCKS, p_248017_, Ingredient.of(p_248018_))).put(ExtendedBlockFamily.Variant.STAIRS, (p_176674_, p_176675_) -> stairBuilder(p_176674_, Ingredient.of(p_176675_)))
+                    .put(ExtendedBlockFamily.Variant.DOOR, (p_176714_, p_176715_) -> doorBuilder(p_176714_, Ingredient.of(p_176715_))).put(ExtendedBlockFamily.Variant.CUSTOM_FENCE, (p_176708_, p_176709_) -> fenceBuilder(p_176708_, Ingredient.of(p_176709_))).put(ExtendedBlockFamily.Variant.FENCE, (p_248031_, p_248032_) -> fenceBuilder(p_248031_, Ingredient.of(p_248032_))).put(ExtendedBlockFamily.Variant.CUSTOM_FENCE_GATE, (p_176698_, p_176699_) -> fenceGateBuilder(p_176698_, Ingredient.of(p_176699_))).put(ExtendedBlockFamily.Variant.FENCE_GATE, (p_248035_, p_248036_) -> fenceGateBuilder(p_248035_, Ingredient.of(p_248036_)))
+                    .put(ExtendedBlockFamily.Variant.SIGN, (p_176688_, p_176689_) -> signBuilder(p_176688_, Ingredient.of(p_176689_)))
+                    .put(ExtendedBlockFamily.Variant.SLAB, (p_248017_, p_248018_) -> slabBuilder(RecipeCategory.BUILDING_BLOCKS, p_248017_, Ingredient.of(p_248018_))).put(ExtendedBlockFamily.Variant.STAIRS, (p_176674_, p_176675_) -> stairBuilder(p_176674_, Ingredient.of(p_176675_)))
                     .put(ExtendedBlockFamily.Variant.PRESSURE_PLATE, (p_248039_, p_248040_) -> pressurePlateBuilder(RecipeCategory.REDSTONE, p_248039_, Ingredient.of(p_248040_)))
                     .put(ExtendedBlockFamily.Variant.POLISHED, (p_248019_, p_248020_) -> polishedBuilder(RecipeCategory.BUILDING_BLOCKS, p_248019_, Ingredient.of(p_248020_))).put(ExtendedBlockFamily.Variant.TRAPDOOR, (p_176638_, p_176639_) -> trapdoorBuilder(p_176638_, Ingredient.of(p_176639_))).put(ExtendedBlockFamily.Variant.WALL, (p_248024_, p_248025_) -> wallBuilder(RecipeCategory.DECORATIONS, p_248024_, Ingredient.of(p_248025_))).build();
 
     protected static void generateRecipes(Consumer<FinishedRecipe> finishedRecipeConsumer, ExtendedBlockFamily family) {
-        family.getVariants().forEach((p_176529_, p_176530_) -> {
-            BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = BUILDERS.get(p_176529_);
-            ItemLike itemlike = getBaseBlock(family, p_176529_);
-            if (bifunction != null) {
-                RecipeBuilder recipebuilder = bifunction.apply(p_176530_, itemlike);
-                family.getRecipeGroupPrefix().ifPresent((p_176601_) -> recipebuilder.group(p_176601_ + (p_176529_ == ExtendedBlockFamily.Variant.CUT ? "" : "_" + p_176529_.getName())));
-                recipebuilder.unlockedBy(family.getRecipeUnlockedBy().orElseGet(() -> getHasName(itemlike)), has(itemlike));
-                recipebuilder.save(finishedRecipeConsumer);
-            }
+        family.getVariants().forEach((variant, block) -> {
+            if (!family.excludeRecipe.contains(variant)) {
+                BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = BUILDERS.get(variant);
+                ItemLike itemlike = getBaseBlock(family, variant);
+                if (bifunction != null) {
+                    RecipeBuilder recipebuilder = bifunction.apply(block, itemlike);
+                    family.getRecipeGroupPrefix().ifPresent((p_176601_) -> recipebuilder.group(p_176601_ + (variant == ExtendedBlockFamily.Variant.CUT ? "" : "_" + variant.getName())));
+                    recipebuilder.unlockedBy(family.getRecipeUnlockedBy().orElseGet(() -> getHasName(itemlike)), has(itemlike));
+                    recipebuilder.save(finishedRecipeConsumer);
+                }
 
-            if (p_176529_ == ExtendedBlockFamily.Variant.CRACKED) {
-                smeltingResultFromBase(finishedRecipeConsumer, p_176530_, itemlike);
+                if (variant == ExtendedBlockFamily.Variant.CRACKED) {
+                    smeltingResultFromBase(finishedRecipeConsumer, block, itemlike);
+                }
             }
-
         });
     }
 
