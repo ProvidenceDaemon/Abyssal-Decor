@@ -50,13 +50,16 @@ public class ExtendedBlockFamilies {
             .recipeUnlockedBy(RECIPE_UNLOCKED_BY_HAS_PLANKS).getFamily();
 
     public static final ExtendedBlockFamily WHITE_PEARL = familyBuilder(AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get())
-            .door(AbyssalDecorBlocks.WHITE_PEARL_DOOR.get())
-            .trapdoor(AbyssalDecorBlocks.WHITE_PEARL_TRAPDOOR.get())
             .stairs(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get())
             .slab(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get())
             .chiseled(AbyssalDecorBlocks.CHISELED_WHITE_PEARL.get())
             .wall(AbyssalDecorBlocks.WHITE_PEARL_WALL.get())
             .recipeUnlockedBy("has_white_pearl").getFamily();
+
+    public static final ExtendedBlockFamily WHITE_PEARL_BARS = familyBuilder(AbyssalDecorBlocks.WHITE_PEARL_BARS.get())
+            .door(AbyssalDecorBlocks.WHITE_PEARL_DOOR.get())
+            .trapdoor(AbyssalDecorBlocks.WHITE_PEARL_TRAPDOOR.get())
+            .recipeUnlockedBy("has_white_pearl_bars").getFamily();
 
     public static final ExtendedBlockFamily WHITE_PEARL_BRICKS = familyBuilder(AbyssalDecorBlocks.WHITE_PEARL_BRICKS.get())
             .stairs(AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get())

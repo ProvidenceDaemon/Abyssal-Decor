@@ -3,20 +3,18 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "abyssaldecor:whitewood_planks"
+      "item": "minecraft:iron_nugget"
     },
     "b": {
-      "item": "abyssaldecor:white_pearl"
+      "item": "abyssaldecor:lightbulb"
     }
   },
   "pattern": [
     "aaa",
-    "bbb",
-    "aaa"
+    "aba"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:whitewood_pearly_glass"
+    "item": "abyssaldecor:iron_lamp"
   },
   "show_notification": true
 }

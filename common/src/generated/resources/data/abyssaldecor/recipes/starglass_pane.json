@@ -1,9 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "misc",
+  "group": "stained_glass_pane",
   "key": {
     "#": {
-      "item": "abyssaldecor:white_pearl_bars"
+      "item": "abyssaldecor:starglass"
     }
   },
   "pattern": [
@@ -11,8 +12,8 @@
     "###"
   ],
   "result": {
-    "count": 2,
-    "item": "abyssaldecor:white_pearl_trapdoor"
+    "count": 16,
+    "item": "abyssaldecor:starglass_pane"
   },
   "show_notification": true
 }

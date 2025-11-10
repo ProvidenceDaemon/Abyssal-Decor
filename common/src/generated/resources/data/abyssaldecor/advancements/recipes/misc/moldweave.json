@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "abyssaldecor:white_pearl_door"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_white_pearl_bars": {
+    "has_moldy_hanger": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:white_pearl_bars"
+              "abyssaldecor:moldy_hanger"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssaldecor:moldweave"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_white_pearl_bars",
+      "has_moldy_hanger",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:white_pearl_door"
+      "abyssaldecor:moldweave"
     ]
   },
   "sends_telemetry_event": false

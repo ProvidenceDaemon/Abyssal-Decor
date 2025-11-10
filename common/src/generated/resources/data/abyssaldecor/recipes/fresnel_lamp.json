@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:redstone"
+    },
+    "b": {
+      "item": "abyssaldecor:fresnel_pane"
+    },
+    "c": {
+      "item": "abyssaldecor:fresnel_block"
+    },
+    "d": {
+      "item": "abyssaldecor:lightbulb"
+    }
+  },
+  "pattern": [
+    " a ",
+    "bcb",
+    " d "
+  ],
+  "result": {
+    "item": "abyssaldecor:fresnel_lamp"
+  },
+  "show_notification": true
+}

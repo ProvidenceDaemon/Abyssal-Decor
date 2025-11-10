@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:clam"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "abyssaldecor:shell"
+  }
+}

@@ -56,7 +56,15 @@ public class Datagen {
             ExtendedBlockFamilies.getAllFamilies().forEach(family -> {
                 Block baseBlock = family.getBaseBlock();
                 String name = name(baseBlock.asItem());
+
+                if (family == ExtendedBlockFamilies.WHITE_PEARL_BARS) {
+                    return;
+                }
+                
                 simpleBlockItem(family.getBaseBlock().asItem());
+
+
+
                 //     ResourceLocation location = Registry.BLOCK.getKey(family.getBaseBlock());
                 //     signBlock((StandingSignBlock) family.get(BlockFamily.Variant.SIGN),(WallSignBlock) family.get(BlockFamily.Variant.WALL_SIGN),
                 //             modLoc("block/"+location.getPath()));
@@ -209,7 +217,13 @@ public class Datagen {
         protected void registerStatesAndModels() {
 
             ExtendedBlockFamilies.getAllFamilies().forEach(family -> {
+
                 Block baseBlock = family.getBaseBlock();
+
+                if (family == ExtendedBlockFamilies.WHITE_PEARL_BARS) {
+                    return;
+                }
+
                 simpleBlock(baseBlock);
                 ResourceLocation location = BuiltInRegistries.BLOCK.getKey(baseBlock);
                 ResourceLocation baseTexture = modLoc("block/" + location.getPath());

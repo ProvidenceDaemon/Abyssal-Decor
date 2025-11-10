@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "abyssaldecor:amaranth_seeds"
+  },
+  "result": "abyssaldecor:toasted_amaranth_seeds"
+}

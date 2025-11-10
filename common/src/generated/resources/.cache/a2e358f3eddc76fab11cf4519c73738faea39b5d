@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-18T22:13:53.6837469	Item Models: abyssaldecor
+// 1.20.1	2025-11-09T23:38:09.7130931	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -130,7 +130,5 @@ c60ede48d6b2b422657d8b017b7be0bad27a41e0 assets/abyssaldecor/models/item/white_p
 22110de89e3520c8bf89e91e1f6efb5775d2bf24 assets/abyssaldecor/models/item/white_pearl_bricks.json
 60e7f44e6ab3c4c5d3dd8d2e2dd1569910c7e077 assets/abyssaldecor/models/item/white_pearl_brick_slab.json
 51c601bc64f4e955bb206b778210a81bb15d1d7d assets/abyssaldecor/models/item/white_pearl_brick_stairs.json
-cb1a7a9e13e578e06d93a0c7f289396978a23009 assets/abyssaldecor/models/item/white_pearl_door.json
 85857f60e818ea2a5f9bc5a27e7aaed03e476cdd assets/abyssaldecor/models/item/white_pearl_slab.json
 969ec10a5ef8377ed984158c656296998fe64bf3 assets/abyssaldecor/models/item/white_pearl_stairs.json
-69e01c99bb58737d4d17d3b63151339c77da2991 assets/abyssaldecor/models/item/white_pearl_trapdoor.json

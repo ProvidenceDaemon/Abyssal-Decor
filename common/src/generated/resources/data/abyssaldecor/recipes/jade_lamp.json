@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "abyssaldecor:polished_jade"
+    },
+    "b": {
+      "item": "abyssaldecor:lightbulb"
+    },
+    "c": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "aaa",
+    " b ",
+    "ccc"
+  ],
+  "result": {
+    "item": "abyssaldecor:jade_lamp"
+  },
+  "show_notification": true
+}

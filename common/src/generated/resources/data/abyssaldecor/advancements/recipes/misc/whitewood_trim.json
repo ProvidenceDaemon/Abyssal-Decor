@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:white_pearl_door"
+        "recipe": "abyssaldecor:whitewood_trim"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_pearl_bars": {
+    "has_whitewood_planks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:white_pearl_bars"
+              "abyssaldecor:whitewood_planks"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_white_pearl_bars",
+      "has_whitewood_planks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:white_pearl_door"
+      "abyssaldecor:whitewood_trim"
     ]
   },
   "sends_telemetry_event": false

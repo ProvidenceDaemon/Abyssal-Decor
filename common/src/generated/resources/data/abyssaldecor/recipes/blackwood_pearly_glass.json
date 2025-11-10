@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "abyssaldecor:whitewood_planks"
+      "item": "abyssaldecor:blackwood_planks"
     },
     "b": {
       "item": "abyssaldecor:white_pearl"
@@ -16,7 +16,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "abyssaldecor:whitewood_pearly_glass"
+    "item": "abyssaldecor:blackwood_pearly_glass"
   },
   "show_notification": true
 }

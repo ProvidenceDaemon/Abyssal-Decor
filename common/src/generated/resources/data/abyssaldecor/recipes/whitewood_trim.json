@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "abyssaldecor:whitewood_planks"
+      "item": "minecraft:stick"
     },
     "b": {
-      "item": "abyssaldecor:white_pearl"
+      "item": "abyssaldecor:whitewood_planks"
     }
   },
   "pattern": [
@@ -16,7 +16,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "abyssaldecor:whitewood_pearly_glass"
+    "item": "abyssaldecor:whitewood_trim"
   },
   "show_notification": true
 }

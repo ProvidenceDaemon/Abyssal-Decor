@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "building",
   "key": {
     "#": {
-      "item": "abyssaldecor:white_pearl_bars"
+      "item": "abyssaldecor:white_pearl"
     }
   },
   "pattern": [
     "##",
-    "##",
     "##"
   ],
   "result": {
-    "count": 3,
-    "item": "abyssaldecor:white_pearl_door"
+    "item": "abyssaldecor:white_pearl_block"
   },
   "show_notification": true
 }

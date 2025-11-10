@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_pearl": {
+    "has_white_pearl_bars": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:white_pearl_block"
+              "abyssaldecor:white_pearl_bars"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_white_pearl",
+      "has_white_pearl_bars",
       "has_the_recipe"
     ]
   ],
