@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:gold_nugget"
+    },
+    "b": {
+      "item": "minecraft:white_stained_glass_pane"
+    },
+    "c": {
+      "item": "abyssaldecor:lightbulb"
+    }
+  },
+  "pattern": [
+    "a b",
+    "a c",
+    "aab"
+  ],
+  "result": {
+    "count": 4,
+    "item": "abyssaldecor:flower_lamp"
+  },
+  "show_notification": true
+}

@@ -2,18 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "abyssaldecor:blood_coral_bars"
+    "#": {
+      "item": "abyssaldecor:blood_coral_pillar"
     }
   },
   "pattern": [
-    "a a",
-    "aa ",
-    "a  "
+    "###",
+    "###"
   ],
   "result": {
-    "count": 4,
-    "item": "abyssaldecor:blood_coral_sconce"
+    "count": 16,
+    "item": "abyssaldecor:blood_coral_bars"
   },
   "show_notification": true
 }

@@ -57,12 +57,9 @@ public class Datagen {
                 Block baseBlock = family.getBaseBlock();
                 String name = name(baseBlock.asItem());
 
-                if (family == ExtendedBlockFamilies.WHITE_PEARL_BARS) {
-                    return;
+                if (!(baseBlock instanceof IronBarsBlock)) {
+                    simpleBlockItem(family.getBaseBlock().asItem());
                 }
-
-                simpleBlockItem(family.getBaseBlock().asItem());
-
 
 
                 //     ResourceLocation location = Registry.BLOCK.getKey(family.getBaseBlock());
@@ -220,11 +217,10 @@ public class Datagen {
 
                 Block baseBlock = family.getBaseBlock();
 
-                if (family == ExtendedBlockFamilies.WHITE_PEARL_BARS) {
-                    return;
+                //special cases like pearl and blood coral
+                if (!(baseBlock instanceof IronBarsBlock)) {
+                    simpleBlock(baseBlock);
                 }
-
-                simpleBlock(baseBlock);
                 ResourceLocation location = BuiltInRegistries.BLOCK.getKey(baseBlock);
                 ResourceLocation baseTexture = modLoc("block/" + location.getPath());
                 //todo signBlock((StandingSignBlock) family.get(Variant.SIGN),(WallSignBlock) family.get(Variant.WALL_SIGN), baseTexture);

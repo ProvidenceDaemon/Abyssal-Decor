@@ -2,18 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "abyssaldecor:blood_coral_bars"
+    "#": {
+      "item": "minecraft:prismarine_crystals"
     }
   },
   "pattern": [
-    "a a",
-    "aa ",
-    "a  "
+    "###",
+    "###",
+    "###"
   ],
   "result": {
-    "count": 4,
-    "item": "abyssaldecor:blood_coral_sconce"
+    "item": "abyssaldecor:prismarine_crystal_block"
   },
   "show_notification": true
 }

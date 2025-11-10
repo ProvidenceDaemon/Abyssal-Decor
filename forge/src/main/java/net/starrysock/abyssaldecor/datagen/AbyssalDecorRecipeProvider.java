@@ -161,6 +161,13 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AbyssalDecorBlocks.WHITE_PEARL.get()), has(AbyssalDecorBlocks.WHITE_PEARL.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(), 16)
+                .define('#', AbyssalDecorBlocks.BLOOD_CORAL_PILLAR.get())
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR.get()), has(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR.get()))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get(), 4)
                 .define('#', AbyssalDecorItems.ELDER_WISTERIA.get())
                 .pattern("##")
@@ -346,7 +353,7 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AbyssalDecorBlocks.WHITEWOOD_FENCE.get())
                         , has(AbyssalDecorBlocks.WHITEWOOD_FENCE.get())).save(consumer);
 
-        AbyssalDecorItems.WALLPAPERS.map().forEach((key, value) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, value.get())
+        AbyssalDecorItems.WALLPAPERS.map().forEach((key, value) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, value.get(),4)
                 .requires(DyeItem.byColor(key))
                 .requires(Items.PAPER)
                 .requires(ItemTags.PLANKS)
@@ -479,6 +486,15 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AbyssalDecorItems.LIGHTBULB.get()),has(AbyssalDecorItems.LIGHTBULB.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.PEARLY_GLASS.get(),6)
+                .pattern("aaa")
+                .pattern("bbb")
+                .pattern("aaa")
+                .define('a',Blocks.SPRUCE_PLANKS)
+                .define('b',AbyssalDecorItems.WHITE_PEARL.get())
+                .unlockedBy(getHasName(AbyssalDecorItems.WHITE_PEARL.get()),has(AbyssalDecorItems.WHITE_PEARL.get()))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.WHITEWOOD_PEARLY_GLASS.get(),6)
                 .pattern("aaa")
                 .pattern("bbb")
@@ -525,33 +541,31 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AbyssalDecorItems.LIGHTBULB.get()),has(AbyssalDecorItems.LIGHTBULB.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.BLOOD_CORAL_SCONCE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.BLOOD_CORAL_SCONCE.get(),4)
                 .pattern("a a")
                 .pattern("aa ")
                 .pattern("a  ")
                 .define('a',AbyssalDecorItems.BLOOD_CORAL_BARS.get())
                 .unlockedBy(getHasName(AbyssalDecorItems.BLOOD_CORAL_BARS.get()),has(AbyssalDecorItems.BLOOD_CORAL_BARS.get()))
                 .save(consumer);
-        ;
 
-        //{
-        //  "type": "minecraft:crafting_shaped",
-        //  "category": "misc",
-        //  "pattern": [
-        //    "a a",
-        //    "aa ",
-        //    "a  "
-        //  ],
-        //  "key": {
-        //    "a": {
-        //      "item": "abyssaldecor:blood_coral_bars_solo"
-        //    }
-        //  },
-        //  "result": {
-        //    "item": "abyssaldecor:blood_coral_sconce",
-        //    "count": 4
-        //  }
-        //}
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.WHITEWOOD_PLANTER.get(),6)
+                .pattern("aba")
+                .pattern("aaa")
+                .define('a',AbyssalDecorItems.WHITEWOOD_PLANKS.get())
+                .define('b',Blocks.DIRT)
+                .unlockedBy(getHasName(AbyssalDecorItems.WHITEWOOD_PLANKS.get()),has(AbyssalDecorItems.WHITEWOOD_PLANKS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.FLOWER_LAMP.get(),4)
+                .pattern("a b")
+                .pattern("a c")
+                .pattern("aab")
+                .define('a',Items.GOLD_NUGGET)
+                .define('b',Blocks.WHITE_STAINED_GLASS_PANE)
+                .define('c',AbyssalDecorItems.LIGHTBULB.get())
+                .unlockedBy(getHasName(AbyssalDecorItems.LIGHTBULB.get()),has(AbyssalDecorItems.LIGHTBULB.get()))
+                .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AbyssalDecorItems.VERDANT_PEARLY_GLASS.get())
                 .requires(AbyssalDecorItems.PEARLY_GLASS.get())
@@ -587,6 +601,12 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AbyssalDecorItems.CLAM.get()), has(AbyssalDecorItems.CLAM.get()))
                 .save(consumer);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AbyssalDecorItems.GILDED_BLACK_PEARL.get())
+                .requires(AbyssalDecorItems.BLACK_PEARL_BLOCK.get())
+                .requires(Items.GOLD_NUGGET)
+                .unlockedBy(getHasName(AbyssalDecorItems.BLACK_PEARL_BLOCK.get()), has(AbyssalDecorItems.BLACK_PEARL_BLOCK.get()))
+                .save(consumer);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AbyssalDecorItems.TRASH_BAG.get())
                 .requires(ItemTags.DIRT)
                 .requires(Items.STICK)
@@ -607,6 +627,9 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
         carpet(consumer, AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), AbyssalDecorBlocks.MOLDWEAVE.get());
 
         slab(consumer,RecipeCategory.MISC,AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),AbyssalDecorBlocks.RIVETED_SEABRASS.get());
+
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.PRISMARINE_CRYSTALS, RecipeCategory.MISC, AbyssalDecorItems.PRISMARINE_CRYSTAL_BLOCK.get());
+
     }
 
     protected void smallBars(Consumer<FinishedRecipe> consumer, ItemLike result, ItemLike ingredient) {
