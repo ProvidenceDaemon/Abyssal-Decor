@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_coral_bars": {
+    "has_lightbulb": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:blood_coral_bars"
+              "abyssaldecor:lightbulb"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:blood_coral_door"
+        "recipe": "abyssaldecor:wall_bulb_lamp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blood_coral_bars",
+      "has_lightbulb",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:blood_coral_door"
+      "abyssaldecor:wall_bulb_lamp"
     ]
   },
   "sends_telemetry_event": false

@@ -1,11 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    "aba",
-    "aba",
-    "a a"
-  ],
   "key": {
     "a": {
       "item": "minecraft:stick"
@@ -14,8 +9,14 @@
       "item": "minecraft:iron_nugget"
     }
   },
+  "pattern": [
+    "aba",
+    "aba",
+    "a a"
+  ],
   "result": {
-    "item": "abyssaldecor:barb_barrier_base",
-    "count": 6
-  }
+    "count": 6,
+    "item": "abyssaldecor:barbed_wire_barrier"
+  },
+  "show_notification": true
 }

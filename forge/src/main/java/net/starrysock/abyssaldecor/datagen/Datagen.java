@@ -60,7 +60,7 @@ public class Datagen {
                 if (family == ExtendedBlockFamilies.WHITE_PEARL_BARS) {
                     return;
                 }
-                
+
                 simpleBlockItem(family.getBaseBlock().asItem());
 
 

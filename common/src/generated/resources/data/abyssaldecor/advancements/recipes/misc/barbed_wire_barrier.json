@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_coral_bars": {
+    "has_iron_nugget": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:blood_coral_bars"
+              "minecraft:iron_nugget"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:blood_coral_door"
+        "recipe": "abyssaldecor:barbed_wire_barrier"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blood_coral_bars",
+      "has_iron_nugget",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:blood_coral_door"
+      "abyssaldecor:barbed_wire_barrier"
     ]
   },
   "sends_telemetry_event": false

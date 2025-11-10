@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    "a  ",
-    "a b",
-    "aaa"
-  ],
   "key": {
     "a": {
       "item": "minecraft:iron_nugget"
     },
     "b": {
-      "item": "abyssaldecor:bulb_lamp_floor"
+      "item": "abyssaldecor:lightbulb"
     }
   },
+  "pattern": [
+    "a  ",
+    "a b",
+    "aaa"
+  ],
   "result": {
-    "item": "abyssaldecor:wall_bulb_lamp",
-    "count": 2
-  }
+    "item": "abyssaldecor:wall_bulb_lamp"
+  },
+  "show_notification": true
 }

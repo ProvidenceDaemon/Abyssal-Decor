@@ -1,11 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    " a ",
-    " b ",
-    "b b"
-  ],
   "key": {
     "a": {
       "item": "minecraft:spyglass"
@@ -14,8 +9,13 @@
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    " a ",
+    " b ",
+    "b b"
+  ],
   "result": {
-    "item": "abyssaldecor:telescope_bottom",
-    "count": 1
-  }
+    "item": "abyssaldecor:telescope"
+  },
+  "show_notification": true
 }

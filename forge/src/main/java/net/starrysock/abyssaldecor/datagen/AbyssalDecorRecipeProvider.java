@@ -36,8 +36,11 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
         stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.FROSTED_GLASS_PANE.get(), AbyssalDecorBlocks.FROSTED_GLASS.get());
 
         stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.PRISMARINE_CRYSTAL_PANE.get(), AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get());
+        stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.AZURE_PEARLY_GLASS_PANE.get(), AbyssalDecorBlocks.AZURE_PEARLY_GLASS.get());
         stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.SUNNY_PEARLY_GLASS_PANE.get(), AbyssalDecorBlocks.SUNNY_PEARLY_GLASS.get());
         stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.VERDANT_PEARLY_GLASS_PANE.get(), AbyssalDecorBlocks.VERDANT_PEARLY_GLASS.get());
+        stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.PEARLY_GLASS_PANE.get(), AbyssalDecorBlocks.PEARLY_GLASS.get());
+        stainedGlassPaneFromStainedGlass(consumer, AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS_PANE.get(), AbyssalDecorBlocks.WHITEWOOD_PEARLY_GLASS.get());
 
         smeltingResultFromBase(consumer, AbyssalDecorBlocks.CRYSTALLIZED_GLOWSTONE.get(), Blocks.GLOWSTONE);
         smeltingResultFromBase(consumer, AbyssalDecorItems.POPPED_SPIDERCORN.get(), AbyssalDecorItems.SPIDERCORN.get());
@@ -65,6 +68,8 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
         smeltingResultFromBase(consumer, AbyssalDecorBlocks.CRACKED_PEARL_TILES.get(), AbyssalDecorBlocks.WHITE_PEARL_TILES.get());
         smeltingResultFromBase(consumer, AbyssalDecorBlocks.SMOOTH_BLACK_PEARL_BLOCK.get(), AbyssalDecorBlocks.BLACK_PEARL_BLOCK.get());
         smeltingResultFromBase(consumer, AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_BLOCK.get(), AbyssalDecorBlocks.WHITE_PEARL_BLOCK.get());
+
+        smeltingResultFromBase(consumer, AbyssalDecorItems.COOKED_MUCKROOT.get(), AbyssalDecorItems.MUCKROOT.get());
 
         smeltingResultFromBase(consumer, AbyssalDecorBlocks.ABYSSAL_LANTERN.get(), AbyssalDecorBlocks.SEABRASS_LAMP.get());
 
@@ -120,6 +125,15 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .define('a', Blocks.POLISHED_ANDESITE)
                 .define('b', Items.ANDESITE_WALL)
                 .define('c', Items.POLISHED_ANDESITE_SLAB)
+                .unlockedBy(getHasName(Blocks.POLISHED_ANDESITE), has(Blocks.ANDESITE_SLAB))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorBlocks.GARGOYLE.get())
+                .pattern("aa ")
+                .pattern("bbc")
+                .define('a', Blocks.POLISHED_ANDESITE_SLAB)
+                .define('b', Items.STONE_BRICKS)
+                .define('c', Items.CHISELED_STONE_BRICKS)
                 .unlockedBy(getHasName(Blocks.POLISHED_ANDESITE), has(Blocks.ANDESITE_SLAB))
                 .save(consumer);
 
@@ -195,6 +209,15 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.BARBED_WIRE_BARRIER.get(), 6)
+                .pattern("aba")
+                .pattern("aba")
+                .pattern("a a")
+                .define('a', Items.STICK)
+                .define('b', Items.IRON_NUGGET)
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.IRON_BALL.get(), 5)
                 .pattern(" a ")
                 .pattern("aaa")
@@ -247,6 +270,50 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .define('c', AbyssalDecorItems.LIGHTBULB.get())
                 .unlockedBy(getHasName(AbyssalDecorItems.LIGHTBULB.get()), has(AbyssalDecorItems.LIGHTBULB.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.RAINBOW_LAMP.get(),4)
+                .pattern(" a ")
+                .pattern("aba")
+                .pattern(" c ")
+                .define('a', Items.GLASS_PANE)
+                .define('b', Items.DIAMOND)
+                .define('c', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.TELESCOPE.get())
+                .pattern(" a ")
+                .pattern(" b ")
+                .pattern("b b")
+                .define('a', Items.SPYGLASS)
+                .define('b', Items.STICK)
+                .unlockedBy(getHasName(Items.SPYGLASS), has(Items.SPYGLASS))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.WALL_BULB_LAMP.get())
+                .pattern("a  ")
+                .pattern("a b")
+                .pattern("aaa")
+                .define('a', Items.IRON_NUGGET)
+                .define('b', AbyssalDecorItems.LIGHTBULB.get())
+                .unlockedBy(getHasName(AbyssalDecorItems.LIGHTBULB.get()), has(AbyssalDecorItems.LIGHTBULB.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.HANGING_WEB.get(),4)
+                .pattern("a")
+                .pattern("a")
+                .define('a', Items.COBWEB)
+                .unlockedBy(getHasName(Items.COBWEB), has(Items.COBWEB))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AbyssalDecorItems.DANGLING_WEB.get(),6)
+                .pattern("a")
+                .pattern("a")
+                .pattern("a")
+                .define('a', Items.COBWEB)
+                .unlockedBy(getHasName(Items.COBWEB), has(Items.COBWEB))
+                .save(consumer);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AbyssalDecorBlocks.WHITEWOOD_LOG.get(), 8)
                 .requires(Ingredient.of(ItemTags.LOGS), 8)
@@ -458,6 +525,34 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AbyssalDecorItems.LIGHTBULB.get()),has(AbyssalDecorItems.LIGHTBULB.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,AbyssalDecorItems.BLOOD_CORAL_SCONCE.get())
+                .pattern("a a")
+                .pattern("aa ")
+                .pattern("a  ")
+                .define('a',AbyssalDecorItems.BLOOD_CORAL_BARS.get())
+                .unlockedBy(getHasName(AbyssalDecorItems.BLOOD_CORAL_BARS.get()),has(AbyssalDecorItems.BLOOD_CORAL_BARS.get()))
+                .save(consumer);
+        ;
+
+        //{
+        //  "type": "minecraft:crafting_shaped",
+        //  "category": "misc",
+        //  "pattern": [
+        //    "a a",
+        //    "aa ",
+        //    "a  "
+        //  ],
+        //  "key": {
+        //    "a": {
+        //      "item": "abyssaldecor:blood_coral_bars_solo"
+        //    }
+        //  },
+        //  "result": {
+        //    "item": "abyssaldecor:blood_coral_sconce",
+        //    "count": 4
+        //  }
+        //}
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AbyssalDecorItems.VERDANT_PEARLY_GLASS.get())
                 .requires(AbyssalDecorItems.PEARLY_GLASS.get())
                 .requires(Items.LIME_DYE)
@@ -510,6 +605,8 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
         smallBars(consumer, AbyssalDecorItems.SMALL_STONE_BARS.get(), AbyssalDecorItems.STONE_BARS.get());
 
         carpet(consumer, AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), AbyssalDecorBlocks.MOLDWEAVE.get());
+
+        slab(consumer,RecipeCategory.MISC,AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),AbyssalDecorBlocks.RIVETED_SEABRASS.get());
     }
 
     protected void smallBars(Consumer<FinishedRecipe> consumer, ItemLike result, ItemLike ingredient) {

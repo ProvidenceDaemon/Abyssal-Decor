@@ -683,6 +683,9 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> FROSTED_GLASS = registerBlockItem(AbyssalDecorBlocks.FROSTED_GLASS);
     public static final RegistrySupplier<BlockItem> FROSTED_GLASS_PANE = registerBlockItem(AbyssalDecorBlocks.FROSTED_GLASS_PANE);
 
+    public static final RegistrySupplier<Item> LE_FISHE_AU_CHOCOLAT = AbyssalDecor.ITEMS.register("le_fishe_au_chocolat",
+            () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(6)
+                    .saturationMod(1.4F).alwaysEat().meat().build())));
 
     public static void register() {
         AbyssalDecor.ITEMS.register();

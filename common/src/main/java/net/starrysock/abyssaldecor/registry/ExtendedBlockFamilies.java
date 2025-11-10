@@ -98,11 +98,14 @@ public class ExtendedBlockFamilies {
             .wall(AbyssalDecorBlocks.IRON_PANEL_WALL.get())
             .recipeUnlockedBy("has_iron_panel").getFamily();
 
-    public static final ExtendedBlockFamily POLISHED_BLOOD_CORAL = familyBuilder(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL.get())
+    public static final ExtendedBlockFamily BLOOD_CORAL_BARS = familyBuilder(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get())
             .door(AbyssalDecorBlocks.BLOOD_CORAL_DOOR.get())
+            .trapdoor(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR.get())
+            .getFamily();
+
+    public static final ExtendedBlockFamily POLISHED_BLOOD_CORAL = familyBuilder(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL.get())
             .slab(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB.get())
             .stairs(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_STAIRS.get())
-            .trapdoor(AbyssalDecorBlocks.BLOOD_CORAL_TRAPDOOR.get())
             .wall(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_WALL.get())
             .getFamily();
 
@@ -160,12 +163,12 @@ public class ExtendedBlockFamilies {
 
 
     private static ExtendedBlockFamily.Builder familyBuilder(Block baseBlock) {
-        ExtendedBlockFamily.Builder blockfamily$builder = new ExtendedBlockFamily.Builder(baseBlock);
-        ExtendedBlockFamily blockfamily = MAP.put(baseBlock, blockfamily$builder.getFamily());
+        ExtendedBlockFamily.Builder builder = new ExtendedBlockFamily.Builder(baseBlock);
+        ExtendedBlockFamily blockfamily = MAP.put(baseBlock, builder.getFamily());
         if (blockfamily != null) {
             throw new IllegalStateException("Duplicate family definition for " + BuiltInRegistries.BLOCK.getKey(baseBlock));
         } else {
-            return blockfamily$builder;
+            return builder;
         }
     }
 

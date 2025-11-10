@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:blood_coral_door"
+        "recipe": "abyssaldecor:blood_coral_sconce"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:blood_coral_door"
+      "abyssaldecor:blood_coral_sconce"
     ]
   },
   "sends_telemetry_event": false

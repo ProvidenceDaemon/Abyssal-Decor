@@ -1,11 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    " a ",
-    "aba",
-    " c "
-  ],
   "key": {
     "a": {
       "item": "minecraft:glass_pane"
@@ -17,8 +12,14 @@
       "item": "minecraft:iron_ingot"
     }
   },
+  "pattern": [
+    " a ",
+    "aba",
+    " c "
+  ],
   "result": {
-    "item": "abyssaldecor:rainbow_1",
-    "count": 4
-  }
+    "count": 4,
+    "item": "abyssaldecor:rainbow_lamp"
+  },
+  "show_notification": true
 }

@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    "a",
-    "a",
-    "a"
-  ],
   "key": {
     "a": {
       "item": "minecraft:cobweb"
     }
   },
+  "pattern": [
+    "a",
+    "a"
+  ],
   "result": {
-    "item": "abyssaldecor:dangling_web_item",
-    "count": 6
-  }
+    "count": 4,
+    "item": "abyssaldecor:hanging_web"
+  },
+  "show_notification": true
 }

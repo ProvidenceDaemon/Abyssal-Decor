@@ -1,19 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "misc",
   "key": {
-    "#": {
+    "a": {
       "item": "abyssaldecor:blood_coral_bars"
     }
   },
   "pattern": [
-    "##",
-    "##",
-    "##"
+    "a a",
+    "aa ",
+    "a  "
   ],
   "result": {
-    "count": 3,
-    "item": "abyssaldecor:blood_coral_door"
+    "item": "abyssaldecor:blood_coral_sconce"
   },
   "show_notification": true
 }

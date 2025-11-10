@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_coral_bars": {
+    "has_glass": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:blood_coral_bars"
+              "abyssaldecor:pearly_glass"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:blood_coral_door"
+        "recipe": "abyssaldecor:pearly_glass_pane"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blood_coral_bars",
+      "has_glass",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:blood_coral_door"
+      "abyssaldecor:pearly_glass_pane"
     ]
   },
   "sends_telemetry_event": false
