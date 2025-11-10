@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:polished_andesite"
+    },
+    "b": {
+      "item": "minecraft:andesite_wall"
+    },
+    "c": {
+      "item": "minecraft:polished_andesite_slab"
+    }
+  },
+  "pattern": [
+    " a ",
+    " b ",
+    "ccc"
+  ],
+  "result": {
+    "item": "abyssaldecor:lion_statue"
+  },
+  "show_notification": true
+}

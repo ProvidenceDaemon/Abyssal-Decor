@@ -3,20 +3,15 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
-    },
-    "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "abyssaldecor:deepbronze_bars"
     }
   },
   "pattern": [
-    "aba",
-    "a a",
-    "a a"
+    "aaa"
   ],
   "result": {
     "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:small_deepbronze_bars"
   },
   "show_notification": true
 }

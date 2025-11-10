@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_wool": {
+    "has_elder_wisteria": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:black_wool"
+              "abyssaldecor:elder_wisteria"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:velvet_barrier"
+        "recipe": "abyssaldecor:elder_wisteria_leaves"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_black_wool",
+      "has_elder_wisteria",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:velvet_barrier"
+      "abyssaldecor:elder_wisteria_leaves"
     ]
   },
   "sends_telemetry_event": false

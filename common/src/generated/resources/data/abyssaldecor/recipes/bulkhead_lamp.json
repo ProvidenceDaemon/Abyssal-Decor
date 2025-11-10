@@ -3,20 +3,19 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:iron_nugget"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "abyssaldecor:lightbulb"
     }
   },
   "pattern": [
-    "aba",
-    "a a",
-    "a a"
+    "a",
+    "b",
+    "a"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:bulkhead_lamp"
   },
   "show_notification": true
 }

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:glass_pane"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "c": {
+      "tag": "minecraft:coals"
+    },
+    "d": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "aba",
+    "aca",
+    "ddd"
+  ],
+  "result": {
+    "item": "abyssaldecor:quartz_lamp"
+  },
+  "show_notification": true
+}

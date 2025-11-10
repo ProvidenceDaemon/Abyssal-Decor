@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:iron_nugget"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "minecraft:black_wool"
     }
   },
   "pattern": [
@@ -16,7 +16,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:iron_barrier"
   },
   "show_notification": true
 }

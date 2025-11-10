@@ -3,15 +3,17 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "abyssaldecor:lightbulb"
+      "item": "abyssaldecor:white_pearl_block"
     }
   },
   "pattern": [
-    "aaa"
+    "a",
+    "a",
+    "a"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:tube_lamp"
+    "count": 3,
+    "item": "abyssaldecor:white_pearl_pillar"
   },
   "show_notification": true
 }

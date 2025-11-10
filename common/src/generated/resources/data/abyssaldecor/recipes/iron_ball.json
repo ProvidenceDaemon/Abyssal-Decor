@@ -3,15 +3,17 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "abyssaldecor:lightbulb"
+      "item": "minecraft:iron_ingot"
     }
   },
   "pattern": [
-    "aaa"
+    " a ",
+    "aaa",
+    " a "
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:tube_lamp"
+    "count": 5,
+    "item": "abyssaldecor:iron_ball"
   },
   "show_notification": true
 }

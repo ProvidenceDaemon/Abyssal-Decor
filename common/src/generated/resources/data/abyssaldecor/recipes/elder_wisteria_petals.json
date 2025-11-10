@@ -2,16 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "abyssaldecor:lightbulb"
+    "#": {
+      "item": "abyssaldecor:elder_wisteria"
     }
   },
   "pattern": [
-    "aaa"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:tube_lamp"
+    "count": 4,
+    "item": "abyssaldecor:elder_wisteria_petals"
   },
   "show_notification": true
 }

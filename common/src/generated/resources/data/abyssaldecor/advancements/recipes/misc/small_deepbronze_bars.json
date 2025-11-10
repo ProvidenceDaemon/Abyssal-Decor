@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_wool": {
+    "has_deepbronze_bars": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:black_wool"
+              "abyssaldecor:deepbronze_bars"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:velvet_barrier"
+        "recipe": "abyssaldecor:small_deepbronze_bars"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_black_wool",
+      "has_deepbronze_bars",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:velvet_barrier"
+      "abyssaldecor:small_deepbronze_bars"
     ]
   },
   "sends_telemetry_event": false

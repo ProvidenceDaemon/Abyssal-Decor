@@ -3,20 +3,19 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "abyssaldecor:polished_jade"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "minecraft:glowstone_dust"
     }
   },
   "pattern": [
+    " a ",
     "aba",
-    "a a",
-    "a a"
+    " a "
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:jade_lantern"
   },
   "show_notification": true
 }

@@ -6,17 +6,19 @@
       "item": "minecraft:gold_nugget"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "minecraft:white_stained_glass_pane"
+    },
+    "c": {
+      "item": "abyssaldecor:lightbulb"
     }
   },
   "pattern": [
-    "aba",
-    "a a",
-    "a a"
+    " a ",
+    "bcb",
+    "bbb"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:frosted_lamp"
   },
   "show_notification": true
 }

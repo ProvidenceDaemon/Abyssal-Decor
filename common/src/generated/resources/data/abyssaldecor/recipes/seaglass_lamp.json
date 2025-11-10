@@ -3,15 +3,22 @@
   "category": "misc",
   "key": {
     "a": {
+      "item": "minecraft:white_stained_glass_pane"
+    },
+    "b": {
+      "item": "minecraft:iron_nugget"
+    },
+    "c": {
       "item": "abyssaldecor:lightbulb"
     }
   },
   "pattern": [
-    "aaa"
+    "aba",
+    "aca",
+    "bbb"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:tube_lamp"
+    "item": "abyssaldecor:seaglass_lamp"
   },
   "show_notification": true
 }

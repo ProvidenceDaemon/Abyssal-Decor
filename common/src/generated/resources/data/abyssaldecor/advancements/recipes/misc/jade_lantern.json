@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_wool": {
+    "has_glowstone_dust": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:black_wool"
+              "minecraft:glowstone_dust"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:velvet_barrier"
+        "recipe": "abyssaldecor:jade_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_black_wool",
+      "has_glowstone_dust",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:velvet_barrier"
+      "abyssaldecor:jade_lantern"
     ]
   },
   "sends_telemetry_event": false

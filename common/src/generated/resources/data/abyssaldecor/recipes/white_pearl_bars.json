@@ -2,16 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "abyssaldecor:lightbulb"
+    "#": {
+      "item": "abyssaldecor:white_pearl"
     }
   },
   "pattern": [
-    "aaa"
+    "###",
+    "###"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:tube_lamp"
+    "count": 16,
+    "item": "abyssaldecor:white_pearl_bars"
   },
   "show_notification": true
 }

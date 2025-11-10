@@ -3,20 +3,22 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:glass_pane"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "minecraft:glowstone_dust"
+    },
+    "c": {
+      "item": "minecraft:iron_nugget"
     }
   },
   "pattern": [
+    " a ",
     "aba",
-    "a a",
-    "a a"
+    " c "
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:lightbulb"
   },
   "show_notification": true
 }

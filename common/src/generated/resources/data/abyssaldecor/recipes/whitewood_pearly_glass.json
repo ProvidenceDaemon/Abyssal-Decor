@@ -3,20 +3,19 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "abyssaldecor:whitewood_planks"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "abyssaldecor:white_pearl"
     }
   },
   "pattern": [
-    "aba",
-    "a a",
-    "a a"
+    "aaa",
+    "bbb",
+    "aaa"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:whitewood_pearly_glass"
   },
   "show_notification": true
 }

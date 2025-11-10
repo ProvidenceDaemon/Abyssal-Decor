@@ -3,20 +3,19 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "abyssaldecor:seabrass_ingot"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "abyssaldecor:lightbulb"
     }
   },
   "pattern": [
+    " a ",
     "aba",
-    "a a",
-    "a a"
+    " a "
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:seabrass_lamp"
   },
   "show_notification": true
 }

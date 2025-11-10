@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssaldecor:chiseled_white_pearl"
+    }
+  ],
+  "result": {
+    "item": "abyssaldecor:cut_white_pearl_block"
+  }
+}

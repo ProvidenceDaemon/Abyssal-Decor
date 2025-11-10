@@ -3,20 +3,20 @@
   "category": "misc",
   "key": {
     "a": {
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:stick"
     },
     "b": {
-      "item": "abyssaldecor:velvet"
+      "item": "minecraft:string"
     }
   },
   "pattern": [
     "aba",
-    "a a",
+    "aba",
     "a a"
   ],
   "result": {
     "count": 6,
-    "item": "abyssaldecor:velvet_barrier"
+    "item": "abyssaldecor:rope_barrier"
   },
   "show_notification": true
 }
