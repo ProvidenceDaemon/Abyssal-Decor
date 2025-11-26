@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor;
+package net.starrysock.abyssaldecor.datagen;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -9,10 +9,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -25,6 +24,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.starrysock.abyssaldecor.AbyssalDecor;
+import net.starrysock.abyssaldecor.BarrierRibbonBlock;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.properties.HorizontalPart;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
@@ -61,12 +62,14 @@ public class ModLootTableProvider extends LootTableProvider {
         @Override
         protected void generate() {
 
-            Set<Block> specialDrops = Set.of(AbyssalDecorBlocks.VELVET_BARRIER.get(),AbyssalDecorBlocks.IRON_BARRIER.get(),
+            Set<Block> specialDrops = Set.of(
+                    AbyssalDecorBlocks.TALL_AMARANTH.get(),AbyssalDecorBlocks.VELVET_BARRIER.get(),AbyssalDecorBlocks.IRON_BARRIER.get(),
                     AbyssalDecorBlocks.ROPE_BARRIER.get(),AbyssalDecorBlocks.BARBED_WIRE_BARRIER.get(),
                     AbyssalDecorBlocks.MUCKROOT.get(),AbyssalDecorBlocks.LION_STATUE.get(),AbyssalDecorBlocks.GARGOYLE.get(),
                     AbyssalDecorBlocks.NITHING_POLE.get(),AbyssalDecorBlocks.TELESCOPE.get(),AbyssalDecorBlocks.HANGING_WEB.get(),
                     AbyssalDecorBlocks.DANGLING_WEB.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(),
-                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),AbyssalDecorBlocks.HEART_OF_THE_SEA.get(),AbyssalDecorBlocks.MOLDY_HANGER.get());
+                    AbyssalDecorBlocks.SPIDERCORN.get(),AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),
+                    AbyssalDecorBlocks.HEART_OF_THE_SEA.get(),AbyssalDecorBlocks.MOLDY_HANGER.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier ->{
                 Block block = blockRegistrySupplier.get();
@@ -142,6 +145,13 @@ public class ModLootTableProvider extends LootTableProvider {
                                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(0,1))))
                             )));
 
+
+            LootItemCondition.Builder ama = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.TALL_AMARANTH.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TallAmaranthBlock.HALF,DoubleBlockHalf.LOWER));
+            this.add(AbyssalDecorBlocks.TALL_AMARANTH.get(), this.createTallCropDrops(AbyssalDecorBlocks.TALL_AMARANTH.get(), AbyssalDecorItems.AMARANTH_PINNACLE.get(),
+                    AbyssalDecorItems.AMARANTH_SEEDS.get(), ama));
+
+
             this.add(AbyssalDecorBlocks.MOLDY_HANGER.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MOLDY_HANGER.get(),
                     LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(AbyssalDecorItems.MOLDY_HANGER.get())))
                             .withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.MOLDY_HANGER.get())
@@ -149,6 +159,14 @@ public class ModLootTableProvider extends LootTableProvider {
                             ).add(LootItem.lootTableItem(Items.SPIDER_EYE)
                                     .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
 
+        }
+
+        protected LootTable.Builder createTallCropDrops(Block cropBlock, Item grownCropItem, Item seedsItem, LootItemCondition.Builder dropGrownCropCondition) {
+            return this.applyExplosionDecay(cropBlock, LootTable.lootTable().withPool(
+                    LootPool.lootPool().add(LootItem.lootTableItem(grownCropItem)
+                            .when(dropGrownCropCondition).otherwise(LootItem.lootTableItem(seedsItem))
+                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TallAmaranthBlock.HALF,DoubleBlockHalf.LOWER)))))
+                    .withPool(LootPool.lootPool().when(dropGrownCropCondition).add(LootItem.lootTableItem(seedsItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))));
         }
 
         protected LootTable.Builder createBogAppleDrops(Block cropBlock, Item grownCropItem, Item seedsItem, LootItemCondition.Builder dropGrownCropCondition) {

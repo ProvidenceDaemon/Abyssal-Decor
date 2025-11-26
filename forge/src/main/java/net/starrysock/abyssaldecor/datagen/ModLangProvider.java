@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor;
+package net.starrysock.abyssaldecor.datagen;
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.data.PackOutput;
@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.registry.AbyssalCreativeTabs;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorMobEffects;

@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor;
+package net.starrysock.abyssaldecor.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.worldgen.CinnamonFoliagePlacer;
 import net.starrysock.abyssaldecor.worldgen.ModTreeFeatures;

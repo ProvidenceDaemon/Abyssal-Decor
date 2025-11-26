@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "abyssaldecor:black_pearl"
+        "recipe": "minecraft:black_pearl_block_uncrafting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "abyssaldecor:black_pearl"
+      "minecraft:black_pearl_block_uncrafting"
     ]
   },
   "sends_telemetry_event": false

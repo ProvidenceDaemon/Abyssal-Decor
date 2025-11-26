@@ -74,6 +74,7 @@ public class BogAppleLeavesBlock extends CropBlock implements SimpleWaterloggedB
                 level.setBlockAndUpdate(pos, block.defaultBlockState());
                 level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.5F);
             }
+            return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return InteractionResult.PASS;
     }

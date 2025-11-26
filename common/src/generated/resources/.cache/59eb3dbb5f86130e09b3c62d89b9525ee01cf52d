@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-09T14:11:35.4575974	Loot Tables
+// 1.20.1	2025-11-26T00:12:05.0650008	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -360,7 +360,7 @@ c7e486009bb19406459085527cf1a5e01c74b958 data/abyssaldecor/loot_tables/blocks/st
 19ea2572e3a007c1a90c86cbb7060ac37e9dc221 data/abyssaldecor/loot_tables/blocks/stripped_cinnamon_wood.json
 96c28fd44e6e9072c2caf80611d1c7be57a386ba data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass.json
 ecdf471a617a7ff6992e81042f36d9e2d7036774 data/abyssaldecor/loot_tables/blocks/sunny_pearly_glass_pane.json
-8efb8a3fe1c8e74342d4831fd76860342616b502 data/abyssaldecor/loot_tables/blocks/tall_amaranth.json
+a8c95054f7b32dfa455fbe877389797ad6c71cde data/abyssaldecor/loot_tables/blocks/tall_amaranth.json
 66ad4024443d734a61042c5d43055705f1e49f69 data/abyssaldecor/loot_tables/blocks/tall_cinnamon_bush.json
 cdc704f8ad4575bfba033663208ca7d45df964bc data/abyssaldecor/loot_tables/blocks/telescope.json
 d225c8aff26bf0e4aa3dc50eee4b507a389926d3 data/abyssaldecor/loot_tables/blocks/terrestrial_rod.json

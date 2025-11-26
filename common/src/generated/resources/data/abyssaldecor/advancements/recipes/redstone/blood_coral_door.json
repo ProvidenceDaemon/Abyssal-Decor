@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_coral_bars": {
+    "has_polished_blood_coral": {
       "conditions": {
         "items": [
           {
             "items": [
-              "abyssaldecor:blood_coral_bars"
+              "abyssaldecor:polished_blood_coral"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_blood_coral_bars",
+      "has_polished_blood_coral",
       "has_the_recipe"
     ]
   ],

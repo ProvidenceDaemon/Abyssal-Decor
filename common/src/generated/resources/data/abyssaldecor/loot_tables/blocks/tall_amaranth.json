@@ -1,16 +1,35 @@
 {
   "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "abyssaldecor:tall_amaranth",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "half": "lower"
+                  }
+                }
+              ],
+              "name": "abyssaldecor:amaranth_pinnacle"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "abyssaldecor:amaranth_seeds"
+            }
+          ],
           "conditions": [
             {
               "block": "abyssaldecor:tall_amaranth",
@@ -19,8 +38,37 @@
                 "half": "lower"
               }
             }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "abyssaldecor:tall_amaranth",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:binomial_with_bonus_count",
+              "function": "minecraft:apply_bonus",
+              "parameters": {
+                "extra": 3,
+                "probability": 0.5714286
+              }
+            }
           ],
-          "name": "minecraft:air"
+          "name": "abyssaldecor:amaranth_seeds"
         }
       ],
       "rolls": 1.0
