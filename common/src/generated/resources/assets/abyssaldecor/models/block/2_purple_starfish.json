@@ -1,7 +1,7 @@
 {
   "parent": "abyssaldecor:custom/starfishdried1",
   "textures": {
-    "particle": "abyssaldecor:block/2_purple_starfish",
-    "texture": "abyssaldecor:block/2_purple_starfish"
+    "0": "abyssaldecor:block/2_purple_starfish",
+    "particle": "abyssaldecor:block/2_purple_starfish"
   }
 }

@@ -56,14 +56,18 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     }
 
     protected void tryGrow(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        BlockPos down = pos.relative(Direction.DOWN);
+        BlockPos down = pos.below();
         if (Services.PLATFORM.onCropsGrowPre(level, down, level.getBlockState(down),random.nextDouble() < this.growPerTickProbability)) {
-            if (state.getValue(ModBlockStateProperties.TRI_PART) != TriPart.TOP) {
-                level.setBlockAndUpdate(pos, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.MIDDLE).setValue(FACING, state.getValue(FACING)));
-            }
-            level.setBlockAndUpdate(down, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM).setValue(FACING,state.getValue(FACING)));
-            Services.PLATFORM.onCropsGrowPost(level, down, level.getBlockState(down));
+            actuallyGrow(state,level,pos, down);
         }
+    }
+
+    protected void actuallyGrow(BlockState state, ServerLevel level, BlockPos pos, BlockPos down) {
+        if (state.getValue(ModBlockStateProperties.TRI_PART) != TriPart.TOP) {
+            level.setBlockAndUpdate(pos, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.MIDDLE).setValue(FACING, state.getValue(FACING)));
+        }
+        level.setBlockAndUpdate(down, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM).setValue(FACING,state.getValue(FACING)));
+        Services.PLATFORM.onCropsGrowPost(level, down, level.getBlockState(down));
     }
 
      public static final VoxelShape NORTH_AABB = box(1, 2, 10, 15, 16, 16);
@@ -205,6 +209,6 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        tryGrow(state, level, pos, random);
+        actuallyGrow(state, level, pos, pos.below());
     }
 }

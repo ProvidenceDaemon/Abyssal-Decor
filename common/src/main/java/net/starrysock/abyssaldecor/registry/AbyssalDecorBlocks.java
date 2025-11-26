@@ -18,6 +18,7 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.BarrierRibbonBlock;
 import net.starrysock.abyssaldecor.MixedBlock;
 import net.starrysock.abyssaldecor.block.*;
+import net.starrysock.abyssaldecor.block.lamp.*;
 import net.starrysock.abyssaldecor.block.properties.FrostedLampBlock;
 import net.starrysock.abyssaldecor.platform.Services;
 
@@ -75,11 +76,13 @@ public class AbyssalDecorBlocks {
                             Block.box(2, 10, 2, 14, 12, 14))));
 
 
-    public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new HorizontalLampBlock(lamp(), null));
-    public static RegistrySupplier<Block> WALL_JADE_LAMP = AbyssalDecor.BLOCKS.register("wall_jade_lamp", () -> new HorizontalLampBlock(lamp().dropsLike(JADE_LAMP.get()), null));
+    public static RegistrySupplier<Block> JADE_LAMP = AbyssalDecor.BLOCKS.register("jade_lamp", () -> new HorizontalLampBlock(lamp(),
+            Shapes.or(Block.box(5.0, 0.0, 5.0, 11.0, 11.0, 11.0), Block.box(3.0, 11.0, 8.0, 13.0, 14.0, 11.0))));
+    public static RegistrySupplier<Block> WALL_JADE_LAMP = AbyssalDecor.BLOCKS.register("wall_jade_lamp", () ->
+            new HorizontalLampBlock(lamp().dropsLike(JADE_LAMP.get()), Shapes.or(Block.box(1.0, 1.0, 0.0, 15.0, 5.0, 1.0), Block.box(3.0, 5.0, 4.0, 13.0, 8.0, 7.0))));
 
 
-    public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new FrostedLampBlock(lamp()));
+    public static RegistrySupplier<Block> SEAGLASS_LAMP = AbyssalDecor.BLOCKS.register("seaglass_lamp", () -> new SeaglassLampBlock(lamp()));
     public static RegistrySupplier<Block> BLAZE_LAMP = AbyssalDecor.BLOCKS.register("blaze_lamp", () ->
             new BlazeLampBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(4.0F, 10.0F).lightLevel(s -> 12)
                     .noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));

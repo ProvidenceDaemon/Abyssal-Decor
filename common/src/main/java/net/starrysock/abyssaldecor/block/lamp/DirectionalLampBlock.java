@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -11,6 +11,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.block.AbstractDirectionalBlock;
 
 public class DirectionalLampBlock extends AbstractDirectionalBlock implements SimpleWaterloggedBlock {
 

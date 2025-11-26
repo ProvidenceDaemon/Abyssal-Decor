@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.starrysock.abyssaldecor.block.ToggleableDirectionalLampBlock;
+import net.starrysock.abyssaldecor.block.lamp.ToggleableDirectionalLampBlock;
 
 public class FrostedLampBlock extends ToggleableDirectionalLampBlock {
     public FrostedLampBlock(Properties properties) {

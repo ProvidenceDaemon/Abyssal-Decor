@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/jadelamp",
+  "parent": "abyssaldecor:custom/jadelamplit",
   "textures": {
     "0": "abyssaldecor:block/jade_lamp_lit",
     "all": "abyssaldecor:block/jade_lamp_lit",

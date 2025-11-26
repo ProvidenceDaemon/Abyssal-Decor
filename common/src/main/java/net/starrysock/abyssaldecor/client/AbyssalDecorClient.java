@@ -194,6 +194,8 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.WHITE_PEARL_DOOR.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.SEABRASS_DOOR.get(),RenderType.cutoutMipped());
         renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_DOOR.get(),RenderType.cutoutMipped());
+
+        renderTypes.accept(AbyssalDecorBlocks.FROSTED_LAMP.get(),RenderType.cutoutMipped());
     }
 
 

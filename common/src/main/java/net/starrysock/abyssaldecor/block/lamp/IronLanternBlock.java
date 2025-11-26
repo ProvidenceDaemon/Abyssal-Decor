@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -22,12 +22,7 @@ public class IronLanternBlock extends RotatedPillarBlock {
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (player.getItemInHand(interactionHand).isEmpty()) {
-            level.setBlockAndUpdate(blockPos, blockState.cycle(BlockStateProperties.LIT));
-            level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
-            return InteractionResult.SUCCESS;
-        }
-        return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+        return ToggleableDirectionalLampBlock.toggleLamp(blockState,level,blockPos);
     }
 
     @Override

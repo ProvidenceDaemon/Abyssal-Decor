@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,6 +21,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.AbyssalUtils;
+import net.starrysock.abyssaldecor.block.AbstractHorizontalBlock;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorSounds;
 import org.jetbrains.annotations.Nullable;

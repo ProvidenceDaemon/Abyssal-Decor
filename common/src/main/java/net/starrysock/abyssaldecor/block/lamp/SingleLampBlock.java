@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

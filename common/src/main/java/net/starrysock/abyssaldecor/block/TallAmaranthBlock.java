@@ -79,7 +79,7 @@ public class TallAmaranthBlock extends DoublePlantBlock implements BonemealableB
     }
 
     boolean isMaxAge(BlockState state){
-        return state.getValue(HALF)==DoubleBlockHalf.LOWER;
+        return state.getValue(AGE) == 1;
     }
 
     public void performBonemeal(ServerLevel level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {

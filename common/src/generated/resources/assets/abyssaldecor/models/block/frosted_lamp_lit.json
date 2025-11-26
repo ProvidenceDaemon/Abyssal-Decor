@@ -1,5 +1,5 @@
 {
-  "parent": "abyssaldecor:custom/frostedceilinglamp",
+  "parent": "abyssaldecor:custom/frostedceilinglamplit",
   "textures": {
     "0": "abyssaldecor:block/frostedceilinglamplit",
     "1": "abyssaldecor:block/frostedceilinglamp2",

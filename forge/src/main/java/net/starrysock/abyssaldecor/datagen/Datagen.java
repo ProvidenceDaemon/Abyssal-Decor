@@ -14,6 +14,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
+import net.starrysock.abyssaldecor.block.lamp.BulkheadLampBlock;
+import net.starrysock.abyssaldecor.block.lamp.HorizontalLampBlock;
+import net.starrysock.abyssaldecor.block.lamp.IronLanternBlock;
 import net.starrysock.abyssaldecor.block.properties.*;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
@@ -312,7 +315,7 @@ public class Datagen {
                 ResourceLocation texture0 = modLoc("block/frostedceilinglamp" + (lit ? "lit" : ""));
 
                 ModelFile modelFile = models().withExistingParent("block/frosted_lamp" + (lit ? "_lit" : ""),
-                                modLoc("custom/frostedceilinglamp"))
+                                modLoc("custom/frostedceilinglamp"+ (lit ? "lit" : "")))
                         .texture("all", texture0)
                         .texture("particle", texture0)
                         .texture("0", texture0)
@@ -387,7 +390,7 @@ public class Datagen {
                         build();
             }, BlockStateProperties.WATERLOGGED);
 
-            wallLamp(AbyssalDecorBlocks.FLOWER_LAMP.get(), modLoc("custom/flowerlamp"), modLoc("block/flower_lamp"),true);
+            wallLamp(AbyssalDecorBlocks.FLOWER_LAMP.get(), modLoc("custom/flowerlamp"), modLoc("block/flower_lamp"));
 
             getVariantBuilder(AbyssalDecorBlocks.TUBE_LAMP.get()).forAllStatesExcept(blockState -> {
                 boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
@@ -416,13 +419,13 @@ public class Datagen {
             directionalBlockWithItem(AbyssalDecorBlocks.FOXY_PILLAR.get(),modLoc("block/foxy_pillar"), modLoc("block/foxy_pillar_top"));
 
             lamp(AbyssalDecorBlocks.QUARTZ_LAMP.get(), modLoc("custom/floorgaslamp"), modLoc("block/quartz_lamp"), modLoc("custom/floorgaslampon"));
-            wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), modLoc("custom/wallgaslamp"), modLoc("block/wall_quartz_lamp"),true);
-            wallLamp(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(), modLoc("custom/ceilingquartzlamp"), modLoc("block/ceiling_quartz_lamp"),true);
-            wallLamp(AbyssalDecorBlocks.JADE_LAMP.get(), modLoc("custom/jadelamp"), modLoc("block/jade_lamp"),false);
-            wallLamp(AbyssalDecorBlocks.WALL_JADE_LAMP.get(), modLoc("custom/walljadelamp"), modLoc("block/wall_jade_lamp"),false);
+            wallLamp(AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), modLoc("custom/wallgaslamp"), modLoc("block/wall_quartz_lamp"));
+            wallLamp(AbyssalDecorBlocks.CEILING_QUARTZ_LAMP.get(), modLoc("custom/ceilingquartzlamp"), modLoc("block/ceiling_quartz_lamp"));
+            wallLamp(AbyssalDecorBlocks.JADE_LAMP.get(), modLoc("custom/jadelamp"), modLoc("block/jade_lamp"));
+            wallLamp(AbyssalDecorBlocks.WALL_JADE_LAMP.get(), modLoc("custom/walljadelamp"), modLoc("block/wall_jade_lamp"));
 
             getVariantBuilder(AbyssalDecorBlocks.BLAZE_LAMP.get()).forAllStatesExcept(blockState -> {
-                Direction orientation = blockState.getValue(HorizontalLampBlock.FACING);
+                Direction orientation = blockState.getValue(net.starrysock.abyssaldecor.block.lamp.HorizontalLampBlock.FACING);
 
                 ResourceLocation texture0 = modLoc("block/blazelamp");
 
@@ -913,7 +916,7 @@ public class Datagen {
                     modLoc("block/frosted_glass_top"),
                     modLoc("block/frosted_glass"),false);
 
-            wallLamp(AbyssalDecorBlocks.WALL_BULB_LAMP.get(), modLoc("custom/bulblamp"), modLoc("block/bulblamp"),true);
+            wallLamp(AbyssalDecorBlocks.WALL_BULB_LAMP.get(), modLoc("custom/bulblamp"), modLoc("block/bulblamp"));
 
             simpleBlockWithItem(AbyssalDecorBlocks.WHITEWOOD_PLANTER.get(),models()
                     .cubeBottomTop("whitewood_planter",modLoc("block/whitewoodplanterside"),modLoc("block/whitewoodplanterbottom")
@@ -1868,7 +1871,7 @@ public class Datagen {
                         int count = state.getValue(StarfishBlock.COUNT);
                         String s = "block/" + count + "_" + color.getName() + "_starfish";
                         ModelFile file = models().withExistingParent(s, modLoc("custom/starfishdried1"))
-                                .texture("texture", s).texture("particle", s);
+                                .texture("0", s).texture("particle", s);
                         return file;});
             iconTexture("starfish", modLoc("block/1_orange_starfish"));
         }
@@ -1999,7 +2002,7 @@ public class Datagen {
         }
 
 
-        protected void wallLamp(Block block, ResourceLocation model, ResourceLocation texture0,boolean litModel) {
+        protected void wallLamp(Block block, ResourceLocation model, ResourceLocation texture0) {
             String name = name(block);
             ResourceLocation litModelM = model.withSuffix("lit");
             ResourceLocation texture0Lit = texture0.withSuffix("_lit");
@@ -2009,7 +2012,7 @@ public class Datagen {
 
                 ResourceLocation texture = lit ? texture0Lit : texture0;
 
-                ResourceLocation m = litModel ? (lit ? litModelM : model):model;
+                ResourceLocation m = lit ? litModelM : model;
 
                 ModelFile modelFile = models().withExistingParent("block/" + name + (lit ? "_lit" : ""),
                                 m)

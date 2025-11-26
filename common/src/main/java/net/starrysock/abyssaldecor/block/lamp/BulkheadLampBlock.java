@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -13,8 +13,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.starrysock.abyssaldecor.block.FaceAttachedBlock;
 
-public class BulkheadLampBlock extends FaceAttachedBlock{
+public class BulkheadLampBlock extends FaceAttachedBlock {
     public BulkheadLampBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(defaultBlockState().setValue(RedstoneLampBlock.LIT, false));

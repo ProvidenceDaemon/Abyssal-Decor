@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,6 +22,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.AbyssalUtils;
+import net.starrysock.abyssaldecor.block.AbstractHorizontalBlock;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumMap;
@@ -31,7 +32,7 @@ public class HorizontalLampBlock extends AbstractHorizontalBlock implements Simp
 
     private final EnumMap<Direction,VoxelShape> shapes = new EnumMap<>(Direction.class);
 
-    public HorizontalLampBlock(Properties properties,VoxelShape shape) {
+    public HorizontalLampBlock(Properties properties,VoxelShape shape) {//note, use the south facing hitbox, rest will be generated
         super(properties);
         this.shape = shape;
         this.registerDefaultState(this.defaultBlockState().setValue(RedstoneLampBlock.LIT, false)

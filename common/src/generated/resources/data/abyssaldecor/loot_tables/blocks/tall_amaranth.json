@@ -19,6 +19,7 @@
                   "block": "abyssaldecor:tall_amaranth",
                   "condition": "minecraft:block_state_property",
                   "properties": {
+                    "age": "1",
                     "half": "lower"
                   }
                 }
@@ -50,6 +51,7 @@
           "block": "abyssaldecor:tall_amaranth",
           "condition": "minecraft:block_state_property",
           "properties": {
+            "age": "1",
             "half": "lower"
           }
         }

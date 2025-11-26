@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor.block;
+package net.starrysock.abyssaldecor.block.lamp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -13,7 +13,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 
-public class VerticalTubeLamp extends HorizontalLampBlock{
+public class VerticalTubeLamp extends HorizontalLampBlock {
     public VerticalTubeLamp(Properties properties, VoxelShape shape) {
         super(properties, shape);
     }
