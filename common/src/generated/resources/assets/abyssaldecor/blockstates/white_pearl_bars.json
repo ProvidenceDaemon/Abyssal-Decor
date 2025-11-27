@@ -3,6 +3,33 @@
     {
       "apply": {
         "model": "abyssaldecor:block/white_pearl_bars_post"
+      },
+      "when": {
+        "vertical_connection": "solo"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/white_pearl_bars_post_bottom"
+      },
+      "when": {
+        "vertical_connection": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/white_pearl_bars_post_middle"
+      },
+      "when": {
+        "vertical_connection": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "abyssaldecor:block/white_pearl_bars_post_top"
+      },
+      "when": {
+        "vertical_connection": "top"
       }
     },
     {

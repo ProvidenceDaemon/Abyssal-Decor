@@ -999,35 +999,46 @@ public class Datagen {
             ModelFile post = models().panePost(baseName + "_post", pane, edge);
             ModelFile side = models().paneSide(baseName + "_side", pane, edge);
             ModelFile sideAlt = models().paneSideAlt(baseName + "_side_alt", pane, edge);
-            ModelFile noSide = models().paneNoSide(baseName + "_noside", edge);
-            ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", edge);
+            ModelFile noSide = models().paneNoSide(baseName + "_noside", pane);
+            ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", pane);
 
+            ModelFile postBottom = models().panePost(baseName + "_post_bottom", paneBottom, edgeTexture);
             ModelFile sideBottom = models().paneSide(baseName + "_side_bottom", paneBottom,edgeTexture);
             ModelFile sideAltBottom = models().paneSideAlt(baseName + "_side_alt_bottom", paneBottom, edgeTexture);
             ModelFile noSideBottom = models().paneNoSide(baseName + "_noside_bottom", paneBottom);
             ModelFile noSideAltBottom = models().paneNoSideAlt(baseName + "_noside_alt_bottom", paneBottom);
 
+            ModelFile postMiddle = models().panePost(baseName + "_post_middle", paneMiddle, edgeTexture);
             ModelFile sideMiddle = models().paneSide(baseName + "_side_middle", paneMiddle, edgeTexture);
             ModelFile sideAltMiddle = models().paneSideAlt(baseName + "_side_alt_middle", paneMiddle, edgeTexture);
             ModelFile noSideMiddle = models().paneNoSide(baseName + "_noside_middle", paneMiddle);
             ModelFile noSideAltMiddle = models().paneNoSideAlt(baseName + "_noside_alt_middle", paneMiddle);
 
+            ModelFile postTop = models().panePost(baseName + "_post_top", paneTop, edgeTexture);
             ModelFile sideTop = models().paneSide(baseName + "_side_top", paneTop, edgeTexture);
             ModelFile sideAltTop = models().paneSideAlt(baseName + "_side_alt_top", paneTop, edgeTexture);
             ModelFile noSideTop = models().paneNoSide(baseName + "_noside_top", paneTop);
             ModelFile noSideAltTop = models().paneNoSideAlt(baseName + "_noside_alt_top", paneTop);
 
-            fancierPaneBlock(block, post, side, sideAlt, noSide, noSideAlt,sideBottom,sideAltBottom,noSideBottom,noSideAltBottom,
-                    sideMiddle,sideAltMiddle,noSideMiddle,noSideAltMiddle,
-                    sideTop,sideAltTop,noSideTop,noSideAltTop);
+            fancierPaneBlock(block, post, side, sideAlt, noSide, noSideAlt,
+                    postBottom,sideBottom,sideAltBottom,noSideBottom,noSideAltBottom,
+                    postMiddle,sideMiddle,sideAltMiddle,noSideMiddle,noSideAltMiddle,
+                    postTop,sideTop,sideAltTop,noSideTop,noSideAltTop);
         }
 
         public void fancierPaneBlock(FancierIronBarsBlock block, ModelFile post, ModelFile side, ModelFile sideAlt, ModelFile noSide, ModelFile noSideAlt,
-                                     ModelFile sideBottom, ModelFile sideAltBottom, ModelFile noSideBottom, ModelFile noSideAltBottom,
-                                     ModelFile sideMiddle, ModelFile sideAltMiddle, ModelFile noSideMiddle, ModelFile noSideAltMiddle,
-                                   ModelFile sideTop, ModelFile sideAltTop, ModelFile noSideTop, ModelFile noSideAltTop) {
+                                     ModelFile postBottom,ModelFile sideBottom, ModelFile sideAltBottom, ModelFile noSideBottom, ModelFile noSideAltBottom,
+                                     ModelFile postMiddle,ModelFile sideMiddle, ModelFile sideAltMiddle, ModelFile noSideMiddle, ModelFile noSideAltMiddle,
+                                     ModelFile postTop,ModelFile sideTop, ModelFile sideAltTop, ModelFile noSideTop, ModelFile noSideAltTop) {
             MultiPartBlockStateBuilder builder = getMultipartBuilder(block)
-                    .part().modelFile(post).addModel().end();
+                    .part().modelFile(post).addModel()
+                    .condition(ModBlockStateProperties.VERTICAL_CONNECTION,VerticalConnection.SOLO).end()
+                    .part().modelFile(postBottom).addModel()
+                    .condition(ModBlockStateProperties.VERTICAL_CONNECTION,VerticalConnection.BOTTOM).end()
+                    .part().modelFile(postMiddle).addModel()
+                    .condition(ModBlockStateProperties.VERTICAL_CONNECTION,VerticalConnection.MIDDLE).end()
+                    .part().modelFile(postTop).addModel()
+                    .condition(ModBlockStateProperties.VERTICAL_CONNECTION,VerticalConnection.TOP).end();
             PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(e -> {
                 Direction dir = e.getKey();
                 BooleanProperty property = e.getValue();

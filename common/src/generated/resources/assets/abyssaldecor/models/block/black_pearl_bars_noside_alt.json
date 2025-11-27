@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "abyssaldecor:block/black_pearl_bars_top"
+    "pane": "abyssaldecor:block/black_pearl_bars_solo"
   }
 }

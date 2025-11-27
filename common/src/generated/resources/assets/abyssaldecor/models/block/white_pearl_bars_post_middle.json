@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "edge": "abyssaldecor:block/white_pearl_bars_top",
+    "pane": "abyssaldecor:block/white_pearl_bars_middle"
+  }
+}

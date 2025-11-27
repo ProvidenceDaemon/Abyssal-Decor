@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside",
   "textures": {
-    "pane": "abyssaldecor:block/seabrass_bars_top"
+    "pane": "abyssaldecor:block/seabrass_bars_solo"
   }
 }
