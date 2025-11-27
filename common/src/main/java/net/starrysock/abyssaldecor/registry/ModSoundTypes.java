@@ -11,6 +11,7 @@ public class ModSoundTypes {
             SoundEvents.NETHERITE_BLOCK_STEP, SoundEvents.NETHERITE_BLOCK_PLACE, SoundEvents.NETHERITE_BLOCK_HIT, SoundEvents.NETHERITE_BLOCK_FALL);
 
     public static final SoundType TRASH_BAG = new SoundType(1.0F, 1.0F,AbyssalDecorSounds.TRASH_BAG_BREAK.get(),
-            AbyssalDecorSounds.TRASH_BAG_STEP.get(), SoundEvents.AZALEA_LEAVES_PLACE, SoundEvents.AZALEA_LEAVES_HIT, SoundEvents.AZALEA_LEAVES_FALL);
+            AbyssalDecorSounds.TRASH_BAG_STEP.get(), AbyssalDecorSounds.TRASH_BAG_BREAK.get()/*place*/,
+            AbyssalDecorSounds.TRASH_BAG_STEP.get()/*hit*/, SoundEvents.AZALEA_LEAVES_FALL);
 
 }

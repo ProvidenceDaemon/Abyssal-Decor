@@ -2,6 +2,6 @@
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
     "edge": "abyssaldecor:block/starglasspanetop",
-    "pane": "abyssaldecor:block/pitchglasspanemid"
+    "pane": "abyssaldecor:block/pitchglasspanetop"
   }
 }

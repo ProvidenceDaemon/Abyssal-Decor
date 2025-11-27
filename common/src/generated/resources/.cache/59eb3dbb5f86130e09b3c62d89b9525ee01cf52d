@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-26T00:25:20.1007503	Loot Tables
+// 1.20.1	2025-11-26T17:10:39.9576704	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -284,7 +284,7 @@ ff0760faf962daf9a8b2cd49de2ddd323edecc4c data/abyssaldecor/loot_tables/blocks/se
 e806127774094cdcc15328601e9fc1828b40162b data/abyssaldecor/loot_tables/blocks/seabrass_chain.json
 78d8628c63c85888989394f39e346212f94d60c8 data/abyssaldecor/loot_tables/blocks/seabrass_door.json
 6750691c9b6c6501d09778efe0f4bfcd2d155ef1 data/abyssaldecor/loot_tables/blocks/seabrass_lamp.json
-557476ed24725c0304ec6c57eaffa5b4cebd8a2e data/abyssaldecor/loot_tables/blocks/seabrass_ore.json
+4304025198228c7bc2f3f4505fff969586d75c19 data/abyssaldecor/loot_tables/blocks/seabrass_ore.json
 0225704622e09c86f1390862f402c908cfebf80a data/abyssaldecor/loot_tables/blocks/seabrass_pillar.json
 f63da16bf1a9ef1b694798267cbbdb30eb4e68a9 data/abyssaldecor/loot_tables/blocks/seabrass_plating.json
 2a05cf01dc687d82008062b1a5ba6d4ba0bc5a73 data/abyssaldecor/loot_tables/blocks/seabrass_pressure_plate.json

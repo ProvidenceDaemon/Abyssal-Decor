@@ -17,6 +17,7 @@ import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.lamp.BulkheadLampBlock;
 import net.starrysock.abyssaldecor.block.lamp.HorizontalLampBlock;
 import net.starrysock.abyssaldecor.block.lamp.IronLanternBlock;
+import net.starrysock.abyssaldecor.block.lamp.TubeLampBlock;
 import net.starrysock.abyssaldecor.block.properties.*;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
@@ -720,8 +721,6 @@ public class Datagen {
 
             simpleBlockWithItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS.get(), models().getExistingFile(modLoc("block/framed_pitchglass_top")));
 
-            paneBlockWithItem(AbyssalDecorBlocks.FRAMED_PITCHGLASS_PANE.get(), modLoc("block/pitchglasspanesolo"),
-                    modLoc("block/pitchglasspanetop"));
 
             logBlockWithItem(AbyssalDecorBlocks.MOLDY_FROND_BLOCK.get());
 
@@ -836,10 +835,12 @@ public class Datagen {
             wisteria(AbyssalDecorBlocks.ELDER_WISTERIA.get());
             iconTexture("elder_wisteria",modLoc("item/elder_wisteria"));
 
-            horizontalBlock(AbyssalDecorBlocks.VERTICAL_TUBE_LAMP.get(),
-                    models().withExistingParent("vertical_tube_lamp",modLoc("custom/tubelampunlit90"))
-                            .texture("particle",modLoc("block/tubelamp"))
-                            .texture("0",modLoc("block/tubelamp"))
+            horizontalBlock(AbyssalDecorBlocks.VERTICAL_TUBE_LAMP.get(),state -> {
+                boolean lit = state.getValue(RedstoneLampBlock.LIT);
+                        return models().withExistingParent("vertical_tube_lamp" + (lit ? "_lit" : ""), modLoc("custom/tubelamp90" + (lit ? "lit" : "")))
+                                .texture("particle", modLoc("block/tubelamp"))
+                                .texture("0", modLoc("block/tubelamp"));
+                    }
             );
 
             spiderCorn(AbyssalDecorBlocks.SPIDERCORN.get());
@@ -872,7 +873,13 @@ public class Datagen {
                     .texture("1",modLoc("block/shellbottom"))
             );
             iconTexture("shell",modLoc("block/shelltop"));
-            fancyIronBarsBlock(AbyssalDecorBlocks.GOLD_BARS.get(),modLoc("block/gold_bars_middle"),modLoc("block/gold_bars_top"),modLoc("block/gold_bars_top"));
+            fancyIronBarsBlock(AbyssalDecorBlocks.GOLD_BARS.get(),modLoc("block/gold_bars_middle"),modLoc("block/gold_bars_top"),
+                    modLoc("block/gold_bars_top"));
+
+            fancyIronBarsBlock(AbyssalDecorBlocks.FRAMED_PITCHGLASS_PANE.get(), modLoc("block/pitchglasspanemid"),
+                    modLoc("block/pitchglasspanetop"),modLoc("block/starglasspanetop"));
+
+
             fancyIronBarsBlock(AbyssalDecorBlocks.LAVENTINE_GLASS_PANE.get(),modLoc("block/laventinepanemid"),modLoc("block/laventinepanetop"),
                     modLoc("block/laventinepanemid"));
 
@@ -1094,10 +1101,10 @@ public class Datagen {
 
         private void fancyPaneBlockInternal(FancyIronBarsBlock block, String baseName, ResourceLocation pane,ResourceLocation paneTop, ResourceLocation edge) {
             ModelFile post = models().panePost(baseName + "_post", pane, edge);
-            ModelFile side = models().paneSide(baseName + "_side", pane, BLANK);
-            ModelFile sideAlt = models().paneSideAlt(baseName + "_side_alt", pane, BLANK);
-            ModelFile noSide = models().paneNoSide(baseName + "_noside", edge);
-            ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", edge);
+            ModelFile side = models().paneSide(baseName + "_side", pane, edge);
+            ModelFile sideAlt = models().paneSideAlt(baseName + "_side_alt", pane, edge);
+            ModelFile noSide = models().paneNoSide(baseName + "_noside", pane);
+            ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", pane);
 
             ModelFile sideTop = models().paneSide(baseName + "_side_top", paneTop, edge);
             ModelFile sideAltTop = models().paneSideAlt(baseName + "_side_alt_top", paneTop, edge);

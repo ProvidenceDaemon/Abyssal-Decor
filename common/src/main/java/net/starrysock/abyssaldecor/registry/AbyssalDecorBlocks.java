@@ -995,7 +995,7 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<IronBarsBlock> PITCHGLASS_PANE = AbyssalDecor.BLOCKS.register("pitchglass_pane",() -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
     public static final RegistrySupplier<Block> FRAMED_PITCHGLASS = AbyssalDecor.BLOCKS.register("framed_pitchglass",() -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
-    public static final RegistrySupplier<IronBarsBlock> FRAMED_PITCHGLASS_PANE = AbyssalDecor.BLOCKS.register("framed_pitchglass_pane",() -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static final RegistrySupplier<FancyIronBarsBlock> FRAMED_PITCHGLASS_PANE = AbyssalDecor.BLOCKS.register("framed_pitchglass_pane",() -> new FancyIronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
     public static final RegistrySupplier<RotatedPillarBlock> MOLDY_FROND_BLOCK = AbyssalDecor.BLOCKS.register("moldy_frond_block",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));

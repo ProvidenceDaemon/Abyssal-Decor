@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside",
   "textures": {
-    "pane": "abyssaldecor:block/gold_bars_middle"
+    "pane": "abyssaldecor:block/pitchglasspanetop"
   }
 }
