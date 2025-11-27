@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/vine",
+  "parent": "abyssaldecor:custom/hangingweb",
   "textures": {
-    "particle": "abyssaldecor:block/hanging_web",
-    "vine": "abyssaldecor:block/hanging_web"
+    "0": "abyssaldecor:block/hanging_web",
+    "particle": "abyssaldecor:block/hanging_web"
   }
 }

@@ -5,24 +5,16 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WebBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class HangingMossBlock extends Block {
-    
-    public static final VoxelShape SHAPE = Shapes.or(box(1, 14, 1, 15, 16, 15), box(4, 7, 4, 12, 16, 12));
-    
-    public HangingMossBlock(Properties properties) {
+public class HangingWebBlock extends WebBlock {
+    public HangingWebBlock(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
     }
 
     /**
@@ -33,6 +25,13 @@ public class HangingMossBlock extends Block {
     @Override
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         return !state.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+    }
+
+    static final VoxelShape SHAPE = Shapes.or(box(1.0, 14.0, 1.0, 15.0, 16.0, 15.0), box(4.0, 7.0, 4.0, 12.0, 16.0, 12.0));
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return SHAPE;
     }
 
     @Override

@@ -39,10 +39,11 @@ public class WallHangingBlock extends AbstractHorizontalBlock{
         BlockState blockstate = this.defaultBlockState();
         LevelReader levelreader = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
-
-        for(Direction direction : context.getNearestLookingDirections()) {
+        Direction[] directions = context.getNearestLookingDirections();
+        for(Direction direction : directions) {
             if (direction.getAxis().isHorizontal()) {
-                blockstate = blockstate.setValue(FACING, direction);
+                Direction direction1 = direction.getOpposite();
+                blockstate = blockstate.setValue(FACING, direction1);
                 if (blockstate.canSurvive(levelreader, blockpos)) {
                     return blockstate;
                 }
@@ -53,9 +54,8 @@ public class WallHangingBlock extends AbstractHorizontalBlock{
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING);
-        BlockPos blockpos = pos.relative(direction.getOpposite());
-        BlockState blockstate = level.getBlockState(blockpos);
-        return blockstate.isFaceSturdy(level, blockpos, direction);
+        Direction direction = state.getValue(FACING).getOpposite();
+        return DriedStarfishBlock.canSupportAtFace(level, pos, direction);
     }
+
 }

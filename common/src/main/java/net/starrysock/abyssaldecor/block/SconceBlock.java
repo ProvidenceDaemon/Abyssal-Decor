@@ -69,7 +69,7 @@ public class SconceBlock extends AbstractHorizontalBlock {
         for (Direction direction : adirection) {
             if (direction.getAxis().isHorizontal()) {
                 Direction direction1 = direction.getOpposite();
-                blockstate = blockstate.setValue(FACING, direction1).setValue(VERTICAL_FACING,fraction.y > .5 ? Direction.UP : Direction.DOWN);
+                blockstate = blockstate.setValue(FACING, direction1).setValue(VERTICAL_FACING,fraction.y < .5 ? Direction.UP : Direction.DOWN);
                 if (blockstate.canSurvive(levelreader, blockpos)) {
                     return blockstate;
                 }

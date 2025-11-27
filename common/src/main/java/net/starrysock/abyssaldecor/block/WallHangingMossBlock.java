@@ -5,10 +5,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.VineBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -68,19 +66,6 @@ public class WallHangingMossBlock extends WallHangingBlock{
         return stateForPlacement;
     }
 
-    public static boolean canSupportAtFace(BlockGetter level, BlockPos pos, Direction direction) {
-        if (direction == Direction.DOWN) {
-            return false;
-        } else {
-            BlockPos blockpos = pos.relative(direction);
-            if (VineBlock.isAcceptableNeighbour(level, blockpos, direction)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-
     /**
      * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
      * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart.
@@ -92,9 +77,4 @@ public class WallHangingMossBlock extends WallHangingBlock{
     }
 
 
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING).getOpposite();
-        return canSupportAtFace(level, pos, direction);
-    }
 }

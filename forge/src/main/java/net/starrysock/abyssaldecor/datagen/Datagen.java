@@ -474,10 +474,11 @@ public class Datagen {
             lionStatue(AbyssalDecorBlocks.NITHING_POLE.get());
             lionStatue(AbyssalDecorBlocks.TELESCOPE.get());
 
-            simpleBlock(AbyssalDecorBlocks.HANGING_WEB.get(), models().withExistingParent("block/hanging_web", "block/cross").texture("cross", "block/hanging_web"));
+            simpleBlock(AbyssalDecorBlocks.HANGING_WEB.get(), models().withExistingParent("block/hanging_web","block/cross").texture("cross", "block/hanging_web"));
             horizontalBlock(AbyssalDecorBlocks.WALL_HANGING_WEB.get(), models()
-                    .withExistingParent("block/wall_hanging_web", "block/vine").texture("particle", modLoc("block/hanging_web"))
-                    .texture("vine", modLoc("block/hanging_web")));
+                    .withExistingParent("block/wall_hanging_web", modLoc("custom/hangingweb"))
+                    .texture("particle", modLoc("block/hanging_web"))
+                    .texture("0", modLoc("block/hanging_web")));
 
             doubleBlock(AbyssalDecorBlocks.DANGLING_WEB.get(), models()
                     .withExistingParent("block/dangling_web_upper", "block/cross").texture("cross", "block/dangling_web_upper"), models()
@@ -557,7 +558,7 @@ public class Datagen {
 
             logBlockWithItem(AbyssalDecorBlocks.BLOOD_CORAL_PILLAR.get());
             logBlockWithItem(AbyssalDecorBlocks.ROUGH_BLOOD_CORAL.get());
-            logBlockWithItem(AbyssalDecorBlocks.GILDED_BLOOD_CORAL_PILLAR.get());
+            gildedPillar(AbyssalDecorBlocks.GILDED_BLOOD_CORAL_PILLAR.get());
 
             paneBlock(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(), modLoc("block/blood_coral_bars_solo"), modLoc("block/blood_coral_bars_solo"));
 
@@ -1753,6 +1754,30 @@ public class Datagen {
             ResourceLocation trapLoc = BuiltInRegistries.BLOCK.getKey(block);
             trapdoorBlock(block, modLoc("block/" + trapLoc.getPath()), true);
             simpleBlockItem(block, models().getExistingFile(modLoc(name(block) + "_bottom")));
+        }
+
+        void gildedPillar(RotatedPillarBlock block) {
+
+            //{
+            //  "parent": "block/cube",
+            //  "textures": {
+            //    "down": "abyssal_decor:block/bloodcoralpillarornatetop",
+            //    "up": "abyssal_decor:block/bloodcoralpillarornatetop",
+            //    "north": "abyssal_decor:block/bloodcoralpillarornatesideflipped",
+            //    "east": "abyssal_decor:block/bloodcoralpillarornatesideflipped",
+            //    "south": "abyssal_decor:block/bloodcoralpillarornateside",
+            //    "west": "abyssal_decor:block/bloodcoralpillarornateside",
+            //    "particle": "abyssal_decor:block/bloodcoralpillarornatetop"
+            //  },
+            //  "render_type": "solid"
+            //}
+            ResourceLocation side = modLoc("block/gilded_blood_coral_pillar");
+            ResourceLocation sideFlipped = modLoc("block/gilded_blood_coral_pillar_flipped");
+            ResourceLocation end = modLoc("block/gilded_blood_coral_pillar_top");
+            ModelFile modelFile = models().cube(name(block),  end,end,sideFlipped,side,sideFlipped,side);
+            axisBlock(block, modelFile,modelFile);
+
+            simpleBlockItem(block, models().getExistingFile(modLoc(name(block))));
         }
 
         void logBlockWithItem(RotatedPillarBlock block) {

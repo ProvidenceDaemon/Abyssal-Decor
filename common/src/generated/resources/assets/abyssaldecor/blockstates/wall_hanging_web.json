@@ -1,32 +1,17 @@
 {
   "variants": {
-    "facing=east,half=lower": {
+    "facing=east": {
       "model": "abyssaldecor:block/wall_hanging_web",
       "y": 90
     },
-    "facing=east,half=upper": {
-      "model": "abyssaldecor:block/wall_hanging_web",
-      "y": 90
-    },
-    "facing=north,half=lower": {
+    "facing=north": {
       "model": "abyssaldecor:block/wall_hanging_web"
     },
-    "facing=north,half=upper": {
-      "model": "abyssaldecor:block/wall_hanging_web"
-    },
-    "facing=south,half=lower": {
+    "facing=south": {
       "model": "abyssaldecor:block/wall_hanging_web",
       "y": 180
     },
-    "facing=south,half=upper": {
-      "model": "abyssaldecor:block/wall_hanging_web",
-      "y": 180
-    },
-    "facing=west,half=lower": {
-      "model": "abyssaldecor:block/wall_hanging_web",
-      "y": 270
-    },
-    "facing=west,half=upper": {
+    "facing=west": {
       "model": "abyssaldecor:block/wall_hanging_web",
       "y": 270
     }

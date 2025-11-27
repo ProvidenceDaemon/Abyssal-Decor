@@ -12,6 +12,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -68,6 +69,9 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
+            if (stack.is(Items.BONE_MEAL)) {//Item#use will be called after this
+                return InteractionResult.PASS;
+            }
             if (!level.isClientSide) {
                 level.setBlockAndUpdate(pos, state.cycle(OPEN));
             }

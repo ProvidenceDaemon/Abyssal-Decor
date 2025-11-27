@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "abyssaldecor:block/gilded_blood_coral_pillar_horizontal",
+      "model": "abyssaldecor:block/gilded_blood_coral_pillar",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "abyssaldecor:block/gilded_blood_coral_pillar"
     },
     "axis=z": {
-      "model": "abyssaldecor:block/gilded_blood_coral_pillar_horizontal",
+      "model": "abyssaldecor:block/gilded_blood_coral_pillar",
       "x": 90
     }
   }

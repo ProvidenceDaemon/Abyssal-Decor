@@ -229,17 +229,17 @@ public class AbyssalDecorBlocks {
             new LionStatueBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(3, 10).noOcclusion().pushReaction(PushReaction.BLOCK)));
 
     public static final RegistrySupplier<Block> HANGING_WEB = AbyssalDecor.BLOCKS.register("hanging_web",
-            () -> new WebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+            () -> new HangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
                     .requiresCorrectToolForDrops().strength(4).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistrySupplier<Block> WALL_HANGING_WEB = AbyssalDecor.BLOCKS.register("wall_hanging_web",
-            () -> new WallHangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+            () -> new WallHangingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
                     .requiresCorrectToolForDrops().strength(4).pushReaction(PushReaction.DESTROY).dropsLike(HANGING_WEB.get())));
 
-    public static final RegistrySupplier<Block> DANGLING_WEB = AbyssalDecor.BLOCKS.register("dangling_web", () -> new HangingDoubleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+    public static final RegistrySupplier<Block> DANGLING_WEB = AbyssalDecor.BLOCKS.register("dangling_web", () -> new DanglingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
             .requiresCorrectToolForDrops().strength(4).pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistrySupplier<Block> WALL_DANGLING_WEB = AbyssalDecor.BLOCKS.register("wall_dangling_web", () -> new WallHangingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
+    public static final RegistrySupplier<Block> WALL_DANGLING_WEB = AbyssalDecor.BLOCKS.register("wall_dangling_web", () -> new WallDanglingingWebBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).forceSolidOn().noCollission()
             .requiresCorrectToolForDrops().strength(4).pushReaction(PushReaction.DESTROY).dropsLike(DANGLING_WEB.get())));
 
     public static final RegistrySupplier<Block> PRISMARINE_CRYSTAL_BLOCK = AbyssalDecor.BLOCKS.register("prismarine_crystal_block", () ->

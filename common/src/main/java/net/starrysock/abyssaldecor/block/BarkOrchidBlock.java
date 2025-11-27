@@ -45,12 +45,6 @@ public class BarkOrchidBlock extends WallHangingBlock implements BonemealableBlo
         return shape;
     }
 
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING).getOpposite();
-        return WallHangingMossBlock.canSupportAtFace(level, pos, direction);
-    }
-
     /**
      * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
      * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart.

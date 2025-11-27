@@ -1,7 +1,11 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "end": "abyssaldecor:block/gilded_blood_coral_pillar_top",
-    "side": "abyssaldecor:block/gilded_blood_coral_pillar"
+    "down": "abyssaldecor:block/gilded_blood_coral_pillar_top",
+    "east": "abyssaldecor:block/gilded_blood_coral_pillar_flipped",
+    "north": "abyssaldecor:block/gilded_blood_coral_pillar_flipped",
+    "south": "abyssaldecor:block/gilded_blood_coral_pillar",
+    "up": "abyssaldecor:block/gilded_blood_coral_pillar_top",
+    "west": "abyssaldecor:block/gilded_blood_coral_pillar"
   }
 }

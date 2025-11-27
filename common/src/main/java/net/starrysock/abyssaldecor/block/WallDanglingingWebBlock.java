@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class WallHangingWebBlock extends HangingDoubleBlock{
+public class WallDanglingingWebBlock extends HangingDoubleBlock{
 
     protected static final VoxelShape EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 3.0D, 16.0D, 16.0D);
     protected static final VoxelShape WEST_AABB = Block.box(13.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -30,7 +30,7 @@ public class WallHangingWebBlock extends HangingDoubleBlock{
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public WallHangingWebBlock(Properties properties) {
+    public WallDanglingingWebBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
