@@ -13,7 +13,11 @@ public class AbyssalCreativeTabs {
                     .title(Component.translatable("itemGroup." + AbyssalDecor.MOD_ID + ".palette_tab"))
                     .icon(() -> new ItemStack(AbyssalDecorItems.SOLAR_ROD.get()))
                     .displayItems((itemDisplayParameters, output) -> {
-                        AbyssalDecor.ITEMS.forEach(itemRegistrySupplier -> output.accept(itemRegistrySupplier.get()));
+                        AbyssalDecor.ITEMS.forEach(itemRegistrySupplier -> {
+                            if (itemRegistrySupplier != AbyssalDecorItems.LE_FISHE_AU_CHOCOLAT) {
+                                output.accept(itemRegistrySupplier.get());
+                            }
+                        });
                     })
                     .build());
 

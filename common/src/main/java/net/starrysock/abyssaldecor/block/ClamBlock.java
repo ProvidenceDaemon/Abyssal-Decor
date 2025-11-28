@@ -172,6 +172,8 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
         if (!level.isClientSide) {
             boolean isPowered = level.hasNeighborSignal(pos);
 
+            //When powered by redstone, Clams with pearls only eject their pearls after an additional block update
+
             if (hasPearl) {
                 state = state.setValue(POWERED, isPowered);
                 if (isPowered) {

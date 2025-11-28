@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor;
+package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.starrysock.abyssaldecor.block.AbstractHorizontalBlock;
 
 import java.util.function.Supplier;
 

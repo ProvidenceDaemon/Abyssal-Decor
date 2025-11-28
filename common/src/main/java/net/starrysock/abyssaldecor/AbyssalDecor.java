@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.starrysock.abyssaldecor.block.FancierIronBarsBlock;
 import net.starrysock.abyssaldecor.mixin.BlockEntityTypeAccessor;
 import net.starrysock.abyssaldecor.platform.Services;
 import net.starrysock.abyssaldecor.registry.*;
@@ -130,6 +131,9 @@ public class AbyssalDecor {
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CINNAMON_WOOD.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get());
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD.get());
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get(),AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
+
+        FancierIronBarsBlock.ORNATE.put(AbyssalDecorBlocks.DULL_IRON_BARS.get(),AbyssalDecorBlocks.ORNATE_DULL_IRON_BARS.get());
+        FancierIronBarsBlock.ORNATE.put(AbyssalDecorBlocks.SEABRASS_BARS.get(),AbyssalDecorBlocks.ORNATE_SEABRASS_BARS.get());
     }
 
     public static ResourceLocation id(String path) {

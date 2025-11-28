@@ -1,10 +1,12 @@
 package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import org.jetbrains.annotations.Nullable;
 
 public class AbstractHorizontalBlock extends HorizontalDirectionalBlock {
     public AbstractHorizontalBlock(Properties properties) {
@@ -17,4 +19,12 @@ public class AbstractHorizontalBlock extends HorizontalDirectionalBlock {
         super.createBlockStateDefinition(builder);
         builder.add(FACING);
     }
+
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
 }

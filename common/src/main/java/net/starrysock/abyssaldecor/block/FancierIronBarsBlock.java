@@ -12,7 +12,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.VerticalConnection;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FancierIronBarsBlock extends IronBarsBlock {
+
+    public static final Map<Block,Block> ORNATE = new HashMap<>();
+
     public FancierIronBarsBlock(Properties p_54198_) {
         super(p_54198_);
         registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.SOLO));
@@ -26,11 +32,15 @@ public class FancierIronBarsBlock extends IronBarsBlock {
         BlockPos below = pos.below();
         BlockPos above = pos.above();
 
-        boolean lampAbove = level.getBlockState(above).is(this);
-        boolean lampBelow = level.getBlockState(below).is(this);
+        boolean lampAbove = verticalConnection(level.getBlockState(above));
+        boolean lampBelow = verticalConnection(level.getBlockState(below));
 
         VerticalConnection part = VerticalConnection.getForPlacement(lampAbove,lampBelow);
         return super.getStateForPlacement(context).setValue(ModBlockStateProperties.VERTICAL_CONNECTION,part);
+    }
+
+    boolean verticalConnection(BlockState state){
+        return state.is(this) || state.is(ORNATE.get(this));
     }
 
     @Override
@@ -41,8 +51,8 @@ public class FancierIronBarsBlock extends IronBarsBlock {
             BlockPos below = currentPos.below();
             BlockPos above = currentPos.above();
 
-            boolean lampAbove = level.getBlockState(above).is(this);
-            boolean lampBelow = level.getBlockState(below).is(this);
+            boolean lampAbove = verticalConnection(level.getBlockState(above));
+            boolean lampBelow = verticalConnection(level.getBlockState(below));
 
             VerticalConnection triPart = VerticalConnection.getForPlacement(lampAbove,lampBelow);
 

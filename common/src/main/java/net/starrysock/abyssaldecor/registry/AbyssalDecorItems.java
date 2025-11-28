@@ -32,8 +32,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<ItemNameBlockItem> AMARANTH_SEEDS = registerNamedBlockItem("amaranth_seeds",AbyssalDecorBlocks.AMARANTH);
     public static final RegistrySupplier<Item> AMARANTH_PINNACLE = AbyssalDecor.ITEMS.register("amaranth_pinnacle",() -> new Item(new Item.Properties()));
     public static final RegistrySupplier<BlockItem> AMARANTH_CRATE = registerBlockItem(AbyssalDecorBlocks.AMARANTH_CRATE);
-    public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = registerNamedBlockItem("muckroot",
-            AbyssalDecorBlocks.MUCKROOT,new Item.Properties().food(Foods.CARROT));
+    public static final RegistrySupplier<ItemNameBlockItem> MUCKROOT = AbyssalDecor.ITEMS.register("muckroot",() ->
+            new MuckrootItem(AbyssalDecorBlocks.MUCKROOT.get(),new Item.Properties().food(Foods.CARROT)));
     public static final RegistrySupplier<Item> COOKED_MUCKROOT = AbyssalDecor.ITEMS.register("cooked_muckroot",() ->
             new CookedMuckrootItem(new Item.Properties().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> MUCKROOT_SOUP = AbyssalDecor.ITEMS.register("muckroot_soup",() ->

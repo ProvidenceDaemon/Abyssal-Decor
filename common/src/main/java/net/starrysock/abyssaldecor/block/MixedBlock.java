@@ -1,4 +1,4 @@
-package net.starrysock.abyssaldecor;
+package net.starrysock.abyssaldecor.block;
 
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;

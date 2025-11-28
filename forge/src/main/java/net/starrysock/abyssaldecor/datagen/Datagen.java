@@ -14,10 +14,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.*;
 import net.starrysock.abyssaldecor.block.*;
+import net.starrysock.abyssaldecor.block.BarrierRibbonBlock;
+import net.starrysock.abyssaldecor.block.MixedBlock;
 import net.starrysock.abyssaldecor.block.lamp.BulkheadLampBlock;
 import net.starrysock.abyssaldecor.block.lamp.HorizontalLampBlock;
 import net.starrysock.abyssaldecor.block.lamp.IronLanternBlock;
-import net.starrysock.abyssaldecor.block.lamp.TubeLampBlock;
 import net.starrysock.abyssaldecor.block.properties.*;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
@@ -109,6 +110,7 @@ public class Datagen {
             });
 
 
+            generatedItem(AbyssalDecorItems.LE_FISHE_AU_CHOCOLAT.get());
             generatedItem(AbyssalDecorItems.AMARANTH_SEEDS.get());
             generatedItem(AbyssalDecorItems.AMARANTH_PINNACLE.get());
 
@@ -1505,7 +1507,7 @@ public class Datagen {
             iconTexture("moldy_stalk",modLoc("block/moldy_stalk"));
         }
 
-        public void ribbon(BarrierRibbonBlock block,ResourceLocation model, ResourceLocation texture) {
+        public void ribbon(BarrierRibbonBlock block, ResourceLocation model, ResourceLocation texture) {
             String name = name(block);
             //{
             //  "parent": "abyssaldecor:custom/velvetbarrierribbon",

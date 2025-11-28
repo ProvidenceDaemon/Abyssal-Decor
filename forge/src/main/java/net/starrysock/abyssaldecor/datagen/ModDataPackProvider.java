@@ -51,7 +51,7 @@ public class ModDataPackProvider extends DatapackBuiltinEntriesProvider {
 
     private static TreeConfiguration.TreeConfigurationBuilder createCinnamon() {
         return createStraightBlobTree(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.CINNAMON_LEAVES.get(),
-                12, 2, 0, 2).ignoreVines();
+                10, 2, 0, 2).ignoreVines();
     }
 
     public static void configureFeatures(BootstapContext<ConfiguredFeature<?, ?>> context) {

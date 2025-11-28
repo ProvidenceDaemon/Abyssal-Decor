@@ -15,8 +15,9 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.AbyssalDecor;
-import net.starrysock.abyssaldecor.BarrierRibbonBlock;
-import net.starrysock.abyssaldecor.MixedBlock;
+import net.starrysock.abyssaldecor.block.BarrierRibbonBlock;
+import net.starrysock.abyssaldecor.block.CinnamonLogBlock;
+import net.starrysock.abyssaldecor.block.MixedBlock;
 import net.starrysock.abyssaldecor.block.*;
 import net.starrysock.abyssaldecor.block.lamp.*;
 import net.starrysock.abyssaldecor.block.properties.FrostedLampBlock;
@@ -541,7 +542,7 @@ public class AbyssalDecorBlocks {
             () -> new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<RotatedPillarBlock> ROUGH_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("rough_blood_coral",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+            () -> new RoughBloodCoralBlock(BlockBehaviour.Properties.of()));
 
 
     public static final RegistrySupplier<RotatedPillarBlock> BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("blood_coral_pillar",
@@ -972,8 +973,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> GRIME_CARPET = AbyssalDecor.BLOCKS.register("grime_carpet",() -> new FloorGrimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion().dropsLike(WALL_GRIME.get())));
 
     public static final RegistrySupplier<Block> PAPER_STACK = AbyssalDecor.BLOCKS.register("paper_stack",() -> new Block(BlockBehaviour.Properties.of()));
-    public static final RegistrySupplier<HorizontalDirectionalBlock> BOOK_BLOCK = AbyssalDecor.BLOCKS.register("book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
-    public static final RegistrySupplier<HorizontalDirectionalBlock> MOLDY_BOOK_BLOCK = AbyssalDecor.BLOCKS.register("moldy_book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<HorizontalDirectionalBlock> BOOK_BLOCK = AbyssalDecor.BLOCKS.register("book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.WOOD).strength(2.0F, 10.0F)));
+    public static final RegistrySupplier<HorizontalDirectionalBlock> MOLDY_BOOK_BLOCK = AbyssalDecor.BLOCKS.register("moldy_book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.WOOD).strength(2.0F, 10.0F)));
 
     public static final RegistrySupplier<Block> BLACK_MOLD = AbyssalDecor.BLOCKS.register("black_mold",() ->
             new MoldBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLACK).sound(SoundType.SOUL_SOIL)
@@ -1061,14 +1062,20 @@ public class AbyssalDecorBlocks {
 
     //////////////////////
 
-    public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_LOG = AbyssalDecor.BLOCKS.register("cinnamon_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));
+    public static final RegistrySupplier<RotatedPillarBlock> CINNAMON_LOG = AbyssalDecor.BLOCKS.register("cinnamon_log", () -> cinnLog(MapColor.SAND, MapColor.QUARTZ));
+
+    public static RotatedPillarBlock cinnLog(MapColor topMapColor, MapColor sideMapColor) {
+        return new CinnamonLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor;
+        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+    }
 
     public static final RegistrySupplier<RotatedPillarBlock> HEALING_CINNAMON_LOG = AbyssalDecor.BLOCKS.register("healing_cinnamon_log",
-            () -> new HealingCinnamonLog(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2)
+            () -> new HealingCinnamonLogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2)
                     .sound(SoundType.WOOD).ignitedByLava().randomTicks()));
 
     public static final RegistrySupplier<RotatedPillarBlock> HEALING_CINNAMON_WOOD = AbyssalDecor.BLOCKS.register("healing_cinnamon_wood", () ->
-            new HealingCinnamonLog(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2)
+            new HealingCinnamonLogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK).instrument(NoteBlockInstrument.BASS).strength(2)
                     .sound(SoundType.WOOD).ignitedByLava()));
 
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = AbyssalDecor.BLOCKS.register("stripped_cinnamon_log", () -> Blocks.log(MapColor.SAND, MapColor.QUARTZ));

@@ -196,6 +196,7 @@ public class AbyssalDecorClient {
         renderTypes.accept(AbyssalDecorBlocks.DEEPBRONZE_DOOR.get(),RenderType.cutoutMipped());
 
         renderTypes.accept(AbyssalDecorBlocks.FROSTED_LAMP.get(),RenderType.cutoutMipped());
+        renderTypes.accept(AbyssalDecorBlocks.ORNATE_DEEPBRONZE_BARS.get(),RenderType.cutoutMipped());
     }
 
 
