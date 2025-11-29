@@ -43,12 +43,6 @@ public class SconceBlock extends AbstractHorizontalBlock {
         return SUPPORT_SHAPE;
     }
 
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING).getOpposite();
-        return DriedStarfishBlock.canSupportAtFace(level, pos, direction);
-    }
-
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

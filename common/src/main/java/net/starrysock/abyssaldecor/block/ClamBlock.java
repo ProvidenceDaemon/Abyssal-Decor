@@ -41,14 +41,14 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
-    public static final VoxelShape shape_closed = box(2,0,2,14,2,14);
-    public static final VoxelShape shape_open = box(2,0,2,14,6,14);
+    public static final VoxelShape shape_closed = box(2, 0, 2, 14, 2, 14);
+    public static final VoxelShape shape_open = box(2, 0, 2, 14, 6, 14);
 
     public ClamBlock(Properties properties, boolean hasPearl) {
         super(properties);
         this.hasPearl = hasPearl;
-        registerDefaultState(defaultBlockState().setValue(OPEN,false).setValue(POWERED,false)
-                .setValue(BlockStateProperties.WATERLOGGED,false));
+        registerDefaultState(defaultBlockState().setValue(OPEN, false).setValue(POWERED, false)
+                .setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override
@@ -62,7 +62,7 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
         ItemStack stack = player.getItemInHand(interactionHand);
         boolean open = state.getValue(OPEN);
         if (!hasPearl && open && stack.is(ItemTags.SAND)) {
-            return eatSand(state,level,pos,player,stack);
+            return eatSand(state, level, pos, player, stack);
         } else if (open && hasPearl) {
             if (!level.isClientSide) {
                 removePearl(state, level, pos, player);
@@ -88,7 +88,7 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
             serverLevel.sendParticles(ParticleTypes.HAPPY_VILLAGER, pos.getX(), pos.getY(), pos.getZ(), 5, 1, 1, 1, 1);
 
             if (level.random.nextDouble() < PEARL_CHANCE) {
-                placePearl(state,serverLevel,pos);
+                placePearl(state, serverLevel, pos);
                 level.playSound(null, pos, SoundEvents.PLAYER_BURP, SoundSource.BLOCKS, 1.0F, 1.2F);
             } else {
                 level.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.BLOCKS, 1.0F, 1.2F);
@@ -102,17 +102,17 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    void removePearl(BlockState state,Level level,BlockPos pos,Player player) {
+    void removePearl(BlockState state, Level level, BlockPos pos, Player player) {
         level.setBlockAndUpdate(pos, AbyssalDecorBlocks.CLAM.get().defaultBlockState()
-                .setValue(FACING,state.getValue(FACING))
-                        .setValue(POWERED,state.getValue(POWERED))
-                        .setValue(OPEN,state.getValue(OPEN))
-                .setValue(BlockStateProperties.WATERLOGGED,state.getValue(BlockStateProperties.WATERLOGGED))
+                .setValue(FACING, state.getValue(FACING))
+                .setValue(POWERED, state.getValue(POWERED))
+                .setValue(OPEN, state.getValue(OPEN))
+                .setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED))
         );
-        if (player!= null) {
+        if (player != null) {
             player.addItem(AbyssalDecorItems.WHITE_PEARL.get().getDefaultInstance());
         } else {
-            popResource(level,pos,AbyssalDecorItems.WHITE_PEARL.get().getDefaultInstance());
+            popResource(level, pos, AbyssalDecorItems.WHITE_PEARL.get().getDefaultInstance());
         }
     }
 
@@ -129,14 +129,14 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         super.tick(state, level, pos, random);
-        placePearl(state,level,pos);
+        placePearl(state, level, pos);
     }
 
-    void placePearl(BlockState state,ServerLevel level,BlockPos pos) {
+    void placePearl(BlockState state, ServerLevel level, BlockPos pos) {
         level.setBlockAndUpdate(pos, AbyssalDecorBlocks.CLAM_WITH_PEARL.get().defaultBlockState()
-                .setValue(FACING,state.getValue(FACING))
-                        .setValue(OPEN,state.getValue(OPEN))
-                .setValue(BlockStateProperties.WATERLOGGED,state.getValue(BlockStateProperties.WATERLOGGED))
+                .setValue(FACING, state.getValue(FACING))
+                .setValue(OPEN, state.getValue(OPEN))
+                .setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED))
         );
     }
 
@@ -154,7 +154,7 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(OPEN,BlockStateProperties.WATERLOGGED,POWERED);
+        builder.add(OPEN, BlockStateProperties.WATERLOGGED, POWERED);
     }
 
     @Override
@@ -172,17 +172,12 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
         if (!level.isClientSide) {
             boolean isPowered = level.hasNeighborSignal(pos);
 
-            //When powered by redstone, Clams with pearls only eject their pearls after an additional block update
-
             if (hasPearl) {
                 state = state.setValue(POWERED, isPowered);
                 if (isPowered) {
-                    if (state.getValue(OPEN)) {
-                        removePearl(state, level, pos, null);
-                    } else  {
-                        level.setBlockAndUpdate(pos,state.setValue(OPEN,true));
-                        this.playSound(null, level, pos, true);
-                    }
+                    state = state.setValue(OPEN, true);
+                    removePearl(state, level, pos, null);
+                    this.playSound(null, level, pos, true);
                 }
             } else if (isPowered != state.getValue(POWERED)) {
                 if (state.getValue(OPEN) != isPowered) {
@@ -198,7 +193,7 @@ public class ClamBlock extends AbstractHorizontalBlock implements SimpleWaterlog
     }
 
     protected void playSound(@Nullable Player player, Level level, BlockPos pos, boolean isOpened) {
-        level.playSound(player, pos,SoundEvents.WOOD_HIT, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+        level.playSound(player, pos, SoundEvents.WOOD_HIT, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
         level.gameEvent(player, isOpened ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
     }
 

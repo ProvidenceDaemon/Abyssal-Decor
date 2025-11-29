@@ -3,11 +3,18 @@ package net.starrysock.abyssaldecor.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
 
@@ -33,6 +40,11 @@ public class FeverBlossomBlock extends CropBlock {
                 }
             }
         }
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        return BogAppleLeavesBlock.tryRightClickHarvest(this,state,level,pos,player,hand);
     }
 
     protected static float getAltGrowthSpeed(Block block, BlockGetter level, BlockPos pos) {
@@ -68,6 +80,10 @@ public class FeverBlossomBlock extends CropBlock {
         return f;
     }
 
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return box(2.0, 0.0, 2.0, 14.0, 7.0, 14.0);
+    }
 
     @Override
     protected ItemLike getBaseSeedId() {

@@ -86,10 +86,12 @@ public class AbyssalDecor {
                 if (b && !player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
-                SoundType soundtype = state.getSoundType();
-                level.playSound(player, pos, soundtype.getPlaceSound(), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
-                level.gameEvent(GameEvent.BLOCK_PLACE, pos, GameEvent.Context.of(player, state));
             }
+
+            SoundType soundtype = state.getSoundType();
+            level.playSound(player, pos, soundtype.getPlaceSound(), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+            level.gameEvent(GameEvent.BLOCK_PLACE, pos, GameEvent.Context.of(player, state));
+
             player.swing(hand);
 
             return InteractionResult.sidedSuccess(player.level().isClientSide);

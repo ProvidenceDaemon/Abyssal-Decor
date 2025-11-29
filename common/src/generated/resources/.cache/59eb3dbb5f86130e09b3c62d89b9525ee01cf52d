@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-26T17:10:39.9576704	Loot Tables
+// 1.20.1	2025-11-28T18:49:37.1921879	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -137,7 +137,7 @@ cc810b8cfdd47d027b9d0f5fe8d97dfcbc3e7e2f data/abyssaldecor/loot_tables/blocks/ef
 39e08b706781905986ad72e23c51bab6e78407f8 data/abyssaldecor/loot_tables/blocks/elder_wisteria_leaves.json
 ad5db7fc9025db019b5218aeea3affda11b2076d data/abyssaldecor/loot_tables/blocks/elder_wisteria_petals.json
 0d2bdbce512e6f0d7c4d7e6b728ba9b935512916 data/abyssaldecor/loot_tables/blocks/ethereal_rod.json
-929ac30be13ef36714a3835f9299a03a830ac622 data/abyssaldecor/loot_tables/blocks/fever_blossom.json
+4f8d6c99f277b547d54104168bda8b2e7daa7639 data/abyssaldecor/loot_tables/blocks/fever_blossom.json
 15fd29c83809bb2c08e049cc78eec75f7bc428cf data/abyssaldecor/loot_tables/blocks/flaky_scales.json
 32225ff84a0b5857945a16dfad297b4fdd876c36 data/abyssaldecor/loot_tables/blocks/flowering_cinnamon_leaves.json
 c1d4b846962b14d6fbdbdf0ba09a1d32cd404535 data/abyssaldecor/loot_tables/blocks/flower_lamp.json

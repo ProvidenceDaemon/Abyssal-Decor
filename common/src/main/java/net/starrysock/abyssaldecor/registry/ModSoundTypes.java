@@ -5,7 +5,8 @@ import net.minecraft.world.level.block.SoundType;
 
 public class ModSoundTypes {
     public static final SoundType DEEPBRONZE_BLOCK = new SoundType(1.0F, 1.0F, AbyssalDecorSounds.DEEPBRONZE_BLOCK_BREAK.get(),
-            AbyssalDecorSounds.DEEPBRONZE_BLOCK_STEP.get(), SoundEvents.NETHERITE_BLOCK_PLACE, SoundEvents.NETHERITE_BLOCK_HIT, SoundEvents.NETHERITE_BLOCK_FALL);
+            AbyssalDecorSounds.DEEPBRONZE_BLOCK_STEP.get(),
+            AbyssalDecorSounds.DEEPBRONZE_BLOCK_BREAK.get(), AbyssalDecorSounds.DEEPBRONZE_BLOCK_STEP.get(), SoundEvents.NETHERITE_BLOCK_FALL);
 
     public static final SoundType SEABRASS_BLOCK = new SoundType(1.0F, 1.0F, SoundEvents.NETHERITE_BLOCK_BREAK,
             SoundEvents.NETHERITE_BLOCK_STEP, SoundEvents.NETHERITE_BLOCK_PLACE, SoundEvents.NETHERITE_BLOCK_HIT, SoundEvents.NETHERITE_BLOCK_FALL);

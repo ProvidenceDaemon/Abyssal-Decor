@@ -62,6 +62,32 @@ public class CurtainBlock extends AbstractHorizontalBlock implements SimpleWater
             if (direction.getAxis().isHorizontal()) {
                 blockstate1 = blockstate1.setValue(FACING, direction.getOpposite());
                 if (blockstate1.canSurvive(levelreader, pos)) {
+
+                    if (lampAbove) {
+                        Direction aboveDirection = levelreader.getBlockState(above).getValue(FACING);
+                        if (aboveDirection != direction.getOpposite()) {//can only be top or solo
+                            if (part == VerticalConnection.MIDDLE) {
+                                part = VerticalConnection.TOP;
+                            }
+                            if (part == VerticalConnection.BOTTOM) {
+                                part = VerticalConnection.SOLO;
+                            }
+                        }
+                    }
+
+                    if (lampBelow) {
+                        Direction belowDirection = levelreader.getBlockState(below).getValue(FACING);
+                        if (belowDirection != direction.getOpposite()) {//can only be bottom or solo
+                            if (part == VerticalConnection.MIDDLE) {
+                                part = VerticalConnection.BOTTOM;
+                            }
+                            if (part == VerticalConnection.TOP) {
+                                part = VerticalConnection.SOLO;
+                            }
+                        }
+                    }
+
+
                     blockstate1 = blockstate1.setValue(BlockStateProperties.WATERLOGGED, fluidstate.getType() == Fluids.WATER);
                     return part == null ? blockstate1 : defaultBlockState()
                             .setValue(ModBlockStateProperties.VERTICAL_CONNECTION,part).setValue(FACING,direction.getOpposite());
@@ -79,8 +105,11 @@ public class CurtainBlock extends AbstractHorizontalBlock implements SimpleWater
             BlockPos below = pos.below();
             BlockPos above = pos.above();
 
-            boolean lampAbove = level.getBlockState(above).is(this);
-            boolean lampBelow = level.getBlockState(below).is(this);
+            Direction facing = state.getValue(FACING);
+
+            boolean lampAbove = check(level.getBlockState(above),facing);
+
+            boolean lampBelow = check(level.getBlockState(below),facing);
 
             VerticalConnection triPart = VerticalConnection.getForPlacement(lampAbove,lampBelow);
 
@@ -88,6 +117,10 @@ public class CurtainBlock extends AbstractHorizontalBlock implements SimpleWater
                     .setValue(FACING,state.getValue(FACING)),3);
         }
         return state;
+    }
+
+    boolean check(BlockState otherState,Direction direction) {
+        return otherState.is(this) && otherState.getValue(FACING) == direction;
     }
 
     @Override

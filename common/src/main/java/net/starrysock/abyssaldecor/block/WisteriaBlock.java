@@ -148,10 +148,11 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
 
         for(Direction direction : context.getNearestLookingDirections()) {
             if (direction.getAxis().isHorizontal()) {
-                blockstate = blockstate.setValue(FACING, direction);
+                Direction direction1 = direction.getOpposite();
+                blockstate = blockstate.setValue(FACING, direction1);
                 if (blockstate.canSurvive(levelreader, blockpos)) {
                     BlockState aboveState = levelreader.getBlockState(blockpos.above());
-                    boolean wisteriaAbove = aboveState.is(this) && aboveState.getValue(FACING) == direction;
+                    boolean wisteriaAbove = aboveState.is(this) && aboveState.getValue(FACING) == direction1;
                     if (wisteriaAbove) {
                         part = TriPart.BOTTOM;
                     }

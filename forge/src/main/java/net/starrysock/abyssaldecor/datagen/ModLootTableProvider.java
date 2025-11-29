@@ -67,7 +67,8 @@ public class ModLootTableProvider extends LootTableProvider {
                     AbyssalDecorBlocks.NITHING_POLE.get(), AbyssalDecorBlocks.TELESCOPE.get(), AbyssalDecorBlocks.HANGING_WEB.get(),
                     AbyssalDecorBlocks.DANGLING_WEB.get(), AbyssalDecorBlocks.CINNAMON_LEAVES.get(), AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get(),
                     AbyssalDecorBlocks.SPIDERCORN.get(), AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),
-                    AbyssalDecorBlocks.HEART_OF_THE_SEA.get(), AbyssalDecorBlocks.MOLDY_HANGER.get(),AbyssalDecorBlocks.SEABRASS_ORE.get());
+                    AbyssalDecorBlocks.HEART_OF_THE_SEA.get(), AbyssalDecorBlocks.MOLDY_HANGER.get(),AbyssalDecorBlocks.SEABRASS_ORE.get()
+                            ,AbyssalDecorBlocks.FEVER_BLOSSOM.get());
 
             AbyssalDecor.BLOCKS.forEach(blockRegistrySupplier -> {
                 Block block = blockRegistrySupplier.get();
@@ -152,6 +153,13 @@ public class ModLootTableProvider extends LootTableProvider {
                             .hasProperty(TallAmaranthBlock.AGE, 1));
             this.add(AbyssalDecorBlocks.TALL_AMARANTH.get(), this.createTallCropDrops(AbyssalDecorBlocks.TALL_AMARANTH.get(), AbyssalDecorItems.AMARANTH_PINNACLE.get(),
                     AbyssalDecorItems.AMARANTH_SEEDS.get(), ama));
+
+            LootItemCondition.Builder fever = LootItemBlockStatePropertyCondition.hasBlockStateProperties(AbyssalDecorBlocks.FEVER_BLOSSOM.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties()
+                            .hasProperty(CropBlock.AGE, 7));
+            this.add(AbyssalDecorBlocks.FEVER_BLOSSOM.get(), this.createCropDrops(AbyssalDecorBlocks.FEVER_BLOSSOM.get(),
+                    AbyssalDecorItems.FEVER_BLOSSOM.get(),
+                    AbyssalDecorItems.FEVER_BLOSSOM_SEEDS.get(), fever));
 
 
             this.add(AbyssalDecorBlocks.MOLDY_HANGER.get(), this.applyExplosionDecay(AbyssalDecorBlocks.MOLDY_HANGER.get(),

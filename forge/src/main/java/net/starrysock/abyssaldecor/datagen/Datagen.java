@@ -938,7 +938,7 @@ public class Datagen {
 
         void blackMold(Block block) {
             ModelFile main = models().cubeAll(name(block),modLoc("block/blackmold"));
-            simpleBlock(block,ConfiguredModel.allYRotations(main,0,false));
+            simpleBlock(block,ConfiguredModel.allRotations(main,false));
         }
 
         void wallGrime(WallGrimeBlock block) {
@@ -1193,41 +1193,12 @@ public class Datagen {
         }
 
 
-        protected void multiblockCurtains(CurtainMultiBlock block) {
-            //{
-            //  "parent": "abyssaldecor:custom/velvetcurtainsolo",
-            //  "textures": {
-            //    "all": "abyssaldecor:block/velvetcurtainsolo",
-            //    "particle": "abyssaldecor:block/velvetcurtainsolo",
-            //    "0": "abyssaldecor:block/velvetcurtainsolo"
-            //  },
-            //  "render_type": "cutout_mipped"
-            //}
-            String name = name(block);
-
-            String baseName = name(block.soloBlock);
-
-            getVariantBuilder(block).forAllStatesExcept(blockState -> {
-
-                TriPart part = blockState.getValue(ModBlockStateProperties.TRI_PART);
-
-                ResourceLocation texture = modLoc("block/"+baseName+"_"+part.getSerializedName());
-
-                ModelFile modelFile = models().withExistingParent("block/" + name+"_"+part.getSerializedName(),
-                                modLoc("custom/velvetcurtainsolo"))
-                        .texture("all", texture)
-                        .texture("particle", texture);
-
-                return ConfiguredModel.builder().modelFile(modelFile).build();
-            }, BlockStateProperties.WATERLOGGED);
-        }
-
         protected void curtains(Block block) {
             String name = name(block);
 
             getVariantBuilder(block).forAllStatesExcept(blockState -> {
                 VerticalConnection part = blockState.getValue(ModBlockStateProperties.VERTICAL_CONNECTION);
-
+                Direction dir = blockState.getValue(HorizontalDirectionalBlock.FACING);
                 ResourceLocation texture = modLoc("block/"+name+"_"+part.getSerializedName());
 
 
@@ -1236,7 +1207,12 @@ public class Datagen {
                         .texture("all", texture)
                         .texture("particle", texture);
 
-                return ConfiguredModel.builder().modelFile(modelFile).build();
+
+                int y = ((int) dir.toYRot()+180) % 360;
+
+                return ConfiguredModel.builder().modelFile(modelFile)
+                        .rotationY(y)
+                        .build();
 
                    //     horizontalBlock(block, models().withExistingParent("block/" + name,
                     //                    modLoc("custom/velvetcurtainsolo"))

@@ -15,6 +15,63 @@
       {
         "model": "abyssaldecor:block/black_mold",
         "y": 270
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 90
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 180
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 180,
+        "y": 90
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 180,
+        "y": 270
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 270
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "abyssaldecor:block/black_mold",
+        "x": 270,
+        "y": 270
       }
     ]
   }

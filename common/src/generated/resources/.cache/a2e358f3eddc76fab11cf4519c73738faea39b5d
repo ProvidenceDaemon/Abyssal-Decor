@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-10T17:16:26.2367176	Item Models: abyssaldecor
+// 1.20.1	2025-11-27T22:49:37.2906727	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -72,6 +72,7 @@ c26183622043c75b51e5c5e8fec7e05bc79fc825 assets/abyssaldecor/models/item/gilded_
 f2f8e7bc161385aa2852aaf31352420ea6d140b9 assets/abyssaldecor/models/item/iron_panel_stairs.json
 144bbfe2057073be4c5be5c2317e27b03126ab58 assets/abyssaldecor/models/item/jade_lamp.json
 cce7a9cfd9e9dc816c9ad1fc05987b8a5a387724 assets/abyssaldecor/models/item/jade_lantern.json
+d69e25dbdfea7c358c98ff9dec128609d5f6f5ff assets/abyssaldecor/models/item/le_fishe_au_chocolat.json
 0e74c8afc23641ec495a08bc5e0ace66ca6e1fcd assets/abyssaldecor/models/item/lightbulb.json
 63d7c9e9deb8fb803fe0c7d429b169ce403d5ff9 assets/abyssaldecor/models/item/lion_statue.json
 614dd979423fa9fff0082beb1e9e395674c3aada assets/abyssaldecor/models/item/nithing_pole.json

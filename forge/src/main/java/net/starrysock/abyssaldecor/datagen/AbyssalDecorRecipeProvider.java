@@ -636,6 +636,11 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
 
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.PRISMARINE_CRYSTALS, RecipeCategory.MISC, AbyssalDecorItems.PRISMARINE_CRYSTAL_BLOCK.get());
 
+        hangingSign(consumer, AbyssalDecorItems.BLACKWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get());
+        hangingSign(consumer, AbyssalDecorItems.CINNAMON_HANGING_SIGN.get(), AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get());
+        hangingSign(consumer, AbyssalDecorItems.WHITEWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_LOG.get());
+
+
     }
 
     protected void smallBars(Consumer<FinishedRecipe> consumer, ItemLike result, ItemLike ingredient) {
