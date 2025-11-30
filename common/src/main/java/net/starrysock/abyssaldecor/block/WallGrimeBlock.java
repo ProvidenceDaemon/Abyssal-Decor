@@ -25,7 +25,7 @@ public class WallGrimeBlock extends AbstractHorizontalBlock{
     }
 
 
-    static final VoxelShape halfShape = box(0,8,15,16,16,16);
+    static final VoxelShape topShape = box(0,8,15,16,16,16);
     static final VoxelShape bottomShape = box(0,0,15,16,8,16);
     static final VoxelShape fullShape = box(0,1,15,16,16,16);
 
@@ -34,9 +34,9 @@ public class WallGrimeBlock extends AbstractHorizontalBlock{
         Direction facing = state.getValue(FACING);
         WallGrimeType wallGrimeType = state.getValue(ModBlockStateProperties.WALL_GRIME_TYPE);
         VoxelShape shape = switch (wallGrimeType){
-            case FLOOR -> bottomShape;
-            case MIDDLE_FLOOR,MIDDLE -> fullShape;
-            case TOP -> halfShape;
+            case BOTTOM, FLOOR -> bottomShape;
+            case MIDDLE_FLOOR,MIDDLE,MIDDLE_CEILING -> fullShape;
+            case TOP,CEILING -> topShape;
         };
 
         return AbyssalUtils.calculateShapes(facing, shape);
@@ -54,27 +54,15 @@ public class WallGrimeBlock extends AbstractHorizontalBlock{
             return Blocks.AIR.defaultBlockState();
         }
 
-        if (facing == Direction.UP) {
-            WallGrimeType type = null;
-            boolean isGrimeAbove = facingState.is(this);
-            boolean isFloorBelow = DriedStarfishBlock.canSupportAtFace(level,currentPos,Direction.DOWN);
-            if (isGrimeAbove) {
-                type = isFloorBelow ? WallGrimeType.MIDDLE_FLOOR : WallGrimeType.MIDDLE;
-            } else {
-                type = isFloorBelow ? WallGrimeType.FLOOR : WallGrimeType.MIDDLE;
-            }
-            state = state.setValue(ModBlockStateProperties.WALL_GRIME_TYPE,type);
+        switch (facing) {
+            case UP, DOWN -> {
+                WallGrimeType.Connection below = getConnection(level, currentPos, Direction.DOWN);
+                WallGrimeType.Connection above = getConnection(level, currentPos, Direction.UP);
 
-        } else {
-            WallGrimeType type = null;
-            boolean isGrimeBelow = facingState.is(this);
-            boolean isFloorBelow = DriedStarfishBlock.canSupportAtFace(level,currentPos,Direction.DOWN);
-            if (isGrimeBelow) {
-                type = isFloorBelow ? WallGrimeType.MIDDLE_FLOOR : WallGrimeType.MIDDLE;
-            } else {
-                type = isFloorBelow ? WallGrimeType.FLOOR : WallGrimeType.TOP;
+
+                WallGrimeType type = WallGrimeType.getGrimeType(above, below);
+                state = state.setValue(ModBlockStateProperties.WALL_GRIME_TYPE, type);
             }
-            state = state.setValue(ModBlockStateProperties.WALL_GRIME_TYPE,type);
         }
 
         return state;
@@ -89,24 +77,23 @@ public class WallGrimeBlock extends AbstractHorizontalBlock{
         return blockState.isFaceSturdy(level, blockPos, direction);
     }
 
+    public WallGrimeType.Connection getConnection(LevelAccessor level,BlockPos pos,Direction direction) {
+        BlockState state = level.getBlockState(pos.relative(direction));
+        if (state.is(this)) return WallGrimeType.Connection.GRIME;
+        boolean solid = DriedStarfishBlock.canSupportAtFace(level, pos, direction);
+        return solid ? WallGrimeType.Connection.SOLID : WallGrimeType.Connection.NOTHING;
+    }
+
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
 
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        boolean floor = DriedStarfishBlock.canSupportAtFace(level, pos, Direction.DOWN);
-        boolean grimeBelow = level.getBlockState(pos.below()).is(this);
-        boolean grimeAbove =  level.getBlockState(pos.above()).is(this);
+        WallGrimeType.Connection below = getConnection(level,pos,Direction.DOWN);
+        WallGrimeType.Connection above =  getConnection(level,pos,Direction.UP);
 
-        WallGrimeType grimeType;
-
-        if (floor) {
-            grimeType = grimeAbove ? WallGrimeType.MIDDLE_FLOOR : WallGrimeType.FLOOR;
-        } else {
-            grimeType = grimeBelow ? WallGrimeType.MIDDLE : WallGrimeType.TOP;
-        }
-
+        WallGrimeType grimeType = WallGrimeType.getGrimeType(above,below);
 
         Direction[] adirection = context.getNearestLookingDirections();
         BlockState blockstate = this.defaultBlockState().setValue(ModBlockStateProperties.WALL_GRIME_TYPE,grimeType);

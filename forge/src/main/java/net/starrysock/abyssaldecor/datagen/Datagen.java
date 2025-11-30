@@ -413,6 +413,7 @@ public class Datagen {
                         .build();
             });
 
+            simpleBlock(AbyssalDecorBlocks.GRIME_CARPET.get(),models().getExistingFile(modLoc("block/grime_carpet")));
             simplestBlockWithItem(AbyssalDecorBlocks.WISTERIA_PETALS.get());
             simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_PETALS.get());
             simplestBlockWithItem(AbyssalDecorBlocks.ELDER_WISTERIA_LEAVES.get());
@@ -943,10 +944,13 @@ public class Datagen {
 
         void wallGrime(WallGrimeBlock block) {
             String name = name(block);
-            ModelFile top = models().getExistingFile(modLoc("block/grime"));
+            ModelFile ceiling = models().getExistingFile(modLoc("block/grime_ceiling"));
+            ModelFile top = models().getExistingFile(modLoc("block/grime_top"));
             ModelFile midFloor = models().getExistingFile(modLoc("block/grime_mid_floor"));
             ModelFile floor = models().getExistingFile(modLoc("block/grime_floor"));
+            ModelFile midCeiling = models().getExistingFile(modLoc("block/grime_mid_ceiling"));
             ModelFile mid = models().getExistingFile(modLoc("block/grime_mid"));
+            ModelFile bottom = models().getExistingFile(modLoc("block/grime_bottom"));
             getVariantBuilder(block).forAllStates(state -> {
                 int angleOffset = 180;
 
@@ -954,7 +958,10 @@ public class Datagen {
                     case FLOOR -> floor;
                     case MIDDLE_FLOOR -> midFloor;
                     case MIDDLE -> mid;
+                    case MIDDLE_CEILING -> midCeiling;
                     case TOP -> top;
+                    case CEILING -> ceiling;
+                    case BOTTOM -> bottom;
                 };
 
                 return ConfiguredModel.builder().modelFile(file)

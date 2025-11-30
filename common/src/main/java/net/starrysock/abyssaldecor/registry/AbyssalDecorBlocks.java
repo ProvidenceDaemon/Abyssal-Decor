@@ -969,8 +969,8 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<Block> GILDED_BLACK_PEARL_DOOR = AbyssalDecor.BLOCKS.register("gilded_black_pearl_door",() -> woodDoor(GILDED_BLACK_PEARL.get(),ModBlockSetTypes.WHITE_PEARL));
     public static final RegistrySupplier<Block> GILDED_BLACK_PEARL_TRAPDOOR = AbyssalDecor.BLOCKS.register("gilded_black_pearl_trapdoor",() -> woodTrapdoor(ModBlockSetTypes.WHITE_PEARL));
 
-    public static final RegistrySupplier<WallGrimeBlock> WALL_GRIME = AbyssalDecor.BLOCKS.register("wall_grime",() -> new WallGrimeBlock(BlockBehaviour.Properties.of().replaceable().noCollission().noOcclusion()));
-    public static final RegistrySupplier<Block> GRIME_CARPET = AbyssalDecor.BLOCKS.register("grime_carpet",() -> new FloorGrimeBlock(BlockBehaviour.Properties.of().replaceable().noCollission().noOcclusion().dropsLike(WALL_GRIME.get())));
+    public static final RegistrySupplier<WallGrimeBlock> WALL_GRIME = AbyssalDecor.BLOCKS.register("wall_grime",() -> new WallGrimeBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.VINE).replaceable().noCollission().noOcclusion()));
+    public static final RegistrySupplier<Block> GRIME_CARPET = AbyssalDecor.BLOCKS.register("grime_carpet",() -> new FloorGrimeBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.VINE).replaceable().noCollission().noOcclusion().dropsLike(WALL_GRIME.get())));
 
     public static final RegistrySupplier<Block> PAPER_STACK = AbyssalDecor.BLOCKS.register("paper_stack",() -> new Block(BlockBehaviour.Properties.of()));
     public static final RegistrySupplier<HorizontalDirectionalBlock> BOOK_BLOCK = AbyssalDecor.BLOCKS.register("book_block",() -> new AbstractHorizontalBlock(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.WOOD).strength(2.0F, 10.0F)));
