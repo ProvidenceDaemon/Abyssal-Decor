@@ -58,7 +58,7 @@ dependencies {
     modImplementation "dev.architectury:architectury-forge:$architectury_version"
 
     compileOnly group: 'org.jetbrains',name:'annotations',version: '24.1.0'
-
+    compileOnly "earth.terrarium.athena:athena-forge-1.20.1:${athena_version}"
 }
 
 jar {

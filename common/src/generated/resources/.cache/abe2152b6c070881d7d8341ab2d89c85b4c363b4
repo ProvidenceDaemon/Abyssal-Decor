@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-29T12:25:27.2770832	Block States: abyssaldecor
+// 1.20.1	2025-12-15T20:29:23.2032337	Block States: abyssaldecor
 1975700f06b4d91b37a3c28e1096b25e3ad87c6c assets/abyssaldecor/blockstates/amaranth.json
 ef421ee76ead997567926af87905959bf2e77b26 assets/abyssaldecor/blockstates/amaranth_crate.json
 aaa1609f56db49cbd6c4008cea8cdd6fa24c8a61 assets/abyssaldecor/blockstates/ancient_birch_log.json
@@ -197,7 +197,7 @@ e5a889d8552153dd379aea088723703ec0764f3f assets/abyssaldecor/blockstates/polishe
 ecf65a58972253b24b7331cba9e72660c85b86a3 assets/abyssaldecor/blockstates/polished_starstone_slab.json
 ba65a98fac80df69fcfae8897ccd41370b6adc3d assets/abyssaldecor/blockstates/polished_starstone_stairs.json
 a93d56b2550ff145a9e239589efdcf7ec2cbed0c assets/abyssaldecor/blockstates/polished_starstone_wall.json
-da33a62c5d28b334105adc282d9b81ed13017d91 assets/abyssaldecor/blockstates/prismarine_crystal_block.json
+126155e088964d8fc8ecfa42a68abcef84e073ad assets/abyssaldecor/blockstates/prismarine_crystal_block.json
 f708d22841429d1b49143e25a5dc533babf01b77 assets/abyssaldecor/blockstates/prismarine_crystal_pane.json
 614e5a0f14e4a42e40efee79f546e588688315eb assets/abyssaldecor/blockstates/purple_wallpaper.json
 3a5211bd426514ea79e1c34b892476301271b0e9 assets/abyssaldecor/blockstates/quartz_lamp.json
