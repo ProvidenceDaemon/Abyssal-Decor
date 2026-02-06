@@ -28,11 +28,20 @@ public class SconceBlock extends AbstractHorizontalBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return switch (state.getValue(FACING)) {
-            case NORTH -> box(6.0, 2.0, 6.0, 10.0, 16.0, 16.0);
-            case EAST -> box(0.0, 2.0, 6.0, 10.0, 16.0, 10.0);
-            case WEST -> box(6.0, 2.0, 6.0, 16.0, 16.0, 10.0);
-            default -> box(6.0, 2.0, 0.0, 10.0, 16.0, 10.0);
+
+        return switch (state.getValue(VERTICAL_FACING)) {
+            case UP -> switch (state.getValue(FACING)) {
+                case NORTH -> box(6.0, 0.0, 6.0, 10.0, 14.0, 16.0);
+                case EAST -> box(0.0, 0.0, 6.0, 10.0, 14.0, 10.0);
+                case WEST -> box(6.0, 0.0, 6.0, 16.0, 14.0, 10.0);
+                default -> box(6.0, 0.0, 0.0, 10.0, 14.0, 10.0);
+            };
+            default -> switch (state.getValue(FACING)) {
+                case NORTH -> box(6.0, 2.0, 6.0, 10.0, 16.0, 16.0);
+                case EAST -> box(0.0, 2.0, 6.0, 10.0, 16.0, 10.0);
+                case WEST -> box(6.0, 2.0, 6.0, 16.0, 16.0, 10.0);
+                default -> box(6.0, 2.0, 0.0, 10.0, 16.0, 10.0);
+            };
         };
     }
 

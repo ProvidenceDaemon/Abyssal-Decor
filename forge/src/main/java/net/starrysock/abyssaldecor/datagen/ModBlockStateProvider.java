@@ -753,7 +753,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(AbyssalDecorBlocks.SEABRASS_CATALYST.get(), models().getExistingFile(modLoc("block/seabrass_catalyst")));
 
         simpleBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get());
-        athenaCTMBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get());
+       // athenaCTMBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get())
+       //         .ctmTexture()
+       // ;
     }
 
     void blackMold(Block block) {
