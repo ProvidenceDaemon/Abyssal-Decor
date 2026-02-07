@@ -379,8 +379,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlockWithItem(AbyssalDecorBlocks.ROUGH_BLOOD_CORAL.get());
         gildedPillar(AbyssalDecorBlocks.GILDED_BLOOD_CORAL_PILLAR.get());
 
-        paneBlock(AbyssalDecorBlocks.BLOOD_CORAL_BARS.get(), modLoc("block/blood_coral_bars_solo"), modLoc("block/blood_coral_bars_solo"));
-
         logBlockWithItem(AbyssalDecorBlocks.GILDED_JADE_PILLAR.get());
 
         simplestBlockWithItem(AbyssalDecorBlocks.SERPENT_SCALES.get());
@@ -926,6 +924,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         .rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()
                         .condition(property, false)
                         .condition(ModBlockStateProperties.VERTICAL_CONNECTION, VerticalConnection.TOP)
+                        .end()
                 ;
             }
         });
@@ -1588,7 +1587,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ResourceLocation side = modLoc("block/gilded_blood_coral_pillar");
         ResourceLocation sideFlipped = modLoc("block/gilded_blood_coral_pillar_flipped");
         ResourceLocation end = modLoc("block/gilded_blood_coral_pillar_top");
-        ModelFile modelFile = models().cube(name(block), end, end, sideFlipped, side, sideFlipped, side);
+        ModelFile modelFile = models().cube(name(block), end, end, sideFlipped, side, sideFlipped, side).texture("particle",end);
         axisBlock(block, modelFile, modelFile);
 
         simpleBlockItem(block, models().getExistingFile(modLoc(name(block))));

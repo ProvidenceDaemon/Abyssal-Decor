@@ -1,6 +1,4 @@
 {
-  "atnena:loader": "athena_ctm",
-  "ctm_textures": {},
   "variants": {
     "": {
       "model": "abyssaldecor:block/prismarine_crystal_block"

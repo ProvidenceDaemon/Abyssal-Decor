@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-28T18:49:37.1921879	Loot Tables
+// 1.20.1	2026-02-07T01:31:50.6149554	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -98,6 +98,8 @@ a953762183caaf9666aff7ccbca5fa8d6ef511c3 data/abyssaldecor/loot_tables/blocks/cr
 e5048253fa4e7d801335b03ba1cff704a351a150 data/abyssaldecor/loot_tables/blocks/crystallized_glowstone.json
 210c60981ef2e1d8edf35f52e3ef5e29e2055d7d data/abyssaldecor/loot_tables/blocks/crystallized_glowstone_pane.json
 eb046cb529d9e76d455acec5daaebffd975346ed data/abyssaldecor/loot_tables/blocks/cut_black_pearl_block.json
+9cf340e100a7a4e23481c7f457cd074aeb9a7e46 data/abyssaldecor/loot_tables/blocks/cut_cinnamon_log.json
+8d7ba63390ed8b193a3eda67b16297998dbf66c8 data/abyssaldecor/loot_tables/blocks/cut_cinnamon_wood.json
 1457fa27e7b7e49609ace615d1370a664f0be656 data/abyssaldecor/loot_tables/blocks/cut_white_pearl_block.json
 6dd02c6c34646897d1961c35ac97edaf95a7e740 data/abyssaldecor/loot_tables/blocks/cyan_wallpaper.json
 f607d48437820935e78b7804128599c41cb42865 data/abyssaldecor/loot_tables/blocks/daffodil.json

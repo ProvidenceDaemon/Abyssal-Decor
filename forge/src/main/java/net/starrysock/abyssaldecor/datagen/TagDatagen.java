@@ -54,7 +54,10 @@ public class TagDatagen {
                     AbyssalDecorBlocks.BLACKWOOD_WOOD.get());//no stripped blackwood wood?
 
             tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),
-                    AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),AbyssalDecorBlocks.CINNAMON_WOOD.get());
+                    AbyssalDecorBlocks.CUT_CINNAMON_LOG.get(),
+                    AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),
+                    AbyssalDecorBlocks.CUT_CINNAMON_WOOD.get(),
+                    AbyssalDecorBlocks.CINNAMON_WOOD.get());
 
             tag(ModTags.Blocks.WHITEWOOD_LOGS).add(AbyssalDecorBlocks.WHITEWOOD_LOG.get(),AbyssalDecorBlocks.WHITEWOOD_WOOD.get());
 
@@ -78,14 +81,6 @@ public class TagDatagen {
                     AbyssalDecorBlocks.BLACKWOOD_WOOD.get()
             );
 
-
-            //    "abyssal_decor:black_mold",
-            //    "abyssal_decor:inactive_mold",
-            //    "abyssal_decor:moldy_starstone",
-            //    "abyssal_decor:moldier_starstone",
-            //    "abyssal_decor:porous_mold",
-            //    "abyssal_decor:blackwood_log",
-            //    "abyssal_decor:blackwood_wood"
 
             tag(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON).addTag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.MOLDY_STALK.get(),
                     AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get());
@@ -183,7 +178,7 @@ public class TagDatagen {
                     AbyssalDecorBlocks.EFFERVESCENT_TILES.get(), AbyssalDecorBlocks.EFFERVESCENCE.get(), AbyssalDecorBlocks.IRON_BALL.get(),
                     AbyssalDecorBlocks.JADE_LAMP.get(), AbyssalDecorBlocks.WALL_JADE_LAMP.get(), AbyssalDecorBlocks.WALL_JADE_LAMP.get(),
                     AbyssalDecorBlocks.WALL_BULB_LAMP.get(),
-                    //AbyssalDecorBlocks.PLACED_HEART_O_SEA.get(),todo
+                    AbyssalDecorBlocks.HEART_OF_THE_SEA.get(),
 
                     AbyssalDecorBlocks.WALL_QUARTZ_LAMP.get(), AbyssalDecorBlocks.QUARTZ_LAMP.get(),
                     AbyssalDecorBlocks.DRIED_STARFISH.get(), AbyssalDecorBlocks.DULL_IRON_BARS.get(), AbyssalDecorBlocks.WALL_IRON_LAMP.get(),
@@ -198,6 +193,8 @@ public class TagDatagen {
                     AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get());
 
             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(AbyssalDecorBlocks.BLACK_MOLD.get(),AbyssalDecorBlocks.INACTIVE_MOLD.get());
+
+            tag(BlockTags.MINEABLE_WITH_AXE);
 
             tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
 

@@ -2,8 +2,10 @@
   "values": [
     "abyssaldecor:cinnamon_log",
     "abyssaldecor:healing_cinnamon_log",
+    "abyssaldecor:cut_cinnamon_log",
     "abyssaldecor:stripped_cinnamon_log",
     "abyssaldecor:healing_cinnamon_wood",
+    "abyssaldecor:cut_cinnamon_wood",
     "abyssaldecor:cinnamon_wood"
   ]
 }

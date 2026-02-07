@@ -127,11 +127,14 @@ public class AbyssalDecor {
         AxeItem.STRIPPABLES = new HashMap<>(AxeItem.STRIPPABLES);
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.BLACKWOOD_LOG.get(),AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get());
 
-        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get());
+        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.CUT_CINNAMON_LOG.get());
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get());
+        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CUT_CINNAMON_LOG.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get());
 
-        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CINNAMON_WOOD.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get());
+        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CINNAMON_WOOD.get(),AbyssalDecorBlocks.CUT_CINNAMON_WOOD.get());
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD.get());
+        AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.CUT_CINNAMON_WOOD.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD.get());
+
         AxeItem.STRIPPABLES.put(AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get(),AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
 
         FancierIronBarsBlock.ORNATE.put(AbyssalDecorBlocks.DULL_IRON_BARS.get(),AbyssalDecorBlocks.ORNATE_DULL_IRON_BARS.get());

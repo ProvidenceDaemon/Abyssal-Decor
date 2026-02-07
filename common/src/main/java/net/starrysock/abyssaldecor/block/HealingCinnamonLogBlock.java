@@ -7,20 +7,27 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 
+import java.util.function.Supplier;
+
 public class HealingCinnamonLogBlock extends RotatedPillarBlock {
-    public HealingCinnamonLogBlock(Properties properties) {
+
+    private final Supplier<? extends Block> healsTo;
+
+    public HealingCinnamonLogBlock(Properties properties, Supplier<? extends Block> healsTo) {
         super(properties);
+        this.healsTo = healsTo;
     }
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         super.tick(state, level, pos, random);
-        level.setBlockAndUpdate(pos, AbyssalDecorBlocks.CINNAMON_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS)));
+        level.setBlockAndUpdate(pos, healsTo.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS)));
     }
 
     @Override

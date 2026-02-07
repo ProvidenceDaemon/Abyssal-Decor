@@ -598,6 +598,8 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.CINNAMON_LOG);
     public static final RegistrySupplier<BlockItem> HEALING_CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.HEALING_CINNAMON_LOG);
     public static final RegistrySupplier<BlockItem> HEALING_CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.HEALING_CINNAMON_WOOD);
+    public static final RegistrySupplier<BlockItem> CUT_CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.CUT_CINNAMON_LOG);
+    public static final RegistrySupplier<BlockItem> CUT_CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.CUT_CINNAMON_WOOD);
     public static final RegistrySupplier<BlockItem> STRIPPED_CINNAMON_LOG = registerBlockItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG);
     public static final RegistrySupplier<BlockItem> STRIPPED_CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD);
     public static final RegistrySupplier<BlockItem> CINNAMON_WOOD = registerBlockItem(AbyssalDecorBlocks.CINNAMON_WOOD);

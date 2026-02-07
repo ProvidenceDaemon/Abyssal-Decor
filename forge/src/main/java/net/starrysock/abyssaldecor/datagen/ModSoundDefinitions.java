@@ -110,13 +110,13 @@ public class ModSoundDefinitions extends SoundDefinitionsProvider {
 
         add(AbyssalDecorSounds.INDUSTRIAL_LEVER_ON.get(), definition()
                 .with(
-                        sound(AbyssalDecor.id("block/industrial_lever/off"))
+                        sound(AbyssalDecor.id("block/industrial_lever/on"))
                 )
         );
 
         add(AbyssalDecorSounds.INDUSTRIAL_LEVER_OFF.get(), definition()
                 .with(
-                        sound(AbyssalDecor.id("block/industrial_lever/on"))
+                        sound(AbyssalDecor.id("block/industrial_lever/off"))
                 )
         );
     }

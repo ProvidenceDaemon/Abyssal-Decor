@@ -69,7 +69,10 @@ public class BogAppleLeavesBlock extends CropBlock implements SimpleWaterloggedB
             if (!level.isClientSide) {
                 List<ItemStack> stacks = getDrops(state, (ServerLevel) level, pos, level.getBlockEntity(pos),player, player.getItemInHand(hand));
                 for (ItemStack stack : stacks) {
-                    player.addItem(stack);
+                    boolean b = player.addItem(stack);
+                    if (!b) {
+                        player.drop(stack,false);
+                    }
                 }
                 level.setBlockAndUpdate(pos, block.defaultBlockState());
                 level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.5F);

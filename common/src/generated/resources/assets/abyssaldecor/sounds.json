@@ -55,12 +55,12 @@
   },
   "industrial_lever_off": {
     "sounds": [
-      "abyssaldecor:block/industrial_lever/on"
+      "abyssaldecor:block/industrial_lever/off"
     ]
   },
   "industrial_lever_on": {
     "sounds": [
-      "abyssaldecor:block/industrial_lever/off"
+      "abyssaldecor:block/industrial_lever/on"
     ]
   },
   "lamp_off": {
