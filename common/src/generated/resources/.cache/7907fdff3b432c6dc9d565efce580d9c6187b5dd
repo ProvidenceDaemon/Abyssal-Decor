@@ -1,4 +1,4 @@
-// 1.20.1	2026-02-07T03:27:13.49582	Tags for minecraft:block mod id abyssaldecor
+// 1.20.1	2026-02-07T14:36:00.4636789	Tags for minecraft:block mod id abyssaldecor
 69c396cb051bbe9a130e6979b67065e5041b179d data/abyssaldecor/tags/blocks/amaranth_growable.json
 8abba24678cbde4ba1e30a6a7337863f0b751284 data/abyssaldecor/tags/blocks/blackwood_logs.json
 ae6308600bc958d52dedb5671a3169b5e1e9636b data/abyssaldecor/tags/blocks/cinnamon_logs.json
@@ -19,14 +19,14 @@ be03e52a67c66c53bc0fa808fa59f6116dc14571 data/abyssaldecor/tags/blocks/whitewood
 0fc56e2c20be7546cdb3853577a7969a3a4f8009 data/minecraft/tags/blocks/logs_that_burn.json
 3d5aa342301b3d0eec6fcb53090968ddc2b22c1c data/minecraft/tags/blocks/mineable/axe.json
 f4aaa9d853cd6d1697f97810994b9ea2c3894aeb data/minecraft/tags/blocks/mineable/hoe.json
-ec09cf666bb7f71ecae0501c82d321673c0c0383 data/minecraft/tags/blocks/mineable/pickaxe.json
+64bee847844f2ddf721eab6ac4110254a44b4e62 data/minecraft/tags/blocks/mineable/pickaxe.json
 96f803b50e7342261d01ec6c48c0df5005c6bd58 data/minecraft/tags/blocks/mineable/shovel.json
 49e5a06389ab8a71f233f380fc269a3fef18859c data/minecraft/tags/blocks/planks.json
 6a55d13f71ab10f1aaa2731564a2db25711584aa data/minecraft/tags/blocks/replaceable_by_trees.json
 ead0af0db8071cd56a864c804132dfcc89a44f29 data/minecraft/tags/blocks/sand.json
 0d9e63cc8b0dee759e1b8e9799a5a126fda7c3d8 data/minecraft/tags/blocks/saplings.json
-80503b3792d95dcb7ef68010f611a09527254ff8 data/minecraft/tags/blocks/slabs.json
-54526e8378e076500e4aa80a33581cba9a4642b5 data/minecraft/tags/blocks/stairs.json
+b1957ccb0d41f4d5b8764b5353411be8b120ebde data/minecraft/tags/blocks/slabs.json
+2927c3cb1995bff2397c3ba98694e5b2b79562c4 data/minecraft/tags/blocks/stairs.json
 c27d910dd600c88fbebace017566fb6fda6f3f09 data/minecraft/tags/blocks/standing_signs.json
 f1397ffb49dd0b3e74ac3a3e8ff7507c313813bc data/minecraft/tags/blocks/walls.json
 3c21bc6d3c6cd38defcc60f03314edead6366a70 data/minecraft/tags/blocks/wall_hanging_signs.json

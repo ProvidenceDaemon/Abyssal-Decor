@@ -7,11 +7,13 @@
     }
   },
   "pattern": [
+    "#  ",
+    "## ",
     "###"
   ],
   "result": {
-    "count": 6,
-    "item": "abyssaldecor:riveted_seabrass_slab"
+    "count": 4,
+    "item": "abyssaldecor:riveted_seabrass_stairs"
   },
   "show_notification": true
 }

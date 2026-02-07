@@ -1,8 +1,8 @@
 {
-  "parent": "minecraft:block/slab",
+  "parent": "minecraft:block/stairs",
   "textures": {
     "bottom": "abyssaldecor:block/riveted_seabrass",
-    "side": "abyssaldecor:block/riveted_seabrass_slab",
+    "side": "abyssaldecor:block/riveted_seabrass",
     "top": "abyssaldecor:block/riveted_seabrass"
   }
 }

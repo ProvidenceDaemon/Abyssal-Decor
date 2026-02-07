@@ -1,4 +1,4 @@
-// 1.20.1	2026-02-07T01:31:50.6149554	Loot Tables
+// 1.20.1	2026-02-07T14:36:00.4666817	Loot Tables
 8cd7c6591ce67afda20c161cb7e36f0c3044d100 data/abyssaldecor/loot_tables/blocks/abyssal_lantern.json
 1065b71fa421b4f61645e40ccef9647640b0dc87 data/abyssaldecor/loot_tables/blocks/amaranth_crate.json
 03d0297312bbd3959a005dc70196b56721c78312 data/abyssaldecor/loot_tables/blocks/ammonite.json
@@ -273,6 +273,7 @@ dc112021c1092d25a5ffa70608f3dcb6010fb3e5 data/abyssaldecor/loot_tables/blocks/re
 3e067dd2167bb4ba37bbdbd2e4bd5e70ccc416d5 data/abyssaldecor/loot_tables/blocks/riveted_deepbronze_wall.json
 8ed2aa302f2f026b8cef522a862e2e64dc82a67d data/abyssaldecor/loot_tables/blocks/riveted_seabrass.json
 793429fbfbd593c94882bf98606cfe4f9360d32b data/abyssaldecor/loot_tables/blocks/riveted_seabrass_slab.json
+4902047d26a55258891752b9736de319be74bda0 data/abyssaldecor/loot_tables/blocks/riveted_seabrass_stairs.json
 6cfcec9b86835a3324dd733ef27cc28744dba39b data/abyssaldecor/loot_tables/blocks/rope_barrier.json
 b4f5499469cd1c96f0d333e4c3018860e9d49b9b data/abyssaldecor/loot_tables/blocks/rope_barrier_ribbon.json
 e655ea3687eca4627ff5f7557037ac463fa767a4 data/abyssaldecor/loot_tables/blocks/rough_blood_coral.json

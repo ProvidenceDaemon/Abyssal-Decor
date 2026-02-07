@@ -19,11 +19,14 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
 import net.starrysock.abyssaldecor.block.properties.TriPart;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorSounds;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BloodLampMultiBlock extends LampBlock{
+import static net.minecraft.world.level.block.RedstoneLampBlock.LIT;
+
+public class BloodLampMultiBlock extends LampBlock {
 
     private final Block block;
 
@@ -31,33 +34,30 @@ public class BloodLampMultiBlock extends LampBlock{
     public BloodLampMultiBlock(Properties properties, Block block) {
         super(properties, Shapes.block());
         this.block = block;
-        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART,TriPart.BOTTOM));
+        registerDefaultState(defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, TriPart.BOTTOM));
     }
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (player.getItemInHand(interactionHand).isEmpty()) {
+        if (!level.isClientSide) {
 
-            if (!level.isClientSide) {
+            boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
 
-                boolean lit = blockState.getValue(RedstoneLampBlock.LIT);
+            List<BlockPos> gatherConnected = getConnected(blockState, level, blockPos);
 
-                List<BlockPos> gatherConnected = getConnected(blockState, level, blockPos);
-
-                for (BlockPos pos : gatherConnected) {
-                    BlockState state = level.getBlockState(pos);
-                    level.setBlockAndUpdate(pos, state.setValue(RedstoneLampBlock.LIT,!lit));
-                }
+            for (BlockPos pos : gatherConnected) {
+                BlockState state = level.getBlockState(pos);
+                level.setBlockAndUpdate(pos, state.setValue(RedstoneLampBlock.LIT, !lit));
             }
-
-            level.playLocalSound(blockPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 0.5F, false);
-
-            return InteractionResult.SUCCESS;
         }
-        return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+
+        level.playLocalSound(blockPos, blockState.getValue(LIT) ? AbyssalDecorSounds.LAMP_OFF.get() :
+                AbyssalDecorSounds.LAMP_ON.get(), SoundSource.BLOCKS, 1, 1, false);
+
+        return InteractionResult.SUCCESS;
     }
 
-    List<BlockPos> getConnected(BlockState state,Level level,BlockPos blockPos) {
+    List<BlockPos> getConnected(BlockState state, Level level, BlockPos blockPos) {
         List<BlockPos> list = new ArrayList<>(1);
         list.add(blockPos);
 
@@ -65,7 +65,7 @@ public class BloodLampMultiBlock extends LampBlock{
 
         boolean reachedBottom = false;
 
-        for (int i = 1; i < level.getHeight();i++) {
+        for (int i = 1; i < level.getHeight(); i++) {
             if (!reachedTop) {
                 BlockPos offsetAbove = blockPos.above(i);
                 if (!level.isInWorldBounds(offsetAbove)) {
@@ -108,14 +108,14 @@ public class BloodLampMultiBlock extends LampBlock{
             boolean lampAbove = isSameBlock(level.getBlockState(above));
             boolean lampBelow = isSameBlock(level.getBlockState(below));
 
-            TriPart triPart = TriPart.getForPlacement(lampAbove,lampBelow);
+            TriPart triPart = TriPart.getForPlacement(lampAbove, lampBelow);
 
             if (triPart == null) {
-                return block.defaultBlockState().setValue(RedstoneLampBlock.LIT,state.getValue(RedstoneLampBlock.LIT));
+                return block.defaultBlockState().setValue(RedstoneLampBlock.LIT, state.getValue(RedstoneLampBlock.LIT));
             }
 
-            level.setBlock(pos,defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, triPart)
-                    .setValue(RedstoneLampBlock.LIT,state.getValue(RedstoneLampBlock.LIT)),3);
+            level.setBlock(pos, defaultBlockState().setValue(ModBlockStateProperties.TRI_PART, triPart)
+                    .setValue(RedstoneLampBlock.LIT, state.getValue(RedstoneLampBlock.LIT)), 3);
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }

@@ -70,7 +70,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 StairBlock stairBlock = (StairBlock) family.get(ExtendedBlockFamily.Variant.STAIRS);
                 stairsBlock(stairBlock, baseTexture);
                 SlabBlock slabBlock = (SlabBlock) family.get(ExtendedBlockFamily.Variant.SLAB);
-                slabBlock(slabBlock, baseTexture, baseTexture);
+                //Polished blood coral, blood coral bricks, seabrass, riveted seabrass, deepbronze, riveted deepbronze,
+                // and starstone slabs have dedicated slab textures
+
+                if (family.customSlabTexture) {
+                    ResourceLocation sideTexture = baseTexture.withSuffix("_slab");
+                    $slabBlock(slabBlock,sideTexture, baseTexture);
+                } else {
+                    slabBlock(slabBlock,baseTexture,baseTexture);
+                }
             }
 
             if (family.exists(ExtendedBlockFamily.Variant.BUTTON)) {
@@ -431,12 +439,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simplestBlockWithItem(AbyssalDecorBlocks.NETTED_SERPENT_EYE.get());
 
-        simplestBlockWithItem(AbyssalDecorBlocks.RIVETED_SEABRASS.get());
         blockLamp(AbyssalDecorBlocks.SEABRASS_LAMP.get(), modLoc("block/seabrass_lamp"));
         blockLamp(AbyssalDecorBlocks.DEEPBRONZE_LANTERN.get(), modLoc("block/deepbronze_lantern"));
         blockLamp(AbyssalDecorBlocks.BLOOD_LANTERN.get(), modLoc("block/blood_lantern"));
         bloodLamp(AbyssalDecorBlocks.BLOOD_LANTERN_MULTIBLOCK.get());
-        simpleSlab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(), modLoc("block/riveted_seabrass"));
 
         paneBlock(AbyssalDecorBlocks.DEEPBRONZE_BARS.get(), modLoc("block/deepbronze_bars"), modLoc("block/bronzebarstop"));
 
@@ -754,6 +760,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
        // athenaCTMBlock(AbyssalDecorBlocks.PRISMARINE_CRYSTAL_BLOCK.get())
        //         .ctmTexture()
        // ;
+    }
+
+    public void $slabBlock(SlabBlock block, ResourceLocation side, ResourceLocation texture) {
+        slabBlock(block, models().slab(name(block), side, texture,texture),
+                models().slabTop(name(block) + "_top", side, texture, texture),
+                models().cubeColumn(name(block) +"_double",side,texture));
     }
 
     void blackMold(Block block) {

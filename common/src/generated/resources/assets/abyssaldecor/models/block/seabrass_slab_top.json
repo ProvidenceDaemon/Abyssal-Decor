@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab_top",
   "textures": {
     "bottom": "abyssaldecor:block/seabrass_block",
-    "side": "abyssaldecor:block/seabrass_block",
+    "side": "abyssaldecor:block/seabrass_block_slab",
     "top": "abyssaldecor:block/seabrass_block"
   }
 }

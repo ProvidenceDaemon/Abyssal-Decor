@@ -103,7 +103,7 @@ public class ExtendedBlockFamilies {
             .getFamily();
 
     public static final ExtendedBlockFamily POLISHED_BLOOD_CORAL = familyBuilder(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL.get())
-            .slab(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB.get())
+            .slab(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_SLAB.get(),true)
             .door(AbyssalDecorBlocks.BLOOD_CORAL_DOOR.get())
             .stairs(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_STAIRS.get())
             .wall(AbyssalDecorBlocks.POLISHED_BLOOD_CORAL_WALL.get())
@@ -116,7 +116,7 @@ public class ExtendedBlockFamilies {
             .getFamily();
 
     public static final ExtendedBlockFamily BLOOD_CORAL_BRICKS = familyBuilder(AbyssalDecorBlocks.BLOOD_CORAL_BRICKS.get())
-            .slab(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_SLAB.get())
+            .slab(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_SLAB.get(),true)
             .stairs(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_STAIRS.get())
             .wall(AbyssalDecorBlocks.BLOOD_CORAL_BRICK_WALL.get())
             .getFamily();
@@ -126,7 +126,7 @@ public class ExtendedBlockFamilies {
             .button(AbyssalDecorBlocks.SEABRASS_BUTTON.get())
             .door(AbyssalDecorBlocks.SEABRASS_DOOR.get())
             .pressurePlate(AbyssalDecorBlocks.SEABRASS_PRESSURE_PLATE.get())
-            .slab(AbyssalDecorBlocks.SEABRASS_SLAB.get())
+            .slab(AbyssalDecorBlocks.SEABRASS_SLAB.get(),true)
             .stairs(AbyssalDecorBlocks.SEABRASS_STAIRS.get())
             .trapdoor(AbyssalDecorBlocks.SEABRASS_TRAPDOOR.get())
             .wall(AbyssalDecorBlocks.SEABRASS_WALL.get())
@@ -148,9 +148,13 @@ public class ExtendedBlockFamilies {
             .wall(AbyssalDecorBlocks.RIVETED_DEEPBRONZE_WALL.get())
             .getFamily();
 
+    public static final ExtendedBlockFamily RIVETED_SEABRASS = familyBuilder(AbyssalDecorBlocks.RIVETED_SEABRASS.get())
+            .slab(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),true)
+            .stairs(AbyssalDecorBlocks.RIVETED_SEABRASS_STAIRS.get())
+            .getFamily();
 
     public static final ExtendedBlockFamily POLISHED_STARSTONE = familyBuilder(AbyssalDecorBlocks.POLISHED_STARSTONE.get())
-            .slab(AbyssalDecorBlocks.POLISHED_STARSTONE_SLAB.get())
+            .slab(AbyssalDecorBlocks.POLISHED_STARSTONE_SLAB.get(),true)
             .stairs(AbyssalDecorBlocks.POLISHED_STARSTONE_STAIRS.get())
             .wall(AbyssalDecorBlocks.POLISHED_STARSTONE_WALL.get())
             .chiseled(AbyssalDecorBlocks.CHISELED_STARSTONE.get())

@@ -373,6 +373,7 @@ public class AbyssalDecorItems {
     public static final RegistrySupplier<BlockItem> SEABRASS_TRAPDOOR = registerBlockItem(AbyssalDecorBlocks.SEABRASS_TRAPDOOR);
 
     public static final RegistrySupplier<BlockItem> RIVETED_SEABRASS_SLAB = registerBlockItem(AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB);
+    public static final RegistrySupplier<BlockItem> RIVETED_SEABRASS_STAIRS = registerBlockItem(AbyssalDecorBlocks.RIVETED_SEABRASS_STAIRS);
 
     public static final RegistrySupplier<BlockItem> SEABRASS_CHAIN = registerBlockItem(AbyssalDecorBlocks.SEABRASS_CHAIN);
 

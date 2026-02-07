@@ -723,6 +723,7 @@ public class AbyssalDecorBlocks {
 
 
     public static final RegistrySupplier<SlabBlock> RIVETED_SEABRASS_SLAB = AbyssalDecor.BLOCKS.register("riveted_seabrass_slab",() -> slab(RIVETED_SEABRASS.get()));
+    public static final RegistrySupplier<StairBlock> RIVETED_SEABRASS_STAIRS = AbyssalDecor.BLOCKS.register("riveted_seabrass_stairs",() -> stairs(RIVETED_SEABRASS.get()));
 
     public static final RegistrySupplier<ChainBlock> SEABRASS_CHAIN = AbyssalDecor.BLOCKS.register("seabrass_chain",() ->
             new ChainBlock(BlockBehaviour.Properties.of()

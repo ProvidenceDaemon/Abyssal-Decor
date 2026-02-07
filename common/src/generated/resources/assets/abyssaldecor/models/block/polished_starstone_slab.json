@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "abyssaldecor:block/polished_starstone",
-    "side": "abyssaldecor:block/polished_starstone",
+    "side": "abyssaldecor:block/polished_starstone_slab",
     "top": "abyssaldecor:block/polished_starstone"
   }
 }

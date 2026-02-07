@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-27T22:49:37.2906727	Item Models: abyssaldecor
+// 1.20.1	2026-02-07T14:36:00.4786926	Item Models: abyssaldecor
 143c16b345adaaa827111f6f9cefbfe85f30f7c0 assets/abyssaldecor/models/item/amaranth_crate.json
 71acea8d6827508a4df07935b7a46edf95c0adca assets/abyssaldecor/models/item/amaranth_pinnacle.json
 295d1a2ae44072e80c1eaa419b32ca4ed65e7b26 assets/abyssaldecor/models/item/amaranth_seeds.json
@@ -90,6 +90,9 @@ a5ca75c43d9dde85c763c176e3533e263675041e assets/abyssaldecor/models/item/popped_
 5e99d40fb591e05b55833cbff1c36ecb8bf57c14 assets/abyssaldecor/models/item/riveted_deepbronze.json
 63e37489c9820cacffbc398dee07c1fe954e5926 assets/abyssaldecor/models/item/riveted_deepbronze_slab.json
 cc4efeefeabee419971c0892eae00be373a729a6 assets/abyssaldecor/models/item/riveted_deepbronze_stairs.json
+8f0f60daf7a51b422f290a05adbdf4e29b7c96d5 assets/abyssaldecor/models/item/riveted_seabrass.json
+dd99dea74e6097b525644252eb3d3d98bd5cd4e5 assets/abyssaldecor/models/item/riveted_seabrass_slab.json
+dde5443792de73d894b5115661ed04a5f976c58d assets/abyssaldecor/models/item/riveted_seabrass_stairs.json
 ce8c055a514f22c4ae202ca832f5442797bf7bf3 assets/abyssaldecor/models/item/seabrass_block.json
 3c82f2b6c1f449381251df0f4c3ab0138e82baee assets/abyssaldecor/models/item/seabrass_button.json
 b55d147d8864c0a9b69c96edac2bfcaf6def2152 assets/abyssaldecor/models/item/seabrass_door.json

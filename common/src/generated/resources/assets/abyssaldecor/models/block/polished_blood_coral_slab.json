@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "abyssaldecor:block/polished_blood_coral",
-    "side": "abyssaldecor:block/polished_blood_coral",
+    "side": "abyssaldecor:block/polished_blood_coral_slab",
     "top": "abyssaldecor:block/polished_blood_coral"
   }
 }

@@ -632,8 +632,6 @@ public class AbyssalDecorRecipeProvider extends RecipeProvider {
 
         carpet(consumer, AbyssalDecorBlocks.MOLDWEAVE_CARPET.get(), AbyssalDecorBlocks.MOLDWEAVE.get());
 
-        slab(consumer,RecipeCategory.MISC,AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),AbyssalDecorBlocks.RIVETED_SEABRASS.get());
-
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.PRISMARINE_CRYSTALS, RecipeCategory.MISC, AbyssalDecorItems.PRISMARINE_CRYSTAL_BLOCK.get());
 
         hangingSign(consumer, AbyssalDecorItems.BLACKWOOD_HANGING_SIGN.get(), AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get());

@@ -184,10 +184,8 @@ public class WisteriaBlock extends AbstractHorizontalBlock implements SimpleWate
     }
 
     protected boolean checkWalls(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING);
-        BlockPos blockpos = pos.relative(direction.getOpposite());
-        BlockState blockstate = level.getBlockState(blockpos);
-        return blockstate.isFaceSturdy(level, blockpos, direction);
+        Direction direction = state.getValue(FACING).getOpposite();
+        return DriedStarfishBlock.canSupportAtFace(level, pos, direction);
     }
 
     @Override

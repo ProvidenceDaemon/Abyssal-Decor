@@ -189,6 +189,7 @@ public class TagDatagen {
                     AbyssalDecorBlocks.SEABRASS_TRIM.get(), AbyssalDecorBlocks.SEABRASS_PILLAR.get(), AbyssalDecorBlocks.LARGE_SEABRASS_PIPE.get(),
                     AbyssalDecorBlocks.SMALL_SEABRASS_PIPES.get(), AbyssalDecorBlocks.SEABRASS_TILES.get(), AbyssalDecorBlocks.SEABRASS_LAMP.get(),
                     AbyssalDecorBlocks.SEABRASS_STAIRS.get(), AbyssalDecorBlocks.SEABRASS_SLAB.get(), AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),
+                    AbyssalDecorBlocks.RIVETED_SEABRASS_STAIRS.get(),
                     AbyssalDecorBlocks.SEABRASS_WALL.get(), AbyssalDecorBlocks.SEABRASS_BUTTON.get(), AbyssalDecorBlocks.SEABRASS_PRESSURE_PLATE.get(),
                     AbyssalDecorBlocks.SEABRASS_CHAIN.get(), AbyssalDecorBlocks.SEABRASS_TRAPDOOR.get(), AbyssalDecorBlocks.SEABRASS_DOOR.get(),
                     AbyssalDecorBlocks.SEABRASS_SCONCE.get(), AbyssalDecorBlocks.SEABRASS_BARS.get(), AbyssalDecorBlocks.ORNATE_SEABRASS_BARS.get(),
@@ -250,10 +251,16 @@ public class TagDatagen {
 
             tag(BlockTags.SAPLINGS).add(AbyssalDecorBlocks.CINNAMON_BUSH.get());
 
-            tag(BlockTags.SLABS).add(AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_SLAB.get(),AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),
+            tag(BlockTags.SLABS).add(
+                    AbyssalDecorBlocks.DEEPBRONZE_SLAB.get(),AbyssalDecorBlocks.RIVETED_DEEPBRONZE_SLAB.get(),
+                    AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_SLAB.get(),AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(),
+                    AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),AbyssalDecorBlocks.SEABRASS_SLAB.get(),AbyssalDecorBlocks.RIVETED_SEABRASS_SLAB.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get());
 
-            tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(),AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_STAIRS.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
+            tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(),
+                    AbyssalDecorBlocks.DEEPBRONZE_STAIRS.get(),AbyssalDecorBlocks.RIVETED_DEEPBRONZE_STAIRS.get(),
+                    AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_STAIRS.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
+                    AbyssalDecorBlocks.SEABRASS_STAIRS.get(),AbyssalDecorBlocks.RIVETED_SEABRASS_STAIRS.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get());
 
             tag(BlockTags.WALLS).add(AbyssalDecorBlocks.WHITE_PEARL_WALL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get()

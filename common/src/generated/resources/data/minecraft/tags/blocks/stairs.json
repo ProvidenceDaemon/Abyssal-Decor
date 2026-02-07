@@ -1,8 +1,12 @@
 {
   "values": [
     "abyssaldecor:white_pearl_stairs",
+    "abyssaldecor:deepbronze_stairs",
+    "abyssaldecor:riveted_deepbronze_stairs",
     "abyssaldecor:mossy_cinnamon_shingle_stairs",
     "abyssaldecor:white_pearl_brick_stairs",
+    "abyssaldecor:seabrass_stairs",
+    "abyssaldecor:riveted_seabrass_stairs",
     "abyssaldecor:smooth_white_pearl_stairs"
   ]
 }

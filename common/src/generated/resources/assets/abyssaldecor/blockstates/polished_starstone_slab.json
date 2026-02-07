@@ -4,7 +4,7 @@
       "model": "abyssaldecor:block/polished_starstone_slab"
     },
     "type=double": {
-      "model": "abyssaldecor:block/polished_starstone"
+      "model": "abyssaldecor:block/polished_starstone_slab_double"
     },
     "type=top": {
       "model": "abyssaldecor:block/polished_starstone_slab_top"

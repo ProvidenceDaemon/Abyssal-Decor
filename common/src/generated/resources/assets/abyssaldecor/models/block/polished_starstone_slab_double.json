@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssaldecor:block/polished_starstone",
+    "side": "abyssaldecor:block/polished_starstone_slab"
+  }
+}

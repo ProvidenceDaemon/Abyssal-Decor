@@ -1,8 +1,12 @@
 {
   "values": [
+    "abyssaldecor:deepbronze_slab",
+    "abyssaldecor:riveted_deepbronze_slab",
     "abyssaldecor:mossy_cinnamon_shingle_slab",
     "abyssaldecor:white_pearl_slab",
     "abyssaldecor:white_pearl_brick_slab",
+    "abyssaldecor:seabrass_slab",
+    "abyssaldecor:riveted_seabrass_slab",
     "abyssaldecor:smooth_white_pearl_slab"
   ]
 }

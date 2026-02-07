@@ -19,6 +19,7 @@ public class ExtendedBlockFamily {
     private final Block baseBlock;
     final Map<Variant, Block> variants = Maps.newHashMap();
     public final Set<Variant> excludeRecipe = new HashSet<>();
+    public boolean customSlabTexture;
     boolean generateModel = true;
     @Nullable
     String recipeGroupPrefix;
@@ -144,7 +145,12 @@ public class ExtendedBlockFamily {
         }
 
         public Builder slab(Block slabBlock) {
+            return slab(slabBlock,false);
+        }
+
+        public Builder slab(Block slabBlock,boolean useCustomTexture) {
             this.family.variants.put(Variant.SLAB, slabBlock);
+            family.customSlabTexture = useCustomTexture;
             return this;
         }
 

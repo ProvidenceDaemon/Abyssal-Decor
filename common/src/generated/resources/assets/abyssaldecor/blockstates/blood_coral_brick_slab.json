@@ -4,7 +4,7 @@
       "model": "abyssaldecor:block/blood_coral_brick_slab"
     },
     "type=double": {
-      "model": "abyssaldecor:block/blood_coral_bricks"
+      "model": "abyssaldecor:block/blood_coral_brick_slab_double"
     },
     "type=top": {
       "model": "abyssaldecor:block/blood_coral_brick_slab_top"

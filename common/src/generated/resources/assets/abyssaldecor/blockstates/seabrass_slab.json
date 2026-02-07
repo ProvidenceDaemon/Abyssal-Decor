@@ -4,7 +4,7 @@
       "model": "abyssaldecor:block/seabrass_slab"
     },
     "type=double": {
-      "model": "abyssaldecor:block/seabrass_block"
+      "model": "abyssaldecor:block/seabrass_slab_double"
     },
     "type=top": {
       "model": "abyssaldecor:block/seabrass_slab_top"
