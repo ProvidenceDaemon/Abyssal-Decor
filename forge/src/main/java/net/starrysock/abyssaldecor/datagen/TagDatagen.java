@@ -20,6 +20,7 @@ import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class TagDatagen {
 
@@ -53,26 +54,18 @@ public class TagDatagen {
             tag(ModTags.Blocks.BLACKWOOD_LOGS).add(AbyssalDecorBlocks.BLACKWOOD_LOG.get(),AbyssalDecorBlocks.STRIPPED_BLACKWOOD_LOG.get(),
                     AbyssalDecorBlocks.BLACKWOOD_WOOD.get());//no stripped blackwood wood?
 
-            tag(ModTags.Blocks.CINNAMON_LOGS).add(AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),
-                    AbyssalDecorBlocks.CUT_CINNAMON_LOG.get(),
-                    AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),
+            tag(ModTags.Blocks.CINNAMON_LOGS).add(
+                    AbyssalDecorBlocks.CINNAMON_LOG.get(),AbyssalDecorBlocks.HEALING_CINNAMON_LOG.get(),
+                    AbyssalDecorBlocks.CUT_CINNAMON_LOG.get(), AbyssalDecorBlocks.STRIPPED_CINNAMON_LOG.get(),
+                    AbyssalDecorBlocks.HEALING_CINNAMON_WOOD.get(),
                     AbyssalDecorBlocks.CUT_CINNAMON_WOOD.get(),
-                    AbyssalDecorBlocks.CINNAMON_WOOD.get());
-
-            tag(ModTags.Blocks.WHITEWOOD_LOGS).add(AbyssalDecorBlocks.WHITEWOOD_LOG.get(),AbyssalDecorBlocks.WHITEWOOD_WOOD.get());
+                    AbyssalDecorBlocks.CINNAMON_WOOD.get(),AbyssalDecorBlocks.STRIPPED_CINNAMON_WOOD.get());
 
             tag(ModTags.Blocks.MOLD_SPREADABLES)
                     .addTags(BlockTags.DIRT);
 
             tag(ModTags.Blocks.MOLD_IMMUNE).add(Blocks.DEEPSLATE,Blocks.DEEPSLATE_COAL_ORE,Blocks.DEEPSLATE_IRON_ORE,
                     AbyssalDecorBlocks.MOLDY_STARSTONE.get(),AbyssalDecorBlocks.MOLDIER_STARSTONE.get());
-
-            //vanilla tags
-            tag(BlockTags.CROPS).add(AbyssalDecorBlocks.SPIDERCORN.get());
-            tag(BlockTags.FLOWERS).add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
-
-            tag(BlockTags.LEAVES).add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
-            tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.CINNAMON_LOGS);
 
             tag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.INACTIVE_MOLD.get(), AbyssalDecorBlocks.BLACK_MOLD.get(),
                     AbyssalDecorBlocks.MOLDY_STARSTONE.get(),AbyssalDecorBlocks.MOLDIER_STARSTONE.get(),
@@ -81,9 +74,61 @@ public class TagDatagen {
                     AbyssalDecorBlocks.BLACKWOOD_WOOD.get()
             );
 
-
             tag(ModTags.Blocks.MOLDY_STALK_PLANTABLE_ON).addTag(ModTags.Blocks.MOLDY_PLANT_VALID_BLOCKS).add(AbyssalDecorBlocks.MOLDY_STALK.get(),
                     AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get());
+
+            tag(ModTags.Blocks.WALLPAPER).add(AbyssalDecorBlocks.WALLPAPERS.map().values().stream().map(Supplier::get).toArray(Block[]::new));
+
+            tag(ModTags.Blocks.WHITEWOOD_LOGS).add(AbyssalDecorBlocks.WHITEWOOD_LOG.get(),AbyssalDecorBlocks.WHITEWOOD_WOOD.get());
+
+            ///////////////////////////////////////////////////////vanilla tags
+
+            tag(BlockTags.CROPS).add(AbyssalDecorBlocks.SPIDERCORN.get());
+            tag(BlockTags.FENCE_GATES).add(AbyssalDecorBlocks.BLACKWOOD_FENCE_GATE.get(),AbyssalDecorBlocks.CINNAMON_FENCE_GATE.get(),AbyssalDecorBlocks.WHITEWOOD_FENCE.get());
+            tag(BlockTags.FLOWERS).add(AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
+
+            tag(BlockTags.LEAVES).add(AbyssalDecorBlocks.CINNAMON_LEAVES.get(),AbyssalDecorBlocks.FLOWERING_CINNAMON_LEAVES.get());
+            tag(BlockTags.LOGS).addTags(ModTags.Blocks.BLACKWOOD_LOGS,ModTags.Blocks.WHITEWOOD_LOGS);
+            tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.CINNAMON_LOGS);
+
+            tag(BlockTags.MINEABLE_WITH_AXE).addTags(ModTags.Blocks.WALLPAPER).add(
+                    AbyssalDecorBlocks.AMARANTH_CRATE.get(),
+                    AbyssalDecorBlocks.ANCIENT_BIRCH_LOG.get(),AbyssalDecorBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get(),
+                    AbyssalDecorBlocks.FOXY_PILLAR.get(),
+                    AbyssalDecorBlocks.WOOD_SUPPORT.get(),
+                    AbyssalDecorBlocks.SHIP_WHEEL.get(),
+                    AbyssalDecorBlocks.WOODEN_FROG.get(),AbyssalDecorBlocks.WOODEN_DRAGON_HEAD.get(),
+                    AbyssalDecorBlocks.NITHING_POLE.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_TRIM.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_PLANTER.get(),
+                    AbyssalDecorBlocks.BLACKWOOD_TRIM.get(),
+                    AbyssalDecorBlocks.PAPER_STACK.get(),
+                    AbyssalDecorBlocks.BOOK_BLOCK.get(),
+                    AbyssalDecorBlocks.MOLDY_BOOK_BLOCK.get(),
+                    AbyssalDecorBlocks.CINNAMON_TRIM.get(),
+                    AbyssalDecorBlocks.CINNAMON_POST.get(),
+                    AbyssalDecorBlocks.CINNAMON_SHINGLES.get(),
+                    AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLES.get(),
+                    AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_SLAB.get(),
+                    AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_STAIRS.get(),
+                    AbyssalDecorBlocks.WHITEWOOD_PICKET_FENCE.get(),
+                    AbyssalDecorBlocks.ROPE_BARRIER.get(),
+                    AbyssalDecorBlocks.ROPE_BARRIER_RIBBON.get()
+            );
+
+            tag(BlockTags.MINEABLE_WITH_HOE).add(
+                    AbyssalDecorBlocks.WISTERIA.get(),
+                    AbyssalDecorBlocks.ELDER_WISTERIA.get(),
+                    AbyssalDecorBlocks.BONEROT.get(),
+                    AbyssalDecorBlocks.SLUMP_LIGHT.get(),
+                    AbyssalDecorBlocks.SHORTGILLS.get(),
+                    AbyssalDecorBlocks.NETTED_SERPENT_EYE.get(),
+                    AbyssalDecorBlocks.SMALL_NETTED_SERPENT_EYE.get(),
+                    AbyssalDecorBlocks.MOLDY_STALK_SPROUT.get(),
+                    AbyssalDecorBlocks.BOG_APPLE_LEAVES.get(),
+                    AbyssalDecorBlocks.MOLDY_STALK.get(),
+                    AbyssalDecorBlocks.TRASH_BAG.get()
+            );
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AbyssalDecorBlocks.FOGHORN.get()
                     , AbyssalDecorBlocks.DESK_BELL.get(),
@@ -192,18 +237,23 @@ public class TagDatagen {
                     AbyssalDecorBlocks.STONE_BARS.get(), AbyssalDecorBlocks.SMALL_STONE_BARS.get(), AbyssalDecorBlocks.SMALL_STONE_BARS_CORNER.get(),
                     AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS.get(), AbyssalDecorBlocks.SMALL_BLOOD_CORAL_BARS_CORNER.get());
 
-            tag(BlockTags.MINEABLE_WITH_SHOVEL).add(AbyssalDecorBlocks.BLACK_MOLD.get(),AbyssalDecorBlocks.INACTIVE_MOLD.get());
+            tag(BlockTags.MINEABLE_WITH_SHOVEL).add(AbyssalDecorBlocks.BLACK_MOLD.get(),AbyssalDecorBlocks.BLACK_MOLD_CARPET.get(),
+                    AbyssalDecorBlocks.INACTIVE_MOLD.get(),AbyssalDecorBlocks.POROUS_MOLD.get(),AbyssalDecorBlocks.SEABRASS_ORE.get());
 
-            tag(BlockTags.MINEABLE_WITH_AXE);
 
-            tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
+
+            tag(BlockTags.PLANKS).add(AbyssalDecorBlocks.BLACKWOOD_PLANKS.get(),AbyssalDecorBlocks.CINNAMON_PLANKS.get(),AbyssalDecorBlocks.WHITEWOOD_PLANKS.get());
 
             tag(BlockTags.REPLACEABLE_BY_TREES).add(AbyssalDecorBlocks.TALL_CINNAMON_BUSH.get());
 
-            tag(BlockTags.SLABS).add(AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),
+            tag(BlockTags.SAND).add(AbyssalDecorBlocks.BLACKENED_SAND.get());
+
+            tag(BlockTags.SAPLINGS).add(AbyssalDecorBlocks.CINNAMON_BUSH.get());
+
+            tag(BlockTags.SLABS).add(AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_SLAB.get(),AbyssalDecorBlocks.WHITE_PEARL_SLAB.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_SLAB.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_SLAB.get());
 
-            tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
+            tag(BlockTags.STAIRS).add(AbyssalDecorBlocks.WHITE_PEARL_STAIRS.get(),AbyssalDecorBlocks.MOSSY_CINNAMON_SHINGLE_STAIRS.get(), AbyssalDecorBlocks.WHITE_PEARL_BRICK_STAIRS.get(),
                     AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_STAIRS.get());
 
             tag(BlockTags.WALLS).add(AbyssalDecorBlocks.WHITE_PEARL_WALL.get(), AbyssalDecorBlocks.SMOOTH_WHITE_PEARL_WALL.get()
@@ -223,12 +273,6 @@ public class TagDatagen {
                     ,AbyssalDecorBlocks.BLACK_PEARL_BRICK_WALL.get()
             );
 
-            tag(BlockTags.WOODEN_BUTTONS).add(AbyssalDecorBlocks.WHITEWOOD_BUTTON.get());
-
-            tag(BlockTags.WOODEN_SLABS).add(AbyssalDecorBlocks.WHITEWOOD_SLAB.get());
-            tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
-
-
             this.tag(BlockTags.STANDING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_SIGN.get(), AbyssalDecorBlocks.CINNAMON_SIGN.get(), AbyssalDecorBlocks.WHITEWOOD_SIGN.get());
             this.tag(BlockTags.WALL_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_SIGN.get());
@@ -237,6 +281,15 @@ public class TagDatagen {
             this.tag(BlockTags.WALL_HANGING_SIGNS).add(AbyssalDecorBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), AbyssalDecorBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
                     AbyssalDecorBlocks.WHITEWOOD_WALL_HANGING_SIGN.get());
 
+            tag(BlockTags.WOODEN_BUTTONS).add(AbyssalDecorBlocks.BLACKWOOD_BUTTON.get(),AbyssalDecorBlocks.CINNAMON_BUTTON.get(),AbyssalDecorBlocks.WHITEWOOD_BUTTON.get());
+            tag(BlockTags.WOODEN_DOORS).add(AbyssalDecorBlocks.BLACKWOOD_DOOR.get(),AbyssalDecorBlocks.CINNAMON_DOOR.get(),AbyssalDecorBlocks.WHITEWOOD_DOOR.get());
+            tag(BlockTags.WOODEN_FENCES).add(AbyssalDecorBlocks.BLACKWOOD_FENCE.get(),AbyssalDecorBlocks.CINNAMON_FENCE.get(),AbyssalDecorBlocks.WHITEWOOD_FENCE.get());
+            tag(BlockTags.WOODEN_PRESSURE_PLATES).add(AbyssalDecorBlocks.BLACKWOOD_PRESSURE_PLATE.get(),AbyssalDecorBlocks.CINNAMON_PRESSURE_PLATE.get(),AbyssalDecorBlocks.WHITEWOOD_PRESSURE_PLATE.get());
+            tag(BlockTags.WOODEN_SLABS).add(AbyssalDecorBlocks.BLACKWOOD_SLAB.get(),AbyssalDecorBlocks.CINNAMON_SLAB.get()
+                    ,AbyssalDecorBlocks.CINNAMON_SHINGLE_SLAB.get(),AbyssalDecorBlocks.WHITEWOOD_SLAB.get());
+            tag(BlockTags.WOODEN_STAIRS).add(AbyssalDecorBlocks.BLACKWOOD_STAIRS.get(),
+                    AbyssalDecorBlocks.CINNAMON_STAIRS.get(),AbyssalDecorBlocks.CINNAMON_SHINGLE_STAIRS.get(),AbyssalDecorBlocks.WHITEWOOD_STAIRS.get());
+            tag(BlockTags.WOODEN_TRAPDOORS).add(AbyssalDecorBlocks.BLACKWOOD_TRAPDOOR.get(),AbyssalDecorBlocks.CINNAMON_TRAPDOOR.get(),AbyssalDecorBlocks.WHITEWOOD_TRAPDOOR.get());
         }
     }
 
@@ -263,6 +316,7 @@ public class TagDatagen {
         protected void addTags(HolderLookup.Provider provider) {
             copy(ModTags.Blocks.BLACKWOOD_LOGS,ModTags.Items.BLACKWOOD_LOGS);
             copy(ModTags.Blocks.CINNAMON_LOGS,ModTags.Items.CINNAMON_LOGS);
+            copy(ModTags.Blocks.WALLPAPER,ModTags.Items.WALLPAPER);
             copy(ModTags.Blocks.WHITEWOOD_LOGS,ModTags.Items.WHITEWOOD_LOGS);
         }
     }

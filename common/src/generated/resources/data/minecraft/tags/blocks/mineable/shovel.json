@@ -1,6 +1,9 @@
 {
   "values": [
     "abyssaldecor:black_mold",
-    "abyssaldecor:inactive_mold"
+    "abyssaldecor:black_mold_carpet",
+    "abyssaldecor:inactive_mold",
+    "abyssaldecor:porous_mold",
+    "abyssaldecor:seabrass_ore"
   ]
 }

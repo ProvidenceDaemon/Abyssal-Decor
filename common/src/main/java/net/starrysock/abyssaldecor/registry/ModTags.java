@@ -25,6 +25,8 @@ public class ModTags {
         public static final TagKey<Block> WHITEWOOD_LOGS = mod("whitewood_logs");
         public static final TagKey<Block> BLACKWOOD_LOGS = mod("blackwood_logs");
 
+        public static final TagKey<Block> WALLPAPER = mod("wallpaper");
+
 
         static TagKey<Block> mod(String path) {
             return TagKey.create(Registries.BLOCK, AbyssalDecor.id(path));
@@ -42,6 +44,8 @@ public class ModTags {
         public static final TagKey<Item> WHITEWOOD_LOGS = mod("whitewood_logs");
         public static final TagKey<Item> CINNAMON_LOGS = mod("cinnamon_logs");
         public static final TagKey<Item> BLACKWOOD_LOGS = mod("blackwood_logs");
+        public static final TagKey<Item> WALLPAPER = mod("wallpaper");
+
 
         static TagKey<Item> mod(String path) {
             return TagKey.create(Registries.ITEM, AbyssalDecor.id(path));
