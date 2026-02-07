@@ -536,7 +536,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("east", modLoc("block/brick_pillar"))
                 .texture("south", modLoc("block/brick_pillar"))
                 .texture("west", modLoc("block/brick_pillar"))
-                .texture("particle", modLoc("block/brick_pillar")), false);
+                .texture("particle", modLoc("block/brick_pillar")));
 
         simplestBlockWithItem(AbyssalDecorBlocks.PITCHGLASS.get());
 
@@ -691,7 +691,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         directionalBlock(AbyssalDecorBlocks.AMARANTH_CRATE.get(), models().cubeBottomTop("amaranth_crate",
                 modLoc("block/amaranthcrate"), modLoc("block/amaranthcratebottom"), modLoc("block/amaranthcratetop")));
 
-        serpentEye(AbyssalDecorBlocks.SHELL.get(), models().withExistingParent("shell", modLoc("custom/shellfloor"))
+        shell(AbyssalDecorBlocks.SHELL.get(), models().withExistingParent("shell", modLoc("custom/shellfloor"))
                 .texture("particle", modLoc("block/shelltop"))
                 .texture("0", modLoc("block/shelltop"))
                 .texture("1", modLoc("block/shellbottom"))
@@ -1528,7 +1528,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 mcLoc("block/slab")));
     }
 
-    void serpentEye(FaceAttachedHorizontalDirectionalBlock block, ModelFile file) {
+    void shell(FaceAttachedHorizontalDirectionalBlock block, ModelFile file) {
         getVariantBuilder(block).forAllStates(state -> {
             Direction facing = state.getValue(ButtonBlock.FACING);
             AttachFace face = state.getValue(ButtonBlock.FACE);
@@ -1543,7 +1543,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block, file);
     }
 
-    void serpentEye(FaceAttachedHorizontalDirectionalBlock block, ModelFile file, boolean uvlock) {
+    void serpentEye(FaceAttachedHorizontalDirectionalBlock block, ModelFile file) {
         getVariantBuilder(block).forAllStates(state -> {
             Direction facing = state.getValue(ButtonBlock.FACING);
             AttachFace face = state.getValue(ButtonBlock.FACE);
@@ -1552,7 +1552,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .modelFile(file)
                     .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
                     .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
-                    .uvLock(uvlock)
                     .build();
         });
         simpleBlockItem(block, file);

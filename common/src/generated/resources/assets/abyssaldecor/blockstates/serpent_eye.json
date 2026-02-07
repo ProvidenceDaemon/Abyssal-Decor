@@ -36,24 +36,20 @@
     },
     "face=wall,facing=east": {
       "model": "abyssaldecor:block/serpent_eye",
-      "uvlock": true,
       "x": 90,
       "y": 90
     },
     "face=wall,facing=north": {
       "model": "abyssaldecor:block/serpent_eye",
-      "uvlock": true,
       "x": 90
     },
     "face=wall,facing=south": {
       "model": "abyssaldecor:block/serpent_eye",
-      "uvlock": true,
       "x": 90,
       "y": 180
     },
     "face=wall,facing=west": {
       "model": "abyssaldecor:block/serpent_eye",
-      "uvlock": true,
       "x": 90,
       "y": 270
     }
