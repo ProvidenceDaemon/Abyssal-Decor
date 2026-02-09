@@ -8,6 +8,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -16,6 +17,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.starrysock.abyssaldecor.AbyssalDecor;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
+import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -321,6 +323,8 @@ public class TagDatagen {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
+            tag(ItemTags.MUSIC_DISCS).add(AbyssalDecorItems.DUSTY_CD.get());
+
             copy(ModTags.Blocks.BLACKWOOD_LOGS,ModTags.Items.BLACKWOOD_LOGS);
             copy(ModTags.Blocks.CINNAMON_LOGS,ModTags.Items.CINNAMON_LOGS);
             copy(ModTags.Blocks.WALLPAPER,ModTags.Items.WALLPAPER);

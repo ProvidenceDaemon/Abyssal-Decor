@@ -586,54 +586,67 @@ public class AbyssalDecorBlocks {
     /////////
 
 
-    public static final RegistrySupplier<Block> ROUGH_JADE = AbyssalDecor.BLOCKS.register("rough_jade",() -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
-    public static final RegistrySupplier<Block> POLISHED_JADE = AbyssalDecor.BLOCKS.register("polished_jade",() -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
-    public static final RegistrySupplier<Block> JADE_BRICKS = AbyssalDecor.BLOCKS.register("jade_bricks",() -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
-    public static final RegistrySupplier<RotatedPillarBlock> JADE_PILLAR = AbyssalDecor.BLOCKS.register("jade_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
-    public static final RegistrySupplier<RotatedPillarBlock> GILDED_JADE_PILLAR = AbyssalDecor.BLOCKS.register("gilded_jade_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<Block> ROUGH_JADE = AbyssalDecor.BLOCKS.register("rough_jade",() -> new Block(jade()));
+    public static final RegistrySupplier<Block> POLISHED_JADE = AbyssalDecor.BLOCKS.register("polished_jade",() -> new Block(jade()));
+    public static final RegistrySupplier<Block> JADE_BRICKS = AbyssalDecor.BLOCKS.register("jade_bricks",() -> new Block(jade()));
+    public static final RegistrySupplier<RotatedPillarBlock> JADE_PILLAR = AbyssalDecor.BLOCKS.register("jade_pillar", () -> new RotatedPillarBlock(jade()));
+    public static final RegistrySupplier<RotatedPillarBlock> GILDED_JADE_PILLAR = AbyssalDecor.BLOCKS.register("gilded_jade_pillar", () -> new RotatedPillarBlock(jade()));
+
+    static BlockBehaviour.Properties jade() {
+        return BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(2, 10).requiresCorrectToolForDrops();
+    }
 
     //jade lantern
 
     public static final RegistrySupplier<RotatedPillarBlock> QUARTZ_BONE = AbyssalDecor.BLOCKS.register("quartz_bone",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.BONE_BLOCK).strength(5, 10).requiresCorrectToolForDrops()));
 
-    public static final RegistrySupplier<Block> BONEROT = AbyssalDecor.BLOCKS.register("bonerot",() -> new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> BONEROT = AbyssalDecor.BLOCKS.register("bonerot",() -> new BonerotBlock(BlockBehaviour.Properties.of()
+            .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHER_WART).strength(3, 10).noCollission().noOcclusion()));
 
     public static final RegistrySupplier<AbstractDirectionalBlock> FLAKY_SCALES =
-            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f)
-                    .sound(SoundType.VINE).pushReaction(PushReaction.DESTROY)));
+            AbyssalDecor.BLOCKS.register("flaky_scales",() -> new FlakyScalesBlock(BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(5, 10)
+                    .noCollission().noOcclusion()));
 
     public static final RegistrySupplier<DirectionalBlock> SLUMP_LIGHT =
-            AbyssalDecor.BLOCKS.register("slump_light",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+            AbyssalDecor.BLOCKS.register("slump_light",() -> new SlumpLightBlock(BlockBehaviour.Properties.of()
+                    .instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(5, 10).lightLevel(s -> 6)
+                    .noCollission().noOcclusion()));
 
     public static final RegistrySupplier<Block> SHORTGILLS =
-            AbyssalDecor.BLOCKS.register("shortgills",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of()));
+            AbyssalDecor.BLOCKS.register("shortgills",() -> new AbstractDirectionalBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CORAL_BLOCK).strength(5.0F, 10.0F).noCollission().noOcclusion()));
 
-    public static final RegistrySupplier<Block> SERPENT_SCALES = AbyssalDecor.BLOCKS.register("serpent_scales",() ->new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> SERPENT_SCALES = AbyssalDecor.BLOCKS.register("serpent_scales",() ->new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(25, 10)));
     public static final RegistrySupplier<SlabBlock> SERPENT_SCALE_SLAB = AbyssalDecor.BLOCKS.register("serpent_scale_slab",() ->slab(SERPENT_SCALES.get()));
-    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SERPENT_SKIN = AbyssalDecor.BLOCKS.register("serpent_skin",() ->new FaceAttachedBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SERPENT_SKIN = AbyssalDecor.BLOCKS.register("serpent_skin",() ->
+            new FaceAttachedBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(25, 10),true));
 
-    public static final RegistrySupplier<Block> DAMAGED_SERPENT_SCALES = AbyssalDecor.BLOCKS.register("damaged_serpent_scales",() ->new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> DAMAGED_SERPENT_SCALES = AbyssalDecor.BLOCKS.register("damaged_serpent_scales",() ->
+            new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(5, 10)));
     public static final RegistrySupplier<SlabBlock> DAMAGED_SERPENT_SCALE_SLAB = AbyssalDecor.BLOCKS.register("damaged_serpent_scale_slab",() ->slab(DAMAGED_SERPENT_SCALES.get()));
-    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DAMAGED_SERPENT_SKIN = AbyssalDecor.BLOCKS.register("damaged_serpent_skin",() ->new FaceAttachedBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> DAMAGED_SERPENT_SKIN = AbyssalDecor.BLOCKS.register("damaged_serpent_skin",() ->
+            new FaceAttachedBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(5, 10),true));
 
-    public static final RegistrySupplier<Block> SERPENT_FLESH = AbyssalDecor.BLOCKS.register("serpent_flesh",() ->new Block(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> SERPENT_FLESH = AbyssalDecor.BLOCKS.register("serpent_flesh",() ->
+            new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(5, 10)));
     public static final RegistrySupplier<Block> SERPENT_FLESH_SLAB = AbyssalDecor.BLOCKS.register("serpent_flesh_slab",() ->slab(SERPENT_FLESH.get()));
 
     public static final RegistrySupplier<RotatedPillarBlock> RIBBED_SERPENT_VEINS = AbyssalDecor.BLOCKS.register("ribbed_serpent_veins",() ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new RotatedPillarBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.CORAL_BLOCK).strength(5, 10)));
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SERPENT_EYE = AbyssalDecor.BLOCKS.register("serpent_eye",() ->
-            new FaceAttachedBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new FaceAttachedBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(25.0F, 10.0F)));
 
     public static final RegistrySupplier<FaceAttachedHorizontalDirectionalBlock> SMALL_SERPENT_EYES = AbyssalDecor.BLOCKS.register("small_serpent_eyes",() ->
-            new FaceAttachedBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+            new FaceAttachedBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CORAL_BLOCK).strength(25.0F, 10.0F)));
 
     public static final RegistrySupplier<Block> NETTED_SERPENT_EYE = AbyssalDecor.BLOCKS.register("netted_serpent_eye",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.SHROOMLIGHT).strength(1, 10)
+                    .lightLevel(s -> 11).jumpFactor(1.5F).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
 
     public static final RegistrySupplier<Block> SMALL_NETTED_SERPENT_EYE = AbyssalDecor.BLOCKS.register("small_netted_serpent_eye",
             () -> new PearlBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.SHROOMLIGHT)
@@ -730,7 +743,8 @@ public class AbyssalDecorBlocks {
             .forceSolidOn().requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.CHAIN).noOcclusion()));
 
     public static final RegistrySupplier<SconceBlock> SEABRASS_SCONCE = AbyssalDecor.BLOCKS.register("seabrass_sconce",
-            () -> new SconceBlock(BlockBehaviour.Properties.of()));
+            () -> new SconceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK)
+                    .strength(3, 10).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final RegistrySupplier<FancierIronBarsBlock> SEABRASS_BARS = AbyssalDecor.BLOCKS.register("seabrass_bars",
             () -> new FancierIronBarsBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)

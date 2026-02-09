@@ -18,6 +18,8 @@ public class AbyssalDecorClient {
 
         renderTypes.accept(AbyssalDecorBlocks.AMARANTH.get(),RenderType.cutout());
 
+        renderTypes.accept(AbyssalDecorBlocks.FRESNEL_LAMP.get(),RenderType.translucent());
+
         renderTypes.accept(AbyssalDecorBlocks.SOLAR_ROD.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.STELLAR_ROD.get(),RenderType.cutout());
         renderTypes.accept(AbyssalDecorBlocks.TERRESTRIAL_ROD.get(),RenderType.cutout());

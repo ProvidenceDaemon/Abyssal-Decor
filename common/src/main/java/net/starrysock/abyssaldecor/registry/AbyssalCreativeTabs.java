@@ -9,10 +9,10 @@ import net.starrysock.abyssaldecor.AbyssalDecor;
 
 public class AbyssalCreativeTabs {
 
-    public static final RegistrySupplier<CreativeModeTab> PALETTE_TAB = AbyssalDecor.TABS.register("palette_tab", () ->
+    public static final RegistrySupplier<CreativeModeTab> MAIN_TAB = AbyssalDecor.TABS.register("main", () ->
             CreativeModeTab.builder(null,-1)
-                    .title(Component.translatable("itemGroup." + AbyssalDecor.MOD_ID + ".palette_tab"))
-                    .icon(() -> new ItemStack(AbyssalDecorItems.SOLAR_ROD.get()))
+                    .title(Component.translatable("itemGroup." + AbyssalDecor.MOD_ID + ".main"))
+                    .icon(() -> new ItemStack(AbyssalDecorItems.ABYSSAL_LANTERN.get()))
                     .displayItems((itemDisplayParameters, output) -> {
                         AbyssalDecor.ITEMS.forEach(itemRegistrySupplier -> {
                             if (!hidden(itemRegistrySupplier.get())) {
