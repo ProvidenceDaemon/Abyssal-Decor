@@ -3,6 +3,7 @@ package net.starrysock.abyssaldecor.registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.starrysock.abyssaldecor.AbyssalDecor;
@@ -49,6 +50,15 @@ public class ModTags {
 
         static TagKey<Item> mod(String path) {
             return TagKey.create(Registries.ITEM, AbyssalDecor.id(path));
+        }
+    }
+
+    public static class Biomes {
+
+        public static final TagKey<Biome> HAS_AMARANTH = mod("has_amaranth");
+
+        static TagKey<Biome> mod(String path) {
+            return TagKey.create(Registries.BIOME, AbyssalDecor.id(path));
         }
     }
 }

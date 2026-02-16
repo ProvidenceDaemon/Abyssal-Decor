@@ -1,2 +1,5 @@
-// 1.20.1	2025-11-27T22:49:37.288671	Registries
+// 1.20.1	2026-02-09T13:05:55.1589567	Registries
+7beae0edabeb38bd7aa6b3dcf72bf7856f0f41cc data/abyssaldecor/forge/biome_modifier/add_amaranth.json
+cfec39ae018688794558442c05ea992109f790a2 data/abyssaldecor/worldgen/configured_feature/amaranth.json
 59275258e2a8f53bebcce34de2638a7566eb40b5 data/abyssaldecor/worldgen/configured_feature/cinnamon.json
+004ae3f758631b87ff66f70f4b75e94cd069fcfd data/abyssaldecor/worldgen/placed_feature/amaranth.json

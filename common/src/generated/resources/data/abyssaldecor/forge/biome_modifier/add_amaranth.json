@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#abyssaldecor:has_amaranth",
+  "features": "abyssaldecor:amaranth",
+  "step": "vegetal_decoration"
+}

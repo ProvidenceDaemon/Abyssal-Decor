@@ -3,13 +3,11 @@ package net.starrysock.abyssaldecor.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.PaintingVariantTags;
+import net.minecraft.tags.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -36,6 +34,7 @@ public class TagDatagen {
         generator.addProvider(true, blockTagsProvider);
         generator.addProvider(true,new ModItemTagsProvider(output,lookupProvider,blockTagsProvider.contentsGetter(),helper));
         generator.addProvider(true, new ModPaintingTagsProvider(output, lookupProvider, helper));
+        generator.addProvider(true,new ModBiomeTagsProvider(output,lookupProvider,helper));
     }
 
 
@@ -341,6 +340,17 @@ public class TagDatagen {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             AbyssalDecor.PAINTING_VARIANTS.forEach(s -> tag(PaintingVariantTags.PLACEABLE).add(s.getKey()));
+        }
+    }
+
+    static class ModBiomeTagsProvider extends BiomeTagsProvider {
+        public ModBiomeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
+            super(output, provider, AbyssalDecor.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.Provider provider) {
+            tag(ModTags.Biomes.HAS_AMARANTH).addTag(BiomeTags.IS_FOREST);
         }
     }
 }
