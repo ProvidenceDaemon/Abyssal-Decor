@@ -18,8 +18,11 @@ import net.starrysock.abyssaldecor.worldgen.ModPlacedFeatures;
 public class BiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_AMARANTH = createKey("add_amaranth");
+    public static final ResourceKey<BiomeModifier> ADD_BOG_APPLE = createKey("add_bog_apple");
+    public static final ResourceKey<BiomeModifier> ADD_CLAM = createKey("add_clam");
     public static final ResourceKey<BiomeModifier> ADD_MUCKROOT = createKey("add_muckroot");
     public static final ResourceKey<BiomeModifier> ADD_SPIDERCORN = createKey("add_spidercorn");
+    public static final ResourceKey<BiomeModifier> ADD_STARFISH = createKey("add_starfish");
 
     public static ResourceKey<BiomeModifier> createKey(String key) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, AbyssalDecor.id(key));
@@ -32,10 +35,19 @@ public class BiomeModifiers {
         context.register(ADD_AMARANTH,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_AMARANTH),
                 HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.AMARANTH)), GenerationStep.Decoration.VEGETAL_DECORATION));
 
+        context.register(ADD_BOG_APPLE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_BOG_APPLE),
+                HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.BOG_APPLE)), GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_CLAM,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_CLAM),
+                HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.CLAM)), GenerationStep.Decoration.VEGETAL_DECORATION));
+
         context.register(ADD_MUCKROOT,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_MUCKROOT),
                 HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.MUCKROOT)), GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SPIDERCORN,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_SPIDERCORN),
                 HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.SPIDERCORN)), GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_STARFISH,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_STARFISH),
+                HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.STARFISH)), GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 }

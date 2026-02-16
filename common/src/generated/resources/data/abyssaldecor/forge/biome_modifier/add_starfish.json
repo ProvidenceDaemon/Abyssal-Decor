@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#abyssaldecor:has_starfish",
+  "features": "abyssaldecor:starfish",
+  "step": "vegetal_decoration"
+}

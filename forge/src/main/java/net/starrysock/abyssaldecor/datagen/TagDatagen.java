@@ -352,8 +352,11 @@ public class TagDatagen {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             tag(ModTags.Biomes.HAS_AMARANTH).addTag(BiomeTags.IS_FOREST);
+            tag(ModTags.Biomes.HAS_BOG_APPLE).addTag(Tags.Biomes.IS_SWAMP);
+            tag(ModTags.Biomes.HAS_CLAM).addTag(BiomeTags.IS_OCEAN);
             tag(ModTags.Biomes.HAS_MUCKROOT).addTags(BiomeTags.IS_FOREST, Tags.Biomes.IS_PLAINS);
             tag(ModTags.Biomes.HAS_SPIDERCORN).addTag(BiomeTags.IS_OVERWORLD);
+            tag(ModTags.Biomes.HAS_STARFISH).addTag(BiomeTags.IS_OCEAN);
         }
     }
 }

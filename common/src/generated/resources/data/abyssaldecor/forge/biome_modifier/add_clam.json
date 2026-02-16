@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#abyssaldecor:has_clam",
+  "features": "abyssaldecor:clam",
+  "step": "vegetal_decoration"
+}

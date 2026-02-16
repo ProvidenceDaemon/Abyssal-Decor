@@ -51,7 +51,9 @@ public class BogAppleLeavesBlock extends CropBlock implements SimpleWaterloggedB
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockpos = pos.below();
-        return this.mayPlaceOn(level.getBlockState(blockpos), level, blockpos)&& level.getFluidState(pos).is(ModTags.Fluids.SUPPORTS_BOG_APPLES);
+        boolean dirt = this.mayPlaceOn(level.getBlockState(blockpos), level, blockpos);
+        boolean water = level.getFluidState(pos).is(ModTags.Fluids.SUPPORTS_BOG_APPLES);
+        return dirt && water;
     }
 
     @Override
