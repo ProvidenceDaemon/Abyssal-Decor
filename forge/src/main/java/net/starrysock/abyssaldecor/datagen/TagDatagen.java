@@ -10,6 +10,7 @@ import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -351,6 +352,8 @@ public class TagDatagen {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             tag(ModTags.Biomes.HAS_AMARANTH).addTag(BiomeTags.IS_FOREST);
+            tag(ModTags.Biomes.HAS_MUCKROOT).addTags(BiomeTags.IS_FOREST, Tags.Biomes.IS_PLAINS);
+            tag(ModTags.Biomes.HAS_SPIDERCORN).addTag(BiomeTags.IS_OVERWORLD);
         }
     }
 }

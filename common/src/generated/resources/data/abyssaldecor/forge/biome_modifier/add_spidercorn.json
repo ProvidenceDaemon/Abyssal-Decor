@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#abyssaldecor:has_spidercorn",
+  "features": "abyssaldecor:spidercorn",
+  "step": "vegetal_decoration"
+}

@@ -1,5 +1,11 @@
-// 1.20.1	2026-02-09T13:05:55.1589567	Registries
+// 1.20.1	2026-02-16T12:15:06.4486233	Registries
 7beae0edabeb38bd7aa6b3dcf72bf7856f0f41cc data/abyssaldecor/forge/biome_modifier/add_amaranth.json
+aeea59087539050d2e100743636cdc95cb8533ad data/abyssaldecor/forge/biome_modifier/add_muckroot.json
+8b18e1586009ea6f99bc0d94eea156a2ee60b5f2 data/abyssaldecor/forge/biome_modifier/add_spidercorn.json
 cfec39ae018688794558442c05ea992109f790a2 data/abyssaldecor/worldgen/configured_feature/amaranth.json
 59275258e2a8f53bebcce34de2638a7566eb40b5 data/abyssaldecor/worldgen/configured_feature/cinnamon.json
+8d80f1bb6e3624f2daed8f829cc4617bd39c3f5d data/abyssaldecor/worldgen/configured_feature/muckroot.json
+30db6652575f3e1722e7b3e4a1ce95f03751d402 data/abyssaldecor/worldgen/configured_feature/spidercorn.json
 004ae3f758631b87ff66f70f4b75e94cd069fcfd data/abyssaldecor/worldgen/placed_feature/amaranth.json
+d528e5fe23781539ba8220572de3f8ed6b9996a6 data/abyssaldecor/worldgen/placed_feature/muckroot.json
+00909e6953d04ad86a522ae541640e718cd4c1ec data/abyssaldecor/worldgen/placed_feature/spidercorn.json

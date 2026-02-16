@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#abyssaldecor:has_muckroot",
+  "features": "abyssaldecor:muckroot",
+  "step": "vegetal_decoration"
+}

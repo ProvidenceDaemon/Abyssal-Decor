@@ -15,6 +15,7 @@ import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> AMARANTH = createKey("amaranth");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MUCKROOT = createKey("muckroot");
     public static final ResourceKey<ConfiguredFeature<?,?>> SPIDERCORN = createKey("spidercorn");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
@@ -25,6 +26,12 @@ public class ModConfiguredFeatures {
         FeatureUtils.register(context, ModTreeFeatures.CINNAMON, Feature.TREE, ModTreeFeatures.createCinnamon().build());
         FeatureUtils.register(context, AMARANTH,Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(AbyssalDecorBlocks.AMARANTH.get()))));
+
+        FeatureUtils.register(context, MUCKROOT,Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                new SimpleBlockConfiguration(BlockStateProvider.simple(AbyssalDecorBlocks.MUCKROOT.get()))));
+
+        FeatureUtils.register(context, SPIDERCORN,Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                new SimpleBlockConfiguration(BlockStateProvider.simple(AbyssalDecorBlocks.SPIDERCORN.get()))));
     }
 
 

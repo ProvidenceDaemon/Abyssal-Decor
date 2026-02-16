@@ -56,6 +56,8 @@ public class ModTags {
     public static class Biomes {
 
         public static final TagKey<Biome> HAS_AMARANTH = mod("has_amaranth");
+        public static final TagKey<Biome> HAS_MUCKROOT = mod("has_muckroot");
+        public static final TagKey<Biome> HAS_SPIDERCORN = mod("has_spidercorn");
 
         static TagKey<Biome> mod(String path) {
             return TagKey.create(Registries.BIOME, AbyssalDecor.id(path));
