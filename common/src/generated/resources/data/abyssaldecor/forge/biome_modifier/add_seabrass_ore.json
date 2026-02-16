@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#abyssaldecor:has_seabrass_ore",
+  "features": "abyssaldecor:seabrass_ore",
+  "step": "underground_ores"
+}

@@ -6,16 +6,71 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "abyssaldecor:starfish",
-              "Properties": {
-                "color": "orange",
-                "count": "1",
-                "facing": "up",
-                "waterlogged": "true"
+            "type": "minecraft:noise_provider",
+            "noise": {
+              "amplitudes": [
+                2.0
+              ],
+              "firstOctave": 0
+            },
+            "scale": 1.0,
+            "seed": 1234,
+            "states": [
+              {
+                "Name": "abyssaldecor:starfish",
+                "Properties": {
+                  "color": "orange",
+                  "count": "1",
+                  "facing": "up",
+                  "waterlogged": "true"
+                }
+              },
+              {
+                "Name": "abyssaldecor:starfish",
+                "Properties": {
+                  "color": "orange",
+                  "count": "2",
+                  "facing": "up",
+                  "waterlogged": "true"
+                }
+              },
+              {
+                "Name": "abyssaldecor:starfish",
+                "Properties": {
+                  "color": "pink",
+                  "count": "1",
+                  "facing": "up",
+                  "waterlogged": "true"
+                }
+              },
+              {
+                "Name": "abyssaldecor:starfish",
+                "Properties": {
+                  "color": "pink",
+                  "count": "2",
+                  "facing": "up",
+                  "waterlogged": "true"
+                }
+              },
+              {
+                "Name": "abyssaldecor:starfish",
+                "Properties": {
+                  "color": "purple",
+                  "count": "1",
+                  "facing": "up",
+                  "waterlogged": "true"
+                }
+              },
+              {
+                "Name": "abyssaldecor:starfish",
+                "Properties": {
+                  "color": "purple",
+                  "count": "2",
+                  "facing": "up",
+                  "waterlogged": "true"
+                }
               }
-            }
+            ]
           }
         }
       },

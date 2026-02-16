@@ -357,6 +357,7 @@ public class TagDatagen {
             tag(ModTags.Biomes.HAS_MUCKROOT).addTags(BiomeTags.IS_FOREST, Tags.Biomes.IS_PLAINS);
             tag(ModTags.Biomes.HAS_SPIDERCORN).addTag(BiomeTags.IS_OVERWORLD);
             tag(ModTags.Biomes.HAS_STARFISH).addTag(BiomeTags.IS_OCEAN);
+            tag(ModTags.Biomes.HAS_SEABRASS_ORE).addTag(BiomeTags.IS_OCEAN);
         }
     }
 }

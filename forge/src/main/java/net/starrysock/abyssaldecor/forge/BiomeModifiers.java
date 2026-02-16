@@ -23,6 +23,7 @@ public class BiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_MUCKROOT = createKey("add_muckroot");
     public static final ResourceKey<BiomeModifier> ADD_SPIDERCORN = createKey("add_spidercorn");
     public static final ResourceKey<BiomeModifier> ADD_STARFISH = createKey("add_starfish");
+    public static final ResourceKey<BiomeModifier> ADD_SEABRASS_ORE = createKey("add_seabrass_ore");
 
     public static ResourceKey<BiomeModifier> createKey(String key) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, AbyssalDecor.id(key));
@@ -49,5 +50,8 @@ public class BiomeModifiers {
 
         context.register(ADD_STARFISH,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_STARFISH),
                 HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.STARFISH)), GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_SEABRASS_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(holdergetter.getOrThrow(ModTags.Biomes.HAS_SEABRASS_ORE),
+                HolderSet.direct(holdergetter1.getOrThrow(ModPlacedFeatures.SEABRASS_ORE)), GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 }

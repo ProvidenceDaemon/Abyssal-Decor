@@ -61,6 +61,7 @@ public class ModTags {
         public static final TagKey<Biome> HAS_MUCKROOT = mod("has_muckroot");
         public static final TagKey<Biome> HAS_SPIDERCORN = mod("has_spidercorn");
         public static final TagKey<Biome> HAS_STARFISH = mod("has_starfish");
+        public static final TagKey<Biome> HAS_SEABRASS_ORE = mod("has_seabrass_ore");
 
         static TagKey<Biome> mod(String path) {
             return TagKey.create(Registries.BIOME, AbyssalDecor.id(path));
