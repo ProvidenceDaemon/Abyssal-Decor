@@ -1,0 +1,16 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/wooden_frame_gray"
+      ],
+	"extra": {
+	  "connect_to": [
+	    {"block": "abyssaldecor:gray_timber"},
+            {"block": "abyssaldecor:gray_wooden_frame"}
+ 	 ]
+    }
+  }
+}

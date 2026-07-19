@@ -1,0 +1,12 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/ironpanel"
+      ],
+      "connect_inside": true
+    }
+  }
+}

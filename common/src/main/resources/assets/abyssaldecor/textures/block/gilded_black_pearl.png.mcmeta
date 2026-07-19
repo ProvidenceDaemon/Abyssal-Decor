@@ -3,7 +3,7 @@
         "ctm_version": 1,
         "type":"CTM",
         "textures":[
-            "abyssal_decor:blocks/gildedblackpearl_ctm"
+            "abyssaldecor:blocks/gildedblackpearl_ctm"
         ]
     }
 }

@@ -48,12 +48,18 @@ legacyForge {
 
 sourceSets.main.resources.srcDir 'src/generated/resources'
 
+repositories {
+    maven { // CTM
+        url "https://maven.tterrag.com/"
+    }
+}
+
 dependencies {
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
     modImplementation "me.shedaniel:RoughlyEnoughItems-forge:$rei_version"
-
+    modImplementation "team.chisel.ctm:CTM:1.20.1-${ctm_version}"
     modImplementation "me.shedaniel.cloth:cloth-config-forge:$cloth_config_version"
     modImplementation "dev.architectury:architectury-forge:$architectury_version"
 

@@ -1,9 +1,12 @@
 {
-    "ctm":{
-        "ctm_version": 1,
-        "type":"CTM",
-        "textures":[
-            "abyssal_decor:blocks/whitewoodplantertop_ctm"
-        ]
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/whitewoodplantertop"
+      ],
+      "connect_inside": true
     }
+  }
 }

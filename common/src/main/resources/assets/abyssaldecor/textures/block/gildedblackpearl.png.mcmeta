@@ -1,0 +1,12 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/gildedblackpearl"
+      ],
+      "connect_inside": true
+    }
+  }
+}

@@ -1,9 +1,12 @@
 {
-    "ctm":{
-        "ctm_version": 1,
-        "type":"CTM",
-        "textures":[
-            "abyssal_decor:blocks/cinnamonpanelling_ctm"
-        ]
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/cinnamonpanelling"
+      ],
+      "connect_inside": true
     }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/cracked_stucco_white"
+      ],
+	"extra": {
+	  "connect_to": [
+	    {"block": "abyssaldecor:white_stucco"},
+            {"block": "abyssaldecor:white_cracked_stucco"}
+ 	 ]
+	}
+  }
+}

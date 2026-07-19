@@ -1,0 +1,12 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "abyssaldecor:ctm/reinforced_filthcrete2"
+      ],
+      "connect_inside": true
+    }
+  }
+}

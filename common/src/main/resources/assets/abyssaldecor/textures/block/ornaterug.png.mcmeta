@@ -1,0 +1,12 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "CUTOUT",
+    "textures": [
+      "abyssaldecor:ctm/ornaterug"
+      ],
+      "connect_inside": true
+    }
+  }
+}
