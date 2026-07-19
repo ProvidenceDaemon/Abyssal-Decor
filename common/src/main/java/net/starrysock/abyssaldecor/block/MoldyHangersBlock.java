@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -27,6 +28,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.starrysock.abyssaldecor.block.properties.ModBlockStateProperties;
@@ -91,8 +93,7 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
         } else {
             BlockPos below = pos.below();
             if (this.canGrowInto(level.getBlockState(below))) {
-                boolean canContinueGrowing = random.nextDouble() < .875;
-                TriPart part = canContinueGrowing ? TriPart.MIDDLE: TriPart.BOTTOM;
+                TriPart part = TriPart.MIDDLE;
                 level.setBlockAndUpdate(below,defaultBlockState().setValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM,part));
 
                 if (random.nextDouble() < .5 && state.getValue(ModBlockStateProperties.TRI_PART_NO_BOTTOM) == TriPart.MIDDLE) {
@@ -110,7 +111,10 @@ public class MoldyHangersBlock extends Block implements BonemealableBlock {
                 level.setBlockAndUpdate(pos, state.setValue(BERRIES, false));
                 int berries = 1+player.getRandom().nextInt(4);
                 ItemStack berryStack = new ItemStack(Items.SPIDER_EYE,berries);
-                player.addItem(berryStack);
+                Vec3 vec3 = Vec3.atLowerCornerWithOffset(pos, 0.5D, 1.01D, 0.5D).offsetRandom(level.random, 0.2F);
+                ItemEntity itementity = new ItemEntity(level, vec3.x(), vec3.y(), vec3.z(), berryStack);
+                itementity.setDefaultPickUpDelay();
+                level.addFreshEntity(itementity);
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
