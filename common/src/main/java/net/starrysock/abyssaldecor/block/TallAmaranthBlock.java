@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorBlocks;
 
 import java.util.List;
@@ -68,7 +70,10 @@ public class TallAmaranthBlock extends DoublePlantBlock implements BonemealableB
             if (!level.isClientSide) {
                 List<ItemStack> stacks = getDrops(state, (ServerLevel) level, pickPos, level.getBlockEntity(pickPos),player, player.getItemInHand(hand));
                 for (ItemStack stack : stacks) {
-                    player.addItem(stack);
+                    Vec3 vec3 = Vec3.atLowerCornerWithOffset(pos, 0.5D, 1.01D, 0.5D).offsetRandom(level.random, 0.2F);
+                    ItemEntity itementity = new ItemEntity(level, vec3.x(), vec3.y(), vec3.z(), stack);
+                    itementity.setDefaultPickUpDelay();
+                    level.addFreshEntity(itementity);
                 }
                 level.setBlockAndUpdate(pickPos, AbyssalDecorBlocks.AMARANTH.get().defaultBlockState());
                 level.playSound(null, pickPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.5F);

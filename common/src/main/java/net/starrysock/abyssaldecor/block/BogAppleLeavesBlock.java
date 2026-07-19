@@ -8,6 +8,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -25,6 +26,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.starrysock.abyssaldecor.registry.AbyssalDecorItems;
 import net.starrysock.abyssaldecor.registry.ModTags;
 import org.jetbrains.annotations.Nullable;
@@ -71,10 +73,10 @@ public class BogAppleLeavesBlock extends CropBlock implements SimpleWaterloggedB
             if (!level.isClientSide) {
                 List<ItemStack> stacks = getDrops(state, (ServerLevel) level, pos, level.getBlockEntity(pos),player, player.getItemInHand(hand));
                 for (ItemStack stack : stacks) {
-                    boolean b = player.addItem(stack);
-                    if (!b) {
-                        player.drop(stack,false);
-                    }
+                    Vec3 vec3 = Vec3.atLowerCornerWithOffset(pos, 0.5D, 1.01D, 0.5D).offsetRandom(level.random, 0.2F);
+                    ItemEntity itementity = new ItemEntity(level, vec3.x(), vec3.y(), vec3.z(), stack);
+                    itementity.setDefaultPickUpDelay();
+                    level.addFreshEntity(itementity);
                 }
                 level.setBlockAndUpdate(pos, block.defaultBlockState());
                 level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.5F);
