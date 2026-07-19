@@ -533,26 +533,26 @@ public class AbyssalDecorBlocks {
                     .noCollission().noOcclusion()));
 
     public static final RegistrySupplier<Block> POLISHED_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("polished_blood_coral",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(coral()));
 
     public static final RegistrySupplier<Block> SMOOTH_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("smooth_blood_coral",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(coral()));
 
     public static final RegistrySupplier<Block> BLOOD_CORAL_BRICKS = AbyssalDecor.BLOCKS.register("blood_coral_bricks",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(coral()));
 
     public static final RegistrySupplier<RotatedPillarBlock> ROUGH_BLOOD_CORAL = AbyssalDecor.BLOCKS.register("rough_blood_coral",
-            () -> new RoughBloodCoralBlock(BlockBehaviour.Properties.of()));
+            () -> new RoughBloodCoralBlock(coral()));
 
 
     public static final RegistrySupplier<RotatedPillarBlock> BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("blood_coral_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+            () -> new RotatedPillarBlock(coral()));
 
     public static final RegistrySupplier<RotatedPillarBlock> GILDED_BLOOD_CORAL_PILLAR = AbyssalDecor.BLOCKS.register("gilded_blood_coral_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()));
+            () -> new RotatedPillarBlock(coral()));
 
     public static final RegistrySupplier<SconceBlock> BLOOD_CORAL_SCONCE = AbyssalDecor.BLOCKS.register("blood_coral_sconce",
-            () -> new SconceBlock(BlockBehaviour.Properties.of()));
+            () -> new SconceBlock(coral()));
 
 
     //blood coral lantern
@@ -582,6 +582,10 @@ public class AbyssalDecorBlocks {
     public static final RegistrySupplier<SlabBlock> BLOOD_CORAL_BRICK_SLAB = AbyssalDecor.BLOCKS.register("blood_coral_brick_slab",() -> slab(BLOOD_CORAL_BRICKS.get()));
     public static final RegistrySupplier<StairBlock> BLOOD_CORAL_BRICK_STAIRS = AbyssalDecor.BLOCKS.register("blood_coral_brick_stairs",() -> stairs(BLOOD_CORAL_BRICKS.get()));
     public static final RegistrySupplier<WallBlock> BLOOD_CORAL_BRICK_WALL = AbyssalDecor.BLOCKS.register("blood_coral_brick_wall",() -> wall(BLOOD_CORAL_BRICKS.get()));
+
+    static BlockBehaviour.Properties coral() {
+        return BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(2, 10).requiresCorrectToolForDrops();
+    }
 
     /////////
 
